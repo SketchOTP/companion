@@ -20,7 +20,7 @@ Maintain a fully installed Authority 3.0 governance baseline that allows future 
 ## Current verified state
 
 - The canonical Notion page identifies the project as an independent greenfield Living Companion & Caretaking Core; the product name remains provisional.
-- Research Phase 01 contains ten research dossiers, an operator-approved visual design bible, 44 evidence records, 28 architecture-decision records, 14 tracked decisions/research gaps with 11 open, and 14 preliminary risks.
+- Research Phase 01 contains ten research dossiers, an operator-approved visual design bible with approved six-view turnaround, 44 evidence records, 29 architecture-decision records, 14 tracked decisions/research gaps with 11 open, and 14 preliminary risks.
 - The remote repository `SketchOTP/companion` uses `main` and began at commit `b7266b5806ef0612a14d2d6b7d324841070625ac`.
 - Before this governance bootstrap the remote contained only `.gitignore` and an Apache-2.0 `LICENSE`; no application source existed.
 - Authority 3.0 repository routing, project state/history, reusable workflow, handoff contracts, evidence rules, safety rules, and conditional task-packet directories are installed.
