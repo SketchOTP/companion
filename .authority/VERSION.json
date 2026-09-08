@@ -1,0 +1,12 @@
+{
+  "schema_version": "authority.version.v1",
+  "authority_version": "2026.08.15",
+  "installation_package": "Authority 3.0",
+  "release_date": "2026-08-15",
+  "governance_schema_version": "2.2.0",
+  "stability": "stable_production_baseline",
+  "freeze": true,
+  "git_required": false,
+  "git_revision_policy": "Record a Git revision when the Authority source is Git-backed; otherwise use NOT_APPLICABLE.",
+  "notes": "Authority 3.0 is the installation and operating model. The stable governance baseline installed here is 2026.08.15 / schema 2.2.0."
+}
