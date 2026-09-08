@@ -50,7 +50,7 @@ The adopted first host is the user's existing Linux PC with its connected webcam
 
 ## 10. Visual identity and sprite production
 
-The approved mon is a simple purple creature whose head reads as an edge-spiked flame silhouette, with black eye fields, small white pupils, a small mouth, and flat cel-shaded color treatment. The identity master and six-view front/back/left/right/top/bottom turnaround were directly inspected. Each hand has exactly three blunt claws/digits; each foot has exactly two blunt toes. The turnaround is directional authority, while detailed construction and remaining three-quarter references remain future work.
+The approved mon is a simple purple creature whose head reads as an edge-spiked flame silhouette, with black eye fields, small white pupils, a small mouth, and flat cel-shaded color treatment. The identity master and six-view front/back/left/right/top/bottom turnaround were directly inspected. Each hand has exactly two fingers plus one thumb; each foot has exactly three toes. The turnaround is directional authority, while detailed construction and remaining three-quarter references remain future work.
 
 `MON_FRAME_V1` requires 1024×1024 transparent RGBA frames, root at (512,896), baseline y=896, allowed content x=64..960 and y=32..960, zero root drift, planted contact within 2 px, uniform scale, and no crop. Timing uses a 24 Hz tick with 12 unique drawings per second as the default. Semantic clips, stable anchors, defined layers, atlas pages no larger than 4096 with at least 4 px gutter/extrusion, and measured streaming/loading are required. Many drawings without state causality, timing, continuity, and grounded selection do not prove aliveness.
 
@@ -102,7 +102,7 @@ It means staged capability gates, curiosity, limited initial learned repertoire,
 
 ## F. What is the exact approved visual anatomy of each hand and foot?
 
-Exactly three blunt claws/digits on every hand and exactly two blunt toes on every foot.
+Exactly two fingers plus one thumb on every hand and exactly three toes on every foot.
 
 ## G. Is a large number of sprites sufficient evidence of aliveness?
 

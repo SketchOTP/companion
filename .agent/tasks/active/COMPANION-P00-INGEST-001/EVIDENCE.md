@@ -67,6 +67,7 @@
 - Turnaround canonical native marker: `SHA-256 3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4`, `1448×1086 RGB`.
 - Turnaround derivative/embedded-preview markers: `SHA-256 ac760dfc80a6cba867ba1e34fc8013c4ae6e979086b8f8fa158132412b8057cc` and `e9fc7793bd326db090425b8765fbff8930c732f6c0bb5b7d1104aae76134c8e5`.
 - Temporary render files remained outside the repository in `/tmp`; no asset was introduced.
+- Final authority re-read: `PASSED` — corrected a draft transcription before Notion publication; the canonical anatomy is exactly two fingers plus one thumb per hand and exactly three toes per foot.
 
 ## Artifact validation
 
