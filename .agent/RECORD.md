@@ -121,7 +121,7 @@ Codex enumerated and read the complete mandatory Notion and repository corpus, p
 
 ### Consequence
 
-Codex may rely on this submitted corpus only for future bounded directives after Architect review. The ingest does not accept itself, finish Roadmap Phase 00, or authorize product implementation.
+Codex may rely on this certified corpus only for future bounded directives after Architect review. The ingest does not accept itself, finish Roadmap Phase 00, or authorize product implementation.
 
 ## COMPANION-GOV-006 — Canonical ingest certification continued for semantic correction
 
