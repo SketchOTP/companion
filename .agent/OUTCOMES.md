@@ -200,3 +200,47 @@ No product implementation, technical dependency, Godot project, sprite asset, CI
 - Updated Notion pages: no truncation, unknown block, or stale “PENDING CODER EXECUTION” marker.
 - GitHub Issue #1 disposition: remains open for independent Architect review.
 - Product implementation authorization: `CLOSED`.
+
+## COMPANION-P00-INGEST-001-ARCHITECT-REVIEW-01 — Comprehension certification continued
+
+- Date: 2026-09-08 America/New_York
+- Verdict: `CONTINUE — CORRECTIONS REQUIRED`
+- Reviewed range: `bb879150f66e4c19bc4058967c628070087d553e..fce544262f164e4da1508879ec9d8865b0cecfa2`.
+- Acceptance authority: Architect.
+- Overall ingest certification: `NOT ACCEPTED`.
+- Product implementation authorization: `CLOSED`.
+
+### Independent review performed
+
+- Reviewed all three submitted commits, their compare range, final committed tree, issue handoff, Notion coder report, and all active task-packet artifacts.
+- Re-fetched the canonical Open Decisions page and Initial Risk Register.
+- Independently queried all 32 live Architecture Decision Ledger rows and reproduced the 44-row evidence-register aggregate.
+- Verified the final branch head and confirmed that all changes remain governance-only.
+
+### Accepted evidence
+
+- Three-commit fast-forward and governance-only scope: `PASSED`.
+- Live counts: `PASSED — 32 unique ADRs / 44 unique evidence records`.
+- Evidence distribution: `PASSED — 31 A / 11 B / 2 C; 31 Reviewed / 12 Candidate / 1 Needs Deep Review`.
+- Visual hashes/dimensions and corrected hand/foot anatomy: `PASSED`.
+- Corpus enumeration: `PROVISIONALLY ACCEPTED`; no full re-ingest required unless a source changes.
+
+### Failed acceptance areas
+
+- Open-decision comprehension: `FAILED` — `COMPREHENSION.md` section 15 assigns incorrect meanings to most RQ IDs and introduces an unsupported `RQ-12` touch/physical-embodiment interpretation.
+- ADR traceability: `FAILED` — multiple IDs do not match their actual decision titles or support the associated statements.
+- Risk traceability: `FAILED` — multiple primary risks are omitted or misassigned.
+- Contradiction analysis: `FAILED IN PART` — `RQ-14` is incorrectly conflated with visual construction work rather than Godot presentation mode/screen habitat.
+- Semantic validation: `INSUFFICIENT` — structural presence/count checks did not validate ID-title and relationship correctness.
+
+### Required continuation
+
+Codex must follow `.agent/tasks/active/COMPANION-P00-INGEST-001/ARCHITECT_REVIEW.md`, re-fetch the Open Decisions page, ADR ledger, and risk register, correct the affected task artifacts and Notion report, update Issue #1, normally push the correction, and return a revised canonical result. Prior manifest/history must be preserved unless a source changed.
+
+### Acceptance boundary
+
+- Retrieval coverage: `PROVISIONALLY ACCEPTED`.
+- Repository hygiene: `ACCEPTED`.
+- Visual identity understanding: `ACCEPTED`.
+- Comprehension and semantic traceability: `NOT ACCEPTED`.
+- Next-phase authority: `NOT GRANTED`.

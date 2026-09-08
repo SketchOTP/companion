@@ -69,3 +69,20 @@ Historical entries are append-only after adoption.
 - Result location: `.agent/tasks/active/COMPANION-P00-INGEST-001/`.
 - Evidence level: `E2_REPRODUCED` for corpus enumeration and comprehension artifacts; no product-capability evidence.
 - Acceptance boundary: Codex completion is provisional; Architect acceptance remains `NOT RUN`; product implementation remains closed.
+
+### Architect Review 01 — 2026-09-08
+
+- Status: `CONTINUED — CORRECTIONS REQUIRED`.
+- Reviewed publication head: `fce544262f164e4da1508879ec9d8865b0cecfa2`.
+- Review record: `.agent/tasks/active/COMPANION-P00-INGEST-001/ARCHITECT_REVIEW.md`.
+- Notion review: https://app.notion.com/p/3d5833cb27ff819b9433f230c7bc06ad
+- Corpus enumeration, database counts, repository scope/hygiene, visual hashes, and corrected hand/foot anatomy: `PROVISIONALLY ACCEPTED / ACCEPTED AS RECORDED`.
+- Open-decision comprehension: `FAILED` — section 15 assigns incorrect meanings to most RQ IDs and invents an unsupported RQ-12 touch/physical-embodiment meaning.
+- ADR traceability: `FAILED` — multiple cited IDs do not match the decision titles or support the linked statements.
+- Risk traceability: `FAILED` — multiple primary risks are omitted or misassigned.
+- Contradiction analysis: `FAILED IN PART` — RQ-14 is incorrectly described as art construction instead of Godot presentation mode/screen habitat.
+- Existing structural validation: `INSUFFICIENT FOR SEMANTIC ACCEPTANCE`.
+- Continuation scope: re-fetch the current Open Decisions page, ADR ledger, and risk register; correct comprehension, traceability, contradictions, evidence, handoff, Notion report, issue handoff, and current `.agent` state; preserve prior manifest/history unless a source changed.
+- Correction gate: exact RQ/ADR/risk ID-title pairs and materially relevant mappings must pass independent review.
+- Overall ingest certification: `NOT ACCEPTED`.
+- Product implementation and next-phase authority: `CLOSED / NOT GRANTED`.

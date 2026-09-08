@@ -121,4 +121,35 @@ Codex enumerated and read the complete mandatory Notion and repository corpus, p
 
 ### Consequence
 
-Codex may rely on this certified corpus only for future bounded directives after Architect review. The ingest does not accept itself, finish Roadmap Phase 00, or authorize product implementation.
+Codex may rely on this submitted corpus only for future bounded directives after Architect review. The ingest does not accept itself, finish Roadmap Phase 00, or authorize product implementation.
+
+## COMPANION-GOV-006 — Canonical ingest certification continued for semantic correction
+
+### Context
+
+Architect Review 01 independently examined the submitted result commits, final repository tree, Notion report, corpus manifest, comprehension, traceability, contradiction analysis, evidence, and current live decision/risk authorities.
+
+### Decision / event
+
+Do not accept `COMPANION-P00-INGEST-001` yet. Continue the same directive for a focused semantic correction cycle.
+
+### Evidence
+
+- Reviewed commit range: `bb879150f66e4c19bc4058967c628070087d553e..fce544262f164e4da1508879ec9d8865b0cecfa2`.
+- Canonical Architect review: https://app.notion.com/p/3d5833cb27ff819b9433f230c7bc06ad
+- Repository review record: `.agent/tasks/active/COMPANION-P00-INGEST-001/ARCHITECT_REVIEW.md`.
+- Fresh Notion query reproduced all 32 architecture decisions and their exact ID/title/status mappings.
+- Fresh Notion query reproduced 44 evidence rows and the reported grade/review-status totals.
+- Open Decisions page and Initial Risk Register were re-fetched directly.
+
+### Findings
+
+- Corpus enumeration and repository hygiene are acceptable.
+- `COMPREHENSION.md` section 15 misidentifies most RQ records and invents an unsupported RQ-12 touch/physical-embodiment meaning.
+- `TRACEABILITY.md` contains widespread incorrect ADR ID-to-title mappings and materially misassigned risks.
+- `CONTRADICTIONS.md` incorrectly treats RQ-14 as visual construction work instead of screen habitat/presentation mode.
+- Structural validation did not establish semantic relationship correctness.
+
+### Consequence
+
+Codex must correct the affected task artifacts, Notion report, issue handoff, and current `.agent` state through a normal fast-forward commit. Retrieval coverage is provisionally accepted, but onboarding certification, environment inventory, architecture v1.0 work, dependency selection, and all product implementation remain closed pending a new independent review.
