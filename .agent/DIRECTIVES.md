@@ -25,3 +25,37 @@ Historical entries are append-only after adoption.
 - Stop conditions: Notion cannot be read; the repository contains unexplained product or dirty work; canonical Authority conflicts materially with current operator authority; a force push or history rewrite would be required; or the work would cross into product implementation.
 - Required project updates: `.agent/` ledgers and current state; Notion canonical page, governance contract, and Research Phase 01 after publication.
 - Required handoff: canonical `CODEX RESULT` with exact validation and GitHub state.
+
+## COMPANION-P00-INGEST-001 — Canonical Project Ingest and Comprehension Certification
+
+- Issued: 2026-09-08 America/New_York
+- Issuer: Architect
+- Status: `ACTIVE`
+- Roadmap relationship: Planning Phase 02, Roadmap Phase 00.
+- Verified baseline: `9056c0362a43f2b635ffb910451943b59e4ee1f0`.
+- Canonical directive: https://app.notion.com/p/3d5833cb27ff8101bfa8f7a28a6999ec
+- Required Notion report: https://app.notion.com/p/3d5833cb27ff817faf6fe9b106af4930
+- Active task packet: `.agent/tasks/active/COMPANION-P00-INGEST-001/`.
+- Objective: perform a complete live ingest of the canonical Notion hierarchy and repository governance kernel, then demonstrate accurate project understanding through a reproducible manifest, original comprehension report, end-goal/roadmap traceability, contradiction report, evidence record, Notion update, and canonical handoff.
+- Why this is next: the operator stated that actual work begins at the beginning and that the AI coder has no assumed awareness of the plan. No technical work can be trusted until comprehension is evidenced and independently reviewed.
+- Scope: read Notion/GitHub and local repository state; create and complete only the active governance task packet; update required `.agent` state and the dedicated Notion coder report; commit and normally push the evidence if the branch remains a clean fast-forward.
+- Do not change: no application code, Godot project, sprites/assets, dependencies, package manifests, CI, deployment, models, datasets, voices, database implementation, experiments, or safety integrations. Do not modify operator rulings, the end goal, roadmap, architecture decisions, visual identity, risk definitions, or open decisions.
+- Mandatory ingest: every authority named in the canonical directive, including the canonical project, complete end goal, roadmap, governance contract, research foundation, R01–R10, approved visual bible and references, risk register, open-decision queue, all current Architecture Decision Ledger rows, all current Research Evidence Register rows, any materially linked child authorities, and the complete repository governance kernel.
+- Required artifacts: `SPEC.md`, `PLAN.md`, `INGEST_MANIFEST.json`, `COMPREHENSION.md`, `TRACEABILITY.md`, `CONTRADICTIONS.md`, `EVIDENCE.md`, and `HANDOFF.md` in the active task packet.
+- Acceptance criteria:
+  1. Every mandatory page/database/row is recorded or explicitly unavailable with evidence; no silent omission.
+  2. Live decision/evidence counts and row identifiers are reconciled against issue-time counts of 32 and 44.
+  3. Comprehension covers all required domains and answers every self-test in the Notion directive correctly in the coder's own words.
+  4. Traceability covers every end-goal acceptance pillar and Roadmap Phase 00–15.
+  5. Contradictions distinguish true conflict, stale snapshot, unresolved decision, and harmless wording difference.
+  6. Retrieval confidence is `ADEQUATE`; otherwise the result is blocked.
+  7. No product implementation or dependency is introduced.
+  8. Notion, `.agent` state, result commit, and remote branch agree.
+  9. Codex returns the canonical result contract without self-assigning Architect acceptance.
+- Required validation: complete Notion enumeration; truncation/unknown-block check; database row-count and ID/title reconciliation; JSON validity and uniqueness; comprehension/traceability coverage checks; repository structural checks; `git diff --check`; narrow secret scan; committed-tree inspection; and post-push local/remote SHA equality.
+- Minimum evidence: `E2_REPRODUCED` for ingest coverage and comprehension artifacts. No product-capability evidence is created by this directive.
+- External discovery: `NOT REQUIRED` for project substance. Use external documentation only if necessary to operate the retrieval tooling; it may not change project decisions.
+- Stop conditions: inaccessible or materially truncated authority; material Notion/GitHub conflict affecting goal, phase, safety, visual identity, or authorization; unexplained product work or non-fast-forward divergence; need for product code, dependency, deletion, or operator decision; retrieval confidence below `ADEQUATE`.
+- Required project updates: active task packet, `.agent/CURRENT.md`, this directive status, outcome evidence after execution, dedicated Notion coder report, directive status, and canonical project synchronization.
+- Required handoff: canonical `CODEX RESULT` with exact baseline/result SHAs, coverage totals, unavailable items, retrieval confidence, contradiction summary, changed files, validation results, achieved evidence level, remaining questions, and explicit confirmation that product implementation remains closed.
+- Architect acceptance: required. Codex completion remains provisional until independent review of the commit, manifest, comprehension, traceability, contradictions, Notion report, and repository state.

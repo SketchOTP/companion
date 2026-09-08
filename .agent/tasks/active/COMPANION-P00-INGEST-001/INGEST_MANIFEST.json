@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "directive_id": "COMPANION-P00-INGEST-001",
+  "verified_baseline_sha": "9056c0362a43f2b635ffb910451943b59e4ee1f0",
+  "generated_at": null,
+  "retrieval_started_at": null,
+  "retrieval_completed_at": null,
+  "retrieval_confidence": "PENDING",
+  "issue_time_expectations": {
+    "named_authority_pages": 18,
+    "canonical_databases": 2,
+    "architecture_decision_rows": 32,
+    "research_evidence_rows": 44,
+    "additional_material_authorities": "DISCOVER_AND_RECORD"
+  },
+  "live_counts": {
+    "named_authority_pages": null,
+    "canonical_databases": null,
+    "architecture_decision_rows": null,
+    "research_evidence_rows": null,
+    "additional_material_authorities": null,
+    "unavailable_or_truncated_records": null
+  },
+  "coverage": {
+    "mandatory_records_expected": null,
+    "records_fetched": null,
+    "records_complete": null,
+    "records_unavailable": null,
+    "records_truncated": null,
+    "records_with_unknown_blocks": null,
+    "duplicate_stable_ids": null,
+    "coverage_passed": false
+  },
+  "records": [],
+  "validation": {
+    "json_syntax": "PENDING",
+    "stable_id_uniqueness": "PENDING",
+    "mandatory_authority_coverage": "PENDING",
+    "database_count_reconciliation": "PENDING",
+    "digest_or_marker_coverage": "PENDING"
+  },
+  "notes": []
+}
