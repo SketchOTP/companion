@@ -66,3 +66,27 @@ Historical entries are append-only after adoption.
 ### Architect decision required
 
 Review this bootstrap, accept or correct the governance-only repository ruling, and continue Research Phase 01 without authorizing implementation by implication.
+
+## COMPANION-AUTHORITY-PUBLICATION-001 — Publication and Notion reconciliation evidence
+
+- Date: 2026-09-08 America/New_York
+- Relationship: evidence addendum to `COMPANION-AUTHORITY-BOOTSTRAP-001`; it does not create a product directive.
+- Governance commit: `d4ebf753068db8deebd8f02a3fea5349558f835f`.
+- Normal push to `origin/main`: `PASSED`.
+- Remote preflight remained at the inspected bootstrap commit: `PASSED`.
+- Local `main` and `origin/main` equality at the governance commit: `PASSED`.
+- Required governance paths: `PASSED` — 23/23 present.
+- Canonical reusable Authority templates: `PASSED` — 9/9 exact matches to the fetched package.
+- Project-state placeholder scan: `PASSED`.
+- Narrow credential/secret scan: `PASSED`.
+- Version metadata validation: `PASSED`.
+- Staged diff check: `PASSED`.
+- Existing `.gitignore` and `LICENSE` preservation: `PASSED`.
+- Governance-only scope check: `PASSED`.
+- Application tests: `NOT APPLICABLE` — no application exists and none was added.
+- Runtime/deployment validation: `NOT APPLICABLE` — no runtime or deployment was authorized.
+- Notion canonical page update and re-fetch: `PASSED`.
+- Notion governance-contract update and re-fetch: `PASSED`.
+- Notion Research Phase 01 update and re-fetch: `PASSED`.
+- Evidence level: `E1_OBSERVED` for repository structure, Git/Notion state, and publication; no product-capability evidence claimed.
+- Acceptance authority earned: `CODEX PROVISIONAL`; Architect/operator review remains required.

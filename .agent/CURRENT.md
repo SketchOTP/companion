@@ -51,6 +51,7 @@ Maintain a fully installed Authority 3.0 governance baseline that allows future 
 - Notion governance contract and Research Phase 01: `VERIFIED` by direct fetch on 2026-09-08.
 - GitHub remote, default branch, initial commit, and tracked bootstrap files: `VERIFIED` by clone and Git inspection on 2026-09-08.
 - Authority bootstrap structural and publication evidence: recorded in `OUTCOMES.md`; Architect acceptance remains pending.
+- Notion canonical project, governance contract, and Research Phase 01 were reconciled and re-fetched after publication; each now records the governance-only repository boundary and retains the implementation gate.
 
 ## Current risks
 
@@ -61,4 +62,4 @@ Maintain a fully installed Authority 3.0 governance baseline that allows future 
 
 ## Next Architect decision point
 
-Review the governance bootstrap and reconcile the governance-only repository authorization in Notion. After acceptance, continue Research Phase 01; do not issue product implementation work until its exit gates are explicitly satisfied.
+Review the governance bootstrap. After acceptance, continue Research Phase 01; do not issue product implementation work until its exit gates are explicitly satisfied.
