@@ -101,3 +101,24 @@ Adopt the Notion `Project End Goal — Complete Operational Definition` as the c
 ### Consequence
 
 Future directives must trace to a roadmap phase, complete a substantial phase outcome, preserve coder discretion inside approved boundaries, and pass an explicit Architect acceptance gate. Product implementation remains blocked until Roadmap Phase 00 produces and receives approval for architecture v1.0, the first vertical-slice contract, environment evidence, dependency and license rules, and repository-expansion controls.
+
+## COMPANION-GOV-005 — Canonical ingest completed for review
+
+### Context
+
+The first Roadmap Phase 00 directive required Codex to prove live comprehension before any environment, architecture, dependency, Godot, asset, or product work.
+
+### Decision / event
+
+Codex enumerated and read the complete mandatory Notion and repository corpus, produced the required task artifacts, classified stale records without changing project substance, and submitted `COMPANION-P00-INGEST-001` for independent Architect review.
+
+### Evidence
+
+- Active task packet: `.agent/tasks/active/COMPANION-P00-INGEST-001/`.
+- Live count: 18 named pages, 2 databases, 32 decision rows, and 44 evidence rows.
+- Retrieval confidence: `ADEQUATE`.
+- Achieved evidence level: `E2_REPRODUCED` for ingest coverage and comprehension.
+
+### Consequence
+
+Codex may rely on this certified corpus only for future bounded directives after Architect review. The ingest does not accept itself, finish Roadmap Phase 00, or authorize product implementation.

@@ -157,3 +157,33 @@ The governance-review blocker is closed. Product work remains prohibited until P
 ### Remaining gate
 
 Roadmap Phase 00 must resolve the implementation-blocking product decisions, actual Linux environment inventory, architecture v1.0, first vertical-slice contract, dependency and rights shortlist, threat/privacy model, evaluation thresholds, repository expansion rules, and bounded Phase 01 directive before product implementation begins.
+
+## COMPANION-P00-INGEST-001-CODEX-COMPLETION — Canonical ingest evidence
+
+- Date: 2026-09-08 America/New_York
+- Verdict: `COMPLETE_FOR_ARCHITECT_REVIEW`
+- Retrieval confidence: `ADEQUATE`
+- Acceptance authority earned: `CODEX PROVISIONAL`; Architect acceptance not self-assigned.
+
+### Work performed
+
+- Read the complete current repository Authority kernel, task packet, six-commit history, committed tree, remote branch state, and live working tree.
+- Fetched the 18 named Notion authorities, both canonical database schemas, all 32 architecture-decision rows, all 44 research-evidence rows, the canonical directive/report, and the preserved superseded duplicate.
+- Fetched every database row page after enumeration and reviewed all decision properties and every evidence record's finding, implication, limitation, license note, and recheck trigger.
+- Directly inspected the approved identity master and six-view turnaround and recorded durable native/derivative SHA-256 markers.
+- Completed the ingest manifest, original comprehension, self-test, end-goal/roadmap traceability, contradiction report, evidence, execution plan, and handoff.
+- Corrected the stale current-phase line in `.agent/PROJECT_PROFILE.md`; preserved all historical source records.
+
+### Validation
+
+- Required Notion corpus availability: `PASSED`.
+- Architecture decisions: `PASSED — 32 unique (16 adopted / 14 interim / 2 rejected)`.
+- Research evidence: `PASSED — 44 unique (31 A / 11 B / 2 C; 31 reviewed / 12 candidate / 1 needs deep review)`.
+- Manifest syntax, uniqueness, markers, and count reconciliation: `PASSED`.
+- Required comprehension/self-test/traceability/contradiction coverage: `PASSED`.
+- Product/dependency/asset/CI exclusion: `PASSED`.
+- Publication and remote equality: recorded in the active packet after normal push.
+
+### Boundary
+
+No product implementation, technical dependency, Godot project, sprite asset, CI, deployment, model, dataset, voice, database implementation, experiment, notification, or safety integration was introduced. Roadmap Phase 00 remains active and product work remains closed pending independent Architect review and later authority.

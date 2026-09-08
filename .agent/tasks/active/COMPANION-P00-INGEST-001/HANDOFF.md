@@ -1,55 +1,69 @@
 # COMPANION-P00-INGEST-001 — Handoff
 
-Complete this file before returning the canonical `CODEX RESULT`.
-
 ## Directive result
 
-- Verdict: `PENDING`
-- Retrieval confidence: `PENDING`
-- Achieved evidence level: `PENDING`
-- Starting SHA: `PENDING`
-- Result SHA: `PENDING`
-- Remote synchronization: `PENDING`
+- Verdict: `COMPLETE_FOR_ARCHITECT_REVIEW`
+- Retrieval confidence: `ADEQUATE`
+- Achieved evidence level: `E2_REPRODUCED`
+- Starting SHA: `0fbedc441cb8ea2b098a32b46d00ce2415c65f07`
+- Directive SHA: `bb879150f66e4c19bc4058967c628070087d553e`
+- Result SHA: `TO BE RECORDED AFTER PUBLICATION`
+- Remote synchronization: `PENDING NORMAL PUSH`
 - Architect acceptance: `NOT ASSIGNED`
 
 ## Corpus coverage
 
-- Named authority pages: `PENDING`
-- Additional material authorities: `PENDING`
-- Architecture Decision Ledger rows: `PENDING`
-- Research Evidence Register rows: `PENDING`
-- Missing/truncated/inaccessible items: `PENDING`
+- Named authority pages: `18 / 18 COMPLETE`
+- Canonical databases: `2 / 2 COMPLETE`
+- Additional material authorities: `1 / 1 COMPLETE` — superseded duplicate audit page
+- Architecture Decision Ledger rows: `32 / 32 COMPLETE`
+- Research Evidence Register rows: `44 / 44 COMPLETE`
+- Direct visual references: `2 / 2 INSPECTED`
+- Missing/truncated/inaccessible items: `0`
 
 ## Project understanding
 
-PENDING — concise original statement of the product end goal, current roadmap gate, critical architecture boundaries, visual identity, caregiving separation, and current implementation prohibition.
+The target is one persistent, autonomous, embodied creature whose canonical organism, evidence, typed memory, development, relationship, and owner-controlled continuity survive sessions and replaceable models/renderers. Grounded multimodal interaction and teaching must preserve uncertainty and correction. A deterministic, auditable caregiving core remains independent of personality, mood, dreams, and language generation. The approved first form is the flat cel-shaded purple flame-headed sprite mon on the existing Linux PC in Godot 4.7.2, governed by the six-view reference and `MON_FRAME_V1`. Planning Phase 02 / Roadmap Phase 00 is active; this ingest is only a comprehension gate and product implementation remains prohibited.
 
 ## Contradictions and stale state
 
-PENDING — summarize true conflicts, stale snapshots, unresolved decisions, broken references, and actions taken.
+No true conflict, broken reference, missing row, or truncated authority was found. Older R10/ADR wording predates the approved six-view turnaround and flat style; ADR-18's production-repository prohibition was narrowly superseded by the later governance-only repository ruling; older research/governance snapshots stop before the directive commit; and `.agent/PROJECT_PROFILE.md` still named Research Phase 01. The current-state profile was corrected under unambiguous authority; historical records were preserved. Ten open RQ items and one partial item remain unresolved and were not guessed. The concurrent duplicate directive remains explicitly superseded as an audit record.
 
 ## Files changed
 
-PENDING
+- Task packet: `INGEST_MANIFEST.json`, `COMPREHENSION.md`, `TRACEABILITY.md`, `CONTRADICTIONS.md`, `EVIDENCE.md`, `PLAN.md`, `HANDOFF.md`.
+- Current-state mirrors: `.agent/INDEX.md`, `.agent/PROJECT_PROFILE.md`, `.agent/CURRENT.md`.
+- Append-only records: `.agent/DIRECTIVES.md`, `.agent/OUTCOMES.md`, `.agent/RECORD.md`.
+- Product/source/runtime paths: none.
 
 ## Notion updates
 
-- Coder report: `PENDING`
-- Directive status: `PENDING`
-- Canonical project synchronization: `PENDING`
+- Coder report: `PENDING PUBLICATION`
+- Directive status: `PENDING PUBLICATION`
+- Canonical project synchronization: `PENDING PUBLICATION`
 
 ## Validation summary
 
-PENDING — list each required check with `PASSED`, `FAILED`, `NOT RUN`, `NOT APPLICABLE`, or `BLOCKED`.
+- `PASSED` — repository/authority preflight and clean fast-forward.
+- `PASSED` — 18 named pages, 2 database schemas, 32 ADRs, 44 evidence rows, workflow/audit authorities.
+- `PASSED` — direct visual inspection and durable markers.
+- `PASSED` — manifest JSON, uniqueness, markers, mandatory coverage, and count reconciliation.
+- `PASSED` — comprehension sections 1–16 and self-tests A–L.
+- `PASSED` — ten end-goal pillars and Roadmap Phases 00–15 traced.
+- `PASSED` — contradiction and stale-state classification.
+- `PASSED` — `git diff --check` and governance-only changed-file scope.
+- `PASSED` — narrow diff secret scan.
+- `PENDING` — Notion publication/re-fetch, commit/push, and exact-SHA equality.
+- `NOT APPLICABLE` — application tests, runtime, deployment, and product-capability validation.
 
 ## Remaining questions and blockers
 
-PENDING
+There is no retrieval blocker. Architect acceptance is the only blocker to treating Codex as onboarded. RQ-02/03/04/05/07/08/09/10/11/14 remain open; RQ-12 remains partial. These belong to later Phase 00 authority and do not block this comprehension certification.
 
 ## Explicit boundary declaration
 
-PENDING — confirm that no application source, runtime package, Godot project, sprite asset, dependency, CI, deployment, model, dataset, voice, database implementation, experiment, notification, or safety integration was introduced; confirm that product implementation remains closed and that Codex has not self-assigned Architect acceptance.
+No application source, runtime package, Godot project, sprite asset, dependency, CI, deployment, model, dataset, voice, database implementation, experiment, notification, or safety integration was introduced. No end goal, roadmap, visual ruling, risk, ADR, or operator decision was changed. Product implementation remains closed, Roadmap Phase 00 remains active, and Codex has not self-assigned Architect acceptance.
 
 ## Recommended next Architect action
 
-PENDING — recommend only review/acceptance, continuation, or targeted clarification. Do not propose implementation work unless the current directive has been accepted and the Architect opens a new bounded directive.
+Independently review the result commit, manifest, comprehension/self-test, traceability, contradiction classifications, Notion report, and remote repository. Accept, continue, block, or reject the comprehension gate. Do not open product implementation by implication.

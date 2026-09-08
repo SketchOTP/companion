@@ -19,7 +19,7 @@
 
 ## Technical profile
 
-- Current phase: Research Phase 01.
+- Current phase: Planning Phase 02, Roadmap Phase 00; canonical ingest completed for independent Architect review.
 - Current repository role: governance-only shell; no production implementation is authorized.
 - Iteration-one host ruling: the existing Linux PC and connected webcam, microphone, speakers, and monitor.
 - Initial embodiment ruling: Godot 4.7.2 stable with an original layered 2D sprite mon.

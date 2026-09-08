@@ -4,7 +4,7 @@ Update this plan as work proceeds. Do not mark a checkpoint complete without evi
 
 ## Checkpoint 1 — Repository and authority sync
 
-Status: `PENDING`
+Status: `COMPLETE`
 
 - Confirm repository root, applicable `AGENTS.md`, branch, HEAD, remotes, and working-tree state.
 - Read the Authority skill, mandatory kernel, directive, result/evidence/state/safety references, and this packet.
@@ -13,7 +13,7 @@ Status: `PENDING`
 
 ## Checkpoint 2 — Canonical Notion traversal
 
-Status: `PENDING`
+Status: `COMPLETE`
 
 - Start at the canonical project root.
 - Fetch the end goal, roadmap, governance contract, research foundation, R01–R10, visual bible, open-decision queue, and risk register.
@@ -23,7 +23,7 @@ Status: `PENDING`
 
 ## Checkpoint 3 — Complete database ingest
 
-Status: `PENDING`
+Status: `COMPLETE`
 
 - Fetch the live Architecture Decision Ledger schema.
 - Enumerate every row and record stable ID/URL, title, status/type/domain, and retrieval marker.
@@ -33,7 +33,7 @@ Status: `PENDING`
 
 ## Checkpoint 4 — Original comprehension synthesis
 
-Status: `PENDING`
+Status: `COMPLETE`
 
 - Complete every section and self-test in `COMPREHENSION.md` in your own words.
 - Explain current authorization and phase boundaries precisely.
@@ -42,7 +42,7 @@ Status: `PENDING`
 
 ## Checkpoint 5 — End-goal and roadmap traceability
 
-Status: `PENDING`
+Status: `COMPLETE`
 
 - Complete every acceptance-pillar row in `TRACEABILITY.md`.
 - Account for Roadmap Phases 00–15.
@@ -51,7 +51,7 @@ Status: `PENDING`
 
 ## Checkpoint 6 — Reconciliation and contradiction analysis
 
-Status: `PENDING`
+Status: `COMPLETE`
 
 - Compare Notion root, end goal, roadmap, governance, research pages, database rows, GitHub HEAD, and `.agent` summaries.
 - Record each mismatch in `CONTRADICTIONS.md` as true conflict, stale snapshot, unresolved decision, harmless wording difference, inaccessible evidence, or broken reference.
@@ -60,7 +60,7 @@ Status: `PENDING`
 
 ## Checkpoint 7 — Validation
 
-Status: `PENDING`
+Status: `COMPLETE`
 
 - Validate `INGEST_MANIFEST.json` syntax, stable-ID uniqueness, expected record classes, and coverage totals.
 - Verify every required comprehension heading and self-test answer exists.
@@ -70,7 +70,7 @@ Status: `PENDING`
 
 ## Checkpoint 8 — Record, publish, and hand off
 
-Status: `PENDING`
+Status: `IN PROGRESS — LOCAL ARTIFACTS COMPLETE; PUBLICATION PENDING`
 
 - Update `.agent/CURRENT.md`, directive status, and outcome/history records required by Authority.
 - Update the dedicated Notion coder report and directive status without changing project substance.

@@ -59,3 +59,13 @@ Historical entries are append-only after adoption.
 - Required project updates: active task packet, `.agent/CURRENT.md`, this directive status, outcome evidence after execution, dedicated Notion coder report, directive status, and canonical project synchronization.
 - Required handoff: canonical `CODEX RESULT` with exact baseline/result SHAs, coverage totals, unavailable items, retrieval confidence, contradiction summary, changed files, validation results, achieved evidence level, remaining questions, and explicit confirmation that product implementation remains closed.
 - Architect acceptance: required. Codex completion remains provisional until independent review of the commit, manifest, comprehension, traceability, contradictions, Notion report, and repository state.
+
+### Codex execution update — 2026-09-08
+
+- Status: `COMPLETED_FOR_ARCHITECT_REVIEW`.
+- Retrieval confidence: `ADEQUATE`.
+- Live corpus: 18/18 named authority pages, 2/2 canonical databases, 32/32 architecture decisions, 44/44 research-evidence records, one additional superseded-draft audit authority, and two directly inspected visual references.
+- Retrieval defects: none; no mandatory record was unavailable or truncated and no unknown block remained.
+- Result location: `.agent/tasks/active/COMPANION-P00-INGEST-001/`.
+- Evidence level: `E2_REPRODUCED` for corpus enumeration and comprehension artifacts; no product-capability evidence.
+- Acceptance boundary: Codex completion is provisional; Architect acceptance remains `NOT RUN`; product implementation remains closed.
