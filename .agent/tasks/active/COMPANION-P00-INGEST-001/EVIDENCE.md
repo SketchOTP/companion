@@ -87,11 +87,11 @@
 | `git diff --check` | PASSED | clean |
 | Narrow secret scan | PASSED | no private-key, provider-token, credential-assignment, or common API-secret pattern in the diff |
 | Changed-file scope inspection | PASSED | 13 paths, all under `.agent/` |
-| Notion report update and re-fetch | PENDING | publication step |
-| Directive status update and re-fetch | PENDING | publication step |
-| Canonical project synchronization and re-fetch | PENDING | publication step |
-| Normal commit/push | PENDING | publication step |
-| Local/remote exact-SHA equality | PENDING | publication step |
+| Notion report update and re-fetch | PASSED | complete counts, ADEQUATE confidence, summary, open decisions, result SHA, E2, and boundary verified; no truncation/unknown blocks |
+| Directive status update and re-fetch | PASSED | Codex-complete/Architect-review-pending status and result SHA verified; issue remains open |
+| Canonical project synchronization and re-fetch | PASSED | result SHA, pending review, governance-only boundary, and closed product gate verified |
+| Normal commit/push | PASSED | result artifacts and anatomy correction normally pushed through `7ea6985ab278439e1903ba0ede0b1deaf71af6c8` |
+| Local/remote exact-SHA equality | PASSED | `HEAD == origin/main == 7ea6985ab278439e1903ba0ede0b1deaf71af6c8` after result push; repeated after publication-evidence commit |
 
 ## Retrieval confidence
 
@@ -112,4 +112,4 @@
 - Strategic project decision changed: `NO`.
 - Unrelated work changed: `NO`.
 - Historical evidence rewritten: `NO`; current-state mirrors were updated and append-only ledgers received new entries.
-- Final diff reviewed: `PASSED PRE-PUBLICATION`; repeat after publication evidence.
+- Final diff reviewed: `PASSED`; only governance/current-state and task-packet records changed.

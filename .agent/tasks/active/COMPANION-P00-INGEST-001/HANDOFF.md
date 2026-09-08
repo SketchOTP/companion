@@ -7,8 +7,8 @@
 - Achieved evidence level: `E2_REPRODUCED`
 - Starting SHA: `0fbedc441cb8ea2b098a32b46d00ce2415c65f07`
 - Directive SHA: `bb879150f66e4c19bc4058967c628070087d553e`
-- Result SHA: `TO BE RECORDED AFTER PUBLICATION`
-- Remote synchronization: `PENDING NORMAL PUSH`
+- Result SHA: `7ea6985ab278439e1903ba0ede0b1deaf71af6c8`
+- Remote synchronization: `PASSED` — normal push; exact local/remote equality verified
 - Architect acceptance: `NOT ASSIGNED`
 
 ## Corpus coverage
@@ -38,9 +38,9 @@ No true conflict, broken reference, missing row, or truncated authority was foun
 
 ## Notion updates
 
-- Coder report: `PENDING PUBLICATION`
-- Directive status: `PENDING PUBLICATION`
-- Canonical project synchronization: `PENDING PUBLICATION`
+- Coder report: `PASSED` — updated and re-fetched
+- Directive status: `PASSED` — Codex complete / Architect review pending; updated and re-fetched
+- Canonical project synchronization: `PASSED` — result SHA and closed product gate updated and re-fetched
 
 ## Validation summary
 
@@ -53,7 +53,8 @@ No true conflict, broken reference, missing row, or truncated authority was foun
 - `PASSED` — contradiction and stale-state classification.
 - `PASSED` — `git diff --check` and governance-only changed-file scope.
 - `PASSED` — narrow diff secret scan.
-- `PENDING` — Notion publication/re-fetch, commit/push, and exact-SHA equality.
+- `PASSED` — Notion report/directive/canonical updates and re-fetches.
+- `PASSED` — normal result commit push and exact local/remote equality.
 - `NOT APPLICABLE` — application tests, runtime, deployment, and product-capability validation.
 
 ## Remaining questions and blockers

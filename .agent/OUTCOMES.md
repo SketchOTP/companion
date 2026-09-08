@@ -187,3 +187,16 @@ Roadmap Phase 00 must resolve the implementation-blocking product decisions, act
 ### Boundary
 
 No product implementation, technical dependency, Godot project, sprite asset, CI, deployment, model, dataset, voice, database implementation, experiment, notification, or safety integration was introduced. Roadmap Phase 00 remains active and product work remains closed pending independent Architect review and later authority.
+
+## COMPANION-P00-INGEST-001-PUBLICATION — Notion and GitHub reconciliation evidence
+
+- Date: 2026-09-08 America/New_York
+- Result commit: `7ea6985ab278439e1903ba0ede0b1deaf71af6c8`.
+- Normal push through result commit: `PASSED`.
+- Local `main` / `origin/main` equality after result push: `PASSED`.
+- Dedicated Notion coder report update and re-fetch: `PASSED`.
+- Canonical directive status/result update and re-fetch: `PASSED`.
+- Canonical project status/result update and re-fetch: `PASSED`.
+- Updated Notion pages: no truncation, unknown block, or stale “PENDING CODER EXECUTION” marker.
+- GitHub Issue #1 disposition: remains open for independent Architect review.
+- Product implementation authorization: `CLOSED`.

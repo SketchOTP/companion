@@ -16,6 +16,7 @@ Obtain independent Architect review of `COMPANION-P00-INGEST-001`. The complete 
 - Directive status: `CODEX COMPLETED / ARCHITECT REVIEW PENDING`
 - Issuer: Architect
 - Verified directive baseline: `9056c0362a43f2b635ffb910451943b59e4ee1f0`
+- Codex result commit: `7ea6985ab278439e1903ba0ede0b1deaf71af6c8`
 - Notion directive: https://app.notion.com/p/3d5833cb27ff8101bfa8f7a28a6999ec
 - Notion coder report: https://app.notion.com/p/3d5833cb27ff817faf6fe9b106af4930
 - Active task packet: `.agent/tasks/active/COMPANION-P00-INGEST-001/`
@@ -30,6 +31,7 @@ Obtain independent Architect review of `COMPANION-P00-INGEST-001`. The complete 
 - The research foundation contains ten research dossiers, an operator-approved visual design bible with approved six-view turnaround, 44 evidence records, 32 architecture-decision records, 14 tracked decisions/research gaps, and 14 preliminary risks at directive issue time.
 - Live ingest re-enumerated 18 named authority pages, two canonical databases, all 32 architecture decisions, all 44 research-evidence records, the superseded duplicate audit page, and both approved visual references with no truncation or unavailable mandatory authority.
 - Retrieval confidence is `ADEQUATE`; this is Codex evidence, not Architect acceptance.
+- Dedicated Notion report, canonical directive status, and canonical project status were updated and re-fetched successfully at the Codex result commit.
 - Iteration one is fixed to the existing Linux PC, existing webcam and microphone, connected speakers and monitor, Godot 4.7.2, and the approved flat cel-shaded purple sprite mon.
 - The remote repository `SketchOTP/companion` uses `main`, began at commit `b7266b5806ef0612a14d2d6b7d324841070625ac`, and was independently inspected through planning commit `9056c0362a43f2b635ffb910451943b59e4ee1f0`.
 - Authority 3.0 repository routing, project state/history, reusable workflow, handoff contracts, evidence rules, safety rules, and conditional task-packet directories are installed and accepted as the governance baseline.

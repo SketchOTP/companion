@@ -70,7 +70,7 @@ Status: `COMPLETE`
 
 ## Checkpoint 8 — Record, publish, and hand off
 
-Status: `IN PROGRESS — LOCAL ARTIFACTS COMPLETE; PUBLICATION PENDING`
+Status: `COMPLETE`
 
 - Update `.agent/CURRENT.md`, directive status, and outcome/history records required by Authority.
 - Update the dedicated Notion coder report and directive status without changing project substance.
