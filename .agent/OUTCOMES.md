@@ -90,3 +90,70 @@ Review this bootstrap, accept or correct the governance-only repository ruling, 
 - Notion Research Phase 01 update and re-fetch: `PASSED`.
 - Evidence level: `E1_OBSERVED` for repository structure, Git/Notion state, and publication; no product-capability evidence claimed.
 - Acceptance authority earned: `CODEX PROVISIONAL`; Architect/operator review remains required.
+
+## COMPANION-AUTHORITY-ARCHITECT-ACCEPTANCE-001 — Governance bootstrap review
+
+- Date: 2026-09-08 America/New_York
+- Verdict: `ACCEPTED_FOR_GOVERNANCE_ONLY`
+- Reviewed baseline: `0fbedc441cb8ea2b098a32b46d00ce2415c65f07`.
+- Acceptance authority: Architect.
+
+### Independent review performed
+
+- Repository metadata, default branch, and recent commit history: `PASSED`.
+- Governance installation commit `d4ebf753068db8deebd8f02a3fea5349558f835f`: inspected.
+- Publication evidence commit `5cba8893168cb90a0cf608d61fde610b5d307c94`: inspected.
+- Decision-count reconciliation commit `0fbedc441cb8ea2b098a32b46d00ce2415c65f07`: inspected.
+- Recursive committed-tree inspection: `PASSED`; Authority governance and preserved bootstrap files only.
+- Unexpected product source, dependencies, assets, CI, deployment, models, datasets, voices, databases, or safety integrations: `NONE FOUND`.
+- Canonical Notion repository boundary: reconciled.
+
+### Acceptance boundary
+
+- Authority 3.0 governance baseline: `ACCEPTED`.
+- Product implementation or runtime behavior: `NOT IMPLEMENTED / NOT ACCEPTED`.
+- Production dependencies or licensing: `NOT SELECTED / NOT ACCEPTED`.
+- Safety, privacy, performance, and deployment capability: `NOT IMPLEMENTED / NOT ACCEPTED`.
+
+### Consequence
+
+The governance-review blocker is closed. Product work remains prohibited until Planning Phase 02 Roadmap Phase 00 is accepted and a bounded Architect directive opens the relevant repository gate.
+
+## COMPANION-PLANNING-BASELINE-001 — Complete end goal and master roadmap
+
+- Date: 2026-09-08 America/New_York
+- Verdict: `ARCHITECT_BASELINE_ESTABLISHED`
+- Operator correction authority: retained.
+- Product implementation authorization: `NO`.
+
+### Work performed
+
+- Established the complete operational end goal as a separate canonical Notion page.
+- Defined the finished companion, caregiving, local-first, owner-portable, privacy, resilience, support, and evidence requirements.
+- Defined what does not count as completion.
+- Created an outcome-based 16-phase roadmap from Phase 00 planning through Phase 15 operational release.
+- Gave every phase an AI-coder accomplishment statement and Architect acceptance gate without prescribing every internal implementation choice.
+- Defined controlled parallelism, cross-cutting obligations, schedule policy, planning exit criteria, and immediate Phase 00 priorities.
+- Added Architecture Decision Ledger entries adopting the end goal, roadmap, and governance acceptance.
+- Transitioned the canonical project from Research Phase 01 into Planning Phase 02 while retaining targeted research as a support function.
+
+### Canonical records
+
+- End goal: https://app.notion.com/p/3d5833cb27ff81b09c20e2b52d537e1e
+- Roadmap: https://app.notion.com/p/3d5833cb27ff81dd88faeb0c95b6f44e
+- Canonical project: https://app.notion.com/p/3d5833cb27ff8196814fdbae282f15ad
+- Governance contract: https://app.notion.com/p/3d5833cb27ff81e2b3b2eabc70f9f6b3
+
+### Validation
+
+- End-goal page creation and fetch: `PASSED`.
+- Roadmap page creation, placeholder correction, and fetch: `PASSED`.
+- Canonical project transition and reconciliation: `PASSED`.
+- Research foundation transition and reconciliation: `PASSED`.
+- Governance gate update: `PASSED`.
+- Architecture Decision Ledger aggregate after planning decisions: `32 total / 16 adopted / 14 interim / 2 rejected`.
+- Application tests: `NOT APPLICABLE` — no product implementation was authorized or added.
+
+### Remaining gate
+
+Roadmap Phase 00 must resolve the implementation-blocking product decisions, actual Linux environment inventory, architecture v1.0, first vertical-slice contract, dependency and rights shortlist, threat/privacy model, evaluation thresholds, repository expansion rules, and bounded Phase 01 directive before product implementation begins.

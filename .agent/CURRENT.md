@@ -2,64 +2,70 @@
 
 ## Current stage
 
-Research Phase 01 — Foundation Dossier and Evidence Register is active.
+Planning Phase 02 — Master Delivery Roadmap is active.
 
-The GitHub repository now exists as a governance-only shell under the operator's 2026-09-08 authorization. The research exit gate still blocks product implementation and production dependency adoption.
+Research Phase 01 established the evidence foundation and remains available for targeted follow-up research. The repository remains governance-only; Roadmap Phase 00 still blocks product implementation, production dependency adoption, assets, CI, deployment, and experiments unless a bounded Architect directive explicitly opens a narrow gate.
 
 ## Current objective
 
-Maintain a fully installed Authority 3.0 governance baseline that allows future agents to reconstruct Notion, GitHub, and repository truth before acting.
+Complete Roadmap Phase 00 by inventorying the actual Linux host and peripherals, resolving the remaining product and safety decisions, converting architecture hypothesis v0.1 into architecture v1.0, defining the first integrated vertical slice and measurable acceptance gates, approving the dependency/license and repository-expansion rules, and issuing the bounded Phase 01 directive.
 
 ## Active directive
 
 - Active directive: `NONE`
 - Last completed Codex directive: `COMPANION-AUTHORITY-BOOTSTRAP-001`
-- Architect review: `PENDING`
+- Governance bootstrap Architect review: `ACCEPTED_FOR_GOVERNANCE_ONLY`
 - Active task packet: `NONE`
 
 ## Current verified state
 
-- The canonical Notion page identifies the project as an independent greenfield Living Companion & Caretaking Core; the product name remains provisional.
-- Research Phase 01 contains ten research dossiers, an operator-approved visual design bible with approved six-view turnaround, 44 evidence records, 29 architecture-decision records, 14 tracked decisions/research gaps with 11 open, and 14 preliminary risks.
-- The remote repository `SketchOTP/companion` uses `main` and began at commit `b7266b5806ef0612a14d2d6b7d324841070625ac`.
-- Before this governance bootstrap the remote contained only `.gitignore` and an Apache-2.0 `LICENSE`; no application source existed.
-- Authority 3.0 repository routing, project state/history, reusable workflow, handoff contracts, evidence rules, safety rules, and conditional task-packet directories are installed.
-- The existing `.gitignore` and `LICENSE` are preserved unchanged.
-- No application source, runtime, package, dependency, CI workflow, deployment configuration, asset, model, dataset, voice, database, or safety integration has been added.
+- The canonical Notion page identifies the project as an independent ground-zero Living Companion & Caretaking Core; the product-facing name remains provisional.
+- Notion contains the adopted complete operational end goal and the active 16-phase master delivery roadmap.
+- The research foundation contains ten research dossiers, an operator-approved visual design bible with approved six-view turnaround, 44 evidence records, 32 architecture-decision records, 14 tracked decisions/research gaps, and 14 preliminary risks.
+- Iteration one is fixed to the existing Linux PC, existing webcam and microphone, connected speakers and monitor, Godot 4.7.2, and the approved flat cel-shaded purple sprite mon.
+- The remote repository `SketchOTP/companion` uses `main`, began at commit `b7266b5806ef0612a14d2d6b7d324841070625ac`, and was independently inspected through baseline commit `0fbedc441cb8ea2b098a32b46d00ce2415c65f07`.
+- Authority 3.0 repository routing, project state/history, reusable workflow, handoff contracts, evidence rules, safety rules, and conditional task-packet directories are installed and accepted as the governance baseline.
+- The existing `.gitignore` and Apache-2.0 `LICENSE` are preserved.
+- No application source, runtime package, production dependency, CI workflow, deployment configuration, sprite asset, model, dataset, voice, database, or safety integration has been added.
+- The end goal requires a persistent autonomous individual, causal visual aliveness, grounded multimodal interaction, developmental learning, typed long-term memory, governed dreaming, a healthy relationship model, a separately governed caregiving core, local survival, owner portability, privacy, security, resilience, and integrated longitudinal evidence.
+- The roadmap defines Phases 00–15 by required outcome and acceptance gate while leaving implementation choices to the AI coder inside approved boundaries.
 
-## Current hypotheses / unknowns
+## Roadmap Phase 00 unknowns
 
-- Canonical product name.
-- First user population, accessibility requirements, household model, and whether minors are in scope.
-- Required offline level and resource envelope on the actual Linux host.
-- First qualified caregiving scenario, contact channel, acknowledgment rules, fallback path, jurisdiction, and claims boundary.
-- Presentation mode, target monitor resolution, default on-screen size, and movement area.
-- Required languages, voice ownership/direction, and wake-word scope.
-- Exact model-sheet proportions, palette, shadows, edge treatment, and normalized occupancy.
-- First vertical-slice contract, module boundaries, language/dependency shortlist, threat model, privacy model, evaluation thresholds, CI, branching, release, and documentation rules.
+- Canonical product-facing name.
+- First user population, accessibility requirements, household roles, and whether minors are excluded from the first qualified release.
+- Intended use and allowable companion/caregiving claims.
+- Required offline level, optional cloud boundary, and resource envelope on the actual Linux host.
+- First qualified caregiving scenario, trusted-contact channel, acknowledgment rules, fallback path, jurisdiction, and claims boundary.
+- Godot presentation mode, monitor geometry, default mon occupancy, movement area, and remaining production model-sheet measurements.
+- Required languages, voice direction and rights, wake/attention model, and interruption expectations.
+- Multi-user identity, consent, private/shared memory, and caregiver or guardian authority.
+- Memory retention, deletion, export, backup, restore, and support-lifetime promises.
+- Architecture v1.0, first vertical-slice contract, module boundaries, dependency shortlist, threat model, privacy model, evaluation thresholds, CI, branching, release, and documentation rules.
 
 ## Current blockers
 
 - Product implementation is not authorized.
-- The research exit criteria and repository-creation contract are not yet satisfied for implementation.
-- No production dependencies beyond the current Godot embodiment ruling are approved.
-- No product source may be introduced until a bounded Architect directive explicitly opens the relevant gate.
+- Roadmap Phase 00 and the Planning Phase 02 exit gate are not complete.
+- No production dependencies beyond the Godot embodiment ruling are approved.
+- No product source or asset may be introduced until a bounded Architect directive identifies the exact baseline SHA, authorized scope, evidence requirements, and acceptance gate.
 
 ## Latest accepted evidence
 
-- Operator-defined Notion project authority: `VERIFIED` by direct fetch on 2026-09-08.
-- Notion governance contract and Research Phase 01: `VERIFIED` by direct fetch on 2026-09-08.
-- GitHub remote, default branch, initial commit, and tracked bootstrap files: `VERIFIED` by clone and Git inspection on 2026-09-08.
-- Authority bootstrap structural and publication evidence: recorded in `OUTCOMES.md`; Architect acceptance remains pending.
-- Notion canonical project, governance contract, and Research Phase 01 were reconciled and re-fetched after publication; each now records the governance-only repository boundary and retains the implementation gate.
+- Operator-defined Notion project authority, visual identity, and six-view turnaround: `VERIFIED` by direct fetch on 2026-09-08.
+- Complete operational end goal and Planning Phase 02 roadmap: `VERIFIED` by direct Notion creation and fetch on 2026-09-08.
+- GitHub repository, default branch, recent commit history, recursive tree, and governance-only contents through `0fbedc441cb8ea2b098a32b46d00ce2415c65f07`: `VERIFIED` by direct GitHub inspection.
+- Authority bootstrap commits `d4ebf753068db8deebd8f02a3fea5349558f835f`, `5cba8893168cb90a0cf608d61fde610b5d307c94`, and `0fbedc441cb8ea2b098a32b46d00ce2415c65f07`: independently reviewed; governance-only scope confirmed.
+- Architecture Decision Ledger: 32 entries — 16 adopted, 14 interim, and 2 rejected.
 
 ## Current risks
 
-- Safety, privacy, biometric, escalation, and false-alarm failures are critical project risks.
-- Premature dependency or architecture commitment could invalidate the research-first boundary.
+- Safety, privacy, biometric, escalation, false-alarm, and accessibility failures remain critical project risks.
+- A persuasive companion demo could conceal weak persistence, false memory, unstable development, or safety theater.
+- Premature dependency or architecture commitment could invalidate the planned first vertical slice.
 - Duplicate or stale state between Notion, GitHub, and `.agent/` can cause governance drift.
 - The existing Python-oriented `.gitignore` does not establish the future implementation language.
 
 ## Next Architect decision point
 
-Review the governance bootstrap. After acceptance, continue Research Phase 01; do not issue product implementation work until its exit gates are explicitly satisfied.
+Close the operator-dependent parts of Roadmap Phase 00, authorize a bounded environment-inventory and architecture-v1.0 planning directive where needed, then review its committed evidence before opening Phase 01 implementation.

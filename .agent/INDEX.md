@@ -6,15 +6,18 @@
 - Authority installation: 3.0
 - Governance baseline: 2026.08.15 / schema 2.2.0
 - Canonical Notion: https://app.notion.com/p/3d5833cb27ff8196814fdbae282f15ad
+- Complete end goal: https://app.notion.com/p/3d5833cb27ff81b09c20e2b52d537e1e
+- Active roadmap: https://app.notion.com/p/3d5833cb27ff81dd88faeb0c95b6f44e
 - GitHub: https://github.com/SketchOTP/companion
 
 ## Current pointers
 
-- Current stage: Research Phase 01 — governance-only repository established; implementation gate closed
+- Current stage: Planning Phase 02 — Roadmap Phase 00 active; product implementation gate closed
 - Active directive: NONE
 - Active task packet: NONE
-- Last accepted outcome: NONE — bootstrap recorded for Architect review
-- Last recorded outcome: COMPANION-AUTHORITY-BOOTSTRAP-001
+- Last accepted outcome: `COMPANION-AUTHORITY-ARCHITECT-ACCEPTANCE-001`
+- Last recorded outcome: `COMPANION-PLANNING-BASELINE-001`
+- Last verified pre-sync repository baseline: `0fbedc441cb8ea2b098a32b46d00ce2415c65f07`
 - Last state sync: 2026-09-08 America/New_York
 
 ## Mandatory kernel
@@ -32,7 +35,7 @@ Then read the active directive from `DIRECTIVES.md` and retrieve only the releva
 - `DIRECTIVES.md` — issued work and acceptance boundaries.
 - `OUTCOMES.md` — what happened and the evidence achieved.
 - `LEARNINGS.md` — durable verified technical/project learnings.
-- `RECORD.md` — major decisions, milestones, reversals, governance events.
+- `RECORD.md` — major decisions, milestones, reversals, and governance events.
 - `REPO_MAP.md` — repository structure and important boundaries.
 - `EXTERNAL.md` — relevant external prior art and dispositions.
 

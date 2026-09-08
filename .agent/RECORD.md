@@ -59,3 +59,45 @@ Canonical Notion ground-zero boundary and intake architect ruling.
 ### Consequence
 
 Every future external component or prior-art candidate requires current evidence, license review, fit analysis, and an explicit decision recorded for this project.
+
+## COMPANION-GOV-004 — Governance baseline independently accepted
+
+### Context
+
+The Authority bootstrap and publication evidence remained marked for Architect review even after publication and Notion reconciliation.
+
+### Decision / event
+
+Accept the Authority 3.0 repository bootstrap for governance use only. This is not product, dependency, runtime, safety, or deployment acceptance.
+
+### Evidence
+
+- Repository metadata and `main` history inspected through `0fbedc441cb8ea2b098a32b46d00ce2415c65f07`.
+- Commits `d4ebf753068db8deebd8f02a3fea5349558f835f`, `5cba8893168cb90a0cf608d61fde610b5d307c94`, and `0fbedc441cb8ea2b098a32b46d00ce2415c65f07` independently reviewed.
+- Recursive tree inspection confirmed Authority governance, preserved `.gitignore` and Apache-2.0 `LICENSE`, and no product implementation, dependency, asset, CI, deployment, model, dataset, voice, database, or safety integration.
+- Canonical Notion project and governance contract reconciled.
+
+### Consequence
+
+The governance review blocker is closed. The repository remains governance-only until Roadmap Phase 00 is accepted and a bounded Architect directive opens the next gate.
+
+## COMPANION-PLAN-001 — Complete end goal and master roadmap adopted
+
+### Context
+
+The operator directed the Architect to define the complete project destination first, then create a phase-by-phase plan that states what the AI coder must accomplish without prescribing every implementation detail.
+
+### Decision / event
+
+Adopt the Notion `Project End Goal — Complete Operational Definition` as the completion baseline and activate `Planning Phase 02 — Master Delivery Roadmap` with Roadmap Phases 00–15.
+
+### Evidence
+
+- Complete end goal: https://app.notion.com/p/3d5833cb27ff81b09c20e2b52d537e1e
+- Master roadmap: https://app.notion.com/p/3d5833cb27ff81dd88faeb0c95b6f44e
+- Architecture Decision Ledger entries adopting the end goal, planning phase, and governance acceptance.
+- Research Phase 01, risk register, approved visual identity, sprite contract, and current repository state reviewed before planning.
+
+### Consequence
+
+Future directives must trace to a roadmap phase, complete a substantial phase outcome, preserve coder discretion inside approved boundaries, and pass an explicit Architect acceptance gate. Product implementation remains blocked until Roadmap Phase 00 produces and receives approval for architecture v1.0, the first vertical-slice contract, environment evidence, dependency and license rules, and repository-expansion controls.
