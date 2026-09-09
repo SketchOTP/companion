@@ -13,12 +13,12 @@ Publish and independently review the environment evidence. Do not install Godot 
 ## Directive state
 
 - Active directive: `COMPANION-P00-ENV-001`
-- Directive status: `CODEX RESULT PREPARED — PUBLICATION / ARCHITECT REVIEW PENDING`
+- Directive status: `CODEX RESULT SUBMITTED — ARCHITECT REVIEW PENDING`
 - Issuer: Architect
 - Verified pre-directive baseline: `ddb6b130ab6428a1f395cd223d309eeaa2ac7462`
 - Directive publication commit: `c06c796d9d54da4cdcf38296ee08c4f70fb3993d`
 - Starting routing head: `2ea7b41d79f24f030ea3c3690dee00e8c2340671`
-- Codex result commit: `PENDING_PUBLICATION`
+- Codex result commit: `ef5b011bfd6e3f747e8bf8e8f06faebb21901d50`
 - Notion directive: https://app.notion.com/p/3d6833cb27ff81e6ab93e37fc851b49d
 - Required Notion report: https://app.notion.com/p/3d6833cb27ff8159b66fdebeb690be90
 - GitHub issue: https://github.com/SketchOTP/companion/issues/2

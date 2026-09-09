@@ -125,7 +125,7 @@ Historical entries are append-only after adoption.
 
 - Issued: 2026-09-09 America/New_York
 - Issuer: Architect
-- Status: `CODEX RESULT PREPARED — PUBLICATION / ARCHITECT REVIEW PENDING`
+- Status: `CODEX RESULT SUBMITTED — ARCHITECT REVIEW PENDING`
 - Roadmap relationship: Planning Phase 02, Roadmap Phase 00.
 - Verified pre-directive baseline: `ddb6b130ab6428a1f395cd223d309eeaa2ac7462`.
 - Directive publication commit: `c06c796d9d54da4cdcf38296ee08c4f70fb3993d`.
@@ -150,5 +150,7 @@ Historical entries are append-only after adoption.
 - Important unknowns/degradations: exact Vulkan capability, concurrent workload capacity, camera/audio quality and latency, local inference, systemd manager health causes, power/noise/load thermals, recovery, and long-running behavior.
 - Product-contract crosswalk: all eleven open/partial RQ records covered; none resolved by machine evidence.
 - Privacy/scope: no durable private identifier or media; no machine/product change. One hardware-serial field surfaced in ephemeral diagnostic output before filtering, was discarded, and is preserved as a contained deviation.
-- Codex result commit: `PENDING_PUBLICATION`.
+- Codex result commit: `ef5b011bfd6e3f747e8bf8e8f06faebb21901d50`.
+- Result push, Notion report/directive update and re-fetch, and GitHub Issue #2 result comment/open-state re-fetch: `PASSED`.
+- Publication reconciliation: recorded in the governance-only commit containing this update; Architect acceptance remains pending.
 - Architect acceptance: `NOT ASSIGNED`; product implementation remains closed.

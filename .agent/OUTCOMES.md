@@ -358,5 +358,8 @@ The directive is complete, its task packet is archived, and the next work must a
 
 ### Publication state
 
-- Result commit: `PENDING_PUBLICATION`.
-- Notion report, GitHub Issue #2, publication-evidence commit, and final remote equality: pending.
+- Result commit: `ef5b011bfd6e3f747e8bf8e8f06faebb21901d50`.
+- Normal result push and immediate `HEAD == origin/main`: `PASSED`.
+- Notion report and directive exact-result-SHA update/re-fetch: `PASSED`; no unknown block and no stale pending-execution marker.
+- GitHub Issue #2 result comment: `PASSED` at comment `5598863339`; issue re-fetched `OPEN`.
+- Publication-evidence reconciliation: recorded in the governance-only commit containing this update; final local/remote equality remains required for the canonical handoff.

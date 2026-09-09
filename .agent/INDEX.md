@@ -23,7 +23,7 @@
 - Verified pre-directive baseline: `ddb6b130ab6428a1f395cd223d309eeaa2ac7462`
 - Directive publication commit: `c06c796d9d54da4cdcf38296ee08c4f70fb3993d`
 - Starting routing head: `2ea7b41d79f24f030ea3c3690dee00e8c2340671`
-- Codex result commit: `PENDING_PUBLICATION`
+- Codex result commit: `ef5b011bfd6e3f747e8bf8e8f06faebb21901d50`
 - Last completed directive: `COMPANION-P00-INGEST-001`
 - Completed ingest packet: `.agent/tasks/completed/COMPANION-P00-INGEST-001/`
 - Last accepted outcome: `COMPANION-P00-INGEST-001-ARCHITECT-ACCEPTANCE-02`

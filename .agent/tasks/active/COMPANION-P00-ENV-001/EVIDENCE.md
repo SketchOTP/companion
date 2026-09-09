@@ -79,12 +79,12 @@ Probes emitted only selected, normalized fields. No general environment dump, ho
 
 ## Publication evidence
 
-- Result commit: `PENDING_PUBLICATION`.
-- Normal push: pending.
-- Notion report update and re-fetch: pending.
-- GitHub Issue #2 result update/open state: pending.
-- Publication-evidence commit: pending.
-- Final local/remote equality: pending.
+- Result commit: `ef5b011bfd6e3f747e8bf8e8f06faebb21901d50`.
+- Normal result push and immediate local/remote equality: `PASSED`.
+- Notion report/directive exact-result-SHA update and re-fetch: `PASSED`; zero unknown blocks and no pending-execution marker.
+- GitHub Issue #2 result update/open state: `PASSED`; comment `5598863339`, issue `OPEN`.
+- Publication-evidence commit: the governance-only commit containing this section.
+- Final local/remote equality: required after publication-evidence push and reported in the canonical result.
 
 ## Evidence level
 

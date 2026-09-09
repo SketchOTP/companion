@@ -8,8 +8,8 @@ Status: `COMPLETE_FOR_ARCHITECT_REVIEW`
 - Retrieval confidence: `ADEQUATE`.
 - Accepted pre-directive baseline: `ddb6b130ab6428a1f395cd223d309eeaa2ac7462`.
 - Starting routing head: `2ea7b41d79f24f030ea3c3690dee00e8c2340671`.
-- Result commit: `PENDING_PUBLICATION`.
-- Publication-evidence commit: pending.
+- Result commit: `ef5b011bfd6e3f747e8bf8e8f06faebb21901d50`.
+- Publication-evidence commit: the governance-only commit containing the final publication reconciliation.
 - Architect acceptance: `NOT ASSIGNED`.
 
 ## Environment summary
@@ -59,8 +59,8 @@ None is authorized by this directive.
 
 ## Publication and scope
 
-- Notion report: pending publication.
-- GitHub Issue #2: must remain open for Architect review.
+- Notion report/directive: `PASSED` — updated and re-fetched with exact result SHA, review-pending state, closed product gate, and zero unknown blocks.
+- GitHub Issue #2: `PASSED` — result comment `5598863339` added and issue re-fetched open for Architect review.
 - Changed paths: `.agent/` only.
 - Product implementation introduced: `NO`.
 - System configuration changed: `NO`.
