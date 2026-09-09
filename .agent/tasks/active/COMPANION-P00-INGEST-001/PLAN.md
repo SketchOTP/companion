@@ -79,3 +79,24 @@ Status: `COMPLETE`
 - Commit once with a scoped message and normally push after remote preflight.
 - Confirm local/remote exact-SHA equality.
 - Complete `HANDOFF.md` and return the canonical `CODEX RESULT`.
+
+## Checkpoint 9 — Architect Review 01 semantic correction
+
+Status: `COMPLETE`
+
+- Fast-forward to review-state head `f4a312b29fd8cc07a330242a1f1d6afaf8cd3858` without rewriting the prior result.
+- Re-fetch the live Open Decisions page, Architecture Decision Ledger, and Initial Risk Register.
+- Correct all 11 open/partial RQ meanings and remove unsupported substitute meanings.
+- Audit every cited ADR and risk by exact live title, status where applicable, and substantive relationship.
+- Separate RQ-14 screen-habitat authority from unfinished visual construction work.
+- Add machine-readable semantic validation and document the first-result supersession.
+
+## Checkpoint 10 — Corrected publication and handoff
+
+Status: `IN PROGRESS — NOTION PREPARED; COMMIT, ISSUE, AND FINAL SHA RECONCILIATION PENDING`
+
+- Update current `.agent` state and append-only directive/outcome records.
+- Update and re-fetch the Notion coder report and directive while preserving the failed Architect review record.
+- Publish one focused normal fast-forward correction commit.
+- Add the corrected result to GitHub Issue #1 without closing it.
+- Verify final local/remote equality and return the canonical result for independent Architect review.

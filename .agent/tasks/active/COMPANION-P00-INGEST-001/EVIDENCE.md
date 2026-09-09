@@ -113,3 +113,62 @@
 - Unrelated work changed: `NO`.
 - Historical evidence rewritten: `NO`; current-state mirrors were updated and append-only ledgers received new entries.
 - Final diff reviewed: `PASSED`; only governance/current-state and task-packet records changed.
+
+## Architect Review 01 supersession
+
+- Review-state baseline: `f4a312b29fd8cc07a330242a1f1d6afaf8cd3858`.
+- Architect verdict: `CONTINUE — CORRECTIONS REQUIRED`; acceptance remains `NOT GRANTED`.
+- Provisionally retained: corpus enumeration, counts, repository scope/hygiene, visual hashes/dimensions, and corrected anatomy.
+- Superseded first-submission claims: comprehension section 15, ADR traceability, risk traceability, contradiction C-01/C-08 interpretation, and the structural-only `PASSED` claims for those areas.
+- Preservation: the prior commits and evidence above remain historical; this section records the focused correction rather than rewriting the failed result.
+
+## Correction cycle 1 — focused source retrieval
+
+- Focused retrieval completed: `2026-09-09T00:46:18Z`.
+- Open Decisions page: `PASSED` — fetched live; 14 queue rows total, comprising 3 resolved and exactly 11 open/partial records; no returned truncation or unknown block.
+- Architecture Decision Ledger: `PASSED` — schema fetched; row-mode query with limit 100 returned 32 rows and `has_more=false`; 32 unique exact ID/title/status triples; 16 Adopted, 14 Interim, 2 Rejected.
+- Initial Risk Register: `PASSED` — fetched live; 14 exact ID/title rows; no returned truncation or unknown block.
+- Architect review, coder report, and active directive: `PASSED` — fetched at review-state head before correction.
+- Full re-ingest: `NOT RUN / NOT REQUIRED` — Architect provisionally accepted corpus coverage and no focused source change required unrelated retrieval.
+- `INGEST_MANIFEST.json`: `UNCHANGED` — the accepted 101-record corpus evidence remains intact; the focused semantic source crosswalk is recorded separately.
+
+## Correction cycle 1 — semantic validation
+
+Machine-readable evidence: `SEMANTIC_VALIDATION.json`.
+
+Validation method:
+
+1. Normalize the live ADR query to `ADR-NN — exact title — exact status`.
+2. Parse the live Open Decisions and Initial Risk Register tables into exact ID/title pairs and derive the explicit open/partial status from each RQ row.
+3. Compare all 11 required RQ pairs against `COMPREHENSION.md` and the machine-readable crosswalk.
+4. Compare every ADR cited by `TRACEABILITY.md` against the live 32-row ledger and require its exact title/status at first use.
+5. Compare every risk cited by `TRACEABILITY.md` against the live 14-risk register and require its exact title at first use.
+6. Enforce reference closure: every ADR/risk token in traceability must exist in the semantic crosswalk and every crosswalk entry must be cited.
+7. Check each of the ten end-goal pillar rows for its manually reviewed, substantively relevant ADR/risk set; numeric proximity is never evidence of relevance.
+
+Results:
+
+| Semantic check | Result | Exact outcome |
+|---|---|---|
+| Live RQ table parsed | PASSED | 14 rows; 11 open/partial target rows |
+| RQ ID/title/status/consequence | PASSED | 11/11 exact; RQ-12 product name and RQ-14 screen habitat restored |
+| Live ADR query parsed | PASSED | 32 rows; 25 cited decisions checked |
+| ADR ID/title/status at first use | PASSED | 25/25 exact |
+| ADR reference closure | PASSED | 25 traceability IDs = 25 semantic-map IDs |
+| Live risk table parsed | PASSED | 14 rows; 13 cited risks checked |
+| Risk ID/title at first use | PASSED | 13/13 exact |
+| Risk reference closure | PASSED | 13 traceability IDs = 13 semantic-map IDs |
+| Ten pillar relationship sets | PASSED | 10/10 rows contain the reviewed ADR/risk relationships |
+| Required primary risk relationships | PASSED | Caregiving RISK-01/02; privacy RISK-03/04; memory RISK-05; continuity RISK-08; development RISK-11 |
+| Unsupported substitute RQ meanings | PASSED | none found |
+| Semantic validator errors | PASSED | 0 |
+
+Validator execution note: two draft harness invocations were discarded before evidence classification. The first parsed the connector's outer JSON envelope instead of its embedded page text and therefore found zero RQ/risk rows; the corrected parser unwrapped the page text and reproduced `11 / 32 / 14` live RQ/ADR/risk counts with zero comparison errors. A later shell closure check mistakenly allowed Markdown backticks to be interpreted by the shell; its output was not accepted. The corrected fixed-string rerun exited zero and produced the results above. Neither harness defect changed a source or project artifact.
+
+## Correction-cycle evidence level
+
+- Corrected semantic artifacts: `E3_TARGET_TESTED`.
+- Retained corpus coverage: `E2_REPRODUCED`.
+- Product-capability evidence: `NOT APPLICABLE`.
+- Retrieval confidence: `ADEQUATE`.
+- Architect acceptance: `NOT RUN` for the corrected submission.

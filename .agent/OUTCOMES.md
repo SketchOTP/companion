@@ -244,3 +244,34 @@ Codex must follow `.agent/tasks/active/COMPANION-P00-INGEST-001/ARCHITECT_REVIEW
 - Visual identity understanding: `ACCEPTED`.
 - Comprehension and semantic traceability: `NOT ACCEPTED`.
 - Next-phase authority: `NOT GRANTED`.
+
+## COMPANION-P00-INGEST-001-CORRECTION-01 — Semantic correction submitted
+
+- Date: 2026-09-08 America/New_York
+- Verdict: `COMPLETE_FOR_ARCHITECT_REVIEW`
+- Continuation baseline: `f4a312b29fd8cc07a330242a1f1d6afaf8cd3858`
+- Retrieval confidence: `ADEQUATE`
+- Architect acceptance: `NOT ASSIGNED`
+- Product implementation authorization: `CLOSED`
+
+### Work performed
+
+- Re-fetched the live Open Decisions page, Initial Risk Register, and all 32 Architecture Decision Ledger rows without repeating the provisionally accepted full corpus ingest.
+- Rewrote comprehension section 15 as exact ID, title, status, and unresolved-consequence entries for all 11 open or partially resolved RQs.
+- Audited every ADR and risk cited by traceability, recorded exact titles at first use, and restored the mandatory primary risk relationships for caregiving, privacy/security, development, memory, and continuity.
+- Corrected the contradiction analysis so RQ-14 means Godot presentation mode and screen habitat while unfinished three-quarter/construction references remain separate visual work.
+- Added a machine-readable semantic validator artifact and updated the handoff, evidence, plan, current Authority state, and Notion report while preserving the failed first-review record.
+
+### Validation
+
+- Open/partial RQ semantics: `PASSED — 11/11 exact ID/title/status/consequence records`.
+- Cited ADR semantics: `PASSED — 25/25 exact live ID/title/status records`.
+- Cited risk semantics: `PASSED — 13/13 exact live ID/title records`.
+- Document-reference closure and required primary risk relationships: `PASSED — zero errors`.
+- End-goal and roadmap coverage: `PASSED — 10/10 pillars and Roadmap Phase 00–15`.
+- Focused correction evidence: `E3_TARGET_TESTED`; retained corpus enumeration remains `E2_REPRODUCED`.
+- Product-capability validation: `NOT APPLICABLE`.
+
+### Boundary
+
+This correction changes governance/current-state and ingest-evidence artifacts only. It does not add product code, a Godot project, assets, dependencies, CI, deployment, models, datasets, voices, database implementation, experiments, notifications, safety integration, environment inventory, or architecture v1.0. Independent Architect review is still required.

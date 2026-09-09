@@ -4,16 +4,16 @@
 
 Planning Phase 02 — Master Delivery Roadmap is active.
 
-Roadmap Phase 00 — Planning and Product Contract is active. `COMPANION-P00-INGEST-001` remains the active directive under Architect correction cycle 1. Corpus coverage is provisionally accepted, but project-comprehension certification is not accepted because the submitted open-decision and ADR/risk traceability mappings contain material semantic errors. Product implementation remains closed.
+Roadmap Phase 00 — Planning and Product Contract is active. `COMPANION-P00-INGEST-001` remains the active directive under Architect correction cycle 1. Codex has completed the focused semantic correction and prepared it for publication and independent Architect re-review. Corpus coverage remains provisionally accepted; overall project-comprehension certification is not accepted until the Architect reviews the correction. Product implementation remains closed.
 
 ## Current objective
 
-Complete the focused correction contract in Architect Review 01. Correct the canonical RQ meanings, ADR references, risk relationships, contradiction classifications, semantic validation evidence, handoff, and Notion report; publish a normal fast-forward correction; return the revised result for independent Architect review.
+Publish the focused correction contract from Architect Review 01 as one normal fast-forward commit, synchronize the exact result identity to Notion and GitHub Issue #1, and return the corrected evidence for independent Architect review.
 
 ## Active directive
 
 - Active directive: `COMPANION-P00-INGEST-001`
-- Directive status: `CONTINUED — CORRECTIONS REQUIRED`
+- Directive status: `CODEX CORRECTION COMPLETE — PUBLICATION / ARCHITECT REVIEW PENDING`
 - Issuer: Architect
 - Verified directive baseline: `9056c0362a43f2b635ffb910451943b59e4ee1f0`
 - Directive commit: `bb879150f66e4c19bc4058967c628070087d553e`
@@ -26,6 +26,7 @@ Complete the focused correction contract in Architect Review 01. Correct the can
 - Last completed Codex directive: `COMPANION-AUTHORITY-BOOTSTRAP-001`
 - Governance bootstrap Architect review: `ACCEPTED_FOR_GOVERNANCE_ONLY`
 - Ingest Architect review: `CONTINUE / NOT ACCEPTED`
+- Correction-cycle Codex result: `COMPLETE_FOR_ARCHITECT_REVIEW`; exact result SHA is the commit containing this snapshot and will be synchronized to Notion and Issue #1 after normal push.
 - Product implementation authorization: `CLOSED`
 
 ## Current verified state
@@ -35,6 +36,7 @@ Complete the focused correction contract in Architect Review 01. Correct the can
 - The research foundation contains ten research dossiers, an operator-approved visual bible with approved six-view turnaround, 44 evidence records, 32 architecture decisions, 14 tracked decisions/research gaps, and 14 preliminary risks.
 - Independent Architect queries reproduced 32 unique ADR rows with 16 Adopted, 14 Interim, and 2 Rejected; and 44 unique evidence rows with 31 Grade A, 11 Grade B, 2 Grade C, 31 Reviewed, 12 Candidate, and 1 Needs Deep Review.
 - Codex enumerated 18 named authority pages, two databases, 32 architecture decisions, 44 evidence records, one superseded audit authority, and two visual references. That retrieval coverage is provisionally accepted; no full re-ingest is required unless a source changes.
+- Correction cycle 1 re-fetched the live Open Decisions page, Initial Risk Register, and all 32 Architecture Decision Ledger rows. The focused semantic map now validates 11/11 open or partial RQs, all 25 cited ADRs, all 13 cited risks, all 10 end-goal pillars, and Roadmap Phase 00–15 with zero ID/title, status, reference-closure, or required-relationship errors.
 - Iteration one is fixed to the existing Linux PC, existing webcam and microphone, connected speakers and monitor, Godot 4.7.2, and the approved flat cel-shaded purple sprite mon.
 - The correct visual anatomy is two fingers plus one thumb per hand and three toes per foot.
 - The remote repository `SketchOTP/companion` uses `main`; Architect review covered the complete three-commit range from `bb879150f66e4c19bc4058967c628070087d553e` through `fce544262f164e4da1508879ec9d8865b0cecfa2`.
@@ -59,11 +61,7 @@ Roadmap Phase 00 also still requires architecture v1.0, process and privilege bo
 
 ## Current blockers
 
-- Open-decision comprehension is not certified: `COMPREHENSION.md` section 15 assigns incorrect meanings to most RQ IDs and contains unsupported `RQ-12` touch/physical-embodiment language.
-- ADR traceability is not certified: multiple cited IDs do not match the decisions used to support the associated claims.
-- Risk traceability is not certified: primary risks are omitted or misassigned across end-goal pillars.
-- `CONTRADICTIONS.md` conflates `RQ-14` screen-habitat work with remaining visual construction references.
-- Existing structural validation did not test semantic ID/title and relationship correctness.
+- Architect acceptance of the corrected comprehension and traceability result remains pending; Codex does not self-accept the ingest certification.
 - Product implementation is not authorized.
 - Roadmap Phase 00 and the Planning Phase 02 exit gate are not complete.
 - No production dependencies beyond the Godot embodiment ruling are approved.
@@ -74,11 +72,12 @@ Roadmap Phase 00 also still requires architecture v1.0, process and privilege bo
 - Complete operational end goal and Planning Phase 02 roadmap: `VERIFIED`.
 - Authority governance bootstrap: `ACCEPTED_FOR_GOVERNANCE_ONLY`.
 - Submitted ingest repository scope and commit hygiene: `ACCEPTED`.
-- Submitted corpus enumeration: `PROVISIONALLY ACCEPTED` at `E2_REPRODUCED` pending semantic correction.
+- Submitted corpus enumeration: `PROVISIONALLY ACCEPTED` at `E2_REPRODUCED` pending overall Architect acceptance.
 - Visual source/hash evidence and corrected hand/foot anatomy: `ACCEPTED`.
-- Open-decision comprehension: `FAILED — CORRECTION REQUIRED`.
-- ADR/risk traceability: `FAILED — CORRECTION REQUIRED`.
-- Overall ingest certification: `NOT ACCEPTED`.
+- Open-decision comprehension correction: `PASSED — 11/11 live ID/title/status/consequence entries`, pending Architect review.
+- ADR/risk traceability correction: `PASSED — 25/25 cited ADRs, 13/13 cited risks, and required primary relationships`, pending Architect review.
+- Focused semantic correction: `E3_TARGET_TESTED` with zero validator errors.
+- Overall ingest certification: `NOT ACCEPTED — CORRECTED RESULT AWAITS ARCHITECT REVIEW`.
 
 ## Current risks
 

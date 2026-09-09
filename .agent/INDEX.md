@@ -15,12 +15,12 @@
 
 ## Current pointers
 
-- Current stage: Planning Phase 02 — Roadmap Phase 00 active; ingest correction cycle 1; product implementation gate closed
+- Current stage: Planning Phase 02 — Roadmap Phase 00 active; ingest correction cycle 1 complete for Architect re-review; product implementation gate closed
 - Active directive: `COMPANION-P00-INGEST-001`
 - Active task packet: `.agent/tasks/active/COMPANION-P00-INGEST-001/`
 - Active Architect review: `.agent/tasks/active/COMPANION-P00-INGEST-001/ARCHITECT_REVIEW.md`
 - Last accepted outcome: `COMPANION-AUTHORITY-ARCHITECT-ACCEPTANCE-001`
-- Last recorded outcome: `COMPANION-P00-INGEST-001-ARCHITECT-REVIEW-01`
+- Last recorded outcome: `COMPANION-P00-INGEST-001-CORRECTION-01`
 - Verified directive baseline: `9056c0362a43f2b635ffb910451943b59e4ee1f0`
 - Reviewed Codex publication head: `fce544262f164e4da1508879ec9d8865b0cecfa2`
 - Last state sync: 2026-09-08 America/New_York

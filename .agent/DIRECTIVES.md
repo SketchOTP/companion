@@ -86,3 +86,13 @@ Historical entries are append-only after adoption.
 - Correction gate: exact RQ/ADR/risk ID-title pairs and materially relevant mappings must pass independent review.
 - Overall ingest certification: `NOT ACCEPTED`.
 - Product implementation and next-phase authority: `CLOSED / NOT GRANTED`.
+
+### Correction cycle 1 execution update — 2026-09-08
+
+- Architect review authority: `.agent/tasks/active/COMPANION-P00-INGEST-001/ARCHITECT_REVIEW.md` and https://app.notion.com/p/3d5833cb27ff819b9433f230c7bc06ad.
+- Continuation baseline: `f4a312b29fd8cc07a330242a1f1d6afaf8cd3858`.
+- Focused sources re-fetched: Open Decisions and Research Gaps, Architecture Decision Ledger, and Initial Risk Register.
+- Corrected deliverables: section 15 of `COMPREHENSION.md`; all ADR/risk references in `TRACEABILITY.md`; the RQ-14 entry in `CONTRADICTIONS.md`; semantic evidence, plan, handoff, current state, and Notion report.
+- Added validation artifact: `SEMANTIC_VALIDATION.json`, covering exact RQ/ADR/risk ID-title pairs, statuses, document-reference closure, and required relationship relevance.
+- Codex disposition: `COMPLETE_FOR_ARCHITECT_REVIEW`; the directive remains active and is not accepted until independent Architect review.
+- Product implementation, environment inventory, architecture v1.0, dependencies, and next-phase authority: `CLOSED / NOT GRANTED`.

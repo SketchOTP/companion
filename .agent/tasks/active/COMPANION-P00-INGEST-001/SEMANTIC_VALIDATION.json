@@ -1,0 +1,528 @@
+{
+  "schema_version": "1.0.0",
+  "directive_id": "COMPANION-P00-INGEST-001",
+  "correction_cycle": 1,
+  "architect_review_head": "f4a312b29fd8cc07a330242a1f1d6afaf8cd3858",
+  "generated_at": "2026-09-09T00:46:18Z",
+  "retrieval_confidence": "ADEQUATE",
+  "source_refetch": {
+    "open_decisions": {
+      "url": "https://app.notion.com/p/3d5833cb27ff81118ac8e4139ce1c873",
+      "status": "COMPLETE",
+      "truncated": false,
+      "unknown_blocks": 0
+    },
+    "architecture_decision_ledger": {
+      "url": "https://app.notion.com/p/0c18cfa488194f4d91ffbb27f39286ad",
+      "data_source": "collection://94c43359-2f33-4791-be4d-da0ff56e0190",
+      "status": "COMPLETE",
+      "row_count": 32,
+      "has_more": false
+    },
+    "initial_risk_register": {
+      "url": "https://app.notion.com/p/3d5833cb27ff817698eed33e1ffcc779",
+      "status": "COMPLETE",
+      "risk_count": 14,
+      "truncated": false,
+      "unknown_blocks": 0
+    }
+  },
+  "rq_records": [
+    {
+      "id": "RQ-02",
+      "title": "First user population and household model",
+      "status": "OPEN",
+      "unresolved_consequence": "Qualification population, household roles, accessibility, consent, safeguarding, biometric scope, evaluation population, and legal scope cannot be finalized."
+    },
+    {
+      "id": "RQ-03",
+      "title": "Intended product use and commercialization path",
+      "status": "OPEN",
+      "unresolved_consequence": "Claims, regulatory analysis, quality obligations, support burden, evidence burden, and commercialization path remain unfixed."
+    },
+    {
+      "id": "RQ-04",
+      "title": "Offline, cloud, compute, power, noise, and cost boundary",
+      "status": "OPEN",
+      "unresolved_consequence": "Model sizes, hardware, service adapters, recurring cost, privacy, latency, and graceful-degradation targets cannot be finalized."
+    },
+    {
+      "id": "RQ-05",
+      "title": "First caregiving scenario and escalation jurisdiction",
+      "status": "OPEN",
+      "unresolved_consequence": "Required sensors, policy, validation data, claims boundary, escalation behavior, jurisdiction, and downstream transport qualification remain open."
+    },
+    {
+      "id": "RQ-07",
+      "title": "Multi-user identity, ownership, and relationship model",
+      "status": "OPEN",
+      "unresolved_consequence": "Enrollment, household roles, visitor behavior, guardian/caregiver permissions, and shared-versus-private memory rules remain undefined."
+    },
+    {
+      "id": "RQ-08",
+      "title": "Voice, languages, wake word, and interruption model",
+      "status": "OPEN",
+      "unresolved_consequence": "Language coverage, voice rights, activation, far-field, accessibility, barge-in, latency, and speech-stack qualification remain undefined."
+    },
+    {
+      "id": "RQ-09",
+      "title": "Memory retention, export, backup, and deletion promises",
+      "status": "OPEN",
+      "unresolved_consequence": "Lifetime, storage scale, raw-media policy, deletion semantics, backup ownership, recovery point, and recovery time remain undefined."
+    },
+    {
+      "id": "RQ-10",
+      "title": "Notification and trusted-contact transport",
+      "status": "OPEN",
+      "unresolved_consequence": "Region, recipient devices, channel, acknowledgment, retries, idempotency, outage behavior, cost, and vendor-continuity requirements remain unselected; this follows RQ-05."
+    },
+    {
+      "id": "RQ-11",
+      "title": "Support lifetime and continuity promise",
+      "status": "OPEN",
+      "unresolved_consequence": "Creature lifespan, update policy, end-of-service migration, key recovery, replacement-body support, and owner backup promises remain undefined."
+    },
+    {
+      "id": "RQ-12",
+      "title": "Canonical product name",
+      "status": "PARTIALLY RESOLVED",
+      "unresolved_consequence": "The repository name SketchOTP/companion is fixed, but the product-facing name still needs deliberate selection and originality/trademark screening before release-facing work."
+    },
+    {
+      "id": "RQ-14",
+      "title": "Godot presentation mode and screen habitat",
+      "status": "OPEN",
+      "unresolved_consequence": "Display resolution and scale, presentation mode, on-screen size, movement area, background, interaction distance, final camera composition, and sprite occupancy remain undefined."
+    }
+  ],
+  "adr_references": [
+    {
+      "id": "ADR-02",
+      "title": "Use Notion as the single source of truth for project meaning and status",
+      "status": "Adopted",
+      "relationships": [
+        "Notion source-of-truth"
+      ],
+      "relevance": "Directly establishes Notion as authority for project meaning and status.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff81a38796d9eb1658ef57"
+    },
+    {
+      "id": "ADR-03",
+      "title": "Keep the caregiving safety core architecturally independent from the companion",
+      "status": "Adopted",
+      "relationships": [
+        "Caregiving utility",
+        "Privacy and security",
+        "Human outcome",
+        "Companion/caregiving separation"
+      ],
+      "relevance": "Directly requires the caregiving safety core to remain independent from companion behavior.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff81ec87b8e560520aac4d"
+    },
+    {
+      "id": "ADR-04",
+      "title": "Use a hybrid persistent-organism architecture as the working direction",
+      "status": "Interim",
+      "relationships": [
+        "Persistent individual",
+        "Autonomous life"
+      ],
+      "relevance": "Defines the working persistent-organism architecture needed for durable identity and autonomous control.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff81b1b638ce598d115176"
+    },
+    {
+      "id": "ADR-05",
+      "title": "Do not allow a language model to own canonical identity, state, memory, or safety authority",
+      "status": "Interim",
+      "relationships": [
+        "Privacy and security",
+        "LLM authority boundary"
+      ],
+      "relevance": "Prevents a language model from owning canonical identity, state, memory, or safety authority.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff81ed86d0fa10c6704d69"
+    },
+    {
+      "id": "ADR-06",
+      "title": "Maintain distinct homeostatic drives with explicit arbitration",
+      "status": "Interim",
+      "relationships": [
+        "Autonomous life"
+      ],
+      "relevance": "Directly defines distinct homeostatic drives and explicit arbitration.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff816db6f2da0c376b284b"
+    },
+    {
+      "id": "ADR-07",
+      "title": "Implement baby-like growth through developmental capability gates over safe pretrained priors",
+      "status": "Interim",
+      "relationships": [
+        "Autonomous life",
+        "Development and teaching",
+        "Human outcome"
+      ],
+      "relevance": "Defines developmental capability gates over safe priors.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff81caaad3ed6e31a6ee2e"
+    },
+    {
+      "id": "ADR-08",
+      "title": "Use append-only evidence with typed, temporal, versioned derived memories",
+      "status": "Interim",
+      "relationships": [
+        "Persistent individual",
+        "Memory and dreaming",
+        "Privacy and security"
+      ],
+      "relevance": "Defines append-only evidence and typed, temporal, versioned derived memories.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff8190925aceb1757258a2"
+    },
+    {
+      "id": "ADR-09",
+      "title": "Treat dreaming as governed offline consolidation, not factual experience",
+      "status": "Adopted",
+      "relationships": [
+        "Memory and dreaming",
+        "Dream/fact boundary"
+      ],
+      "relevance": "Directly prohibits treating dream generation as factual experience.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff815dbc57c4657e520d81"
+    },
+    {
+      "id": "ADR-10",
+      "title": "Prohibit uncontrolled online foundation-model weight updates in the first implementation",
+      "status": "Interim",
+      "relationships": [
+        "Development and teaching"
+      ],
+      "relevance": "Constrains learning by prohibiting uncontrolled online foundation-model weight updates.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff812d8ec6f4d46a26ad1b"
+    },
+    {
+      "id": "ADR-11",
+      "title": "Require perception systems to emit uncertain evidence rather than durable beliefs",
+      "status": "Interim",
+      "relationships": [
+        "Grounded interaction",
+        "Development and teaching",
+        "Caregiving utility",
+        "Privacy and security",
+        "Perception uncertainty"
+      ],
+      "relevance": "Requires perception adapters to emit uncertain evidence rather than durable beliefs.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff81aa988bca4568c878a5"
+    },
+    {
+      "id": "ADR-12",
+      "title": "Treat affect as a contextual hypothesis, never a directly observed fact or sole safety trigger",
+      "status": "Adopted",
+      "relationships": [
+        "Grounded interaction",
+        "Caregiving utility",
+        "Privacy and security",
+        "Human outcome",
+        "Affect limitation"
+      ],
+      "relevance": "Directly makes affect a contextual hypothesis and rejects it as a sole safety trigger.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff810fb768c80edd3fd9af"
+    },
+    {
+      "id": "ADR-13",
+      "title": "Make embodiment an engine-neutral adapter driven by causal intents",
+      "status": "Interim",
+      "relationships": [
+        "Embodied aliveness"
+      ],
+      "relevance": "Defines engine-neutral embodiment driven by causal organism intents.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff8160af99e812b9e65e90"
+    },
+    {
+      "id": "ADR-14",
+      "title": "Require local survival and owner-portable creature continuity",
+      "status": "Interim",
+      "relationships": [
+        "Persistent individual",
+        "Memory and dreaming",
+        "Privacy and security",
+        "Continuity and ownership",
+        "Local survival"
+      ],
+      "relevance": "Directly requires local survival and owner-portable continuity.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff819cb122d3030f50949c"
+    },
+    {
+      "id": "ADR-15",
+      "title": "Qualify named safety scenarios instead of building a generalized danger detector",
+      "status": "Adopted",
+      "relationships": [
+        "Caregiving utility",
+        "Human outcome"
+      ],
+      "relevance": "Directly requires named safety scenarios instead of a generalized danger detector.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff815cb19df16ac2e0d587"
+    },
+    {
+      "id": "ADR-16",
+      "title": "Use explicit help requests and declared check-in deadlines as first safety-validation candidates",
+      "status": "Interim",
+      "relationships": [
+        "Caregiving utility"
+      ],
+      "relevance": "Defines the current first safety-validation candidates without claiming final selection.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff81769403f54fd8551879"
+    },
+    {
+      "id": "ADR-22",
+      "title": "Run iteration one on the existing Linux PC and existing peripherals",
+      "status": "Adopted",
+      "relationships": [
+        "Embodied aliveness",
+        "Grounded interaction"
+      ],
+      "relevance": "Selects the existing Linux PC and peripherals for iteration one.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff81a9b7b0ded1c854306d"
+    },
+    {
+      "id": "ADR-23",
+      "title": "Use Godot as the iteration-one embodiment engine",
+      "status": "Adopted",
+      "relationships": [
+        "Embodied aliveness"
+      ],
+      "relevance": "Selects Godot as the iteration-one embodiment engine.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff8111be22e29667aacdc5"
+    },
+    {
+      "id": "ADR-24",
+      "title": "Pin Godot 4.7.2 stable as the initial implementation baseline",
+      "status": "Interim",
+      "relationships": [
+        "Embodied aliveness"
+      ],
+      "relevance": "Pins Godot 4.7.2 as the initial implementation baseline.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff8199b506fc49bc8a018c"
+    },
+    {
+      "id": "ADR-25",
+      "title": "Represent the mon as an original project-authored 2D sprite system",
+      "status": "Adopted",
+      "relationships": [
+        "Embodied aliveness",
+        "Approved visual identity"
+      ],
+      "relevance": "Selects an original project-authored 2D sprite system.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff8180bd3be58844cbdba2"
+    },
+    {
+      "id": "ADR-26",
+      "title": "Adopt MON_FRAME_V1 and a layered semantic sprite-clip pipeline",
+      "status": "Interim",
+      "relationships": [
+        "Embodied aliveness",
+        "Approved visual identity"
+      ],
+      "relevance": "Defines MON_FRAME_V1 and the layered semantic sprite-clip pipeline.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff81f69ceac63e3758e0d8"
+    },
+    {
+      "id": "ADR-27",
+      "title": "Keep Godot embodiment separate from canonical state and caregiving authority",
+      "status": "Adopted",
+      "relationships": [
+        "Embodied aliveness",
+        "Continuity and ownership"
+      ],
+      "relevance": "Separates Godot embodiment from canonical state and caregiving authority, allowing renderer replacement.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff81b18229f2569683cd97"
+    },
+    {
+      "id": "ADR-28",
+      "title": "Adopt Mon Visual Reference V1 as the canonical iteration-one identity",
+      "status": "Adopted",
+      "relationships": [
+        "Embodied aliveness",
+        "Approved visual identity"
+      ],
+      "relevance": "Adopts the operator-approved identity master.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff812698acdcb26c74571f"
+    },
+    {
+      "id": "ADR-29",
+      "title": "Approve the six-view turnaround sheet as an authoritative visual reference",
+      "status": "Adopted",
+      "relationships": [
+        "Embodied aliveness",
+        "Approved visual identity"
+      ],
+      "relevance": "Adopts the six-view turnaround as directional authority.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff81c58ea6da92b72828ac"
+    },
+    {
+      "id": "ADR-31",
+      "title": "Adopt the complete operational end goal as the project completion baseline",
+      "status": "Adopted",
+      "relationships": [
+        "Persistent individual",
+        "Autonomous life",
+        "Grounded interaction",
+        "Continuity and ownership",
+        "Human outcome",
+        "Product claims"
+      ],
+      "relevance": "Adopts the complete operational end goal as the completion baseline.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff811eb51eec5de96d5c24"
+    },
+    {
+      "id": "ADR-32",
+      "title": "Begin Planning Phase 02 and govern delivery through the 16-phase master roadmap",
+      "status": "Adopted",
+      "relationships": [
+        "Roadmap Phase 00"
+      ],
+      "relevance": "Activates Planning Phase 02 and the 16-phase roadmap.",
+      "source_url": "https://app.notion.com/p/3d5833cb27ff81e0b086dd3cd98daf55"
+    }
+  ],
+  "risk_references": [
+    {
+      "id": "RISK-01",
+      "title": "Missed qualified emergency or distress event",
+      "relationships": [
+        "Caregiving utility",
+        "Human outcome"
+      ],
+      "relevance": "Direct failure mode for qualified detection and timely assistance."
+    },
+    {
+      "id": "RISK-02",
+      "title": "False safety escalation and alarm fatigue",
+      "relationships": [
+        "Caregiving utility",
+        "Human outcome"
+      ],
+      "relevance": "Direct false-positive and caregiver-burden failure mode."
+    },
+    {
+      "id": "RISK-03",
+      "title": "Biometric misidentification or spoofing",
+      "relationships": [
+        "Grounded interaction",
+        "Caregiving utility",
+        "Privacy and security"
+      ],
+      "relevance": "Direct identity, attribution, access, and cross-person disclosure failure mode."
+    },
+    {
+      "id": "RISK-04",
+      "title": "Private camera, microphone, memory, or safety data exposure",
+      "relationships": [
+        "Memory and dreaming",
+        "Privacy and security"
+      ],
+      "relevance": "Direct private sensor, memory, and safety-data confidentiality failure mode."
+    },
+    {
+      "id": "RISK-05",
+      "title": "False or corrupted autobiographical memory",
+      "relationships": [
+        "Persistent individual",
+        "Memory and dreaming",
+        "Continuity and ownership"
+      ],
+      "relevance": "Direct identity and memory-integrity failure mode."
+    },
+    {
+      "id": "RISK-06",
+      "title": "Companion behavior creates unhealthy dependence, exclusivity, guilt, or social withdrawal",
+      "relationships": [
+        "Human outcome",
+        "Attachment safety"
+      ],
+      "relevance": "Direct relational-manipulation and well-being failure mode."
+    },
+    {
+      "id": "RISK-07",
+      "title": "Prompt injection or poisoned teaching through speech, screens, visitors, media, or demonstrations",
+      "relationships": [
+        "Grounded interaction",
+        "Development and teaching",
+        "Privacy and security"
+      ],
+      "relevance": "Direct adversarial perception, learning, privilege, and data-exposure failure mode."
+    },
+    {
+      "id": "RISK-08",
+      "title": "Cloud, subscription, vendor, model, or service shutdown",
+      "relationships": [
+        "Persistent individual",
+        "Memory and dreaming",
+        "Privacy and security",
+        "Continuity and ownership"
+      ],
+      "relevance": "Direct long-term continuity and vendor-replacement failure mode."
+    },
+    {
+      "id": "RISK-09",
+      "title": "Code, model, dataset, voice, asset, or plugin rights are incompatible",
+      "relationships": [
+        "Embodied aliveness",
+        "Artifact rights review"
+      ],
+      "relevance": "Direct adoption, commercialization, and forced-rewrite failure mode for implementation artifacts."
+    },
+    {
+      "id": "RISK-10",
+      "title": "Runtime latency, heat, power, noise, or instability breaks continuous aliveness",
+      "relationships": [
+        "Autonomous life",
+        "Embodied aliveness",
+        "Grounded interaction"
+      ],
+      "relevance": "Direct continuous-life, response-latency, sensor, and household-acceptance failure mode."
+    },
+    {
+      "id": "RISK-11",
+      "title": "Developmental gates produce either a fake infant or an unsafe/incompetent system",
+      "relationships": [
+        "Autonomous life",
+        "Development and teaching",
+        "Human outcome"
+      ],
+      "relevance": "Direct developmental-experience, competence, and safety failure mode."
+    },
+    {
+      "id": "RISK-13",
+      "title": "Check-in interaction is inaccessible to a user in distress or with disability",
+      "relationships": [
+        "Grounded interaction",
+        "Caregiving utility",
+        "Human outcome"
+      ],
+      "relevance": "Direct accessibility, false non-response, escalation, and missed-assistance failure mode."
+    },
+    {
+      "id": "RISK-14",
+      "title": "Model or software update silently changes qualified behavior",
+      "relationships": [
+        "Persistent individual",
+        "Embodied aliveness",
+        "Development and teaching",
+        "Memory and dreaming",
+        "Privacy and security",
+        "Continuity and ownership"
+      ],
+      "relevance": "Direct regression and silent qualification-drift failure mode."
+    }
+  ],
+  "validation": {
+    "live_source_refetch": "PASSED",
+    "rq_exact_id_title_status": "PASSED",
+    "adr_exact_id_title_status": "PASSED",
+    "risk_exact_id_title": "PASSED",
+    "relationship_relevance_review": "PASSED",
+    "document_reference_closure": "PASSED"
+  },
+  "notes": [
+    "Only ADRs and risks cited by TRACEABILITY.md are included in the semantic reference arrays; all 32 live ADR rows were re-enumerated.",
+    "Relationship relevance was reviewed against each live decision rationale/consequence or risk consequence/control, not inferred from numeric proximity.",
+    "Architecture, dependency, evaluation-protocol, and unfinished visual-construction work are not assigned substitute RQ identifiers."
+  ]
+}
