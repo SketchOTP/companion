@@ -24,6 +24,8 @@ Harden the corrected foundation qualification so its claims are independently re
 - Original verified pre-directive baseline: `4cfb0d5d62cd85737f88cd151d250ccf292a7e6d`
 - Task-packet publication: `f8fc3149fcf039d2cec468aa8c3a37acdaf620d9`
 - Reviewed correction head: `9be80e14e907f7973c1161bda041986e06f85a6e`
+- Required hardening merge: `bbbe5cedd8f82779e3f3d3c369cfb70ba99e9135`
+- Focused hardening commit: `65ba92299338ae5b0484579cd089fa3bc7d99b28`
 - Architect Review 01 commit: `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`
 - Architect Review 02 repository authority: `.agent/tasks/active/COMPANION-P00-QUAL-001/ARCHITECT_REVIEW_02.md`
 - Architect Review 02 Notion authority: https://app.notion.com/p/3d6833cb27ff8113bc7dcc42e96237f0
@@ -84,3 +86,7 @@ Counts are snapshots. Codex must query live Notion before publication.
 ## Next review point
 
 Codex updates the existing `codex/p00-qual-001` branch and draft PR #5 with one focused hardening commit and at most one publication-reconciliation commit, publishes sanitized result/provenance evidence and fail-closed validation, updates Notion and Issue #4, leaves PR #5 and Issue #4 open, and stops for independent Architect review. Prior correction evidence remains historical and is preserved.
+
+The focused hardening commit is published on the existing branch. A single
+reconciliation commit may update provenance hashes and publication pointers;
+no merge of PR #5 or adoption follows.

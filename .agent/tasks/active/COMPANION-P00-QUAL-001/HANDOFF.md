@@ -81,3 +81,8 @@ deferred. IPC and SQLite outcomes are bounded `E3_TARGET_TESTED` candidate
 evidence, Godot remains retained `E1_OBSERVED`, and transient systemd remains
 retained `E3_TARGET_TESTED`. Architecture v1.0 remains adopted, Roadmap Phase
 01 remains closed, and no dependency or product capability is self-approved.
+
+Focused hardening commit: `65ba92299338ae5b0484579cd089fa3bc7d99b28` (after
+required merge `bbbe5cedd8f82779e3f3d3c369cfb70ba99e9135`). The result-file
+hashes are recorded in `results/provenance.json`; the final reconciliation
+publication remains limited to metadata/state synchronization.

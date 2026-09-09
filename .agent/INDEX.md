@@ -27,6 +27,8 @@
 - GitHub Issue #4: https://github.com/SketchOTP/companion/issues/4
 - Pull request #5: https://github.com/SketchOTP/companion/pull/5
 - Reviewed correction head: `9be80e14e907f7973c1161bda041986e06f85a6e`
+- Required hardening merge: `bbbe5cedd8f82779e3f3d3c369cfb70ba99e9135`
+- Focused hardening commit: `65ba92299338ae5b0484579cd089fa3bc7d99b28`
 - Architect Review 01 main commit: `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`
 - Required task branch: `codex/p00-qual-001`
 - Required clean secondary worktree: `YES`
@@ -55,6 +57,8 @@ Codex cannot see the operator–Architect conversation. Do not infer what to rea
 10. Compare every claimed valid profile vector and service outcome across Python, Rust, and the exact oracle; correct package identity; test real queue overflow or remove the claim.
 11. Make SQLite concurrency, migration, disk-full, restore, commit-fault, checkpoint-fault, exit-code, and VFS-injection verdicts strict and fail closed.
 12. Update the task packet, Notion, PR #5 body, and Issue #4; leave PR and issue open; stop for Architect review.
+
+13. Verify committed result/provenance hashes and re-fetch mutable external state after the final publication.
 
 ## Evidence disposition
 
