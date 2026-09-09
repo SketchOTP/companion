@@ -29,7 +29,7 @@ Missed/false help, inaccessible response, biometric spoofing, private-data expos
 
 ## Validation and publication
 
-`EVIDENCE.md` contains exact authority totals, sources, validation, publication addendum, changed paths, and SHAs. The dedicated Notion report and GitHub Issue #3 receive the canonical result; Issue #3 remains open. The repository publication is a normal fast-forward and final `HEAD == origin/main`.
+`EVIDENCE.md` contains exact authority totals, sources, validation, publication markers, changed paths, and SHAs. The coherent planning result is `5d6d87d93b017e42647e260b69d80b5ad3f8becc`. The dedicated Notion report and parent directive were updated and re-fetched; GitHub Issue #3 received comment `5603553996` and remains open. The final publication-only reconciliation commit and remote equality are reported in the canonical result after publication.
 
 ## Acceptance boundary
 

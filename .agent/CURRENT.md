@@ -24,6 +24,7 @@ Produce a decision-ready Architecture v1.0 package and first vertical-slice cont
 - GitHub issue: https://github.com/SketchOTP/companion/issues/3
 - Active packet: `.agent/tasks/active/COMPANION-P00-ARCH-001/`
 - Full repository execution directive: `.agent/tasks/active/COMPANION-P00-ARCH-001/CODEX_FULL_DIRECTIVE.md`
+- Coherent planning result: `5d6d87d93b017e42647e260b69d80b5ad3f8becc`
 - Acceptance authority: Architect
 - Product implementation authorization: `CLOSED`
 
@@ -94,4 +95,4 @@ Recommend a local-first event-sourced modular core with consequence-driven proce
 
 ## Next review point
 
-The Architect independently reviews the complete packet, Notion report, result commits, and Issue #3 handoff before architecture adoption, Roadmap Phase 00 completion, Phase 01, dependency selection, or implementation authority.
+The Architect independently reviews the complete packet, Notion report, result commits, and Issue #3 comment `5603553996` before architecture adoption, Roadmap Phase 00 completion, Phase 01, dependency selection, or implementation authority.

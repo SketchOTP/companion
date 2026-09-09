@@ -20,6 +20,14 @@ Historical entries are append-only after adoption.
 - Prohibited: product/Godot source or execution, assets, dependencies/manifests, CI/deployment, database implementation, models/data/voices, media capture/playback, benchmark/host changes, biometrics, notifications, safety runtime, self-acceptance, Phase 01, and product capability.
 - Acceptance authority: Architect. Codex completion does not adopt the architecture.
 
+### Codex publication update — 2026-09-09
+
+- Coherent planning result: `5d6d87d93b017e42647e260b69d80b5ad3f8becc`.
+- Normal push: `PASSED`.
+- Dedicated Notion report and parent directive update/re-fetch: `PASSED`.
+- GitHub Issue #3 handoff: `PASSED`, comment `5603553996`; issue remains open.
+- Architect review: `NOT RUN`; Phase 01 and product implementation remain closed.
+
 ## COMPANION-AUTHORITY-BOOTSTRAP-001 — Install Authority 3.0 governance
 
 - Issued: 2026-09-08 America/New_York

@@ -25,6 +25,14 @@ Historical entries are append-only after adoption.
 - No product source, Godot project/execution, sprites, dependency/manifests, CI/deployment, database implementation, model/data/voice, media capture/playback, benchmark/host change, biometric, notification, or safety runtime was introduced.
 - Roadmap Phase 00 remains active; Architecture v1.0, Phase 01, dependencies, and product implementation remain pending Architect authority.
 
+### Publication
+
+- Coherent planning result: `5d6d87d93b017e42647e260b69d80b5ad3f8becc`.
+- Normal fast-forward push: `PASSED`.
+- Notion coder report and parent directive exact-SHA update/re-fetch: `PASSED`.
+- GitHub Issue #3 result comment `5603553996` and final open state: `PASSED`.
+- Publication-only repository reconciliation and final local/remote equality are recorded in the canonical result.
+
 ## COMPANION-AUTHORITY-BOOTSTRAP-001 — Directive COMPANION-AUTHORITY-BOOTSTRAP-001
 
 - Date: 2026-09-08 America/New_York

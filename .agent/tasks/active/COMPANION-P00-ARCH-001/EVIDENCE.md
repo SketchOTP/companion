@@ -1,6 +1,6 @@
 # Evidence Record
 
-Status: `COMPLETE FOR ARCHITECT REVIEW — PUBLICATION EVIDENCE APPENDED AFTER RESULT COMMIT`
+Status: `COMPLETE FOR ARCHITECT REVIEW — PUBLISHED`
 
 ## Authority reconstruction
 
@@ -72,7 +72,7 @@ Validation is semantic as well as structural:
 - placeholder, prohibited-path, secret/private-identifier, and implementation-leakage scans;
 - `git diff --check` and final local/remote synchronization.
 
-Exact command results and publication SHAs are recorded in the publication addendum below.
+Exact command results and publication markers are recorded in the publication addendum below.
 
 ## Evidence level and limits
 
@@ -84,4 +84,29 @@ Exact command results and publication SHAs are recorded in the publication adden
 
 ## Publication addendum
 
-The exact result commit, Notion/Issue publication markers, remote equality, and final validation results are appended in a publication-only commit after the coherent planning commit. This two-commit sequence is required because external publication must cite an immutable result SHA.
+- Coherent planning result commit: `5d6d87d93b017e42647e260b69d80b5ad3f8becc` — `docs: propose companion architecture v1.0`.
+- Normal fast-forward from `6559cec1beaf27bf958c2b9517b0717f04c83ea9`: `PASSED`.
+- Planning result push to `origin/main`: `PASSED`.
+- Dedicated Notion coder report replaced with the complete proposal and exact result SHA: `PASSED`; re-fetched at `2026-09-09T14:28:33.690Z`; no pending-execution marker or truncation/unknown-block flag returned.
+- Parent Notion directive status changed to `CODEX RESULT SUBMITTED — ARCHITECT REVIEW PENDING`, exact result section appended, and page re-fetched: `PASSED` at `2026-09-09T14:29:08.208Z`.
+- GitHub Issue #3 result comment: `PASSED`, comment `5603553996`; exact result SHA re-fetched in comment body.
+- GitHub Issue #3 final state: `OPEN`, four comments at `2026-09-09T14:29:36Z`; Codex did not close or self-accept.
+- Mutable authority re-fetch immediately before publication: `PASSED`; canonical/roadmap/open/risk/directive/report states unchanged, 37 ADRs and 46 evidence rows returned with `has_more=false`.
+
+### Final validation commands
+
+- Changed paths outside `.agent/`: `PASSED — 0`.
+- Preserved `CODEX_FULL_DIRECTIVE.md` and `AUTHORITY_CONTEXT_BRIDGE.md`: `PASSED — 0 diff lines`.
+- Required active packet files: `PASSED — 17 present`.
+- Output pending/placeholder markers: `PASSED — 0`.
+- Exact end-goal pillar coverage: `PASSED — 10/10`.
+- Exact roadmap phase coverage: `PASSED — Phase 00–15, 16/16`.
+- Remaining RQ disposition coverage: `PASSED — 7/7`.
+- Risk coverage: `PASSED — RISK-01 through RISK-14, 14/14`.
+- Product/manifests/workflows forbidden-path check: `PASSED — 0`.
+- Narrow secret/private-identifier scan of changed content: `PASSED — 0`.
+- One-writer/authority-cycle and relationship-relevance review: `PASSED — manual semantic review`.
+- `git diff --check` and staged `git diff --cached --check`: `PASSED`.
+- Product/runtime tests, Godot tests, benchmarks, media tests, safety/notification tests: `NOT APPLICABLE / NOT RUN` because prohibited by this planning directive.
+
+The publication-only reconciliation commit containing this addendum is reported in the canonical handoff after it is created; a commit cannot contain its own SHA.
