@@ -175,3 +175,48 @@ Accept `COMPANION-P00-INGEST-001` as complete and certify Codex onboarding to th
 ### Consequence
 
 Codex may execute future bounded directives using the accepted onboarding corpus, subject to fresh current-state reconstruction. The directive packet is archived. Roadmap Phase 00 remains active and product implementation remains closed until later explicit authority.
+
+## COMPANION-PLAN-002 — Operator Decision Packet 01 partially resolved
+
+### Context
+
+Accepted Linux environment evidence showed that the iteration-one host has multiple displays and that machine facts could not determine user population, intended-use claims, first caregiving scenario, jurisdiction, or screen-habitat policy. The Architect issued a focused four-part operator decision packet before architecture v1.0.
+
+### Decision / event
+
+On 2026-09-09 the operator selected:
+
+- one adult primary user aged 18 or older who may have support needs, a single-primary-user authority model, explicitly configured trusted caregivers/contacts, and no minors in iteration one;
+- consumer-product development from the start under a narrow non-medical companion and trusted-contact assistance claim;
+- explicit spoken help request as the first caregiving scenario in Kentucky, United States;
+- the separate 1366×768 Openbox-managed output as the iteration-one mon display.
+
+The operator did not yet select borderless full-screen, bounded resizable window, or transparent desktop overlay, so `RQ-14` remains partially open.
+
+### Evidence
+
+- Direct operator response: `1A`, `2B`, `Spoken help request — Kentucky US`, `Openbox`.
+- Operator decision packet: https://app.notion.com/p/3d6833cb27ff817a8972cecb1b877260
+- Accepted environment review: https://app.notion.com/p/3d6833cb27ff81c596a4dbe116099a75
+- Updated open-decision queue: https://app.notion.com/p/3d5833cb27ff81118ac8e4139ce1c873
+- Official Kentucky Attorney General guidance states that the Kentucky Consumer Data Protection Act took effect January 1, 2026 and grants specified rights to covered consumers.
+- Official Godot 4.7 Window documentation distinguishes monitor-specific fullscreen, borderless, transparent, focus, and passthrough behavior and notes that X11 exclusive fullscreen bypasses the compositor.
+- Architecture Decision Ledger now contains 36 decisions: 20 adopted, 14 interim, and 2 rejected.
+- Research Evidence Register now contains 46 sources: 33 Grade A, 11 Grade B, and 2 Grade C.
+
+### Consequence
+
+- `RQ-02`, `RQ-03`, and `RQ-05` are resolved.
+- `RQ-14` is partially resolved to the Openbox output; habitat mode remains pending.
+- `RQ-04`, `RQ-07`, `RQ-08`, `RQ-09`, `RQ-10`, and `RQ-11` remain open; `RQ-12` remains partially resolved.
+- Consumer-product engineering must account for Kentucky privacy-law applicability and consumer-rights workflows before a Kentucky pilot or release, without assuming the law applies before threshold and exemption analysis.
+- Spoken-help qualification must address accidental media playback, replay/spoofing, uncertain speaker identity, confirmation, accessible fallback, cancellation, false activation, degraded audio, trusted-contact acknowledgment, and immutable audit.
+- No coder directive, dependency selection, Godot installation, benchmark, architecture v1.0 approval, Phase 01 authority, or product implementation is created by these rulings.
+
+### Remaining operator clarification
+
+Choose the default habitat mode for the selected Openbox display:
+
+- `A` — borderless full-screen habitat
+- `B` — bounded resizable habitat window
+- `C` — transparent desktop overlay
