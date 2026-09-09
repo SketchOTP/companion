@@ -20,6 +20,18 @@ Before substantial planning, editing, coding, or validation:
 
 Do not implement from the directive alone when repository evidence is available.
 
+## Conversation isolation and context bridge
+
+Codex does not receive the operator–Architect ChatGPT conversation unless its content is deliberately published into Notion, this repository, or the active GitHub issue. Never assume access to hidden chat history, private reasoning, or prior verbal instructions.
+
+- Treat the live canonical Notion hierarchy as authority for project meaning, operator rulings, requirements, risks, and status.
+- Treat the repository and GitHub as authority for versioned artifacts, commits, issue routing, and technical evidence.
+- At the start of every substantial directive, read the active packet's context/delta bridge and complete any required acknowledgment before doing the main work.
+- A summary is not enough when exact decisions exist. Re-fetch the named Notion pages and verify exact decision IDs, titles, statuses, consequences, and unresolved boundaries.
+- If a claimed operator decision is absent from canonical Notion and the repository/issue bridge, stop and ask the Architect rather than inferring it.
+- If Notion, the active packet, GitHub issue, and repository state disagree materially, record the contradiction and stop before changing product direction.
+- The Architect must publish material chat decisions before expecting Codex to act on them; Codex must prove comprehension before a directive can be accepted.
+
 ## Role boundary
 
 The Architect decides what the project should accomplish next and why.
