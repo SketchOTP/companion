@@ -1,6 +1,6 @@
 {
   "schema": "companion-p00-qual-results-v1",
-  "evidence_commit": "PENDING_NARROW_CORRECTION_COMMIT",
+  "evidence_commit": "3fc75bffd2d4459748489eb13a4d8b7728c19d97",
   "execution_date": "2026-09-09",
   "timestamp_precision": "date-only UTC",
   "sanitized_host_class": "Linux x86_64; local ext4/NVMe qualification worktree",

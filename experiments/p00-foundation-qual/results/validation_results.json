@@ -1,12 +1,12 @@
 {
-  "ancestry_verified": false,
+  "ancestry_verified": true,
   "checked_files": [
     "jcs_toolchain_results.json",
     "ipc_results.json",
     "sqlite_results.json"
   ],
   "circular_validation_input": false,
-  "evidence_commit_pending_reconciliation": true,
+  "evidence_commit_pending_reconciliation": false,
   "fixture_verified": true,
   "status": "PASSED",
   "validator": "validate_results.py"
