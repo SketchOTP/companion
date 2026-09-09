@@ -1,0 +1,245 @@
+{
+  "adoption": "NONE",
+  "artifact": {
+    "local_matches_published": true,
+    "source_id": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+    "sqlite3_c_sha3_256": "67f423e9ebbbdc473cbc4772c872ee6b89f31fde4ed0279a5c25d5f65c043a16",
+    "version": "3.53.4"
+  },
+  "backup_restore": {
+    "backup_command": {
+      "returncode": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "corrupted_copy_check": {
+      "returncode": 1,
+      "stderr": "Parse error near line 1: file is not a database (26)",
+      "stdout": ""
+    },
+    "fresh_directory": true,
+    "full_equivalence": true,
+    "integrity": true,
+    "ordered_logical_rows_digest": true,
+    "restored": {
+      "integrity_check": "ok",
+      "ordered_rows_sha256": "7bbc78f919e2ff9cb73cba32f63e5a7a7ad0aeb4704ab16d0301f528ed33e534",
+      "row_count": 6,
+      "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+      "user_version": 1
+    },
+    "schema_digest": true,
+    "source": {
+      "integrity_check": "ok",
+      "ordered_rows_sha256": "7bbc78f919e2ff9cb73cba32f63e5a7a7ad0aeb4704ab16d0301f528ed33e534",
+      "row_count": 6,
+      "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+      "user_version": 1
+    },
+    "user_version": true
+  },
+  "concurrency": {
+    "after_counts": [
+      6,
+      6
+    ],
+    "after_equals_before_plus_one": true,
+    "before_count": 5,
+    "before_state": {
+      "integrity_check": "ok",
+      "ordered_rows_sha256": "3dbc26d13fba227846344049b61d4a07b224518cfc78bd3c15b932f8529eb06c",
+      "row_count": 5,
+      "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+      "user_version": 0
+    },
+    "during_counts": [
+      5,
+      5
+    ],
+    "during_equals_before": true,
+    "inserted_overlap_row_count": 1,
+    "one_writer_two_readers": true,
+    "overlap_barrier": true
+  },
+  "disk_full": {
+    "expected_error": "Error near line 3: database or disk is full",
+    "integrity": "ok",
+    "logical_atomicity_observed": true,
+    "pre_post_logical_equality": true,
+    "target_count": 0
+  },
+  "fault_vfs": {
+    "all_atomicity_assertions": true,
+    "all_exit_codes_ok": true,
+    "all_integrity_ok": true,
+    "all_metadata_ok": true,
+    "all_state_preservation_ok": true,
+    "all_whole_or_absent": true,
+    "outcomes": {
+      "checkpoint_crash": {
+        "checkpoint_post_state": {
+          "integrity_check": "ok",
+          "ordered_rows_sha256": "17305d8ef9b966b2dddb1463f784ff35e2a1343d59236ad4be0a5d4cdc51d5f9",
+          "row_count": 9,
+          "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+          "user_version": 1
+        },
+        "checkpoint_pre_state": {
+          "integrity_check": "ok",
+          "ordered_rows_sha256": "17305d8ef9b966b2dddb1463f784ff35e2a1343d59236ad4be0a5d4cdc51d5f9",
+          "row_count": 9,
+          "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+          "user_version": 1
+        },
+        "checkpoint_state_equivalent": true,
+        "expected_count": 3,
+        "expected_returncode": 70,
+        "integrity": "ok",
+        "logical_state_preserved": true,
+        "post_existing_state": {
+          "integrity_check": "ok",
+          "ordered_rows_sha256": "7bbc78f919e2ff9cb73cba32f63e5a7a7ad0aeb4704ab16d0301f528ed33e534",
+          "row_count": 6,
+          "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+          "user_version": 1
+        },
+        "pre_existing_state": {
+          "integrity_check": "ok",
+          "ordered_rows_sha256": "7bbc78f919e2ff9cb73cba32f63e5a7a7ad0aeb4704ab16d0301f528ed33e534",
+          "row_count": 6,
+          "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+          "user_version": 1
+        },
+        "pre_existing_state_preserved": true,
+        "returncode": 70,
+        "stderr": "fault_file_class=wal xSync_flags=2 xSync_ordinal=1",
+        "sync_file_class": "wal",
+        "sync_flags": 2,
+        "sync_ordinal": 1,
+        "target_count": 3,
+        "whole_or_absent": true
+      },
+      "checkpoint_return": {
+        "checkpoint_post_state": {
+          "integrity_check": "ok",
+          "ordered_rows_sha256": "17305d8ef9b966b2dddb1463f784ff35e2a1343d59236ad4be0a5d4cdc51d5f9",
+          "row_count": 9,
+          "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+          "user_version": 1
+        },
+        "checkpoint_pre_state": {
+          "integrity_check": "ok",
+          "ordered_rows_sha256": "17305d8ef9b966b2dddb1463f784ff35e2a1343d59236ad4be0a5d4cdc51d5f9",
+          "row_count": 9,
+          "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+          "user_version": 1
+        },
+        "checkpoint_state_equivalent": true,
+        "expected_count": 3,
+        "expected_returncode": 69,
+        "integrity": "ok",
+        "logical_state_preserved": true,
+        "post_existing_state": {
+          "integrity_check": "ok",
+          "ordered_rows_sha256": "7bbc78f919e2ff9cb73cba32f63e5a7a7ad0aeb4704ab16d0301f528ed33e534",
+          "row_count": 6,
+          "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+          "user_version": 1
+        },
+        "pre_existing_state": {
+          "integrity_check": "ok",
+          "ordered_rows_sha256": "7bbc78f919e2ff9cb73cba32f63e5a7a7ad0aeb4704ab16d0301f528ed33e534",
+          "row_count": 6,
+          "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+          "user_version": 1
+        },
+        "pre_existing_state_preserved": true,
+        "returncode": 69,
+        "stderr": "fault_file_class=wal xSync_flags=2 xSync_ordinal=1\nrc=10 error=disk I/O error",
+        "sync_file_class": "wal",
+        "sync_flags": 2,
+        "sync_ordinal": 1,
+        "target_count": 3,
+        "whole_or_absent": true
+      },
+      "commit_crash": {
+        "checkpoint_post_state": null,
+        "checkpoint_pre_state": null,
+        "checkpoint_state_equivalent": null,
+        "expected_count": 0,
+        "expected_returncode": 70,
+        "integrity": "ok",
+        "logical_state_preserved": true,
+        "post_existing_state": {
+          "integrity_check": "ok",
+          "ordered_rows_sha256": "7bbc78f919e2ff9cb73cba32f63e5a7a7ad0aeb4704ab16d0301f528ed33e534",
+          "row_count": 6,
+          "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+          "user_version": 1
+        },
+        "pre_existing_state": {
+          "integrity_check": "ok",
+          "ordered_rows_sha256": "7bbc78f919e2ff9cb73cba32f63e5a7a7ad0aeb4704ab16d0301f528ed33e534",
+          "row_count": 6,
+          "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+          "user_version": 1
+        },
+        "pre_existing_state_preserved": true,
+        "returncode": 70,
+        "stderr": "fault_file_class=wal xSync_flags=2 xSync_ordinal=1",
+        "sync_file_class": "wal",
+        "sync_flags": 2,
+        "sync_ordinal": 1,
+        "target_count": 0,
+        "whole_or_absent": true
+      },
+      "commit_return": {
+        "checkpoint_post_state": null,
+        "checkpoint_pre_state": null,
+        "checkpoint_state_equivalent": null,
+        "expected_count": 0,
+        "expected_returncode": 69,
+        "integrity": "ok",
+        "logical_state_preserved": true,
+        "post_existing_state": {
+          "integrity_check": "ok",
+          "ordered_rows_sha256": "7bbc78f919e2ff9cb73cba32f63e5a7a7ad0aeb4704ab16d0301f528ed33e534",
+          "row_count": 6,
+          "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+          "user_version": 1
+        },
+        "pre_existing_state": {
+          "integrity_check": "ok",
+          "ordered_rows_sha256": "7bbc78f919e2ff9cb73cba32f63e5a7a7ad0aeb4704ab16d0301f528ed33e534",
+          "row_count": 6,
+          "schema_sha256": "c61b2554e3337ebe570058598a90749175c4a44bccc87f3f1c46eed284692954",
+          "user_version": 1
+        },
+        "pre_existing_state_preserved": true,
+        "returncode": 69,
+        "stderr": "fault_file_class=wal xSync_flags=2 xSync_ordinal=1\nrc=10 error=disk I/O error",
+        "sync_file_class": "wal",
+        "sync_flags": 2,
+        "sync_ordinal": 1,
+        "target_count": 0,
+        "whole_or_absent": true
+      }
+    },
+    "status": "PASSED"
+  },
+  "migration": {
+    "integrity": "ok",
+    "logical_data_unchanged": true,
+    "rejected_before_mutation": true,
+    "schema_unchanged": true,
+    "user_version_unchanged": true
+  },
+  "status": "PASSED_BOUNDED_MATRIX",
+  "unqualified_surfaces": [
+    "xWrite",
+    "xTruncate",
+    "WAL-index/shared-memory compound faults",
+    "power-loss realism",
+    "lifetime reliability"
+  ]
+}

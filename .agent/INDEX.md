@@ -28,6 +28,9 @@
 - GitHub Issue #4: https://github.com/SketchOTP/companion/issues/4
 - Pull request #5: https://github.com/SketchOTP/companion/pull/5
 - Reviewed final-hardening head: `fd6f4752ed4fed33c79bbcf8d1da2475724c40ba`
+- Required hardening merge: `bbbe5cedd8f82779e3f3d3c369cfb70ba99e9135`
+- Focused hardening commit: `65ba92299338ae5b0484579cd089fa3bc7d99b28`
+- Final hardening reconciliation: `fd6f4752ed4fed33c79bbcf8d1da2475724c40ba`
 - Architect Review 01 main commit: `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`
 - Architect Review 02 main commit: `0cce392a3706f26530d0bccf00d095c444b18279`
 - Required task branch: `codex/p00-qual-001`
@@ -59,6 +62,8 @@ Codex cannot see the operator–Architect conversation. Do not infer what to rea
 12. Calculate exact SQLite before/after count and state relationships for concurrency, commit faults, and checkpoint faults.
 13. Update the task packet, Notion, PR #5 body, and Issue #4; leave PR and issue open; stop for Architect review.
 
+14. Verify committed result/provenance hashes and re-fetch mutable external state after the final publication.
+
 ## Evidence disposition
 
 - Protected-work handling: accepted.
@@ -68,6 +73,18 @@ Codex cannot see the operator–Architect conversation. Do not infer what to rea
 - SQLite observations: retained as bounded candidate evidence; database not adopted.
 - Godot artifact: accepted `E1_OBSERVED`; no rerun required.
 - Transient systemd-user feasibility: accepted bounded `E3_TARGET_TESTED`; no rerun required.
+
+## Correction disposition pointer
+
+- Architect Review 01 (`9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`) found the original IPC, JCS, serial-reader, migration, and restore evidence insufficient.
+- Corrected packet now contains actual multi-process socket traffic and kernel credentials, oracle-backed canonicalization vectors, release-build sustained parity, synchronized SQLite overlap, migration preflight, full backup equivalence, induced page-limit failure, and adapted deterministic VFS faults.
+- Corrected evidence is target-tested only; publication commit `07d2bda94c341e72e5aa974f32a99b45b7c806fa` is on the existing branch. No dependency, mechanism, Phase 01 transition, or product capability is adopted. PR #5 and Issue #4 remain open.
+- Final live Research Evidence Register requery returned 55 rows, including Evidence 54 (`pidfd_getfd(2)`) and Evidence 55 (SQLite I/O/crash/concurrency methods); no material discrepancy remains.
+
+## Qualification disposition pointer
+
+- Packet result: corrected Python/Rust/JCS and direct-care IPC evidence are `E3_TARGET_TESTED`; Godot provenance is retained `E1_OBSERVED`; corrected SQLite matrix is `E3_TARGET_TESTED` but remains a non-adopted candidate pending review; transient systemd-user supervision is retained `E3_TARGET_TESTED`.
+- Architect decision point: Rust candidate, Candidate 2 IPC experiment, Godot artifact disposition, SQLite fault-injection follow-up, and systemd-user direction.
 
 ## Protected-work rule
 

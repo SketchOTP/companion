@@ -199,3 +199,42 @@ Historical entries are append-only after adoption.
 - Existing Notion report and parent directive exact-SHA update/re-fetch: `PASSED`.
 - GitHub Issue #3 correction comment: `5605575746`; issue re-fetched `OPEN` with seven comments.
 - Status: `CODEX CORRECTION SUBMITTED — ARCHITECT RE-REVIEW PENDING`; no self-acceptance or downstream authority created.
+
+## COMPANION-P00-QUAL-001 — Foundation technology and trust qualification
+
+- Issued: 2026-09-09 America/New_York by Architect; GitHub Issue #4; required branch `codex/p00-qual-001`.
+- Status: `CODEX RESULT PREPARED — PUBLICATION / INDEPENDENT REVIEW PENDING`.
+- Scope: synthetic Python/Rust toolchain shells, direct-care IPC threat experiments, official Godot 4.7.2 artifact identification, exact SQLite local matrix, and transient user-supervision probes only.
+- Protected work: operator-owned uncommitted primary `.gitignore` and `AGENTS.md` paths excluded; secondary local-ext4 checkout required.
+- Result boundary: no product implementation, dependency adoption, Godot project, media, personal data, live safety behavior, persistent services, Phase 01 opening, or self-acceptance.
+- Material partial: SQLite deterministic during-commit/checkpoint kill injection remains blocked without an intrusive fault VFS or equivalent later authority.
+
+### Architect Review 01 — 2026-09-09
+
+- Status: `CONTINUE — FOCUSED CORRECTIONS REQUIRED`; review commit `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`.
+- Accepted for retention: protected-work handling, weak pathname injection, Godot artifact/version evidence, transient systemd probes, exact SQLite identity/basic observations, and the selected-fixture Python/Rust timing.
+- Rejected as qualification evidence: the prior in-process Candidate 1/2 IPC call path, ordinary serializer-as-JCS claims, serial reader checks, guard-only migration check, and count-only restore comparison.
+- Required continuation: actual four-process `SOCK_SEQPACKET`/`SCM_CREDENTIALS` harness with `pidfd_getfd` result; oracle/reference JCS vectors and full shell parity/resource measurements; true SQLite overlap, pre-mutation migration rejection, full backup equivalence, disk/I/O atomicity, and deterministic VFS fault points.
+- PR #5 remains open/draft/unmerged and Issue #4 remains open. No dependency, Roadmap Phase 01 transition, security/safety capability, or product implementation is authorized.
+
+### Correction cycle 01 — Codex submission published
+
+- Corrected scripts and task records were published on `codex/p00-qual-001` in `07d2bda94c341e72e5aa974f32a99b45b7c806fa`, from the normal merge of `origin/main` review commit `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`.
+- Corrected target evidence is `E3_TARGET_TESTED` for IPC/JCS/toolchain and bounded SQLite fault/concurrency surfaces; Godot/systemd evidence is retained at `E1_OBSERVED`/`E3_TARGET_TESTED`.
+
+## COMPANION-P00-QUAL-001 — Architect Review 02 final hardening
+
+The final hardening directive required committed sanitized result/provenance
+records and assertion-driven validation. It also required accurate supervisor
+endpoint ownership, complete Python/Rust/oracle profile parity, and strict
+SQLite concurrency/migration/restore/fault verdicts. Queue overflow is
+deferred to Phase 01. No dependency, implementation mechanism, Phase 01
+transition, or product capability is adopted.
+- Final live Research Evidence Register requery returned 55 rows; Evidence 54 (`pidfd_getfd(2)`) and Evidence 55 (SQLite I/O/crash/concurrency methods) were verified and incorporated.
+- Independent Architect review is required; Codex does not self-accept.
+
+### Architect Review 03 — narrow evidence-binding correction (2026-09-09)
+
+- Current authority is `.agent/tasks/active/COMPANION-P00-QUAL-001/ARCHITECT_REVIEW_03.md`; review commit `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2` was merged normally as `1997e01`.
+- Scope is limited to provenance/result binding, fail-closed IPC evidence labels and assertions, exact JCS/toolchain claim alignment, and SQLite before/after state derivation. Accepted Godot and systemd work is retained without rerun.
+- No dependency, mechanism, Phase 01 transition, product implementation, security certification, reliability claim, safety efficacy, or product capability is adopted. PR #5 and Issue #4 remain open.

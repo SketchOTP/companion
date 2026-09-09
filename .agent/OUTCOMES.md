@@ -417,3 +417,68 @@ The directive is complete, its task packet is archived, and the next work must a
 - GitHub Issue #3 comment `5605575746` and open-state re-fetch: `PASSED`.
 - One reconciliation commit is authorized to preserve these publication facts; final SHA/remote equality are reported in the canonical result.
 - Architect acceptance: `NOT RUN`; Architecture v1.0, Phase 01, dependencies, milestone work, and product implementation remain closed.
+
+## COMPANION-P00-QUAL-001 — Foundation technology and trust qualification prepared
+
+- Date: 2026-09-09 America/New_York.
+- Verdict: `PARTIAL_FOR_ARCHITECT_REVIEW`.
+- Retrieval confidence: `ADEQUATE`.
+- Protected primary Graft paths: untouched and uncommitted by this task; all qualification work occurred on clean local-ext4 branch `codex/p00-qual-001` from `fb4d4750182bae765e8366265d6cfb1ee36e105d`.
+- Toolchain: E3 synthetic frozen parity passed for CPython 3.12.3 and isolated Rust 1.98.1; evidence-backed recommendation is Rust candidate only, not adoption.
+- IPC: E3 weak same-user pathname injection succeeded as expected; Candidate 2 private seqpacket/generation/capability/nondumpable probe passed its bounded attacks. It is a recommendation only.
+- Godot: E1 official 4.7.2 standard asset digest matched and non-GUI version returned `4.7.2.stable.official.ed1daf0bf`; no project/renderer/window ran.
+- SQLite: exact 3.53.4 source ID and published sqlite3.c SHA3 matched; bounded WAL/atomicity/backup/restore/fault checks were E3 partial. Deterministic during-commit/checkpoint kill coverage is `BLOCKED`, so SQLite is not eligible for adoption.
+- Supervision: E3 transient systemd-user probes passed despite unrelated degraded-manager noise; no persistent service was created.
+- Product, safety, reliability, security-certification, dependency, and Phase 01 claims: `NOT ESTABLISHED / NOT AUTHORIZED`.
+
+### Submission publication
+
+- Task branch commits published: `c6c8141a28186b4b30ad438c7f504fce9602f070`, `9668cad9b1c1062f0b4c322784fe53f5c52eaad3`, and reconciliation `db136f60c6548718caa809ef06ec4fd71873e612`.
+- Pull request: `#5`, target `main`, `OPEN` and unmerged; Issue #4 remains `OPEN` with Codex submission comment `5608260248`.
+- Required Notion coder report and parent directive publication: `PASSED`; the report records a submission pending independent Architect review, not acceptance.
+- Final PR/remote-equality and Notion post-write re-fetch after the reconciliation commit: `PASSED`.
+
+## COMPANION-P00-QUAL-001 — Architect Review 01 correction submission
+
+### Scope and disposition
+
+- Status: `CORRECTION SUBMITTED — INDEPENDENT ARCHITECT REVIEW REQUIRED`.
+- The review's invalid IPC/JCS/SQLite claims are retained as historical failures; they are not upgraded by this entry.
+- Architecture v1.0 remains adopted and unchanged. Roadmap Phase 01 remains closed. No dependency, product source, safety runtime, security capability, or reliability claim was self-approved.
+
+### Corrected evidence
+
+- Toolchain/JCS: maintained `canonical@5.0.0` oracle vectors, decoded escaped-duplicate rejection, UTF-16 non-BMP ordering, Python/Rust canonical-byte agreement, persistent stream parity, release Rust build, and 12×32 warm measurements passed (`E3_TARGET_TESTED`).
+
+## COMPANION-P00-QUAL-001 — Architect Review 02 hardening result
+
+The earlier package-name line above is retained as historical output. The
+superseding result uses `canonicalize@5.0.0`, runs all claimed bounded profile
+vectors through Python, release Rust, and the Node oracle, and compares
+framing, rejection reasons, idempotency, logs and shutdown. The real
+multi-process IPC and strict SQLite matrix now fail closed and are recorded in
+the committed sanitized result bundle. Evidence remains candidate-only;
+Architecture v1.0 is unchanged, Phase 01 is closed, and adoption is none.
+- IPC: actual supervisor/producer/care/sibling processes exchanged sequenced packets; kernel credentials, generations, HMAC rotation, restart/replay, stale channel/capability, descriptor, and exact `pidfd_getfd` (`EPERM`) probes passed within exclusions (`E3_TARGET_TESTED`).
+- SQLite: exact 3.53.4 synchronized overlap, migration preflight, full backup/restore equivalence, induced page-limit failure, and adapted deterministic commit/checkpoint VFS return/crash points passed with integrity and whole-or-absent checks (`E3_TARGET_TESTED` bounded; adoption remains blocked).
+- Godot 4.7.2 artifact provenance (`E1`) and transient systemd-user probes (`E3`) were retained without rerun.
+
+### Authority reconciliation
+
+- Final live evidence-register requery returned 55 rows, including Evidence 54 (`pidfd_getfd(2)`) and Evidence 55 (SQLite I/O/crash/concurrency methods); no material discrepancy remains.
+- PR #5 and Issue #4 remain open; publication commit and post-push re-fetch are pending.
+
+### Correction publication
+
+- Focused correction commit: `07d2bda94c341e72e5aa974f32a99b45b7c806fa`; normal push to `origin/codex/p00-qual-001`: `PASSED`.
+- Pull request #5: `OPEN / DRAFT / UNMERGED`; Issue #4: `OPEN` after correction comments.
+- Notion coder report and parent directive were updated and re-fetched with the correction commit and 45/55 live ledger counts: `PASSED`.
+- Architect acceptance: `NOT RUN`; no downstream authority created.
+
+## COMPANION-P00-QUAL-001 — Architect Review 03 narrow evidence-binding correction
+
+- Date: 2026-09-09 America/New_York; review merge `1997e01` from `origin/main` `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2`.
+- Sanitized summaries are regenerated from runner output. Provenance records honest date-only UTC precision, exact `canonicalize@5.0.0` npm integrity, fixture/result SHA-256 values, and final evidence-commit ancestry.
+- IPC fields are labeled `RUNTIME_OBSERVED`, `KERNEL_OBSERVED`, or `CODE_INSPECTED`; outage semantics use `normal_coverage_claimed=false`; stale/restart/old-channel/capability and descriptor outcomes are asserted fail-closed.
+- SQLite derives exact before/during/after reader counts, multi-row fault atomicity, pre-existing-state preservation, checkpoint full-state equality, and VFS exit/file-class/flags/ordinal assertions.
+- Evidence remains bounded `E3_TARGET_TESTED` candidate evidence (Godot retained `E1_OBSERVED`, systemd retained `E3_TARGET_TESTED`). Architecture v1.0 remains adopted; dependencies, Phase 01, and product implementation remain closed; Architect acceptance is pending.

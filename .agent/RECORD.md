@@ -270,3 +270,79 @@ Continue the same directive from `c36525ae5e1bb478baf679cacc1a5f2fd22020c8` for 
 ### Consequence
 
 The corrected packet may be submitted for independent re-review. Architecture v1.0, Roadmap Phase 01, dependencies, cross-phase milestone work, product implementation, and product capability remain closed; Issue #3 remains open.
+
+## COMPANION-PLAN-005 — Foundation qualification evidence prepared
+
+### Context
+
+Architecture v1.0 adoption added implementation gates for authoritative-service toolchain selection, direct-care producer authentication, exact Godot provenance, exact SQLite qualification, and user-level supervision.
+
+### Event
+
+Codex completed the bounded synthetic qualification in a clean local-ext4 secondary worktree. The weak same-user AF_UNIX baseline was defeated by an actual same-user injection. Rust 1.98.1, a private-channel capability candidate, official Godot 4.7.2 artifact metadata, SQLite 3.53.4 source identity, and transient systemd-user probes were evaluated without product work.
+
+### Consequence
+
+The Architect must decide whether to adopt any toolchain/IPC/Godot/supervision recommendation. SQLite remains blocked because deterministic kill placement during commit/checkpoint was not safely available under the directive. Architecture v1.0 stays adopted; Phase 01 and all dependency/product authority remain closed.
+
+## COMPANION-PLAN-006 — Qualification submission published for Architect review
+
+### Context
+
+The bounded qualification packet was ready on a clean local-ext4/NVMe task worktree while the primary SSHFS worktree continued to contain protected operator-owned Graft edits.
+
+### Event
+
+Codex pushed `codex/p00-qual-001` with commits `c6c8141a28186b4b30ad438c7f504fce9602f070`, `9668cad9b1c1062f0b4c322784fe53f5c52eaad3`, and reconciliation `db136f60c6548718caa809ef06ec4fd71873e612`, opened PR #5 to `main`, updated and re-fetched the required Notion coder report and parent directive, and posted GitHub Issue #4 comment `5608260248`. PR #5 and Issue #4 remain open.
+
+### Consequence
+
+This is a submission for independent Architect review, not acceptance. The existing recommendations remain nonadopted; SQLite has the recorded fault/concurrency gaps. Architecture v1.0 remains adopted; Roadmap Phase 01, dependencies, product implementation, and product-capability claims remain closed.
+
+## COMPANION-PLAN-007 — Qualification correction cycle submitted for review
+
+### Context
+
+Architect Review 01 (`9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`) found that
+the prior IPC candidate harness was in-process, serializer output was not
+RFC 8785 evidence, SQLite reader/migration/restore checks were insufficient,
+and the resulting claims exceeded the executed tests.
+
+### Event
+
+Codex prepared a focused correction on the existing `codex/p00-qual-001`
+branch. It adds actual four-process socket traffic with kernel credentials and
+generation/capability rotation, oracle-backed canonicalization vectors and
+release-build parity/resource measurements, synchronized SQLite reader/writer
+overlap, migration rejection before mutation, full backup equivalence, induced
+page-limit failure, and deterministic adapted VFS commit/checkpoint faults.
+
+### Consequence
+
+Corrected work remains a provisional submission for independent Architect
+review. Rust, Candidate 2 IPC, SQLite 3.53.4, Godot 4.7.2, and systemd are
+candidates/recommendations only. Architecture v1.0 remains adopted; Roadmap
+Phase 01, dependencies, product implementation, and product capability remain
+closed.
+
+## 2026-09-09 — Architect Review 02 final evidence hardening
+
+The required normal merge from current `origin/main` was performed in the
+secondary worktree. Final hardening adds committed sanitized result/provenance
+JSON, a fail-closed validator, accurate IPC supervisor ownership and strict
+cross-language/SQLite assertions. The prior failed claims remain historical.
+PR #5 and Issue #4 remain open; no dependency, Phase 01 transition, or
+product capability is adopted.
+
+## 2026-09-09 — Architect Review 03 evidence-binding continuation
+
+The Architect continued `COMPANION-P00-QUAL-001` for one narrow correction.
+Review commit `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2` was merged normally as
+`1997e01`. The correction binds sanitized result hashes, fixture hash, exact
+oracle registry identity, and final Git ancestry; separates IPC runtime/kernel
+observations from code inspection; and derives JCS/toolchain and SQLite
+summaries from runner outcomes and complete state comparisons.
+
+The result remains provisional for independent Architect review. Architecture
+v1.0 remains adopted and unchanged; Roadmap Phase 01, dependency/mechanism
+adoption, product implementation, and capability claims remain closed.

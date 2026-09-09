@@ -1,6 +1,30 @@
 # COMPANION-P00-QUAL-001 — Execution Plan
 
-Status: `PENDING CODEX EXECUTION`
+## Correction cycle 01 plan/result
+
+The Architect Review 01 correction was executed as a focused continuation:
+
+1. Preserve the accepted Godot and systemd evidence and the protected primary
+   worktree; do not rerun unchanged work.
+2. Replace the invalid in-process IPC exercise with a four-process socket,
+   credential, generation, restart, stale-channel/capability, sibling, and
+   pidfd harness.
+3. Add a maintained RFC 8785 oracle/vector check and bring Python/Rust shells
+   to persistent multi-message semantic parity with release-build CPU/RSS
+   measurements.
+4. Replace serial SQLite observations with synchronized reader/writer overlap,
+   real migration preflight rejection, full backup/restore equivalence, an
+   induced page-limit failure, and an adapted deterministic VFS fault matrix.
+5. Preserve every earlier failed attempt as historical evidence; update packet
+   and append-only `.agent` records; re-fetch mutable authority before
+   publication.
+
+Correction execution result: steps 2–4 are target-tested in private retained
+   results; SQLite's exact build/configuration remains a bounded candidate, not
+   an adopted dependency. Publication and independent Architect review remain
+   pending.
+
+Status: `EXECUTED — RESULTS PENDING INDEPENDENT ARCHITECT REVIEW`
 
 1. Preserve the operator's protected Graft changes and create a clean secondary worktree/branch.
 2. Reconstruct live Notion, GitHub, Architecture v1.0, ADR-38 through ADR-45, evidence, risk, and open-decision authority.
@@ -16,3 +40,26 @@ Status: `PENDING CODEX EXECUTION`
 12. Push the task branch, open a PR to `main`, publish/re-fetch the Notion report, update Issue #4, and stop for Architect review.
 
 A failed workstream is reported, not hidden. Independent safe workstreams may continue unless their assumptions depend on the failure.
+
+Execution result: steps 1–10 completed within the bounded synthetic scope. SQLite commit/checkpoint deterministic-fault subtests remain blocked, so step 11 records a partial storage result. Publication/PR steps remain pending final scope validation and coherent task-branch commits.
+
+## Architect Review 02 final hardening supersession
+
+The prior step-11 limitation is retained as history. The authorized correction
+added strict assertions, committed sanitized results/provenance, and a
+fail-closed validator. Queue-overflow qualification is deferred to Phase 01.
+The bounded evidence remains candidate-only; publication is limited to the
+existing draft PR #5 and no adoption or Phase 01 opening is implied.
+
+## Architect Review 03 narrow evidence-binding plan
+
+1. Merge the review commit normally (completed as `1997e01`) and preserve
+   protected primary Graft work.
+2. Regenerate sanitized JCS/toolchain, IPC, and SQLite summaries from runner
+   output; remove unsupported claims and label inspected versus observed data.
+3. Recompute result/fixture hashes, record exact npm integrity and honest
+   timestamp precision, validate Git ancestry, and retain a tamper-negative.
+4. Update append-only state, the active handoff, PR #5, Issue #4, and Notion;
+   bind the final evidence SHA in one permitted reconciliation commit.
+
+Status: `IN PROGRESS — NARROW EVIDENCE-BINDING CORRECTION`.

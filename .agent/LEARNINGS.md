@@ -169,3 +169,112 @@ Persistence approval requires exact source identity, binding, compile options, s
 ### Recheck trigger
 
 Every dependency/toolchain/runtime upgrade and every exact-build qualification record.
+
+## COMPANION-L013 — Same-UID pathname sockets are not a producer-authorization boundary
+
+### Learning
+
+A private mode-0600 AF_UNIX pathname socket accepted a structurally valid synthetic message from an unrelated same-user process. UID equality and message-declared producer identity therefore do not satisfy the adopted direct-care safety-ingress gate.
+
+### Why it matters
+
+Direct care ingress needs a supervisor-controlled private channel plus generation-bound capability/process controls, and must be target-tested before implementation.
+
+### Recheck trigger
+
+Any change to supervisor, OS identity, confinement, producer lifecycle, socket topology, or care authorization contract.
+
+## COMPANION-L014 — Exact SQLite identity is necessary but not sufficient
+
+### Learning
+
+SQLite 3.53.4 source identity and bounded local WAL/backup tests can be reproduced, while deterministic kill placement inside commit/checkpoint remains unqualified without an intrusive fault mechanism.
+
+### Why it matters
+
+An exact release and several green tests cannot silently become persistence adoption; incomplete fault coverage is a material blocker rather than a tolerated gap.
+
+### Recheck trigger
+
+Before any persistence adoption, binding selection, fault-VFS authorization, or change in SQLite release/build/topology.
+
+## COMPANION-L015 — Qualification claims require actual process boundaries
+
+### Learning
+
+Calling a care function from a single process does not qualify producer-to-care
+IPC, descriptor ownership, kernel credentials, generation binding, restart
+revocation, or same-user isolation. The correction required independent
+supervisor, producer, care, and sibling processes exchanging real packets.
+
+### Why it matters
+
+Process identity and channel controls are properties of the live kernel/process
+graph, not of an in-process mock. Exact syscall errors such as `pidfd_getfd`
+`EPERM` must be retained as observed results rather than normalized to pass.
+
+### Recheck trigger
+
+Every direct-care ingress, supervisor, capability, descriptor, restart, or
+same-user threat qualification.
+
+## COMPANION-L016 — Canonicalization requires an oracle and edge vectors
+
+### Learning
+
+Sorted JSON output is not RFC 8785. Decoded duplicate names, UTF-16 property
+ordering, non-BMP keys, number rendering, Unicode validity, and control
+escaping require a maintained implementation or independently validated oracle
+and retained vectors.
+
+### Why it matters
+
+Cross-language digest/replay agreement can be false on ASCII-only fixtures even
+when implementations diverge on canonical bytes.
+
+### Recheck trigger
+
+Every event digest, schema/parser, language comparison, replay, or signature
+decision.
+
+## COMPANION-L017 — Storage fault evidence must prove post-reopen state
+
+### Learning
+
+Serial reader checks, guard errors, and row-count-only restores cannot qualify
+SQLite atomicity. The corrected matrix overlaps independent readers with a
+writer, rejects incompatible migration before mutation, compares schema and
+ordered logical digests, and reopens after deterministic VFS failures.
+
+### Why it matters
+
+Returned errors alone do not prove whether a transaction partially committed;
+integrity and whole-or-absent logical state after reopen are required.
+
+### Recheck trigger
+
+Every exact database/build/topology, migration, backup/restore, disk/I/O fault,
+or crash-consistency decision.
+
+## COMPANION-L — Committed evidence must be executable and fail closed
+
+Qualification summaries are insufficient when a green process exit can coexist
+with a false security, parity, or atomicity boolean. Commit sanitized result
+records, provenance, and a validator whose exit status is derived from every
+acceptance assertion. Preserve failed historical attempts, but make the
+current result unambiguous and machine-checkable.
+
+## COMPANION-L-001 — Evidence binding must be independent of self-attestation
+
+Result files are not evidence merely because a validator reads their booleans.
+Recompute manifest and fixture hashes, bind the checked-out evidence commit
+through Git ancestry, generate validation output rather than consuming it, and
+retain an explicit tamper-negative test. Date-only precision is more honest
+than fabricated midnight timestamps when exact execution times were not kept.
+
+## COMPANION-L-002 — Summaries preserve measured versus inspected facts
+
+Process-boundary summaries label runtime and kernel observations separately from
+code-inspected ownership facts. SQLite summaries derive claims from independent
+before/after state and fixed expected counts rather than observed values or
+hand-curated booleans.

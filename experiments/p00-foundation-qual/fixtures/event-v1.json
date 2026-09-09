@@ -1,0 +1,19 @@
+{
+  "authority_class": "qualification",
+  "boot_id": "boot-qualification-a",
+  "causation_id": "cause-0001",
+  "canonicalization_version": "JCS-RFC8785-v1",
+  "correlation_id": "correlation-0001",
+  "digest_version": "sha-256-jcs-event-v1",
+  "event_sequence": "1",
+  "message_id": "message-0001",
+  "monotonic_ns": "1000000",
+  "payload": {"fixed_point_delta": 25, "unit_scale": 100},
+  "privacy_class": "synthetic",
+  "producer": "qualification-producer",
+  "producer_version": "v1",
+  "schema_uri": "companion://qualification/event",
+  "schema_version": "1.0",
+  "utc_observed": "2026-09-09T00:00:00.000000Z",
+  "utc_uncertainty_us": 1000
+}

@@ -25,6 +25,9 @@ Bind the final-hardening qualification evidence to exact provenance and observed
 - Original verified pre-directive baseline: `4cfb0d5d62cd85737f88cd151d250ccf292a7e6d`
 - Task-packet publication: `f8fc3149fcf039d2cec468aa8c3a37acdaf620d9`
 - Reviewed final-hardening head: `fd6f4752ed4fed33c79bbcf8d1da2475724c40ba`
+- Required hardening merge: `bbbe5cedd8f82779e3f3d3c369cfb70ba99e9135`
+- Focused hardening commit: `65ba92299338ae5b0484579cd089fa3bc7d99b28`
+- Final hardening reconciliation: `fd6f4752ed4fed33c79bbcf8d1da2475724c40ba`
 - Architect Review 01 commit: `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`
 - Architect Review 02 commit: `0cce392a3706f26530d0bccf00d095c444b18279`
 - Architect Review 03 repository authority: `.agent/tasks/active/COMPANION-P00-QUAL-001/ARCHITECT_REVIEW_03.md`
@@ -74,6 +77,22 @@ No Rust, IPC mechanism, SQLite, systemd supervisor, canonicalization package, Go
 
 Counts are snapshots. Codex must query live Notion before publication.
 
+## Correction cycle state
+
+- Architect Review 01: `CONTINUE — FOCUSED CORRECTIONS REQUIRED` (main `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`).
+- The original Candidate 1/2 IPC, JCS, serial-reader, migration-guard, and count-only restore claims remain historical limitations and are not reused as corrected evidence.
+- Corrected real-process IPC, oracle-backed JCS/profile parity, synchronized SQLite overlap, migration rejection, full backup equivalence, induced page-limit failure, and adapted VFS fault points are target-tested in the secondary worktree; submitted in `07d2bda94c341e72e5aa974f32a99b45b7c806fa`.
+- Final live evidence-register requery returned 55 rows, including Evidence 54 (`pidfd_getfd(2)`) and Evidence 55 (SQLite I/O/crash/concurrency methods); no material authority discrepancy remains.
+- PR #5 and Issue #4 remain open; no merge, adoption, Phase 01 opening, or product capability is authorized.
+
 ## Next review point
 
 Codex merges current `origin/main` normally into the existing `codex/p00-qual-001` branch, performs only the evidence-binding correction defined by `ARCHITECT_REVIEW_03.md`, updates draft PR #5, Notion, and Issue #4, leaves the PR and issue open, and stops for independent Architect review.
+The prior hardening and reconciliation commits remain historical. This cycle is limited to one narrow evidence-binding correction and at most one publication-reconciliation commit; no merge of PR #5 or adoption follows.
+
+## Review 03 correction status
+
+- Required review merge: `1997e01` (normal merge of `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2`).
+- Committed result bundle is being regenerated from sanitized runner output; current pre-publication result hashes are recorded in `results/provenance.json`.
+- Validator now recomputes result and fixture SHA-256 values, avoids circular validation input, and supports final evidence-commit ancestry binding. The exact evidence commit remains pending until the narrow correction commit is created, followed by one allowed reconciliation commit.
+- IPC and SQLite summaries are derived from fail-closed assertions and explicit evidence classes/state digests. Unsupported JCS claims are removed; queue overflow remains deferred.
