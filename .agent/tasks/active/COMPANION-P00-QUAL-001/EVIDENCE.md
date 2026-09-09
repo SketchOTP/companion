@@ -37,14 +37,14 @@ toolchains remain private local qualification state. No dependency, Phase 01
 transition, product source, safety runtime, or product capability was
 self-approved. Architecture v1.0 remains adopted and unchanged.
 
-### Live authority count discrepancy
+### Live authority re-fetch
 
-The Architect correction states that the Research Evidence Register now has 55
-rows. The live Notion query performed for this correction returned 53 rows
-(40 Grade A, 11 Grade B, 2 Grade C), with Evidence 47–53 present and no
-materially available 54/55 rows. This mismatch is recorded rather than
-inventing records; the correction does not rely on unseen evidence. A final
-re-fetch is required before publication evidence is closed.
+The final live Notion query returned 45 Architecture Decision Ledger rows and
+55 Research Evidence Register rows. Evidence 54 is the official Linux
+`pidfd_getfd(2)` record; Evidence 55 is the official SQLite I/O-error,
+crash/power-loss, and concurrency-testing record. Both were materially
+available and included in this correction. No authority-count discrepancy
+remains.
 
 ### Correction command receipts
 

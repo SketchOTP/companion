@@ -18,7 +18,7 @@
 
 - Current stage: Planning Phase 02 — Roadmap Phase 00
 - Architecture v1.0: `ADOPTED`
-- Active coder directive: `COMPANION-P00-QUAL-001 — CORRECTION SUBMISSION; INDEPENDENT REVIEW PENDING`
+- Active coder directive: `COMPANION-P00-QUAL-001 — CORRECTION SUBMITTED; INDEPENDENT REVIEW PENDING`
 - Active packet: `.agent/tasks/active/COMPANION-P00-QUAL-001/`
 - Full execution directive: `.agent/tasks/active/COMPANION-P00-QUAL-001/CODEX_FULL_DIRECTIVE.md`
 - GitHub Issue #4: https://github.com/SketchOTP/companion/issues/4
@@ -62,8 +62,8 @@ Codex cannot see the operator–Architect conversation. Do not infer what to rea
 
 - Architect Review 01 (`9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`) found the original IPC, JCS, serial-reader, migration, and restore evidence insufficient.
 - Corrected packet now contains actual multi-process socket traffic and kernel credentials, oracle-backed canonicalization vectors, release-build sustained parity, synchronized SQLite overlap, migration preflight, full backup equivalence, induced page-limit failure, and adapted deterministic VFS faults.
-- Corrected evidence is target-tested only; no dependency, mechanism, Phase 01 transition, or product capability is adopted. PR #5 and Issue #4 remain open.
-- Live Research Evidence Register returned 53 rows despite review text stating 55; preserve as an explicit reconciliation discrepancy.
+- Corrected evidence is target-tested only; publication commit `07d2bda94c341e72e5aa974f32a99b45b7c806fa` is on the existing branch. No dependency, mechanism, Phase 01 transition, or product capability is adopted. PR #5 and Issue #4 remain open.
+- Final live Research Evidence Register requery returned 55 rows, including Evidence 54 (`pidfd_getfd(2)`) and Evidence 55 (SQLite I/O/crash/concurrency methods); no material discrepancy remains.
 
 ## Qualification disposition pointer
 

@@ -455,5 +455,12 @@ The directive is complete, its task packet is archived, and the next work must a
 
 ### Authority reconciliation
 
-- Final live evidence-register requery must be recorded before publication. The current query returned 53 rows while the review text states 55; this discrepancy is explicit and unresolved, with no invented rows.
+- Final live evidence-register requery returned 55 rows, including Evidence 54 (`pidfd_getfd(2)`) and Evidence 55 (SQLite I/O/crash/concurrency methods); no material discrepancy remains.
 - PR #5 and Issue #4 remain open; publication commit and post-push re-fetch are pending.
+
+### Correction publication
+
+- Focused correction commit: `07d2bda94c341e72e5aa974f32a99b45b7c806fa`; normal push to `origin/codex/p00-qual-001`: `PASSED`.
+- Pull request #5: `OPEN / DRAFT / UNMERGED`; Issue #4: `OPEN` after correction comments.
+- Notion coder report and parent directive were updated and re-fetched with the correction commit and 45/55 live ledger counts: `PASSED`.
+- Architect acceptance: `NOT RUN`; no downstream authority created.

@@ -4,6 +4,11 @@
 
 Status: `CORRECTION SUBMITTED — INDEPENDENT ARCHITECT REVIEW REQUIRED`
 
+Focused correction commit: `07d2bda94c341e72e5aa974f32a99b45b7c806fa`; pushed
+normally to `origin/codex/p00-qual-001`. PR #5 is OPEN/DRAFT/UNMERGED and
+Issue #4 is OPEN. The Notion report and parent directive were updated and
+re-fetched after publication. Architect acceptance remains NOT RUN.
+
 This focused correction supersedes the invalid portions of the first result
 without erasing them. The IPC harness now uses separate supervisor, producer,
 care, and same-user sibling processes with real `AF_UNIX SOCK_SEQPACKET`

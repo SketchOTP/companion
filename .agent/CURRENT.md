@@ -19,7 +19,7 @@ Produce target-host synthetic evidence and decision recommendations for the foun
 ## Active directive
 
 - Directive: `COMPANION-P00-QUAL-001`
-- Status: `CODEX CORRECTION SUBMISSION IN PREPARATION — INDEPENDENT REVIEW PENDING`
+- Status: `CODEX CORRECTION SUBMITTED — INDEPENDENT REVIEW PENDING`
 - Verified pre-directive baseline: `4cfb0d5d62cd85737f88cd151d250ccf292a7e6d`
 - Task-packet publication: `f8fc3149fcf039d2cec468aa8c3a37acdaf620d9`
 - Notion directive: https://app.notion.com/p/3d6833cb27ff815e90e8de161e6de185
@@ -62,8 +62,8 @@ Counts are snapshots. Codex must query live Notion.
 
 - Architect Review 01: `CONTINUE — FOCUSED CORRECTIONS REQUIRED` (main `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`).
 - The original Candidate 1/2 IPC, JCS, serial-reader, migration-guard, and count-only restore claims remain historical limitations and are not reused as corrected evidence.
-- Corrected real-process IPC, oracle-backed JCS/profile parity, synchronized SQLite overlap, migration rejection, full backup equivalence, induced page-limit failure, and adapted VFS fault points are target-tested in the secondary worktree.
-- Live evidence-register requery returned 53 rows while the Architect review states 55; no unavailable rows were invented. This discrepancy remains explicit in final publication evidence.
+- Corrected real-process IPC, oracle-backed JCS/profile parity, synchronized SQLite overlap, migration rejection, full backup equivalence, induced page-limit failure, and adapted VFS fault points are target-tested in the secondary worktree; submitted in `07d2bda94c341e72e5aa974f32a99b45b7c806fa`.
+- Final live evidence-register requery returned 55 rows, including Evidence 54 (`pidfd_getfd(2)`) and Evidence 55 (SQLite I/O/crash/concurrency methods); no material authority discrepancy remains.
 - PR #5 and Issue #4 remain open; no merge, adoption, Phase 01 opening, or product capability is authorized.
 
 ## Next review point

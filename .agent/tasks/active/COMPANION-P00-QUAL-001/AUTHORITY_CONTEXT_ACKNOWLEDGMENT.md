@@ -9,12 +9,10 @@ historical and not accepted as current evidence. The corrected work is limited
 to the existing qualification branch/worktree and does not alter the protected
 primary Graft files.
 
-The live ledger re-query returned 45 ADR rows and 53 Research Evidence rows.
-The review text says the evidence register now has 55 rows, but rows 54–55
-were not materially available from the live database response. This is recorded
-as an authority-count discrepancy; no records are invented and no product
-direction depends on the missing rows. A final re-fetch is required before
-publication evidence is closed.
+The live ledger re-query returned 45 ADR rows and 55 Research Evidence rows.
+Evidence 54 (Linux `pidfd_getfd(2)`) and Evidence 55 (SQLite official I/O,
+crash, power-loss, and concurrency testing methods) were fetched and included
+in the correction context. No material authority discrepancy remains.
 
 Correction execution remains authorized only for the bounded target tests:
 real process-boundary IPC, oracle-backed canonicalization/profile parity,

@@ -217,8 +217,9 @@ Historical entries are append-only after adoption.
 - Required continuation: actual four-process `SOCK_SEQPACKET`/`SCM_CREDENTIALS` harness with `pidfd_getfd` result; oracle/reference JCS vectors and full shell parity/resource measurements; true SQLite overlap, pre-mutation migration rejection, full backup equivalence, disk/I/O atomicity, and deterministic VFS fault points.
 - PR #5 remains open/draft/unmerged and Issue #4 remains open. No dependency, Roadmap Phase 01 transition, security/safety capability, or product implementation is authorized.
 
-### Correction cycle 01 — Codex submission in preparation
+### Correction cycle 01 — Codex submission published
 
-- Corrected scripts and task records are being prepared on `codex/p00-qual-001` from the normal merge of `origin/main` review commit `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`.
+- Corrected scripts and task records were published on `codex/p00-qual-001` in `07d2bda94c341e72e5aa974f32a99b45b7c806fa`, from the normal merge of `origin/main` review commit `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`.
 - Corrected target evidence is `E3_TARGET_TESTED` for IPC/JCS/toolchain and bounded SQLite fault/concurrency surfaces; Godot/systemd evidence is retained at `E1_OBSERVED`/`E3_TARGET_TESTED`.
+- Final live Research Evidence Register requery returned 55 rows; Evidence 54 (`pidfd_getfd(2)`) and Evidence 55 (SQLite I/O/crash/concurrency methods) were verified and incorporated.
 - Independent Architect review is required; Codex does not self-accept.
