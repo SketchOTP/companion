@@ -4,7 +4,7 @@
 
 Planning Phase 02 — Master Delivery Roadmap remains active.
 
-Roadmap Phase 00 — Planning and Product Contract remains active. The canonical ingest, Linux environment inventory, and Operator Decision Packet 01 are complete. `COMPANION-P00-ARCH-001` is the active bounded directive. Product implementation remains closed.
+Roadmap Phase 00 — Planning and Product Contract remains active. The canonical ingest, Linux environment inventory, and Operator Decision Packet 01 are complete. `COMPANION-P00-ARCH-001` has a complete Codex planning result prepared for independent Architect review. Product implementation remains closed.
 
 ## Current objective
 
@@ -13,7 +13,7 @@ Produce a decision-ready Architecture v1.0 package and first vertical-slice cont
 ## Active directive
 
 - Directive: `COMPANION-P00-ARCH-001`
-- Status: `ISSUED — ACTIVE; FULL DIRECTIVE AND CONTEXT ACKNOWLEDGMENT REQUIRED`
+- Status: `CODEX RESULT COMPLETE — ARCHITECT REVIEW PENDING`
 - Verified task baseline: `db33d8a597f79a01e569482dc00583dcf50249f9`
 - Directive publication commit: `704325baa95e490710441a468625d2e74f9a343c`
 - Context-bridge commit: `1b43815cea804958f49b8b44463192bce2bf09dd`
@@ -27,19 +27,17 @@ Produce a decision-ready Architecture v1.0 package and first vertical-slice cont
 - Acceptance authority: Architect
 - Product implementation authorization: `CLOSED`
 
-## Mandatory execution order
+## Completed execution gate
 
 Codex cannot see the operator–Architect ChatGPT conversation. All actionable context must be reconstructed from canonical Notion, GitHub, and the active packet.
 
-Before substantive architecture work, Codex must:
+Codex completed the required sequence:
 
-1. Read `.agent/tasks/active/COMPANION-P00-ARCH-001/CODEX_FULL_DIRECTIVE.md` in full.
-2. Read `.agent/tasks/active/COMPANION-P00-ARCH-001/AUTHORITY_CONTEXT_BRIDGE.md`.
-3. Fetch every exact live Notion/GitHub authority named in the full directive and bridge, including both databases and both approved visual references.
-4. Complete `.agent/tasks/active/COMPANION-P00-ARCH-001/AUTHORITY_CONTEXT_ACKNOWLEDGMENT.md` in Codex's own words.
-5. Stop if any material decision, count, status, or boundary conflicts with live authority, or if confidence is below `ADEQUATE`.
-6. If the preflight passes, continue directly through the complete Architecture v1.0 planning packet without waiting for another instruction.
-7. Publish the complete report, leave Issue #3 open, and stop for independent Architect review.
+1. Read the full directive and bridge.
+2. Re-fetched every named live Notion/GitHub authority, both databases, and both approved visual references.
+3. Completed `AUTHORITY_CONTEXT_ACKNOWLEDGMENT.md` with `ADEQUATE` confidence and no material contradiction.
+4. Completed all Architecture v1.0 proposal, boundary, RQ, vertical-slice, dependency/rights, threat/claims, repository/release, experiment, traceability, evidence, and handoff artifacts.
+5. Preserved the planning-only boundary and stopped for independent Architect review.
 
 No conversation-only statement has authority. The full directive is an execution map; live Notion remains authoritative for project meaning.
 
@@ -90,6 +88,10 @@ The architecture directive may recommend a disposition, bounded default, experim
 
 No product source, Godot project or execution, sprite production, dependency installation or approval, package manifest, CI workflow, deployment, database implementation, model/weight/data/voice download, media capture/playback, benchmark, biometric enrollment, notification integration, safety runtime, architecture self-approval, Phase 01, or product-capability claim is authorized.
 
+## Codex recommendation summary
+
+Recommend a local-first event-sourced modular core with consequence-driven process isolation: one companion truth owner, an independent deterministic care authority, and nonauthoritative sensor/model/Godot/notification/operations adapters. The first proposed slice is a restartable remembered care interaction plus a synthetic shadow-help incident. No dependency is approved and all remaining RQs retain explicit operator/experiment gates.
+
 ## Next review point
 
-Codex publishes the complete planning packet, including the completed context acknowledgment, Notion report, result commit, and Issue #3 handoff. The Architect independently reviews comprehension, recommendation, traceability, rights, risks, and repository scope before architecture adoption or implementation authority.
+The Architect independently reviews the complete packet, Notion report, result commits, and Issue #3 handoff before architecture adoption, Roadmap Phase 00 completion, Phase 01, dependency selection, or implementation authority.

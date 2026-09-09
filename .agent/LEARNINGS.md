@@ -99,3 +99,31 @@ Future probes and runtime telemetry should use source-level field allowlists, bo
 ### Recheck trigger
 
 Every machine inventory, sensor diagnostic, support bundle, telemetry design, biometric flow, and privacy review.
+
+## COMPANION-L008 — Isolate by consequence, not by conceptual noun
+
+### Learning
+
+The Companion requires hard process boundaries around caregiving authority, raw sensors, models, rendering, secrets, and external transports, but splitting every tightly coupled organism and memory concept into an independent service would introduce distributed state reconciliation before evidence justifies it.
+
+### Why it matters
+
+A cohesive transactional companion truth owner plus consequence-driven edge isolation preserves deterministic personal continuity and testability while retaining future split seams.
+
+### Recheck trigger
+
+Measured resource isolation, privilege, independent upgrade/restart, database contention, second-device, or multi-owner evidence that makes a further split necessary.
+
+## COMPANION-L009 — Persistence version is a safety and continuity input
+
+### Learning
+
+An embedded database's broad reputation or API is insufficient. Current SQLite documentation records a rare 2026 WAL-reset corruption issue across many releases and requires a fixed exact version/backport for the proposed multi-connection WAL use.
+
+### Why it matters
+
+Persistence selection must capture the exact embedded library, compile options, filesystem semantics, writer topology, checkpoint behavior, and crash/backup/restore evidence. The host binding and SSHFS checkout cannot be accepted by assumption.
+
+### Recheck trigger
+
+Every persistence shortlist, runtime/toolchain lock, database upgrade, writer-topology change, or migration/backup design.

@@ -1,6 +1,6 @@
 # COMPANION-P00-ARCH-001 — Execution Plan
 
-Status: `PENDING CODEX EXECUTION — FULL DIRECTIVE AND CONTEXT ACKNOWLEDGMENT FIRST`
+Status: `EXECUTED — COMPLETE FOR INDEPENDENT ARCHITECT REVIEW`
 
 ## Gate 0 — Exact execution authority
 
@@ -47,3 +47,10 @@ Status: `PENDING CODEX EXECUTION — FULL DIRECTIVE AND CONTEXT ACKNOWLEDGMENT F
 29. Re-fetch Notion and Issue #3, leave the issue open, and return the canonical `CODEX RESULT` for independent Architect review.
 
 Stop rather than infer conversation context, invent operator intent, rely on stale sources, install or execute Godot, implement product code, create assets, install dependencies, add CI, capture/play media, benchmark, alter the host, integrate biometrics/notifications/safety, self-approve architecture, open Phase 01, or claim product capability.
+
+## Execution disposition
+
+- Gates 0–2: `PASSED`; retrieval confidence `ADEQUATE`; no material contradiction.
+- Architecture planning steps 14–22: `PASSED`; recommendations remain proposals.
+- Validation/publication steps 23–29: recorded in `EVIDENCE.md` and `HANDOFF.md`.
+- Deviations: none from scope; no product/runtime work performed.

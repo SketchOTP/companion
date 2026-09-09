@@ -2,6 +2,29 @@
 
 Historical entries are append-only after adoption.
 
+## COMPANION-P00-ARCH-001-CODEX-COMPLETION — Architecture proposal prepared
+
+- Date: 2026-09-09 America/New_York
+- Verdict: `COMPLETE_FOR_ARCHITECT_REVIEW`
+- Retrieval confidence: `ADEQUATE`
+- Architect acceptance: `NOT ASSIGNED`
+- Product implementation authorization: `CLOSED`
+
+### Work performed
+
+- Reconstructed the complete live directive source map, all 37 ADRs, all 46 evidence records, exact risks/RQs, accepted environment, GitHub issue/comments, repository state/history, and both approved visual references.
+- Compared two credible local topologies and recommended a cohesive event-sourced companion core with separately persisted deterministic care authority and isolated device/model/renderer/transport/operations adapters.
+- Defined one writer for every state/authority class, typed/versioned Unix-socket contracts, local XDG persistence, startup/recovery/degradation, update/migration/backup/restore seams, and no-default-network boundaries.
+- Defined all remaining RQ dispositions without resolution, a measurable remembered-interaction plus shadow-help first slice, candidate-only dependency/rights matrix, privacy/threat/Kentucky/federal claims model, repository/CI/test/release plan, and rewrite-risk-ordered experiments.
+
+### Evidence and boundary
+
+- Authority reconstruction: `E2_REPRODUCED`.
+- Semantic planning crosswalk: `E3_TARGET_TESTED` for documentation only.
+- Runtime/product evidence: `NOT APPLICABLE / NOT CREATED`.
+- No product source, Godot project/execution, sprites, dependency/manifests, CI/deployment, database implementation, model/data/voice, media capture/playback, benchmark/host change, biometric, notification, or safety runtime was introduced.
+- Roadmap Phase 00 remains active; Architecture v1.0, Phase 01, dependencies, and product implementation remain pending Architect authority.
+
 ## COMPANION-AUTHORITY-BOOTSTRAP-001 — Directive COMPANION-AUTHORITY-BOOTSTRAP-001
 
 - Date: 2026-09-08 America/New_York

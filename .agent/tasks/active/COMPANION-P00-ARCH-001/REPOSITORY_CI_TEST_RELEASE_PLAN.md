@@ -1,5 +1,108 @@
 # Repository, CI, Test, and Release Foundation Plan
 
-Status: `PENDING CODER EXECUTION`
+Status: `COMPLETE — PROPOSED ONLY; NO SCAFFOLD, MANIFEST, OR WORKFLOW CREATED`
 
-Propose top-level module boundaries, authored/generated/runtime-data separation, reproducible environment, branch/commit/review rules, test layers, CI matrix, artifact retention, migrations, release signing, SBOM/model-BOM/provenance outputs, and clean-clone acceptance. Do not create implementation or workflows.
+## Proposed source tree
+
+```text
+/
+├── AGENTS.md
+├── .agent/                  # Authority state and task evidence
+├── .agents/                 # repository skills/instructions
+├── .authority/
+├── apps/
+│   └── godot-body/          # Godot presentation only
+├── services/
+│   ├── companion-core/
+│   ├── care-core/
+│   └── ops/
+├── adapters/
+│   ├── sensors/
+│   ├── models/
+│   └── notifications/
+├── contracts/               # JSON Schemas, examples, compatibility fixtures
+├── policies/                # reviewed care policy source; no secrets
+├── assets/
+│   ├── source/              # authored MON_FRAME_V1 source
+│   └── manifests/           # asset provenance/rights; generated atlases excluded
+├── migrations/              # immutable per-store migrations and fixtures
+├── tests/
+│   ├── unit/
+│   ├── contract/
+│   ├── integration/
+│   ├── fault/
+│   ├── privacy-security/
+│   ├── golden/
+│   └── acceptance/
+├── tools/                   # project-owned build/validation helpers
+├── docs/
+└── release/                 # source templates for BOM/provenance; outputs excluded
+```
+
+This is a proposed boundary map, not authorization to create it.
+
+## Authored, generated, and runtime separation
+
+- Git tracks authored source, schemas, policies, migrations, fixtures, tests, asset source/manifests, and environment locks.
+- Generated code, Godot imports, atlases, build/export outputs, coverage, BOMs, attestations, caches, and test results go to deterministic build directories or immutable release storage, not mixed with source.
+- Runtime data uses local XDG directories; never repository/SSHFS. Tests use per-run local temporary roots with explicit fixtures and teardown.
+- Secrets, credentials, personal data, biometric templates, real contacts, raw media, and private backups are never committed or placed in CI artifacts.
+
+## Reproducible environment
+
+- Pin Godot editor/export-template digest, language toolchain, OS/container image digest where appropriate, all direct/transitive dependencies, schema dialects, policy versions, and build tools.
+- Resolve from locked, allowlisted sources; verify hashes/signatures before use; record offline cache provenance.
+- Generate a human-readable version manifest and machine BOM. Clean builds must not depend on mutable user/global state.
+- A developer setup script may diagnose prerequisites but cannot silently install/change host software.
+
+## Branch, commit, and review rules
+
+- Protected `main`; short-lived `codex/*` or feature branches; no force push.
+- One directive/result lineage per coherent change; conventional, reviewable commits; Authority state updated with implementation evidence.
+- Required independent review for architecture, care policy, privacy/security, migrations, dependency/rights, model/data/voice/assets, and release claims.
+- Generated artifacts are rebuilt, not hand-edited. Failed tests/evidence remain append-only.
+- CODEOWNERS or equivalent should require care/security/privacy and asset-rights review once roles exist.
+
+## Test layers
+
+| Layer | Required scope |
+|---|---|
+| Static | format/lint/type/schema/policy validation; secrets/private-data/forbidden-path scan; license headers |
+| Unit/property | deterministic organism, memory projection, policy transitions, idempotency, time and boundary values |
+| Contract | every IPC producer/consumer, schema-major rejection, additive compatibility, peer authorization |
+| Persistence | migration, replay hash, crash/checkpoint, disk-full/read-only, backup/restore, corrupted-copy fail-closed |
+| Integration | process graph with synthetic adapters; startup/shutdown/restart/degradation; no shared writer |
+| Godot | import/asset metadata, intent playback, window/display/focus/scaling, renderer fallback |
+| Privacy/security | egress deny, log redaction, filesystem/socket modes, capability denial, threat fixtures, dependency scans |
+| Safety | deterministic scenario replay, false/missed/replay/media/fallback/ack states in simulation/shadow only |
+| Resource/endurance | latency quantiles, per-process resource series, queue/store growth, leak/soak, suspend/resume |
+| Acceptance | exact vertical-slice contract and end-goal/ADR/risk traceability; Architect visual and semantic review |
+
+## Proposed CI matrix
+
+No CI exists or is authorized yet. When authorized:
+
+- fast presubmit on supported Linux: static, unit, property, contract, secret/privacy scan, deterministic replay;
+- clean pinned Linux build: locked dependency restore, build, SBOM/license/provenance, zero untracked generated source;
+- integration job: synthetic process graph, fault injection, persistence/backup/migration;
+- Godot 4.7.2 job: headless import/schema plus display-capable self-hosted target-host tests separately;
+- scheduled security/dependency/rights drift review and bounded endurance; never label queued/skipped target-host work as pass.
+
+Camera/audio, GPU/display, suspend, power/noise, and actual host service tests cannot be proven by generic hosted CI. They require privacy-safe target-host directives and retained measurements.
+
+## Artifacts and retention
+
+- Presubmit: bounded logs/JUnit/schema reports retained long enough for review; no private payload.
+- Accepted release candidate: source commit, build inputs, binary/assets, checksums/signatures, migrations, schemas/policies, test/evidence index, SPDX or CycloneDX BOM with separate model/data/voice/asset/service fields, vulnerability/license report, and SLSA 1.2-compatible provenance.
+- Safety qualification and migration/restore/fault evidence is immutable and retention-governed. Raw test media is not retained unless licensed, synthetic, necessary, and explicitly authorized.
+
+## Migration/release
+
+- Every store schema has monotonic version, compatibility window, forward migration, preflight, consistent backup, resumption journal, and rollback/recovery procedure.
+- Release candidates are built from clean reviewed commits, reproduce from declared inputs, sign artifacts/manifests, verify before install, stage separately, run compatibility/health checks, and retain last-known-good rollback.
+- Code, policy, model, data, voice, asset, plugin, and service changes are independently visible; a code-only version cannot hide a model/policy change.
+- Claims are generated from a reviewed capability/evidence matrix, not feature presence.
+
+## Clean-clone acceptance
+
+A fresh isolated checkout with only documented prerequisites must: verify locks/signatures; build without network after the declared restore stage; leave the checkout clean except documented ignored outputs; run all non-hardware tests; generate reproducible hashes or documented non-determinism; emit BOM/provenance/license reports; reject missing/unlocked inputs; and contain no personal/global-machine dependency. Target-host tests and Architect acceptance remain separate.

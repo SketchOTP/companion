@@ -2,6 +2,24 @@
 
 Historical entries are append-only after adoption.
 
+## COMPANION-P00-ARCH-001 — Architecture v1.0 Options and First Vertical-Slice Contract
+
+- Issued: 2026-09-09 America/New_York
+- Issuer: Architect
+- Status: `CODEX RESULT COMPLETE — ARCHITECT REVIEW PENDING`
+- Roadmap relationship: Planning Phase 02, Roadmap Phase 00.
+- Starting routing head: `6559cec1beaf27bf958c2b9517b0717f04c83ea9`.
+- Parent directive: https://app.notion.com/p/3d6833cb27ff8183a210e560883d96ab
+- Full directive: https://app.notion.com/p/3d6833cb27ff8109a0b2e216b52bbda0
+- Required report: https://app.notion.com/p/3d6833cb27ff8141837fdaa087841324
+- GitHub Issue #3: https://github.com/SketchOTP/companion/issues/3
+- Objective: produce a decision-ready Architecture v1.0 proposal, process/authority/data boundaries, remaining-RQ dispositions, first integrated vertical-slice contract, dependency/rights matrix, threat/privacy/claims model, repository/CI/test/release foundation, and ordered experiment plan.
+- Gate result: every named live authority, 37 ADRs, 46 evidence records, all risk/RQ records, Issue #3, repository state, and both approved visual references were retrieved/inspected; confidence `ADEQUATE`; no material contradiction.
+- Recommendation: cohesive transactional companion core with isolated care, sensor, model, Godot, notification, and operations processes.
+- Scope: planning/evidence and synchronized governance records only.
+- Prohibited: product/Godot source or execution, assets, dependencies/manifests, CI/deployment, database implementation, models/data/voices, media capture/playback, benchmark/host changes, biometrics, notifications, safety runtime, self-acceptance, Phase 01, and product capability.
+- Acceptance authority: Architect. Codex completion does not adopt the architecture.
+
 ## COMPANION-AUTHORITY-BOOTSTRAP-001 — Install Authority 3.0 governance
 
 - Issued: 2026-09-08 America/New_York
