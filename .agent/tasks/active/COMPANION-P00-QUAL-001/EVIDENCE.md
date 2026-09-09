@@ -33,7 +33,9 @@ Link machine-readable results and summarize passes, failures, blocked cases, tim
 
 ## Scope validation
 
-Pending final changed-path, secret scan, branch, diff, publication, and protected-primary recheck. No product directory or protected root file is part of the task branch.
+Final changed-path and protected-primary rechecks: `PASSED`. The task branch does not modify root `AGENTS.md` or `.gitignore`, and it adds no product directory or live-data integration. `git diff --check`: `PASSED`; task worktree cleanliness after publication reconciliation: pending final remote-equality recheck. The protected primary worktree remains read-only with only its pre-existing Graft edits.
+
+Publication: Notion coder report and parent directive were updated and must be re-fetched after the final reconciliation push; GitHub Issue #4 comment `5608260248` was posted; PR #5 is open and unmerged. No approval was claimed.
 
 Prove protected root files were untouched, only authorized Git paths changed, generated outputs remained outside Git, no product directories or live data integrations were added, `git diff --check` passed, branch history is normal, the task worktree is clean, and issue/PR/Notion publication agrees.
 

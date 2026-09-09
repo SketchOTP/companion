@@ -35,7 +35,7 @@ Do not self-adopt.
 
 ## Repository and publication
 
-Base: `fb4d4750182bae765e8366265d6cfb1ee36e105d`; branch: `codex/p00-qual-001`; task worktree: clean local ext4/NVMe before committed changes. Primary Graft edits remained protected and were never read into this packet. Result commit/PR/Notion/Issue publication are pending final validation.
+Base: `fb4d4750182bae765e8366265d6cfb1ee36e105d`; branch: `codex/p00-qual-001`; qualification commits: `c6c8141a28186b4b30ad438c7f504fce9602f070`, `9668cad9b1c1062f0b4c322784fe53f5c52eaad3`. PR #5 targets `main` and is open/unmerged; Issue #4 is open and contains comment `5608260248`. The required Notion coder report and parent directive were updated; post-write re-fetch and final remote equality remain required after this reconciliation commit. Primary Graft edits remained protected and were never read into this packet.
 
 Record baseline, task branch, commits, PR, issue, changed paths, clean worktree, protected main-worktree status, Notion report, and remote equality.
 

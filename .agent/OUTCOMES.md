@@ -430,3 +430,10 @@ The directive is complete, its task packet is archived, and the next work must a
 - SQLite: exact 3.53.4 source ID and published sqlite3.c SHA3 matched; bounded WAL/atomicity/backup/restore/fault checks were E3 partial. Deterministic during-commit/checkpoint kill coverage is `BLOCKED`, so SQLite is not eligible for adoption.
 - Supervision: E3 transient systemd-user probes passed despite unrelated degraded-manager noise; no persistent service was created.
 - Product, safety, reliability, security-certification, dependency, and Phase 01 claims: `NOT ESTABLISHED / NOT AUTHORIZED`.
+
+### Submission publication
+
+- Task branch commits published: `c6c8141a28186b4b30ad438c7f504fce9602f070` and `9668cad9b1c1062f0b4c322784fe53f5c52eaad3`.
+- Pull request: `#5`, target `main`, `OPEN` and unmerged; Issue #4 remains `OPEN` with Codex submission comment `5608260248`.
+- Required Notion coder report and parent directive publication: `PASSED`; the report records a submission pending independent Architect review, not acceptance.
+- Final PR/remote-equality and Notion post-write re-fetch remain required after the reconciliation commit.

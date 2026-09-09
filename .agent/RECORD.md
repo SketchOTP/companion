@@ -284,3 +284,17 @@ Codex completed the bounded synthetic qualification in a clean local-ext4 second
 ### Consequence
 
 The Architect must decide whether to adopt any toolchain/IPC/Godot/supervision recommendation. SQLite remains blocked because deterministic kill placement during commit/checkpoint was not safely available under the directive. Architecture v1.0 stays adopted; Phase 01 and all dependency/product authority remain closed.
+
+## COMPANION-PLAN-006 — Qualification submission published for Architect review
+
+### Context
+
+The bounded qualification packet was ready on a clean local-ext4/NVMe task worktree while the primary SSHFS worktree continued to contain protected operator-owned Graft edits.
+
+### Event
+
+Codex pushed `codex/p00-qual-001` with commits `c6c8141a28186b4b30ad438c7f504fce9602f070` and `9668cad9b1c1062f0b4c322784fe53f5c52eaad3`, opened PR #5 to `main`, updated the required Notion coder report and parent directive, and posted GitHub Issue #4 comment `5608260248`. PR #5 and Issue #4 remain open.
+
+### Consequence
+
+This is a submission for independent Architect review, not acceptance. The existing recommendations remain nonadopted; SQLite has the recorded fault/concurrency gaps. Architecture v1.0 remains adopted; Roadmap Phase 01, dependencies, product implementation, and product-capability claims remain closed.
