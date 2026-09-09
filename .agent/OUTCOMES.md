@@ -433,7 +433,7 @@ The directive is complete, its task packet is archived, and the next work must a
 
 ### Submission publication
 
-- Task branch commits published: `c6c8141a28186b4b30ad438c7f504fce9602f070` and `9668cad9b1c1062f0b4c322784fe53f5c52eaad3`.
+- Task branch commits published: `c6c8141a28186b4b30ad438c7f504fce9602f070`, `9668cad9b1c1062f0b4c322784fe53f5c52eaad3`, and reconciliation `db136f60c6548718caa809ef06ec4fd71873e612`.
 - Pull request: `#5`, target `main`, `OPEN` and unmerged; Issue #4 remains `OPEN` with Codex submission comment `5608260248`.
 - Required Notion coder report and parent directive publication: `PASSED`; the report records a submission pending independent Architect review, not acceptance.
-- Final PR/remote-equality and Notion post-write re-fetch remain required after the reconciliation commit.
+- Final PR/remote-equality and Notion post-write re-fetch after the reconciliation commit: `PASSED`.

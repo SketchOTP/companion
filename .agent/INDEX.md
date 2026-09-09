@@ -18,7 +18,7 @@
 
 - Current stage: Planning Phase 02 — Roadmap Phase 00
 - Architecture v1.0: `ADOPTED`
-- Active coder directive: `COMPANION-P00-QUAL-001 — CODEX RESULT PREPARED; INDEPENDENT REVIEW PENDING`
+- Active coder directive: `COMPANION-P00-QUAL-001 — CODEX RESULT PUBLISHED; INDEPENDENT REVIEW PENDING`
 - Active packet: `.agent/tasks/active/COMPANION-P00-QUAL-001/`
 - Full execution directive: `.agent/tasks/active/COMPANION-P00-QUAL-001/CODEX_FULL_DIRECTIVE.md`
 - GitHub Issue #4: https://github.com/SketchOTP/companion/issues/4
