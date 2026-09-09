@@ -1,0 +1,40 @@
+{
+  "schema": "companion-p00-qual-results-v1",
+  "git_commit": "PENDING_FOCUSED_HARDENING_COMMIT",
+  "execution_timestamp_utc": "2026-09-09T00:00:00Z",
+  "sanitized_host_class": "Linux x86_64; local ext4/NVMe qualification worktree",
+  "commands": [
+    "python3 experiments/p00-foundation-qual/scripts/jcs_conformance.py",
+    "python3 experiments/p00-foundation-qual/scripts/run_toolchain_measure.py",
+    "python3 experiments/p00-foundation-qual/scripts/ipc_trust_qualification.py --run",
+    "python3 experiments/p00-foundation-qual/scripts/sqlite_matrix.py",
+    "cargo test --manifest-path experiments/p00-foundation-qual/rust/Cargo.toml",
+    "cargo build --release --manifest-path experiments/p00-foundation-qual/rust/Cargo.toml",
+    "python3 experiments/p00-foundation-qual/scripts/validate_results.py"
+  ],
+  "candidate_versions": {
+    "python": "CPython 3.12.3 existing host executable",
+    "rust": "1.98.1 stable isolated qualification toolchain",
+    "node": "v24.20.0 exact runtime for oracle",
+    "oracle": "canonicalize@5.0.0",
+    "sqlite": "3.53.4 exact official amalgamation",
+    "godot_retained": "4.7.2.stable.official.ed1daf0bf"
+  },
+  "source_identities": {
+    "oracle_repository": "https://github.com/erdtman/canonicalize.git",
+    "oracle_tarball_sha256": "5e13234695e05dc1398c84e7bc12aaee7c69a6e23b52325b9cb54f6a307427b0",
+    "sqlite_source_id": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+    "sqlite_published_sha3_256": "67f423e9ebbbdc473cbc4772c872ee6b89f31fde4ed0279a5c25d5f65c043a16",
+    "godot_sha256_retained": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4"
+  },
+  "fixture_hashes": {
+    "event_v1_sha256": "23c5d91539d162bbaa86c804a57e6decbee96d17ae58607fcda85fae10d6eb2b"
+  },
+  "result_file_sha256": {
+    "jcs_toolchain_results.json": "PENDING",
+    "ipc_results.json": "PENDING",
+    "sqlite_results.json": "PENDING",
+    "validation_results.json": "PENDING"
+  },
+  "evidence_ceiling": "E3_TARGET_TESTED bounded engineering evidence; Godot retained E1_OBSERVED and transient supervision retained E3_TARGET_TESTED. No adoption or product/security/safety/reliability claim."
+}

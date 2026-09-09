@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bounded parity, cold/warm, queue and resource measurements; not a product benchmark."""
+"""Bounded parity and resource measurements; not a product benchmark."""
 from __future__ import annotations
 
 import hashlib
@@ -22,15 +22,26 @@ ROUNDS = 12
 WARM_REQUESTS = 32
 
 
+def recv_exact(sock: socket.socket, size: int) -> bytes:
+    data = bytearray()
+    while len(data) < size:
+        chunk = sock.recv(size - len(data))
+        if not chunk:
+            raise RuntimeError("short framed response")
+        data.extend(chunk)
+    return bytes(data)
+
+
+def frame_raw(sock: socket.socket, raw: bytes) -> dict:
+    sock.sendall(struct.pack(">I", len(raw)) + raw)
+    header = recv_exact(sock, 4)
+    size = struct.unpack(">I", header)[0]
+    return json.loads(recv_exact(sock, size))
+
+
 def frame(sock: socket.socket, value: dict) -> dict:
     raw = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
-    sock.sendall(struct.pack(">I", len(raw)) + raw)
-    header = sock.recv(4)
-    size = struct.unpack(">I", header)[0]
-    data = b""
-    while len(data) < size:
-        data += sock.recv(size - len(data))
-    return json.loads(data)
+    return frame_raw(sock, raw)
 
 
 def rss_kib(pid: int) -> int | None:
@@ -46,6 +57,7 @@ def rss_kib(pid: int) -> int | None:
 def run_candidate(name: str, command: list[str], socket_path: Path) -> dict:
     fixture = json.loads(FIXTURE.read_text(encoding="utf-8"))
     cold_self, cold_single, warm_times, rss_samples, responses = [], [], [], [], []
+    behavior = None
     child_cpu = 0.0
     for round_number in range(ROUNDS):
         before = resource.getrusage(resource.RUSAGE_CHILDREN)
@@ -66,6 +78,21 @@ def run_candidate(name: str, command: list[str], socket_path: Path) -> dict:
         started = time.perf_counter_ns()
         responses.append(frame(client, single))
         cold_single.append((time.perf_counter_ns() - started) / 1_000_000)
+        if round_number == 0:
+            duplicate = frame(client, single)
+            unsupported = dict(single); unsupported["schema_version"] = "2.0"
+            unsupported_response = frame(client, unsupported)
+            malformed_response = frame_raw(client, b'{"message_id":"a","message_id":"b"}')
+            client.sendall(struct.pack(">I", 65537))
+            frame_limit_response = json.loads(recv_exact(client, struct.unpack(">I", recv_exact(client, 4))[0]))
+            behavior = {
+                "duplicate_idempotent": duplicate.get("accepted") is True and duplicate.get("duplicate") is True,
+                "unsupported_schema_rejected": unsupported_response.get("accepted") is False and unsupported_response.get("reason") == "schema-major",
+                "decoded_duplicate_rejected": malformed_response.get("accepted") is False and "duplicate-key" in malformed_response.get("reason", ""),
+                "frame_limit_rejected": frame_limit_response.get("accepted") is False and frame_limit_response.get("reason") == "frame-limit",
+                "response_fields": all(key in responses[-1] for key in ("accepted", "duplicate", "digest", "fixed_point_state", "log")),
+                "log_schema": responses[-1].get("log") == "qualification-shell;payload-minimized",
+            }
         for request_number in range(WARM_REQUESTS):
             request = dict(fixture)
             request["message_id"] = f"warm-{round_number}-{request_number}"
@@ -96,6 +123,7 @@ def run_candidate(name: str, command: list[str], socket_path: Path) -> dict:
         "rss_kib_min": min(rss_samples) if rss_samples else None,
         "rss_kib_max": max(rss_samples) if rss_samples else None,
         "responses": responses,
+        "behavior": behavior,
     }
 
 
@@ -111,7 +139,7 @@ def main() -> None:
             "warm_requests_per_round": WARM_REQUESTS,
             "python": run_candidate("python", [sys.executable, str(ROOT / "python" / "qual_shell.py")], root / "python.sock"),
             "rust": run_candidate("rust", [rust], root / "rust.sock"),
-            "queue_overflow_probe": "PASSED in both self-tests; two-item bounded queue is explicit",
+            "queue_overflow_probe": "DEFERRED_PHASE_01 — no service-boundary overflow claim",
         }
     python_responses = results["python"]["responses"]
     rust_responses = results["rust"]["responses"]
@@ -120,6 +148,12 @@ def main() -> None:
         for left, right in zip(python_responses, rust_responses)
     ):
         raise AssertionError("Python/Rust sustained digest mismatch")
+    for candidate in (results["python"], results["rust"]):
+        if not all(candidate["behavior"].values()):
+            raise AssertionError(f"behavioral check failed: {candidate['behavior']}")
+    if results["python"]["behavior"] != results["rust"]["behavior"]:
+        raise AssertionError("Python/Rust behavioral parity mismatch")
+    results["behavioral_parity"] = results["python"]["behavior"]
     output.write_text(json.dumps(results, sort_keys=True, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({name: {key: value for key, value in data.items() if "median" in key or "p95" in key or "cpu" in key or "rss" in key}
                       for name, data in results.items() if isinstance(data, dict) and "warm_median_ms" in data}, sort_keys=True))

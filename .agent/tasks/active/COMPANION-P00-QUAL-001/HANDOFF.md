@@ -71,3 +71,13 @@ Record baseline, task branch, commits, PR, issue, changed paths, clean worktree,
 Architecture v1.0 remains adopted. Roadmap Phase 01, all dependency adoption, ordinary product implementation, media, live safety behavior, and product-capability claims remain pending Architect authority.
 
 Explicitly confirm that Architecture v1.0 remains adopted, while Roadmap Phase 01, dependencies, ordinary product implementation, real media, live safety behavior, and product-capability claims remain pending Architect authority.
+
+## Final hardening handoff
+
+The committed `experiments/p00-foundation-qual/results/` bundle and
+`validate_results.py` now provide the reproducible fail-closed acceptance
+record. Exact package identity is `canonicalize@5.0.0`; queue overflow is
+deferred. IPC and SQLite outcomes are bounded `E3_TARGET_TESTED` candidate
+evidence, Godot remains retained `E1_OBSERVED`, and transient systemd remains
+retained `E3_TARGET_TESTED`. Architecture v1.0 remains adopted, Roadmap Phase
+01 remains closed, and no dependency or product capability is self-approved.

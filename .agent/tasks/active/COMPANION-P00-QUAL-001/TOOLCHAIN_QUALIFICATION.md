@@ -6,7 +6,7 @@ Status: `CORRECTION SUBMITTED — E3 TARGET-TESTED; ARCHITECT REVIEW REQUIRED`
 
 The first submission's ordinary `json.dumps(sort_keys=True)` and
 `serde_json::to_vec` were not treated as RFC 8785 implementations. This
-correction uses the maintained qualification-only `canonical@5.0.0` package as
+correction uses the maintained qualification-only `canonicalize@5.0.0` package as
 an oracle, cached outside Git (tarball SHA-256
 `5e13234695e05dc1398c84e7bc12aaee7c69a6e23b52325b9cb54f6a307427b0`). The
 Python and Rust shells now apply the bounded project profile (recursive UTF-16
@@ -33,6 +33,18 @@ ms, warm 0.128 ms (p95 0.167 ms), CPU 0.731 s, RSS 17,744–17,884 KiB; Rust:
 cold self-test 0.865 ms, cold request 0.078 ms, warm 0.047 ms (p95 0.076 ms),
 CPU 0.029 s, RSS 2,148–2,244 KiB. These are selected synthetic engineering
 measurements, not product performance, reliability, or capacity evidence.
+
+## Final hardening status
+
+Every bounded profile vector (nested objects, arrays, controls, Unicode and
+non-BMP keys) is sent through Python, the release Rust shell, and the exact
+Node oracle. Decoded duplicate names, invalid Unicode, nonfinite values and
+unsupported schema majors are rejected consistently. Service-level framing,
+response fields, rejection reasons, idempotency, logs and shutdown are
+compared. Queue overflow is not claimed and is deferred to Phase 01. The
+committed result bundle and `validate_results.py` are the fail-closed record;
+the recommendation remains `BLOCKED — MORE EVIDENCE REQUIRED` and Rust is a
+candidate, not a selection.
 
 Recommendation remains `BLOCKED — MORE EVIDENCE REQUIRED` for a production
 language decision until the Architect decides whether this bounded oracle and

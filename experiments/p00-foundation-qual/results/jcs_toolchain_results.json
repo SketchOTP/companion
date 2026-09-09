@@ -1,0 +1,62 @@
+{
+  "status": "PASSED",
+  "oracle": {
+    "package": "canonicalize@5.0.0",
+    "license": "Apache-2.0",
+    "node_engine": ">=22",
+    "node_runtime": "v24.20.0",
+    "tarball_sha256": "5e13234695e05dc1398c84e7bc12aaee7c69a6e23b52325b9cb54f6a307427b0",
+    "repository": "https://github.com/erdtman/canonicalize.git",
+    "vectors": 8,
+    "profile_vectors": 5
+  },
+  "conformance": {
+    "python_rust_oracle_bytes": true,
+    "utf16_non_bmp_order": true,
+    "nested_objects_and_arrays": true,
+    "control_characters": true,
+    "unicode_preservation": true,
+    "decoded_duplicate_rejection": true,
+    "escaped_duplicate_rejection": true,
+    "invalid_unicode_rejection": true,
+    "nonfinite_rejection": true,
+    "bounded_integer_profile": true,
+    "schema_major_rejection": true,
+    "altered_digest_detection": true
+  },
+  "behavioral_parity": {
+    "canonical_bytes": true,
+    "digest": true,
+    "response_fields": true,
+    "idempotency": true,
+    "rejection_reasons": true,
+    "framing_errors": true,
+    "controlled_shutdown": true,
+    "log_schema": true,
+    "no_egress": true,
+    "queue_overflow": "DEFERRED_PHASE_01"
+  },
+  "python": {
+    "runtime": "CPython 3.12.3 (existing host executable)",
+    "cold_self_median_ms": 29.5594035,
+    "cold_request_median_ms": 0.359042,
+    "warm_median_ms": 0.126621,
+    "warm_p95_ms": 0.180418,
+    "cpu_seconds": 0.745927,
+    "rss_kib": [17740, 17844]
+  },
+  "rust": {
+    "toolchain": "rustc 1.98.1 stable (isolated qualification cache)",
+    "release_build": true,
+    "tests_passed": 5,
+    "cold_self_median_ms": 0.869051,
+    "cold_request_median_ms": 0.082924,
+    "warm_median_ms": 0.0502225,
+    "warm_p95_ms": 0.072844,
+    "cpu_seconds": 0.031187,
+    "rss_kib": [2120, 2224]
+  },
+  "fixture_sha256": "23c5d91539d162bbaa86c804a57e6decbee96d17ae58607fcda85fae10d6eb2b",
+  "recommendation": "BLOCKED — MORE EVIDENCE REQUIRED",
+  "adoption": "NONE"
+}

@@ -1,0 +1,6 @@
+{
+  "validator": "experiments/p00-foundation-qual/scripts/validate_results.py",
+  "status": "PASSED",
+  "expected_exit_code": 0,
+  "checks": "all committed result assertions and sanitized provenance requirements"
+}

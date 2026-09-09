@@ -12,7 +12,7 @@ historical attempts, not silently upgraded evidence.
 
 The replacement evidence is:
 
-- **Toolchain/JCS — E3_TARGET_TESTED:** maintained `canonical@5.0.0` oracle
+- **Toolchain/JCS — E3_TARGET_TESTED:** maintained `canonicalize@5.0.0` oracle
   (qualification-only, cached outside Git) agreed with Python and Rust on
   eight vectors including escaped duplicate decoded names and non-BMP UTF-16
   ordering; both shells passed persistent multi-message parity and release-Rust
@@ -80,6 +80,18 @@ For every materially used source/artifact record title, owner, release/update da
 All generated outputs are confined to sanitized private local XDG-style qualification state/cache roots. Retained raw machine-readable files include toolchain, IPC, and SQLite attempt/final JSON. Toolchain fixture SHA-256 is `569b94e…b8e5f`; both implementations produced digest `04d5a59a…b3f3e`. No private paths, usernames, hostnames, serials, credentials, media, or personal data are included in committed records.
 
 Record sanitized commands, exact candidate versions, environment variables, local XDG root classes, seeds, fixture hashes, locks, and generated-artifact index. Do not publish usernames, hostnames, private paths, serials, credentials, media, or personal data.
+
+## Architect Review 02 final hardening disposition
+
+The earlier limitations remain historical evidence: Candidate 1/2 were not
+previously IPC-tested, the prior serializer was not JCS proof, SQLite reads
+were serial, migration was only a guard observation, and restore comparison
+was count-only. The hardened scripts now fail closed and the committed
+`results/` bundle is the reproducible sanitized record. The oracle identity is
+`canonicalize@5.0.0` (not `canonical@5.0.0`). Queue overflow is explicitly
+deferred to Roadmap Phase 01 rather than claimed. IPC, JCS/profile parity,
+and the bounded SQLite matrix are `E3_TARGET_TESTED` candidate evidence only;
+no language, IPC mechanism, SQLite build, or package is adopted.
 
 ## Test evidence
 

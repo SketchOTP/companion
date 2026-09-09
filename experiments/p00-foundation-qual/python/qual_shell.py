@@ -173,7 +173,7 @@ def self_test(fixture: Path):
     else: raise AssertionError("accepted unsupported major")
     queue = deque(maxlen=2); queue.extend((b"one", b"two")); overflow = len(queue) == queue.maxlen
     assert overflow
-    print(json.dumps({"self_test":"passed", "digest":first["digest"], "python":sys.version.split()[0], "queue_probe":"passed"}, sort_keys=True))
+    print(json.dumps({"self_test":"passed", "digest":first["digest"], "python":sys.version.split()[0], "queue_profile":"declared_only_deferred"}, sort_keys=True))
 
 def main():
     parser = argparse.ArgumentParser(); parser.add_argument("--self-test", type=Path)

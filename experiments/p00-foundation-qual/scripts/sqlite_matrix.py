@@ -80,9 +80,16 @@ def concurrent_readers(db: Path) -> dict:
     committed = writer.stdout.readline().strip()
     writer.stdin.close(); writer.wait(timeout=3)
     after = [read_once() for _ in range(2)]
+    during_counts = [int(item["stdout"]) for item in readers]
+    after_counts = [int(item["stdout"]) for item in after]
     return {"barrier": barrier, "readers_during_uncommitted_writer": readers,
-            "checkpoint_during_writer": checkpoint, "writer_commit_marker": committed,
-            "readers_after_commit": after, "overlap_proven": ready == "READY" and committed == "COMMITTED"}
+            "readers_during_counts": during_counts, "checkpoint_during_writer": checkpoint,
+            "writer_commit_marker": committed, "readers_after_commit": after,
+            "readers_after_counts": after_counts, "expected_old_count": during_counts[0] if during_counts else None,
+            "expected_new_count": after_counts[0] if after_counts else None,
+            "exact_old_state": bool(during_counts) and all(count == during_counts[0] for count in during_counts),
+            "exact_new_state": bool(after_counts) and all(count == after_counts[0] for count in after_counts),
+            "overlap_proven": ready == "READY" and committed == "COMMITTED"}
 
 
 def incompatible_migration(db: Path) -> dict:
@@ -123,9 +130,11 @@ def diskfull_atomicity(db: Path) -> dict:
     # stopping after SQLITE_FULL; target absence plus page-limit setup is
     # retained as corroborating evidence, never as a generic pass.
     induced_error = attempt["returncode"] != 0 and target_count == 0
+    pre_post_equal = before["ordered_rows_sha256"] == after["ordered_rows_sha256"] and before["schema_sha256"] == after["schema_sha256"] and before["user_version"] == after["user_version"]
     return {"attempt": attempt, "before": before, "after": after, "target_count": target_count,
             "induced_error": induced_error, "integrity_preserved": after["integrity_check"] == "ok",
-            "logical_atomicity_observed": induced_error and target_count == 0}
+            "pre_post_logical_equality": pre_post_equal,
+            "logical_atomicity_observed": induced_error and target_count == 0 and pre_post_equal}
 
 
 def backup_equivalence(db: Path, backup: Path, restored: Path, corrupted: Path) -> dict:
@@ -150,15 +159,25 @@ def fault_matrix(db: Path, runner: Path, root: Path) -> dict:
             copy = root / f"fault-{phase}-{action}.db"
             shutil.copy2(db, copy)
             result = subprocess.run([str(runner), str(copy), phase, action], capture_output=True, text=True)
-            target = "vfs-commit-fault" if phase == "commit" else "vfs-checkpoint-fault"
-            count = int(scalar(copy, f"count(*) FROM events WHERE id='{target}'"))
+            target = "vfs-commit-fault-" if phase == "commit" else "vfs-checkpoint-fault-"
+            count = int(scalar(copy, f"count(*) FROM events WHERE id LIKE '{target}%'"))
+            expected_rc = 69
+            expected_count = 0 if phase == "commit" else 3
+            metadata = {"file_class": None, "flags": None, "ordinal": None}
+            for line in result.stderr.splitlines():
+                if line.startswith("fault_file_class="):
+                    fields = dict(item.split("=", 1) for item in line.split() if "=" in item)
+                    metadata = {"file_class": fields.get("fault_file_class"), "flags": int(fields["xSync_flags"]), "ordinal": int(fields["xSync_ordinal"])}
             outcomes[f"{phase}_{action}"] = {
-                "returncode": result.returncode, "stderr": result.stderr.strip(), "target_count": count,
-                "integrity": integrity(copy), "whole_or_absent": count in {0, 1},
+                "returncode": result.returncode, "expected_returncode": 70 if action == "crash" else expected_rc,
+                "stderr": result.stderr.strip(), "target_count": count, "expected_count": expected_count,
+                "integrity": integrity(copy), "whole_or_absent": count in ({0, 3} if phase == "commit" else {3}),
+                "sync_file_class": metadata["file_class"], "sync_flags": metadata["flags"], "sync_ordinal": metadata["ordinal"],
             }
-    return {"status": "PASSED", "outcomes": outcomes,
-            "all_integrity_ok": all(item["integrity"] == "ok" for item in outcomes.values()),
-            "all_whole_or_absent": all(item["whole_or_absent"] for item in outcomes.values())}
+    all_integrity_ok = all(item["integrity"] == "ok" for item in outcomes.values())
+    all_whole_or_absent = all(item["whole_or_absent"] for item in outcomes.values())
+    return {"status": "PASSED" if all_integrity_ok and all_whole_or_absent and all(item["returncode"] == item["expected_returncode"] for item in outcomes.values()) and all(item["sync_file_class"] and item["sync_ordinal"] == 1 for item in outcomes.values()) else "FAILED",
+            "outcomes": outcomes, "all_integrity_ok": all_integrity_ok, "all_whole_or_absent": all_whole_or_absent}
 
 
 def main() -> None:
@@ -196,6 +215,13 @@ def main() -> None:
         runner = root / "sqlite-fault-runner"
         results["fault_vfs_build"] = build_fault_vfs(runner)
         results["tests"]["deterministic_vfs_faults"] = fault_matrix(db, runner, root)
+    tests = results["tests"]
+    conc = tests["concurrent_reader_writer"]
+    assert conc["overlap_proven"] and conc["exact_old_state"] and conc["exact_new_state"]
+    assert tests["incompatible_migration"]["rejected_before_mutation"]
+    assert tests["diskfull_atomicity"]["logical_atomicity_observed"] and tests["diskfull_atomicity"]["pre_post_logical_equality"]
+    assert tests["backup_restore"]["full_equivalence"] and tests["backup_restore"]["restored"]["integrity_check"] == "ok"
+    assert tests["deterministic_vfs_faults"]["status"] == "PASSED"
     OUT.write_text(json.dumps(results, sort_keys=True, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"artifact": results["artifact"], "concurrency": results["tests"]["concurrent_reader_writer"]["overlap_proven"],
                       "migration": results["tests"]["incompatible_migration"]["rejected_before_mutation"],

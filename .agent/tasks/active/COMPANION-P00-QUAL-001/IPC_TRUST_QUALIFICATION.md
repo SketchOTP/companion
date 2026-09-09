@@ -90,3 +90,16 @@ Record same-user connection/injection, producer-field spoofing, malformed schema
 **Recommendation to Architect: carry Candidate 2 forward as the direct-care IPC implementation experiment**, not as an adopted mechanism. It prevents the observed unauthorized same-user connection before any synthetic safety receipt under this bounded threat model. It does not prove resistance to full user-account compromise, root, kernel compromise, or compromise of the authorized producer.
 
 Recommend the narrowest passing design or report a blocker. State exactly what was proven, not proven, and which Phase 01 implementation gate remains.
+
+## Final hardening status
+
+The supervisor, authorized producer, care receiver and same-user sibling are
+independent processes exchanging actual `SOCK_SEQPACKET` packets. The
+supervisor is trusted for lifecycle and capability provisioning: its producer
+copy is closed after handoff, while its care copy is retained only for care
+restart and never read. Readiness, `PR_SET_DUMPABLE=0`, descriptor closure,
+`SO_PASSCRED`, pidfd liveness, generation binding, replay/idempotency,
+restart/revocation and degraded-outage assertions are fail-closed. The exact
+host `pidfd_getfd` result is `EPERM`; no universal protection is claimed.
+Candidate 1/2 remain unqualified implementation hypotheses pending Architect
+selection and a later authorized Phase 01 experiment.

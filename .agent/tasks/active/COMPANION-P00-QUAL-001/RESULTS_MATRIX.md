@@ -38,6 +38,15 @@ Status: `COMPLETED — SYNTHETIC QUALIFICATION SUMMARY`
 | systemd user supervision | systemd 255 transient units | E3 | Start/stop/exit/restart visibility pass | No persistent/production policy test | system component | Candidate feasible | Yes |
 | direct supervisor comparator | Parent observes child | E1 | Child exit observed | No restart/status lifecycle | stdlib | Inferior evidence surface | No |
 
+## Final hardening evidence bundle
+
+`experiments/p00-foundation-qual/results/` is the committed sanitized result
+and provenance bundle. `scripts/validate_results.py` is an assertion-driven
+gate and must exit nonzero for any unmet expectation. The bundle records
+`canonicalize@5.0.0`, actual multi-process IPC, exact `pidfd_getfd=EPERM`,
+release-build parity, and strict SQLite fault outcomes. It does not adopt a
+dependency, security boundary, supervisor, or product capability.
+
 ## Phase 01 readiness
 
 Language-neutral contracts/fixtures/XDG/logging/test controls are ready only for a later directive. Authoritative-service implementation is blocked on Architect language and IPC decisions. SQLite remains blocked on the missing deterministic commit/checkpoint fault evidence. Godot and systemd have qualification evidence but no adopted dependency/supervisor. The IPC trust and persistence gaps remain capable of forcing architecture change.

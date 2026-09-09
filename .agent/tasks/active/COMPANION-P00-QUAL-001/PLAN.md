@@ -42,3 +42,11 @@ Status: `EXECUTED — RESULTS PENDING INDEPENDENT ARCHITECT REVIEW`
 A failed workstream is reported, not hidden. Independent safe workstreams may continue unless their assumptions depend on the failure.
 
 Execution result: steps 1–10 completed within the bounded synthetic scope. SQLite commit/checkpoint deterministic-fault subtests remain blocked, so step 11 records a partial storage result. Publication/PR steps remain pending final scope validation and coherent task-branch commits.
+
+## Architect Review 02 final hardening supersession
+
+The prior step-11 limitation is retained as history. The authorized correction
+added strict assertions, committed sanitized results/provenance, and a
+fail-closed validator. Queue-overflow qualification is deferred to Phase 01.
+The bounded evidence remains candidate-only; publication is limited to the
+existing draft PR #5 and no adoption or Phase 01 opening is implied.

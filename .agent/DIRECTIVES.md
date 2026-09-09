@@ -221,5 +221,14 @@ Historical entries are append-only after adoption.
 
 - Corrected scripts and task records were published on `codex/p00-qual-001` in `07d2bda94c341e72e5aa974f32a99b45b7c806fa`, from the normal merge of `origin/main` review commit `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`.
 - Corrected target evidence is `E3_TARGET_TESTED` for IPC/JCS/toolchain and bounded SQLite fault/concurrency surfaces; Godot/systemd evidence is retained at `E1_OBSERVED`/`E3_TARGET_TESTED`.
+
+## COMPANION-P00-QUAL-001 — Architect Review 02 final hardening
+
+The final hardening directive required committed sanitized result/provenance
+records and assertion-driven validation. It also required accurate supervisor
+endpoint ownership, complete Python/Rust/oracle profile parity, and strict
+SQLite concurrency/migration/restore/fault verdicts. Queue overflow is
+deferred to Phase 01. No dependency, implementation mechanism, Phase 01
+transition, or product capability is adopted.
 - Final live Research Evidence Register requery returned 55 rows; Evidence 54 (`pidfd_getfd(2)`) and Evidence 55 (SQLite I/O/crash/concurrency methods) were verified and incorporated.
 - Independent Architect review is required; Codex does not self-accept.

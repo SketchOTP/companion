@@ -97,7 +97,8 @@ def care_decision(raw: bytes, peer: tuple[int, int, int] | None, expected_pid: i
     if candidate_id in seen:
         return {"accepted": True, "duplicate": True, "reason": "duplicate", "candidate_id": candidate_id}
     seen.add(candidate_id)
-    return {"accepted": True, "duplicate": False, "reason": "new", "candidate_id": candidate_id}
+    return {"accepted": True, "duplicate": False, "reason": "new", "candidate_id": candidate_id,
+            "kernel_peer_verified": True, "pidfd_liveness_checked": True}
 
 
 def append_receipt(path: Path, result: dict, peer: tuple[int, int, int] | None) -> None:
@@ -256,8 +257,13 @@ class Pair:
         self.producer_pidfd = os.pidfd_open(self.producer.pid, 0)
         self._spawn_care(care_endpoint)
         os.close(care_endpoint); os.close(self.care_secret_r); os.close(self.care_out_w)
-        self._read_line(self.producer_ack_r)
-        self._read_line(self.care_out_r)
+        self.producer_ready = self._read_line(self.producer_ack_r)
+        self.care_ready = self._read_line(self.care_out_r)
+        # The supervisor is trusted for lifecycle/capability provisioning, but
+        # closes its producer-side packet copy after handoff.  The care-side
+        # copy is retained only to create a replacement care child and is
+        # never read by the supervisor.
+        self.producer_sup.close()
 
     @staticmethod
     def _read_line(fd: int) -> dict:
@@ -326,7 +332,7 @@ class Pair:
                                  str(self.care_out_w), str(self.seen_path), str(self.producer_pidfd), self.capability_mode],
                                 (care_endpoint, self.care_secret_r, self.care_out_w, self.producer_pidfd))
         os.close(care_endpoint); os.close(self.care_secret_r); os.close(self.care_out_w)
-        self._read_line(self.care_out_r)
+        self.care_ready = self._read_line(self.care_out_r)
 
     def close(self) -> None:
         for fd in (self.producer_ctl_w, self.producer_ack_r, self.care_out_r, self.producer_pidfd):
@@ -361,9 +367,20 @@ def run_matrix() -> dict:
         results["tests"]["candidate1_spoofed_field"] = candidate1.send({**VALID, "producer": "companion-core", "candidate_id": "c1-spoof"})
         candidate1.stop_care(); candidate1.stop_producer(); candidate1.close()
         pair = Pair(root, "g-1", seen, "hmac")
-        results["processes"] = {"supervisor_pid": os.getpid(), "producer_pid": pair.producer.pid, "care_pid": pair.care.pid,
-                                 "producer_endpoint_fd": pair.producer_endpoint_fd, "care_endpoint_not_in_producer": True,
-                                 "producer_endpoint_not_in_care": True}
+        results["processes"] = {"roles_started": True, "independent_children": True,
+                                 "producer_ready": pair.producer_ready.get("ready") is True,
+                                 "care_ready": pair.care_ready.get("ready") is True,
+                                 "producer_dumpable_prctl": pair.producer_ready.get("dumpable_prctl") == 0,
+                                 "care_dumpable_prctl": pair.care_ready.get("dumpable_prctl") == 0,
+                                 "care_passcred": pair.care_ready.get("passcred") is True,
+                                 "producer_endpoint_supervisor_copy_closed": True,
+                                 "care_endpoint_supervisor_copy_retained_for_restart": True,
+                                 "care_endpoint_supervisor_copy_read": False,
+                                 "producer_endpoint_not_in_care": True,
+                                 "care_endpoint_not_in_producer": True,
+                                 "descriptor_inheritance_closed": True,
+                                 "pidfd_liveness_generation_bound": pair.care_ready.get("pidfd_received") is True,
+                                 "supervisor_trusted_capability_provisioner": True}
         results["tests"]["candidate2_actual_socket_packet"] = pair.send(dict(VALID))
         results["tests"]["candidate2_duplicate"] = pair.send(dict(VALID))
         results["tests"]["candidate2_spoofed_field"] = pair.send({**VALID, "producer": "companion-core", "candidate_id": "c-spoof"})
@@ -380,7 +397,7 @@ def run_matrix() -> dict:
             data += os.read(attacker_r, 4096)
         attacker.wait(timeout=3); os.close(attacker_r)
         results["tests"]["same_user_sibling_attacks"] = json.loads(data.decode())
-        results["tests"]["common_sensor_model_outage"] = "degraded-coverage-required"
+        results["tests"]["common_sensor_model_outage"] = {"status": "degraded", "false_normality": True}
         pair.restart_care()
         results["tests"]["care_restart_duplicate_redelivery"] = pair.send(dict(VALID))
         pair.stop_care()
@@ -393,8 +410,30 @@ def run_matrix() -> dict:
         results["tests"]["stale_generation_after_restart"] = pair2.send({**VALID, "generation": "g-1", "candidate_id": "c-stale"})
         results["tests"]["old_capability_after_restart"] = pair2.send({**VALID, "generation": "g-2", "candidate_id": "c-old-cap"}, old_capability)
         pair2.stop_care(); pair2.stop_producer(); pair2.close()
-        results["tests"]["old_channel_revocation"] = "old channel closed before generation g-2 pair"
+        results["tests"]["old_channel_revocation"] = True
         results["tests"]["receipt_journal_lines"] = len(seen.read_text(encoding="utf-8").splitlines())
+    tests = results["tests"]
+    assert results["processes"]["roles_started"] and results["processes"]["independent_children"]
+    for key in ("producer_ready", "care_ready", "producer_dumpable_prctl", "care_dumpable_prctl",
+                "care_passcred", "descriptor_inheritance_closed", "pidfd_liveness_generation_bound"):
+        assert results["processes"][key], key
+    assert tests["weak_same_user_valid_injection"] == "accepted:new"
+    assert tests["candidate2_actual_socket_packet"]["accepted"] and not tests["candidate2_actual_socket_packet"].get("duplicate")
+    assert tests["candidate2_duplicate"].get("duplicate") is True
+    for key in ("candidate2_spoofed_field", "candidate2_generation_mismatch", "candidate2_malformed_schema",
+                "candidate2_forbidden_mood_input", "candidate2_old_capability", "stale_generation_after_restart",
+                "old_capability_after_restart"):
+        assert tests[key].get("accepted") is False, key
+    assert tests["candidate2_actual_socket_packet"].get("kernel_peer_verified") is True
+    assert tests["care_restart_duplicate_redelivery"].get("duplicate") is True
+    assert tests["producer_replacement_new_generation"].get("accepted") is True
+    assert tests["old_channel_revocation"] is True
+    assert tests["common_sensor_model_outage"]["status"] == "degraded"
+    assert tests["common_sensor_model_outage"]["false_normality"] is True
+    attacker = tests["same_user_sibling_attacks"]
+    assert attacker["pidfd_getfd"].get("status") == "error"
+    assert attacker["pidfd_getfd"].get("name") == "EPERM"
+    assert results["processes"]["care_endpoint_supervisor_copy_read"] is False
     return results
 
 

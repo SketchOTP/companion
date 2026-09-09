@@ -449,6 +449,16 @@ The directive is complete, its task packet is archived, and the next work must a
 ### Corrected evidence
 
 - Toolchain/JCS: maintained `canonical@5.0.0` oracle vectors, decoded escaped-duplicate rejection, UTF-16 non-BMP ordering, Python/Rust canonical-byte agreement, persistent stream parity, release Rust build, and 12×32 warm measurements passed (`E3_TARGET_TESTED`).
+
+## COMPANION-P00-QUAL-001 — Architect Review 02 hardening result
+
+The earlier package-name line above is retained as historical output. The
+superseding result uses `canonicalize@5.0.0`, runs all claimed bounded profile
+vectors through Python, release Rust, and the Node oracle, and compares
+framing, rejection reasons, idempotency, logs and shutdown. The real
+multi-process IPC and strict SQLite matrix now fail closed and are recorded in
+the committed sanitized result bundle. Evidence remains candidate-only;
+Architecture v1.0 is unchanged, Phase 01 is closed, and adoption is none.
 - IPC: actual supervisor/producer/care/sibling processes exchanged sequenced packets; kernel credentials, generations, HMAC rotation, restart/replay, stale channel/capability, descriptor, and exact `pidfd_getfd` (`EPERM`) probes passed within exclusions (`E3_TARGET_TESTED`).
 - SQLite: exact 3.53.4 synchronized overlap, migration preflight, full backup/restore equivalence, induced page-limit failure, and adapted deterministic commit/checkpoint VFS return/crash points passed with integrity and whole-or-absent checks (`E3_TARGET_TESTED` bounded; adoption remains blocked).
 - Godot 4.7.2 artifact provenance (`E1`) and transient systemd-user probes (`E3`) were retained without rerun.

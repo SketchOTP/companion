@@ -324,3 +324,12 @@ review. Rust, Candidate 2 IPC, SQLite 3.53.4, Godot 4.7.2, and systemd are
 candidates/recommendations only. Architecture v1.0 remains adopted; Roadmap
 Phase 01, dependencies, product implementation, and product capability remain
 closed.
+
+## 2026-09-09 — Architect Review 02 final evidence hardening
+
+The required normal merge from current `origin/main` was performed in the
+secondary worktree. Final hardening adds committed sanitized result/provenance
+JSON, a fail-closed validator, accurate IPC supervisor ownership and strict
+cross-language/SQLite assertions. The prior failed claims remain historical.
+PR #5 and Issue #4 remain open; no dependency, Phase 01 transition, or
+product capability is adopted.

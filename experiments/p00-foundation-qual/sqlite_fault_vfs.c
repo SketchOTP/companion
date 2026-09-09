@@ -8,12 +8,16 @@
 typedef struct QualFile {
     sqlite3_file base;
     sqlite3_file *real;
+    int open_flags;
 } QualFile;
 
 static sqlite3_vfs *underlying;
 static int fault_enabled;
 static int fault_crash;
 static int fault_count;
+static int sync_ordinal;
+static int first_sync_flags;
+static char first_sync_file_class[32] = "unknown";
 
 static sqlite3_file *real_file(sqlite3_file *file) {
     return ((QualFile *)file)->real;
@@ -25,7 +29,21 @@ static int qWrite(sqlite3_file *file, const void *buf, int amount, sqlite3_int64
 static int qTruncate(sqlite3_file *file, sqlite3_int64 size) { sqlite3_file *r = real_file(file); return r->pMethods->xTruncate(r, size); }
 static int qSync(sqlite3_file *file, int flags) {
     sqlite3_file *r = real_file(file);
+    QualFile *q = (QualFile *)file;
+    if (fault_enabled) {
+        sync_ordinal++;
+        if (fault_count == 0) {
+            first_sync_flags = flags;
+            if (q->open_flags & SQLITE_OPEN_WAL) snprintf(first_sync_file_class, sizeof(first_sync_file_class), "wal");
+            else if (q->open_flags & SQLITE_OPEN_MAIN_DB) snprintf(first_sync_file_class, sizeof(first_sync_file_class), "main-db");
+            else if (q->open_flags & SQLITE_OPEN_MAIN_JOURNAL) snprintf(first_sync_file_class, sizeof(first_sync_file_class), "main-journal");
+            else if (q->open_flags & SQLITE_OPEN_TEMP_DB) snprintf(first_sync_file_class, sizeof(first_sync_file_class), "temp-db");
+            else snprintf(first_sync_file_class, sizeof(first_sync_file_class), "other");
+        }
+    }
     if (fault_enabled && fault_count++ == 0) {
+        fprintf(stderr, "fault_file_class=%s xSync_flags=%d xSync_ordinal=%d\n", first_sync_file_class, first_sync_flags, sync_ordinal);
+        fflush(stderr);
         if (fault_crash) _exit(70);
         return SQLITE_IOERR_FSYNC;
     }
@@ -54,6 +72,7 @@ static const sqlite3_io_methods methods = {
 static int qOpen(sqlite3_vfs *vfs, const char *name, sqlite3_file *file, int flags, int *out_flags) {
     QualFile *qual = (QualFile *)file;
     qual->real = (sqlite3_file *)((unsigned char *)file + sizeof(QualFile));
+    qual->open_flags = flags;
     int rc = underlying->xOpen(underlying, name, qual->real, flags, out_flags);
     if (rc != SQLITE_OK) return rc;
     qual->base.pMethods = &methods;
@@ -104,11 +123,11 @@ int main(int argc, char **argv) {
     if (rc != SQLITE_OK) return 67;
     rc = exec_sql(db, "PRAGMA journal_mode=WAL; PRAGMA synchronous=FULL;");
     if (rc == SQLITE_OK && strcmp(phase, "commit") == 0) {
-        rc = exec_sql(db, "BEGIN IMMEDIATE; INSERT INTO events(id,payload) VALUES('vfs-commit-fault','synthetic');");
+        rc = exec_sql(db, "BEGIN IMMEDIATE; INSERT INTO events(id,payload) VALUES('vfs-commit-fault-1','synthetic'),('vfs-commit-fault-2','synthetic'),('vfs-commit-fault-3','synthetic');");
         fault_enabled = rc == SQLITE_OK;
         if (rc == SQLITE_OK) rc = exec_sql(db, "COMMIT;");
     } else if (rc == SQLITE_OK && strcmp(phase, "checkpoint") == 0) {
-        rc = exec_sql(db, "BEGIN IMMEDIATE; INSERT INTO events(id,payload) VALUES('vfs-checkpoint-fault','synthetic'); COMMIT;");
+        rc = exec_sql(db, "BEGIN IMMEDIATE; INSERT INTO events(id,payload) VALUES('vfs-checkpoint-fault-1','synthetic'),('vfs-checkpoint-fault-2','synthetic'),('vfs-checkpoint-fault-3','synthetic'); COMMIT;");
         fault_enabled = rc == SQLITE_OK;
         if (rc == SQLITE_OK) rc = exec_sql(db, "PRAGMA wal_checkpoint(TRUNCATE);");
     } else if (rc == SQLITE_OK) {

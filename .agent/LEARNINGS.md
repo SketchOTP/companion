@@ -255,3 +255,11 @@ integrity and whole-or-absent logical state after reopen are required.
 
 Every exact database/build/topology, migration, backup/restore, disk/I/O fault,
 or crash-consistency decision.
+
+## COMPANION-L — Committed evidence must be executable and fail closed
+
+Qualification summaries are insufficient when a green process exit can coexist
+with a false security, parity, or atomicity boolean. Commit sanitized result
+records, provenance, and a validator whose exit status is derived from every
+acceptance assertion. Preserve failed historical attempts, but make the
+current result unambiguous and machine-checkable.

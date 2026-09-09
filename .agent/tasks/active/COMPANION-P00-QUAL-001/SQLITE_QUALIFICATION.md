@@ -86,3 +86,15 @@ Report every pass/fail/block, exact commands, seeds, artifacts, partial observat
 **BLOCKED — MORE EVIDENCE REQUIRED.** 3.53.4 is the exact current non-withdrawn candidate with corroborated source identity, but it must not be adopted until an authorized deterministic commit/checkpoint fault mechanism, more genuinely concurrent reader/writer workloads, and binding-specific identity tests complete.
 
 Recommend the exact candidate/configuration, reject it, or return blocked evidence. Do not adopt a database or extrapolate beyond the tested artifact/configuration.
+
+## Final hardening status
+
+The matrix now asserts synchronized one-writer/two-reader overlap (exact old
+and new counts), pre-mutation incompatible migration rejection, full logical
+and schema backup/restore equivalence, disk-full pre/post equality, expected
+fault-runner exits, integrity after every fault, multi-row commit all-or-none,
+checkpoint preservation, and injected `xSync` file class/flags/ordinal.
+Overall status is derived from these assertions and exits nonzero on failure.
+The exact 3.53.4 artifact remains a non-adopted candidate. Broader xWrite,
+xTruncate, shared-memory compound, realistic power-loss and lifetime tests
+remain explicitly unqualified.

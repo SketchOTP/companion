@@ -37,6 +37,13 @@ def shell_rejects(command: list[str], raw: str) -> bool:
     return result.returncode != 0
 
 
+def profile_event(payload: object, index: int) -> str:
+    event = json.loads((ROOT / "fixtures" / "event-v1.json").read_text(encoding="utf-8"))
+    event["message_id"] = f"jcs-vector-{index}"
+    event["payload"] = {"fixed_point_delta": 25, "unit_scale": 100, "vector": payload}
+    return json.dumps(event, ensure_ascii=False, separators=(",", ":"))
+
+
 def main() -> None:
     vectors = {
         '{"b":1,"a":2}': '{"a":2,"b":1}',
@@ -60,14 +67,22 @@ def main() -> None:
         duplicate_rejected = True
     if not duplicate_rejected:
         raise AssertionError("escaped duplicate accepted")
-    event = json.loads((ROOT / "fixtures" / "event-v1.json").read_text(encoding="utf-8"))
-    event["payload"].update({"𝄞": 1, "a": 2})
-    event_raw = json.dumps(event, ensure_ascii=False, separators=(",", ":"))
-    py = shell_canonical(["python3", str(PYTHON_SHELL)], event_raw)
-    rust = shell_canonical([str(RUST_BINARY)], event_raw)
-    expected_profile = oracle(event_raw)
-    if py != rust or py != expected_profile:
-        raise AssertionError("Python/Rust bounded-profile bytes disagree with JCS oracle")
+    profile_vectors = [
+        {"b": 1, "a": 2},
+        [1, {"nested": "value", "control": "line\n\t"}],
+        {"𝄞": "𝄞", "a": "A", "\U00010000": 3},
+        {"quote": "\\\"", "slash": "/", "control": "\b\f\r"},
+        {"deep": [{"z": 0, "a": 25}, ["x", {"m": 2, "n": 3}]]},
+    ]
+    profile_agreement = []
+    for index, payload in enumerate(profile_vectors):
+        event_raw = profile_event(payload, index)
+        py = shell_canonical(["python3", str(PYTHON_SHELL)], event_raw)
+        rust = shell_canonical([str(RUST_BINARY)], event_raw)
+        expected_profile = oracle(event_raw)
+        if py != rust or py != expected_profile:
+            raise AssertionError(f"profile vector {index} differs across implementations")
+        profile_agreement.append(hashlib.sha256(py.encode()).hexdigest())
     numeric_profile_rejections = {
         raw: shell_rejects(["python3", str(PYTHON_SHELL)], raw)
         and shell_rejects([str(RUST_BINARY)], raw)
@@ -76,8 +91,10 @@ def main() -> None:
     if not all(numeric_profile_rejections.values()):
         raise AssertionError("a non-integer canonical-state number was accepted")
     print(json.dumps({
-        "oracle_package": "canonical@5.0.0",
+        "oracle_package": "canonicalize@5.0.0",
         "oracle_vectors": len(vectors),
+        "profile_vectors": len(profile_vectors),
+        "profile_vector_agreement": profile_agreement,
         "escaped_duplicate_rejected": True,
         "non_bmp_utf16_order_checked": True,
         "numeric_profile_rejections": numeric_profile_rejections,

@@ -1,0 +1,38 @@
+{
+  "status": "PASSED_BOUNDED_CANDIDATE_MATRIX",
+  "roles": ["qualification-supervisor", "authorized-producer", "care-receiver", "same-user-sibling"],
+  "process_boundary": {
+    "four_independent_roles_started": true,
+    "actual_seqpacket_delivery": true,
+    "child_pr_set_dumpable_zero": true,
+    "descriptor_inheritance_closed": true,
+    "producer_supervisor_copy_closed_after_handoff": true,
+    "care_supervisor_copy_retained_only_for_restart": true,
+    "care_supervisor_copy_read": false,
+    "kernel_credentials_verified": true,
+    "pidfd_liveness_and_generation_binding": true,
+    "care_independent_of_companion_database": true
+  },
+  "security_tests": {
+    "weak_same_user_pathname_injection": "accepted:new (baseline insufficient)",
+    "valid_candidate_once": true,
+    "duplicate_idempotent": true,
+    "spoofed_producer_rejected": true,
+    "malformed_rejected": true,
+    "stale_generation_rejected": true,
+    "stale_capability_rejected": true,
+    "forbidden_companion_state_rejected": true,
+    "care_restart_duplicate_redelivery": true,
+    "producer_replacement_new_generation": true,
+    "old_channel_revoked": true,
+    "old_capability_revoked": true,
+    "companion_absent_does_not_block": true,
+    "companion_database_absent_does_not_block": true,
+    "outage_is_degraded_not_normal": true,
+    "same_user_sibling_direct_injection": "not available: anonymous channel",
+    "pidfd_getfd": {"syscall": "pidfd_getfd", "status": "error", "errno": 1, "name": "EPERM"},
+    "proc_fd_duplication": "EACCES"
+  },
+  "threat_ceiling": ["root", "kernel compromise", "full user-account compromise", "fully compromised authorized producer"],
+  "adoption": "NONE — candidate implementation experiment only"
+}

@@ -1,0 +1,51 @@
+{
+  "status": "PASSED_BOUNDED_MATRIX",
+  "artifact": {
+    "version": "3.53.4",
+    "source_id": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+    "sqlite3_c_sha3_256": "67f423e9ebbbdc473cbc4772c872ee6b89f31fde4ed0279a5c25d5f65c043a16",
+    "local_matches_published": true
+  },
+  "concurrency": {
+    "one_writer_two_readers": true,
+    "overlap_barrier": true,
+    "old_state_counts": [5, 5],
+    "new_state_counts": [6, 6],
+    "exact_old_state": true,
+    "exact_new_state": true,
+    "checkpoint_during_writer": true
+  },
+  "migration": {
+    "rejected_before_mutation": true,
+    "schema_unchanged": true,
+    "user_version_unchanged": true,
+    "logical_data_unchanged": true,
+    "integrity": "ok"
+  },
+  "disk_full": {
+    "expected_error": "database or disk is full",
+    "target_count": 0,
+    "pre_post_logical_equality": true,
+    "integrity": "ok"
+  },
+  "backup_restore": {
+    "integrity": true,
+    "schema_digest": true,
+    "user_version": true,
+    "ordered_logical_rows_digest": true,
+    "fresh_directory": true,
+    "corruption_detected": true
+  },
+  "fault_vfs": {
+    "runner_sha256": "a69bef9ae86f00a82ee16b0ce97e16a7c30a5942c0d7cfbe9682c4b554e21e4e",
+    "expected_return_codes": {"return": 69, "crash": 70},
+    "commit_return": {"returncode": 69, "target_count": 0, "integrity": "ok", "whole_or_absent": true, "sync_file_class": "wal", "sync_flags": 2, "sync_ordinal": 1},
+    "commit_crash": {"returncode": 70, "target_count": 0, "integrity": "ok", "whole_or_absent": true, "sync_file_class": "wal", "sync_flags": 2, "sync_ordinal": 1},
+    "checkpoint_return": {"returncode": 69, "target_count": 3, "integrity": "ok", "whole_or_absent": true, "logical_state_preserved": true, "sync_file_class": "wal", "sync_flags": 2, "sync_ordinal": 1},
+    "checkpoint_crash": {"returncode": 70, "target_count": 3, "integrity": "ok", "whole_or_absent": true, "logical_state_preserved": true, "sync_file_class": "wal", "sync_flags": 2, "sync_ordinal": 1},
+    "all_integrity_ok": true,
+    "all_atomicity_assertions": true
+  },
+  "unqualified_surfaces": ["xWrite", "xTruncate", "WAL-index/shared-memory compound faults", "power-loss realism", "lifetime reliability"],
+  "adoption": "NONE"
+}
