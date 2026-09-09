@@ -1,5 +1,13 @@
 # Godot 4.7.2 Artifact Qualification
 
+## Correction-cycle disposition
+
+The Architect accepted the prior source-correlated artifact/version evidence
+at `E1_OBSERVED`; this workstream was not rerun because neither the official
+artifact nor its source changed. No project was created, no editor/window or
+renderer was started, and no dependency was adopted. See the retained result
+below for the exact artifact identity and limitation boundary.
+
 Status: `COMPLETED — E1 OBSERVED ARTIFACT QUALIFICATION`
 
 ## Official provenance

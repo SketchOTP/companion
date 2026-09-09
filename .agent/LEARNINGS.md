@@ -197,3 +197,61 @@ An exact release and several green tests cannot silently become persistence adop
 ### Recheck trigger
 
 Before any persistence adoption, binding selection, fault-VFS authorization, or change in SQLite release/build/topology.
+
+## COMPANION-L015 — Qualification claims require actual process boundaries
+
+### Learning
+
+Calling a care function from a single process does not qualify producer-to-care
+IPC, descriptor ownership, kernel credentials, generation binding, restart
+revocation, or same-user isolation. The correction required independent
+supervisor, producer, care, and sibling processes exchanging real packets.
+
+### Why it matters
+
+Process identity and channel controls are properties of the live kernel/process
+graph, not of an in-process mock. Exact syscall errors such as `pidfd_getfd`
+`EPERM` must be retained as observed results rather than normalized to pass.
+
+### Recheck trigger
+
+Every direct-care ingress, supervisor, capability, descriptor, restart, or
+same-user threat qualification.
+
+## COMPANION-L016 — Canonicalization requires an oracle and edge vectors
+
+### Learning
+
+Sorted JSON output is not RFC 8785. Decoded duplicate names, UTF-16 property
+ordering, non-BMP keys, number rendering, Unicode validity, and control
+escaping require a maintained implementation or independently validated oracle
+and retained vectors.
+
+### Why it matters
+
+Cross-language digest/replay agreement can be false on ASCII-only fixtures even
+when implementations diverge on canonical bytes.
+
+### Recheck trigger
+
+Every event digest, schema/parser, language comparison, replay, or signature
+decision.
+
+## COMPANION-L017 — Storage fault evidence must prove post-reopen state
+
+### Learning
+
+Serial reader checks, guard errors, and row-count-only restores cannot qualify
+SQLite atomicity. The corrected matrix overlaps independent readers with a
+writer, rejects incompatible migration before mutation, compares schema and
+ordered logical digests, and reopens after deterministic VFS failures.
+
+### Why it matters
+
+Returned errors alone do not prove whether a transaction partially committed;
+integrity and whole-or-absent logical state after reopen are required.
+
+### Recheck trigger
+
+Every exact database/build/topology, migration, backup/restore, disk/I/O fault,
+or crash-consistency decision.

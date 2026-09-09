@@ -19,7 +19,7 @@ Produce target-host synthetic evidence and decision recommendations for the foun
 ## Active directive
 
 - Directive: `COMPANION-P00-QUAL-001`
-- Status: `CODEX QUALIFICATION RESULT PUBLISHED — INDEPENDENT REVIEW PENDING`
+- Status: `CODEX CORRECTION SUBMISSION IN PREPARATION — INDEPENDENT REVIEW PENDING`
 - Verified pre-directive baseline: `4cfb0d5d62cd85737f88cd151d250ccf292a7e6d`
 - Task-packet publication: `f8fc3149fcf039d2cec468aa8c3a37acdaf620d9`
 - Notion directive: https://app.notion.com/p/3d6833cb27ff815e90e8de161e6de185
@@ -58,6 +58,14 @@ The directive permits no root/system changes, permanent services, product module
 
 Counts are snapshots. Codex must query live Notion.
 
+## Correction cycle state
+
+- Architect Review 01: `CONTINUE — FOCUSED CORRECTIONS REQUIRED` (main `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`).
+- The original Candidate 1/2 IPC, JCS, serial-reader, migration-guard, and count-only restore claims remain historical limitations and are not reused as corrected evidence.
+- Corrected real-process IPC, oracle-backed JCS/profile parity, synchronized SQLite overlap, migration rejection, full backup equivalence, induced page-limit failure, and adapted VFS fault points are target-tested in the secondary worktree.
+- Live evidence-register requery returned 53 rows while the Architect review states 55; no unavailable rows were invented. This discrepancy remains explicit in final publication evidence.
+- PR #5 and Issue #4 remain open; no merge, adoption, Phase 01 opening, or product capability is authorized.
+
 ## Next review point
 
-Codex has published bounded qualification evidence to unmerged PR #5 (`codex/p00-qual-001`; commits `c6c8141a28186b4b30ad438c7f504fce9602f070`, `9668cad9b1c1062f0b4c322784fe53f5c52eaad3`, and reconciliation `db136f60c6548718caa809ef06ec4fd71873e612`) and updated/re-fetched the required Notion report/directive and GitHub Issue #4. The PR and issue are open pending independent Architect review. SQLite remains partial because deterministic commit/checkpoint kill placement requires an unauthorized intrusive fault VFS; true concurrent reader/writer coverage was also not established. The Architect reviews the Rust, IPC Candidate 2, Godot artifact, SQLite-blocker, and systemd-user recommendations. Architecture v1.0 remains adopted; Phase 01, dependency adoption, and product implementation remain closed.
+Codex has published bounded qualification evidence to unmerged PR #5 (`codex/p00-qual-001`; prior commits remain historical). This correction adds real process-boundary IPC, RFC 8785 oracle/profile conformance, release-build sustained parity, true SQLite overlap/migration/backup/fault evidence, and corrected scope labels. The PR and issue remain open pending independent Architect review. Architecture v1.0 remains adopted; Roadmap Phase 01, dependency adoption, and product implementation remain closed.

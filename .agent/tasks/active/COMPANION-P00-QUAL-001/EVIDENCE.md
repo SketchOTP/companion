@@ -1,5 +1,61 @@
 # Qualification Evidence Record
 
+## Correction cycle 01 — evidence disposition (2026-09-09)
+
+Status: `CORRECTION SUBMITTED — PUBLICATION / INDEPENDENT REVIEW PENDING`
+
+The Architect Review 01 finding is retained: the original Candidate 1/2 IPC
+result never crossed a socket, ordinary JSON serializers did not establish
+JCS, SQLite readers were serial, the migration check was only a guard
+observation, and backup/restore was count-only. Those are failed or limited
+historical attempts, not silently upgraded evidence.
+
+The replacement evidence is:
+
+- **Toolchain/JCS — E3_TARGET_TESTED:** maintained `canonical@5.0.0` oracle
+  (qualification-only, cached outside Git) agreed with Python and Rust on
+  eight vectors including escaped duplicate decoded names and non-BMP UTF-16
+  ordering; both shells passed persistent multi-message parity and release-Rust
+  measurements. Rust remains a candidate only.
+- **IPC — E3_TARGET_TESTED:** four real processes exchanged actual
+  `SOCK_SEQPACKET` packets; care consumed `SCM_CREDENTIALS`, generation, and
+  per-generation HMAC; sibling injection, stale channel/capability, replay,
+  restart, and descriptor probes were exercised. `pidfd_getfd` returned exact
+  `EPERM` on this host. Candidate 2 is not adopted and exclusions remain
+  root/kernel/full-account/authorized-producer compromise.
+- **SQLite — E3_TARGET_TESTED bounded:** exact 3.53.4 passed synchronized
+  reader/writer overlap, migration rejection before mutation, full logical and
+  schema backup equivalence, induced page-limit failure with post-reopen
+  atomicity, and adapted deterministic commit/checkpoint VFS return/crash
+  points. It remains blocked for adoption pending Architect review and any
+  broader evidence required.
+- **Godot — E1_OBSERVED** and **systemd-user — E3_TARGET_TESTED** remain
+  accepted retained evidence; they were not rerun without a material change.
+
+All generated binaries, caches, databases, WAL files, raw measurements, and
+toolchains remain private local qualification state. No dependency, Phase 01
+transition, product source, safety runtime, or product capability was
+self-approved. Architecture v1.0 remains adopted and unchanged.
+
+### Live authority count discrepancy
+
+The Architect correction states that the Research Evidence Register now has 55
+rows. The live Notion query performed for this correction returned 53 rows
+(40 Grade A, 11 Grade B, 2 Grade C), with Evidence 47–53 present and no
+materially available 54/55 rows. This mismatch is recorded rather than
+inventing records; the correction does not rely on unseen evidence. A final
+re-fetch is required before publication evidence is closed.
+
+### Correction command receipts
+
+- `python3 -m py_compile experiments/p00-foundation-qual/python/qual_shell.py experiments/p00-foundation-qual/scripts/*.py`: `PASSED`.
+- Isolated `cargo build --offline --locked --release` and `cargo test --offline --locked`: `PASSED` (0 Rust unit tests; release build used for measurements).
+- `jcs_conformance.py`: `PASSED`; eight oracle vectors, decoded escaped duplicate, non-BMP UTF-16 order, numeric profile rejections, and Python/Rust/oracle agreement.
+- `run_toolchain_measure.py`: `PASSED`; 12 rounds × 32 warm requests, per-index digest parity, cold/warm latency, child CPU, and RSS retained privately.
+- `ipc_trust_qualification.py --run`: `PASSED` bounded process matrix; weak baseline injection accepted as expected insufficiency, Candidate 2 attacks/restarts/stale controls passed, exact `pidfd_getfd=EPERM` retained.
+- `sqlite_matrix.py`: `PASSED` bounded matrix; overlap, migration, page-limit atomicity, backup equivalence, and four adapted VFS fault outcomes passed with integrity/whole-or-absent checks.
+- `git diff --check` and repository scope inspection: `PASSED`; no root `AGENTS.md`/`.gitignore` change in the secondary worktree and no generated qualification output tracked.
+
 Status: `DRAFTED — FINAL SCOPE/PUBLICATION VALIDATION PENDING`
 
 ## Authority reconstruction

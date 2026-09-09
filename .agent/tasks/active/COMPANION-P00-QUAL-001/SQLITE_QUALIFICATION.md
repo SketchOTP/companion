@@ -1,6 +1,59 @@
 # Exact SQLite Qualification
 
-Status: `PARTIAL — E3 BOUNDED MATRIX WITH EXPLICIT FAULT-INJECTION BLOCKERS`
+## Correction cycle 01 — superseding storage result (2026-09-09)
+
+Status: `CORRECTION SUBMITTED — E3 TARGET-TESTED BOUNDED MATRIX; ARCHITECT REVIEW REQUIRED`
+
+The previous result's “concurrent readers” were serial checks, its migration
+test only observed a guard, and its restore check compared row counts. Those
+limitations remain historical below. The corrected matrix uses the exact
+SQLite 3.53.4 amalgamation/CLI and adds synchronized overlap, actual
+pre-mutation migration rejection, full backup equivalence, safe page-limit
+failure, and a qualification-only deterministic VFS wrapper.
+
+Current artifact identity remains exact SQLite 3.53.4 with source ID
+`2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc`;
+the published `sqlite3.c` SHA3-256 and local hash match. The build uses
+`SQLITE_THREADSAFE=1`, `SQLITE_ENABLE_FTS5`, and dynamic `libdl`, `libpthread`,
+and `libm` on local ext4/NVMe. The Python system binding (3.45.1) is not used.
+
+Correction outcomes from the retained private result are:
+
+- True one-writer/two-reader overlap: `overlap_proven=true`; readers during an
+  uncommitted writer saw the prior count (5), readers after commit saw the new
+  count (6), and a checkpoint ran during the writer.
+- Incompatible migration: CLI `-bail` stopped on the guard with
+  `incompatible-schema`; schema digest, ordered rows, user version, and
+  integrity were unchanged (`rejected_before_mutation=true`).
+- Backup/restore: fresh-directory restore matched integrity, schema digest,
+  ordered logical rows, row count, and user version; copied-file corruption was
+  detected as “file is not a database”.
+- Deterministic VFS faults: a narrowly adapted qualification-only wrapper
+  against the exact amalgamation injected first-`xSync` return and crash faults
+  at commit and checkpoint boundaries. All four cases reopened with
+  `PRAGMA integrity_check=ok` and whole-or-absent target state. The runner
+  binary hash is retained privately as
+  `a69bef9ae86f00a82ee16b0ce97e16a7c30a5942c0d7cfbe9682c4b554e21e4e`.
+- Safe simulated disk-full: a fresh 1 KiB-page database with a connection
+  `max_page_count=3` returned `database or disk is full` for the oversized
+  transaction; after reopen the target row was absent and integrity was `ok`.
+  This is a bounded induced failure, not a general lifetime `SQLITE_FULL`
+  reliability claim.
+
+The corrected bounded matrix is `E3_TARGET_TESTED` for this exact build,
+configuration, local filesystem, synthetic data, and injected fault points.
+SQLite remains `BLOCKED — MORE EVIDENCE REQUIRED` for adoption pending
+Architect review, broader retained-seed stress, binding-specific qualification,
+and any additional fault surface the Architect requires. No database or
+dependency was selected or adopted.
+
+Historical status at first submission: `SUPERSEDED — SERIAL/COUNT-ONLY CHECKS AND NO FAULT VFS`
+
+## Historical first submission (superseded; retained for audit)
+
+The original matrix is retained below to document its serial-reader,
+guard-only migration, count-only restore, and missing deterministic fault
+coverage. It is not the correction result.
 
 ## Exact artifact
 

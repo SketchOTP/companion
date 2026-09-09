@@ -1,5 +1,29 @@
 # COMPANION-P00-QUAL-001 — Execution Plan
 
+## Correction cycle 01 plan/result
+
+The Architect Review 01 correction was executed as a focused continuation:
+
+1. Preserve the accepted Godot and systemd evidence and the protected primary
+   worktree; do not rerun unchanged work.
+2. Replace the invalid in-process IPC exercise with a four-process socket,
+   credential, generation, restart, stale-channel/capability, sibling, and
+   pidfd harness.
+3. Add a maintained RFC 8785 oracle/vector check and bring Python/Rust shells
+   to persistent multi-message semantic parity with release-build CPU/RSS
+   measurements.
+4. Replace serial SQLite observations with synchronized reader/writer overlap,
+   real migration preflight rejection, full backup/restore equivalence, an
+   induced page-limit failure, and an adapted deterministic VFS fault matrix.
+5. Preserve every earlier failed attempt as historical evidence; update packet
+   and append-only `.agent` records; re-fetch mutable authority before
+   publication.
+
+Correction execution result: steps 2–4 are target-tested in private retained
+   results; SQLite's exact build/configuration remains a bounded candidate, not
+   an adopted dependency. Publication and independent Architect review remain
+   pending.
+
 Status: `EXECUTED — RESULTS PENDING INDEPENDENT ARCHITECT REVIEW`
 
 1. Preserve the operator's protected Graft changes and create a clean secondary worktree/branch.

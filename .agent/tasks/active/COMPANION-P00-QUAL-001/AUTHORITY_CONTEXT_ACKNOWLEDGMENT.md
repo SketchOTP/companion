@@ -1,5 +1,27 @@
 # COMPANION-P00-QUAL-001 — Authority Context Acknowledgment
 
+## Correction-cycle acknowledgment — 2026-09-09
+
+The Architect Review 01 at main `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`
+was re-read before this correction. The prior in-process IPC, ordinary JSON
+JCS, serial-reader, guard-only migration, and count-only restore claims are
+historical and not accepted as current evidence. The corrected work is limited
+to the existing qualification branch/worktree and does not alter the protected
+primary Graft files.
+
+The live ledger re-query returned 45 ADR rows and 53 Research Evidence rows.
+The review text says the evidence register now has 55 rows, but rows 54–55
+were not materially available from the live database response. This is recorded
+as an authority-count discrepancy; no records are invented and no product
+direction depends on the missing rows. A final re-fetch is required before
+publication evidence is closed.
+
+Correction execution remains authorized only for the bounded target tests:
+real process-boundary IPC, oracle-backed canonicalization/profile parity,
+release-build measurements, and corrected exact-SQLite overlap/migration/
+backup/fault checks. Architecture v1.0 remains adopted; Roadmap Phase 01,
+dependencies, product implementation, and product capability remain closed.
+
 Status: `COMPLETED — QUALIFICATION PREFLIGHT PASSED`
 
 Complete this in your own words before downloading artifacts or running tests.

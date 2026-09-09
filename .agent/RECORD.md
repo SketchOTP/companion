@@ -298,3 +298,29 @@ Codex pushed `codex/p00-qual-001` with commits `c6c8141a28186b4b30ad438c7f504fce
 ### Consequence
 
 This is a submission for independent Architect review, not acceptance. The existing recommendations remain nonadopted; SQLite has the recorded fault/concurrency gaps. Architecture v1.0 remains adopted; Roadmap Phase 01, dependencies, product implementation, and product-capability claims remain closed.
+
+## COMPANION-PLAN-007 — Qualification correction cycle submitted for review
+
+### Context
+
+Architect Review 01 (`9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`) found that
+the prior IPC candidate harness was in-process, serializer output was not
+RFC 8785 evidence, SQLite reader/migration/restore checks were insufficient,
+and the resulting claims exceeded the executed tests.
+
+### Event
+
+Codex prepared a focused correction on the existing `codex/p00-qual-001`
+branch. It adds actual four-process socket traffic with kernel credentials and
+generation/capability rotation, oracle-backed canonicalization vectors and
+release-build parity/resource measurements, synchronized SQLite reader/writer
+overlap, migration rejection before mutation, full backup equivalence, induced
+page-limit failure, and deterministic adapted VFS commit/checkpoint faults.
+
+### Consequence
+
+Corrected work remains a provisional submission for independent Architect
+review. Rust, Candidate 2 IPC, SQLite 3.53.4, Godot 4.7.2, and systemd are
+candidates/recommendations only. Architecture v1.0 remains adopted; Roadmap
+Phase 01, dependencies, product implementation, and product capability remain
+closed.

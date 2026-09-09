@@ -9,7 +9,7 @@
 
 ## Major modules / packages
 
-No application module or package exists or is authorized. `experiments/p00-foundation-qual/` is a disposable non-product qualification harness area with Python/Rust synthetic shells and IPC/SQLite scripts; its qualification-only Rust lock is not a production dependency declaration.
+No application module or package exists or is authorized. `experiments/p00-foundation-qual/` is a disposable non-product qualification harness area with Python/Rust synthetic shells, oracle-backed JCS checks, multi-process IPC scripts, and exact SQLite/VFS scripts; its qualification-only Rust lock and cached oracle are not production dependency declarations.
 
 ## Important interfaces / contracts
 
@@ -26,7 +26,7 @@ No application test suite or governance test runner exists. Governance is valida
 
 ## Generated / cache / build areas
 
-None established. Existing `.gitignore` is preserved from the remote bootstrap and does not select the future stack.
+Qualification binaries, toolchains, Godot archives, SQLite sources/builds, databases, WAL files, sockets, raw measurements, and temporary VFS runners are private local XDG cache/state outside Git. Existing `.gitignore` and protected primary Graft changes are untouched.
 
 ## Governance / agent files
 

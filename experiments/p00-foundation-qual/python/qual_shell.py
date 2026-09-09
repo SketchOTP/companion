@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import hashlib
 import json
 import math
@@ -53,9 +54,41 @@ def strict_loads(raw: str):
     walk(value)
     return value
 
+def _utf16_key(value: str) -> bytes:
+    """JCS object-key order: raw UTF-16 code units."""
+    return value.encode("utf-16-be", "surrogatepass")
+
+
 def canonical(value):
-    return json.dumps(value, ensure_ascii=False, separators=(",", ":"), sort_keys=True,
-                      allow_nan=False).encode("utf-8")
+    """Canonicalize the bounded integer/string Companion event profile.
+
+    Full RFC 8785 vectors are exercised against the maintained reference
+    oracle by ``jcs_conformance.py``; this shell intentionally rejects floats
+    so authoritative state cannot depend on platform float formatting.
+    """
+    if value is None:
+        return b"null"
+    if value is True:
+        return b"true"
+    if value is False:
+        return b"false"
+    if isinstance(value, int) and not isinstance(value, bool):
+        if abs(value) > MAX_EXACT_INT:
+            raise Reject("integer-range")
+        return str(value).encode("ascii")
+    if isinstance(value, float):
+        raise Reject("fractional-number-profile")
+    if isinstance(value, str):
+        return json.dumps(value, ensure_ascii=False, separators=(",", ":"),
+                          allow_nan=False).encode("utf-8")
+    if isinstance(value, list):
+        return b"[" + b",".join(canonical(item) for item in value) + b"]"
+    if isinstance(value, dict):
+        items = sorted(value.items(), key=lambda pair: _utf16_key(pair[0]))
+        return b"{" + b",".join(
+            canonical(str(key)) + b":" + canonical(item) for key, item in items
+        ) + b"}"
+    raise Reject("unsupported-value")
 
 def validate(event):
     if not isinstance(event, dict) or set(event) != REQUIRED:
@@ -102,14 +135,25 @@ def serve(path: Path):
     try:
         conn, _ = server.accept()
         with conn:
-            raw = recv_frame(conn)
-            if len(queue) == queue.maxlen: raise Reject("queue-full")
-            queue.append(raw)
-            try: result = process(raw, seen)
-            except Reject as error: result = {"accepted": False, "reason": str(error)}
-            result["queue_depth"] = len(queue)
-            result["log"] = "qualification-shell;payload-minimized"
-            send_frame(conn, result)
+            while True:
+                try:
+                    raw = recv_frame(conn)
+                except Reject as error:
+                    if str(error) == "short-header":
+                        break
+                    result = {"accepted": False, "reason": str(error)}
+                    send_frame(conn, result)
+                    continue
+                if len(queue) == queue.maxlen:
+                    result = {"accepted": False, "reason": "queue-full", "queue_depth": len(queue)}
+                else:
+                    queue.append(raw)
+                    try: result = process(raw, seen)
+                    except Reject as error: result = {"accepted": False, "reason": str(error)}
+                    result["queue_depth"] = len(queue)
+                    queue.popleft()
+                result["log"] = "qualification-shell;payload-minimized"
+                send_frame(conn, result)
     finally:
         server.close(); path.unlink(missing_ok=True)
 
@@ -118,7 +162,8 @@ def self_test(fixture: Path):
     first, again = process(raw, set()), process(raw, {"message-0001"})
     assert first["accepted"] and not first["duplicate"] and first["fixed_point_state"] == 25
     assert again["duplicate"] and again["fixed_point_state"] == 0
-    for bad in ('{"message_id":"a","message_id":"b"}', '{"x":NaN}', '"\\ud800"'):
+    for bad in ('{"message_id":"a","message_id":"b"}',
+                '{"a":1,"\\u0061":2}', '{"x":NaN}', '"\\ud800"'):
         try: strict_loads(bad)
         except Reject: pass
         else: raise AssertionError(f"accepted invalid input: {bad}")
@@ -126,12 +171,17 @@ def self_test(fixture: Path):
     try: validate(event)
     except Reject: pass
     else: raise AssertionError("accepted unsupported major")
-    print(json.dumps({"self_test":"passed", "digest":first["digest"], "python":sys.version.split()[0]}, sort_keys=True))
+    queue = deque(maxlen=2); queue.extend((b"one", b"two")); overflow = len(queue) == queue.maxlen
+    assert overflow
+    print(json.dumps({"self_test":"passed", "digest":first["digest"], "python":sys.version.split()[0], "queue_probe":"passed"}, sort_keys=True))
 
 def main():
     parser = argparse.ArgumentParser(); parser.add_argument("--self-test", type=Path)
-    parser.add_argument("--serve", type=Path); args = parser.parse_args()
+    parser.add_argument("--serve", type=Path); parser.add_argument("--canonical", type=Path); args = parser.parse_args()
     if args.self_test: self_test(args.self_test)
     elif args.serve: serve(args.serve)
+    elif args.canonical:
+        event = strict_loads(args.canonical.read_bytes()); validate(event)
+        print(base64.b64encode(canonical(event)).decode("ascii"))
     else: parser.error("select --self-test or --serve")
 if __name__ == "__main__": main()

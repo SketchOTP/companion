@@ -1,6 +1,57 @@
 # Direct-Care IPC Trust Qualification
 
-Status: `COMPLETED — E3 TARGET-TESTED SYNTHETIC LOCAL THREAT CHECK`
+## Correction cycle 01 — real process-boundary result (2026-09-09)
+
+Status: `CORRECTION SUBMITTED — E3 TARGET-TESTED; ARCHITECT REVIEW REQUIRED`
+
+The prior Candidate 1/2 harness was invalid: its `exchange()` function called
+the care decision function directly and never sent packets through a socket.
+That result is retained below as a failed attempt, not as IPC evidence.
+
+The replacement `ipc_trust_qualification.py --run` uses four independent
+process roles: a supervisor, an authorized producer, a care receiver, and an
+untrusted same-UID sibling. The supervisor creates a private `AF_UNIX`
+`SOCK_SEQPACKET` socketpair, passes only the required endpoint to each child,
+creates a producer pidfd, and uses private pipes for capability material and
+control. The producer and care children each set `PR_SET_DUMPABLE=0`; care
+enables `SO_PASSCRED`, reads `SCM_CREDENTIALS`, and checks the live producer
+PID/UID, generation, candidate kind, and (Candidate 2) an HMAC capability.
+Care owns the append-only synthetic receipt journal and idempotency set; no
+companion database or decision function is in the path.
+
+Observed correction results:
+
+- Weak mode-0600 pathname baseline: same-user valid injection `accepted:new`
+  (accepted evidence of insufficiency).
+- Candidate 1 actual packet: accepted; duplicate was `accepted:duplicate`;
+  spoofed producer field was rejected.
+- Candidate 2 actual packet: accepted; duplicate remained idempotent; spoofed
+  producer, stale generation, malformed schema, forbidden mood input, and old
+  capability were rejected; a missing companion database did not block care.
+- Care restart replayed the candidate as a duplicate. Sending on the revoked
+  old channel returned `Broken pipe`. A replacement producer with generation
+  `g-2` was accepted; stale `g-1` and the `g-1` capability were rejected.
+- The sibling could not connect to a pathname/abstract endpoint, discover a
+  capability in environment/argv, or open the producer descriptor through
+  `/proc`. The direct Linux `pidfd_getfd` syscall probe returned the exact
+  host result `errno=1 (EPERM)`; this is recorded as an observed kernel result,
+  not translated into a generic pass.
+- Common sensor/model outage is represented as required `degraded-coverage`,
+  never false normality. Threat exclusions remain root, kernel compromise,
+  full account compromise, and a fully compromised authorized producer.
+
+The bounded result supports carrying Candidate 2 into a later implementation
+experiment (`E3_TARGET_TESTED` under the stated threat model), but it does not
+adopt an IPC mechanism or establish security/safety capability. The old
+Candidate 1/2 result is explicitly superseded because it lacked actual
+cross-process socket traffic.
+
+Historical status at first submission: `SUPERSEDED — IN-PROCESS HARNESS DID NOT TEST IPC`
+
+## Historical first submission (superseded; retained for audit)
+
+The following original sections describe the invalid in-process attempt. They
+are preserved to show the review trail and are not current IPC evidence.
 
 ## Threat model
 

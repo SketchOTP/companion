@@ -1,5 +1,27 @@
 # COMPANION-P00-QUAL-001 — Handoff
 
+## Correction cycle 01 submission
+
+Status: `CORRECTION SUBMITTED — INDEPENDENT ARCHITECT REVIEW REQUIRED`
+
+This focused correction supersedes the invalid portions of the first result
+without erasing them. The IPC harness now uses separate supervisor, producer,
+care, and same-user sibling processes with real `AF_UNIX SOCK_SEQPACKET`
+traffic, `SO_PASSCRED`/`SCM_CREDENTIALS`, generation binding, capability
+rotation, restart/replay, and a direct `pidfd_getfd` probe (`EPERM` observed).
+The JCS harness uses a maintained cached oracle and reference edge vectors; the
+Python/Rust shells agree on canonical bytes and sustained synthetic parity.
+SQLite now exercises synchronized overlap, pre-mutation migration rejection,
+full backup equivalence, a safe induced page-limit failure, and adapted
+deterministic commit/checkpoint VFS faults. Godot and transient systemd
+evidence are retained unchanged.
+
+The result remains provisional. Candidate 2, Rust, SQLite 3.53.4, Godot
+4.7.2, and systemd are recommendations/candidates only; no dependency,
+supervisor, security mechanism, Phase 01 transition, or product capability is
+adopted. Architecture v1.0 remains adopted and Roadmap Phase 01 remains
+closed. PR #5 and Issue #4 must remain open for independent Architect review.
+
 Status: `PARTIAL QUALIFICATION COMPLETE — INDEPENDENT ARCHITECT REVIEW REQUIRED`
 
 ## Executive result

@@ -1,6 +1,51 @@
 # Toolchain Qualification — Python 3.12 versus Rust
 
-Status: `COMPLETED — E3 TARGET-TESTED SYNTHETIC COMPARISON`
+## Correction cycle 01 — superseding result (2026-09-09)
+
+Status: `CORRECTION SUBMITTED — E3 TARGET-TESTED; ARCHITECT REVIEW REQUIRED`
+
+The first submission's ordinary `json.dumps(sort_keys=True)` and
+`serde_json::to_vec` were not treated as RFC 8785 implementations. This
+correction uses the maintained qualification-only `canonical@5.0.0` package as
+an oracle, cached outside Git (tarball SHA-256
+`5e13234695e05dc1398c84e7bc12aaee7c69a6e23b52325b9cb54f6a307427b0`). The
+Python and Rust shells now apply the bounded project profile (recursive UTF-16
+property ordering, duplicate decoded-name rejection, invalid-number/Unicode
+rejection, and bounded integers) and are compared byte-for-byte with that
+oracle. This is target-tested profile agreement, not production RFC 8785 or
+dependency adoption.
+
+Conformance cases passed: eight reference primitive/property vectors,
+non-BMP UTF-16 ordering, nested objects/arrays, control escaping, Unicode
+preservation, `{"a":1,"\\u0061":2}` duplicate-name rejection, NaN/Infinity and
+lone-surrogate rejection, bounded integer validation, schema-major rejection,
+and altered-digest protection. Result: `jcs_conformance.py` reported
+`status=passed`, `oracle_vectors=8`, and Python/Rust/oracle agreement for an
+extended fixture (SHA-256 `33fe3ec40aeca83f6593414b11de6a539c6eabde2cb289f71c18d95041a265d2`).
+
+Both shells now run persistent length-delimited multi-message streams,
+idempotency, bounded queue probes, rejection codes, controlled shutdown, and
+payload-minimized logs. The release Rust binary was used for the comparison.
+Twelve rounds × 32 warm requests per candidate were retained privately with
+per-index digest/acceptance parity, cold-start and warm latency, child CPU, and
+RSS. Current medians were Python: cold self-test 29.18 ms, cold request 0.355
+ms, warm 0.128 ms (p95 0.167 ms), CPU 0.731 s, RSS 17,744–17,884 KiB; Rust:
+cold self-test 0.865 ms, cold request 0.078 ms, warm 0.047 ms (p95 0.076 ms),
+CPU 0.029 s, RSS 2,148–2,244 KiB. These are selected synthetic engineering
+measurements, not product performance, reliability, or capacity evidence.
+
+Recommendation remains `BLOCKED — MORE EVIDENCE REQUIRED` for a production
+language decision until the Architect decides whether this bounded oracle and
+parity surface is sufficient. Rust is a candidate, not selected or adopted;
+language-neutral contracts remain possible and no production crate/toolchain
+was approved.
+
+Historical status at first submission: `SUPERSEDED — INSUFFICIENT JCS/RESOURCE/PARITY EVIDENCE`
+
+## Historical first submission (superseded; retained for audit)
+
+The following section records the original one-fixture/incomplete attempt. Its
+claims are not the correction result and do not support adoption.
 
 ## Candidate provenance
 
@@ -33,7 +78,7 @@ Rust debug binary was approximately 8.0 MB; the isolated Rust toolchain/cache an
 
 Record functional parity, deterministic/golden-vector results, retained seeds, startup distributions, RSS, CPU, artifact/environment size, dependency surface, offline reproduction, isolation, update/rollback, testability, complexity, and failed attempts.
 
-## Recommendation
+## Historical recommendation (superseded)
 
 **Recommendation to Architect: RUST for the first authoritative-service implementation decision, subject to a later explicit adoption.** The bounded shell gave identical selected semantic outcomes with substantially lower sample startup/request timing and a stronger language-level memory-safety model. This does not establish production security, throughput, maintainability, or a final language decision; the Rust dependency and toolchain footprint, Python 3.12.3 patch lag, and lack of sustained RSS/CPU evidence remain material.
 

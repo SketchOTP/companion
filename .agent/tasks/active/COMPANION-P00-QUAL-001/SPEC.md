@@ -1,5 +1,16 @@
 # COMPANION-P00-QUAL-001 — Operative Specification
 
+## Architect Review 01 correction scope
+
+The first submission is not accepted. This continuation preserves accepted
+work and replaces only the invalid evidence surfaces: IPC must cross real
+process sockets; canonicalization must be oracle/reference-vector tested;
+Python/Rust parity must include persistent operation and release-build
+resource measurements; SQLite must use true overlap, migration preflight, full
+restore equivalence, induced disk/I/O atomicity, and deterministic VFS fault
+points. All output remains qualification-only and recommendations remain
+subject to Architect decision.
+
 Status: `ISSUED — ACTIVE AFTER PUBLICATION`
 
 ## Authority

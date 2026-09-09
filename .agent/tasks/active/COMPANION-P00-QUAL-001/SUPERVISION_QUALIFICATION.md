@@ -1,5 +1,13 @@
 # Supervision Qualification
 
+## Correction-cycle disposition
+
+The Architect accepted the bounded transient systemd-user probes at
+`E3_TARGET_TESTED`; this workstream was not rerun because host service-manager
+state did not materially change. No persistent unit, restart, or host policy
+was modified. The retained result is feasibility evidence only and does not
+select a production supervisor.
+
 Status: `COMPLETED — E3 TRANSIENT USER-SERVICE FEASIBILITY CHECK`
 
 ## Manager diagnosis

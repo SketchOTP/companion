@@ -36,3 +36,21 @@ The Research Phase 01 Notion hierarchy contains the project's research evidence 
 - Disposition: `BENCHMARK` Python and Rust; `BENCHMARK` private-channel IPC primitives; `REFERENCE` JCS/unix/systemd; `BENCHMARK` exact Godot artifact; `BENCHMARK` exact SQLite 3.53.4. No source or dependency is adopted.
 - Material result: Rust candidate and private-channel Candidate 2 merit Architect review; Godot evidence is source-correlated; SQLite remains blocked by missing deterministic commit/checkpoint fault injection.
 - Recheck: every toolchain/artifact/build selection, security-policy change, upgrade, or future implementation authorization.
+
+### Correction cycle 01 — process/JCS/SQLite follow-up
+
+- Date: 2026-09-09 America/New_York.
+- Sources: RFC 8785 reference material and maintained `canonicalize` package
+  5.0.0; Linux `unix(7)` and `pidfd_getfd(2)`; SQLite official testing,
+  WAL/release/news/Backup API documentation; exact cached SQLite 3.53.4
+  amalgamation.
+- Disposition: oracle/reference vectors and Linux credential primitives are
+  qualification evidence only; the adapted VFS wrapper is disposable source
+  under `experiments/`; Rust, Candidate 2 IPC, and SQLite remain candidates.
+- Material result: actual packet traffic, decoded duplicate-name rejection,
+  UTF-16 ordering, synchronized readers/writer, migration preflight, full
+  restore equivalence, page-limit failure, and deterministic xSync fault points
+  were target-tested. No external dependency or production mechanism was
+  adopted.
+- Recheck: before any dependency, canonicalizer, supervisor, IPC, database,
+  or product implementation decision.

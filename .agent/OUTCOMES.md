@@ -437,3 +437,23 @@ The directive is complete, its task packet is archived, and the next work must a
 - Pull request: `#5`, target `main`, `OPEN` and unmerged; Issue #4 remains `OPEN` with Codex submission comment `5608260248`.
 - Required Notion coder report and parent directive publication: `PASSED`; the report records a submission pending independent Architect review, not acceptance.
 - Final PR/remote-equality and Notion post-write re-fetch after the reconciliation commit: `PASSED`.
+
+## COMPANION-P00-QUAL-001 — Architect Review 01 correction submission
+
+### Scope and disposition
+
+- Status: `CORRECTION SUBMITTED — INDEPENDENT ARCHITECT REVIEW REQUIRED`.
+- The review's invalid IPC/JCS/SQLite claims are retained as historical failures; they are not upgraded by this entry.
+- Architecture v1.0 remains adopted and unchanged. Roadmap Phase 01 remains closed. No dependency, product source, safety runtime, security capability, or reliability claim was self-approved.
+
+### Corrected evidence
+
+- Toolchain/JCS: maintained `canonical@5.0.0` oracle vectors, decoded escaped-duplicate rejection, UTF-16 non-BMP ordering, Python/Rust canonical-byte agreement, persistent stream parity, release Rust build, and 12×32 warm measurements passed (`E3_TARGET_TESTED`).
+- IPC: actual supervisor/producer/care/sibling processes exchanged sequenced packets; kernel credentials, generations, HMAC rotation, restart/replay, stale channel/capability, descriptor, and exact `pidfd_getfd` (`EPERM`) probes passed within exclusions (`E3_TARGET_TESTED`).
+- SQLite: exact 3.53.4 synchronized overlap, migration preflight, full backup/restore equivalence, induced page-limit failure, and adapted deterministic commit/checkpoint VFS return/crash points passed with integrity and whole-or-absent checks (`E3_TARGET_TESTED` bounded; adoption remains blocked).
+- Godot 4.7.2 artifact provenance (`E1`) and transient systemd-user probes (`E3`) were retained without rerun.
+
+### Authority reconciliation
+
+- Final live evidence-register requery must be recorded before publication. The current query returned 53 rows while the review text states 55; this discrepancy is explicit and unresolved, with no invented rows.
+- PR #5 and Issue #4 remain open; publication commit and post-push re-fetch are pending.

@@ -208,3 +208,17 @@ Historical entries are append-only after adoption.
 - Protected work: operator-owned uncommitted primary `.gitignore` and `AGENTS.md` paths excluded; secondary local-ext4 checkout required.
 - Result boundary: no product implementation, dependency adoption, Godot project, media, personal data, live safety behavior, persistent services, Phase 01 opening, or self-acceptance.
 - Material partial: SQLite deterministic during-commit/checkpoint kill injection remains blocked without an intrusive fault VFS or equivalent later authority.
+
+### Architect Review 01 — 2026-09-09
+
+- Status: `CONTINUE — FOCUSED CORRECTIONS REQUIRED`; review commit `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`.
+- Accepted for retention: protected-work handling, weak pathname injection, Godot artifact/version evidence, transient systemd probes, exact SQLite identity/basic observations, and the selected-fixture Python/Rust timing.
+- Rejected as qualification evidence: the prior in-process Candidate 1/2 IPC call path, ordinary serializer-as-JCS claims, serial reader checks, guard-only migration check, and count-only restore comparison.
+- Required continuation: actual four-process `SOCK_SEQPACKET`/`SCM_CREDENTIALS` harness with `pidfd_getfd` result; oracle/reference JCS vectors and full shell parity/resource measurements; true SQLite overlap, pre-mutation migration rejection, full backup equivalence, disk/I/O atomicity, and deterministic VFS fault points.
+- PR #5 remains open/draft/unmerged and Issue #4 remains open. No dependency, Roadmap Phase 01 transition, security/safety capability, or product implementation is authorized.
+
+### Correction cycle 01 — Codex submission in preparation
+
+- Corrected scripts and task records are being prepared on `codex/p00-qual-001` from the normal merge of `origin/main` review commit `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`.
+- Corrected target evidence is `E3_TARGET_TESTED` for IPC/JCS/toolchain and bounded SQLite fault/concurrency surfaces; Godot/systemd evidence is retained at `E1_OBSERVED`/`E3_TARGET_TESTED`.
+- Independent Architect review is required; Codex does not self-accept.

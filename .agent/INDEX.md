@@ -18,7 +18,7 @@
 
 - Current stage: Planning Phase 02 — Roadmap Phase 00
 - Architecture v1.0: `ADOPTED`
-- Active coder directive: `COMPANION-P00-QUAL-001 — CODEX RESULT PUBLISHED; INDEPENDENT REVIEW PENDING`
+- Active coder directive: `COMPANION-P00-QUAL-001 — CORRECTION SUBMISSION; INDEPENDENT REVIEW PENDING`
 - Active packet: `.agent/tasks/active/COMPANION-P00-QUAL-001/`
 - Full execution directive: `.agent/tasks/active/COMPANION-P00-QUAL-001/CODEX_FULL_DIRECTIVE.md`
 - GitHub Issue #4: https://github.com/SketchOTP/companion/issues/4
@@ -58,9 +58,16 @@ Codex cannot see the operator–Architect conversation. Do not infer what to rea
 - User-level supervision feasibility or explicit blocker.
 - No production adoption or product capability.
 
+## Correction disposition pointer
+
+- Architect Review 01 (`9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`) found the original IPC, JCS, serial-reader, migration, and restore evidence insufficient.
+- Corrected packet now contains actual multi-process socket traffic and kernel credentials, oracle-backed canonicalization vectors, release-build sustained parity, synchronized SQLite overlap, migration preflight, full backup equivalence, induced page-limit failure, and adapted deterministic VFS faults.
+- Corrected evidence is target-tested only; no dependency, mechanism, Phase 01 transition, or product capability is adopted. PR #5 and Issue #4 remain open.
+- Live Research Evidence Register returned 53 rows despite review text stating 55; preserve as an explicit reconciliation discrepancy.
+
 ## Qualification disposition pointer
 
-- Packet result: Python/Rust and direct-care IPC evidence are `E3_TARGET_TESTED`; Godot provenance is `E1_OBSERVED`; SQLite is partial because deterministic commit/checkpoint kill injection is blocked; transient systemd-user supervision is `E3_TARGET_TESTED`.
+- Packet result: corrected Python/Rust/JCS and direct-care IPC evidence are `E3_TARGET_TESTED`; Godot provenance is retained `E1_OBSERVED`; corrected SQLite matrix is `E3_TARGET_TESTED` but remains a non-adopted candidate pending review; transient systemd-user supervision is retained `E3_TARGET_TESTED`.
 - Architect decision point: Rust candidate, Candidate 2 IPC experiment, Godot artifact disposition, SQLite fault-injection follow-up, and systemd-user direction.
 
 ## Protected-work rule
