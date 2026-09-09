@@ -74,7 +74,7 @@ Accept the Authority 3.0 repository bootstrap for governance use only. This is n
 
 - Repository metadata and `main` history inspected through `0fbedc441cb8ea2b098a32b46d00ce2415c65f07`.
 - Commits `d4ebf753068db8deebd8f02a3fea5349558f835f`, `5cba8893168cb90a0cf608d61fde610b5d307c94`, and `0fbedc441cb8ea2b098a32b46d00ce2415c65f07` independently reviewed.
-- Recursive tree inspection confirmed Authority governance, preserved `.gitignore` and Apache-2.0 `LICENSE`, and no product implementation, dependency, asset, CI, deployment, model, dataset, voice, database, or safety integration.
+- Recursive committed-tree inspection confirmed Authority governance, preserved `.gitignore` and Apache-2.0 `LICENSE`, and no product implementation, dependency, asset, CI, deployment, model, dataset, voice, database, or safety integration.
 - Canonical Notion project and governance contract reconciled.
 
 ### Consequence
@@ -153,3 +153,25 @@ Do not accept `COMPANION-P00-INGEST-001` yet. Continue the same directive for a 
 ### Consequence
 
 Codex must correct the affected task artifacts, Notion report, issue handoff, and current `.agent` state through a normal fast-forward commit. Retrieval coverage is provisionally accepted, but onboarding certification, environment inventory, architecture v1.0 work, dependency selection, and all product implementation remain closed pending a new independent review.
+
+## COMPANION-GOV-007 — Canonical ingest and coder onboarding accepted
+
+### Context
+
+Codex completed the focused semantic correction required by Architect Review 01 and submitted it through correction commit `9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388` and publication-evidence commit `6d5868c14fb77de2d556c96e02c1ca71a07d059f`.
+
+### Decision / event
+
+Accept `COMPANION-P00-INGEST-001` as complete and certify Codex onboarding to the canonical project.
+
+### Evidence
+
+- Architect Review 02: https://app.notion.com/p/3d6833cb27ff81e4aea5df63206c1e66
+- Repository review: `.agent/tasks/completed/COMPANION-P00-INGEST-001/ARCHITECT_REVIEW_02.md`.
+- Eleven open/partial RQ records independently matched by exact ID, title, status, and consequence.
+- Twenty-five cited ADRs and thirteen cited risks independently matched to live authority and substantively reviewed.
+- Ten end-goal pillars, Roadmap Phase 00–15, required primary risks, contradiction handling, and governance-only scope passed review.
+
+### Consequence
+
+Codex may execute future bounded directives using the accepted onboarding corpus, subject to fresh current-state reconstruction. The directive packet is archived. Roadmap Phase 00 remains active and product implementation remains closed until later explicit authority.

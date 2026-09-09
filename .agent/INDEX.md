@@ -8,23 +8,24 @@
 - Canonical Notion: https://app.notion.com/p/3d5833cb27ff8196814fdbae282f15ad
 - Complete end goal: https://app.notion.com/p/3d5833cb27ff81b09c20e2b52d537e1e
 - Active roadmap: https://app.notion.com/p/3d5833cb27ff81dd88faeb0c95b6f44e
-- Active directive authority: https://app.notion.com/p/3d5833cb27ff8101bfa8f7a28a6999ec
-- Active coder report: https://app.notion.com/p/3d5833cb27ff817faf6fe9b106af4930
+- Completed ingest directive: https://app.notion.com/p/3d5833cb27ff8101bfa8f7a28a6999ec
+- Accepted coder report: https://app.notion.com/p/3d5833cb27ff817faf6fe9b106af4930
 - Architect Review 01: https://app.notion.com/p/3d5833cb27ff819b9433f230c7bc06ad
+- Architect Review 02: https://app.notion.com/p/3d6833cb27ff81e4aea5df63206c1e66
 - GitHub: https://github.com/SketchOTP/companion
 
 ## Current pointers
 
-- Current stage: Planning Phase 02 — Roadmap Phase 00 active; ingest correction cycle 1 complete for Architect re-review; product implementation gate closed
-- Active directive: `COMPANION-P00-INGEST-001`
-- Active task packet: `.agent/tasks/active/COMPANION-P00-INGEST-001/`
-- Active Architect review: `.agent/tasks/active/COMPANION-P00-INGEST-001/ARCHITECT_REVIEW.md`
-- Last accepted outcome: `COMPANION-AUTHORITY-ARCHITECT-ACCEPTANCE-001`
-- Last recorded outcome: `COMPANION-P00-INGEST-001-CORRECTION-01`
-- Verified directive baseline: `9056c0362a43f2b635ffb910451943b59e4ee1f0`
-- Reviewed Codex publication head: `fce544262f164e4da1508879ec9d8865b0cecfa2`
-- Focused correction commit: `9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388`
-- Last state sync: 2026-09-08 America/New_York
+- Current stage: Planning Phase 02 — Roadmap Phase 00 active; canonical ingest accepted; product implementation gate closed
+- Active directive: `NONE`
+- Active task packet: `NONE`
+- Last completed directive: `COMPANION-P00-INGEST-001`
+- Completed task packet: `.agent/tasks/completed/COMPANION-P00-INGEST-001/`
+- Last accepted outcome: `COMPANION-P00-INGEST-001-ARCHITECT-ACCEPTANCE-02`
+- Last recorded outcome: `COMPANION-P00-INGEST-001-ARCHITECT-ACCEPTANCE-02`
+- Correction result commit: `9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388`
+- Correction publication head reviewed: `6d5868c14fb77de2d556c96e02c1ca71a07d059f`
+- Last state sync: 2026-09-09 America/New_York
 
 ## Mandatory kernel
 
@@ -34,7 +35,7 @@ Read these before substantial work:
 2. `PROJECT_PROFILE.md`
 3. `CURRENT.md`
 
-Then read the active directive from `DIRECTIVES.md`, the active task packet, and the current Architect review. Retrieve all historical and Notion records required by the directive. The active correction cycle requires focused re-fetch of the Open Decisions page, Architecture Decision Ledger, and Initial Risk Register; a full re-ingest is unnecessary unless a canonical source changed.
+Then resolve the incoming Architect directive in `DIRECTIVES.md`, read its task packet when one is active, and retrieve the relevant Notion, GitHub, repository, outcome, learning, record, repo-map, external-discovery, and prior-directive evidence.
 
 ## Historical ledgers
 
@@ -45,7 +46,7 @@ Then read the active directive from `DIRECTIVES.md`, the active task packet, and
 - `REPO_MAP.md` — repository structure and important boundaries.
 - `EXTERNAL.md` — relevant external prior art and dispositions.
 
-Do not bulk-load entire growing ledgers unless the active directive genuinely requires it. Preserve prior ingest evidence and correct it through a new fast-forward commit rather than rewriting history.
+Do not bulk-load entire growing ledgers unless the active directive genuinely requires it. Do not skip relevant history merely to save context.
 
 ## Update rule
 

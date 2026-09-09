@@ -283,3 +283,40 @@ This correction changes governance/current-state and ingest-evidence artifacts o
 - Notion coder report and directive exact-SHA update/re-fetch: `PASSED`.
 - GitHub Issue #1 exact-SHA result comment and open-state re-fetch: `PASSED`.
 - Architect acceptance: `NOT RUN`; issue and active directive remain open for independent review.
+
+## COMPANION-P00-INGEST-001-ARCHITECT-ACCEPTANCE-02 — Corrected ingest accepted
+
+- Date: 2026-09-09 America/New_York
+- Verdict: `ACCEPTED — CODER ONBOARDING CERTIFIED`
+- Acceptance authority: Architect
+- Reviewed correction range: `f4a312b29fd8cc07a330242a1f1d6afaf8cd3858..6d5868c14fb77de2d556c96e02c1ca71a07d059f`
+- Product implementation authorization: `CLOSED`
+
+### Independent review performed
+
+- Inspected both correction commits, their complete changed-file scope, and the final recursive tree.
+- Reviewed corrected comprehension, traceability, contradictions, semantic validation, evidence, handoff, and current Authority state.
+- Re-fetched the live Open Decisions page and Initial Risk Register.
+- Independently queried all 32 Architecture Decision Ledger rows and compared the cited relationships to the source meanings.
+- Verified the Notion coder report/directive, Issue #1 correction comments, current `main`, and the absence of CI or product paths.
+
+### Acceptance results
+
+- Corpus reconstruction: `ACCEPTED — E2_REPRODUCED`.
+- Open/partial RQ semantics: `PASSED — 11/11`.
+- ADR semantics and relevance: `PASSED — 25/25 cited decisions`.
+- Risk semantics and relevance: `PASSED — 13/13 cited risks`.
+- Required primary risk relationships: `PASSED`.
+- End-goal and roadmap traceability: `PASSED — 10/10 pillars and Phase 00–15`.
+- Contradiction handling and RQ-14 separation: `PASSED`.
+- Focused semantic correction: `ACCEPTED — E3_TARGET_TESTED` for the correction artifact only.
+- Governance-only scope: `PASSED`.
+- Product/runtime tests: `NOT APPLICABLE`.
+
+### Boundary
+
+Codex is now considered onboarded to the canonical project. This acceptance does not finish Roadmap Phase 00 and does not authorize environment inventory, architecture v1.0 work, dependencies, application or Godot source, sprite production, CI, deployment, experiments, biometrics, notifications, safety integration, or any product capability.
+
+### Consequence
+
+The directive is complete, its task packet is archived, and the next work must arrive through a new bounded Roadmap Phase 00 directive. Product implementation remains closed.

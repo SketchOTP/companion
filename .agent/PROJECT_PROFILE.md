@@ -14,12 +14,15 @@
 
 - Canonical project Notion: https://app.notion.com/p/3d5833cb27ff8196814fdbae282f15ad
 - Project governance contract: https://app.notion.com/p/3d5833cb27ff81e2b3b2eabc70f9f6b3
-- Active research phase: https://app.notion.com/p/3d5833cb27ff815a91cecb838d49e8f9
+- Research foundation: https://app.notion.com/p/3d5833cb27ff815a91cecb838d49e8f9
+- Complete end goal: https://app.notion.com/p/3d5833cb27ff81b09c20e2b52d537e1e
+- Active roadmap: https://app.notion.com/p/3d5833cb27ff81dd88faeb0c95b6f44e
+- Accepted ingest review: https://app.notion.com/p/3d6833cb27ff81e4aea5df63206c1e66
 - Authority 3.0 installation package: https://app.notion.com/p/3bf833cb27ff811aae15def88959797e
 
 ## Technical profile
 
-- Current phase: Planning Phase 02, Roadmap Phase 00; canonical ingest correction cycle 1 completed for independent Architect review.
+- Current phase: Planning Phase 02, Roadmap Phase 00; canonical project ingest and Codex onboarding accepted.
 - Current repository role: governance-only shell; no production implementation is authorized.
 - Iteration-one host ruling: the existing Linux PC and connected webcam, microphone, speakers, and monitor.
 - Initial embodiment ruling: Godot 4.7.2 stable with an original layered 2D sprite mon.
@@ -42,7 +45,7 @@
 
 - The caregiving core is independently governed, testable, auditable, conservative under uncertainty, and visibly degraded on failure.
 - No safety escalation may be suppressed, fabricated, or independently authorized by companion mood, personality, creative behavior, or unconstrained language generation.
-- No deployment, user monitoring, biometric collection, contact notification, or production data handling is authorized by the governance bootstrap.
+- No deployment, user monitoring, biometric collection, contact notification, or production data handling is authorized by the current governance state.
 
 ## Source-of-truth boundaries
 

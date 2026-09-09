@@ -104,3 +104,19 @@ Historical entries are append-only after adoption.
 - Notion coder report and directive exact-SHA reconciliation: `PASSED`.
 - GitHub Issue #1 corrected result handoff: `PASSED`; issue remains open.
 - Acceptance boundary: `ARCHITECT REVIEW PENDING`; Codex did not self-assign acceptance or open product work.
+
+### Architect Review 02 — 2026-09-09
+
+- Status: `ACCEPTED — COMPLETE`.
+- Acceptance authority: Architect.
+- Reviewed correction range: `f4a312b29fd8cc07a330242a1f1d6afaf8cd3858..6d5868c14fb77de2d556c96e02c1ca71a07d059f`.
+- Repository review: `.agent/tasks/completed/COMPANION-P00-INGEST-001/ARCHITECT_REVIEW_02.md`.
+- Notion review: https://app.notion.com/p/3d6833cb27ff81e4aea5df63206c1e66
+- Corpus enumeration: `ACCEPTED — E2_REPRODUCED`.
+- Corrected open-decision comprehension: `ACCEPTED — 11/11 exact live RQ records`.
+- Corrected ADR/risk traceability: `ACCEPTED — 25/25 cited ADRs, 13/13 cited risks, all required primary relationships`.
+- Corrected contradiction handling and RQ-14 separation: `ACCEPTED`.
+- Focused semantic correction: `ACCEPTED — E3_TARGET_TESTED` for the correction artifact only.
+- Coder onboarding: `CERTIFIED`.
+- Task packet: archived to `.agent/tasks/completed/COMPANION-P00-INGEST-001/`.
+- Product implementation, environment inventory, architecture v1.0, dependency selection, and Phase 01 authority: `CLOSED / NOT GRANTED`.

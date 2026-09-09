@@ -43,3 +43,17 @@ Reusable governance procedure may be installed from the canonical Authority pack
 ### Recheck trigger
 
 Any proposed reuse, migration, import, or comparison to a prior project.
+
+## COMPANION-L004 — Identifier coverage is not semantic traceability
+
+### Learning
+
+A document can contain every required RQ, ADR, risk, pillar, and phase identifier while still mapping those identifiers to the wrong meaning. Structural presence, counts, JSON validity, and reference closure do not prove that a relationship is substantively correct.
+
+### Why it matters
+
+Future architecture, risk, and requirement traceability must verify exact ID-title-status pairs and manually review whether each cited record actually supports the statement. Automated crosswalks are supporting evidence, not a substitute for source-aware review.
+
+### Recheck trigger
+
+Every directive that creates or materially changes requirement, decision, risk, evidence, or roadmap traceability.
