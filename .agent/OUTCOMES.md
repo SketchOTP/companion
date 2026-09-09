@@ -417,3 +417,16 @@ The directive is complete, its task packet is archived, and the next work must a
 - GitHub Issue #3 comment `5605575746` and open-state re-fetch: `PASSED`.
 - One reconciliation commit is authorized to preserve these publication facts; final SHA/remote equality are reported in the canonical result.
 - Architect acceptance: `NOT RUN`; Architecture v1.0, Phase 01, dependencies, milestone work, and product implementation remain closed.
+
+## COMPANION-P00-QUAL-001 — Foundation technology and trust qualification prepared
+
+- Date: 2026-09-09 America/New_York.
+- Verdict: `PARTIAL_FOR_ARCHITECT_REVIEW`.
+- Retrieval confidence: `ADEQUATE`.
+- Protected primary Graft paths: untouched and uncommitted by this task; all qualification work occurred on clean local-ext4 branch `codex/p00-qual-001` from `fb4d4750182bae765e8366265d6cfb1ee36e105d`.
+- Toolchain: E3 synthetic frozen parity passed for CPython 3.12.3 and isolated Rust 1.98.1; evidence-backed recommendation is Rust candidate only, not adoption.
+- IPC: E3 weak same-user pathname injection succeeded as expected; Candidate 2 private seqpacket/generation/capability/nondumpable probe passed its bounded attacks. It is a recommendation only.
+- Godot: E1 official 4.7.2 standard asset digest matched and non-GUI version returned `4.7.2.stable.official.ed1daf0bf`; no project/renderer/window ran.
+- SQLite: exact 3.53.4 source ID and published sqlite3.c SHA3 matched; bounded WAL/atomicity/backup/restore/fault checks were E3 partial. Deterministic during-commit/checkpoint kill coverage is `BLOCKED`, so SQLite is not eligible for adoption.
+- Supervision: E3 transient systemd-user probes passed despite unrelated degraded-manager noise; no persistent service was created.
+- Product, safety, reliability, security-certification, dependency, and Phase 01 claims: `NOT ESTABLISHED / NOT AUTHORIZED`.

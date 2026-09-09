@@ -199,3 +199,12 @@ Historical entries are append-only after adoption.
 - Existing Notion report and parent directive exact-SHA update/re-fetch: `PASSED`.
 - GitHub Issue #3 correction comment: `5605575746`; issue re-fetched `OPEN` with seven comments.
 - Status: `CODEX CORRECTION SUBMITTED — ARCHITECT RE-REVIEW PENDING`; no self-acceptance or downstream authority created.
+
+## COMPANION-P00-QUAL-001 — Foundation technology and trust qualification
+
+- Issued: 2026-09-09 America/New_York by Architect; GitHub Issue #4; required branch `codex/p00-qual-001`.
+- Status: `CODEX RESULT PREPARED — PUBLICATION / INDEPENDENT REVIEW PENDING`.
+- Scope: synthetic Python/Rust toolchain shells, direct-care IPC threat experiments, official Godot 4.7.2 artifact identification, exact SQLite local matrix, and transient user-supervision probes only.
+- Protected work: operator-owned uncommitted primary `.gitignore` and `AGENTS.md` paths excluded; secondary local-ext4 checkout required.
+- Result boundary: no product implementation, dependency adoption, Godot project, media, personal data, live safety behavior, persistent services, Phase 01 opening, or self-acceptance.
+- Material partial: SQLite deterministic during-commit/checkpoint kill injection remains blocked without an intrusive fault VFS or equivalent later authority.

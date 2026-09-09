@@ -9,7 +9,7 @@
 
 ## Major modules / packages
 
-No application module or package exists or is authorized.
+No application module or package exists or is authorized. `experiments/p00-foundation-qual/` is a disposable non-product qualification harness area with Python/Rust synthetic shells and IPC/SQLite scripts; its qualification-only Rust lock is not a production dependency declaration.
 
 ## Important interfaces / contracts
 

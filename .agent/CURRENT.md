@@ -19,7 +19,7 @@ Produce target-host synthetic evidence and decision recommendations for the foun
 ## Active directive
 
 - Directive: `COMPANION-P00-QUAL-001`
-- Status: `ISSUED — ACTIVE`
+- Status: `CODEX QUALIFICATION RESULT PREPARED — PUBLICATION/INDEPENDENT REVIEW PENDING`
 - Verified pre-directive baseline: `4cfb0d5d62cd85737f88cd151d250ccf292a7e6d`
 - Task-packet publication: `f8fc3149fcf039d2cec468aa8c3a37acdaf620d9`
 - Notion directive: https://app.notion.com/p/3d6833cb27ff815e90e8de161e6de185
@@ -60,4 +60,4 @@ Counts are snapshots. Codex must query live Notion.
 
 ## Next review point
 
-Codex completes the full task packet and disposable qualification harnesses, pushes `codex/p00-qual-001`, opens a pull request, publishes the Notion report and Issue #4 result, leaves the PR and issue open, and stops for independent Architect review.
+Codex has prepared bounded qualification evidence. SQLite remains partial because deterministic commit/checkpoint kill placement requires an unauthorized intrusive fault VFS. After normal branch publication, the Architect reviews the Rust, IPC Candidate 2, Godot artifact, SQLite-blocker, and systemd-user recommendations. Architecture v1.0 remains adopted; Phase 01, dependency adoption, and product implementation remain closed.

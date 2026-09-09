@@ -26,3 +26,13 @@ The Research Phase 01 Notion hierarchy contains the project's research evidence 
 - Disposition: `ADOPT` RFC 8785 as the architecture-level `JCS-RFC8785-v1` profile; `REFERENCE` systemd boot semantics for the time model; `REFERENCE/BENCHMARK` exact SQLite builds only; `BENCHMARK` Python 3.12 versus exactly one Architect-selected Rust-or-Go comparator through EXP-00.
 - Material delta: SQLite news records 3.52.0 as withdrawn and later 3.53 releases, so the prior loose `3.51.3+` rule is invalid. No SQLite build or production language is selected.
 - Recheck: before choosing a canonicalizer/parser, language/toolchain, SQLite source/binding, signature implementation, or Architecture v1.0 adoption if any source changed.
+
+## COMPANION-P00-QUAL-001 — Exact qualification sources
+
+- Date: 2026-09-09 America/New_York.
+- Trigger: adopted Architecture v1.0 requires target-host evidence before any Phase 01 opening.
+- Sources: official Python 3.12 documentation; Rust 1.98.1 release and ownership documentation; RFC 8785; Linux unix(7); official Godot 4.7.2 release/archive and release asset metadata; official SQLite WAL/news/release/Backup API; official systemd service-manager documentation.
+- Overlap: Notion Evidence 47–53 is the canonical project register. This entry records the bounded repository qualification and does not supersede the register.
+- Disposition: `BENCHMARK` Python and Rust; `BENCHMARK` private-channel IPC primitives; `REFERENCE` JCS/unix/systemd; `BENCHMARK` exact Godot artifact; `BENCHMARK` exact SQLite 3.53.4. No source or dependency is adopted.
+- Material result: Rust candidate and private-channel Candidate 2 merit Architect review; Godot evidence is source-correlated; SQLite remains blocked by missing deterministic commit/checkpoint fault injection.
+- Recheck: every toolchain/artifact/build selection, security-policy change, upgrade, or future implementation authorization.

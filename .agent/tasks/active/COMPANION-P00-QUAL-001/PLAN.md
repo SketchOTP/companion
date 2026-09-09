@@ -1,6 +1,6 @@
 # COMPANION-P00-QUAL-001 — Execution Plan
 
-Status: `PENDING CODEX EXECUTION`
+Status: `EXECUTED — RESULTS PENDING INDEPENDENT ARCHITECT REVIEW`
 
 1. Preserve the operator's protected Graft changes and create a clean secondary worktree/branch.
 2. Reconstruct live Notion, GitHub, Architecture v1.0, ADR-38 through ADR-45, evidence, risk, and open-decision authority.
@@ -16,3 +16,5 @@ Status: `PENDING CODEX EXECUTION`
 12. Push the task branch, open a PR to `main`, publish/re-fetch the Notion report, update Issue #4, and stop for Architect review.
 
 A failed workstream is reported, not hidden. Independent safe workstreams may continue unless their assumptions depend on the failure.
+
+Execution result: steps 1–10 completed within the bounded synthetic scope. SQLite commit/checkpoint deterministic-fault subtests remain blocked, so step 11 records a partial storage result. Publication/PR steps remain pending final scope validation and coherent task-branch commits.

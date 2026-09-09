@@ -169,3 +169,31 @@ Persistence approval requires exact source identity, binding, compile options, s
 ### Recheck trigger
 
 Every dependency/toolchain/runtime upgrade and every exact-build qualification record.
+
+## COMPANION-L013 — Same-UID pathname sockets are not a producer-authorization boundary
+
+### Learning
+
+A private mode-0600 AF_UNIX pathname socket accepted a structurally valid synthetic message from an unrelated same-user process. UID equality and message-declared producer identity therefore do not satisfy the adopted direct-care safety-ingress gate.
+
+### Why it matters
+
+Direct care ingress needs a supervisor-controlled private channel plus generation-bound capability/process controls, and must be target-tested before implementation.
+
+### Recheck trigger
+
+Any change to supervisor, OS identity, confinement, producer lifecycle, socket topology, or care authorization contract.
+
+## COMPANION-L014 — Exact SQLite identity is necessary but not sufficient
+
+### Learning
+
+SQLite 3.53.4 source identity and bounded local WAL/backup tests can be reproduced, while deterministic kill placement inside commit/checkpoint remains unqualified without an intrusive fault mechanism.
+
+### Why it matters
+
+An exact release and several green tests cannot silently become persistence adoption; incomplete fault coverage is a material blocker rather than a tolerated gap.
+
+### Recheck trigger
+
+Before any persistence adoption, binding selection, fault-VFS authorization, or change in SQLite release/build/topology.

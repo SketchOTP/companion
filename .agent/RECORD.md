@@ -270,3 +270,17 @@ Continue the same directive from `c36525ae5e1bb478baf679cacc1a5f2fd22020c8` for 
 ### Consequence
 
 The corrected packet may be submitted for independent re-review. Architecture v1.0, Roadmap Phase 01, dependencies, cross-phase milestone work, product implementation, and product capability remain closed; Issue #3 remains open.
+
+## COMPANION-PLAN-005 — Foundation qualification evidence prepared
+
+### Context
+
+Architecture v1.0 adoption added implementation gates for authoritative-service toolchain selection, direct-care producer authentication, exact Godot provenance, exact SQLite qualification, and user-level supervision.
+
+### Event
+
+Codex completed the bounded synthetic qualification in a clean local-ext4 secondary worktree. The weak same-user AF_UNIX baseline was defeated by an actual same-user injection. Rust 1.98.1, a private-channel capability candidate, official Godot 4.7.2 artifact metadata, SQLite 3.53.4 source identity, and transient systemd-user probes were evaluated without product work.
+
+### Consequence
+
+The Architect must decide whether to adopt any toolchain/IPC/Godot/supervision recommendation. SQLite remains blocked because deterministic kill placement during commit/checkpoint was not safely available under the directive. Architecture v1.0 stays adopted; Phase 01 and all dependency/product authority remain closed.
