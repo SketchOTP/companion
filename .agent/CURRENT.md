@@ -8,11 +8,12 @@ Roadmap Phase 00 — Planning and Product Contract remains active. `COMPANION-P0
 
 ## Current objective
 
-Resolve the operator-dependent product-contract decisions that materially determine safety, privacy, evaluation, embodiment, and architecture v1.0. No Codex directive is currently active. Do not install or run Godot 4.7.2, select dependencies, run media/workload benchmarks, draft architecture v1.0 as approved, create application or asset work, or begin Phase 01 without a new bounded Architect directive.
+Obtain the four high-coupling operator rulings in the canonical decision packet: primary user/household, intended use and claims, first caregiving scenario and jurisdiction, and default Godot screen habitat. Then resolve or deliberately defer the remaining product-contract decisions before architecture v1.0. No Codex directive is currently active. Do not install or run Godot 4.7.2, select dependencies, run media/workload benchmarks, draft architecture v1.0 as approved, create application or asset work, or begin Phase 01 without a new bounded Architect directive.
 
-## Directive state
+## Directive and operator-gate state
 
-- Active directive: `NONE`
+- Active coder directive: `NONE`
+- Active operator gate: https://app.notion.com/p/3d6833cb27ff817a8972cecb1b877260
 - Last completed directive: `COMPANION-P00-ENV-001`
 - Last directive verdict: `ACCEPTED — ENVIRONMENT EVIDENCE QUALIFIED`
 - Completed task packet: `.agent/tasks/completed/COMPANION-P00-ENV-001/`
@@ -22,6 +23,7 @@ Resolve the operator-dependent product-contract decisions that materially determ
 - Notion Architect review: https://app.notion.com/p/3d6833cb27ff81c596a4dbe116099a75
 - Codex result commit: `ef5b011bfd6e3f747e8bf8e8f06faebb21901d50`
 - Codex publication head reviewed: `c41176bf0b682ca55871e3636d143cf98c150747`
+- Environment acceptance commit: `19140d1076bd6cbd23f25b76b54f9637acec8d84`
 - Product implementation authorization: `CLOSED`
 
 ## Accepted environment evidence
@@ -64,11 +66,12 @@ One transient diagnostic response exposed a hardware-serial field before filteri
 ## Current blockers
 
 - Roadmap Phase 00 and its implementation-opening package are incomplete.
-- Operator decisions affecting target users, claims, caregiving scenario/jurisdiction, ownership/consent, cloud/offline boundary, voice, retention, notifications, support, and screen habitat remain unresolved.
+- The four high-coupling operator rulings in Decision Packet 01 are pending.
+- Remaining operator decisions affecting ownership/consent, cloud/offline boundary, voice, retention, notifications, support, and public naming must later be resolved or deliberately deferred.
 - Godot 4.7.2 supply and exact runtime verification remain unauthorized and incomplete.
 - No production dependency beyond the existing Godot/Godot-version rulings is approved.
 - Architecture v1.0, Phase 01, and product implementation remain closed.
 
 ## Next Architect decision point
 
-Obtain a focused operator ruling on the first high-coupling product decisions: primary user/household, intended use and claims, first caregiving scenario and jurisdiction, and the default screen habitat. Then resolve or deliberately defer the remaining contract decisions in dependency order before issuing architecture v1.0 work.
+After the operator answers Decision Packet 01, record the rulings in Notion and the decision ledger, update the project state, and issue the next bounded Phase 00 directive for architecture v1.0 options and the first vertical-slice contract. Do not infer implementation authority from the operator decisions alone.

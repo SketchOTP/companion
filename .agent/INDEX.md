@@ -8,6 +8,7 @@
 - Canonical Notion: https://app.notion.com/p/3d5833cb27ff8196814fdbae282f15ad
 - Complete end goal: https://app.notion.com/p/3d5833cb27ff81b09c20e2b52d537e1e
 - Active roadmap: https://app.notion.com/p/3d5833cb27ff81dd88faeb0c95b6f44e
+- Active operator decision packet: https://app.notion.com/p/3d6833cb27ff817a8972cecb1b877260
 - Completed environment directive: https://app.notion.com/p/3d6833cb27ff81e6ab93e37fc851b49d
 - Accepted environment report: https://app.notion.com/p/3d6833cb27ff8159b66fdebeb690be90
 - Environment Architect review: https://app.notion.com/p/3d6833cb27ff81c596a4dbe116099a75
@@ -17,14 +18,16 @@
 
 ## Current pointers
 
-- Current stage: Planning Phase 02 — Roadmap Phase 00 active; environment evidence accepted; product implementation gate closed
-- Active directive: `NONE`
+- Current stage: Planning Phase 02 — Roadmap Phase 00 active; environment evidence accepted; operator product-contract ruling pending; product implementation gate closed
+- Active coder directive: `NONE`
 - Active task packet: `NONE`
+- Active operator gate: `Operator Decision Packet 01`
 - Last completed directive: `COMPANION-P00-ENV-001`
 - Completed environment packet: `.agent/tasks/completed/COMPANION-P00-ENV-001/`
 - Latest accepted review: `.agent/tasks/completed/COMPANION-P00-ENV-001/ARCHITECT_REVIEW.md`
 - Codex environment result: `ef5b011bfd6e3f747e8bf8e8f06faebb21901d50`
 - Codex environment publication head reviewed: `c41176bf0b682ca55871e3636d143cf98c150747`
+- Environment acceptance commit: `19140d1076bd6cbd23f25b76b54f9637acec8d84`
 - Last ledgered accepted outcome: `COMPANION-P00-INGEST-001-ARCHITECT-ACCEPTANCE-02`
 - Last state sync: 2026-09-09 America/New_York
 
@@ -36,7 +39,7 @@ Read these before substantial work:
 2. `PROJECT_PROFILE.md`
 3. `CURRENT.md`
 
-Then resolve any incoming Architect directive in `DIRECTIVES.md`, read its active task packet, and fetch the relevant live Notion authority. For environment-dependent work, consult `.agent/tasks/completed/COMPANION-P00-ENV-001/` and its Architect review. Re-probe only when the directive requires current machine evidence or when the environment may have changed.
+Then resolve any incoming Architect directive in `DIRECTIVES.md`, read its active task packet, and fetch the relevant live Notion authority. While the operator decision packet is active, do not start coder work by implication. For environment-dependent work, consult `.agent/tasks/completed/COMPANION-P00-ENV-001/` and its Architect review. Re-probe only when a directive requires current machine evidence or the environment may have changed.
 
 ## Historical ledgers
 
@@ -47,7 +50,7 @@ Then resolve any incoming Architect directive in `DIRECTIVES.md`, read its activ
 - `REPO_MAP.md` — repository structure and important boundaries.
 - `EXTERNAL.md` — relevant external prior art and dispositions.
 
-Do not bulk-load growing history without relevance. Do not skip evidence required to establish the current baseline, safety boundary, prior acceptance, or environment assumptions.
+Do not bulk-load growing history without relevance. Do not skip evidence required to establish the current baseline, safety boundary, prior acceptance, environment assumptions, or operator rulings.
 
 ## Update rule
 
