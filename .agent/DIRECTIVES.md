@@ -191,3 +191,11 @@ Historical entries are append-only after adoption.
 - Corrected scope: direct producer-to-care safety ingress and care-owned receipt journal; explicit identity-consent vault; RFC 8785 canonical event profile and reboot-aware time; Phase 01/milestone separation; Python-versus-one-compiled-comparator evidence gate; exact non-withdrawn SQLite eligibility; and provisional/diversified engineering floors.
 - Publication authority: one focused correction commit and at most one reconciliation commit; update the existing Notion report, parent directive, and open Issue #3.
 - Acceptance boundary: Architecture v1.0, Phase 01, dependency approval, cross-phase milestone, product implementation, and product capability remain `NOT GRANTED` until an independent Architect decision.
+
+### Correction publication update — 2026-09-09
+
+- Focused correction commit: `25b1c737d6f8f1f861a36355909c2a51ea5c64ea`.
+- Normal fast-forward/push: `PASSED`.
+- Existing Notion report and parent directive exact-SHA update/re-fetch: `PASSED`.
+- GitHub Issue #3 correction comment: `5605575746`; issue re-fetched `OPEN` with seven comments.
+- Status: `CODEX CORRECTION SUBMITTED — ARCHITECT RE-REVIEW PENDING`; no self-acceptance or downstream authority created.

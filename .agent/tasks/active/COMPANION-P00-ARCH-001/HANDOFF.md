@@ -1,6 +1,6 @@
 # Handoff — Architect Review 01 Correction
 
-Status: `CORRECTED FOR INDEPENDENT ARCHITECT REVIEW; NOT ACCEPTED`
+Status: `CORRECTION PUBLISHED FOR INDEPENDENT ARCHITECT REVIEW; NOT ACCEPTED`
 
 ## Retained recommendation
 
@@ -43,4 +43,10 @@ Primary-source updates are RFC 8785, systemd boot/monotonic semantics, current S
 - Product implementation/capability: `NOT IMPLEMENTED / NOT ACCEPTED`.
 - GitHub Issue #3: must remain `OPEN` for independent Architect review.
 
-Exact result/publication SHAs, Notion re-fetch markers, Issue comment ID, final clean-tree status, and remote equality are added during the authorized publication reconciliation.
+## Publication
+
+- Focused correction: `25b1c737d6f8f1f861a36355909c2a51ea5c64ea` — normal fast-forward and push passed.
+- Notion coder report: updated and re-fetched at `2026-09-09T16:54:10.517Z` with the focused SHA and current correction section.
+- Parent Notion directive: updated and re-fetched at `2026-09-09T16:54:12.116Z` with the focused SHA and correction summary.
+- GitHub Issue #3: correction comment `5605575746`; re-fetched open with seven comments.
+- The one authorized reconciliation commit records these facts. Its SHA and final clean-tree/remote equality are reported in the canonical result because a commit cannot contain itself.

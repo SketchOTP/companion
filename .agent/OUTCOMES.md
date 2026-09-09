@@ -408,3 +408,12 @@ The directive is complete, its task packet is archived, and the next work must a
 - Evidence semantics: 100 restart/replay cases, 1,000 cycles, and 30 minutes relabeled and diversified as provisional minimum engineering floors with later qualification escalation.
 - Evidence level: `E3_TARGET_TESTED` for corrected document semantics only; runtime/product evidence `NOT CREATED`.
 - Hard boundary: no product code, Godot execution, asset, dependency/manifest, CI workflow, benchmark, media, biometric, notification, safety runtime, phase transition, or capability claim.
+
+### Publication reconciliation
+
+- Focused correction commit: `25b1c737d6f8f1f861a36355909c2a51ea5c64ea`.
+- Normal fast-forward/push and immediate remote equality: `PASSED`.
+- Notion coder report/directive update and post-write re-fetch: `PASSED`.
+- GitHub Issue #3 comment `5605575746` and open-state re-fetch: `PASSED`.
+- One reconciliation commit is authorized to preserve these publication facts; final SHA/remote equality are reported in the canonical result.
+- Architect acceptance: `NOT RUN`; Architecture v1.0, Phase 01, dependencies, milestone work, and product implementation remain closed.

@@ -4,20 +4,21 @@
 
 Planning Phase 02 — Master Delivery Roadmap remains active.
 
-Roadmap Phase 00 — Planning and Product Contract remains active. The canonical ingest, Linux environment inventory, and Operator Decision Packet 01 are complete. `COMPANION-P00-ARCH-001` has received Architect Review 01; Codex has prepared the focused correction for publication and independent re-review. Product implementation remains closed.
+Roadmap Phase 00 — Planning and Product Contract remains active. The canonical ingest, Linux environment inventory, and Operator Decision Packet 01 are complete. `COMPANION-P00-ARCH-001` has received Architect Review 01; Codex published focused correction `25b1c737d6f8f1f861a36355909c2a51ea5c64ea` for independent re-review. Product implementation remains closed.
 
 ## Current objective
 
-Publish and independently review the corrected Architecture v1.0 proposal. The packet now addresses the seven review findings: independent safety-evidence ingress, explicit identity/consent/contact/secret authority, canonical event encoding and reboot-aware time, roadmap-consistent milestone placement, language/toolchain selection gate, exact SQLite eligibility, and properly labeled/diversified evidence floors.
+Independently review the corrected Architecture v1.0 proposal. The packet now addresses the seven review findings: independent safety-evidence ingress, explicit identity/consent/contact/secret authority, canonical event encoding and reboot-aware time, roadmap-consistent milestone placement, language/toolchain selection gate, exact SQLite eligibility, and properly labeled/diversified evidence floors.
 
 ## Active directive
 
 - Directive: `COMPANION-P00-ARCH-001`
-- Status: `CORRECTION PREPARED — CODEX RESUBMISSION / ARCHITECT REVIEW REQUIRED`
+- Status: `CODEX CORRECTION 01 SUBMITTED — ARCHITECT RE-REVIEW REQUIRED`
 - Verified task baseline: `db33d8a597f79a01e569482dc00583dcf50249f9`
 - Starting routing head for original execution: `6559cec1beaf27bf958c2b9517b0717f04c83ea9`
 - Codex planning result: `5d6d87d93b017e42647e260b69d80b5ad3f8becc`
 - Codex publication head reviewed: `d8c7209e0ec0370c17fc4cf980fde879e54f10b5`
+- Focused correction result: `25b1c737d6f8f1f861a36355909c2a51ea5c64ea`
 - Architect review file: `.agent/tasks/active/COMPANION-P00-ARCH-001/ARCHITECT_REVIEW_01.md`
 - Architect review Notion: https://app.notion.com/p/3d6833cb27ff81bd834cf3693f8ae9a5
 - Parent directive: https://app.notion.com/p/3d6833cb27ff8183a210e560883d96ab
@@ -106,4 +107,4 @@ No product source, Godot project or execution, sprite production, dependency ins
 
 ## Next review point
 
-Codex publishes the focused correction commit, updated Notion report/directive, and Issue #3 handoff. The Architect independently verifies the safety path, vault authority, canonical encoding/time model, phase sequencing, language gate, SQLite rule, evidence floors, traceability, scope, and repository state before any Architecture v1.0 adoption.
+The Architect independently verifies focused correction `25b1c737d6f8f1f861a36355909c2a51ea5c64ea`, its publication reconciliation, safety path, vault authority, canonical encoding/time model, phase sequencing, language gate, SQLite rule, evidence floors, traceability, scope, and repository state before any Architecture v1.0 adoption.

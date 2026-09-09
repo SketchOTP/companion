@@ -1,6 +1,6 @@
 # Evidence Record
 
-Status: `ARCHITECT REVIEW 01 CORRECTED — RESUBMISSION PENDING PUBLICATION`
+Status: `ARCHITECT REVIEW 01 CORRECTED — PUBLISHED FOR INDEPENDENT RE-REVIEW`
 
 ## Authority reconstruction
 
@@ -157,3 +157,15 @@ The original result and publication evidence above remain historical. Architect 
 - Product/runtime tests, Godot execution, toolchain/database benchmarks, media, biometrics, notification, and safety runtime: `NOT APPLICABLE / NOT RUN — PROHIBITED`.
 
 The correction artifact evidence is `E3_TARGET_TESTED` for documentation semantics and cross-document consistency only. It establishes no runtime or product capability and does not constitute Architect acceptance.
+
+### Correction publication addendum
+
+- Focused correction commit: `25b1c737d6f8f1f861a36355909c2a51ea5c64ea` — `docs: correct architecture review findings`.
+- Normal fast-forward from Architect Review 01 baseline `c36525ae5e1bb478baf679cacc1a5f2fd22020c8`: `PASSED`.
+- Focused correction push and immediate `HEAD == origin/main`: `PASSED`.
+- Existing Notion coder report top status updated and current correction section appended with exact focused SHA: `PASSED`; re-fetched `2026-09-09T16:54:10.517Z`, no truncation/unknown-block flag returned.
+- Parent Notion directive status updated and correction summary appended with exact focused SHA: `PASSED`; re-fetched `2026-09-09T16:54:12.116Z`, no truncation/unknown-block flag returned.
+- Canonical project, roadmap, and Architect Review 01 re-fetched after publication: `PASSED`; they retain Architecture v1.0 not-adopted/continued boundaries and no conflicting later authority.
+- GitHub Issue #3 correction comment: `PASSED`, comment `5605575746`, exact focused SHA and hard boundary present.
+- GitHub Issue #3 final pre-reconciliation state: `OPEN`, seven comments; Codex did not close or self-accept.
+- Publication reconciliation is the single additional governance commit containing this addendum. Its SHA is reported in the canonical result because a commit cannot contain its own SHA.

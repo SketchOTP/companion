@@ -17,7 +17,7 @@
 ## Current pointers
 
 - Current stage: Planning Phase 02 — Roadmap Phase 00
-- Active coder directive: `COMPANION-P00-ARCH-001 — CODEX CORRECTION PREPARED; INDEPENDENT REVIEW REQUIRED`
+- Active coder directive: `COMPANION-P00-ARCH-001 — CODEX CORRECTION 01 SUBMITTED; INDEPENDENT REVIEW REQUIRED`
 - Active packet: `.agent/tasks/active/COMPANION-P00-ARCH-001/`
 - Required correction authority: `.agent/tasks/active/COMPANION-P00-ARCH-001/ARCHITECT_REVIEW_01.md`
 - Original full execution directive: `.agent/tasks/active/COMPANION-P00-ARCH-001/CODEX_FULL_DIRECTIVE.md`
@@ -27,6 +27,7 @@
 - Codex planning result: `5d6d87d93b017e42647e260b69d80b5ad3f8becc`
 - Codex publication head reviewed: `d8c7209e0ec0370c17fc4cf980fde879e54f10b5`
 - Architect Review 01 head / correction baseline: `c36525ae5e1bb478baf679cacc1a5f2fd22020c8`
+- Focused correction result: `25b1c737d6f8f1f861a36355909c2a51ea5c64ea`
 - Architecture v1.0: `NOT ADOPTED`
 - Roadmap Phase 01: `CLOSED`
 - Product implementation: `CLOSED`
