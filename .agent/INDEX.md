@@ -9,7 +9,8 @@
 - Governance contract: https://app.notion.com/p/3d5833cb27ff81e2b3b2eabc70f9f6b3
 - Adopted Architecture v1.0: https://app.notion.com/p/3d6833cb27ff81e99c52dc33b53f2556
 - Architect Review 02: https://app.notion.com/p/3d6833cb27ff81d88785f64d0629286c
-- Architecture routing mirror: `.agent/ARCHITECTURE_V1.md`
+- Active qualification directive: https://app.notion.com/p/3d6833cb27ff815e90e8de161e6de185
+- Required qualification report: https://app.notion.com/p/3d6833cb27ff81c7a89acb29ced1a1cc
 - Open-decision queue: https://app.notion.com/p/3d5833cb27ff81118ac8e4139ce1c873
 - GitHub: https://github.com/SketchOTP/companion
 
@@ -17,38 +18,49 @@
 
 - Current stage: Planning Phase 02 — Roadmap Phase 00
 - Architecture v1.0: `ADOPTED`
+- Active coder directive: `COMPANION-P00-QUAL-001`
+- Active packet: `.agent/tasks/active/COMPANION-P00-QUAL-001/`
+- Full execution directive: `.agent/tasks/active/COMPANION-P00-QUAL-001/CODEX_FULL_DIRECTIVE.md`
+- GitHub Issue #4: https://github.com/SketchOTP/companion/issues/4
+- Verified pre-directive baseline: `4cfb0d5d62cd85737f88cd151d250ccf292a7e6d`
+- Task-packet publication: `f8fc3149fcf039d2cec468aa8c3a37acdaf620d9`
+- Required task branch: `codex/p00-qual-001`
+- Required clean secondary worktree: `YES`
+- Required publication: `UNMERGED PULL REQUEST TO MAIN`
 - Last completed directive: `COMPANION-P00-ARCH-001`
 - Completed architecture packet: `.agent/tasks/completed/COMPANION-P00-ARCH-001/`
-- Accepted correction: `25b1c737d6f8f1f861a36355909c2a51ea5c64ea`
-- Corrected publication reviewed: `1ceb330d4c2321b500a138b8acfdfeb4279c08e7`
-- GitHub Issue #3: close as completed after archive publication
-- Active coder directive: `NONE DURING ACCEPTANCE CLOSEOUT`
 - Roadmap Phase 01: `CLOSED`
 - Dependencies: `NONE APPROVED`
 - Product implementation: `CLOSED`
-- Current canonical totals: `53` evidence records; `45` architecture decisions
+- Current canonical totals at issue: `53` evidence records; `45` architecture decisions
 - Last state sync: 2026-09-09 America/New_York
 
-## Mandatory startup for the next directive
+## Mandatory startup
 
-Codex cannot see the operator–Architect ChatGPT conversation. Use durable authority only.
+Codex cannot see the operator–Architect conversation. Do not infer what to read or do.
 
-1. Read root and nested `AGENTS.md` files and `.agents/skills/authority/SKILL.md`.
-2. Read `.agent/PROJECT_GOAL.md`, `.agent/PROJECT_PROFILE.md`, `.agent/CURRENT.md`, and `.agent/ARCHITECTURE_V1.md`.
-3. Fetch the live canonical project, end goal, roadmap, governance contract, adopted Architecture v1.0, Architect Review 02, open-decision queue, risk register, and the active directive/report named by the future task packet.
-4. Query current Architecture Decision Ledger and Research Evidence Register counts rather than relying on snapshots.
-5. Inspect the current branch, local/remote SHAs, working tree, open issue, and recent commits. Preserve all unfamiliar work.
-6. Treat the reported user-owned local Graft edits to `.gitignore` and `AGENTS.md` as protected. Do not commit, discard, overwrite, reset, or reinterpret them without explicit authority.
-7. Use current primary external sources before every material technical, legal, version, platform, dependency, or licensing recommendation.
-8. Stop on material Notion/GitHub contradiction, inaccessible authority, unexplained divergence, or work outside the active directive.
+1. Inspect the primary worktree without modifying it. Preserve reported uncommitted Graft edits to root `.gitignore` and `AGENTS.md`.
+2. Fetch current `origin/main`; verify the accepted architecture/archive baseline and later directive publication chain.
+3. Create a clean secondary worktree on local ext4/NVMe and branch `codex/p00-qual-001`; do not stash/reset/switch/clean the primary worktree.
+4. Read root/nested `AGENTS.md`, `.agents/skills/authority/SKILL.md`, `.agent/PROJECT_GOAL.md`, `.agent/PROJECT_PROFILE.md`, `.agent/CURRENT.md`, `.agent/ARCHITECTURE_V1.md`, and every file in the active packet.
+5. Fetch every exact live Notion source in `CODEX_FULL_DIRECTIVE.md`, query ADR/evidence databases, read ADR-38 through ADR-45, read Issue #4 and all comments, and complete `AUTHORITY_CONTEXT_ACKNOWLEDGMENT.md`.
+6. Stop if confidence is not `ADEQUATE`, protected work cannot remain untouched, the worktree/branch is not clean, or material authority conflicts.
+7. Recheck current primary official sources before every artifact download, version choice, security design, license statement, or technical recommendation.
+8. Execute only the synthetic qualification work authorized by the full directive.
+9. Push the task branch, open a PR to `main`, publish the Notion result and Issue #4 update, leave both open, and stop for Architect review.
 
-## Adopted architecture pointers
+## Active qualification outputs
 
-- Runtime owners, direct care ingress, vault boundary, canonical event profile, IPC trust gate, local storage, lifecycle, roadmap placement, and technology state: `.agent/ARCHITECTURE_V1.md`.
-- Complete accepted evidence/history: `.agent/tasks/completed/COMPANION-P00-ARCH-001/`.
-- The direct safety path cannot be implemented until same-user unauthorized producer injection is shown impossible under the selected host-specific mechanism.
-- The production core language remains unselected. Python 3.12 and Rust are the next qualification pair.
-- No Godot 4.7.2 artifact, SQLite artifact/build, systemd topology, speech/vision/model stack, vault implementation, or notification provider is approved.
+- Python 3.12 versus exact Rust stable toolchain evidence and recommendation.
+- Same-user direct-care producer identity/capability attack matrix and recommendation.
+- Exact official Godot 4.7.2 artifact provenance and non-GUI version-only result.
+- Exact supported non-withdrawn SQLite artifact/build and bounded local storage evidence.
+- User-level supervision feasibility or explicit blocker.
+- No production adoption or product capability.
+
+## Protected-work rule
+
+Do not commit, discard, reset, overwrite, stash, reformat, or reinterpret the operator's uncommitted root `.gitignore` and `AGENTS.md` edits. Do not include their contents in reports. Use the secondary worktree.
 
 ## Historical ledgers
 
@@ -59,4 +71,4 @@ Codex cannot see the operator–Architect ChatGPT conversation. Use durable auth
 - `REPO_MAP.md` — repository structure and boundaries.
 - `EXTERNAL.md` — external prior art and dispositions.
 
-`CURRENT.md` is mutable. Historical ledgers are append-only after adoption; correct mistakes through new superseding entries.
+`CURRENT.md` is mutable. Historical ledgers are append-only after adoption; correct errors through new superseding entries.
