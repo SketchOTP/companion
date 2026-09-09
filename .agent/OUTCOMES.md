@@ -275,3 +275,11 @@ Codex must follow `.agent/tasks/active/COMPANION-P00-INGEST-001/ARCHITECT_REVIEW
 ### Boundary
 
 This correction changes governance/current-state and ingest-evidence artifacts only. It does not add product code, a Godot project, assets, dependencies, CI, deployment, models, datasets, voices, database implementation, experiments, notifications, safety integration, environment inventory, or architecture v1.0. Independent Architect review is still required.
+
+### Publication reconciliation
+
+- Focused correction commit: `9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388`.
+- Normal push and immediate correction-commit local/remote equality: `PASSED`.
+- Notion coder report and directive exact-SHA update/re-fetch: `PASSED`.
+- GitHub Issue #1 exact-SHA result comment and open-state re-fetch: `PASSED`.
+- Architect acceptance: `NOT RUN`; issue and active directive remain open for independent review.

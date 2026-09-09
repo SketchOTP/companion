@@ -23,6 +23,7 @@
 - Last recorded outcome: `COMPANION-P00-INGEST-001-CORRECTION-01`
 - Verified directive baseline: `9056c0362a43f2b635ffb910451943b59e4ee1f0`
 - Reviewed Codex publication head: `fce544262f164e4da1508879ec9d8865b0cecfa2`
+- Focused correction commit: `9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388`
 - Last state sync: 2026-09-08 America/New_York
 
 ## Mandatory kernel

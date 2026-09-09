@@ -7,7 +7,7 @@
 - Focused correction evidence: `E3_TARGET_TESTED`
 - Retained corpus-enumeration evidence: `E2_REPRODUCED`
 - Correction baseline: `f4a312b29fd8cc07a330242a1f1d6afaf8cd3858`
-- Correction result identity: the focused commit containing this handoff; the exact SHA is synchronized to the Notion report, directive page, and GitHub Issue #1 after normal push.
+- Focused correction commit: `9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388` — normal fast-forward from the Architect review baseline.
 - Architect acceptance: `NOT ASSIGNED`
 
 ## Retained accepted and provisional evidence
@@ -45,10 +45,10 @@ The first submission's blanket comprehension and traceability pass claims are su
 
 ## Notion and GitHub publication
 
-- Notion coder report correction: `PASSED` — updated and re-fetched before publication; exact result SHA is added after push.
-- Notion directive correction state: `PASSED` — updated and re-fetched before publication; exact result SHA is added after push.
-- GitHub Issue #1: remains open; corrected result comment is added after push.
-- Normal fast-forward and local/remote SHA equality: must pass after publication before final reporting.
+- Notion coder report correction: `PASSED` — updated and re-fetched with exact correction SHA, semantic result, closed product gate, and Architect-review-pending state.
+- Notion directive correction state: `PASSED` — updated and re-fetched with the same exact correction SHA and acceptance boundary.
+- GitHub Issue #1: `PASSED` — correction comment `5594224653` added with exact SHA; issue re-fetched open for independent review.
+- Focused correction push and equality: `PASSED` — `HEAD == origin/main == 9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388` immediately after the normal correction push.
 
 ## Validation summary
 
@@ -57,6 +57,7 @@ The first submission's blanket comprehension and traceability pass claims are su
 - `PASSED` — reference closure, required risk relationships, 10 end-goal pillars, and Roadmap Phase 00–15.
 - `PASSED` — corrected RQ-14 classification and first-result supersession.
 - `PASSED` — repository remains governance/evidence only.
+- `PASSED` — Notion report/directive exact-SHA reconciliation and GitHub Issue #1 correction handoff.
 - `NOT APPLICABLE` — application tests, runtime, deployment, and product-capability validation.
 - `NOT RUN` — Architect re-review and acceptance.
 

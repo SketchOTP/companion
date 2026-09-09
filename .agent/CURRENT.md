@@ -4,16 +4,16 @@
 
 Planning Phase 02 — Master Delivery Roadmap is active.
 
-Roadmap Phase 00 — Planning and Product Contract is active. `COMPANION-P00-INGEST-001` remains the active directive under Architect correction cycle 1. Codex has completed the focused semantic correction and prepared it for publication and independent Architect re-review. Corpus coverage remains provisionally accepted; overall project-comprehension certification is not accepted until the Architect reviews the correction. Product implementation remains closed.
+Roadmap Phase 00 — Planning and Product Contract is active. `COMPANION-P00-INGEST-001` remains the active directive under Architect correction cycle 1. Codex published the focused semantic correction for independent Architect re-review. Corpus coverage remains provisionally accepted; overall project-comprehension certification is not accepted until the Architect reviews the correction. Product implementation remains closed.
 
 ## Current objective
 
-Publish the focused correction contract from Architect Review 01 as one normal fast-forward commit, synchronize the exact result identity to Notion and GitHub Issue #1, and return the corrected evidence for independent Architect review.
+Await independent Architect review of the corrected ingest evidence. Do not begin environment inventory, architecture v1.0, dependency selection, or product implementation without new authority.
 
 ## Active directive
 
 - Active directive: `COMPANION-P00-INGEST-001`
-- Directive status: `CODEX CORRECTION COMPLETE — PUBLICATION / ARCHITECT REVIEW PENDING`
+- Directive status: `CODEX CORRECTION SUBMITTED — ARCHITECT REVIEW PENDING`
 - Issuer: Architect
 - Verified directive baseline: `9056c0362a43f2b635ffb910451943b59e4ee1f0`
 - Directive commit: `bb879150f66e4c19bc4058967c628070087d553e`
@@ -26,7 +26,7 @@ Publish the focused correction contract from Architect Review 01 as one normal f
 - Last completed Codex directive: `COMPANION-AUTHORITY-BOOTSTRAP-001`
 - Governance bootstrap Architect review: `ACCEPTED_FOR_GOVERNANCE_ONLY`
 - Ingest Architect review: `CONTINUE / NOT ACCEPTED`
-- Correction-cycle Codex result: `COMPLETE_FOR_ARCHITECT_REVIEW`; exact result SHA is the commit containing this snapshot and will be synchronized to Notion and Issue #1 after normal push.
+- Correction-cycle Codex result: `COMPLETE_FOR_ARCHITECT_REVIEW` at `9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388`; Notion and GitHub Issue #1 carry the exact result identity.
 - Product implementation authorization: `CLOSED`
 
 ## Current verified state
@@ -40,6 +40,7 @@ Publish the focused correction contract from Architect Review 01 as one normal f
 - Iteration one is fixed to the existing Linux PC, existing webcam and microphone, connected speakers and monitor, Godot 4.7.2, and the approved flat cel-shaded purple sprite mon.
 - The correct visual anatomy is two fingers plus one thumb per hand and three toes per foot.
 - The remote repository `SketchOTP/companion` uses `main`; Architect review covered the complete three-commit range from `bb879150f66e4c19bc4058967c628070087d553e` through `fce544262f164e4da1508879ec9d8865b0cecfa2`.
+- Focused correction commit `9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388` was normally pushed from review-state baseline `f4a312b29fd8cc07a330242a1f1d6afaf8cd3858`; its exact identity was verified in the Notion report/directive and open GitHub Issue #1.
 - The final reviewed tree contains Authority governance/current-state records and the ingest task packet only. No application source, runtime package, production dependency, CI workflow, deployment configuration, sprite asset, model, dataset, voice, database implementation, experiment, notification, or safety integration exists.
 - No CI workflow or product test suite exists; product/runtime tests remain not applicable at this stage.
 

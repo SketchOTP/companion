@@ -96,3 +96,11 @@ Historical entries are append-only after adoption.
 - Added validation artifact: `SEMANTIC_VALIDATION.json`, covering exact RQ/ADR/risk ID-title pairs, statuses, document-reference closure, and required relationship relevance.
 - Codex disposition: `COMPLETE_FOR_ARCHITECT_REVIEW`; the directive remains active and is not accepted until independent Architect review.
 - Product implementation, environment inventory, architecture v1.0, dependencies, and next-phase authority: `CLOSED / NOT GRANTED`.
+
+### Correction cycle 1 publication update — 2026-09-08
+
+- Focused correction commit: `9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388`.
+- Normal fast-forward from Architect review baseline: `PASSED`.
+- Notion coder report and directive exact-SHA reconciliation: `PASSED`.
+- GitHub Issue #1 corrected result handoff: `PASSED`; issue remains open.
+- Acceptance boundary: `ARCHITECT REVIEW PENDING`; Codex did not self-assign acceptance or open product work.

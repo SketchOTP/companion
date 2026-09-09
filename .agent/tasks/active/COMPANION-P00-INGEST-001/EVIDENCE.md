@@ -172,3 +172,14 @@ Validator execution note: two draft harness invocations were discarded before ev
 - Product-capability evidence: `NOT APPLICABLE`.
 - Retrieval confidence: `ADEQUATE`.
 - Architect acceptance: `NOT RUN` for the corrected submission.
+
+## Correction-cycle publication evidence
+
+- Focused correction commit: `9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388` — `PASSED`.
+- Normal fast-forward: `f4a312b29fd8cc07a330242a1f1d6afaf8cd3858..9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388` — `PASSED`; no force push or history rewrite.
+- Immediate correction-push equality: `HEAD == origin/main == 9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388` — `PASSED`.
+- Notion coder report exact-SHA update and re-fetch: `PASSED`; correction submitted, Architect review pending, product implementation closed, no publication placeholder.
+- Notion directive exact-SHA update and re-fetch: `PASSED`; same result identity and boundary.
+- GitHub Issue #1 correction handoff: `PASSED`; comment `5594224653` contains the exact correction SHA and semantic summary.
+- GitHub Issue #1 state after comment: `OPEN` — `PASSED`; Codex did not close or self-accept the directive.
+- Publication-evidence reconciliation: recorded in the governance-only commit containing this section; final local/remote equality is required and reported in the canonical result.

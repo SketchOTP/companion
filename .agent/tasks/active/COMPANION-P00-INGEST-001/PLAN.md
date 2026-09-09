@@ -93,7 +93,7 @@ Status: `COMPLETE`
 
 ## Checkpoint 10 — Corrected publication and handoff
 
-Status: `IN PROGRESS — NOTION PREPARED; COMMIT, ISSUE, AND FINAL SHA RECONCILIATION PENDING`
+Status: `COMPLETE`
 
 - Update current `.agent` state and append-only directive/outcome records.
 - Update and re-fetch the Notion coder report and directive while preserving the failed Architect review record.
