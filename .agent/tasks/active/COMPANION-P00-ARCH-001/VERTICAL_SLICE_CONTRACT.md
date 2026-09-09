@@ -1,104 +1,150 @@
-# First Vertical-Slice Contract
+# Foundation and Cross-Phase Integration Contracts
 
-Status: `COMPLETE — PROPOSED PHASE-01 CONTRACT; NOT AUTHORIZED`
+Status: `CORRECTED — PROPOSED CONTRACTS; NOT AUTHORIZED`
 
-## Slice: “One remembered care loop plus shadow help”
+These are two distinct gates. Roadmap Phase 01 establishes the engineering foundation. “One remembered care loop plus shadow help” is a later cross-phase architecture-proof milestone whose prerequisites include bounded work from Phases 02, 03, 04, and 10. Neither contract is authorized by this planning document.
 
-On the adopted 1366×768 Openbox display, a real Godot 4.7.2 bounded window presents the approved mon responding to a deterministic synthetic encounter. The encounter changes a named homeostatic drive, creates an evidence-backed episodic memory, and produces a body-neutral intent that Godot renders. After controlled process restart, the same individual restores the committed change and references the encounter through a structured, non-LLM recall. In parallel, a synthetic explicit-help fixture traverses the separate care policy to a shadow incident and stub acknowledgment without sending a real notification or changing companion state.
+## Contract A — Roadmap Phase 01 engineering foundation
 
-This exercises identity continuity, organism causality, typed memory, uncertain evidence, embodiment separation, care separation, restart/recovery, degradation, and evidence/provenance. It intentionally does not claim conversation, real perception, real speech recognition, caregiving efficacy, or deployment readiness.
+### Scope
 
-## Real, simulated, stubbed, absent
+Phase 01 expands the governance-only repository into a reproducible engineering workspace without claiming companion behavior:
 
-| Surface | Slice treatment |
+- approved repository/module shells and authored/generated/runtime separation;
+- pinned, reproducible development/build environment and exact toolchain records;
+- process shells for `companion-core`, `care-core`, `identity-consent-vault`, adapters, Godot presentation, and supervision, with domain behavior absent;
+- typed/versioned IPC schemas, `JCS-RFC8785-v1` canonical fixtures, digest/time profiles, peer authorization, bounded queues, and compatibility rules;
+- local XDG config/data/state/cache/runtime boundaries, with canonical runtime state prohibited on SSHFS;
+- structured payload-minimized logging, health/degradation reporting, and lifecycle/version inventory;
+- supervisor start/stop/restart/backoff foundation without enabling live sensing, care, or external delivery;
+- deterministic clock, boot epoch, seeds, fixture, fault-control, and per-run local test-root facilities;
+- CI design/implementation and provenance/BOM foundations only when separately authorized;
+- diagnostic device metadata surfaces that do not capture or play media.
+
+### Acceptance
+
+A clean clone with only approved prerequisites reproduces the environment, validates locked inputs, builds the authorized shells, runs non-hardware tests locally and in CI, starts/stops the empty process graph safely, verifies IPC/canonicalization/peer boundaries, confines all mutable test state to local XDG-like roots, reports unavailable capabilities honestly, emits rights/provenance records, and leaves no hidden network, model, data, voice, secret, biometric, contact, or personal-machine dependency.
+
+The language/toolchain evidence gate blocks production implementation of `companion-core`, `care-core`, and `identity-consent-vault`, but it does not block language-neutral repository layout, schema/canonicalization contracts, test fixtures, XDG policy, logging/health contracts, or supervisor/CI planning. The Architect must explicitly decide which Phase 01 activities may begin and must approve the eventual language/toolchain result.
+
+### Explicit exclusions
+
+Phase 01 completion does not prove organism behavior, memory, production embodiment, care scenario efficacy, perception/speech, notification delivery, biometrics, identity matching, privacy/security qualification, endurance, accessibility, pilot readiness, or any product capability.
+
+## Contract B — Cross-phase milestone: “One remembered care loop plus shadow help”
+
+### Purpose and phase provenance
+
+After its prerequisite gates are authorized and passed, a real Godot 4.7.2 bounded window on the adopted 1366×768 Openbox display presents the approved mon responding to a deterministic synthetic encounter. The encounter changes a named homeostatic drive, creates an evidence-backed episodic memory, and produces a body-neutral intent rendered by Godot. After controlled process restart, the same individual restores the committed change and references the encounter through structured non-LLM recall.
+
+In parallel, an authorized synthetic safety producer sends an `explicit_help_candidate_v1` directly to `care-core`. Care durably records the safety-input receipt in its own append-only journal, traverses deterministic shadow policy, and exercises stub acknowledgment without a real notification or companion-state mutation. The producer may also send a separately addressed ordinary-observation copy to `companion-core`; both cite the same immutable source ID/digest, but neither store is shared.
+
+The milestone combines bounded work from:
+
+| Roadmap phase | Bounded contribution |
+|---|---|
+| Phase 02 — Mon body, habitat, and sprite pipeline | exact Godot body adapter, approved minimal authored sprite subset, bounded-window behavior |
+| Phase 03 — Organism kernel and autonomous life | deterministic two-drive organism subset and body-neutral intents |
+| Phase 04 — Evidence, world model, and persistent memory | ordinary-evidence event, episodic memory, replay, restart, and restore |
+| Phase 10 — Caretaking core foundation | direct safety ingress, care-owned receipt/incident journals, signed policy, shadow-only incident flow |
+
+Passing the milestone completes none of Phases 02, 03, 04, or 10. Early bounded `care-core` work retires the architecture-blocking risk that companion failure could control safety ingress; it does not bypass Phase 10’s full scenario, consent, accessibility, false/missed-event, contact, and operational qualification.
+
+### Real, simulated, stubbed, absent
+
+| Surface | Milestone treatment |
 |---|---|
 | Godot 4.7.2 build and bounded window | **Real**, exact verified build; adopted display |
 | Approved mon identity | **Real authored test sprite subset** only after separate asset authority; must pass visual bible/MON_FRAME_V1 |
-| companion core/event/memory store | **Real minimal implementation** |
+| `companion-core` event/memory store | **Real minimal implementation** |
 | organism | **Real deterministic two-drive subset** with explicit arbitration |
-| world/evidence | **Synthetic fixture**, schema-valid and clearly marked |
+| ordinary world/evidence | **Synthetic fixture**, schema-valid and clearly marked |
 | recall | **Real structured retrieval**, no LLM |
-| care core/policy/incident journal | **Real minimal deterministic shadow implementation** |
-| spoken-help recognition | **Synthetic transcript/evidence fixture**, not recorded media |
+| direct safety producer→care path | **Real IPC/receipt path** driven by an authorized synthetic producer; no media/model |
+| `care-core` safety-input/policy/incident journals | **Real minimal deterministic shadow implementation**, independent of companion database |
+| `identity-consent-vault` | **Real contract stub only**; reports `test_only`, exposes no secrets/biometrics/contacts, denies every live capability |
+| spoken-help recognition | **Synthetic safety-candidate fixture**, not recorded media |
 | notification | **Stub** producing deterministic queued/delivered/acknowledged/failure fixtures; no external transport |
 | camera, microphone, speakers | **Absent** |
 | models, weights, datasets, voice | **Absent** |
-| biometrics, enrollment, contact secrets | **Absent** |
+| biometrics, enrollment, real contacts/secrets/keys | **Absent** |
 | dream/consolidation and online learning | **Absent** |
 | cloud/network | **Absent** |
 
-## Scenario
+### Scenario
 
-1. Start from a versioned seed containing one creature ID and neutral drives.
-2. Inject `care_interaction_v1` synthetic evidence with source, quality, monotonic/UTC time, privacy class, and fixture provenance.
-3. Companion core appends the evidence, deterministically reduces `connection_need`, creates one episodic memory linked to the evidence, and emits `approach_acknowledge`.
+1. Start from a versioned seed containing one creature ID and neutral drives; assign a test `boot_id` and owner sequences.
+2. Inject `care_interaction_v1` as an ordinary synthetic observation with source, quality, boot-scoped monotonic time, UTC observation/uncertainty, privacy class, and fixture provenance.
+3. Companion core appends the ordinary evidence, deterministically reduces `connection_need`, creates one episodic memory linked to the evidence, and emits `approach_acknowledge`.
 4. Godot renders a two-state intent sequence using the approved subset and reports exact intent/frame completion.
-5. Stop companion core at a controlled point; restart; replay and verify identical projection hash, creature ID, drive value, memory linkage, and next intent.
-6. Inject a distinct `explicit_help_candidate_v1` synthetic fixture to care core.
+5. Stop companion core at controlled durable boundaries; restart; replay and verify identical canonical event bytes/digests, projection hash, creature ID, drive value, memory linkage, and next intent across same- and new-boot cases.
+6. Through an independently authorized synthetic producer, send `explicit_help_candidate_v1` directly to care. Care authenticates the producer, validates schema/canonical bytes/digest/freshness/quality/replay indicators, then appends its own accepted or rejected receipt before policy evaluation.
 7. Care policy creates a shadow incident, exercises confirmation timeout and accessible fallback branches, sends only to the stub, distinguishes delivered from acknowledged, and closes only under a defined terminal fixture.
-8. Kill/restart Godot, model-stub, companion core, care core, and notification stub one at a time; verify required degradation and recovery.
+8. Stop `companion-core`; redeliver a new valid safety candidate; prove care receipt/transition and recovery without companion IPC or database access.
+9. Kill/restart Godot, producer stub, companion core, care core, vault stub, and notification stub one at a time; verify explicit degradation and recovery.
 
-## Acceptance thresholds
+## Provisional minimum engineering evidence floors
 
-### Correctness and authority
+These floors are early defect-finding gates, not statistical reliability, safety, endurance, availability, or production-SLA evidence.
 
-- 100% of a fixed golden sequence produces byte-stable canonical event payloads after normalization and identical projection hashes across 100 replay runs.
-- Creature ID/epoch, evidence link, memory version, drive values, and incident sequence are identical before/after 100 controlled restarts.
-- 0 unauthorized cross-store writes across capability tests; filesystem and IPC peer-negative tests all reject.
-- 100% duplicate command/evidence/notification messages with identical idempotency keys create no duplicate domain event or incident transition.
-- 100% unsupported schema-major, stale evidence, malformed fixture, unknown producer, or missing authority class is rejected and audited.
-- Synthetic dream/model data cannot satisfy a factual-memory promotion test; companion output cannot trigger care policy in any negative test.
-- Delivered and acknowledged states are distinct in every incident trace.
+| Floor | Intended to detect | Cannot establish |
+|---|---|---|
+| 100 replay/restart cases | deterministic reconstruction errors, non-idempotent commands, boundary-specific torn state, boot/time ordering defects | real crash frequency, hardware/power-loss reliability, long-history correctness, or operational availability |
+| 1,000 deterministic interaction cycles | short-loop leaks, queue/store growth, schema drift, projection divergence, deadlocks under bounded synthetic load | realistic human/media distribution, statistical failure rate, product lifetime, or safety efficacy |
+| 30 minutes continuous integrated execution | immediate resource growth, startup/warmup instability, adapter stalls, renderer/IPC liveness defects | 24-hour or multi-day endurance, thermal/noise acceptability, maintenance burden, or production SLA |
 
-### Latency
+The suite must span multiple retained deterministic seeds, low/high drive and state boundaries, empty/nonempty/restored stores, multiple supported schema versions plus invalid/unsupported messages, kill points before/during/after durable commits, replay from multiple persisted states, same-boot and cross-boot time cases, and property/randomized tests whose failing and passing seeds are retained. Repeating one golden sequence does not satisfy a floor.
 
-Measured on the accepted host under the defined slice workload, after warmup:
+Later gates must explicitly escalate to 24-hour and multi-day soak, target-media qualification, shadow-safety false/missed-event measurement, accessibility testing with the intended population, controlled pilot evidence, and operational/update/recovery observation. None of those later gates is implied by the initial counts.
+
+## Milestone acceptance
+
+### Correctness, canonicalization, and authority
+
+- Every golden event matches pinned `JCS-RFC8785-v1` UTF-8 bytes and `sha-256-jcs-event-v1` digest; duplicate keys, invalid Unicode, NaN/Infinity, out-of-range/noncanonical numbers, altered digest/signature scope, and unsupported schema major are rejected before authority logic.
+- Creature ID/epoch, evidence link, memory version, fixed-point drive values, and incident sequence are identical before/after the diversified replay/restart matrix; owner sequence and causation determine cross-boot ordering while UTC steps do not reorder history.
+- Zero unauthorized cross-store writes; filesystem, socket-peer, producer-capability, vault-capability, and schema-negative tests all reject.
+- Duplicated ordinary or safety messages are idempotent. Duplicate safety candidates create at most one logical safety input and one corresponding transition, with care-owned duplicate receipts/reasons retained.
+- Delivered and acknowledged states remain distinct in every incident trace.
+
+### Independent safety ingress negatives
+
+- A stopped `companion-core` cannot block producer→care delivery, durable receipt, policy processing, or care recovery.
+- A syntactically valid or forged companion message cannot create a safety receipt or incident because companion peer identity is not an allowed safety producer.
+- Mood, memory, language/model output, dream material, animation, and Godot status cannot produce, authorize, modify, delay, or suppress a care transition.
+- Removing sensor/speech producer health creates explicit degraded safety coverage, never false normality.
+- Care start, processing, restart, replay, and backup tests run with the companion database path absent and fail if any access is attempted.
+
+### Latency and resources
+
+Measured on the accepted host under the defined milestone workload, after warmup:
 
 - synthetic input accepted/rejected p95 ≤ 50 ms and p99 ≤ 100 ms;
 - deterministic organism-to-intent p95 ≤ 100 ms and p99 ≤ 200 ms;
-- Godot intent receipt-to-first-frame p95 ≤ 100 ms; no main-thread stall > 50 ms during the 30-minute run;
-- care fixture-to-shadow-incident persistence p95 ≤ 100 ms and p99 ≤ 250 ms;
-- crash detection plus visible degraded state ≤ 2 s; stateful core recovery to readiness ≤ 5 s for the bounded fixture store.
+- Godot intent receipt-to-first-frame p95 ≤ 100 ms; no main-thread stall > 50 ms during the 30-minute provisional run;
+- direct safety fixture-to-durable receipt and shadow-incident persistence p95 ≤ 100 ms and p99 ≤ 250 ms;
+- crash detection plus visible degraded state ≤ 2 s; stateful core recovery to readiness ≤ 5 s for bounded fixture stores;
+- no unbounded queue/store/log growth; RSS growth from minute 10 to 30 ≤ 5% or ≤ 50 MiB, whichever is larger, without a monotonic leak signature.
 
-These are slice gates, not final speech/safety latency claims.
+These are milestone engineering gates, not speech, safety, endurance, or production latency/capacity promises.
 
-### Resource/endurance
+### Privacy, network, visual, and recovery
 
-- Define baseline and test with all slice processes active for 30 minutes.
-- No unbounded queue/store/log growth; each bounded queue reaches neither silent drop nor deadlock.
-- RSS growth from minute 10 to 30 ≤ 5% or ≤ 50 MiB, whichever is larger, with no monotonic leak signature.
-- CPU/GPU/memory/storage measurements are recorded per process; no final workload-capacity inference is permitted.
-- 1,000 deterministic interaction cycles complete with zero crash, deadlock, schema error, or projection mismatch.
+- Egress observation shows zero outbound connections. Logs/fixtures/artifacts contain no private machine identifiers, credentials, real contacts, raw media, real transcripts, biometrics, or autobiographical content.
+- Runtime/test data stays in local XDG-like storage, never SSHFS; unauthorized socket peers and vault calls fail.
+- Window placement/scaling/focus/display fallback and approved anatomy/MON_FRAME_V1 metadata pass; captured media remains prohibited unless separately authorized.
+- Kill every process before, during, and after each durable boundary. Recovery yields exact prior or full commits, never partial transitions.
+- Corrupt copied stores and incompatible schemas fail closed. Disk-full/read-only, queue full, clock step, reboot, renderer loss, producer loss, care loss, vault loss, and stub timeout all produce typed visible/auditable degradation.
+- A consistent backup restores into a fresh local directory with matching manifest, event counts/digests, projections, identity, memory linkage, policy version, safety receipts, and incident trace.
 
-### Privacy and network
+## Required completion evidence
 
-- Network namespace/egress observation shows zero outbound connections.
-- Repository, logs, fixtures, and test artifacts contain no username, hostname, hardware serial, credential, real contact, raw media, real transcript, biometric, or autobiographical content.
-- Runtime data is local XDG storage, never SSHFS; runtime sockets are mode 0700 directory and unauthorized peer tests fail.
-- Logs pass a sensitive-payload scanner and contain only fixture IDs, classifications, state transitions, and timing.
+- Exact source/release SHAs and toolchain locks; verified Godot 4.7.2 artifact identity; exact eligible SQLite build record if selected.
+- Machine-readable test report with every seed, fixture, schema/canonicalization/digest version, boot ID, persisted starting state, kill point, timing/resource series, and result hash.
+- Provisional 100-case replay/restart matrix, 1,000-cycle report, 30-minute report, property/randomized seed ledger, authority/fault matrix, egress/privacy scans, backup/restore equivalence, and window/display evidence.
+- BOM/provenance/rights records with empty model/data/voice/asset/service surfaces explicitly stated.
+- Independent Architect acceptance. Code existence or a narrow pass does not complete a roadmap phase or establish product capability.
 
-### Window/visual behavior
+## Milestone entry gates
 
-- Starts on the adopted output in a documented initial size; remains usable at proposed minimum and maximum sizes; aspect/scaling rule produces no clipping or identity distortion.
-- Placement restores after normal restart; display removal/geometry-change test selects documented safe fallback; focus/input never traps the desktop.
-- Approved anatomy counts/silhouette and MON_FRAME_V1 root alignment pass automated metadata checks and Architect visual review.
-
-### Fault injection/recovery
-
-- Kill -9 each process at every durable boundary; restart yields either exact prior commit or exact full commit, never a partial transition.
-- Corrupt copied test stores and incompatible schema fixtures fail closed without modifying the only preserved copy.
-- Disk-full/read-only, socket unavailable, queue full, clock step, stale monotonic timestamp, renderer loss, care loss, and stub timeout all produce the specified visible/auditable degraded states.
-- Backup taken through the selected consistent mechanism restores into a fresh local directory with matching manifest, event count, projection hash, creature ID, memory linkage, policy version, and incident trace.
-
-## Completion evidence
-
-- Exact source/release SHA and toolchain lock; verified Godot 4.7.2 artifact identity.
-- Machine-readable test report with all seeds, fixtures, schemas, versions, timings, resource series, and result hashes.
-- Golden replay, 100 restart traces, 1,000-cycle endurance report, fault matrix, network observation, privacy scan, backup/restore equivalence, and window/display evidence.
-- SBOM plus separately enumerated model/data/voice/asset/service BOM fields (empty surfaces explicitly recorded), license review, build provenance, migration manifest, and signed checksums.
-- Screenshots/media are allowed only if a later test directive explicitly authorizes privacy-safe capture; otherwise Architect visual inspection is recorded without captured household media.
-- Independent Architect acceptance. Code existence or a passing narrow test does not open Phase 02 or establish product capability.
-
-## Entry gates
-
-Architecture adoption; Phase 01 authorization; exact Godot 4.7.2 acquisition approval; runtime/dependency shortlist approval; privacy-safe fixture approval; local-state directory decision; test thresholds accepted; and separate authority for the minimal approved sprite subset. None is granted here.
+Architecture v1.0 adoption; successful Phase 01 foundation gate; separate bounded authorization for the Phase 02/03/04/10 contributions; language/toolchain decision; exact Godot 4.7.2 and dependency approvals; exact persistence approval; privacy-safe fixtures; local-state policy; test thresholds; and separate minimal sprite authority. None is granted here.

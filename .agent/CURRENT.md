@@ -4,16 +4,16 @@
 
 Planning Phase 02 — Master Delivery Roadmap remains active.
 
-Roadmap Phase 00 — Planning and Product Contract remains active. The canonical ingest, Linux environment inventory, and Operator Decision Packet 01 are complete. `COMPANION-P00-ARCH-001` has received Architect Review 01 and is continued for focused architecture corrections. Product implementation remains closed.
+Roadmap Phase 00 — Planning and Product Contract remains active. The canonical ingest, Linux environment inventory, and Operator Decision Packet 01 are complete. `COMPANION-P00-ARCH-001` has received Architect Review 01; Codex has prepared the focused correction for publication and independent re-review. Product implementation remains closed.
 
 ## Current objective
 
-Correct the Architecture v1.0 proposal without repeating the accepted corpus ingest or rewriting correct sections. Resolve the seven review findings: independent safety-evidence ingress, explicit identity/consent/contact/secret authority, canonical event encoding and reboot-aware time, roadmap-consistent slice placement, language/toolchain selection gate, exact SQLite eligibility, and properly labeled/diversified evidence floors.
+Publish and independently review the corrected Architecture v1.0 proposal. The packet now addresses the seven review findings: independent safety-evidence ingress, explicit identity/consent/contact/secret authority, canonical event encoding and reboot-aware time, roadmap-consistent milestone placement, language/toolchain selection gate, exact SQLite eligibility, and properly labeled/diversified evidence floors.
 
 ## Active directive
 
 - Directive: `COMPANION-P00-ARCH-001`
-- Status: `CONTINUED — FOCUSED CORRECTIONS REQUIRED`
+- Status: `CORRECTION PREPARED — CODEX RESUBMISSION / ARCHITECT REVIEW REQUIRED`
 - Verified task baseline: `db33d8a597f79a01e569482dc00583dcf50249f9`
 - Starting routing head for original execution: `6559cec1beaf27bf958c2b9517b0717f04c83ea9`
 - Codex planning result: `5d6d87d93b017e42647e260b69d80b5ad3f8becc`
@@ -52,6 +52,19 @@ Not accepted yet:
 5. Python versus a compiled core/care candidate needs an explicit language/toolchain evidence gate before implementation.
 6. SQLite eligibility must require one exact supported non-withdrawn build; a loose `3.51.3+` rule is insufficient because 3.52.0 was withdrawn.
 7. The 100-restart, 1,000-cycle, and 30-minute values must be provisional engineering floors with diversified seeds/boundaries, not reliability claims.
+
+## Codex correction disposition
+
+- Direct safety path: independently authorized sensor/speech producer sends safety candidates directly to `care-core`; care owns accepted/rejected receipt and incident journals; companion has no safety forwarding/gating/suppression/authorization role.
+- Safety negatives: companion stopped, forged companion input, duplicate candidate, producer/model outage, companion database absent, and companion mood/memory/language/dream/animation sources are explicitly covered.
+- Vault: `identity-consent-vault` owns consent/revocation, biometric handles/templates, contacts/roles, provider credential handles, key references/recovery metadata, and privileged-change audit; foreign processes receive only decisions/opaque expiring capabilities.
+- Canonical events: `JCS-RFC8785-v1` plus `sha-256-jcs-event-v1`, exact hash/signature scope, duplicate-key/Unicode/numeric rules, fixed-point/wide-integer rules, boot-scoped monotonic time, UTC uncertainty, owner event sequence, and causation are defined.
+- Phase semantics: the Roadmap Phase 01 foundation contract is separate from the later Phase 02/03/04/10 cross-phase architecture-proof milestone; passing the milestone completes no phase.
+- Toolchain: EXP-00 compares Python 3.12 with one Architect-selected Rust-or-Go comparator; no winner/install/benchmark exists; the gate blocks authoritative-service implementation rather than every language-neutral foundation task.
+- SQLite: only one exact supported non-withdrawn release or documented fixed backport may be considered, with complete build/topology/security metadata and target tests.
+- Evidence floors: 100 replay/restart cases, 1,000 cycles, and 30 minutes are provisional minimum engineering floors with multiple seeds/states/schemas/kill points/boots; later soak, media, shadow-safety, accessibility, pilot, and operational evidence remains separate.
+
+This is a Codex correction claim only. Architect Review 01 remains the last acceptance authority event until independent re-review.
 
 ## Required correction behavior
 
@@ -93,4 +106,4 @@ No product source, Godot project or execution, sprite production, dependency ins
 
 ## Next review point
 
-Codex submits the focused correction commit, updated Notion report/directive, and Issue #3 handoff. The Architect independently verifies the safety path, vault authority, canonical encoding/time model, phase sequencing, language gate, SQLite rule, evidence floors, traceability, scope, and repository state before any Architecture v1.0 adoption.
+Codex publishes the focused correction commit, updated Notion report/directive, and Issue #3 handoff. The Architect independently verifies the safety path, vault authority, canonical encoding/time model, phase sequencing, language gate, SQLite rule, evidence floors, traceability, scope, and repository state before any Architecture v1.0 adoption.

@@ -1,6 +1,6 @@
 # Evidence Record
 
-Status: `COMPLETE FOR ARCHITECT REVIEW — PUBLISHED`
+Status: `ARCHITECT REVIEW 01 CORRECTED — RESUBMISSION PENDING PUBLICATION`
 
 ## Authority reconstruction
 
@@ -110,3 +110,50 @@ Exact command results and publication markers are recorded in the publication ad
 - Product/runtime tests, Godot tests, benchmarks, media tests, safety/notification tests: `NOT APPLICABLE / NOT RUN` because prohibited by this planning directive.
 
 The publication-only reconciliation commit containing this addendum is reported in the canonical handoff after it is created; a commit cannot contain its own SHA.
+
+## Architect Review 01 correction evidence
+
+The original result and publication evidence above remain historical. Architect Review 01 at `c36525ae5e1bb478baf679cacc1a5f2fd22020c8` continued the directive and superseded prior pass claims for seven semantic areas. Accepted context reconstruction and topology were retained.
+
+### Fresh authority/state retrieval
+
+- Local clean `main` at `d8c7209e0ec0370c17fc4cf980fde879e54f10b5` and remote head `c36525ae5e1bb478baf679cacc1a5f2fd22020c8`: `PASSED`.
+- Incoming history: one normal fast-forward commit changing only `.agent/CURRENT.md`, `.agent/INDEX.md`, and `ARCHITECT_REVIEW_01.md`: `PASSED`.
+- Required repository review/current/index/kernel and affected artifacts: `PASSED`.
+- Live Notion Architect review, parent directive, coder report, canonical project, and roadmap: `PASSED`; all agree the directive is continued, Architecture v1.0 is not adopted, Phase 01/product work are closed, and the retained corpus is 37 ADRs/46 evidence records.
+- GitHub Issue #3 and six comments: `PASSED`; state `OPEN`, Architect continuation comment `5604351972` present.
+- Full corpus re-ingest: `NOT RUN / NOT REQUIRED` because the Architect accepted it and no live authority change requiring repetition was found.
+- Retrieval confidence: `ADEQUATE`; material authority contradiction: `NONE`.
+
+### Refreshed primary sources
+
+- RFC 8785: invariant JCS output, I-JSON constraint, duplicate-key prohibition, Unicode preservation without normalization, IEEE-754 input boundary, rejection of NaN/Infinity, deterministic property ordering, and UTF-8 generation: `PASSED`.
+- systemd journal time semantics: monotonic time begins anew each boot and needs a boot identifier for well-defined cross-record use: `PASSED`.
+- SQLite WAL: current page still records the WAL-reset affected range/fixed releases/backports and one-host/network-filesystem limits: `PASSED`.
+- SQLite news: 3.52.0 withdrawal and 3.53-series releases reproduced; this disproves a generic `3.51.3+` eligibility expression but does not preselect a build: `PASSED`.
+- Official Python 3.12, Rust, and Go documentation entry points: `PASSED`; used only to define the EXP-00 candidate boundary, not to select a winner or claim host fit.
+
+### Corrected architecture assertions
+
+- Direct safety ingress: authorized producer sends a safety candidate directly to care; companion cannot forward, gate, suppress, modify, or authorize it; care owns immutable receipts and incidents.
+- Authority independence: common source ID/digest/provenance can link ordinary and safety messages without shared storage or mutation. Care starts/processes/replays without the companion store.
+- Vault: one explicit owner for consent/revocation, biometric handles/templates, contacts/roles, provider credential handles, key references/recovery metadata, and privileged audit; foreign processes receive only decisions/opaque capabilities.
+- Canonical events: `JCS-RFC8785-v1`, `sha-256-jcs-event-v1`, complete digest/signature scope, duplicate-key/Unicode/numeric rules, fixed-point/wide-integer representation, boot-scoped monotonic time, UTC uncertainty, owner sequence, and causation are specified.
+- Phase semantics: Phase 01 foundation is distinct from a later Phase 02/03/04/10 milestone; milestone success completes no roadmap phase.
+- Toolchain: EXP-00 compares Python 3.12 with exactly one Architect-selected compiled comparator from Rust or Go; no installation, code, benchmark, or winner exists. It blocks authoritative-service implementation, not all language-neutral Phase 01 foundation work.
+- SQLite: eligibility is one exact supported non-withdrawn release or documented fixed backport with a complete build/topology/security record and crash/concurrency/checkpoint/disk/backup/restore/migration tests.
+- Evidence floors: 100 replay/restart cases, 1,000 cycles, and 30 minutes are provisional minimum engineering floors with diversified seeds/states/schemas/kill points/boots; none is reliability, safety, endurance, capacity, or SLA evidence.
+
+### Correction validation scope
+
+- Safety-path cross-artifact consistency and five required direct-ingress/forgery/idempotency/outage/DB-independence tests specified: `PASSED`.
+- Companion mood/memory/language/model/dream/animation suppression or transition authority excluded and negative-tested: `PASSED`.
+- Vault ownership/interface plus absent/locked/corrupt/unavailable/revoked behavior across architecture, boundaries, threat, milestone, dependency, test, and traceability: `PASSED`.
+- Canonicalization/digest/numeric/time fields and rejection/replay fixtures across architecture, milestone, repository-test plan, and traceability: `PASSED`.
+- Phase 01 versus cross-phase milestone separation and exact Phase 02/03/04/10 contributions: `PASSED`.
+- EXP-00 evaluation dimensions/blocking boundary/no-winner constraint: `PASSED`.
+- No loose SQLite minimum remains in operative recommendations; historical review text is preserved: `PASSED`.
+- Provisional-floor label, intended-detection/limitation table, diversified cases, and later escalation: `PASSED`.
+- Product/runtime tests, Godot execution, toolchain/database benchmarks, media, biometrics, notification, and safety runtime: `NOT APPLICABLE / NOT RUN — PROHIBITED`.
+
+The correction artifact evidence is `E3_TARGET_TESTED` for documentation semantics and cross-document consistency only. It establishes no runtime or product capability and does not constitute Architect acceptance.

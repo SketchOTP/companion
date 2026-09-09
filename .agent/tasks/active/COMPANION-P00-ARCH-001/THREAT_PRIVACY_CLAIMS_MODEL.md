@@ -6,7 +6,7 @@ This is an engineering threat/claims model, not legal advice. It applies the ado
 
 ## Protected assets and actors
 
-Assets: creature identity and autobiographical memory; household audio/video evidence; routines, relationships, preferences, health-like and distress information; consent; biometric templates; trusted contacts and credentials; incident policy/audit; update/signing material; availability and recovery.
+Assets: creature identity and autobiographical memory; household audio/video evidence; routines, relationships, preferences, health-like and distress information; care-owned safety-input receipts and incident state; vault-owned consent/revocation, biometric templates/handles, trusted contacts/roles, provider credential handles, key references/recovery metadata and privileged audit; incident policy/audit; update/signing material; availability and recovery.
 
 Actors: primary adult owner/user; configured caregiver/contact; unknown visitor; malicious visitor/co-resident; remote attacker; compromised dependency/model/service; provider/operator insider; accidental media source; faulty sensor/model; maintenance agent; lost/stolen backup.
 
@@ -18,11 +18,14 @@ Trust zones and single owners are defined in `PROCESS_PRIVILEGE_DATA_BOUNDARIES.
 |---|---|---|---|
 | Spoofed/replayed help phrase from TV, phone, recording, adversary, or generated voice | false escalation, alarm fatigue | source/quality/replay metadata; bounded confirmation; accessible fallback; incident dedupe; never voice alone for identity; shadow mode | representative replay/media/adversarial matrix; false alerts/user-day; trace review |
 | Missed spoken help due to noise, distance, accent, atypical speech, outage, or disability | delayed help | visible coverage state; multiple accessible response paths; retry/timeout; explicit limitations; no silence=danger assumption | target-population accessibility and degraded-audio tests; sensitivity/latency by condition |
-| Companion mood/model prose triggers care | unsafe authority coupling | care accepts only versioned policy inputs from allowed producers; reject free-form text/mood | capability and negative contract tests |
+| Companion outage delays or suppresses safety input | missed candidate and false normal coverage | dedicated authorized producer→care socket/queue; care-owned receipt journal; no companion dependency/backpressure/database | stop companion and remove its database while direct care input persists and transitions |
+| Forged companion, mood, memory, model prose, dream, or animation triggers care | unsafe authority coupling | companion identity is never an allowed safety producer; care accepts only authenticated direct candidates and signed policy; reject every companion-derived authority class | peer/capability, malformed/valid-forged-message, and domain-state negative tests |
+| Shared sensor/speech producer or model fails while both ordinary and safety paths appear healthy | missed candidate hidden by false normality | producer health lease, freshness deadline, direct care coverage state, explicit common-mode degradation | withdraw producer/model health and prove `coverage_input_unavailable`, expiration, visible/auditable degradation |
 | Visitor teaches poison/prompt injection through speech/screen/demo | data exfiltration or behavioral corruption | provenance, role/consent checks, typed tools, reversible skill lifecycle, model sandbox, no direct store/tool authority | multimodal adversarial suite and rollback proof |
 | Biometric false match/spoof | cross-person memory/contact leak | no biometrics in first slice; later explicit enrollment, unknown result, quality/liveness, vault, no sole safety authority | target-camera demographic/condition/spoof validation and legal review |
 | Raw media or memory leaks through logs/cloud/support | severe privacy harm | ephemeral raw media; payload-free logs; default no network; data minimization; user-initiated scoped diagnostics; access audit | data-flow inspection, egress test, log scan, penetration test |
-| Unauthorized deletion/export/contact change | identity loss, stalking, coercion | owner authentication, role matrix, step-up confirmation, recovery delay where appropriate, immutable audit | abuse-case tests, recovery and appeal workflow |
+| Unauthorized deletion/export/contact/consent/credential/key change | identity loss, stalking, coercion, secret compromise | explicit identity-consent vault, owner authentication, role matrix, purpose/expiry, step-up confirmation, recovery delay where appropriate, immutable privileged audit | absent/locked/corrupt/unavailable/revoked tests, capability-denial tests, recovery and appeal workflow |
+| Vault secret or biometric material reaches core, model, renderer, or logs | impersonation or irreversible private-data exposure | opaque handles and one-operation capabilities only; no plaintext IPC; payload-minimized logs; separate store/access path | taint/data-flow test, IPC/log/store scan, unauthorized caller tests, backup/export separation |
 | Malicious/buggy update or dependency | silent behavior/safety regression | signed artifacts, separate BOMs, provenance, staged update, compatibility gates, rollback, policy/model review | clean build, signature, SBOM, regression/canary/rollback evidence |
 | Corrupt memory or synthetic dream promoted as fact | relationship harm | append-only evidence, temporal correction, source linkage, synthetic namespace, abstention | contradiction/false-memory/crash/migration tests |
 | Vendor/cloud shutdown | creature loss | local survival, portable versioned export, replacement adapters/body | offline test and replacement restore |
@@ -32,12 +35,14 @@ Trust zones and single owners are defined in `PROCESS_PRIVILEGE_DATA_BOUNDARIES.
 ## Consent and data lifecycle
 
 - Ambient sensing is off until an explicit purpose, role, indicator, retention rule, and accessible pause/delete path exist.
-- Consent is versioned and purpose-specific; absence/expiry revokes acquisition, not merely downstream use.
+- Consent is versioned and purpose-specific in `identity-consent-vault`; absence, lock, expiry, or revocation stops acquisition and new processing/delivery, invalidates purpose capabilities, and exposes retained-data obligations rather than silently preserving access.
 - Unknown visitors are not enrolled and receive limited context. Minors are excluded from iteration one; discovery of minor-directed use triggers immediate product/legal review.
 - Raw media is ephemeral by default. Retention requires a separate adopted policy; derived evidence retains source/model/version/quality without silently preserving raw content.
 - Correction appends a superseding version; it does not erase audit. User deletion must define whether the request removes source data, derived memories, backups, and incident/legal records and must expose exceptions.
 - Export/backup must be owner-controlled, encrypted, manifest-driven, and restorable. Key recovery cannot rely solely on the vendor.
 - Every third-party/model/service flow needs purpose, fields, region, retention, training-use prohibition, subprocessors, deletion, incident, and shutdown analysis before approval.
+
+The vault never returns biometric templates, provider credentials, key bytes, full contact records, or recovery secrets to Godot, models, logs, `companion-core`, or `care-core`. Its minimum outward surface is a consent decision, opaque subject/contact role result, expiring single-purpose provider/key capability, and redacted audit receipt. Absent or unavailable vault means denial plus a typed degraded state; locked means no protected result; corruption freezes mutation and invalidates capabilities pending authenticated recovery.
 
 ## Kentucky and federal implications
 
@@ -76,12 +81,12 @@ Every future claim maps to a versioned feature, intended population/use/environm
 
 ## Spoken-help deterministic policy boundary
 
-Candidate input must include producer, schema/policy version, timestamp/freshness, transcript or intent evidence, confidence/quality, channel health, and replay/media flags. The policy records accepted/rejected reason, attempts confirmation through configured accessible channels, avoids duplicate incidents, and separately models `detected`, `confirmed`, `queued`, `provider_accepted`, `delivered`, `acknowledged`, `failed`, `expired`, and `closed`. Companion content cannot suppress or manufacture transitions. In shadow mode no external delivery occurs.
+Candidate input travels directly from an independently authorized sensor/speech producer to `care-core`; it never relies on companion forwarding. It includes producer identity/capability, schema/canonicalization/digest version, source `message_id` and evidence digest, `boot_id`, monotonic time, UTC observation/uncertainty, freshness, transcript or intent evidence, confidence/quality, channel health, and replay/media flags. Care authenticates and appends an accepted/rejected safety-input receipt before deterministic policy evaluation. The policy avoids duplicate transitions and separately models `detected`, `confirmed`, `queued`, `provider_accepted`, `delivered`, `acknowledged`, `failed`, `expired`, and `closed`. Companion content cannot create, modify, delay, suppress, or authorize transitions. In shadow mode no external delivery occurs.
 
 ## Degraded coverage
 
-Loss of microphone, model, care process, policy integrity, storage, clock quality, contact configuration, or transport produces a specific visible and auditable coverage state. The system never presents normal check-in assistance while its qualifying path is unavailable. A user-accessible non-voice fallback is required before live qualification.
+Loss of microphone, authorized producer, speech model, producer-health lease, direct care socket, care process, safety-input persistence, policy integrity, clock quality, vault/consent, contact configuration, or transport produces a specific visible and auditable coverage state. Common sensor/model failure degrades both ordinary and safety awareness but care independently owns the safety coverage truth. The system never presents normal check-in assistance while its qualifying path is unavailable. A user-accessible non-voice fallback is required before live qualification.
 
 ## Evidence gates
 
-Threat model review; dependency and model/data/voice/asset/service rights; static and dynamic security testing; IPC/privilege penetration; egress/log privacy tests; deletion/export/restore exercises; accessible scenario testing; replay/media spoof tests; false/missed trigger estimates in shadow mode; update/rollback exercise; incident response tabletop; and product/counsel sign-off before any pilot or claim.
+Threat model review; dependency and model/data/voice/asset/service rights; canonical-byte/digest/parser tests; direct safety-ingress and companion-forgery negatives; vault capability/absence/lock/corruption/revocation tests; static and dynamic security testing; IPC/privilege penetration; egress/log privacy tests; deletion/export/restore exercises; accessible scenario testing; replay/media spoof tests; false/missed trigger estimates in shadow mode; update/rollback exercise; incident response tabletop; and product/counsel sign-off before any pilot or claim.

@@ -15,3 +15,14 @@ The Research Phase 01 Notion hierarchy contains the project's research evidence 
 - Disposition: JSON Schema/XDG and BOM/provenance standards are recommended planning primitives; SQLite/systemd/Godot remain target-tested candidates; Kentucky/federal sources define review triggers, not legal conclusions.
 - Material delta: official SQLite documentation now records a WAL-reset corruption issue affecting 3.7.0–3.51.2, fixed in 3.51.3 and listed backports. Exact embedded-version verification is now a persistence gate.
 - Recheck: before Architecture adoption if sources change; before exact dependency selection, Kentucky pilot, public claim, or release.
+
+## COMPANION-P00-ARCH-001-REVIEW-01 — Canonical events, reboot time, exact SQLite, and toolchain gate
+
+- Date: 2026-09-09 America/New_York.
+- Trigger: Architect Review 01 requires material correction to deterministic serialization/time, SQLite eligibility, and implementation-language selection.
+- Sources: RFC 8785; systemd journal monotonic/boot semantics; current SQLite WAL documentation and release news; official Python 3.12, Rust, and Go documentation entry points.
+- Freshness: re-fetched on 2026-09-09 immediately before correction.
+- Overlap: supplements S01–S16 and live Notion evidence without changing the accepted ADR/evidence corpus.
+- Disposition: `ADOPT` RFC 8785 as the architecture-level `JCS-RFC8785-v1` profile; `REFERENCE` systemd boot semantics for the time model; `REFERENCE/BENCHMARK` exact SQLite builds only; `BENCHMARK` Python 3.12 versus exactly one Architect-selected Rust-or-Go comparator through EXP-00.
+- Material delta: SQLite news records 3.52.0 as withdrawn and later 3.53 releases, so the prior loose `3.51.3+` rule is invalid. No SQLite build or production language is selected.
+- Recheck: before choosing a canonicalizer/parser, language/toolchain, SQLite source/binding, signature implementation, or Architecture v1.0 adoption if any source changed.

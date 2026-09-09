@@ -17,7 +17,7 @@
 ## Current pointers
 
 - Current stage: Planning Phase 02 — Roadmap Phase 00
-- Active coder directive: `COMPANION-P00-ARCH-001 — CONTINUED FOR FOCUSED CORRECTION`
+- Active coder directive: `COMPANION-P00-ARCH-001 — CODEX CORRECTION PREPARED; INDEPENDENT REVIEW REQUIRED`
 - Active packet: `.agent/tasks/active/COMPANION-P00-ARCH-001/`
 - Required correction authority: `.agent/tasks/active/COMPANION-P00-ARCH-001/ARCHITECT_REVIEW_01.md`
 - Original full execution directive: `.agent/tasks/active/COMPANION-P00-ARCH-001/CODEX_FULL_DIRECTIVE.md`
@@ -26,11 +26,20 @@
 - Original routing head: `6559cec1beaf27bf958c2b9517b0717f04c83ea9`
 - Codex planning result: `5d6d87d93b017e42647e260b69d80b5ad3f8becc`
 - Codex publication head reviewed: `d8c7209e0ec0370c17fc4cf980fde879e54f10b5`
+- Architect Review 01 head / correction baseline: `c36525ae5e1bb478baf679cacc1a5f2fd22020c8`
 - Architecture v1.0: `NOT ADOPTED`
 - Roadmap Phase 01: `CLOSED`
 - Product implementation: `CLOSED`
 - Current canonical totals at review: `46` evidence records and `37` architecture decisions
 - Last state sync: 2026-09-09 America/New_York
+
+## Corrected architecture pointers
+
+- Independent safety ingress and vault authority: `.agent/tasks/active/COMPANION-P00-ARCH-001/PROCESS_PRIVILEGE_DATA_BOUNDARIES.md`
+- Canonical bytes/digest/numeric/boot-time profile: `.agent/tasks/active/COMPANION-P00-ARCH-001/RECOMMENDED_ARCHITECTURE.md`
+- Separate Phase 01 foundation and Phase 02/03/04/10 integration milestone: `.agent/tasks/active/COMPANION-P00-ARCH-001/VERTICAL_SLICE_CONTRACT.md`
+- Language/toolchain and exact SQLite gates: `.agent/tasks/active/COMPANION-P00-ARCH-001/RESOURCE_EXPERIMENT_PLAN.md` and `DEPENDENCY_AND_RIGHTS_MATRIX.md`
+- Correction evidence/handoff: `.agent/tasks/active/COMPANION-P00-ARCH-001/EVIDENCE.md` and `HANDOFF.md`
 
 ## Mandatory correction startup
 

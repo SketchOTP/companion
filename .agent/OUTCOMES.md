@@ -394,3 +394,17 @@ The directive is complete, its task packet is archived, and the next work must a
 - Notion report and directive exact-result-SHA update/re-fetch: `PASSED`; no unknown block and no stale pending-execution marker.
 - GitHub Issue #2 result comment: `PASSED` at comment `5598863339`; issue re-fetched `OPEN`.
 - Publication-evidence reconciliation: recorded in the governance-only commit containing this update; final local/remote equality remains required for the canonical handoff.
+
+## COMPANION-P00-ARCH-001-CORRECTION-01 — Focused architecture correction prepared
+
+- Date: 2026-09-09 America/New_York.
+- Verdict: `COMPLETE FOR CORRECTION PUBLICATION / INDEPENDENT ARCHITECT REVIEW`.
+- Retrieval confidence: `ADEQUATE`; accepted full ingest not repeated because no material authority change was found.
+- Safety ingress: direct authorized producer→care path, care-owned append-only receipt/incident journals, companion-independent persistence/processing, explicit common-mode degradation, and required negative tests specified.
+- Vault: explicit authority and absent/locked/corrupt/unavailable/revoked contracts specified without choosing or implementing encryption.
+- Canonical event model: RFC 8785 profile, SHA-256 digest scope, numeric/Unicode/parser rules, boot-aware monotonic time, UTC uncertainty, owner sequence, and causation specified.
+- Roadmap: Phase 01 foundation separated from the later Phase 02/03/04/10 architecture-proof milestone.
+- Decision gates: EXP-00 language/toolchain comparison added; SQLite narrowed to one exact supported non-withdrawn build/fixed backport.
+- Evidence semantics: 100 restart/replay cases, 1,000 cycles, and 30 minutes relabeled and diversified as provisional minimum engineering floors with later qualification escalation.
+- Evidence level: `E3_TARGET_TESTED` for corrected document semantics only; runtime/product evidence `NOT CREATED`.
+- Hard boundary: no product code, Godot execution, asset, dependency/manifest, CI workflow, benchmark, media, biometric, notification, safety runtime, phase transition, or capability claim.

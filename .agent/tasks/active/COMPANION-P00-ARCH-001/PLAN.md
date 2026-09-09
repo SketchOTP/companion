@@ -1,6 +1,6 @@
 # COMPANION-P00-ARCH-001 — Execution Plan
 
-Status: `EXECUTED — COMPLETE FOR INDEPENDENT ARCHITECT REVIEW`
+Status: `ARCHITECT REVIEW 01 CORRECTION CYCLE — EXECUTED FOR RESUBMISSION`
 
 ## Gate 0 — Exact execution authority
 
@@ -54,3 +54,21 @@ Stop rather than infer conversation context, invent operator intent, rely on sta
 - Architecture planning steps 14–22: `PASSED`; recommendations remain proposals.
 - Validation/publication steps 23–29: recorded in `EVIDENCE.md` and `HANDOFF.md`.
 - Deviations: none from scope; no product/runtime work performed.
+
+## Architect Review 01 focused correction cycle
+
+The original execution and accepted context reconstruction above remain historical evidence. They are not rewritten. The prior claim that the package was complete is superseded for the seven reviewed semantic areas until a new Architect decision.
+
+1. Fast-forward from publication head `d8c7209e0ec0370c17fc4cf980fde879e54f10b5` to Architect review head `c36525ae5e1bb478baf679cacc1a5f2fd22020c8`; verify the three-path review delta and clean tree.
+2. Read `ARCHITECT_REVIEW_01.md`, current kernel, affected packet files, live Notion review/directive/report/canonical/roadmap state, and open Issue #3. Reuse the accepted 37-ADR/46-evidence ingest because no canonical source change was found.
+3. Re-fetch RFC 8785, systemd boot/monotonic semantics, SQLite WAL and release news, and official language/toolchain documentation.
+4. Define direct authorized sensor/speech-producer→care ingress, care-owned receipt/incident journals, shared immutable source identifiers without shared mutation, common-mode degraded coverage, and all required negative tests.
+5. Define explicit `identity-consent-vault` ownership, least-data interfaces, and absent/locked/corrupt/unavailable/revoked behavior.
+6. Pin `JCS-RFC8785-v1`, `sha-256-jcs-event-v1`, digest/signature scope, Unicode/numeric rules, boot-aware time fields, owner sequences, and cross-reboot ordering/tests.
+7. Split the Roadmap Phase 01 engineering-foundation contract from the Phase 02/03/04/10 cross-phase milestone and make its non-completion semantics explicit.
+8. Add EXP-00 for Python 3.12 versus one Architect-selected Rust-or-Go comparator; block only authoritative-service implementation; select no winner and run no experiment.
+9. Replace loose SQLite lower-bound language with exact supported non-withdrawn release/fixed-backport eligibility and complete qualification metadata/tests.
+10. Relabel/diversify 100 restart/replay cases, 1,000 cycles, and 30 minutes as provisional minimum engineering evidence floors with later 24-hour, multi-day, media, shadow-safety, accessibility, pilot, and operational escalation.
+11. Run cross-artifact semantic/scope/source/path/privacy/diff validation; publish one focused correction commit and at most one reconciliation commit; update Notion and Issue #3; leave acceptance, Phase 01, dependencies, and implementation closed.
+
+Correction retrieval confidence: `ADEQUATE`. Product/runtime execution: `NOT APPLICABLE / PROHIBITED`.

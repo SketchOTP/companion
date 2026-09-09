@@ -1,42 +1,46 @@
-# Handoff
+# Handoff — Architect Review 01 Correction
 
-Status: `COMPLETE FOR INDEPENDENT ARCHITECT REVIEW`
+Status: `CORRECTED FOR INDEPENDENT ARCHITECT REVIEW; NOT ACCEPTED`
 
-## Recommendation
+## Retained recommendation
 
-Adopt, after independent review, a local-first event-sourced modular companion core with consequence-driven isolation: `companion-core` is the single writer for creature truth; `care-core` is separately persisted and deterministically owns scenario/incident authority; sensor, model, Godot, notification, and operations processes are nonauthoritative adapters. Use versioned JSON Schema messages over private Unix sockets and local XDG storage. Shortlist a fixed SQLite build only after crash/checkpoint/backup qualification.
+Retain the provisionally accepted local-first event-sourced modular companion core with consequence-driven isolation. `companion-core` is the sole writer for ordinary creature truth; `care-core` separately and deterministically owns safety-input receipts, policy evaluation, incident state, and care audit; `identity-consent-vault` explicitly owns consent, biometric/contact/credential/key material and privileged changes. Sensors/speech, models, Godot, notification, and operations remain nonauthoritative adapters.
 
-The credible alternative is a fully decomposed service graph. It offers narrower independent restart/scale boundaries but introduces distributed consistency, interface, supervision, mixed-version, and resource complexity unsupported by current single-host evidence.
+## Seven focused corrections
 
-## Proposed first slice
+1. **Independent safety ingress:** an independently authorized sensor/speech producer sends ordinary observation to companion and safety candidate directly to care. Shared immutable source IDs/digests do not create shared authority. Companion cannot validate, forward, delay, suppress, modify, or authorize safety input. Care owns the append-only receipt journal and works without the companion process/database.
+2. **Vault authority:** `identity-consent-vault` owns consent/revocation, biometric templates/opaque handles, trusted contacts/roles, provider credential handles, key references/recovery metadata, and enrollment/privileged audit. Its APIs return only decisions/opaque capabilities. Absent, locked, corrupted, unavailable, and revoked states fail closed and degrade precisely.
+3. **Canonical events/time:** `JCS-RFC8785-v1` and `sha-256-jcs-event-v1` define invariant bytes and digest/signature scope. Duplicate keys, invalid Unicode, NaN/Infinity, unsupported/noncanonical numbers fail. Canonical state uses bounded/fixed-point integers or canonical decimal strings. `boot_id`, `monotonic_ns`, `utc_observed`, `utc_uncertainty_us`, `event_sequence`, and `causation_id` define reboot-aware evidence; owner sequence/causation—not UTC—orders across boots.
+4. **Roadmap semantics:** a distinct Roadmap Phase 01 foundation contract covers repository/environment/process/IPC/XDG/logging/health/supervisor/deterministic-control/CI/provenance foundations. “One remembered care loop plus shadow help” is a later Phase 02/03/04/10 cross-phase milestone. Passing it completes none of those phases; early care work retires authority-coupling risk rather than bypassing Phase 10.
+5. **Language/toolchain gate:** EXP-00 compares Python 3.12 with exactly one Architect-selected compiled comparator from Rust or Go over equivalent frozen evidence. It selects no winner here and blocks authoritative-service implementation only, not all language-neutral Phase 01 foundation work.
+6. **SQLite eligibility:** no numeric minimum is allowed. One exact currently supported non-withdrawn SQLite release or specifically documented fixed backport must have exact source/digest, binding, compile, filesystem, connection/writer/checkpoint, Backup API, migration, vulnerability, and compatibility records and pass crash/concurrent-write/checkpoint/disk-full/backup/restore/migration tests.
+7. **Evidence floors:** 100 replay/restart cases, 1,000 cycles, and 30 minutes are provisional minimum engineering defect-detection floors, diversified across seeds/states/schemas/invalid inputs/kill points/persisted states/boots/property tests. They are not reliability, safety, endurance, capacity, or SLA evidence; later 24-hour, multi-day, media, shadow-safety, accessibility, pilot, and operational gates remain.
 
-“One remembered care loop plus shadow help” integrates a real exact Godot 4.7.2 bounded window, a real deterministic two-drive organism subset, real append-only persistence/typed memory/restart, and a separate real minimal care policy/incident journal. Inputs are synthetic; notification is a stub; media, models, biometrics, contacts, network, voice, and dream learning are absent. Acceptance includes deterministic replay, 100 restarts, 1,000 cycles, IPC/authority negatives, fault injection, privacy/egress checks, window recovery, and backup/restore equivalence.
+## Required negative evidence now specified
 
-## Unresolved gates
+- stopped companion cannot block direct safety receipt/processing;
+- forged or well-formed companion messages cannot create safety input/incident;
+- duplicate safety candidates are idempotent across care restart;
+- sensor/model/producer outage becomes explicit degraded coverage, never false normality;
+- care starts, processes, replays, backs up, and restores without the companion database;
+- mood, memory, language/model output, dreams, animation, and Godot state cannot produce or suppress a care transition;
+- vault secrets/biometrics cannot reach core, model, renderer, logs, or foreign stores.
 
-- Operator: RQ-07 role/privacy/authority; RQ-08 language/voice/wake/interruption/accessibility; RQ-09 retention/deletion/export/backup promises; RQ-11 lifespan/support/key/replacement promise.
-- Evidence then operator: RQ-04 cloud/compute/power/noise/cost.
-- Deferred safely: RQ-10 uses only a stub until transport ruling; RQ-12 uses internal working labels until name/trademark authority.
-- Experiments: exact Godot 4.7.2 supply, Vulkan/GPU, window/display, fixed persistence, service recovery, slice concurrency, camera/audio, model/resource, backup/restore, power/noise, and soak.
+## Evidence and limitations
 
-## Dependencies and rights
+The accepted source reconstruction remains `E2_REPRODUCED`. The focused correction crosswalk is `E3_TARGET_TESTED` for planning-document semantics only. No product/runtime code, dependency, toolchain, database build, experiment, CI, Godot execution, media, biometric, notification, safety capability, or operational evidence exists.
 
-No dependency is approved. Godot 4.7.2 is operator-selected but absent/unqualified. Python and Rust/Go remain implementation comparators; JSON Schema is the recommended contract standard; SQLite is conditional on a fixed exact release and tests; systemd user services are conditional on recovery tests. Speech/perception/model/cloud/notification/vault candidates are deferred. InsightFace supplied pretrained artifacts are rejected absent exact commercial rights. BOM/provenance format candidates are CycloneDX/SPDX plus SLSA 1.2 concepts.
+Primary-source updates are RFC 8785, systemd boot/monotonic semantics, current SQLite WAL/news, and official Python/Rust/Go documentation. SQLite 3.52.0’s withdrawal disproves the earlier loose minimum but does not approve 3.53.x or another build.
 
-## Priority risks
+## Unresolved and authority boundary
 
-Missed/false help, inaccessible response, biometric spoofing, private-data exposure, false memory, prompt/teaching injection, vendor shutdown, artifact rights, runtime instability, developmental leakage, update regression, and distributed authority duplication. Controls and required evidence are explicit; none is claimed effective in runtime.
-
-## Validation and publication
-
-`EVIDENCE.md` contains exact authority totals, sources, validation, publication markers, changed paths, and SHAs. The coherent planning result is `5d6d87d93b017e42647e260b69d80b5ad3f8becc`. The dedicated Notion report and parent directive were updated and re-fetched; GitHub Issue #3 received comment `5603553996` and remains open. The final publication-only reconciliation commit and remote equality are reported in the canonical result after publication.
-
-## Acceptance boundary
-
-- Architecture v1.0: `RECOMMENDED — NOT ADOPTED`.
+- Architecture v1.0: `RECOMMENDED / CORRECTED — NOT ADOPTED`.
 - Roadmap Phase 00: `ACTIVE / INCOMPLETE`.
-- Phase 01: `NOT AUTHORIZED`.
-- Product implementation and capability: `NOT IMPLEMENTED / NOT ACCEPTED`.
-- Architect review: `REQUIRED`.
+- Roadmap Phase 01: `CLOSED / NOT AUTHORIZED`.
+- Language/toolchain comparator and winner: `OPEN / ARCHITECT DECISION AFTER EVIDENCE`.
+- Dependencies, exact SQLite build, vault implementation: `NOT APPROVED`.
+- Cross-phase milestone: `NOT AUTHORIZED`.
+- Product implementation/capability: `NOT IMPLEMENTED / NOT ACCEPTED`.
+- GitHub Issue #3: must remain `OPEN` for independent Architect review.
 
-Codex has not self-accepted the architecture, closed the issue, resolved open product decisions, or opened implementation.
+Exact result/publication SHAs, Notion re-fetch markers, Issue comment ID, final clean-tree status, and remote equality are added during the authorized publication reconciliation.

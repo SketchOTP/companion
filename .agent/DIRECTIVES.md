@@ -180,3 +180,14 @@ Historical entries are append-only after adoption.
 - Result push, Notion report/directive update and re-fetch, and GitHub Issue #2 result comment/open-state re-fetch: `PASSED`.
 - Publication reconciliation: recorded in the governance-only commit containing this update; Architect acceptance remains pending.
 - Architect acceptance: `NOT ASSIGNED`; product implementation remains closed.
+
+## COMPANION-P00-ARCH-001 — Architect Review 01 correction cycle
+
+- Date: 2026-09-09 America/New_York.
+- Correction authority: `.agent/tasks/active/COMPANION-P00-ARCH-001/ARCHITECT_REVIEW_01.md` and https://app.notion.com/p/3d6833cb27ff81bd834cf3693f8ae9a5.
+- Correction baseline: `c36525ae5e1bb478baf679cacc1a5f2fd22020c8`.
+- Status: `CODEX CORRECTION PREPARED — ARCHITECT RE-REVIEW REQUIRED`.
+- Accepted/retained: context reconstruction, governance-only scope, cohesive companion topology, separate care authority, nonauthoritative adapters, local XDG/SSHFS boundary, no default egress, typed/versioned IPC, portability/rights/claims boundaries, and the candidate integration-milestone concept.
+- Corrected scope: direct producer-to-care safety ingress and care-owned receipt journal; explicit identity-consent vault; RFC 8785 canonical event profile and reboot-aware time; Phase 01/milestone separation; Python-versus-one-compiled-comparator evidence gate; exact non-withdrawn SQLite eligibility; and provisional/diversified engineering floors.
+- Publication authority: one focused correction commit and at most one reconciliation commit; update the existing Notion report, parent directive, and open Issue #3.
+- Acceptance boundary: Architecture v1.0, Phase 01, dependency approval, cross-phase milestone, product implementation, and product capability remain `NOT GRANTED` until an independent Architect decision.

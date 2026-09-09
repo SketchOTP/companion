@@ -249,3 +249,24 @@ On 2026-09-09 the operator selected option `B`: a bounded resizable Godot habita
 - Operator Decision Packet 01 is complete.
 - The next work is a bounded Roadmap Phase 00 directive for architecture v1.0 options and the first vertical-slice contract.
 - No Godot installation, dependency selection, benchmark, product source, asset production, Phase 01 authority, or product implementation is created by this ruling.
+
+## COMPANION-PLAN-004 — Architecture Review 01 continued for focused corrections
+
+### Context
+
+The Architect independently reviewed the original `COMPANION-P00-ARCH-001` result and retained its context reconstruction and topology direction, but found seven semantic defects that blocked Architecture v1.0 adoption.
+
+### Decision / event
+
+Continue the same directive from `c36525ae5e1bb478baf679cacc1a5f2fd22020c8` for a focused correction. Require independent care ingress, an explicit identity-consent vault, canonical event bytes/reboot-aware ordering, Phase 01/milestone separation, a language/toolchain evidence gate, exact SQLite eligibility, and provisional/diversified engineering evidence floors.
+
+### Evidence
+
+- Repository review: `.agent/tasks/active/COMPANION-P00-ARCH-001/ARCHITECT_REVIEW_01.md`.
+- Notion review: https://app.notion.com/p/3d6833cb27ff81bd834cf3693f8ae9a5.
+- GitHub Issue #3 Architect continuation comment: `5604351972`.
+- Live Notion/GitHub/repository state agreed; retained corpus remained 37 ADRs and 46 evidence records.
+
+### Consequence
+
+The corrected packet may be submitted for independent re-review. Architecture v1.0, Roadmap Phase 01, dependencies, cross-phase milestone work, product implementation, and product capability remain closed; Issue #3 remains open.

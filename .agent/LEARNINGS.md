@@ -127,3 +127,45 @@ Persistence selection must capture the exact embedded library, compile options, 
 ### Recheck trigger
 
 Every persistence shortlist, runtime/toolchain lock, database upgrade, writer-topology change, or migration/backup design.
+
+## COMPANION-L010 — Safety independence requires independent ingress and persistence
+
+### Learning
+
+A separate care process is not architecturally independent if its qualifying inputs must be validated, forwarded, queued, or persisted by the companion authority. Independence requires an authenticated producer-to-care path, a care-owned receipt journal, and explicit common-mode input degradation.
+
+### Why it matters
+
+Companion failure, compromise, mood, memory, generated language, dreams, animation, or database availability must be unable to suppress or manufacture a care transition. Shared source identifiers are useful for reconciliation but cannot create shared mutable truth.
+
+### Recheck trigger
+
+Every sensor/speech topology, care scenario, queue, IPC authorization, persistence, degradation, and integration test design.
+
+## COMPANION-L011 — Deterministic schemas require canonical bytes and reboot epochs
+
+### Learning
+
+JSON Schema constrains structure but does not make JSON bytes invariant. Repeatable hashes/replay require a pinned canonical encoding/digest scope and canonical numeric rules; monotonic time also requires a boot identifier and cannot order records across reboots by itself.
+
+### Why it matters
+
+Cross-language serialization, Unicode/numeric edge cases, signatures, wall-clock steps, and reboot resets otherwise create divergent history despite schema-valid content. Owner sequence and causation remain the durable cross-boot order.
+
+### Recheck trigger
+
+Every event schema, parser/canonicalizer, hash/signature, language/toolchain, migration, replay, clock, and cross-boot test decision.
+
+## COMPANION-L012 — Numeric version floors can admit withdrawn releases
+
+### Learning
+
+An eligibility rule expressed only as a minimum version can admit a later withdrawn or incompatible release. SQLite 3.52.0 demonstrates that security/correctness fixes and compatibility/support disposition must be evaluated per exact build.
+
+### Why it matters
+
+Persistence approval requires exact source identity, binding, compile options, support/withdrawal/vulnerability status, topology, and reproduced recovery behavior—not lexical or numeric version comparison.
+
+### Recheck trigger
+
+Every dependency/toolchain/runtime upgrade and every exact-build qualification record.
