@@ -57,3 +57,45 @@ Future architecture, risk, and requirement traceability must verify exact ID-tit
 ### Recheck trigger
 
 Every directive that creates or materially changes requirement, decision, risk, evidence, or roadmap traceability.
+
+## COMPANION-L005 — Environment metadata does not qualify the companion workload
+
+### Learning
+
+The iteration-one host exposes ample general-purpose resources and accelerated OpenGL 4.6, but labels such as CPU model, RAM amount, GPU model, VRAM, and generic Godot requirements do not prove concurrent rendering, perception, speech, memory, model, or safety performance.
+
+### Why it matters
+
+Architecture and model sizing must be based on bounded integrated measurements with explicit latency, resource, thermal, power, and degradation criteria. Generic specifications only preserve options.
+
+### Recheck trigger
+
+Every renderer, model, camera mode, audio path, process-placement, and resource-budget decision.
+
+## COMPANION-L006 — Source, runtime state, and backup need separate storage domains
+
+### Learning
+
+The Git repository is on network-backed SSHFS while the host provides local ext4/NVMe storage. These have different latency, availability, locking, and failure semantics.
+
+### Why it matters
+
+Canonical organism state, memory, caches, audit data, and recovery material must not inherit repository-volume assumptions. Source transport, runtime persistence, model cache, export, and backup require separate explicit policies.
+
+### Recheck trigger
+
+Architecture v1.0 storage design, persistence selection, backup/export planning, and any environment migration.
+
+## COMPANION-L007 — Privacy filtering must begin at collection
+
+### Learning
+
+A hardware serial can appear in otherwise useful camera or audio metadata before a post-processing filter runs. In `COMPANION-P00-ENV-001` the value was immediately discarded and never entered durable artifacts, but the exposure shows that redaction after broad collection is weaker than field-limited collection.
+
+### Why it matters
+
+Future probes and runtime telemetry should use source-level field allowlists, bounded parsers, pre-reviewed command forms, and data minimization before persistence. Post-processing redaction is a secondary defense.
+
+### Recheck trigger
+
+Every machine inventory, sensor diagnostic, support bundle, telemetry design, biometric flow, and privacy review.
