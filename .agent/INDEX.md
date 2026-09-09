@@ -2,63 +2,53 @@
 
 ## Project identity
 
-- Project: Living Companion & Caretaking Core (product name provisional)
+- Project: Living Companion & Caretaking Core (public product name provisional)
 - Canonical Notion: https://app.notion.com/p/3d5833cb27ff8196814fdbae282f15ad
 - Complete end goal: https://app.notion.com/p/3d5833cb27ff81b09c20e2b52d537e1e
 - Active roadmap: https://app.notion.com/p/3d5833cb27ff81dd88faeb0c95b6f44e
 - Governance contract: https://app.notion.com/p/3d5833cb27ff81e2b3b2eabc70f9f6b3
-- Active directive: https://app.notion.com/p/3d6833cb27ff8183a210e560883d96ab
-- Coder report: https://app.notion.com/p/3d6833cb27ff8141837fdaa087841324
-- Architect Review 01: https://app.notion.com/p/3d6833cb27ff81bd834cf3693f8ae9a5
-- Completed operator decision packet: https://app.notion.com/p/3d6833cb27ff817a8972cecb1b877260
+- Adopted Architecture v1.0: https://app.notion.com/p/3d6833cb27ff81e99c52dc33b53f2556
+- Architect Review 02: https://app.notion.com/p/3d6833cb27ff81d88785f64d0629286c
+- Architecture routing mirror: `.agent/ARCHITECTURE_V1.md`
 - Open-decision queue: https://app.notion.com/p/3d5833cb27ff81118ac8e4139ce1c873
 - GitHub: https://github.com/SketchOTP/companion
 
 ## Current pointers
 
 - Current stage: Planning Phase 02 — Roadmap Phase 00
-- Active coder directive: `COMPANION-P00-ARCH-001 — CODEX CORRECTION 01 SUBMITTED; INDEPENDENT REVIEW REQUIRED`
-- Active packet: `.agent/tasks/active/COMPANION-P00-ARCH-001/`
-- Required correction authority: `.agent/tasks/active/COMPANION-P00-ARCH-001/ARCHITECT_REVIEW_01.md`
-- Original full execution directive: `.agent/tasks/active/COMPANION-P00-ARCH-001/CODEX_FULL_DIRECTIVE.md`
-- GitHub Issue #3: https://github.com/SketchOTP/companion/issues/3
-- Original task baseline: `db33d8a597f79a01e569482dc00583dcf50249f9`
-- Original routing head: `6559cec1beaf27bf958c2b9517b0717f04c83ea9`
-- Codex planning result: `5d6d87d93b017e42647e260b69d80b5ad3f8becc`
-- Codex publication head reviewed: `d8c7209e0ec0370c17fc4cf980fde879e54f10b5`
-- Architect Review 01 head / correction baseline: `c36525ae5e1bb478baf679cacc1a5f2fd22020c8`
-- Focused correction result: `25b1c737d6f8f1f861a36355909c2a51ea5c64ea`
-- Architecture v1.0: `NOT ADOPTED`
+- Architecture v1.0: `ADOPTED`
+- Last completed directive: `COMPANION-P00-ARCH-001`
+- Completed architecture packet: `.agent/tasks/completed/COMPANION-P00-ARCH-001/`
+- Accepted correction: `25b1c737d6f8f1f861a36355909c2a51ea5c64ea`
+- Corrected publication reviewed: `1ceb330d4c2321b500a138b8acfdfeb4279c08e7`
+- GitHub Issue #3: close as completed after archive publication
+- Active coder directive: `NONE DURING ACCEPTANCE CLOSEOUT`
 - Roadmap Phase 01: `CLOSED`
+- Dependencies: `NONE APPROVED`
 - Product implementation: `CLOSED`
-- Current canonical totals at review: `46` evidence records and `37` architecture decisions
+- Current canonical totals: `53` evidence records; `45` architecture decisions
 - Last state sync: 2026-09-09 America/New_York
 
-## Corrected architecture pointers
+## Mandatory startup for the next directive
 
-- Independent safety ingress and vault authority: `.agent/tasks/active/COMPANION-P00-ARCH-001/PROCESS_PRIVILEGE_DATA_BOUNDARIES.md`
-- Canonical bytes/digest/numeric/boot-time profile: `.agent/tasks/active/COMPANION-P00-ARCH-001/RECOMMENDED_ARCHITECTURE.md`
-- Separate Phase 01 foundation and Phase 02/03/04/10 integration milestone: `.agent/tasks/active/COMPANION-P00-ARCH-001/VERTICAL_SLICE_CONTRACT.md`
-- Language/toolchain and exact SQLite gates: `.agent/tasks/active/COMPANION-P00-ARCH-001/RESOURCE_EXPERIMENT_PLAN.md` and `DEPENDENCY_AND_RIGHTS_MATRIX.md`
-- Correction evidence/handoff: `.agent/tasks/active/COMPANION-P00-ARCH-001/EVIDENCE.md` and `HANDOFF.md`
+Codex cannot see the operator–Architect ChatGPT conversation. Use durable authority only.
 
-## Mandatory correction startup
+1. Read root and nested `AGENTS.md` files and `.agents/skills/authority/SKILL.md`.
+2. Read `.agent/PROJECT_GOAL.md`, `.agent/PROJECT_PROFILE.md`, `.agent/CURRENT.md`, and `.agent/ARCHITECTURE_V1.md`.
+3. Fetch the live canonical project, end goal, roadmap, governance contract, adopted Architecture v1.0, Architect Review 02, open-decision queue, risk register, and the active directive/report named by the future task packet.
+4. Query current Architecture Decision Ledger and Research Evidence Register counts rather than relying on snapshots.
+5. Inspect the current branch, local/remote SHAs, working tree, open issue, and recent commits. Preserve all unfamiliar work.
+6. Treat the reported user-owned local Graft edits to `.gitignore` and `AGENTS.md` as protected. Do not commit, discard, overwrite, reset, or reinterpret them without explicit authority.
+7. Use current primary external sources before every material technical, legal, version, platform, dependency, or licensing recommendation.
+8. Stop on material Notion/GitHub contradiction, inaccessible authority, unexplained divergence, or work outside the active directive.
 
-Codex cannot see the operator–Architect conversation. Use durable authority only.
+## Adopted architecture pointers
 
-1. Synchronize normally to current `main`; record local `HEAD`, `origin/main`, branch, working tree, and Issue #3 state.
-2. Read root and nested `AGENTS.md` files and `.agents/skills/authority/SKILL.md`.
-3. Read `PROJECT_GOAL.md`, `PROJECT_PROFILE.md`, and `CURRENT.md`.
-4. Read `.agent/tasks/active/COMPANION-P00-ARCH-001/ARCHITECT_REVIEW_01.md` in full.
-5. Read the affected proposal files named in the review; use the original full directive and context bridge for unchanged authority.
-6. Re-fetch the live parent directive, coder report, Architect review, canonical project, roadmap, and any mutable ADR/evidence/RQ authority that changed after the prior result.
-7. Reuse the accepted context acknowledgment and full ingest unless a source changed. Do not create busywork by repeating accepted work.
-8. Correct the seven material issues exactly as directed: independent care ingress, explicit vault authority, canonical serialization/numeric/boot epoch, roadmap-consistent slice placement, language/toolchain gate, exact SQLite eligibility, and provisional/diversified evidence floors.
-9. Use current primary sources for every changed technical assertion.
-10. Run semantic, authority, phase, threat, scope, privacy, path, diff, and publication validation.
-11. Update the dedicated Notion report and parent directive, comment on Issue #3, publish through normal fast-forward commits, leave Issue #3 open, and stop for Architect review.
-
-A full rewrite is not authorized. Preserve accepted analysis and history. Any material contradiction, unavailable source, or need for implementation/installation/benchmarking blocks the correction and must be returned to the Architect.
+- Runtime owners, direct care ingress, vault boundary, canonical event profile, IPC trust gate, local storage, lifecycle, roadmap placement, and technology state: `.agent/ARCHITECTURE_V1.md`.
+- Complete accepted evidence/history: `.agent/tasks/completed/COMPANION-P00-ARCH-001/`.
+- The direct safety path cannot be implemented until same-user unauthorized producer injection is shown impossible under the selected host-specific mechanism.
+- The production core language remains unselected. Python 3.12 and Rust are the next qualification pair.
+- No Godot 4.7.2 artifact, SQLite artifact/build, systemd topology, speech/vision/model stack, vault implementation, or notification provider is approved.
 
 ## Historical ledgers
 

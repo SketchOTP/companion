@@ -4,107 +4,59 @@
 
 Planning Phase 02 — Master Delivery Roadmap remains active.
 
-Roadmap Phase 00 — Planning and Product Contract remains active. The canonical ingest, Linux environment inventory, and Operator Decision Packet 01 are complete. `COMPANION-P00-ARCH-001` has received Architect Review 01; Codex published focused correction `25b1c737d6f8f1f861a36355909c2a51ea5c64ea` for independent re-review. Product implementation remains closed.
+Roadmap Phase 00 — Planning and Product Contract remains active. `COMPANION-P00-ARCH-001` is accepted and complete. Architecture v1.0 is adopted. Roadmap Phase 01, dependency approval, experiments, and product implementation remain closed pending new bounded Architect authority.
 
 ## Current objective
 
-Independently review the corrected Architecture v1.0 proposal. The packet now addresses the seven review findings: independent safety-evidence ingress, explicit identity/consent/contact/secret authority, canonical event encoding and reboot-aware time, roadmap-consistent milestone placement, language/toolchain selection gate, exact SQLite eligibility, and properly labeled/diversified evidence floors.
+Close and archive the accepted architecture packet, then execute the next Roadmap Phase 00 foundation-qualification directive. The critical unknowns are the Python-versus-Rust toolchain choice, enforceable process identity for direct safety ingress, exact Godot 4.7.2 artifact provenance, exact persistence artifact/build, and target-host supervision assumptions.
 
-## Active directive
+## Accepted architecture authority
 
-- Directive: `COMPANION-P00-ARCH-001`
-- Status: `CODEX CORRECTION 01 SUBMITTED — ARCHITECT RE-REVIEW REQUIRED`
-- Verified task baseline: `db33d8a597f79a01e569482dc00583dcf50249f9`
-- Starting routing head for original execution: `6559cec1beaf27bf958c2b9517b0717f04c83ea9`
-- Codex planning result: `5d6d87d93b017e42647e260b69d80b5ad3f8becc`
-- Codex publication head reviewed: `d8c7209e0ec0370c17fc4cf980fde879e54f10b5`
-- Focused correction result: `25b1c737d6f8f1f861a36355909c2a51ea5c64ea`
-- Architect review file: `.agent/tasks/active/COMPANION-P00-ARCH-001/ARCHITECT_REVIEW_01.md`
-- Architect review Notion: https://app.notion.com/p/3d6833cb27ff81bd834cf3693f8ae9a5
-- Parent directive: https://app.notion.com/p/3d6833cb27ff8183a210e560883d96ab
-- Coder report: https://app.notion.com/p/3d6833cb27ff8141837fdaa087841324
-- GitHub Issue #3: https://github.com/SketchOTP/companion/issues/3
-- Active packet: `.agent/tasks/active/COMPANION-P00-ARCH-001/`
-- Acceptance authority: Architect
-- Architecture v1.0 adoption: `NOT GRANTED`
-- Roadmap Phase 01: `CLOSED`
-- Dependency approval: `NONE`
-- Product implementation: `CLOSED`
+- Canonical Architecture v1.0: https://app.notion.com/p/3d6833cb27ff81e99c52dc33b53f2556
+- Architect Review 02: https://app.notion.com/p/3d6833cb27ff81d88785f64d0629286c
+- Architecture routing mirror: `.agent/ARCHITECTURE_V1.md`
+- Accepted focused correction: `25b1c737d6f8f1f861a36355909c2a51ea5c64ea`
+- Corrected publication reviewed: `1ceb330d4c2321b500a138b8acfdfeb4279c08e7`
+- Architect acceptance records: `00dc566adf4f4210fe439b9a1a74c0ee947d79dd` and `0d8cdb7542cdbe5049b77e4074ccf3ea179e2645`
+- Completed packet: `.agent/tasks/completed/COMPANION-P00-ARCH-001/`
+- GitHub Issue #3: closes as completed after archive publication
 
-## Architect review disposition
+## Architecture v1.0 summary
 
-Accepted for retention:
+- `companion-core` is the sole writer for ordinary creature truth.
+- `care-core` independently owns safety-input receipts, deterministic scenario policy, degraded safety coverage, incidents, acknowledgment state, and care audit.
+- `identity-consent-vault` solely owns consent/revocation, biometric handles/templates, trusted contacts/roles, provider credential handles, key references/recovery metadata, and privileged audit.
+- Authorized sensor/speech producers send ordinary observations to `companion-core` and safety candidates directly to `care-core`; companion availability or permission is not required for the care path.
+- Sensor, model, Godot, notification, and operations processes are nonauthoritative adapters.
+- Canonical events use `JCS-RFC8785-v1` and `sha-256-jcs-event-v1`, bounded/fixed-point numeric rules, boot-scoped monotonic time, UTC uncertainty, owner sequence, and causation.
+- Runtime state uses local XDG paths on ext4/NVMe, never the SSHFS checkout.
+- Outbound network is disabled by default.
+- Roadmap Phase 01 engineering foundation is separate from the later Phase 02/03/04/10 remembered-care and shadow-help architecture-proof milestone.
 
-- `ADEQUATE` source/context reconstruction.
-- Current live totals and ADR-33 through ADR-37 semantics.
-- Governance/planning-only scope and normal result publication.
-- Local-first cohesive companion-core topology with consequence-driven edge isolation.
-- Separate deterministic care authority; nonauthoritative Godot/model/sensor/notification adapters.
-- Local XDG state on ext4/NVMe; no canonical state on SSHFS; no default outbound network.
-- Typed/versioned local IPC, explicit degradation, owner portability, rights separation, and Kentucky/nonmedical claims boundaries.
-- The remembered-interaction plus shadow-help concept as an architecture-proof milestone after correction.
+## Mandatory implementation gates
 
-Not accepted yet:
+1. Direct safety ingress requires process-level producer authentication independent of message-declared identity and same-UID socket access.
+2. Authoritative service implementation requires an accepted Python 3.12 versus Rust qualification result; Rust is the selected compiled comparator, not the winner.
+3. Godot 4.7.2 requires exact official artifact provenance and target-host qualification; existing 4.6 is not a substitute.
+4. Persistence requires one exact supported non-withdrawn artifact/build and crash/checkpoint/disk/migration/backup/restore evidence; SQLite remains conditional.
+5. systemd/user-service supervision remains conditional because accepted host evidence reported degraded managers.
+6. RQ-04 and RQ-07 through RQ-12 remain open or partially resolved.
 
-1. Safety evidence ownership/ingress is contradictory. `care-core` needs a direct authenticated producer path and its own durable safety-input journal; `companion-core` may not gate or suppress it.
-2. Identity, consent, contacts, credentials, biometric handles, and key references need one explicit vault authority and degraded behavior.
-3. Byte-stable JSON/hash claims need a pinned canonical event encoding, numeric rules, event-digest scope, and boot/clock epoch.
-4. The cross-phase slice cannot be mislabeled as the Roadmap Phase 01 contract. Define a separate Phase 01 foundation gate and preserve phase semantics.
-5. Python versus a compiled core/care candidate needs an explicit language/toolchain evidence gate before implementation.
-6. SQLite eligibility must require one exact supported non-withdrawn build; a loose `3.51.3+` rule is insufficient because 3.52.0 was withdrawn.
-7. The 100-restart, 1,000-cycle, and 30-minute values must be provisional engineering floors with diversified seeds/boundaries, not reliability claims.
+## Canonical counts after architecture adoption
 
-## Codex correction disposition
+- Architecture decisions: `45` total — `27 Adopted`, `16 Interim`, `2 Rejected`.
+- Research evidence: `53` total — `40 Grade A`, `11 Grade B`, `2 Grade C`; `40 Reviewed`, `12 Candidate`, `1 Needs Deep Review`.
 
-- Direct safety path: independently authorized sensor/speech producer sends safety candidates directly to `care-core`; care owns accepted/rejected receipt and incident journals; companion has no safety forwarding/gating/suppression/authorization role.
-- Safety negatives: companion stopped, forged companion input, duplicate candidate, producer/model outage, companion database absent, and companion mood/memory/language/dream/animation sources are explicitly covered.
-- Vault: `identity-consent-vault` owns consent/revocation, biometric handles/templates, contacts/roles, provider credential handles, key references/recovery metadata, and privileged-change audit; foreign processes receive only decisions/opaque expiring capabilities.
-- Canonical events: `JCS-RFC8785-v1` plus `sha-256-jcs-event-v1`, exact hash/signature scope, duplicate-key/Unicode/numeric rules, fixed-point/wide-integer rules, boot-scoped monotonic time, UTC uncertainty, owner event sequence, and causation are defined.
-- Phase semantics: the Roadmap Phase 01 foundation contract is separate from the later Phase 02/03/04/10 cross-phase architecture-proof milestone; passing the milestone completes no phase.
-- Toolchain: EXP-00 compares Python 3.12 with one Architect-selected Rust-or-Go comparator; no winner/install/benchmark exists; the gate blocks authoritative-service implementation rather than every language-neutral foundation task.
-- SQLite: only one exact supported non-withdrawn release or documented fixed backport may be considered, with complete build/topology/security metadata and target tests.
-- Evidence floors: 100 replay/restart cases, 1,000 cycles, and 30 minutes are provisional minimum engineering floors with multiple seeds/states/schemas/kill points/boots; later soak, media, shadow-safety, accessibility, pilot, and operational evidence remains separate.
+These are snapshots. Future agents must query live Notion.
 
-This is a Codex correction claim only. Architect Review 01 remains the last acceptance authority event until independent re-review.
+## Local working-tree protection
 
-## Required correction behavior
-
-1. Read `ARCHITECT_REVIEW_01.md` in full.
-2. Re-fetch only mutable live authorities whose state may have changed; the accepted full ingest need not be repeated unless a source changed.
-3. Check current local/remote Git state and Issue #3 before editing.
-4. Update only affected planning/evidence files and append new superseding ledger entries rather than rewriting history.
-5. Use current primary sources for every changed technical assertion.
-6. Publish a focused correction result to Notion and Issue #3.
-7. Leave Issue #3 open and stop for a new independent Architect review.
-
-## Adopted product boundary remains unchanged
-
-- One adult primary user aged 18 or older who may have support needs; configured trusted caregivers/contacts; no minors in iteration one.
-- Consumer-product development under a narrow non-medical companion and trusted-contact assistance claim.
-- Explicit spoken help request is the first caregiving scenario in Kentucky, United States; qualification begins with simulation, replay, and shadow mode.
-- Existing Linux PC, existing webcam/microphone/speakers, and dedicated 1366×768 Openbox-managed display.
-- Bounded resizable Godot habitat window.
-- Godot 4.7.2 selected but absent; Godot 4.6 is not an approved substitute.
-- Approved flat cel-shaded sprite mon and `MON_FRAME_V1` remain unchanged.
-
-## Accepted environment limits remain unchanged
-
-- Ubuntu 24.04.5 LTS, x86_64, X11; Ryzen 7 5800XT; approximately 67.3 GB RAM.
-- GTX 1660 SUPER and RTX 3050 6 GB on NVIDIA 595.84; direct OpenGL 4.6 observed; exact Vulkan capability unknown.
-- Camera/audio metadata is known; real quality, latency, contention, and integrated behavior are unqualified.
-- Repository checkout is SSHFS; local ext4/NVMe is available for later runtime state.
-- Godot 4.7.2 execution, service recovery, workload headroom, power, thermals, noise, and endurance remain unqualified.
-
-## Canonical counts at Architect Review 01
-
-- Research evidence: `46` records — `33 A`, `11 B`, `2 C`; `33 Reviewed`, `12 Candidate`, `1 Needs Deep Review`.
-- Architecture decisions: `37` records — `21 Adopted`, `14 Interim`, `2 Rejected`.
-- No new ADR or dependency was adopted by the review.
+Codex reported intentionally uncommitted user-owned Graft changes to root `.gitignore` and `AGENTS.md`. They are not part of the reviewed remote commits and have not been independently inspected through GitHub. Future Codex work must inspect and preserve them. Do not commit, discard, reset, overwrite, or reinterpret them without explicit authority.
 
 ## Hard boundary
 
-No product source, Godot project or execution, sprite production, dependency installation or approval, package manifest, CI workflow, deployment, database implementation, model/weight/data/voice download, media capture/playback, benchmark, biometric implementation, notification integration, safety runtime, architecture self-approval, Roadmap Phase 01, or product-capability claim is authorized.
+No active directive currently authorizes product source, Godot project execution, production sprites, dependency adoption, CI workflows, deployment, biometrics, notification delivery, live safety behavior, Roadmap Phase 01, or product-capability claims.
 
 ## Next review point
 
-The Architect independently verifies focused correction `25b1c737d6f8f1f861a36355909c2a51ea5c64ea`, its publication reconciliation, safety path, vault authority, canonical encoding/time model, phase sequencing, language gate, SQLite rule, evidence floors, traceability, scope, and repository state before any Architecture v1.0 adoption.
+A new Architect directive will define the exact foundation-qualification scope, permitted disposable experiment artifacts, source map, stop conditions, validation, Notion result, GitHub issue, and acceptance gate.
