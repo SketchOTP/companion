@@ -8,23 +8,22 @@
 - Canonical Notion: https://app.notion.com/p/3d5833cb27ff8196814fdbae282f15ad
 - Complete end goal: https://app.notion.com/p/3d5833cb27ff81b09c20e2b52d537e1e
 - Active roadmap: https://app.notion.com/p/3d5833cb27ff81dd88faeb0c95b6f44e
+- Active directive: https://app.notion.com/p/3d6833cb27ff81e6ab93e37fc851b49d
+- Active coder report: https://app.notion.com/p/3d6833cb27ff8159b66fdebeb690be90
 - Completed ingest directive: https://app.notion.com/p/3d5833cb27ff8101bfa8f7a28a6999ec
-- Accepted coder report: https://app.notion.com/p/3d5833cb27ff817faf6fe9b106af4930
-- Architect Review 01: https://app.notion.com/p/3d5833cb27ff819b9433f230c7bc06ad
-- Architect Review 02: https://app.notion.com/p/3d6833cb27ff81e4aea5df63206c1e66
+- Accepted ingest review: https://app.notion.com/p/3d6833cb27ff81e4aea5df63206c1e66
 - GitHub: https://github.com/SketchOTP/companion
 
 ## Current pointers
 
-- Current stage: Planning Phase 02 — Roadmap Phase 00 active; canonical ingest accepted; product implementation gate closed
-- Active directive: `NONE`
-- Active task packet: `NONE`
+- Current stage: Planning Phase 02 — Roadmap Phase 00 active; environment-evidence directive active; product implementation gate closed
+- Active directive: `COMPANION-P00-ENV-001`
+- Active task packet: `.agent/tasks/active/COMPANION-P00-ENV-001/`
+- GitHub execution issue: https://github.com/SketchOTP/companion/issues/2
+- Verified directive baseline: `ddb6b130ab6428a1f395cd223d309eeaa2ac7462`
 - Last completed directive: `COMPANION-P00-INGEST-001`
-- Completed task packet: `.agent/tasks/completed/COMPANION-P00-INGEST-001/`
+- Completed ingest packet: `.agent/tasks/completed/COMPANION-P00-INGEST-001/`
 - Last accepted outcome: `COMPANION-P00-INGEST-001-ARCHITECT-ACCEPTANCE-02`
-- Last recorded outcome: `COMPANION-P00-INGEST-001-ARCHITECT-ACCEPTANCE-02`
-- Correction result commit: `9a2b9b9f73fa8b5545dc6549f9ae3eb10dc0d388`
-- Correction publication head reviewed: `6d5868c14fb77de2d556c96e02c1ca71a07d059f`
 - Last state sync: 2026-09-09 America/New_York
 
 ## Mandatory kernel
@@ -35,7 +34,7 @@ Read these before substantial work:
 2. `PROJECT_PROFILE.md`
 3. `CURRENT.md`
 
-Then resolve the incoming Architect directive in `DIRECTIVES.md`, read its task packet when one is active, and retrieve the relevant Notion, GitHub, repository, outcome, learning, record, repo-map, external-discovery, and prior-directive evidence.
+Then read the active directive from `DIRECTIVES.md`, the complete active task packet, and the linked live Notion directive/report. Retrieve changed canonical authority and the prior accepted ingest evidence necessary to interpret the task.
 
 ## Historical ledgers
 
@@ -46,7 +45,7 @@ Then resolve the incoming Architect directive in `DIRECTIVES.md`, read its task 
 - `REPO_MAP.md` — repository structure and important boundaries.
 - `EXTERNAL.md` — relevant external prior art and dispositions.
 
-Do not bulk-load entire growing ledgers unless the active directive genuinely requires it. Do not skip relevant history merely to save context.
+Do not bulk-load growing history without relevance. Do not skip evidence needed to establish the current baseline, safety boundaries, or prior acceptance.
 
 ## Update rule
 

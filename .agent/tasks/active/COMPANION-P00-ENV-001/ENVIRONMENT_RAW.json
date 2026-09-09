@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "directive_id": "COMPANION-P00-ENV-001",
+  "status": "PENDING_CODER_EXECUTION",
+  "verified_baseline": "ddb6b130ab6428a1f395cd223d309eeaa2ac7462",
+  "retrieval_confidence": null,
+  "collection_started_at": null,
+  "collection_completed_at": null,
+  "privacy_sanitized": false,
+  "observations": {
+    "host_os_session": [],
+    "cpu_memory_limits": [],
+    "graphics": [],
+    "display": [],
+    "storage": [],
+    "webcam": [],
+    "audio": [],
+    "godot": [],
+    "development_tools": [],
+    "always_on_operations": []
+  },
+  "unavailable_tools": [],
+  "blocked_probes": [],
+  "redactions": [],
+  "validation": {
+    "json_parse": "PENDING",
+    "required_categories": "PENDING",
+    "source_timestamp_status_confidence": "PENDING",
+    "summary_crosscheck": "PENDING",
+    "privacy_sanitization": "PENDING",
+    "media_absence": "PENDING",
+    "repository_scope": "PENDING"
+  }
+}
