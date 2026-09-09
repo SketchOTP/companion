@@ -21,6 +21,7 @@
 - Active task packet: `.agent/tasks/active/COMPANION-P00-ENV-001/`
 - GitHub execution issue: https://github.com/SketchOTP/companion/issues/2
 - Verified directive baseline: `ddb6b130ab6428a1f395cd223d309eeaa2ac7462`
+- Directive publication commit: `c06c796d9d54da4cdcf38296ee08c4f70fb3993d`
 - Last completed directive: `COMPANION-P00-INGEST-001`
 - Completed ingest packet: `.agent/tasks/completed/COMPANION-P00-INGEST-001/`
 - Last accepted outcome: `COMPANION-P00-INGEST-001-ARCHITECT-ACCEPTANCE-02`
@@ -34,11 +35,11 @@ Read these before substantial work:
 2. `PROJECT_PROFILE.md`
 3. `CURRENT.md`
 
-Then read the active directive from `DIRECTIVES.md`, the complete active task packet, and the linked live Notion directive/report. Retrieve changed canonical authority and the prior accepted ingest evidence necessary to interpret the task.
+Then read the full active `SPEC.md` and `PLAN.md` under the active task packet, fetch the linked live Notion directive/report, and use `DIRECTIVES.md` plus the completed ingest packet for relevant historical authority. The live Notion directive controls if a repository summary is incomplete.
 
 ## Historical ledgers
 
-- `DIRECTIVES.md` — issued work and acceptance boundaries.
+- `DIRECTIVES.md` — previously issued work and acceptance boundaries.
 - `OUTCOMES.md` — what happened and the evidence achieved.
 - `LEARNINGS.md` — durable verified technical/project learnings.
 - `RECORD.md` — major decisions, milestones, reversals, and governance events.
