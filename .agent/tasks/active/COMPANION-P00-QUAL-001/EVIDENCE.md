@@ -112,3 +112,26 @@ Prove protected root files were untouched, only authorized Git paths changed, ge
 No evidence exceeds `E3_TARGET_TESTED`. Product/runtime/safety capability, reliability, security certification, dependency adoption, and Phase 01 authorization are not established.
 
 Use only `E1_OBSERVED` and `E3_TARGET_TESTED` where justified. State product/runtime/safety evidence as not established.
+
+## Architect Review 03 — evidence-binding correction
+
+Earlier hardening results remain historical. The superseding `results/` bundle
+is generated from sanitized runner output by `scripts/generate_results.py`.
+`validate_results.py` independently recomputes the three manifest-listed result
+hashes and fixture hash, rejects private fields, checks final evidence-commit
+ancestry, and writes `validation_results.json` rather than reading it as
+evidence. The initial run leaves ancestry pending until the correction SHA is
+known; the publication reconciliation binds that exact SHA.
+
+IPC records distinguish `RUNTIME_OBSERVED`, `KERNEL_OBSERVED`, and
+`CODE_INSPECTED`; outage semantics use `normal_coverage_claimed=false`; all
+required lifecycle, revocation, credential, capability, old-channel,
+companion-independent, and descriptor outcomes are asserted. SQLite records
+fixed before/during/after counts, complete state digests, multi-row 0-or-3
+atomicity, checkpoint equality, expected exits, and VFS metadata. Unsupported
+JCS claims were removed and queue overflow remains deferred to Phase 01.
+
+Current live authority snapshot: 45 ADR rows (27 Adopted, 16 Interim, 2
+Rejected) and 55 evidence rows (42 Grade A, 11 Grade B, 2 Grade C). Architecture
+v1.0 remains adopted; Phase 01 and product implementation remain closed; no
+dependency or mechanism is self-approved.

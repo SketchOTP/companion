@@ -54,3 +54,16 @@ Language-neutral contracts/fixtures/XDG/logging/test controls are ready only for
 ## Prohibited inference
 
 A recommendation or bounded passing test is not production adoption, product capacity, safety efficacy, release readiness, or permission to merge/open Roadmap Phase 01.
+
+## Architect Review 03 evidence-binding status
+
+| Area | Binding correction | Evidence level | Disposition |
+|---|---|---|---|
+| Provenance | Result/fixture hashes, exact oracle npm integrity, honest timestamp, and final Git ancestry are independently checked; validation output is not input evidence | E3_TARGET_TESTED | Pending Architect review |
+| IPC | Runtime/kernel observations are labeled; ownership constants are code-inspected; required lifecycle, revocation, old-channel, capability, descriptor, outage, and companion-independent results fail closed | E3_TARGET_TESTED | Candidate mechanism only |
+| JCS/toolchain | Summary generated from sanitized runner output; unsupported claims removed; `canonicalize@5.0.0`; queue overflow deferred | E3_TARGET_TESTED | Rust and canonicalizer unselected |
+| SQLite | Exact counts, complete state digests, 0-or-3 commit groups, checkpoint equality, expected exits, and VFS metadata derive the summary | E3_TARGET_TESTED | SQLite unselected |
+
+Retained Godot (`E1_OBSERVED`) and transient systemd (`E3_TARGET_TESTED`)
+evidence were not rerun. No result exceeds bounded engineering evidence; no
+dependency, mechanism, Phase 01 transition, or product capability is adopted.

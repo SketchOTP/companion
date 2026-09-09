@@ -232,3 +232,9 @@ deferred to Phase 01. No dependency, implementation mechanism, Phase 01
 transition, or product capability is adopted.
 - Final live Research Evidence Register requery returned 55 rows; Evidence 54 (`pidfd_getfd(2)`) and Evidence 55 (SQLite I/O/crash/concurrency methods) were verified and incorporated.
 - Independent Architect review is required; Codex does not self-accept.
+
+### Architect Review 03 — narrow evidence-binding correction (2026-09-09)
+
+- Current authority is `.agent/tasks/active/COMPANION-P00-QUAL-001/ARCHITECT_REVIEW_03.md`; review commit `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2` was merged normally as `1997e01`.
+- Scope is limited to provenance/result binding, fail-closed IPC evidence labels and assertions, exact JCS/toolchain claim alignment, and SQLite before/after state derivation. Accepted Godot and systemd work is retained without rerun.
+- No dependency, mechanism, Phase 01 transition, product implementation, security certification, reliability claim, safety efficacy, or product capability is adopted. PR #5 and Issue #4 remain open.

@@ -474,3 +474,11 @@ Architecture v1.0 is unchanged, Phase 01 is closed, and adoption is none.
 - Pull request #5: `OPEN / DRAFT / UNMERGED`; Issue #4: `OPEN` after correction comments.
 - Notion coder report and parent directive were updated and re-fetched with the correction commit and 45/55 live ledger counts: `PASSED`.
 - Architect acceptance: `NOT RUN`; no downstream authority created.
+
+## COMPANION-P00-QUAL-001 — Architect Review 03 narrow evidence-binding correction
+
+- Date: 2026-09-09 America/New_York; review merge `1997e01` from `origin/main` `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2`.
+- Sanitized summaries are regenerated from runner output. Provenance records honest date-only UTC precision, exact `canonicalize@5.0.0` npm integrity, fixture/result SHA-256 values, and final evidence-commit ancestry.
+- IPC fields are labeled `RUNTIME_OBSERVED`, `KERNEL_OBSERVED`, or `CODE_INSPECTED`; outage semantics use `normal_coverage_claimed=false`; stale/restart/old-channel/capability and descriptor outcomes are asserted fail-closed.
+- SQLite derives exact before/during/after reader counts, multi-row fault atomicity, pre-existing-state preservation, checkpoint full-state equality, and VFS exit/file-class/flags/ordinal assertions.
+- Evidence remains bounded `E3_TARGET_TESTED` candidate evidence (Godot retained `E1_OBSERVED`, systemd retained `E3_TARGET_TESTED`). Architecture v1.0 remains adopted; dependencies, Phase 01, and product implementation remain closed; Architect acceptance is pending.

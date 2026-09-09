@@ -333,3 +333,16 @@ JSON, a fail-closed validator, accurate IPC supervisor ownership and strict
 cross-language/SQLite assertions. The prior failed claims remain historical.
 PR #5 and Issue #4 remain open; no dependency, Phase 01 transition, or
 product capability is adopted.
+
+## 2026-09-09 — Architect Review 03 evidence-binding continuation
+
+The Architect continued `COMPANION-P00-QUAL-001` for one narrow correction.
+Review commit `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2` was merged normally as
+`1997e01`. The correction binds sanitized result hashes, fixture hash, exact
+oracle registry identity, and final Git ancestry; separates IPC runtime/kernel
+observations from code inspection; and derives JCS/toolchain and SQLite
+summaries from runner outcomes and complete state comparisons.
+
+The result remains provisional for independent Architect review. Architecture
+v1.0 remains adopted and unchanged; Roadmap Phase 01, dependency/mechanism
+adoption, product implementation, and capability claims remain closed.

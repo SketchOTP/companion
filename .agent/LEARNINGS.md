@@ -263,3 +263,18 @@ with a false security, parity, or atomicity boolean. Commit sanitized result
 records, provenance, and a validator whose exit status is derived from every
 acceptance assertion. Preserve failed historical attempts, but make the
 current result unambiguous and machine-checkable.
+
+## COMPANION-L-001 — Evidence binding must be independent of self-attestation
+
+Result files are not evidence merely because a validator reads their booleans.
+Recompute manifest and fixture hashes, bind the checked-out evidence commit
+through Git ancestry, generate validation output rather than consuming it, and
+retain an explicit tamper-negative test. Date-only precision is more honest
+than fabricated midnight timestamps when exact execution times were not kept.
+
+## COMPANION-L-002 — Summaries preserve measured versus inspected facts
+
+Process-boundary summaries label runtime and kernel observations separately from
+code-inspected ownership facts. SQLite summaries derive claims from independent
+before/after state and fixed expected counts rather than observed values or
+hand-curated booleans.

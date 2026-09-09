@@ -1,62 +1,79 @@
 {
-  "status": "PASSED",
-  "oracle": {
-    "package": "canonicalize@5.0.0",
-    "license": "Apache-2.0",
-    "node_engine": ">=22",
-    "node_runtime": "v24.20.0",
-    "tarball_sha256": "5e13234695e05dc1398c84e7bc12aaee7c69a6e23b52325b9cb54f6a307427b0",
-    "repository": "https://github.com/erdtman/canonicalize.git",
-    "vectors": 8,
-    "profile_vectors": 5
+  "adoption": "NONE",
+  "behavioral_parity": {
+    "decoded_duplicate_rejected": true,
+    "duplicate_idempotent": true,
+    "frame_limit_rejected": true,
+    "log_schema": true,
+    "queue_overflow": "DEFERRED_PHASE_01",
+    "response_fields": true,
+    "unsupported_schema_rejected": true
   },
   "conformance": {
-    "python_rust_oracle_bytes": true,
-    "utf16_non_bmp_order": true,
-    "nested_objects_and_arrays": true,
+    "bounded_integer_profile": true,
     "control_characters": true,
-    "unicode_preservation": true,
     "decoded_duplicate_rejection": true,
     "escaped_duplicate_rejection": true,
     "invalid_unicode_rejection": true,
+    "nested_objects_and_arrays": true,
     "nonfinite_rejection": true,
-    "bounded_integer_profile": true,
+    "project_profile_numeric_rejection": true,
+    "python_rust_oracle_bytes": true,
     "schema_major_rejection": true,
-    "altered_digest_detection": true
+    "unicode_preservation": true,
+    "utf16_non_bmp_order": true
   },
-  "behavioral_parity": {
-    "canonical_bytes": true,
-    "digest": true,
-    "response_fields": true,
-    "idempotency": true,
-    "rejection_reasons": true,
-    "framing_errors": true,
-    "controlled_shutdown": true,
-    "log_schema": true,
-    "no_egress": true,
-    "queue_overflow": "DEFERRED_PHASE_01"
+  "fixture_sha256": "569b94e68f93f70e040c62d5d53610624cdea61f6296f6de84d8fff18d6b8e5f",
+  "oracle": {
+    "license": "Apache-2.0",
+    "node_engine": ">=22",
+    "node_runtime": "v24.20.0",
+    "npm_integrity": "sha512-O/NCg79G0/TWoD3Fo6scOMfP4p7/TsxRXVmRo9mEfD6h/5y5o1wtVbKyBO0E2i7FEcqe5tRijyAH/IWHIHMH4w==",
+    "package": "canonicalize@5.0.0",
+    "profile_vectors": 5,
+    "repository": "https://github.com/erdtman/canonicalize.git",
+    "tarball_sha256": "5e13234695e05dc1398c84e7bc12aaee7c69a6e23b52325b9cb54f6a307427b0",
+    "vectors": 8
   },
+  "profile_vector_hashes": [
+    "4f28b69359c0f198ee869294be4f2aa1d94763e7cc1242c7a1c7c30f14945d38",
+    "8b67007c9395c5f0d4cab09e1644e7e43441b5ac569bac362fa2021239d269e7",
+    "fd57f15d85571d2712b0f654ed96d7c5fb2395690f86cf8744595163c6c736c9",
+    "3ca8e8960c855ee4e26f1a89d27ba87d5bdc3d98d3d9dd14548d3299d1c82ed4",
+    "10e2441ebc02b750c5917108bc0abf7a3221d19266b3f644bab96934c152ca2f"
+  ],
   "python": {
+    "cold_request_median_ms": 0.371442,
+    "cold_self_median_ms": 29.694735,
+    "cpu_seconds": 0.7599959999999999,
+    "rss_kib": [
+      17744,
+      17840
+    ],
     "runtime": "CPython 3.12.3 (existing host executable)",
-    "cold_self_median_ms": 29.5594035,
-    "cold_request_median_ms": 0.359042,
-    "warm_median_ms": 0.126621,
-    "warm_p95_ms": 0.180418,
-    "cpu_seconds": 0.745927,
-    "rss_kib": [17740, 17844]
+    "warm_median_ms": 0.133603,
+    "warm_p95_ms": 0.173364
   },
+  "recommendation": "BLOCKED \u2014 MORE EVIDENCE REQUIRED",
   "rust": {
-    "toolchain": "rustc 1.98.1 stable (isolated qualification cache)",
+    "cold_request_median_ms": 0.083097,
+    "cold_self_median_ms": 0.861882,
+    "cpu_seconds": 0.02905900000000003,
     "release_build": true,
+    "rss_kib": [
+      2120,
+      2240
+    ],
     "tests_passed": 5,
-    "cold_self_median_ms": 0.869051,
-    "cold_request_median_ms": 0.082924,
-    "warm_median_ms": 0.0502225,
-    "warm_p95_ms": 0.072844,
-    "cpu_seconds": 0.031187,
-    "rss_kib": [2120, 2224]
+    "toolchain": "rustc 1.98.1 stable (isolated qualification cache)",
+    "warm_median_ms": 0.047406000000000004,
+    "warm_p95_ms": 0.065941
   },
-  "fixture_sha256": "23c5d91539d162bbaa86c804a57e6decbee96d17ae58607fcda85fae10d6eb2b",
-  "recommendation": "BLOCKED — MORE EVIDENCE REQUIRED",
-  "adoption": "NONE"
+  "status": "PASSED_BOUNDED_PROFILE",
+  "unsupported_claims_removed": [
+    "altered_digest_detection",
+    "controlled_shutdown",
+    "no_egress",
+    "rejection_reasons"
+  ]
 }

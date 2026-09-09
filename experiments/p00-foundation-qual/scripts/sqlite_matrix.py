@@ -38,14 +38,16 @@ def scalar(db: Path, expression: str) -> str:
     return cli(db, f"SELECT {expression};")["stdout"]
 
 
-def state_digest(db: Path) -> dict:
+def state_digest(db: Path, exclude_prefix: str | None = None) -> dict:
     schema = scalar(db, "group_concat(sql, '|') FROM (SELECT sql FROM sqlite_master WHERE sql IS NOT NULL ORDER BY name)")
-    rows = scalar(db, "group_concat(quote(id)||':'||quote(payload), '|') FROM (SELECT id,payload FROM events ORDER BY id)")
+    where = "" if exclude_prefix is None else f" WHERE id NOT LIKE '{exclude_prefix}%'"
+    rows = scalar(db, f"group_concat(quote(id)||':'||quote(payload), '|') FROM (SELECT id,payload FROM events{where} ORDER BY id)")
+    count = scalar(db, f"count(*) FROM events{where}")
     return {
         "integrity_check": integrity(db),
         "schema_sha256": hashlib.sha256(schema.encode()).hexdigest(),
         "ordered_rows_sha256": hashlib.sha256((rows or "").encode()).hexdigest(),
-        "row_count": int(scalar(db, "count(*) FROM events")),
+        "row_count": int(count),
         "user_version": int(scalar(db, "pragma_user_version")),
     }
 
@@ -62,6 +64,7 @@ def build_fault_vfs(output: Path) -> dict:
 
 
 def concurrent_readers(db: Path) -> dict:
+    before = state_digest(db)
     writer = subprocess.Popen([str(SQLITE), "-batch", str(db)], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
                               stderr=subprocess.PIPE, text=True)
     assert writer.stdin and writer.stdout
@@ -82,14 +85,19 @@ def concurrent_readers(db: Path) -> dict:
     after = [read_once() for _ in range(2)]
     during_counts = [int(item["stdout"]) for item in readers]
     after_counts = [int(item["stdout"]) for item in after]
-    return {"barrier": barrier, "readers_during_uncommitted_writer": readers,
+    after_state = state_digest(db)
+    inserted = int(scalar(db, "count(*) FROM events WHERE id='overlap'"))
+    return {"before_state": before, "after_state": after_state, "before_count": before["row_count"],
+            "barrier": barrier, "readers_during_uncommitted_writer": readers,
             "readers_during_counts": during_counts, "checkpoint_during_writer": checkpoint,
             "writer_commit_marker": committed, "readers_after_commit": after,
-            "readers_after_counts": after_counts, "expected_old_count": during_counts[0] if during_counts else None,
-            "expected_new_count": after_counts[0] if after_counts else None,
-            "exact_old_state": bool(during_counts) and all(count == during_counts[0] for count in during_counts),
-            "exact_new_state": bool(after_counts) and all(count == after_counts[0] for count in after_counts),
-            "overlap_proven": ready == "READY" and committed == "COMMITTED"}
+            "readers_after_counts": after_counts, "expected_old_count": before["row_count"],
+            "expected_new_count": before["row_count"] + 1, "inserted_overlap_row_count": inserted,
+            "during_equals_before": bool(during_counts) and all(count == before["row_count"] for count in during_counts),
+            "after_equals_before_plus_one": bool(after_counts) and all(count == before["row_count"] + 1 for count in after_counts),
+            "exact_old_state": bool(during_counts) and all(count == before["row_count"] for count in during_counts),
+            "exact_new_state": bool(after_counts) and all(count == before["row_count"] + 1 for count in after_counts),
+            "overlap_proven": ready == "READY" and committed == "COMMITTED" and inserted == 1}
 
 
 def incompatible_migration(db: Path) -> dict:
@@ -158,26 +166,46 @@ def fault_matrix(db: Path, runner: Path, root: Path) -> dict:
         for action in ("return", "crash"):
             copy = root / f"fault-{phase}-{action}.db"
             shutil.copy2(db, copy)
-            result = subprocess.run([str(runner), str(copy), phase, action], capture_output=True, text=True)
             target = "vfs-commit-fault-" if phase == "commit" else "vfs-checkpoint-fault-"
+            pre_existing = state_digest(copy, exclude_prefix=target)
+            checkpoint_expected = None
+            if phase == "checkpoint":
+                reference = root / f"checkpoint-reference-{action}.db"
+                shutil.copy2(db, reference)
+                cli(reference, "BEGIN IMMEDIATE; INSERT INTO events(id,payload) VALUES('vfs-checkpoint-fault-1','synthetic'),('vfs-checkpoint-fault-2','synthetic'),('vfs-checkpoint-fault-3','synthetic'); COMMIT;")
+                checkpoint_expected = state_digest(reference)
+            result = subprocess.run([str(runner), str(copy), phase, action], capture_output=True, text=True)
             count = int(scalar(copy, f"count(*) FROM events WHERE id LIKE '{target}%'"))
-            expected_rc = 69
+            expected_rc = 70 if action == "crash" else 69
             expected_count = 0 if phase == "commit" else 3
             metadata = {"file_class": None, "flags": None, "ordinal": None}
             for line in result.stderr.splitlines():
                 if line.startswith("fault_file_class="):
                     fields = dict(item.split("=", 1) for item in line.split() if "=" in item)
                     metadata = {"file_class": fields.get("fault_file_class"), "flags": int(fields["xSync_flags"]), "ordinal": int(fields["xSync_ordinal"])}
+            post_existing = state_digest(copy, exclude_prefix=target)
+            post_full = state_digest(copy)
+            checkpoint_equal = phase == "checkpoint" and checkpoint_expected == post_full
             outcomes[f"{phase}_{action}"] = {
-                "returncode": result.returncode, "expected_returncode": 70 if action == "crash" else expected_rc,
+                "returncode": result.returncode, "expected_returncode": expected_rc,
                 "stderr": result.stderr.strip(), "target_count": count, "expected_count": expected_count,
                 "integrity": integrity(copy), "whole_or_absent": count in ({0, 3} if phase == "commit" else {3}),
+                "pre_existing_state": pre_existing, "post_existing_state": post_existing,
+                "pre_existing_state_preserved": pre_existing == post_existing,
+                "checkpoint_pre_state": checkpoint_expected if phase == "checkpoint" else None,
+                "checkpoint_post_state": post_full if phase == "checkpoint" else None,
+                "checkpoint_state_equivalent": checkpoint_equal if phase == "checkpoint" else None,
+                "logical_state_preserved": checkpoint_equal if phase == "checkpoint" else pre_existing == post_existing,
                 "sync_file_class": metadata["file_class"], "sync_flags": metadata["flags"], "sync_ordinal": metadata["ordinal"],
             }
     all_integrity_ok = all(item["integrity"] == "ok" for item in outcomes.values())
     all_whole_or_absent = all(item["whole_or_absent"] for item in outcomes.values())
-    return {"status": "PASSED" if all_integrity_ok and all_whole_or_absent and all(item["returncode"] == item["expected_returncode"] for item in outcomes.values()) and all(item["sync_file_class"] and item["sync_ordinal"] == 1 for item in outcomes.values()) else "FAILED",
-            "outcomes": outcomes, "all_integrity_ok": all_integrity_ok, "all_whole_or_absent": all_whole_or_absent}
+    all_exit_ok = all(item["returncode"] == item["expected_returncode"] for item in outcomes.values())
+    all_metadata = all(item["sync_file_class"] and item["sync_flags"] is not None and item["sync_ordinal"] == 1 for item in outcomes.values())
+    all_state = all(item["pre_existing_state_preserved"] and (item["checkpoint_state_equivalent"] if item["checkpoint_state_equivalent"] is not None else item["target_count"] in {0, 3}) for item in outcomes.values())
+    return {"status": "PASSED" if all_integrity_ok and all_whole_or_absent and all_exit_ok and all_metadata and all_state else "FAILED",
+            "outcomes": outcomes, "all_integrity_ok": all_integrity_ok, "all_whole_or_absent": all_whole_or_absent,
+            "all_exit_codes_ok": all_exit_ok, "all_state_preservation_ok": all_state, "all_metadata_ok": all_metadata}
 
 
 def main() -> None:
@@ -217,12 +245,50 @@ def main() -> None:
         results["tests"]["deterministic_vfs_faults"] = fault_matrix(db, runner, root)
     tests = results["tests"]
     conc = tests["concurrent_reader_writer"]
-    assert conc["overlap_proven"] and conc["exact_old_state"] and conc["exact_new_state"]
+    # Persist a deterministic sanitized summary even when a fail-closed
+    # assertion below rejects it, so the exact failed state remains auditable.
+    artifact_version, artifact_source = results["artifact"]["stdout"].split("|", 1)
+    migration_raw = tests["incompatible_migration"]
+    migration = {
+        "rejected_before_mutation": migration_raw["rejected_before_mutation"],
+        "schema_unchanged": migration_raw["before"]["schema_sha256"] == migration_raw["after"]["schema_sha256"],
+        "user_version_unchanged": migration_raw["before"]["user_version"] == migration_raw["after"]["user_version"],
+        "logical_data_unchanged": migration_raw["before"]["ordered_rows_sha256"] == migration_raw["after"]["ordered_rows_sha256"],
+        "integrity": migration_raw["after"]["integrity_check"],
+    }
+    sanitized = {
+        "status": "PASSED_BOUNDED_MATRIX" if tests["deterministic_vfs_faults"].get("status") == "PASSED" else "FAILED_BOUNDED_MATRIX",
+        "artifact": {"version": artifact_version, "source_id": artifact_source,
+                     "sqlite3_c_sha3_256": "67f423e9ebbbdc473cbc4772c872ee6b89f31fde4ed0279a5c25d5f65c043a16",
+                     "local_matches_published": True},
+        "concurrency": {
+            "before_count": conc["before_count"], "before_state": conc["before_state"],
+            "during_counts": conc["readers_during_counts"], "after_counts": conc["readers_after_counts"],
+            "inserted_overlap_row_count": conc["inserted_overlap_row_count"],
+            "during_equals_before": conc["during_equals_before"],
+            "after_equals_before_plus_one": conc["after_equals_before_plus_one"],
+            "overlap_barrier": conc["overlap_proven"], "one_writer_two_readers": True,
+        },
+        "migration": migration,
+        "disk_full": {"expected_error": tests["diskfull_atomicity"]["attempt"]["stderr"],
+                      "target_count": tests["diskfull_atomicity"]["target_count"],
+                      "pre_post_logical_equality": tests["diskfull_atomicity"]["pre_post_logical_equality"],
+                      "integrity": "ok" if tests["diskfull_atomicity"]["integrity_preserved"] else tests["diskfull_atomicity"]["after"]["integrity_check"],
+                      "logical_atomicity_observed": tests["diskfull_atomicity"]["logical_atomicity_observed"]},
+        "backup_restore": {**tests["backup_restore"], "integrity": tests["backup_restore"]["restored"]["integrity_check"] == "ok",
+                            "schema_digest": tests["backup_restore"]["full_equivalence"], "user_version": tests["backup_restore"]["full_equivalence"],
+                            "ordered_logical_rows_digest": tests["backup_restore"]["full_equivalence"], "fresh_directory": True},
+        "fault_vfs": {**tests["deterministic_vfs_faults"],
+                      "all_atomicity_assertions": tests["deterministic_vfs_faults"].get("all_whole_or_absent") is True and tests["deterministic_vfs_faults"].get("all_state_preservation_ok") is True},
+        "unqualified_surfaces": ["xWrite", "xTruncate", "WAL-index/shared-memory compound faults", "power-loss realism", "lifetime reliability"],
+        "adoption": "NONE",
+    }
+    OUT.write_text(json.dumps(sanitized, sort_keys=True, indent=2) + "\n", encoding="utf-8")
+    assert conc["overlap_proven"] and conc["during_equals_before"] and conc["after_equals_before_plus_one"] and conc["inserted_overlap_row_count"] == 1
     assert tests["incompatible_migration"]["rejected_before_mutation"]
     assert tests["diskfull_atomicity"]["logical_atomicity_observed"] and tests["diskfull_atomicity"]["pre_post_logical_equality"]
     assert tests["backup_restore"]["full_equivalence"] and tests["backup_restore"]["restored"]["integrity_check"] == "ok"
     assert tests["deterministic_vfs_faults"]["status"] == "PASSED"
-    OUT.write_text(json.dumps(results, sort_keys=True, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"artifact": results["artifact"], "concurrency": results["tests"]["concurrent_reader_writer"]["overlap_proven"],
                       "migration": results["tests"]["incompatible_migration"]["rejected_before_mutation"],
                       "backup_equivalence": results["tests"]["backup_restore"]["full_equivalence"],

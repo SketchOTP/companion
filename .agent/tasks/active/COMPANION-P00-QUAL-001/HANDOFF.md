@@ -86,3 +86,28 @@ Focused hardening commit: `65ba92299338ae5b0484579cd089fa3bc7d99b28` (after
 required merge `bbbe5cedd8f82779e3f3d3c369cfb70ba99e9135`). The result-file
 hashes are recorded in `results/provenance.json`; the final reconciliation
 publication remains limited to metadata/state synchronization.
+
+## Architect Review 03 narrow correction handoff
+
+Status: `NARROW EVIDENCE-BINDING CORRECTION IN PROGRESS — ARCHITECT REVIEW REQUIRED`.
+Review merge: `1997e01` (normal merge of `origin/main` review commit
+`2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2`). Result summaries are generated
+from sanitized runner output; provenance uses honest date-only UTC precision
+and exact `canonicalize@5.0.0` npm integrity. The validator independently
+checks result/fixture hashes and final Git ancestry, ignores
+`validation_results.json` as evidence, and supports a `QUAL_RESULTS_ROOT`
+tamper-negative run.
+
+IPC fields are labeled by evidence class and required lifecycle, revocation,
+old-channel, capability, descriptor, outage, and companion-independent results
+are fail-closed. SQLite derives exact reader counts, migration immutability,
+pre-existing state, 0-or-3 commit groups, checkpoint equality, and fault
+metadata. Unsupported JCS/toolchain fields were removed; queue overflow stays
+`DEFERRED_PHASE_01`.
+
+After publication, bind `provenance.evidence_commit` to the narrow correction
+SHA in the one permitted reconciliation commit, rerun validator and
+tamper-negative, update PR #5 and Issue #4 without merging/closing, re-fetch
+Notion/GitHub, and stop for independent Architect review. Architecture v1.0
+remains adopted; Roadmap Phase 01, dependencies, product implementation, and
+product capability remain closed.

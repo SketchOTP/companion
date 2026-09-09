@@ -1,7 +1,8 @@
 {
   "schema": "companion-p00-qual-results-v1",
-  "git_commit": "65ba92299338ae5b0484579cd089fa3bc7d99b28",
-  "execution_timestamp_utc": "2026-09-09T00:00:00Z",
+  "evidence_commit": "PENDING_NARROW_CORRECTION_COMMIT",
+  "execution_date": "2026-09-09",
+  "timestamp_precision": "date-only UTC",
   "sanitized_host_class": "Linux x86_64; local ext4/NVMe qualification worktree",
   "commands": [
     "python3 experiments/p00-foundation-qual/scripts/jcs_conformance.py",
@@ -20,21 +21,27 @@
     "sqlite": "3.53.4 exact official amalgamation",
     "godot_retained": "4.7.2.stable.official.ed1daf0bf"
   },
+  "oracle": {
+    "package": "canonicalize",
+    "version": "5.0.0",
+    "registry_tarball": "https://registry.npmjs.org/canonicalize/-/canonicalize-5.0.0.tgz",
+    "npm_integrity": "sha512-O/NCg79G0/TWoD3Fo6scOMfP4p7/TsxRXVmRo9mEfD6h/5y5o1wtVbKyBO0E2i7FEcqe5tRijyAH/IWHIHMH4w==",
+    "tarball_sha256": "5e13234695e05dc1398c84e7bc12aaee7c69a6e23b52325b9cb54f6a307427b0",
+    "license": "Apache-2.0",
+    "node_engine": ">=22",
+    "node_runtime": "v24.20.0",
+    "repository": "https://github.com/erdtman/canonicalize.git"
+  },
   "source_identities": {
-    "oracle_repository": "https://github.com/erdtman/canonicalize.git",
-    "oracle_tarball_sha256": "5e13234695e05dc1398c84e7bc12aaee7c69a6e23b52325b9cb54f6a307427b0",
     "sqlite_source_id": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
     "sqlite_published_sha3_256": "67f423e9ebbbdc473cbc4772c872ee6b89f31fde4ed0279a5c25d5f65c043a16",
     "godot_sha256_retained": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4"
   },
-  "fixture_hashes": {
-    "event_v1_sha256": "23c5d91539d162bbaa86c804a57e6decbee96d17ae58607fcda85fae10d6eb2b"
-  },
+  "fixture_sha256": "569b94e68f93f70e040c62d5d53610624cdea61f6296f6de84d8fff18d6b8e5f",
   "result_file_sha256": {
-    "jcs_toolchain_results.json": "6561bc527bf2fe2ffa9bf0be700a260f96676014263a01d6ec2f3674de6a9d3a",
-    "ipc_results.json": "e5cbdbca863455c4a7ef11c6dafefe50b2dedc7e6cdc807bd6b6e83abc47358a",
-    "sqlite_results.json": "3d0b10d5551542fb2736d7f0441a7b438124506cd82910cc4af15a361c30ab85",
-    "validation_results.json": "bcb77639f77c55c810be4484a782b0835916df84330fe3a274c001f486da6ef4"
+    "jcs_toolchain_results.json": "540e01a7bdecaa9678931295b48c0e0f1a337e2d36aa670c64e2df447732a544",
+    "ipc_results.json": "89bffea02bfc1751f38c56dfc4739ac4002cb3709e8950b584f2b95c780b8374",
+    "sqlite_results.json": "ce4086725304d1cdaafec3d5461d75af10cbbe75c7893e17c900adcf6a3ee0dd"
   },
   "evidence_ceiling": "E3_TARGET_TESTED bounded engineering evidence; Godot retained E1_OBSERVED and transient supervision retained E3_TARGET_TESTED. No adoption or product/security/safety/reliability claim."
 }

@@ -1,38 +1,191 @@
 {
+  "processes": {
+    "care_dumpable_prctl": {
+      "evidence_class": "RUNTIME_OBSERVED",
+      "value": true
+    },
+    "care_endpoint_not_in_producer": {
+      "evidence_class": "CODE_INSPECTED",
+      "value": true
+    },
+    "care_endpoint_supervisor_copy_read": {
+      "evidence_class": "CODE_INSPECTED",
+      "value": false
+    },
+    "care_endpoint_supervisor_copy_retained_for_restart": {
+      "evidence_class": "CODE_INSPECTED",
+      "value": true
+    },
+    "care_passcred": {
+      "evidence_class": "KERNEL_OBSERVED",
+      "value": true
+    },
+    "care_ready": {
+      "evidence_class": "RUNTIME_OBSERVED",
+      "value": true
+    },
+    "descriptor_inheritance_closed": {
+      "evidence_class": "CODE_INSPECTED",
+      "value": true
+    },
+    "independent_children": {
+      "evidence_class": "RUNTIME_OBSERVED",
+      "value": true
+    },
+    "pidfd_liveness_generation_bound": {
+      "evidence_class": "KERNEL_OBSERVED",
+      "value": true
+    },
+    "producer_dumpable_prctl": {
+      "evidence_class": "RUNTIME_OBSERVED",
+      "value": true
+    },
+    "producer_endpoint_not_in_care": {
+      "evidence_class": "CODE_INSPECTED",
+      "value": true
+    },
+    "producer_endpoint_supervisor_copy_closed": {
+      "evidence_class": "CODE_INSPECTED",
+      "value": true
+    },
+    "producer_ready": {
+      "evidence_class": "RUNTIME_OBSERVED",
+      "value": true
+    },
+    "roles_started": {
+      "evidence_class": "RUNTIME_OBSERVED",
+      "value": true
+    },
+    "supervisor_trusted_capability_provisioner": {
+      "evidence_class": "CODE_INSPECTED",
+      "value": true
+    }
+  },
   "status": "PASSED_BOUNDED_CANDIDATE_MATRIX",
-  "roles": ["qualification-supervisor", "authorized-producer", "care-receiver", "same-user-sibling"],
-  "process_boundary": {
-    "four_independent_roles_started": true,
-    "actual_seqpacket_delivery": true,
-    "child_pr_set_dumpable_zero": true,
-    "descriptor_inheritance_closed": true,
-    "producer_supervisor_copy_closed_after_handoff": true,
-    "care_supervisor_copy_retained_only_for_restart": true,
-    "care_supervisor_copy_read": false,
-    "kernel_credentials_verified": true,
-    "pidfd_liveness_and_generation_binding": true,
-    "care_independent_of_companion_database": true
+  "tests": {
+    "candidate1_actual_socket_packet": {
+      "accepted": true,
+      "candidate_id": "c1-new",
+      "duplicate": false,
+      "kernel_peer_verified": true,
+      "pidfd_liveness_checked": true,
+      "reason": "new"
+    },
+    "candidate1_duplicate": {
+      "accepted": true,
+      "candidate_id": "c1-new",
+      "duplicate": true,
+      "reason": "duplicate"
+    },
+    "candidate1_spoofed_field": {
+      "accepted": false,
+      "reason": "producer"
+    },
+    "candidate2_actual_socket_packet": {
+      "accepted": true,
+      "candidate_id": "c-1",
+      "duplicate": false,
+      "kernel_peer_verified": true,
+      "pidfd_liveness_checked": true,
+      "reason": "new"
+    },
+    "candidate2_companion_db_absent": {
+      "accepted": true,
+      "candidate_id": "c-db-absent",
+      "duplicate": false,
+      "kernel_peer_verified": true,
+      "pidfd_liveness_checked": true,
+      "reason": "new"
+    },
+    "candidate2_duplicate": {
+      "accepted": true,
+      "candidate_id": "c-1",
+      "duplicate": true,
+      "reason": "duplicate"
+    },
+    "candidate2_forbidden_mood_input": {
+      "accepted": false,
+      "reason": "kind"
+    },
+    "candidate2_generation_mismatch": {
+      "accepted": false,
+      "reason": "generation"
+    },
+    "candidate2_malformed_schema": {
+      "accepted": false,
+      "reason": "malformed:Expecting ',' delimiter: line 1 column 29 (char 28)"
+    },
+    "candidate2_old_capability": {
+      "accepted": false,
+      "reason": "capability"
+    },
+    "candidate2_spoofed_field": {
+      "accepted": false,
+      "reason": "producer"
+    },
+    "care_restart_duplicate_redelivery": {
+      "accepted": true,
+      "candidate_id": "c-1",
+      "duplicate": true,
+      "reason": "duplicate"
+    },
+    "common_sensor_model_outage": {
+      "normal_coverage_claimed": false,
+      "status": "degraded"
+    },
+    "old_capability_after_restart": {
+      "accepted": false,
+      "reason": "capability"
+    },
+    "old_channel_after_care_restart": {
+      "errno": 32,
+      "error": "[Errno 32] Broken pipe",
+      "name": "EPIPE",
+      "sent": false
+    },
+    "old_channel_revocation": true,
+    "producer_replacement_new_generation": {
+      "accepted": true,
+      "candidate_id": "c-new",
+      "duplicate": false,
+      "kernel_peer_verified": true,
+      "pidfd_liveness_checked": true,
+      "reason": "new"
+    },
+    "receipt_journal_lines": 15,
+    "same_user_sibling_attacks": {
+      "abstract_connect": {
+        "errno": 111,
+        "name": "ECONNREFUSED"
+      },
+      "argv_capability": false,
+      "environment_capability": false,
+      "pathname_connect": "NOT_APPLICABLE:anonymous_socketpair",
+      "pidfd_getfd": {
+        "errno": 1,
+        "name": "EPERM",
+        "status": "error",
+        "syscall": "pidfd_getfd"
+      },
+      "proc_fd_open": {
+        "errno": 13,
+        "name": "EACCES"
+      },
+      "proc_fd_symlink": {
+        "errno": 13,
+        "name": "EACCES"
+      }
+    },
+    "stale_generation_after_restart": {
+      "accepted": false,
+      "reason": "generation"
+    },
+    "weak_same_user_valid_injection": "accepted:new"
   },
-  "security_tests": {
-    "weak_same_user_pathname_injection": "accepted:new (baseline insufficient)",
-    "valid_candidate_once": true,
-    "duplicate_idempotent": true,
-    "spoofed_producer_rejected": true,
-    "malformed_rejected": true,
-    "stale_generation_rejected": true,
-    "stale_capability_rejected": true,
-    "forbidden_companion_state_rejected": true,
-    "care_restart_duplicate_redelivery": true,
-    "producer_replacement_new_generation": true,
-    "old_channel_revoked": true,
-    "old_capability_revoked": true,
-    "companion_absent_does_not_block": true,
-    "companion_database_absent_does_not_block": true,
-    "outage_is_degraded_not_normal": true,
-    "same_user_sibling_direct_injection": "not available: anonymous channel",
-    "pidfd_getfd": {"syscall": "pidfd_getfd", "status": "error", "errno": 1, "name": "EPERM"},
-    "proc_fd_duplication": "EACCES"
-  },
-  "threat_ceiling": ["root", "kernel compromise", "full user-account compromise", "fully compromised authorized producer"],
-  "adoption": "NONE — candidate implementation experiment only"
+  "threat_exclusions": [
+    "root",
+    "kernel compromise",
+    "full user-account compromise",
+    "fully compromised authorized producer"
+  ]
 }

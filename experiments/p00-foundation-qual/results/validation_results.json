@@ -1,6 +1,13 @@
 {
-  "validator": "experiments/p00-foundation-qual/scripts/validate_results.py",
+  "ancestry_verified": false,
+  "checked_files": [
+    "jcs_toolchain_results.json",
+    "ipc_results.json",
+    "sqlite_results.json"
+  ],
+  "circular_validation_input": false,
+  "evidence_commit_pending_reconciliation": true,
+  "fixture_verified": true,
   "status": "PASSED",
-  "expected_exit_code": 0,
-  "checks": "all committed result assertions and sanitized provenance requirements"
+  "validator": "validate_results.py"
 }

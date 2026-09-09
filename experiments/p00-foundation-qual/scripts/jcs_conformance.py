@@ -67,6 +67,9 @@ def main() -> None:
         duplicate_rejected = True
     if not duplicate_rejected:
         raise AssertionError("escaped duplicate accepted")
+    cross_language_duplicate = shell_rejects(["python3", str(PYTHON_SHELL)], duplicate) and shell_rejects([str(RUST_BINARY)], duplicate)
+    if not cross_language_duplicate:
+        raise AssertionError("service shell accepted decoded duplicate")
     profile_vectors = [
         {"b": 1, "a": 2},
         [1, {"nested": "value", "control": "line\n\t"}],
@@ -96,10 +99,11 @@ def main() -> None:
         "profile_vectors": len(profile_vectors),
         "profile_vector_agreement": profile_agreement,
         "escaped_duplicate_rejected": True,
+        "cross_language_decoded_duplicate_rejected": cross_language_duplicate,
         "non_bmp_utf16_order_checked": True,
         "numeric_profile_rejections": numeric_profile_rejections,
         "bounded_profile_python_rust_oracle_agreement": True,
-        "fixture_sha256": hashlib.sha256(event_raw.encode()).hexdigest(),
+        "fixture_sha256": hashlib.sha256((ROOT / "fixtures" / "event-v1.json").read_bytes()).hexdigest(),
         "status": "passed",
     }, sort_keys=True))
 

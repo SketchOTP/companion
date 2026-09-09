@@ -38,3 +38,16 @@ No protected Graft-file changes, main-branch push/merge, product source, Godot p
 ## Completion
 
 Complete every packet artifact and qualification harness, publish the Notion report, update Issue #4, push `codex/p00-qual-001`, open a PR to `main`, leave both open, and stop for independent Architect review.
+
+## Review 03 evidence-integrity delta
+
+The correction must be independently reproducible from committed sanitized
+JSON. The validator recomputes manifest-listed result and fixture hashes,
+checks evidence-commit ancestry, does not consume `validation_results.json`,
+and exits nonzero for any expected-result mismatch. IPC ownership constants are
+`CODE_INSPECTED` rather than runtime observations; required lifecycle,
+revocation, descriptor, outage, and companion-independent outcomes are
+asserted. SQLite conclusions derive fixed before/during/after counts and full
+state digests. The exact oracle is `canonicalize@5.0.0` with Node `v24.20.0`;
+queue overflow remains deferred. No adoption, product implementation, or
+Phase 01 transition is permitted.

@@ -40,6 +40,16 @@ All mandatory sources: `PASSED`.
 - Canonical project, end goal, roadmap, governance, Architecture v1.0, Architect Review 02, open decisions, risk register, active directive, and pending result page: fetched live on `2026-09-09`; no truncation or material contradiction. They agree that Architecture v1.0 is adopted while Roadmap Phase 01, dependency adoption, and ordinary product implementation remain closed.
 - Architecture Decision Ledger: `PASSED` — `45` live rows (`27 Adopted`, `16 Interim`, `2 Rejected`). ADR-38 through ADR-45 were individually verified by ID, title, status, rationale, consequence, evidence basis, and review trigger.
 - Research Evidence Register: `PASSED` — `53` live rows (`40 Grade A`, `11 Grade B`, `2 Grade C`; `40 Reviewed`, `12 Candidate`, `1 Needs Deep Review`). Evidence 47–53 verified the RFC 8785, unix(7), SQLite WAL/news, boot-time, Rust, and Python sources relevant to this qualification.
+
+### Review 03 live re-query supersession
+
+The Review 03 re-query returned `55` live Research Evidence Register rows,
+with `42` Grade A, `11` Grade B, and `2` Grade C records. The additional live
+records for Linux `pidfd_getfd(2)` and SQLite I/O/crash/concurrency methods were
+available. The earlier 53-row statement is retained as historical context and
+does not represent the current snapshot. Architecture decisions remain `45`
+(`27 Adopted`, `16 Interim`, `2 Rejected`). Retrieval confidence remains
+`ADEQUATE`; no material Notion/GitHub/repository contradiction was found.
 - GitHub Issue #4 and its complete current comment set: `PASSED` — `OPEN`, consistent with the packet and Notion directive.
 - Archived Architecture v1 packet and every active qualification-packet file: `PASSED` — read from the task checkout; the archive establishes the accepted architecture and the active packet establishes this bounded qualification scope.
 

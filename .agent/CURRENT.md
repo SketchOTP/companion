@@ -89,3 +89,10 @@ Counts are snapshots. Codex must query live Notion before publication.
 
 Codex merges current `origin/main` normally into the existing `codex/p00-qual-001` branch, performs only the evidence-binding correction defined by `ARCHITECT_REVIEW_03.md`, updates draft PR #5, Notion, and Issue #4, leaves the PR and issue open, and stops for independent Architect review.
 The prior hardening and reconciliation commits remain historical. This cycle is limited to one narrow evidence-binding correction and at most one publication-reconciliation commit; no merge of PR #5 or adoption follows.
+
+## Review 03 correction status
+
+- Required review merge: `1997e01` (normal merge of `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2`).
+- Committed result bundle is being regenerated from sanitized runner output; current pre-publication result hashes are recorded in `results/provenance.json`.
+- Validator now recomputes result and fixture SHA-256 values, avoids circular validation input, and supports final evidence-commit ancestry binding. The exact evidence commit remains pending until the narrow correction commit is created, followed by one allowed reconciliation commit.
+- IPC and SQLite summaries are derived from fail-closed assertions and explicit evidence classes/state digests. Unsupported JCS claims are removed; queue overflow remains deferred.

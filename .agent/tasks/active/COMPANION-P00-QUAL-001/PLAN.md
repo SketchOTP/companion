@@ -50,3 +50,16 @@ added strict assertions, committed sanitized results/provenance, and a
 fail-closed validator. Queue-overflow qualification is deferred to Phase 01.
 The bounded evidence remains candidate-only; publication is limited to the
 existing draft PR #5 and no adoption or Phase 01 opening is implied.
+
+## Architect Review 03 narrow evidence-binding plan
+
+1. Merge the review commit normally (completed as `1997e01`) and preserve
+   protected primary Graft work.
+2. Regenerate sanitized JCS/toolchain, IPC, and SQLite summaries from runner
+   output; remove unsupported claims and label inspected versus observed data.
+3. Recompute result/fixture hashes, record exact npm integrity and honest
+   timestamp precision, validate Git ancestry, and retain a tamper-negative.
+4. Update append-only state, the active handoff, PR #5, Issue #4, and Notion;
+   bind the final evidence SHA in one permitted reconciliation commit.
+
+Status: `IN PROGRESS — NARROW EVIDENCE-BINDING CORRECTION`.
