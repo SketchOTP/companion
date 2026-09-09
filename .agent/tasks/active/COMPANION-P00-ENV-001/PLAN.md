@@ -1,5 +1,9 @@
 # COMPANION-P00-ENV-001 — Execution Plan
 
+Status: `EXECUTED — PUBLICATION IN PROGRESS`
+
+Adaptive note: probes were filtered and normalized in-process, so no unsanitized raw-output spool was retained. This is stricter than keeping a temporary raw workspace and reduces identifier-retention risk.
+
 ## Checkpoint 1 — Reconstruct authority and repository state
 
 - Read `AGENTS.md`, Authority skill, mandatory kernel, active directive, and this packet.

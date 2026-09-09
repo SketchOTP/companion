@@ -16,12 +16,14 @@
 
 ## Current pointers
 
-- Current stage: Planning Phase 02 — Roadmap Phase 00 active; environment-evidence directive active; product implementation gate closed
+- Current stage: Planning Phase 02 — Roadmap Phase 00 active; environment evidence prepared for independent review; product implementation gate closed
 - Active directive: `COMPANION-P00-ENV-001`
 - Active task packet: `.agent/tasks/active/COMPANION-P00-ENV-001/`
 - GitHub execution issue: https://github.com/SketchOTP/companion/issues/2
-- Verified directive baseline: `ddb6b130ab6428a1f395cd223d309eeaa2ac7462`
+- Verified pre-directive baseline: `ddb6b130ab6428a1f395cd223d309eeaa2ac7462`
 - Directive publication commit: `c06c796d9d54da4cdcf38296ee08c4f70fb3993d`
+- Starting routing head: `2ea7b41d79f24f030ea3c3690dee00e8c2340671`
+- Codex result commit: `PENDING_PUBLICATION`
 - Last completed directive: `COMPANION-P00-INGEST-001`
 - Completed ingest packet: `.agent/tasks/completed/COMPANION-P00-INGEST-001/`
 - Last accepted outcome: `COMPANION-P00-INGEST-001-ARCHITECT-ACCEPTANCE-02`
@@ -35,7 +37,7 @@ Read these before substantial work:
 2. `PROJECT_PROFILE.md`
 3. `CURRENT.md`
 
-Then read the full active `SPEC.md` and `PLAN.md` under the active task packet, fetch the linked live Notion directive/report, and use `DIRECTIVES.md` plus the completed ingest packet for relevant historical authority. The live Notion directive controls if a repository summary is incomplete.
+Then read the full active `SPEC.md`, `PLAN.md`, and current result artifacts under the active task packet, fetch the linked live Notion directive/report, and use `DIRECTIVES.md` plus the completed ingest packet for relevant historical authority. The live Notion directive controls if a repository summary is incomplete.
 
 ## Historical ledgers
 

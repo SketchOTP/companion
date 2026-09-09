@@ -120,3 +120,35 @@ Historical entries are append-only after adoption.
 - Coder onboarding: `CERTIFIED`.
 - Task packet: archived to `.agent/tasks/completed/COMPANION-P00-INGEST-001/`.
 - Product implementation, environment inventory, architecture v1.0, dependency selection, and Phase 01 authority: `CLOSED / NOT GRANTED`.
+
+## COMPANION-P00-ENV-001 — Linux Host Inventory and Product-Contract Evidence
+
+- Issued: 2026-09-09 America/New_York
+- Issuer: Architect
+- Status: `CODEX RESULT PREPARED — PUBLICATION / ARCHITECT REVIEW PENDING`
+- Roadmap relationship: Planning Phase 02, Roadmap Phase 00.
+- Verified pre-directive baseline: `ddb6b130ab6428a1f395cd223d309eeaa2ac7462`.
+- Directive publication commit: `c06c796d9d54da4cdcf38296ee08c4f70fb3993d`.
+- Starting routing head: `2ea7b41d79f24f030ea3c3690dee00e8c2340671`.
+- Canonical directive: https://app.notion.com/p/3d6833cb27ff81e6ab93e37fc851b49d
+- Required Notion report: https://app.notion.com/p/3d6833cb27ff8159b66fdebeb690be90
+- GitHub execution issue: https://github.com/SketchOTP/companion/issues/2
+- Active task packet: `.agent/tasks/active/COMPANION-P00-ENV-001/`.
+- Objective: establish a reproducible, privacy-safe, read-only inventory of the actual Linux host, display/session, graphics, storage, webcam, microphone, speakers, installed Godot state, relevant tools, and always-on constraints; convert it into an eleven-RQ product-contract brief without resolving operator choices or selecting architecture/dependencies.
+- Authorized scope: non-privileged metadata inspection, sanitized `.agent` evidence, Notion report, issue handoff, and normal fast-forward publication.
+- Prohibited scope: elevated access, installation, configuration change, media capture, playback, benchmarks, private identifiers, product source, Godot project/assets, dependencies, CI/deployment, models/data/voices/database implementation, biometrics, notifications, safety integration, architecture v1.0 completion, Phase 01, or self-acceptance.
+- Required evidence: all ten environment categories complete or explicitly unknown/blocked; source/timestamp/status/confidence on observations; capability matrix; exact eleven-RQ crosswalk; architecture constraints/options only; privacy/media/secret/scope validation; Notion/GitHub synchronization; canonical result.
+- Acceptance authority: Architect.
+
+### Codex execution update — 2026-09-09
+
+- Retrieval confidence: `ADEQUATE`.
+- Host/peripheral evidence: `E1_OBSERVED`.
+- Sanitized artifact validation: `E3_TARGET_TESTED`.
+- Key facts: Ubuntu 24.04.5/X11; Ryzen 7 5800XT; 67.3 GB RAM; two NVIDIA GPUs with OpenGL 4.6; three display outputs across two X screens; one readable UVC camera; PipeWire/WirePlumber audio; SSHFS repository and local ext4/NVMe system volume.
+- Godot disposition: selected 4.7.2 build not found; one unique pre-existing 4.6 stable binary content observed; no version ruling changed and no installation performed.
+- Important unknowns/degradations: exact Vulkan capability, concurrent workload capacity, camera/audio quality and latency, local inference, systemd manager health causes, power/noise/load thermals, recovery, and long-running behavior.
+- Product-contract crosswalk: all eleven open/partial RQ records covered; none resolved by machine evidence.
+- Privacy/scope: no durable private identifier or media; no machine/product change. One hardware-serial field surfaced in ephemeral diagnostic output before filtering, was discarded, and is preserved as a contained deviation.
+- Codex result commit: `PENDING_PUBLICATION`.
+- Architect acceptance: `NOT ASSIGNED`; product implementation remains closed.

@@ -320,3 +320,43 @@ Codex is now considered onboarded to the canonical project. This acceptance does
 ### Consequence
 
 The directive is complete, its task packet is archived, and the next work must arrive through a new bounded Roadmap Phase 00 directive. Product implementation remains closed.
+
+## COMPANION-P00-ENV-001-CODEX-COMPLETION — Sanitized environment evidence prepared
+
+- Date: 2026-09-09 America/New_York
+- Verdict: `COMPLETE_FOR_ARCHITECT_REVIEW`
+- Retrieval confidence: `ADEQUATE`
+- Architect acceptance: `NOT ASSIGNED`
+- Product implementation authorization: `CLOSED`
+
+### Work performed
+
+- Reconstructed the live Notion directive/report, canonical project, roadmap, Open Decisions queue, R09/R10 research anchors, current repository, and open Issue #2.
+- Performed non-privileged, metadata-only inspection of OS/session, CPU, memory, limits, GPUs/OpenGL/Vulkan observability, displays, storage, webcam, audio, Godot installations, development/diagnostic tools, time, suspend, service management, and thermal visibility.
+- Produced a sanitized structured inventory, human report, capability matrix, exact eleven-RQ product-contract crosswalk, architecture constraints/options, evidence, and handoff.
+- Preserved all operator questions and architecture/dependency choices as unresolved.
+
+### Evidence and validation
+
+- Host/peripheral metadata: `E1_OBSERVED`.
+- Artifact syntax, completeness, crosswalk, vocabulary, cross-document facts, privacy patterns, secret scan, media absence, product-artifact absence, `.agent/`-only scope, and whitespace: `E3_TARGET_TESTED — PASSED`.
+- Generic Godot Compatibility-renderer prerequisite: `SUPPORTED` only by official simple-project specifications and observed OpenGL 4.6/host facts.
+- Product workload, exact Godot 4.7.2 runtime, Vulkan, media quality/latency/concurrency, local inference, safety, recovery, and long-running capability: `NOT ESTABLISHED`.
+
+### Material findings
+
+- Selected Godot 4.7.2 was not found; one unique pre-existing Godot 4.6 stable binary content was observed through two entries.
+- Repository storage is SSHFS while system storage is local ext4/NVMe.
+- Three displays are active across two logical X screens/window managers.
+- Camera and audio metadata are available, but stream behavior remains untested.
+- Both system and user systemd managers report degraded even though the relevant inspected core/audio/time units are active.
+
+### Boundary and deviation
+
+- No elevated access, installation, configuration change, media capture, playback, benchmark, disruptive transition, product code, Godot project, asset, dependency, CI, deployment, model, dataset, voice, database implementation, biometric operation, notification, or safety integration occurred.
+- One live driver/audio metadata response exposed a hardware-serial field before filtering. It was discarded, no raw file was retained, and every durable artifact omits it. The incident is not promoted to a privacy-clean execution claim; it remains recorded as a contained deviation for Architect disposition.
+
+### Publication state
+
+- Result commit: `PENDING_PUBLICATION`.
+- Notion report, GitHub Issue #2, publication-evidence commit, and final remote equality: pending.
