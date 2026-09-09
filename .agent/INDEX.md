@@ -8,8 +8,8 @@
 - Active roadmap: https://app.notion.com/p/3d5833cb27ff81dd88faeb0c95b6f44e
 - Governance contract: https://app.notion.com/p/3d5833cb27ff81e2b3b2eabc70f9f6b3
 - Active directive: https://app.notion.com/p/3d6833cb27ff8183a210e560883d96ab
-- Full Codex execution directive: https://app.notion.com/p/3d6833cb27ff8109a0b2e216b52bbda0
-- Active coder report: https://app.notion.com/p/3d6833cb27ff8141837fdaa087841324
+- Coder report: https://app.notion.com/p/3d6833cb27ff8141837fdaa087841324
+- Architect Review 01: https://app.notion.com/p/3d6833cb27ff81bd834cf3693f8ae9a5
 - Completed operator decision packet: https://app.notion.com/p/3d6833cb27ff817a8972cecb1b877260
 - Open-decision queue: https://app.notion.com/p/3d5833cb27ff81118ac8e4139ce1c873
 - GitHub: https://github.com/SketchOTP/companion
@@ -17,41 +17,38 @@
 ## Current pointers
 
 - Current stage: Planning Phase 02 — Roadmap Phase 00
-- Active coder directive: `COMPANION-P00-ARCH-001`
+- Active coder directive: `COMPANION-P00-ARCH-001 — CONTINUED FOR FOCUSED CORRECTION`
 - Active packet: `.agent/tasks/active/COMPANION-P00-ARCH-001/`
-- Full execution directive: `.agent/tasks/active/COMPANION-P00-ARCH-001/CODEX_FULL_DIRECTIVE.md`
-- Mandatory context bridge: `.agent/tasks/active/COMPANION-P00-ARCH-001/AUTHORITY_CONTEXT_BRIDGE.md`
-- Required pre-work acknowledgment: `.agent/tasks/active/COMPANION-P00-ARCH-001/AUTHORITY_CONTEXT_ACKNOWLEDGMENT.md`
-- GitHub issue: https://github.com/SketchOTP/companion/issues/3
-- Verified task baseline: `db33d8a597f79a01e569482dc00583dcf50249f9`
-- Directive publication commit: `704325baa95e490710441a468625d2e74f9a343c`
-- Context-bridge commit: `1b43815cea804958f49b8b44463192bce2bf09dd`
-- Full-directive publication commit: `b2a92b297266d7fab5719cc97df5eaabb47b883d`
-- Last completed directive: `COMPANION-P00-ENV-001`
-- Completed environment packet: `.agent/tasks/completed/COMPANION-P00-ENV-001/`
+- Required correction authority: `.agent/tasks/active/COMPANION-P00-ARCH-001/ARCHITECT_REVIEW_01.md`
+- Original full execution directive: `.agent/tasks/active/COMPANION-P00-ARCH-001/CODEX_FULL_DIRECTIVE.md`
+- GitHub Issue #3: https://github.com/SketchOTP/companion/issues/3
+- Original task baseline: `db33d8a597f79a01e569482dc00583dcf50249f9`
+- Original routing head: `6559cec1beaf27bf958c2b9517b0717f04c83ea9`
+- Codex planning result: `5d6d87d93b017e42647e260b69d80b5ad3f8becc`
+- Codex publication head reviewed: `d8c7209e0ec0370c17fc4cf980fde879e54f10b5`
+- Architecture v1.0: `NOT ADOPTED`
+- Roadmap Phase 01: `CLOSED`
 - Product implementation: `CLOSED`
-- Canonical totals at full-directive publication: `46` evidence records, `37` architecture decisions, `7` resolved + `1` partially resolved + `6` open queue items
+- Current canonical totals at review: `46` evidence records and `37` architecture decisions
 - Last state sync: 2026-09-09 America/New_York
 
-## Mandatory startup
+## Mandatory correction startup
 
-Codex cannot see the operator–Architect ChatGPT conversation. Do not infer what to read or what to do.
+Codex cannot see the operator–Architect conversation. Use durable authority only.
 
-1. Read root and nested `AGENTS.md` files and `.agents/skills/authority/SKILL.md`.
-2. Read `PROJECT_GOAL.md`, `PROJECT_PROFILE.md`, and `CURRENT.md`.
-3. Read every file in `.agent/tasks/active/COMPANION-P00-ARCH-001/`, starting with `CODEX_FULL_DIRECTIVE.md`.
-4. Follow the exact Notion source map and sequence in `CODEX_FULL_DIRECTIVE.md`.
-5. Read `AUTHORITY_CONTEXT_BRIDGE.md` and then re-fetch the named live authorities rather than trusting the summary.
-6. Query the complete Architecture Decision Ledger and Research Evidence Register; verify ADR-33 through ADR-37 and live totals.
-7. Directly inspect both approved visual references in the Mon Visual Design Bible.
-8. Reconstruct current GitHub branch, Issue #3 including all comments, repository tree, and working-tree state.
-9. Complete `AUTHORITY_CONTEXT_ACKNOWLEDGMENT.md` in Codex's own words.
-10. Stop if confidence is not `ADEQUATE`, a mandatory source is unavailable, or a material contradiction remains.
-11. If the preflight passes, complete the entire Architecture v1.0 planning packet without waiting for another instruction.
-12. Use current primary sources for every material architecture, dependency, standard, license, platform, privacy, or claims assertion.
-13. Publish the dedicated Notion report and GitHub result, leave Issue #3 open, and stop for independent Architect review.
+1. Synchronize normally to current `main`; record local `HEAD`, `origin/main`, branch, working tree, and Issue #3 state.
+2. Read root and nested `AGENTS.md` files and `.agents/skills/authority/SKILL.md`.
+3. Read `PROJECT_GOAL.md`, `PROJECT_PROFILE.md`, and `CURRENT.md`.
+4. Read `.agent/tasks/active/COMPANION-P00-ARCH-001/ARCHITECT_REVIEW_01.md` in full.
+5. Read the affected proposal files named in the review; use the original full directive and context bridge for unchanged authority.
+6. Re-fetch the live parent directive, coder report, Architect review, canonical project, roadmap, and any mutable ADR/evidence/RQ authority that changed after the prior result.
+7. Reuse the accepted context acknowledgment and full ingest unless a source changed. Do not create busywork by repeating accepted work.
+8. Correct the seven material issues exactly as directed: independent care ingress, explicit vault authority, canonical serialization/numeric/boot epoch, roadmap-consistent slice placement, language/toolchain gate, exact SQLite eligibility, and provisional/diversified evidence floors.
+9. Use current primary sources for every changed technical assertion.
+10. Run semantic, authority, phase, threat, scope, privacy, path, diff, and publication validation.
+11. Update the dedicated Notion report and parent directive, comment on Issue #3, publish through normal fast-forward commits, leave Issue #3 open, and stop for Architect review.
 
-Live Notion controls project meaning. Repository and issue records provide routing and technical evidence. No chat-only statement has authority and no implementation authority may be inferred from this planning directive.
+A full rewrite is not authorized. Preserve accepted analysis and history. Any material contradiction, unavailable source, or need for implementation/installation/benchmarking blocks the correction and must be returned to the Architect.
 
 ## Historical ledgers
 
@@ -62,4 +59,4 @@ Live Notion controls project meaning. Repository and issue records provide routi
 - `REPO_MAP.md` — repository structure and boundaries.
 - `EXTERNAL.md` — external prior art and dispositions.
 
-`CURRENT.md` is mutable. Historical ledgers are append-only after adoption; correct errors through superseding entries.
+`CURRENT.md` is mutable. Historical ledgers are append-only after adoption; correct mistakes through new superseding entries.
