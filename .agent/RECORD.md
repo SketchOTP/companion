@@ -220,3 +220,32 @@ Choose the default habitat mode for the selected Openbox display:
 - `A` — borderless full-screen habitat
 - `B` — bounded resizable habitat window
 - `C` — transparent desktop overlay
+
+## COMPANION-PLAN-003 — Operator Decision Packet 01 completed
+
+### Context
+
+Operator Decision Packet 01 had adopted the target user, product path, first caregiving scenario and jurisdiction, and dedicated Openbox output, but RQ-14 remained partially open until the habitat class was selected.
+
+### Decision / event
+
+On 2026-09-09 the operator selected option `B`: a bounded resizable Godot habitat window on the separate 1366×768 Openbox-managed output.
+
+### Evidence
+
+- Direct operator response: `B`.
+- Operator decision packet: https://app.notion.com/p/3d6833cb27ff817a8972cecb1b877260
+- Architecture decision: ADR-37, `Use a bounded resizable Godot habitat window on the dedicated Openbox display`.
+- Official Godot 4.7 Window documentation provides windowed mode, resize controls, content-scaling behavior, minimum/maximum dimensions, focus APIs, and screen selection.
+- Architecture Decision Ledger now contains 37 decisions: 21 adopted, 14 interim, and 2 rejected.
+- Research Evidence Register remains at 46 sources: 33 Grade A, 11 Grade B, and 2 Grade C.
+
+### Consequence
+
+- `RQ-14` is resolved at the product level.
+- Full-screen and transparent-overlay presentation are not iteration-one defaults.
+- Exact initial/minimum/maximum dimensions, content scale, aspect behavior, title-bar treatment, mon occupancy, placement persistence, focus/input handling, selected-screen recovery, and display-change behavior remain architecture v1.0 decisions.
+- The decision/research-gap queue now contains 7 resolved, 1 partially resolved, and 6 open records.
+- Operator Decision Packet 01 is complete.
+- The next work is a bounded Roadmap Phase 00 directive for architecture v1.0 options and the first vertical-slice contract.
+- No Godot installation, dependency selection, benchmark, product source, asset production, Phase 01 authority, or product implementation is created by this ruling.
