@@ -40,3 +40,15 @@ care receipts to its own store. The supervisor is trusted for lifecycle and
 capability provisioning; this is a bounded synthetic foundation and not a
 security certification. Full adversarial restart/descriptor matrix remains an
 Architect-directed follow-up evidence surface.
+
+## Review 01 continuation
+
+The resident implementation now exposes a private supervisor control socket;
+`--once` is explicit test mode. Role targets are separate binaries. Endpoints
+remain close-on-exec until intended child handoff, and capability bytes travel
+through a private inherited pipe rather than argv, environment, logs, or files.
+Care verifies kernel credentials and a SHA-256 MAC, and persists each receipt
+before reporting durable acceptance. The supervisor is trusted for lifecycle
+and provisioning, not domain or care decisions. Complete producer replacement,
+pidfd race, and broad adversarial evidence remain unqualified until separately
+run.

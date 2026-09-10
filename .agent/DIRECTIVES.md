@@ -251,3 +251,13 @@ transition, or product capability is adopted.
 - The candidate contains only the authorized Rust/Godot/contracts/storage/process/observability/CI foundation and synthetic evidence; no later-phase product behavior was introduced.
 - Local locked verification, clean-clone verification, remote CI, bounded Openbox validation, and the 3-seed/3,000-cycle matrix were recorded. The 60-minute synthetic soak was run separately and its exact status is bound in the final evidence summary.
 - Publication is through PR #7, which remains open and unmerged; Issue #6 remains open. Architect acceptance and any downstream phase transition remain pending.
+## COMPANION-P01-FOUNDATION-001 — Review 01 continuation (2026-09-10)
+
+Status: `IMPLEMENTED CANDIDATE — ARCHITECT REVIEW REQUIRED`
+
+The active directive remains phase-sized and permits continuation on the
+existing PR. Work is confined to engineering foundations and synthetic
+evidence. The resident supervisor, direct-care boundary, SQLite/XDG/library
+corrections, live health, and actual packet-cycle runner were updated without
+opening Phase 02 or introducing product behavior. Remaining unqualified gates
+are recorded in the task validation matrix and handoff.

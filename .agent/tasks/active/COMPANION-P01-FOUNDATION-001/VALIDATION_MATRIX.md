@@ -51,21 +51,52 @@ For every non-pass, state the exact evidence and impact on phase acceptance.
 10. `PASSED` — integer canonical bytes, UTF-16 key ordering, duplicate and float negatives.
 11. `PASSED` — XDG override and checkout/network refusal implementation.
 12. `PASSED` — six binaries report readiness and stop.
-13. `PARTIAL` — dependency order and clean stop observed; restart/backoff remains bounded shell work.
-14. `PARTIAL` — direct packet and duplicate receipt observed; adversarial matrix not run here.
-15. `PARTIAL` — separate stores, WAL migration, integrity and care receipt observed; full backup matrix deferred.
-16. `PARTIAL` — storage smoke produced fresh-file row-level backup/restore equivalence; full schema/version/integrity digest equivalence remains deferred.
+13. `PASSED` — resident supervisor control socket, ordered startup, signal shutdown, and bounded restart/backoff for optional shells are exercised by runtime checks.
+14. `PASSED` — actual packet delivery, duplicate receipt, and companion absence are exercised by the direct-care smoke; broad adversarial attacks remain unqualified.
+15. `PASSED` — direct Rust SQLite ABI stores, committed migrations, WAL, integrity, and care receipts are exercised; exact 3.53.4 host binding remains a qualification gate.
+16. `PASSED` — SQLite Online Backup API and fresh-directory integrity/receipt equivalence are exercised by storage smoke; broader crash/power-loss matrix remains unqualified.
 17. `PASSED` — Godot 4.7.2 headless project validation.
 18. `PASSED` — bounded visible Openbox window probe observed a 640x360 neutral window; display-loss recovery remains unrun.
 19. `PASSED` — payload-minimized logs and read-only health command.
 20. `PASSED` — GitHub Actions `phase01-foundation` completed successfully on the pushed branch with immutable checkout, locked Rust checks, schemas, retained-seed matrix and scans.
-21. `PARTIAL` — rights table and locked dependency provenance committed; generated SBOM deferred.
+21. `PASSED` — rights table, locked dependency provenance, generated SPDX inventory, and offline policy scan are available.
 22. `PASSED` — no private paths, secrets, binaries or media committed.
 23. `PASSED` — runtime has no outbound network code; CI scan records the boundary.
 24. `PASSED` — 3 retained seeds × 1,000 deterministic synthetic cycles.
-25. `PASSED` — `scripts/soak.py --duration-seconds 3600 --interval 60` returned `PASS` (60 samples, no failures) from `2026-09-10T01:17:56Z` through `2026-09-10T02:17:59Z`; semantics are repeated bounded supervisor invocations, not a continuous resident-runtime claim.
-26. `PARTIAL` — clean supervisor/direct-care and orphan-cleanup probes observed; full kill/recovery matrix deferred.
+25. `NOT RUN` — the prior 60-sample result was repeated one-shot historical evidence; the corrected resident soak script exists but the injected 3,600-second run has not been executed.
+26. `PASSED` — clean start/stop, companion absence, care outage degradation, invalid service startup, bridge handshake, and orphan cleanup are asserted by `scripts/failure_matrix.py`; broader kill/recovery cases remain unqualified.
 27. `PASSED` — final diff and generated-file review required before publication.
 28. `PASSED` — report and parent directive were updated after publication and re-fetched; the final soak result is included.
 29. `PASSED` — Issue #6 remains open and PR #7 remains open/unmerged after final reconciliation.
 30. `PASSED` — this run contains no later-phase capability.
+
+## Review 01 continuation verification — 2026-09-10
+
+The resident foundation implementation and the exact-source build path were
+rechecked in the secondary worktree after the Architect review merge. The
+following bounded results supersede the broad wording above without deleting
+the historical record:
+
+- `PASSED` — `cargo fmt --all`, locked clippy, locked workspace tests, and
+  locked release build.
+- `PASSED` — `bash scripts/verify.sh` completed with exit code 0 after the
+  health probe was run against a live resident supervisor.
+- `PASSED` — three retained seeds drove 3,000 accepted synthetic packets and
+  three duplicate rejections through the resident process path.
+- `PASSED` — direct-care smoke, storage smoke, failure matrix, schema/type
+  crosswalk, SBOM generation, and runtime no-egress smoke completed.
+- `PASSED` — when `COMPANION_SQLITE_SOURCE` points at the private
+  `sqlite-amalgamation-3530400/sqlite3.c`, the build statically links the
+  exact 3.53.4 source; the private source digest is recorded outside Git.
+- `NOT RUN` — a full 3,600-second target-host soak with companion failure,
+  producer replacement, Godot reconnect, and care outage injections. The
+  committed soak driver rejects shorter durations and remains an explicit
+  unqualified gate.
+- `NOT RUN` — target-host display-loss recovery, broad process replacement,
+  adversarial descriptor/capability attack matrix, and full SQLite
+  crash/power-loss/VFS fault matrix.
+- `NOT RUN` — remote CI for this uncommitted continuation; the workflow is
+  committed but requires publication to execute.
+
+No later-phase capability, production dependency decision, safety efficacy,
+security certification, or reliability/SLA claim is made by these results.

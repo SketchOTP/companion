@@ -73,3 +73,23 @@ evidence, not a continuous-resident runtime or production reliability claim.
 Architecture v1.0 remains adopted, Roadmap Phase 02+ remain closed, and no
 product capability or dependency beyond the authorized baseline is
 self-approved.
+
+## Review 01 continuation — current technical result
+
+The current secondary worktree contains a resident supervisor implementation,
+separate role binaries, direct SQLite ABI persistence, fail-closed XDG path
+resolution, a private direct-care channel, and a deterministic private-source
+SQLite build path. `bash scripts/verify.sh` most recently completed with exit
+code 0 after running locked Rust checks, schema/type checks, the 3-seed/3,000-
+packet matrix, storage/direct-care/failure smoke, SBOM generation, a live health
+query, and the resident no-egress check. The exact-source path used the private
+3.53.4 amalgamation at
+`$QUAL_ROOT/artifacts/sqlite-amalgamation-3530400/sqlite3.c`; no source,
+binary, database, WAL, or cache was added to Git.
+
+The full one-hour injected target-host soak and the broad process-replacement,
+display-loss, adversarial IPC, and SQLite VFS/power-loss matrices have not
+been run in this continuation. They remain `NOT RUN`/unqualified and prevent
+Phase 01 acceptance. The branch remains a phase-sized candidate awaiting
+Architect review; Architecture v1.0 stays adopted, Roadmap Phase 02+ stays
+closed, and no product capability or dependency is self-approved.

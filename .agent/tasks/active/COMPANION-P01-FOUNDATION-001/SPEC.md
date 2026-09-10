@@ -26,3 +26,11 @@ No mon organism, real memory, learning, dreaming, production sprites, media capt
 ## Evidence rule
 
 Every claimed result must map to an exact command, test, structured artifact, commit and evidence ceiling. Missing, failed and blocked outcomes remain visible.
+
+## Review 01 continuation contract
+
+The implementation is a candidate only. Resident lifecycle, direct-care
+durability, direct SQLite binding, XDG refusal, live health, and actual process
+cycles are required to be backed by executable observations. Any unrun
+target-host recovery or long-duration scenario remains `NOT RUN` and cannot be
+upgraded by summary prose.

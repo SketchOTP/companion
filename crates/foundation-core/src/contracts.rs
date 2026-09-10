@@ -55,3 +55,50 @@ pub struct HealthSnapshot {
     pub causation_id: Option<Uuid>,
     pub reason: Option<String>,
 }
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct OrdinaryObservation {
+    pub schema_major: u16,
+    pub message_id: Uuid,
+    pub producer: String,
+    pub observed_at: String,
+    pub kind: String,
+    pub payload: serde_json::Value,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct EmbodimentIntent {
+    pub schema_major: u16,
+    pub intent_id: Uuid,
+    pub kind: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct EmbodimentResult {
+    pub schema_major: u16,
+    pub intent_id: Uuid,
+    pub status: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct VaultDecision {
+    pub schema_major: u16,
+    pub decision_id: Uuid,
+    pub status: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct BackupManifest {
+    pub schema_major: u16,
+    pub authority: String,
+    pub schema_version: u32,
+    pub integrity: String,
+    pub created_utc: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct DegradedState {
+    pub role: String,
+    pub status: String,
+    pub reason: String,
+}

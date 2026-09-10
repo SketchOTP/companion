@@ -34,3 +34,12 @@ numbers and unsupported schema majors; object members are sorted by decoded
 UTF-16 units and SHA-256 covers the resulting canonical event bytes. The
 profile is intentionally integer/fixed-point bounded and is not a claim of a
 general-purpose RFC 8785 implementation or product semantics.
+
+## Review 01 continuation
+
+Rust types now cover all nine authored domains, including embodiment result and
+backup-manifest shells. The canonical encoder remains bounded to schema major
+1, finite integers, decoded duplicate-key rejection, and UTF-16 member order;
+it does not claim unrestricted RFC 8785 or product semantics. Draft 2020-12
+validation is run through the pinned `jsonschema` CI tool; broader negative
+fixture expansion remains explicitly tracked.

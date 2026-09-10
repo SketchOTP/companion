@@ -1,6 +1,5 @@
 use crate::version::FOUNDATION_VERSION;
 use serde::Serialize;
-use std::time::{SystemTime, UNIX_EPOCH};
 
 #[derive(Debug, Serialize)]
 pub struct LogRecord<'a> {
@@ -17,14 +16,29 @@ pub struct LogRecord<'a> {
 }
 
 pub fn boot_id() -> String {
-    let nanos = SystemTime::now()
-        .duration_since(UNIX_EPOCH)
-        .unwrap_or_default()
-        .as_nanos();
-    format!("boot-{nanos:x}")
+    std::fs::read_to_string("/proc/sys/kernel/random/boot_id")
+        .map(|v| v.trim().to_owned())
+        .ok()
+        .filter(|v| !v.is_empty())
+        .unwrap_or_else(|| "boot-unknown".to_owned())
 }
 
-pub fn emit(process: &str, event: &str, sequence: u64, boot: &str, reason: Option<&str>) {
+pub fn monotonic_ns() -> u64 {
+    unsafe {
+        let mut ts = libc::timespec {
+            tv_sec: 0,
+            tv_nsec: 0,
+        };
+        if libc::clock_gettime(libc::CLOCK_MONOTONIC, &mut ts) == 0 {
+            return (ts.tv_sec.max(0) as u64)
+                .saturating_mul(1_000_000_000)
+                .saturating_add(ts.tv_nsec.max(0) as u64);
+        }
+    }
+    0
+}
+
+pub fn emit(process: &str, event: &str, sequence: u64, boot: &str, reason: Option<&str>) -> bool {
     let record = LogRecord {
         process,
         version: FOUNDATION_VERSION,
@@ -37,7 +51,11 @@ pub fn emit(process: &str, event: &str, sequence: u64, boot: &str, reason: Optio
         causation_id: None,
         reason,
     };
-    if let Ok(json) = serde_json::to_string(&record) {
-        println!("{json}");
+    match serde_json::to_string(&record) {
+        Ok(json) => {
+            println!("{json}");
+            true
+        }
+        Err(_) => false,
     }
 }

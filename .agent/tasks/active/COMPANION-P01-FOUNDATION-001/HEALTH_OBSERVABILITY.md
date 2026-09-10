@@ -24,3 +24,12 @@ privacy class, correlation/causation and reason fields without payloads.
 `scripts/health.py --json` is read-only, reports all six roles, XDG storage
 class, SQLite availability, default-deny network policy and explicit degraded
 coverage when no persistent runtime is running.
+
+## Review 01 continuation
+
+`ops-supervisor` is resident by default and answers a private Unix control
+socket with child PID, generation, restart/backoff, role, care-coverage, boot
+identifier, and default-deny network metadata. The logger uses the kernel boot
+identifier and `CLOCK_MONOTONIC` rather than wall-clock nanoseconds. Health is
+queried from supervisor state; unavailable control is reported explicitly, not
+converted into normality. Runtime socket census remains engineering evidence.

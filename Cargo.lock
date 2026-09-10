@@ -78,6 +78,7 @@ dependencies = [
  "foundation-core",
  "libc",
  "serde_json",
+ "sha2",
  "uuid",
 ]
 

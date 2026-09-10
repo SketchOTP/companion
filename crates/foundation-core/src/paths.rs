@@ -1,3 +1,5 @@
+//! XDG and filesystem policy. Canonical state fails closed when its placement
+//! cannot be proven local, private, and outside the checkout.
 use std::fs;
 use std::path::{Path, PathBuf};
 use thiserror::Error;
@@ -8,6 +10,14 @@ pub enum PathError {
     Unsafe(PathBuf),
     #[error("path is on a network filesystem: {0}")]
     Network(PathBuf),
+    #[error("required environment variable is missing: {0}")]
+    MissingEnv(&'static str),
+    #[error("invalid authority identifier: {0}")]
+    InvalidAuthority(String),
+    #[error("unsafe permissions or ownership: {0}")]
+    Permissions(PathBuf),
+    #[error("mount metadata unavailable for {0}")]
+    MountUnknown(PathBuf),
     #[error("io: {0}")]
     Io(#[from] std::io::Error),
 }
@@ -27,49 +37,44 @@ pub struct XdgPaths {
 
 impl XdgPaths {
     pub fn resolve(app: &str) -> Result<Self, PathError> {
+        validate_authority(app)?;
         let home = std::env::var_os("HOME")
             .map(PathBuf::from)
-            .unwrap_or_else(|| PathBuf::from("/tmp"));
-        let base = std::env::var_os("COMPANION_XDG_ROOT")
-            .map(PathBuf::from)
-            .unwrap_or_else(|| home.join(".local"));
-        let root = base.join("share").join(app);
-        let config = std::env::var_os("XDG_CONFIG_HOME")
-            .map(PathBuf::from)
-            .unwrap_or_else(|| base.join("config"))
-            .join(app);
-        let data = root.join("data");
-        let state = std::env::var_os("XDG_STATE_HOME")
-            .map(PathBuf::from)
-            .unwrap_or_else(|| base.join("state"))
-            .join(app);
-        let cache = std::env::var_os("XDG_CACHE_HOME")
-            .map(PathBuf::from)
-            .unwrap_or_else(|| base.join("cache"))
-            .join(app);
-        let logs = state.join("logs");
-        let runtime = std::env::var_os("XDG_RUNTIME_DIR")
-            .map(PathBuf::from)
-            .unwrap_or_else(|| state.join("runtime"))
-            .join(app);
-        let backups = data.join("backups");
-        let exports = data.join("exports");
-        let secrets = data.join("secrets");
+            .ok_or(PathError::MissingEnv("HOME"))?;
+        let override_root = std::env::var_os("COMPANION_XDG_ROOT").map(PathBuf::from);
+        let config_base = override_root
+            .clone()
+            .or_else(|| std::env::var_os("XDG_CONFIG_HOME").map(PathBuf::from))
+            .unwrap_or_else(|| home.join(".config"));
+        let data_base = override_root
+            .clone()
+            .or_else(|| std::env::var_os("XDG_DATA_HOME").map(PathBuf::from))
+            .unwrap_or_else(|| home.join(".local/share"));
+        let state_base = override_root
+            .clone()
+            .or_else(|| std::env::var_os("XDG_STATE_HOME").map(PathBuf::from))
+            .unwrap_or_else(|| home.join(".local/state"));
+        let cache_base = override_root
+            .clone()
+            .or_else(|| std::env::var_os("XDG_CACHE_HOME").map(PathBuf::from))
+            .unwrap_or_else(|| home.join(".cache"));
+        let runtime_base = override_root
+            .or_else(|| std::env::var_os("XDG_RUNTIME_DIR").map(PathBuf::from))
+            .ok_or(PathError::MissingEnv("XDG_RUNTIME_DIR"))?;
         let result = Self {
-            config,
-            data,
-            state,
-            cache,
-            logs,
-            runtime,
-            backups,
-            exports,
-            secrets,
+            config: config_base.join(app),
+            data: data_base.join(app),
+            state: state_base.join(app),
+            cache: cache_base.join(app),
+            logs: state_base.join(app).join("logs"),
+            runtime: runtime_base.join(app),
+            backups: data_base.join(app).join("backups"),
+            exports: data_base.join(app).join("exports"),
+            secrets: data_base.join(app).join("secrets"),
         };
         result.validate_all()?;
         Ok(result)
     }
-
     pub fn ensure(&self) -> Result<(), PathError> {
         for path in [
             &self.config,
@@ -88,40 +93,48 @@ impl XdgPaths {
                 use std::os::unix::fs::PermissionsExt;
                 fs::set_permissions(path, fs::Permissions::from_mode(0o700))?;
             }
+            self.validate_private(path)?;
         }
         Ok(())
     }
-
     pub fn store(&self, authority: &str) -> Result<PathBuf, PathError> {
+        validate_authority(authority)?;
         let path = self.data.join(format!("{authority}.sqlite3"));
         self.validate(&path)?;
         Ok(path)
     }
-
     pub fn validate(&self, path: &Path) -> Result<(), PathError> {
         let absolute = if path.is_absolute() {
             path.to_path_buf()
         } else {
-            std::env::current_dir()?.join(path)
+            return Err(PathError::Unsafe(path.to_path_buf()));
         };
-        let cwd = std::env::current_dir()?
-            .canonicalize()
-            .unwrap_or_else(|_| std::env::current_dir().unwrap_or_default());
-        let repo = find_repository_root(&cwd);
-        if absolute.starts_with(&cwd)
-            || repo.as_ref().is_some_and(|root| absolute.starts_with(root))
+        if absolute.exists() && fs::symlink_metadata(&absolute)?.file_type().is_symlink() {
+            return Err(PathError::Unsafe(absolute));
+        }
+        if absolute
+            .components()
+            .any(|c| matches!(c, std::path::Component::ParentDir))
         {
             return Err(PathError::Unsafe(absolute));
         }
-        let text = absolute.to_string_lossy();
-        if text.contains("sshfs") || mounted_network_path(&absolute) {
-            return Err(PathError::Network(absolute));
+        let parent = absolute.parent().unwrap_or(Path::new("/"));
+        let canonical_parent = canonicalize_existing(parent)?;
+        let candidate = canonical_parent.join(absolute.file_name().unwrap_or_default());
+        let cwd = std::env::current_dir()?.canonicalize()?;
+        if candidate.starts_with(&cwd)
+            || find_repository_root(&cwd).is_some_and(|root| candidate.starts_with(root))
+        {
+            return Err(PathError::Unsafe(candidate));
         }
-        Ok(())
+        match mount_kind(&candidate)? {
+            Some(kind) if is_network_fs(&kind) => Err(PathError::Network(candidate)),
+            Some(_) => Ok(()),
+            None => Err(PathError::MountUnknown(candidate)),
+        }
     }
-
     fn validate_all(&self) -> Result<(), PathError> {
-        for path in [
+        for p in [
             &self.config,
             &self.data,
             &self.state,
@@ -132,73 +145,87 @@ impl XdgPaths {
             &self.exports,
             &self.secrets,
         ] {
-            self.validate(path)?;
+            self.validate(p)?;
+        }
+        Ok(())
+    }
+    fn validate_private(&self, path: &Path) -> Result<(), PathError> {
+        #[cfg(unix)]
+        {
+            use std::os::unix::fs::{MetadataExt, PermissionsExt};
+            let m = fs::metadata(path)?;
+            if m.uid() != unsafe { libc::geteuid() } || (m.permissions().mode() & 0o077) != 0 {
+                return Err(PathError::Permissions(path.to_path_buf()));
+            }
         }
         Ok(())
     }
 }
-
+fn validate_authority(value: &str) -> Result<(), PathError> {
+    if value.is_empty()
+        || !value
+            .bytes()
+            .all(|b| b.is_ascii_lowercase() || b.is_ascii_digit() || b == b'-' || b == b'_')
+    {
+        return Err(PathError::InvalidAuthority(value.into()));
+    }
+    Ok(())
+}
+fn canonicalize_existing(path: &Path) -> Result<PathBuf, PathError> {
+    let mut current = path.to_path_buf();
+    while !current.exists() {
+        current = current
+            .parent()
+            .ok_or_else(|| PathError::Unsafe(path.to_path_buf()))?
+            .to_path_buf();
+    }
+    let base = current.canonicalize()?;
+    let tail = path.strip_prefix(&current).unwrap_or(Path::new(""));
+    Ok(base.join(tail))
+}
 fn find_repository_root(start: &Path) -> Option<PathBuf> {
-    let mut current = Some(start);
-    while let Some(path) = current {
-        if path.join(".git").exists() {
-            return Some(path.to_path_buf());
+    let mut p = Some(start);
+    while let Some(v) = p {
+        if v.join(".git").exists() {
+            return Some(v.to_path_buf());
         }
-        current = path.parent();
+        p = v.parent();
     }
     None
 }
-
-fn mounted_network_path(path: &Path) -> bool {
-    let Ok(mounts) = fs::read_to_string("/proc/mounts") else {
-        return false;
-    };
-    let mut best: Option<(usize, &str)> = None;
+fn mount_kind(path: &Path) -> Result<Option<String>, PathError> {
+    let mounts = fs::read_to_string("/proc/mounts")
+        .map_err(|_| PathError::MountUnknown(path.to_path_buf()))?;
+    let mut best: Option<(usize, String)> = None;
     for line in mounts.lines() {
-        let mut parts = line.split_whitespace();
-        let _source = parts.next();
-        let Some(mount) = parts.next() else {
-            continue;
-        };
-        let Some(kind) = parts.next() else {
-            continue;
-        };
-        let mount = mount.replace("\\040", " ");
-        if path.to_string_lossy().starts_with(&mount)
-            && best.is_none_or(|(len, _)| mount.len() > len)
+        let mut p = line.split_whitespace();
+        let _ = p.next();
+        let Some(m) = p.next() else { continue };
+        let Some(k) = p.next() else { continue };
+        let m = m.replace("\\040", " ");
+        if path.to_string_lossy().starts_with(&m) && best.as_ref().is_none_or(|(n, _)| m.len() > *n)
         {
-            best = Some((mount.len(), kind));
+            best = Some((m.len(), k.into()));
         }
     }
-    best.is_some_and(|(_, kind)| {
-        matches!(
-            kind,
-            "sshfs" | "fuse.sshfs" | "nfs" | "nfs4" | "cifs" | "smb3" | "9p"
-        )
-    })
+    Ok(best.map(|(_, k)| k))
+}
+fn is_network_fs(kind: &str) -> bool {
+    matches!(
+        kind,
+        "sshfs" | "fuse.sshfs" | "nfs" | "nfs4" | "cifs" | "smb3" | "9p" | "fuseblk"
+    )
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-
     #[test]
-    fn rejects_checkout_paths() {
-        let root = std::env::current_dir().expect("cwd");
-        let policy = XdgPaths {
-            config: root.join("config"),
-            data: root.join("data"),
-            state: root.join("state"),
-            cache: root.join("cache"),
-            logs: root.join("logs"),
-            runtime: root.join("runtime"),
-            backups: root.join("backups"),
-            exports: root.join("exports"),
-            secrets: root.join("secrets"),
-        };
-        assert!(matches!(
-            policy.validate(&root.join("companion.sqlite3")),
-            Err(PathError::Unsafe(_))
-        ));
+    fn rejects_relative() {
+        assert!(validate_authority("../bad").is_err());
+    }
+    #[test]
+    fn rejects_authority() {
+        assert!(validate_authority("bad/name").is_err());
     }
 }

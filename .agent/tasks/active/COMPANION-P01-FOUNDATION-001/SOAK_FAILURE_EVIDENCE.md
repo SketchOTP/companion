@@ -49,3 +49,12 @@ interval; this is not a continuous resident runtime or production reliability
 claim. The raw sample output remains outside Git in the private temporary
 qualification area; the committed summary is
 `evidence/phase01-foundation-summary.json`.
+
+## Review 01 continuation
+
+The prior repeated-invocation soak is historical evidence only. The corrected
+`scripts/soak.py` starts one resident supervisor, queries its private control
+socket throughout the requested interval, records sanitized health hashes and
+network-census values, and performs signal shutdown. A complete 60-minute run
+with injected companion, producer, Godot, and care failures has not yet been
+executed in this continuation; it remains `NOT RUN` until observed.

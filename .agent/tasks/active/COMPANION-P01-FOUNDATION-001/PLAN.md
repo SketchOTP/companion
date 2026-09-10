@@ -38,6 +38,14 @@ Status: `IMPLEMENTED — VALIDATION RECORDED`
 - Run 1,000 deterministic cycles across retained seeds.
 - Run 60-minute target-host soak and full failure matrix.
 
+## Review 01 continuation plan
+
+Implement and verify the resident supervisor and direct-care boundary first,
+then replace subprocess persistence and unsafe XDG fallbacks. Bind live health
+and actual packet-cycle runners to the same binaries, run the failure matrix,
+and record any target-host or long-duration gaps as explicit non-pass outcomes.
+No later-phase capability or dependency adoption is permitted.
+
 ## Checkpoint 5 — publication
 
 - Inspect full diff and generated artifacts.

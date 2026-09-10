@@ -154,5 +154,20 @@ pub fn peer_credentials(fd: &OwnedFd) -> io::Result<libc::ucred> {
     }
 }
 
+/// Open a race-resistant handle for a live process where the host supports
+/// pidfd_open(2). An unavailable syscall is returned verbatim to the caller.
+pub fn pidfd_open(pid: libc::pid_t) -> io::Result<OwnedFd> {
+    #[cfg(target_arch = "x86_64")]
+    const SYS_PIDFD_OPEN: libc::c_long = 434;
+    #[cfg(target_arch = "aarch64")]
+    const SYS_PIDFD_OPEN: libc::c_long = 434;
+    let fd = unsafe { libc::syscall(SYS_PIDFD_OPEN, pid, 0) as libc::c_int };
+    if fd < 0 {
+        Err(io::Error::last_os_error())
+    } else {
+        Ok(unsafe { OwnedFd::from_raw_fd(fd) })
+    }
+}
+
 #[allow(dead_code)]
 fn _socket_address_type_is_available(_: sockaddr_un) {}

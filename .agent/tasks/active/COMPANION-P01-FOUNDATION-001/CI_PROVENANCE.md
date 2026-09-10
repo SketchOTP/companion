@@ -28,3 +28,14 @@ format/lint/tests, schema validation, the retained-seed matrix, secret/private
 path scans and diff checks. `scripts/generate_sbom.py` emits an SPDX-2.3
 inventory to a caller-selected private output. No remote CI result is claimed
 by this local execution; the workflow remains reviewable source configuration.
+
+## Review 01 continuation
+
+CI now runs locked debug and release builds, clippy/format/tests, pinned
+Draft-2020-12 validation, the actual resident-process matrix, runtime smoke,
+accepted qualification-result validation, SPDX generation, and offline
+dependency-policy checks. Bootstrap uses deterministic artifact names and does
+not rely on a random prior unpack directory. SBOM output is generated from the
+locked graph with package versions, source locations where available,
+relationships, and explicit `NOASSERTION` license conclusions pending legal
+review; it is not a legal or vulnerability certification.

@@ -98,6 +98,19 @@ Codex cannot see the operator–Architect conversation. Do not infer hidden deci
 - supervisor-backed health, correct boot/monotonic/sequence logging, and runtime no-network observation;
 - deterministic clean-clone artifact bootstrap, release CI, vulnerability/license checks, complete SBOM, provenance, and artifact retention;
 - at least 3,000 actual messages through one resident foundation across retained seeds;
+
+The Review 01 continuation is implemented on the existing task branch. The
+resident supervisor, real process-bound care transport, direct SQLite store,
+correct XDG policy, live health query, separate binaries, and actual resident
+cycle driver are now executable. Review-critical gaps remain explicit: broad
+kill/recovery coverage, display-loss/reconnect validation, exact host soname
+identity versus the selected 3.53.4 artifact, and the 60-minute injected soak.
+No later-phase capability is opened.
+
+The latest secondary-worktree recheck also exercised the private exact-source
+SQLite 3.53.4 static build and a live supervisor-backed health query. These are
+bounded engineering observations only; the continuous injected soak and broad
+recovery/fault matrices remain unrun and must not be represented as accepted.
 - complete failure/recovery matrix;
 - one continuously resident 60-minute target-host soak with controlled child, producer, care, and Godot failures.
 

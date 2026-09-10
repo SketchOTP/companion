@@ -497,3 +497,14 @@ Architecture v1.0 is unchanged, Phase 01 is closed, and adoption is none.
 - IPC fields are labeled `RUNTIME_OBSERVED`, `KERNEL_OBSERVED`, or `CODE_INSPECTED`; outage semantics use `normal_coverage_claimed=false`; stale/restart/old-channel/capability and descriptor outcomes are asserted fail-closed.
 - SQLite derives exact before/during/after reader counts, multi-row fault atomicity, pre-existing-state preservation, checkpoint full-state equality, and VFS exit/file-class/flags/ordinal assertions.
 - Evidence remains bounded `E3_TARGET_TESTED` candidate evidence (Godot retained `E1_OBSERVED`, systemd retained `E3_TARGET_TESTED`). Architecture v1.0 remains adopted; dependencies, Phase 01, and product implementation remain closed; Architect acceptance is pending.
+## 2026-09-10 — Phase 01 Architect Review 01 continuation
+
+Implemented a resident supervisor control loop with explicit `--once` test
+mode, separate role binaries, private endpoint handoff, private capability
+pipes, HMAC verification, kernel credentials, persistent care receipts, direct
+SQLite ABI/prepared statements, corrected XDG defaults, live health querying,
+and an actual three-seed/3,000-packet process matrix. Local debug/release,
+format, clippy, workspace tests, schema validation, storage/direct-care smoke,
+and runtime lifecycle checks pass. Target-host display recovery, broad kill
+matrix, exact host SQLite 3.53.4 identity, and a full injected continuous
+60-minute soak remain unqualified. Phase 01 remains unaccepted pending review.

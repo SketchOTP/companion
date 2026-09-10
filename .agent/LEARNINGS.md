@@ -300,3 +300,16 @@ continuous resident runtime, production reliability, safety efficacy, or SLA.
 
 Any future claim about continuous operation, restart durability, service
 supervision, reliability, or production readiness.
+## 2026-09-10 — Resident foundation continuation
+
+- A resident supervisor must expose a stable control socket and keep child
+  lifecycle state in memory; one-shot invocations cannot support health or soak
+  claims.
+- Capability bytes can be delivered through a private inherited pipe while the
+  endpoint itself remains close-on-exec until the intended child handoff.
+- Same-user care authentication requires kernel credentials and a MAC; a
+  declared producer field or environment secret is not an authority source.
+- Direct SQLite ABI binding removes PATH/subprocess ambiguity, but exact source
+  identity still needs host-level verification before release claims.
+- XDG defaults and missing runtime bases must fail closed; `/tmp` is never a
+  canonical-state fallback.

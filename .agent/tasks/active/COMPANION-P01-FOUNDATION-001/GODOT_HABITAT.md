@@ -28,3 +28,13 @@ Godot 4.7.2 artifact passed `--headless --path godot --editor --quit`; a local
 X11/Openbox probe observed the titled 640x360 window at the requested bounded
 position and terminated it without screenshot or media capture. No geometry is
 written by the shell and no production asset or bridge behavior is present.
+
+## Review 01 continuation
+
+The neutral Godot script now models explicit connecting/connected/degraded/
+disconnected/incompatible bridge states, a versioned bridge marker, configurable
+target-screen selection, bounded geometry, visible-area clamping, and persisted
+window geometry. `godot-bridge` writes a local versioned handshake state under
+the private runtime root. Renderer, media, sprite, and production embodiment
+behavior remain out of scope; target-host display-loss recovery is still
+unqualified until exercised.

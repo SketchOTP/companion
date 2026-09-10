@@ -37,3 +37,17 @@ records three distinct stores, duplicate idempotency, integrity `ok`, and
 fresh-directory backup/restore equivalence using synthetic data. Long-duration
 crash, disk-full, migration, and power-loss qualification remain conditional;
 no release suitability is claimed.
+
+## Review 01 continuation
+
+`foundation_core::persistence::Store` now binds the SQLite C ABI directly and
+uses prepared statements with bound values for event and receipt writes. It
+executes committed migration text transactionally, records a migration SHA-256,
+enables WAL/FULL synchronous mode, performs integrity/checkpoint operations,
+and uses the SQLite Online Backup API for fresh-file snapshots. When the
+private `COMPANION_SQLITE_SOURCE` input is present, `build.rs` compiles and
+statically links the cached 3.53.4 amalgamation; the resulting binary reports
+3.53.4 and carries no SQLite dynamic dependency. Hosts without that private
+input use a visible development fallback and do not receive an exact-version
+claim. Full crash, power-loss, migration and long-duration qualification
+remain unqualified.

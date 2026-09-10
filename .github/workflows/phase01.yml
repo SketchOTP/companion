@@ -16,11 +16,22 @@ jobs:
           cargo fmt --all -- --check
           cargo clippy --workspace --all-targets --all-features --locked -- -D warnings
           cargo test --workspace --locked
+          cargo build --workspace --locked --release
       - name: Contract validation
-        run: python3 scripts/validate_schemas.py
+        run: |
+          python3 -m pip install --disable-pip-version-check --no-input 'jsonschema==4.25.1'
+          python3 scripts/validate_schemas.py
+          python3 scripts/check_contract_types.py
+          python3 scripts/foundation_runtime_check.py --output /tmp/runtime-results.json
       - name: Deterministic matrix
         run: python3 scripts/cycle_matrix.py --cycles 1000 --seeds 17,23,41
       - name: Forbidden data scan
         run: |
           ! git grep -nE '(/home/|/srv/|sshfs|BEGIN (RSA|OPENSSH) PRIVATE KEY|api[_-]?key)' -- ':!experiments/p00-foundation-qual/results/*'
           git diff --check
+      - name: SBOM and license inventory
+        run: python3 scripts/generate_sbom.py --output /tmp/phase01-sbom.spdx.json
+      - name: Accepted qualification evidence validator
+        run: python3 experiments/p00-foundation-qual/scripts/validate_results.py
+      - name: Offline dependency policy
+        run: python3 scripts/security_checks.py

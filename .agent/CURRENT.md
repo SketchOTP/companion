@@ -102,3 +102,26 @@ Phase 01 may implement engineering foundations and synthetic process/store/IPC b
 ## Next review point
 
 Codex completes the full resident Phase 01 foundation in PR #7, runs the real integration and failure matrices and continuous soak, publishes a reconciled Notion/GitHub result, leaves PR #7 and Issue #6 open, and stops for independent Architect review.
+
+## Review 01 continuation update — 2026-09-10
+
+The continuation replaces the one-shot service entry point with a resident
+`ops-supervisor` and explicit `--once` test mode, separate role binaries,
+supervisor-backed health, direct SQLite ABI calls with prepared statements and
+the Online Backup API, corrected XDG defaults with fail-closed placement, and
+private capability delivery for the real direct-care socket. Three retained
+seeds now drive 3,000 actual packet cycles through separate processes. The
+remaining full failure/recovery injection, target-host Godot recovery, exact
+3.53.4 host-library binding verification, and completed continuous 60-minute
+injected soak remain tracked as unqualified until independently observed.
+
+## Review 01 continuation recheck — 2026-09-10
+
+The private exact SQLite 3.53.4 amalgamation build path is now exercised when
+`COMPANION_SQLITE_SOURCE` is present; the resulting release binary statically
+exposes SQLite 3.53.4 and has no SQLite dynamic dependency. The verification
+script also starts a resident supervisor before querying the operator health
+command, so the health result reflects live child state. The bounded verify
+run completed successfully. Full injected one-hour soak, broad restart and
+display-loss recovery, adversarial IPC, and VFS/power-loss coverage remain
+unrun and continue to block phase acceptance.

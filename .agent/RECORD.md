@@ -369,3 +369,12 @@ The candidate is published for independent Architect review through PR #7 and
 Issue #6. Architecture v1.0 remains adopted; Roadmap Phase 02 and later,
 product implementation and product-capability claims remain closed. The soak
 and all partial/unqualified recovery surfaces are engineering evidence only.
+## 2026-09-10 — Phase 01 Review 01 continuation record
+
+Architect Review 01 was merged normally into `codex/p01-foundation-001` as
+`22d64f4`. The continuation preserves the rejected candidate and adds a
+resident supervisor, direct SQLite store, process-separated service binaries,
+private capability provisioning, fail-closed XDG resolution, supervisor-backed
+health, and actual resident-process message-cycle evidence. No dependency,
+later roadmap phase, product capability, security certification, or reliability
+claim was adopted by Codex.

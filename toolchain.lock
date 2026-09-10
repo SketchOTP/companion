@@ -4,6 +4,7 @@ godot=4.7.2.stable.official.ed1daf0bf
 godot_linux_x86_64_archive_sha256=cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4
 sqlite=3.53.4
 sqlite_source_id=2026-07-24_19:02:57_bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc
+sqlite_amalgamation_sha256=b1dd5d74ec7f29055a6684fa06fb3c2f6821c87dd38f9a458dfd2e8a1db28189
 canonical_event_profile=JCS-RFC8785-v1
 event_digest=sha-256-jcs-event-v1
 runtime_network=deny-by-default
