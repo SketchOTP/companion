@@ -21,6 +21,7 @@ python3 scripts/storage_smoke.py --output "$COMPANION_XDG_ROOT/storage-results.j
 python3 scripts/direct_care_smoke.py --output "$COMPANION_XDG_ROOT/care-results.json"
 python3 scripts/failure_matrix.py --output "$COMPANION_XDG_ROOT/failure-results.json"
 python3 scripts/generate_sbom.py --output "$COMPANION_XDG_ROOT/sbom.spdx.json"
+python3 scripts/security_checks.py
 FOUNDATION_SUPERVISOR=target/release/ops-supervisor COMPANION_XDG_ROOT="$COMPANION_XDG_ROOT" target/release/ops-supervisor >"$COMPANION_XDG_ROOT/supervisor.log" 2>&1 &
 SUPERVISOR_PID=$!
 trap 'kill "$SUPERVISOR_PID" 2>/dev/null || true; wait "$SUPERVISOR_PID" 2>/dev/null || true' EXIT
