@@ -32,7 +32,20 @@ These are engineering evidence floors, not product reliability or safety statist
 The deterministic matrix is implemented by `scripts/cycle_matrix.py` with
 retained seeds 17, 23 and 41 and 1,000 cycles per seed (3,000 total). A
 bounded clean start/stop and orphan-cleanup probe is available through
-`scripts/failure_matrix.py`. The required 60-minute soak is running separately
-with `scripts/soak.py --duration-seconds 3600 --interval 60`; its result will
-be recorded only after the process completes. No product SLA, reliability or
-safety claim is inferred from these engineering floors.
+`scripts/failure_matrix.py`. The required soak was run with
+`scripts/soak.py --duration-seconds 3600 --interval 60`; the sanitized result
+below records the exact timestamps, sample count and failures. Each sample is
+a bounded supervisor invocation at the requested interval, not a continuous
+resident runtime. No product SLA, reliability or safety claim is inferred from
+these engineering floors.
+
+## Final soak result
+
+The sanitized run returned `PASS` with 60 samples and no failures over the
+required 3,600 seconds. It started at `2026-09-10T01:17:56Z` and ended at
+`2026-09-10T02:17:59Z`, using the release `ops-supervisor` build from the task
+branch. Each sample was a bounded supervisor invocation at a 60-second
+interval; this is not a continuous resident runtime or production reliability
+claim. The raw sample output remains outside Git in the private temporary
+qualification area; the committed summary is
+`evidence/phase01-foundation-summary.json`.

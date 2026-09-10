@@ -286,3 +286,17 @@ behavior across roadmap gates. Synthetic care packets, neutral Godot status,
 development stores and deterministic cycle matrices are E3 engineering
 evidence only; visible/long-duration and remote CI checks remain separately
 identified when not executed.
+
+## COMPANION-L-004 — Phase 01 evidence must distinguish bounded soak from residency
+
+A phase-sized foundation can provide executable service shells, direct
+synthetic care transport, isolated development stores, a neutral Godot habitat,
+and deterministic message evidence without becoming a living companion. The
+60-minute soak used repeated bounded supervisor invocations at a fixed interval;
+its timestamps and failures are evidence of that harness only, not proof of a
+continuous resident runtime, production reliability, safety efficacy, or SLA.
+
+### Recheck trigger
+
+Any future claim about continuous operation, restart durability, service
+supervision, reliability, or production readiness.

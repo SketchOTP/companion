@@ -36,9 +36,10 @@
 The task branch contains the executable foundation candidate and its evidence
 packet. Local locked builds/tests, schema and artifact checks, direct synthetic
 care smoke, separate-store smoke, headless Godot validation, bounded visible
-window probe, health view, and a 3-seed/3,000-cycle matrix have been run. The
-60-minute soak, remote CI execution, and later-phase capabilities remain
-unqualified. Awaiting independent Architect review.
+window probe, health view, a 3-seed/3,000-cycle matrix, and the bounded
+60-minute target-host soak have been run. The soak is synthetic repeated
+supervisor evidence rather than a continuous-resident runtime claim; later-
+phase capabilities remain unqualified. Awaiting independent Architect review.
 
 ## Completed gates
 

@@ -481,6 +481,15 @@ Architecture v1.0 is unchanged, Phase 01 is closed, and adoption is none.
 - Local verification: locked format/clippy/tests, exact cached artifact checks, schema validation, three-store backup/restore smoke, direct-care packet and duplicate smoke, headless Godot and bounded visible window probe, 3-seed/3,000-cycle matrix.
 - `NOT RUN`: 60-minute soak and remote CI execution. No acceptance or downstream phase transition claimed.
 
+## COMPANION-P01-FOUNDATION-001 — Phase 01 publication reconciliation
+
+- The phase-sized foundation candidate was executed in the clean local-ext4/NVMe secondary worktree on `codex/p01-foundation-001` from `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`.
+- Locked Rust, contracts, XDG guard, six synthetic shells, direct care transport, isolated stores, neutral Godot shell, health/tooling, CI source, SBOM tooling, and the 3-seed/3,000-cycle matrix remain in scope.
+- The required 60-minute synthetic soak was run with `scripts/soak.py --duration-seconds 3600 --interval 60`; its exact sanitized status, timestamps, sample count and failure list are recorded in the final evidence summary.
+- Final soak result: `PASS`, 60 samples, zero failures, `2026-09-10T01:17:56Z`–`2026-09-10T02:17:59Z`, 3,600 seconds.
+- The soak is repeated bounded supervisor invocations, not a continuous resident process and not production reliability evidence. The failure matrix, display-loss recovery and later-phase capability surfaces remain explicitly partial or unqualified.
+- Architecture v1.0 remains adopted; Roadmap Phase 02 and later, product implementation, dependency expansion and product-capability claims remain closed pending Architect review.
+
 ## COMPANION-P00-QUAL-001 — Architect Review 03 narrow evidence-binding correction
 
 - Date: 2026-09-09 America/New_York; review merge `1997e01` from `origin/main` `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2`.

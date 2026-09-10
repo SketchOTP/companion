@@ -355,3 +355,17 @@ engineering foundation, synthetic qualification tooling, neutral habitat
 shell, contracts, migrations, docs and evidence. Architecture v1.0 remains
 adopted; Phase 02 and later remain closed. This record is a candidate result
 awaiting independent Architect review, not a self-acceptance.
+
+## 2026-09-10 — COMPANION-P01-FOUNDATION-001 publication reconciliation
+
+The phase-sized foundation candidate was executed in the clean local-ext4/NVMe
+secondary worktree on `codex/p01-foundation-001` from
+`4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`. It contains only the authorized
+Rust/Godot/contracts/storage/process/observability/CI foundation and synthetic
+evidence. The bounded 60-minute soak was run separately and its exact
+sanitized result is recorded in the evidence summary.
+
+The candidate is published for independent Architect review through PR #7 and
+Issue #6. Architecture v1.0 remains adopted; Roadmap Phase 02 and later,
+product implementation and product-capability claims remain closed. The soak
+and all partial/unqualified recovery surfaces are engineering evidence only.

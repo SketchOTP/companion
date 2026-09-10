@@ -65,6 +65,11 @@ implementation is confined to Rust foundations, schemas/migrations, a neutral
 Godot shell, scripts, docs and .agent evidence. Accepted baseline artifacts
 remain Rust 1.98.1, Godot 4.7.2 and SQLite 3.53.4 from the private
 qualification cache. Local tests and headless validation passed; visible
-Openbox and the 60-minute soak are explicitly not run. Architecture v1.0
-remains adopted, Roadmap Phase 02+ remain closed, and no product capability or
-dependency beyond the authorized baseline is self-approved.
+Openbox bounded-window validation passed and the required 60-minute soak
+returned `PASS` with 60 samples and no failures from
+`2026-09-10T01:17:56Z` through `2026-09-10T02:17:59Z`. It used repeated bounded
+supervisor invocations at a 60-second interval. This is synthetic engineering
+evidence, not a continuous-resident runtime or production reliability claim.
+Architecture v1.0 remains adopted, Roadmap Phase 02+ remain closed, and no
+product capability or dependency beyond the authorized baseline is
+self-approved.

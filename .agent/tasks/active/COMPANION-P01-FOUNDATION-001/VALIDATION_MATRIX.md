@@ -54,18 +54,18 @@ For every non-pass, state the exact evidence and impact on phase acceptance.
 13. `PARTIAL` — dependency order and clean stop observed; restart/backoff remains bounded shell work.
 14. `PARTIAL` — direct packet and duplicate receipt observed; adversarial matrix not run here.
 15. `PARTIAL` — separate stores, WAL migration, integrity and care receipt observed; full backup matrix deferred.
-16. `NOT RUN` — fresh-directory restore command is implemented but not executed in this pass.
+16. `PARTIAL` — storage smoke produced fresh-file row-level backup/restore equivalence; full schema/version/integrity digest equivalence remains deferred.
 17. `PASSED` — Godot 4.7.2 headless project validation.
 18. `PASSED` — bounded visible Openbox window probe observed a 640x360 neutral window; display-loss recovery remains unrun.
 19. `PASSED` — payload-minimized logs and read-only health command.
-20. `NOT RUN` — remote CI runner not available in this local pass.
+20. `PASSED` — GitHub Actions `phase01-foundation` completed successfully on the pushed branch with immutable checkout, locked Rust checks, schemas, retained-seed matrix and scans.
 21. `PARTIAL` — rights table and locked dependency provenance committed; generated SBOM deferred.
 22. `PASSED` — no private paths, secrets, binaries or media committed.
 23. `PASSED` — runtime has no outbound network code; CI scan records the boundary.
 24. `PASSED` — 3 retained seeds × 1,000 deterministic synthetic cycles.
-25. `NOT RUN` — 60-minute soak remains an explicit next evidence action.
+25. `PASSED` — `scripts/soak.py --duration-seconds 3600 --interval 60` returned `PASS` (60 samples, no failures) from `2026-09-10T01:17:56Z` through `2026-09-10T02:17:59Z`; semantics are repeated bounded supervisor invocations, not a continuous resident-runtime claim.
 26. `PARTIAL` — clean supervisor/direct-care and orphan-cleanup probes observed; full kill/recovery matrix deferred.
 27. `PASSED` — final diff and generated-file review required before publication.
-28. `PENDING` — mutable Notion records are updated only after branch publication.
-29. `PENDING` — Issue #6/PR publication occurs after final commit.
+28. `PASSED` — report and parent directive were updated after publication and re-fetched; the final soak result is included.
+29. `PASSED` — Issue #6 remains open and PR #7 remains open/unmerged after final reconciliation.
 30. `PASSED` — this run contains no later-phase capability.

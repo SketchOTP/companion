@@ -244,3 +244,10 @@ transition, or product capability is adopted.
 - Current authority is `.agent/tasks/active/COMPANION-P00-QUAL-001/ARCHITECT_REVIEW_03.md`; review commit `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2` was merged normally as `1997e01`.
 - Scope is limited to provenance/result binding, fail-closed IPC evidence labels and assertions, exact JCS/toolchain claim alignment, and SQLite before/after state derivation. Accepted Godot and systemd work is retained without rerun.
 - No dependency, mechanism, Phase 01 transition, product implementation, security certification, reliability claim, safety efficacy, or product capability is adopted. PR #5 and Issue #4 remain open.
+
+### Phase 01 execution publication — awaiting independent review
+
+- `COMPANION-P01-FOUNDATION-001` was executed as one phase-sized candidate on `codex/p01-foundation-001` from main `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`.
+- The candidate contains only the authorized Rust/Godot/contracts/storage/process/observability/CI foundation and synthetic evidence; no later-phase product behavior was introduced.
+- Local locked verification, clean-clone verification, remote CI, bounded Openbox validation, and the 3-seed/3,000-cycle matrix were recorded. The 60-minute synthetic soak was run separately and its exact status is bound in the final evidence summary.
+- Publication is through PR #7, which remains open and unmerged; Issue #6 remains open. Architect acceptance and any downstream phase transition remain pending.

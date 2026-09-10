@@ -13,8 +13,9 @@ clean local secondary worktree and is awaiting Architect review. The submitted
 foundation includes a locked Rust workspace, contracts and XDG guard, six
 synthetic service shells, direct care transport, separate development-store
 migrations, a neutral Godot shell, operator tooling and CI/provenance
-definitions. Target-host soak and any production-capability claims remain
-explicitly out of scope until independent acceptance.
+definitions. The bounded target-host soak is recorded in the final evidence;
+any production-capability claims remain explicitly out of scope until
+independent acceptance.
 
 Complete the entire Roadmap Phase 01 engineering foundation in one phase-sized run. The repository must become a reproducible, executable, observable local foundation containing:
 
@@ -31,7 +32,7 @@ Complete the entire Roadmap Phase 01 engineering foundation in one phase-sized r
 ## Active directive
 
 - Directive: `COMPANION-P01-FOUNDATION-001`
-- Status: `ISSUED — ACTIVE`
+- Status: `IMPLEMENTED — AWAITING INDEPENDENT ARCHITECT REVIEW`
 - Accepted qualification merge baseline: `80dab0c1942e4a799328a957331381104b892945`
 - Notion directive: https://app.notion.com/p/3d7833cb27ff815ebe3ed1999f05beba
 - Required Notion report: https://app.notion.com/p/3d7833cb27ff81c5b0eee3e6c98b54b5
