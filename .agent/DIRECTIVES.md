@@ -233,6 +233,12 @@ transition, or product capability is adopted.
 - Final live Research Evidence Register requery returned 55 rows; Evidence 54 (`pidfd_getfd(2)`) and Evidence 55 (SQLite I/O/crash/concurrency methods) were verified and incorporated.
 - Independent Architect review is required; Codex does not self-accept.
 
+### COMPANION-P01-FOUNDATION-001 — Phase 01 execution (2026-09-09)
+
+- Architect authorized the complete engineering foundation on `codex/p01-foundation-001` from main `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`.
+- Scope includes Rust workspace, contracts, XDG guard, six synthetic shells, direct care transport, separate SQLite stores, neutral Godot shell, health/tooling, CI/provenance and bounded synthetic evidence.
+- No later-phase capability, media, model, biometrics, notifications, product runtime or host mutation is authorized. Independent Architect review remains required.
+
 ### Architect Review 03 — narrow evidence-binding correction (2026-09-09)
 
 - Current authority is `.agent/tasks/active/COMPANION-P00-QUAL-001/ARCHITECT_REVIEW_03.md`; review commit `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2` was merged normally as `1997e01`.

@@ -1,6 +1,6 @@
 # Phase 01 Specification — COMPANION-P01-FOUNDATION-001
 
-Status: `PENDING CODEX EXECUTION`
+Status: `IMPLEMENTED — AWAITING ARCHITECT REVIEW`
 
 ## Phase outcome
 

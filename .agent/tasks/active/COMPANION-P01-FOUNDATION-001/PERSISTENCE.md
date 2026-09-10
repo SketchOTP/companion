@@ -1,6 +1,6 @@
 # Persistence Foundation — COMPANION-P01-FOUNDATION-001
 
-Status: `PENDING CODEX EXECUTION`
+Status: `IMPLEMENTED — AWAITING ARCHITECT REVIEW`
 
 Document the exact SQLite 3.53.4 integration and the separate companion, care and vault development stores.
 
@@ -26,3 +26,14 @@ Required proof:
 - store corruption causes visible failure/degradation;
 - `care-core` does not require the companion store;
 - release-unqualified surfaces remain explicit.
+
+## Implemented persistence surface
+
+The shared Rust Store resolves one `companion.sqlite3`, `care.sqlite3`, and
+`vault.sqlite3` under private XDG data, applies WAL plus `synchronous=FULL`,
+creates authority-specific append/audit tables, supports idempotent inserts,
+integrity checks and SQLite Backup API command execution. `scripts/storage_smoke.py`
+records three distinct stores, duplicate idempotency, integrity `ok`, and
+fresh-directory backup/restore equivalence using synthetic data. Long-duration
+crash, disk-full, migration, and power-loss qualification remain conditional;
+no release suitability is claimed.

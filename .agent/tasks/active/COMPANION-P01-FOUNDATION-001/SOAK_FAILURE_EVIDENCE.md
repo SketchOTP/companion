@@ -1,6 +1,6 @@
 # Soak and Failure Evidence — COMPANION-P01-FOUNDATION-001
 
-Status: `PENDING CODEX EXECUTION`
+Status: `IMPLEMENTED — PARTIAL EVIDENCE — AWAITING ARCHITECT REVIEW`
 
 ## Deterministic matrix
 

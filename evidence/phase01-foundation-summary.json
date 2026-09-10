@@ -1,0 +1,13 @@
+{
+  "directive": "COMPANION-P01-FOUNDATION-001",
+  "status": "IMPLEMENTED_AWAITING_ARCHITECT_REVIEW",
+  "evidence_ceiling": "E3_TARGET_TESTED",
+  "rust": {"version": "1.98.1", "profile": "debug_and_release", "tests": "passed"},
+  "godot": {"version": "4.7.2.stable.official.ed1daf0bf", "sha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4", "headless": "passed", "visible_window": "passed_640x360_bounded_test_no_media_capture"},
+  "sqlite": {"version": "3.53.4", "stores": ["companion", "care", "vault"], "wal": true, "integrity": "observed"},
+  "care_path": {"transport": "AF_UNIX SOCK_SEQPACKET", "independent_of_companion": true, "duplicate_idempotency": "observed"},
+  "matrix": {"seeds": [17, 23, 41], "cycles_per_seed": 1000, "total_cycles": 3000, "status": "passed"},
+  "soak_60_minute": "NOT_RUN",
+  "openbox_window": "PASSED_BOUNDED_VISIBLE_TEST",
+  "product_capability": "not_claimed"
+}

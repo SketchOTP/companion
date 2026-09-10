@@ -1,6 +1,6 @@
 # Phase 01 Execution Plan — COMPANION-P01-FOUNDATION-001
 
-Status: `PENDING CODEX EXECUTION`
+Status: `IMPLEMENTED — VALIDATION RECORDED`
 
 ## Checkpoint 0 — authority and branch safety
 
@@ -47,3 +47,13 @@ Status: `PENDING CODEX EXECUTION`
 - Re-fetch mutable records and return the canonical result.
 
 Do not stop between checkpoints while the full phase remains feasible. A stop-condition blocker must identify the exact failed requirement, attempted evidence and smallest Architect decision needed.
+
+## Checkpoint execution record
+
+Checkpoints 0–3 are implemented in the clean secondary worktree. Checkpoint 4
+has local locked builds, schema/artifact validation, direct-care and SQLite
+smoke, headless and bounded visible Godot probes, SBOM generation, and a
+3-seed/3,000-cycle matrix. The long-running 60-minute soak is executing as a
+separate synthetic process and its sanitized result remains outside the
+repository until completion. No system package, persistent service, product
+runtime, media, model, or later-phase behavior was introduced.

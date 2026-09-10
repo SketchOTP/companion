@@ -1,6 +1,6 @@
 # XDG and Storage Boundary — COMPANION-P01-FOUNDATION-001
 
-Status: `PENDING CODEX EXECUTION`
+Status: `IMPLEMENTED — AWAITING ARCHITECT REVIEW`
 
 Document the shared path-policy implementation for configuration, data, state, cache, logs, runtime sockets, backups, exports and secrets.
 
@@ -13,3 +13,12 @@ Required proof:
 - explicit fatal/degraded outcomes instead of unsafe fallback;
 - no canonical write beneath the checkout during unit, integration, Godot or soak runs;
 - migration/restore paths use local ext4/NVMe.
+
+## Implemented path guard
+
+`foundation_core::paths::XdgPaths` supports deterministic XDG overrides,
+creates private 0700 directories, rejects paths below the checkout/repository
+root, and detects common network filesystem types from sanitized mount
+metadata. Canonical data, WAL/lock files, sockets and backup staging therefore
+fail closed rather than silently falling back. Runtime data used by tests was
+outside the repository.

@@ -1,0 +1,1 @@
+{"schema_major":1,"event_type":"foundation.synthetic","message_id":"00000000-0000-4000-8000-000000000001","boot_id":"phase01-fixture","monotonic_ns":1,"utc_observed":"2026-09-09T12:00:00Z","utc_uncertainty_us":1000,"event_sequence":1,"causation_id":null,"payload":{"count_milli":1250,"nested":{"text":"safe ✓","emoji":"🜁"},"items":[{"id":1},{"id":2}]}}

@@ -475,6 +475,12 @@ Architecture v1.0 is unchanged, Phase 01 is closed, and adoption is none.
 - Notion coder report and parent directive were updated and re-fetched with the correction commit and 45/55 live ledger counts: `PASSED`.
 - Architect acceptance: `NOT RUN`; no downstream authority created.
 
+## COMPANION-P01-FOUNDATION-001 — Phase 01 foundation candidate
+
+- Local secondary implementation: locked Rust workspace, nine schemas, canonical event profile, XDG refusal, six role binaries, supervisor/direct care path, separate store migrations, Godot shell, health, scripts, CI and evidence summaries.
+- Local verification: locked format/clippy/tests, exact cached artifact checks, schema validation, three-store backup/restore smoke, direct-care packet and duplicate smoke, headless Godot and bounded visible window probe, 3-seed/3,000-cycle matrix.
+- `NOT RUN`: 60-minute soak and remote CI execution. No acceptance or downstream phase transition claimed.
+
 ## COMPANION-P00-QUAL-001 — Architect Review 03 narrow evidence-binding correction
 
 - Date: 2026-09-09 America/New_York; review merge `1997e01` from `origin/main` `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2`.

@@ -1,0 +1,10 @@
+{
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "creationInfo": {"creators": ["Tool: companion-generate-sbom"], "created": "DATE_GENERATED_AT_VERIFICATION"},
+  "dataLicense": "CC0-1.0",
+  "documentNamespace": "https://companion.local/sbom/phase01",
+  "name": "companion-phase01-foundation",
+  "packages": [],
+  "spdxVersion": "SPDX-2.3",
+  "note": "Regenerate with scripts/generate_sbom.py; package inventory is generated in private verification output."
+}

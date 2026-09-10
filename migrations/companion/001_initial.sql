@@ -1,0 +1,3 @@
+PRAGMA user_version=1;
+CREATE TABLE IF NOT EXISTS authority_meta (k TEXT PRIMARY KEY, v TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS event_log (id INTEGER PRIMARY KEY, message_id TEXT UNIQUE NOT NULL, event_type TEXT NOT NULL, payload TEXT NOT NULL, created_utc TEXT NOT NULL);

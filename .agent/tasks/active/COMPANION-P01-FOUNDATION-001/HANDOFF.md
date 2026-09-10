@@ -1,6 +1,6 @@
 # Phase 01 Handoff — COMPANION-P01-FOUNDATION-001
 
-Status: `PENDING CODEX EXECUTION`
+Status: `IMPLEMENTED — AWAITING ARCHITECT REVIEW`
 
 Return the canonical result in this structure:
 
@@ -57,3 +57,14 @@ Explicitly confirm:
 - no living-mon, organism, memory, speech, vision, learning, dreaming, production-sprite, notification or safety capability is claimed;
 - no security certification, reliability/SLA, medical or emergency-efficacy claim is made;
 - the pull request is unmerged and awaiting independent Architect review.
+
+## Execution handoff
+
+The branch is a phase-sized foundation candidate, not self-accepted. The
+implementation is confined to Rust foundations, schemas/migrations, a neutral
+Godot shell, scripts, docs and .agent evidence. Accepted baseline artifacts
+remain Rust 1.98.1, Godot 4.7.2 and SQLite 3.53.4 from the private
+qualification cache. Local tests and headless validation passed; visible
+Openbox and the 60-minute soak are explicitly not run. Architecture v1.0
+remains adopted, Roadmap Phase 02+ remain closed, and no product capability or
+dependency beyond the authorized baseline is self-approved.

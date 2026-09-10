@@ -8,6 +8,14 @@ Roadmap Phase 00 has satisfied its implementation-opening gate. Architecture v1.
 
 ## Active objective
 
+Codex phase implementation is present on `codex/p01-foundation-001` in the
+clean local secondary worktree and is awaiting Architect review. The submitted
+foundation includes a locked Rust workspace, contracts and XDG guard, six
+synthetic service shells, direct care transport, separate development-store
+migrations, a neutral Godot shell, operator tooling and CI/provenance
+definitions. Target-host soak and any production-capability claims remain
+explicitly out of scope until independent acceptance.
+
 Complete the entire Roadmap Phase 01 engineering foundation in one phase-sized run. The repository must become a reproducible, executable, observable local foundation containing:
 
 1. a locked Rust 1.98.1 workspace and exact artifact bootstrap;

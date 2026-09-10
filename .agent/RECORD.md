@@ -346,3 +346,12 @@ summaries from runner outcomes and complete state comparisons.
 The result remains provisional for independent Architect review. Architecture
 v1.0 remains adopted and unchanged; Roadmap Phase 01, dependency/mechanism
 adoption, product implementation, and capability claims remain closed.
+
+## 2026-09-09 — COMPANION-P01-FOUNDATION-001 implementation
+
+Phase 01 foundation work was implemented on the clean local secondary branch
+from main `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`. The work adds only
+engineering foundation, synthetic qualification tooling, neutral habitat
+shell, contracts, migrations, docs and evidence. Architecture v1.0 remains
+adopted; Phase 02 and later remain closed. This record is a candidate result
+awaiting independent Architect review, not a self-acceptance.

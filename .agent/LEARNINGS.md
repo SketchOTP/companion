@@ -278,3 +278,11 @@ Process-boundary summaries label runtime and kernel observations separately from
 code-inspected ownership facts. SQLite summaries derive claims from independent
 before/after state and fixed expected counts rather than observed values or
 hand-curated booleans.
+
+## COMPANION-L-003 — Phase-sized foundations still preserve explicit ceilings
+
+A runnable engineering foundation can be delivered without smuggling product
+behavior across roadmap gates. Synthetic care packets, neutral Godot status,
+development stores and deterministic cycle matrices are E3 engineering
+evidence only; visible/long-duration and remote CI checks remain separately
+identified when not executed.

@@ -1,0 +1,32 @@
+[package]
+name = "foundation-services"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+foundation-core = { path = "../foundation-core" }
+serde_json.workspace = true
+libc.workspace = true
+uuid.workspace = true
+
+[[bin]]
+name = "ops-supervisor"
+path = "src/main.rs"
+[[bin]]
+name = "companion-core"
+path = "src/main.rs"
+[[bin]]
+name = "care-core"
+path = "src/main.rs"
+[[bin]]
+name = "identity-consent-vault"
+path = "src/main.rs"
+[[bin]]
+name = "sensor-gateway"
+path = "src/main.rs"
+[[bin]]
+name = "godot-bridge"
+path = "src/main.rs"
+

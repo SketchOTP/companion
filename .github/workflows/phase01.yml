@@ -1,0 +1,26 @@
+name: phase01-foundation
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install exact Rust toolchain on ephemeral runner
+        run: rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
+      - name: Rust locked checks
+        run: |
+          cargo fmt --all -- --check
+          cargo clippy --workspace --all-targets --all-features --locked -- -D warnings
+          cargo test --workspace --locked
+      - name: Contract validation
+        run: python3 scripts/validate_schemas.py
+      - name: Deterministic matrix
+        run: python3 scripts/cycle_matrix.py --cycles 1000 --seeds 17,23,41
+      - name: Forbidden data scan
+        run: |
+          ! git grep -nE '(/home/|/srv/|sshfs|BEGIN (RSA|OPENSSH) PRIVATE KEY|api[_-]?key)' -- ':!experiments/p00-foundation-qual/results/*'
+          git diff --check
