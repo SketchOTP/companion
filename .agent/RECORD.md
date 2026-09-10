@@ -378,3 +378,31 @@ private capability provisioning, fail-closed XDG resolution, supervisor-backed
 health, and actual resident-process message-cycle evidence. No dependency,
 later roadmap phase, product capability, security certification, or reliability
 claim was adopted by Codex.
+
+## 2026-09-10 — Phase 01 Architect Review 02 continuation
+
+The existing task branch received resident control-plane, direct-care
+authentication/rotation, exact SQLite, semantic contracts, Godot UDS, and
+integration-driver corrections. One resident synthetic run and bounded
+failure/recovery tests passed. Full acceptance was not claimed because the
+runtime `/proc` census failed under intentional dumpability hardening and the
+required 3,600-second injected soak was not run. Architecture v1.0 remains
+adopted; Roadmap Phase 02+ and product capability remain closed.
+
+## 2026-09-10 — Resident evidence correction
+
+The runtime no-egress check now reports process-attributed socket ownership
+from `ss` and separately records the permission boundary created by child
+dumpability hardening. Producer and care services publish post-initialization
+readiness before entering resident loops. Existing non-passes remain in the
+audit trail; no acceptance or product capability is inferred.
+
+## 2026-09-10 — Final resident soak evidence
+
+The initial full-duration soak failed closed after one control-socket startup
+race (`FileNotFoundError`, 59 samples). After adding an explicit readiness wait,
+the fresh run completed from `2026-09-10T13:10:15Z` to
+`2026-09-10T14:10:15Z` for `3,600` seconds: `PASS`, 60 samples, zero failures,
+injections for companion restart, producer rotation, Godot restart, and care
+failure, zero process-owned network sockets, and no checkout writes. Evidence
+is bounded E3 and remains subject to independent Architect acceptance.

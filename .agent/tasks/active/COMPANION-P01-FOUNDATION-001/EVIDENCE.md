@@ -116,3 +116,54 @@ evidence-ancestry verification. Push run `34464690282` and pull-request run
 `34464693372` both passed all configured checks. This does not close the
 continuous soak, process-replacement/adversarial IPC, display-loss, or
 complete SQLite VFS/power-loss gates.
+
+## Architect Review 02 continuation — 2026-09-10
+
+Observed in the secondary worktree after the review merge:
+
+- `cargo fmt --all -- --check`, locked clippy, locked workspace tests, and a
+  release build passed when `COMPANION_SQLITE_SOURCE` identified the verified
+  3.53.4 amalgamation (`b1dd5d74ec7f29055a6684fa06fb3c2f6821c87dd38f9a458dfd2e8a1db28189`).
+- `scripts/cycle_matrix.py --cycles 1000 --seeds 17,23,41` used one resident
+  supervisor invocation and observed 3,000 accepted packets plus one duplicate
+  rejection (`E3_TARGET_TESTED`).
+- `scripts/failure_matrix.py` observed resident readiness, companion restart,
+  producer channel/generation rebuild, care outage/recovery, bridge restart and
+  clean shutdown (`E3_TARGET_TESTED`).
+- `scripts/godot_bridge_smoke.py` observed a real headless Godot 4.7.2
+  `StreamPeerUDS` handshake and a degraded run after bridge termination
+  (`E3_TARGET_TESTED`, no display or product claim).
+- Health returned live child state, readiness markers, producer pidfd liveness,
+  SQLite version/source-id/compile options, and synthetic care coverage.
+
+Non-pass evidence remains explicit: the runtime `/proc` census failed with
+`PermissionError` for hardened children; the required 3,600-second injected
+soak was not run; broader display-loss, adversarial descriptor, and later-phase
+SQLite VFS/power-loss qualification remain unqualified. The CI workflow is
+updated to fetch and hash the exact SQLite source, but remote CI for this
+unpublished continuation has not yet executed.
+
+## Evidence correction — 2026-09-10
+
+After correcting the runtime census, `scripts/foundation_runtime_check.py`
+passed. It observed all five resident roles ready, synthetic care coverage,
+zero process-owned AF_INET/AF_INET6 sockets via `ss -H -tunp`, and clean signal
+shutdown. The expected `PermissionError` while traversing hardened child
+`/proc/<pid>/fd` remains recorded as an observability limitation. The resident
+producer and care loops now publish readiness before entering steady state.
+The required continuous 3,600-second injected soak remains `NOT RUN`; no
+display-loss, broad adversarial, or later-phase SQLite claims are made.
+
+## Final resident soak — 2026-09-10
+
+The first full-duration attempt failed closed on a startup control-socket race:
+`FileNotFoundError` during health polling, 59 samples, and no checkout writes.
+After adding a readiness wait and rerunning the complete duration, the
+authoritative run passed: `2026-09-10T13:10:15Z`–`2026-09-10T14:10:15Z`,
+`3,600` seconds, 60 samples, zero failures, four injections
+(`companion-core:restart`, `sensor-gateway:rotate`, `godot-bridge:restart`,
+`care-core:fail`), resident supervisor observed, zero process-owned network
+sockets, and no checkout writes. This is `E3_TARGET_TESTED` synthetic
+engineering evidence only. It does not establish production reliability,
+safety efficacy, or Phase 01 acceptance; display-loss, broader adversarial
+descriptor, and deferred SQLite VFS/power-loss surfaces remain unqualified.

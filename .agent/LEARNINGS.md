@@ -313,3 +313,36 @@ supervision, reliability, or production readiness.
   identity still needs host-level verification before release claims.
 - XDG defaults and missing runtime bases must fail closed; `/tmp` is never a
   canonical-state fallback.
+
+## 2026-09-10 — Architect Review 02 integration hardening
+
+- Readiness is only meaningful when emitted after store/channel initialization
+  and cross-checked against a live child handle; a registry boolean is not
+  health evidence.
+- Direct-care replacement must close the old socketpair and rotate both the
+  generation and capability; retaining a pidfd makes liveness observable but
+  does not expand the documented threat ceiling.
+- Exact SQLite source hashing in `build.rs` prevents a host-library fallback
+  from silently entering acceptance builds; runtime version/source-id/options
+  must still be recorded.
+- Child dumpability hardening can make `/proc` census unavailable to a same
+  user; that is a real observability failure to report, not permission to
+  downgrade the security setting.
+
+## 2026-09-10 — Evidence correction
+
+- A hardened child may legitimately deny `/proc/<pid>/fd` traversal. Preserve
+  that denial as an observation and use process-attributed `ss` output for the
+  no-egress check; never reinterpret inaccessible descriptors as zero sockets.
+- Resident producer and care roles must emit readiness only after their packet
+  and store initialization, then remain alive until an explicit supervisor
+  shutdown so health and recovery probes observe a real resident foundation.
+
+## 2026-09-10 — Soak startup-race correction
+
+- A long-running harness must wait for the supervisor control endpoint before
+  its first health request; otherwise a legitimate bind race becomes a false
+  soak failure. Preserve the failed run and rerun the full duration after the
+  fix rather than relabeling it.
+- The corrected resident run completed 3,600 seconds with 60 samples and four
+  injections without claiming production reliability.

@@ -182,3 +182,26 @@ The final CI-corrected publication head is
 `4cfc1c512b2da6c7b25087cd35627cb7eb10bdda`. Full-history CI verification
 passed; the continuous injected soak and broad recovery/fault surfaces remain
 `NOT RUN` and unqualified.
+
+## Architect Review 02 continuation
+
+The active Phase 01 branch contains evidence-bound resident health and
+readiness, direct-care HMAC/channel rotation, exact-source SQLite gating and
+runtime identity, semantic schema validation, a real Godot UDS bridge, a
+single-resident 3,000-packet matrix, and an observed bounded failure matrix.
+The full 3,600-second injected soak and child `/proc` census remain non-pass
+(`NOT RUN` and `FAILED`, respectively); the phase is not accepted. Protected
+primary Graft edits remain untouched. Architecture v1.0 is adopted and later
+roadmap phases remain closed.
+
+The subsequent runtime evidence correction observes process-owned network
+sockets with `ss` and preserves the expected dumpable-hardening `/proc` denial
+as an explicit limitation. The corrected lifecycle check passed; continuous
+3,600-second residency and broader display/SQLite fault surfaces remain
+unqualified.
+
+The final evidence run includes a fail-closed startup-race failure followed by
+a corrected `3,600`-second resident soak (`60` samples, zero failures, four
+injections, zero process-owned network sockets, no checkout writes). The soak
+is bounded E3 engineering evidence only; the Phase 01 candidate still awaits
+independent Architect review and no later phase is open.

@@ -51,3 +51,14 @@ statically links the cached 3.53.4 amalgamation; the resulting binary reports
 input use a visible development fallback and do not receive an exact-version
 claim. Full crash, power-loss, migration and long-duration qualification
 remain unqualified.
+
+## Architect Review 02 continuation
+
+`build.rs`, `bootstrap.sh`, and `verify.sh` now require the exact private
+SQLite 3.53.4 amalgamation and verify its SHA-256 before compiling; the host
+library is available only through an explicit nonauthoritative developer
+fallback. Runtime health reports `sqlite3_libversion`, `sqlite3_sourceid`, and
+`sqlite3_compileoption_get` values. `scripts/sqlite_identity_check.py` asserts
+the accepted version/source identity and source digest against a live resident
+supervisor. The bounded store smoke remains synthetic and does not claim
+lifetime, power-loss, or release reliability.

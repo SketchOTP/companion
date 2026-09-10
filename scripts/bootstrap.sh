@@ -15,9 +15,11 @@ command -v cargo >/dev/null || { echo "cargo 1.98.1 is required in QUAL_ROOT" >&
 test "$(rustc --version | awk '{print $2}')" = "1.98.1"
 test -x "$COMPANION_SQLITE_BIN" || { echo "exact SQLite 3.53.4 artifact missing from private cache" >&2; exit 2; }
 test -f "${COMPANION_SQLITE_SOURCE:-}" || { echo "exact SQLite 3.53.4 amalgamation missing from private cache" >&2; exit 2; }
+test "$(sha256sum "$COMPANION_SQLITE_SOURCE" | awk '{print $1}')" = "b1dd5d74ec7f29055a6684fa06fb3c2f6821c87dd38f9a458dfd2e8a1db28189" || { echo "SQLite 3.53.4 source digest mismatch" >&2; exit 2; }
 python3 scripts/verify_artifacts.py
 cargo build --workspace --locked --release
 cargo test --workspace --locked
+python3 scripts/sqlite_identity_check.py --output "$COMPANION_XDG_ROOT/sqlite-identity-results.json"
 python3 scripts/validate_schemas.py
 python3 scripts/foundation_runtime_check.py --output "$COMPANION_XDG_ROOT/runtime-results.json"
 python3 scripts/storage_smoke.py --output "$COMPANION_XDG_ROOT/storage-results.json"

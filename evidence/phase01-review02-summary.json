@@ -1,0 +1,55 @@
+{
+  "schema": "companion-phase01-review02-summary-v1",
+  "evidence_commit": "PENDING_FINAL_COMMIT",
+  "architecture": "v1.0 adopted and unchanged",
+  "roadmap_phase_01": "active; not accepted",
+  "product_implementation": "closed",
+  "dependency_adoption": "none beyond explicitly authorized Phase 01 baseline",
+  "checks": {
+    "rust_locked_debug_release": "PASSED",
+    "rust_fmt_clippy_tests": "PASSED",
+    "schemas_semantic_validation": "PASSED",
+    "rust_schema_crosswalk": "PASSED",
+    "resident_3000_cycle_matrix": "PASSED",
+    "failure_recovery_matrix": "PASSED",
+    "direct_care_smoke": "PASSED",
+    "sqlite_exact_identity": "PASSED",
+    "sqlite_storage_smoke": "PASSED",
+    "godot_uds_headless_smoke": "PASSED",
+    "runtime_health_and_network_observation": "PASSED",
+    "sbom_generation": "PASSED",
+    "offline_policy_scan": "PASSED_LIMITED",
+    "continuous_3600_second_soak": "PASSED",
+    "target_display_loss_and_restore": "NOT RUN",
+    "vulnerability_database_scan": "NOT RUN",
+    "legal_license_review": "NOT RUN"
+  },
+  "exact_artifacts": {
+    "rust": "1.98.1",
+    "godot": "4.7.2.stable.official.ed1daf0bf",
+    "godot_archive_sha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4",
+    "sqlite": "3.53.4",
+    "sqlite_source_id": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+    "sqlite_source_sha256": "b1dd5d74ec7f29055a6684fa06fb3c2f6821c87dd38f9a458dfd2e8a1db28189"
+  },
+  "soak": {
+    "status": "PASS",
+    "started_utc": "2026-09-10T13:10:15Z",
+    "ended_utc": "2026-09-10T14:10:15Z",
+    "duration_seconds": 3600,
+    "samples": 60,
+    "failures": [],
+    "injections": [
+      "companion-core:restart",
+      "sensor-gateway:rotate",
+      "godot-bridge:restart",
+      "care-core:fail"
+    ],
+    "resident_supervisor_observed": true,
+    "checkout_write_detected": false,
+    "network_owned_count_max": 0,
+    "evidence_ceiling": "E3_TARGET_TESTED",
+    "claim_boundary": "resident synthetic engineering soak with controlled failures; not production reliability or safety efficacy"
+  },
+  "claim_boundary": "Bounded synthetic engineering evidence only; no product capability, safety efficacy, security certification, production reliability, or SLA claim."
+}

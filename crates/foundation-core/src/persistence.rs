@@ -28,6 +28,7 @@ const SQLITE_TRANSIENT: usize = usize::MAX;
 unsafe extern "C" {
     fn sqlite3_libversion() -> *const c_char;
     fn sqlite3_sourceid() -> *const c_char;
+    fn sqlite3_compileoption_get(index: c_int) -> *const c_char;
     fn sqlite3_open_v2(
         filename: *const c_char,
         db: *mut *mut sqlite3,
@@ -99,6 +100,25 @@ pub fn runtime_identity() -> (String, String) {
                 .into_owned(),
         )
     }
+}
+
+/// Return the compile-time options exposed by the linked SQLite build. This
+/// is evidence metadata only; acceptance still requires the exact source
+/// digest and runtime version/source-id checks in the verification harness.
+pub fn runtime_compile_options() -> Vec<String> {
+    let mut options = Vec::new();
+    for index in 0..256 {
+        let value = unsafe { sqlite3_compileoption_get(index) };
+        if value.is_null() {
+            break;
+        }
+        options.push(
+            unsafe { CStr::from_ptr(value) }
+                .to_string_lossy()
+                .into_owned(),
+        );
+    }
+    options
 }
 
 pub struct Store {

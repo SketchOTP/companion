@@ -508,3 +508,30 @@ format, clippy, workspace tests, schema validation, storage/direct-care smoke,
 and runtime lifecycle checks pass. Target-host display recovery, broad kill
 matrix, exact host SQLite 3.53.4 identity, and a full injected continuous
 60-minute soak remain unqualified. Phase 01 remains unaccepted pending review.
+
+## COMPANION-P01-FOUNDATION-001 — Architect Review 02 continuation (2026-09-10)
+
+- Live resident health/readiness, direct-care HMAC/channel rotation, exact
+  SQLite source gating/runtime identity, semantic schema checks, Godot UDS
+  handshake, one-resident 3,000-packet matrix, and bounded failure/recovery
+  observations were added on the existing branch.
+- `scripts/verify.sh` failed at the `/proc` census because child-level
+  `PR_SET_DUMPABLE=0` blocks descriptor inspection; the failure is preserved.
+- The required 3,600-second injected soak was not run. Phase 01 remains a
+  candidate for independent Architect review; Architecture v1.0 is adopted,
+  Phase 02+ and product implementation remain closed, and no dependency or
+  capability is self-approved.
+
+## COMPANION-P01-FOUNDATION-001 — evidence correction (2026-09-10)
+
+- Corrected `foundation_runtime_check.py` to observe process-owned network
+  sockets with `ss -H -tunp`; the expected `PR_SET_DUMPABLE=0` `/proc` denial is
+  retained as an explicit limitation.
+- Rebuilt the resident producer/care lifecycle so readiness markers are
+  published after role initialization and both roles remain resident until
+  supervisor shutdown. The failure matrix passed after this correction.
+- The first 3,600-second soak failed closed on a startup control-socket race;
+  the driver now waits for readiness. A fresh resident 3,600-second run passed
+  with 60 samples, zero failures, four injections, zero process-owned network
+  sockets, and no checkout writes. This remains bounded E3 engineering
+  evidence and a candidate for independent Architect review.

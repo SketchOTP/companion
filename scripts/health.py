@@ -9,7 +9,7 @@ def main():
     sock_path = root / "supervisor.sock"
     state={"version":"companion-foundation/0.1.0","timestamp_utc":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),"network_default":"deny","privacy_class":"PUBLIC_METADATA","supervisor":"not_running","children":[]}
     try:
-        s=socket.socket(socket.AF_UNIX,socket.SOCK_STREAM); s.settimeout(1); s.connect(str(sock_path)); state.update(json.loads(s.recv(65536))); s.close()
+        s=socket.socket(socket.AF_UNIX,socket.SOCK_STREAM); s.settimeout(1); s.connect(str(sock_path)); s.sendall(b'{"command":"health"}\n'); s.shutdown(socket.SHUT_WR); payload=s.recv(65536); s.close(); response=json.loads(payload); state.update(json.loads(response["health"]) if "health" in response else response)
     except OSError as exc: state.update({"supervisor":"unavailable","known_degradation":"supervisor control socket unavailable","error_class":type(exc).__name__})
     print(json.dumps(state,indent=2,sort_keys=True) if args.json else f"foundation supervisor: {state.get('status', state['supervisor'])}")
 if __name__=="__main__": main()

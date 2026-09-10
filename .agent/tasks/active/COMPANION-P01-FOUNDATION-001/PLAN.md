@@ -65,3 +65,36 @@ smoke, headless and bounded visible Godot probes, SBOM generation, and a
 separate synthetic process and its sanitized result remains outside the
 repository until completion. No system package, persistent service, product
 runtime, media, model, or later-phase behavior was introduced.
+
+## Architect Review 02 continuation — current run
+
+The continuation hardens the resident control plane and contract boundary. It
+adds post-initialization readiness markers, live child-state health (including
+retained producer pidfd liveness), versioned health/fail/restart/rotate/shutdown
+commands, direct-care channel rebuild with generation and capability rotation,
+RustCrypto HMAC verification over canonical bytes, exact-source SQLite digest
+gating and runtime compile-option identity, semantic schema fixtures/crosswalk,
+and a real Godot 4.7 `StreamPeerUDS` handshake. The one-resident matrix now
+drives 3,000 packets across retained seeds in a single supervisor lifetime;
+the bounded failure matrix exercises observed restart/rotation/recovery.
+
+The target-host 3,600-second injected soak remains intentionally `NOT RUN` in
+this turn, and `/proc` census is `FAILED` when child dumpability hardening
+blocks descriptor inspection. These are preserved as acceptance blockers, not
+converted to passes.
+
+## Evidence correction — 2026-09-10
+
+The runtime validation was tightened to distinguish expected dumpable-hardening
+`/proc` denial from the independent process-owned network census. The corrected
+run passed the lifecycle and no-egress observations. No source, host policy, or
+security setting was weakened; the 3,600-second continuous soak remains a
+required, unrun gate.
+
+## Final soak execution — 2026-09-10
+
+The first full-duration run failed closed on a startup race before the control
+socket was available. The harness was corrected to wait for explicit endpoint
+readiness, then rerun for the full 3,600 seconds. The corrected result passed
+with 60 samples, zero failures, and all four controlled injections; the exact
+timestamps and bounded evidence ceiling are recorded in the evidence summary.

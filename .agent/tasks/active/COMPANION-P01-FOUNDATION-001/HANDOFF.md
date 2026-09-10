@@ -74,6 +74,27 @@ Architecture v1.0 remains adopted, Roadmap Phase 02+ remain closed, and no
 product capability or dependency beyond the authorized baseline is
 self-approved.
 
+## Final resident soak correction — 2026-09-10
+
+The first 3,600-second run failed closed on a control-socket startup race and
+is retained as failed evidence. The corrected driver waited for supervisor
+readiness; its fresh full run passed from `2026-09-10T13:10:15Z` to
+`2026-09-10T14:10:15Z` with 60 samples, zero failures, four required
+injections, zero process-owned network sockets, and no checkout writes. The
+result is bounded `E3_TARGET_TESTED` engineering evidence. The branch remains
+a Phase 01 candidate awaiting Architect review; Architecture v1.0 remains
+adopted, Roadmap Phase 02+ and product implementation remain closed.
+
+## Evidence correction — current run
+
+The prior `/proc` census failure is preserved as history. The corrected
+checker records that child descriptor traversal is intentionally denied by
+`PR_SET_DUMPABLE=0` and uses process-owned `ss -H -tunp` output for the
+network observation. The corrected run passed with live readiness, synthetic
+care coverage, zero owned network sockets, and clean shutdown. Phase 01 remains
+a candidate pending the required continuous injected soak and other explicitly
+unqualified surfaces; no product or dependency adoption is claimed.
+
 ## Review 01 continuation — current technical result
 
 The current secondary worktree contains a resident supervisor implementation,
@@ -114,3 +135,22 @@ prior handoff reconciliation is the CI checkout `fetch-depth: 0`, required
 for the committed evidence-ancestry validator. Both resulting CI runs
 passed. The candidate remains unaccepted pending the explicitly unrun
 continuous injected soak and recovery/fault matrices.
+
+## Architect Review 02 continuation — current result
+
+The branch now contains the focused resident-integration hardening: exact
+RustCrypto HMAC and schema-aligned safety packets, post-init readiness/live
+health, retained producer pidfd reporting, direct-care generation/channel
+rebuild and capability rotation, mandatory verified SQLite source builds and
+runtime identity reporting, semantic nine-schema fixtures, real Godot UDS
+handshake, one-resident 3,000-packet matrix, and an observed failure/recovery
+matrix. The Godot and systemd evidence ceilings remain bounded engineering
+observations only.
+
+`scripts/verify.sh` reached the runtime census and failed because hardened
+children deny `/proc/<pid>/fd` inspection (`PermissionError`); this is recorded
+as a failed check, not suppressed. The continuously resident 3,600-second
+injected soak was not run in this correction cycle. The branch therefore
+remains a Phase 01 candidate awaiting Architect review; Architecture v1.0 is
+unchanged, Phase 02+ remain closed, and no dependency or product capability is
+self-approved.

@@ -7,14 +7,20 @@ var topology := DisplayTopology.new()
 enum BridgeState { CONNECTING, CONNECTED, DEGRADED, DISCONNECTED, INCOMPATIBLE }
 var bridge_state: BridgeState = BridgeState.CONNECTING
 var status := "FOUNDATION / BRIDGE: CONNECTING"
-var target_screen := 0
+var target_screen := DisplayServer.get_primary_screen()
 var min_size := Vector2i(320, 180)
 var max_size := Vector2i(1366, 768)
 var reconnect_attempts := 0
+var bridge_peer: StreamPeerUDS
+var bridge_socket_path := ""
 
 func _ready() -> void:
 	set_process(true)
 	_restore_geometry()
+	var configured_screen := OS.get_environment("COMPANION_TARGET_SCREEN")
+	if configured_screen.is_valid_int():
+		target_screen = configured_screen.to_int()
+	bridge_socket_path = _bridge_socket_path()
 	_apply_screen_policy()
 	_poll_bridge()
 	queue_redraw()
@@ -24,22 +30,37 @@ func _process(_delta: float) -> void:
 	queue_redraw()
 
 func _poll_bridge() -> void:
-	# The bridge handshake is local and versioned. A missing bridge is an
-	# explicit degraded state; it never fabricates a connected product state.
-	var marker := "user://foundation_bridge_v1.json"
-	if not FileAccess.file_exists(marker):
+	# The bridge handshake is a real local versioned Unix-domain connection.
+	# Missing or incompatible bridge state is explicit degradation.
+	if bridge_peer == null or bridge_peer.get_status() != StreamPeerSocket.STATUS_CONNECTED:
+		bridge_peer = StreamPeerUDS.new()
+		var connect_error := bridge_peer.connect_to_host(bridge_socket_path)
+		if connect_error != OK:
+			bridge_state = BridgeState.DISCONNECTED
+			status = "FOUNDATION / BRIDGE: DISCONNECTED"
+			reconnect_attempts += 1
+			return
+		var request := JSON.stringify({"protocol": "companion-foundation-v1", "schema_major": 1}).to_utf8_buffer()
+		bridge_peer.put_data(request)
+	if bridge_peer.get_available_bytes() <= 0:
 		bridge_state = BridgeState.DISCONNECTED
 		status = "FOUNDATION / BRIDGE: DISCONNECTED"
 		return
-	var file := FileAccess.open(marker, FileAccess.READ)
-	var parsed = JSON.parse_string(file.get_as_text()) if file else null
-	if parsed is Dictionary and parsed.get("protocol") == "companion-foundation-v1":
+	var response := bridge_peer.get_data(bridge_peer.get_available_bytes())
+	var parsed = JSON.parse_string(response[1].get_string_from_utf8()) if response[0] == OK else null
+	if parsed is Dictionary and parsed.get("protocol") == "companion-foundation-v1" and parsed.get("state") == "connected":
 		bridge_state = BridgeState.CONNECTED
 		status = "FOUNDATION / BRIDGE: CONNECTED"
 		reconnect_attempts = 0
 	else:
 		bridge_state = BridgeState.INCOMPATIBLE
 		status = "FOUNDATION / BRIDGE: INCOMPATIBLE"
+
+func _bridge_socket_path() -> String:
+	var root := OS.get_environment("COMPANION_XDG_ROOT")
+	if root.is_empty():
+		root = OS.get_environment("XDG_RUNTIME_DIR")
+	return root.path_join("companion").path_join("godot-bridge.sock")
 
 func _apply_screen_policy() -> void:
 	var screens := DisplayServer.get_screen_count()
@@ -60,7 +81,7 @@ func _notification(what: int) -> void:
 		get_tree().quit()
 
 func _persist_geometry() -> void:
-	var payload := {"position": DisplayServer.window_get_position(), "size": DisplayServer.window_get_size()}
+	var payload := {"output": target_screen, "position": DisplayServer.window_get_position(), "size": DisplayServer.window_get_size()}
 	var file := FileAccess.open("user://foundation_geometry.json", FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(payload))
@@ -73,7 +94,13 @@ func _restore_geometry() -> void:
 		return
 	var parsed = JSON.parse_string(file.get_as_text())
 	if parsed is Dictionary and parsed.has("size"):
-		var size: Vector2i = parsed["size"]
+		if parsed.has("output"):
+			target_screen = int(parsed["output"])
+		if parsed.has("position") and parsed["position"] is Array and parsed["position"].size() == 2:
+			DisplayServer.window_set_position(Vector2i(int(parsed["position"][0]), int(parsed["position"][1])))
+		if not parsed["size"] is Array or parsed["size"].size() != 2:
+			return
+		var size := Vector2i(int(parsed["size"][0]), int(parsed["size"][1]))
 		if size.x >= 320 and size.y >= 180:
 			DisplayServer.window_set_size(size)
 

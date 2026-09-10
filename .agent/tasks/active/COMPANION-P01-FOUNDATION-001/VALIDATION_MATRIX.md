@@ -100,3 +100,51 @@ the historical record:
 
 No later-phase capability, production dependency decision, safety efficacy,
 security certification, or reliability/SLA claim is made by these results.
+
+## Architect Review 02 continuation validation — 2026-09-10
+
+1. `PASSED` — protected primary worktree remained untouched; secondary had
+   only the pre-existing operator `.gitignore` modification before edits.
+2. `PASSED` — current Architect review was merged normally; no rebase/reset or
+   force-push was used.
+3. `PASSED` — exact SQLite source digest was checked before compilation and
+   runtime health exposed version `3.53.4`, source ID and compile options.
+4. `PASSED` — locked format, clippy, workspace tests, and release build with
+   the exact source.
+5. `PASSED` — all nine schemas exercised by deterministic positive/negative
+   semantic validation and Rust field/type crosswalk.
+6. `PASSED` — one resident process foundation delivered 3,000 accepted
+   packets plus one duplicate rejection across retained seeds.
+7. `PASSED` — resident failure matrix observed companion restart, producer
+   channel/generation/capability rebuild, care outage/recovery, bridge restart,
+   and shutdown.
+8. `PASSED` — headless Godot 4.7.2 `StreamPeerUDS` handshake observed.
+9. `FAILED` — `/proc` descriptor census returned `PermissionError` for all
+   hardened children; no false no-egress pass is reported.
+10. `NOT RUN` — required continuously resident 3,600-second injected soak.
+11. `NOT RUN` — target-host display-loss and broad adversarial descriptor
+   matrix; later-phase SQLite VFS/power-loss qualification remains deferred.
+
+The failed/Not Run items keep Phase 01 unaccepted pending independent review.
+
+## Evidence correction validation — 2026-09-10
+
+12. `PASSED` — corrected runtime lifecycle checker observed resident readiness,
+    synthetic care coverage, zero process-owned AF_INET/AF_INET6 sockets using
+    `ss -H -tunp`, and clean shutdown. The intentional child `/proc/<pid>/fd`
+    denial is retained as an explicit observability limitation.
+13. `PASSED` — producer and care services now emit readiness after their
+    role-specific work and then remain resident until supervisor shutdown.
+14. `NOT RUN` — the continuously resident 3,600-second injected soak.
+
+The phase remains a candidate; no non-pass was reclassified as product,
+security, reliability, or safety capability.
+
+15. `PASSED` — first full-duration soak failed closed on a startup race and was
+    preserved; the corrected driver waits for control-socket readiness.
+16. `PASSED` — corrected resident soak completed 3,600 seconds with 60 samples,
+    zero failures, four injections, zero process-owned network sockets, and no
+    checkout writes (`E3_TARGET_TESTED`).
+17. `PASSED` — soak evidence remains bounded synthetic engineering evidence;
+    no production reliability, safety efficacy, or later-phase capability is
+    claimed.

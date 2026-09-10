@@ -1,1 +1,18 @@
-{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://companion.local/schema/safety-candidate-v1.json","type":"object","additionalProperties":false,"required":["schema_major","message_id","producer_generation","capability","observed_at","confidence_milli","quality_milli","replay"],"properties":{"schema_major":{"const":1},"message_id":{"type":"string","format":"uuid"},"producer_generation":{"type":"string","minLength":1},"capability":{"type":"string","minLength":1},"observed_at":{"type":"string","format":"date-time"},"confidence_milli":{"type":"integer","minimum":0,"maximum":1000},"quality_milli":{"type":"integer","minimum":0,"maximum":1000},"replay":{"type":"boolean"}}}
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://companion.local/schema/safety-candidate-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_major", "message_id", "producer_generation", "auth_scheme", "mac", "observed_at", "confidence_milli", "quality_milli", "replay"],
+  "properties": {
+    "schema_major": {"const": 1},
+    "message_id": {"type": "string", "format": "uuid"},
+    "producer_generation": {"type": "string", "minLength": 1},
+    "auth_scheme": {"const": "hmac-sha256-jcs-v1"},
+    "mac": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "confidence_milli": {"type": "integer", "minimum": 0, "maximum": 1000},
+    "quality_milli": {"type": "integer", "minimum": 0, "maximum": 1000},
+    "replay": {"type": "boolean"}
+  }
+}

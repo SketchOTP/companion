@@ -38,3 +38,13 @@ window geometry. `godot-bridge` writes a local versioned handshake state under
 the private runtime root. Renderer, media, sprite, and production embodiment
 behavior remain out of scope; target-host display-loss recovery is still
 unqualified until exercised.
+
+## Architect Review 02 continuation
+
+`godot-bridge` now creates a private runtime UDS and serves the versioned
+`companion-foundation-v1` handshake. The Godot 4.7 shell uses
+`StreamPeerUDS`, configurable `COMPANION_TARGET_SCREEN`, persisted output/
+position/size, and explicit disconnected/incompatible/degraded states. The
+headless smoke observed handshake success and a clean degraded run after bridge
+termination. Target-host display-loss recovery and production embodiment remain
+unqualified.

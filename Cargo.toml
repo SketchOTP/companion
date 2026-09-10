@@ -12,6 +12,7 @@ rust-version = "1.98"
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = { version = "1.0.145", features = ["preserve_order"] }
 sha2 = "0.10.9"
+hmac = "0.12.1"
 libc = "0.2.176"
 thiserror = "2.0.17"
 tracing = "0.1.41"

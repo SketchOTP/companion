@@ -162,3 +162,47 @@ matching the remote branch. The workflow now retains full Git history so the
 accepted-qualification evidence validator can verify ancestry on CI; both
 push and pull-request runs passed. Phase 01 remains a candidate pending the
 continuous injected soak and recovery/fault gates listed below.
+
+## Architect Review 02 continuation — 2026-09-10
+
+The final-integration correction is implemented on the existing task branch.
+The resident supervisor now publishes post-initialization readiness markers,
+live liveness/health states, retained producer pidfd liveness, control-command
+driven ordinary restart and direct-care channel/generation/capability rebuild.
+The wire contract uses `auth_scheme` plus `mac` and RustCrypto HMAC verification
+over canonical bytes. Exact SQLite source digest verification is mandatory in
+acceptance builds and CI, and health exposes runtime version/source-id/options.
+All nine schemas have positive/negative semantic checks; Godot uses a real
+`StreamPeerUDS` bridge; the cycle matrix is one resident 3,000-packet run; and
+the failure matrix exercises observed restart/rotation/recovery.
+
+The current local verify run fails at `/proc` census because `PR_SET_DUMPABLE=0`
+correctly prevents child descriptor inspection (`PermissionError`), and the
+required continuously resident 3,600-second injected soak was not run. These
+remain explicit acceptance blockers. Architecture v1.0 remains adopted,
+Roadmap Phase 02+ remain closed, and no product capability or dependency is
+self-approved.
+
+## Review 02 evidence correction — 2026-09-10
+
+The runtime checker now records the intentional `/proc/<pid>/fd` denial as an
+observability limitation while using `ss -H -tunp` to observe AF_INET/AF_INET6
+ownership for the supervisor and children. The corrected lifecycle check
+passed with zero owned network sockets, live readiness, synthetic care
+coverage, and clean shutdown. The resident producer and care services now
+publish readiness before entering their steady-state loops. Phase 01 remains a
+candidate until the required continuous injected soak and broader deferred
+recovery surfaces are independently reviewed.
+
+## Phase 01 final integration evidence — 2026-09-10
+
+The first 3,600-second soak attempt failed closed on one startup
+`FileNotFoundError` while the supervisor control socket was still binding
+(`59` samples); that failure is retained as history. The driver now waits for
+the control socket before polling. A fresh full run passed with one resident
+supervisor, `60` samples over `3,600` seconds, zero failures, the four required
+synthetic injections, zero process-owned network sockets, and no checkout
+writes (`2026-09-10T13:10:15Z`–`2026-09-10T14:10:15Z`). This is bounded E3
+engineering evidence, not production reliability, safety efficacy, or Phase 01
+acceptance. The candidate remains for Architect review; Architecture v1.0 is
+adopted, later phases and product implementation remain closed.

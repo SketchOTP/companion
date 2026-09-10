@@ -261,3 +261,19 @@ evidence. The resident supervisor, direct-care boundary, SQLite/XDG/library
 corrections, live health, and actual packet-cycle runner were updated without
 opening Phase 02 or introducing product behavior. Remaining unqualified gates
 are recorded in the task validation matrix and handoff.
+
+## COMPANION-P01-FOUNDATION-001 — Architect Review 02 continuation (2026-09-10)
+
+Continue the existing phase-sized PR with resident integration hardening. The
+authorized scope covers live readiness/health and lifecycle control, direct-care
+RustCrypto HMAC and channel rotation, exact SQLite source/runtime identity,
+semantic contract validation, real Godot UDS handshake, observed failure
+matrix, and one-resident message matrix. The 3,600-second injected soak and
+any host modification remain unrun/non-authorized. Do not merge PR #7, open
+later phases, or claim product/security/reliability capability.
+
+The initial full-duration soak failed closed on a startup race. After an
+explicit control-socket readiness wait, a fresh 3,600-second resident run
+passed; its exact timestamps, samples, injections, and bounded evidence
+ceiling are recorded in `evidence/phase01-review02-summary.json`. The PR
+remains unmerged and Phase 01 remains subject to independent review.

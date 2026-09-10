@@ -52,3 +52,22 @@ before reporting durable acceptance. The supervisor is trusted for lifecycle
 and provisioning, not domain or care decisions. Complete producer replacement,
 pidfd race, and broad adversarial evidence remain unqualified until separately
 run.
+
+## Architect Review 02 continuation
+
+Readiness is now written after each role completes initialization. The
+supervisor health response derives `state` (`starting`, `healthy`, `failed`,
+`crash_loop`, or `degraded`) from live child handles and readiness markers and
+retains a producer pidfd with an observable liveness poll. Versioned local
+control commands support health, fail/restart/rotate and shutdown. Killing a
+direct producer or care child closes the old socketpair, reaps the peer,
+rotates the UUID generation and capability bytes, and starts a fresh pair;
+the supervisor remains the trusted lifecycle/capability provisioner.
+
+The direct-care packet is schema-aligned (`auth_scheme`, canonical `mac`,
+UUID message id, observed timestamp, bounded quality/confidence) and uses the
+RustCrypto `hmac` verification API with a domain separator. Runtime tests
+observed the one-resident packet matrix and bounded restart/rotation/outage
+matrix. `/proc` descriptor census is intentionally recorded as failed when
+child dumpability hardening returns `PermissionError`; root/kernel/full-account
+and compromised-authorized-producer threats remain outside the ceiling.
