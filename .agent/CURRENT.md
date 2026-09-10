@@ -2,97 +2,88 @@
 
 ## Current stage
 
-Planning Phase 02 — Master Delivery Roadmap remains active.
+Planning Phase 02 remains the governing delivery roadmap.
 
-Roadmap Phase 00 — Planning and Product Contract remains active. Architecture v1.0 is adopted. `COMPANION-P00-QUAL-001` is continued under Architect Review 03 for one narrow evidence-binding correction. Roadmap Phase 01, dependency adoption, and ordinary product implementation remain closed.
+Roadmap Phase 00 has satisfied its implementation-opening gate. Architecture v1.0 remains adopted. Roadmap Phase 01 — Environment and Engineering Foundation is active under `COMPANION-P01-FOUNDATION-001`.
 
-## Current objective
+## Active objective
 
-Bind the final-hardening qualification evidence to exact provenance and observed runner outcomes without broadening scope:
+Complete the entire Roadmap Phase 01 engineering foundation in one phase-sized run. The repository must become a reproducible, executable, observable local foundation containing:
 
-1. Recompute and validate committed result-file and fixture hashes.
-2. Correct timestamp precision and record exact `canonicalize@5.0.0` source identity.
-3. Add a reproducible results-regeneration procedure.
-4. Make IPC pass fields observed, explicitly code-inspected, or removed; assert every required runtime outcome.
-5. Align JCS/toolchain claims with exact executed results.
-6. Tie SQLite overlap and fault conclusions to explicit before/after state and exact count relations.
-7. Reconcile PR #5, Notion, Issue #4, and Authority records without adopting a dependency or opening Phase 01.
+1. a locked Rust 1.98.1 workspace and exact artifact bootstrap;
+2. versioned contracts, canonical fixtures and negative tests;
+3. XDG path enforcement and refusal of canonical state on SSHFS or inside the checkout;
+4. Rust shells for `ops-supervisor`, `companion-core`, `care-core`, `identity-consent-vault`, `sensor-gateway`, and `godot-bridge`;
+5. a direct synthetic safety path to `care-core` independent of `companion-core`;
+6. separate single-writer SQLite 3.53.4 development stores;
+7. a Godot 4.7.2 bounded resizable habitat shell on the selected Openbox display;
+8. structured health, logging, CI, SBOM, license and provenance evidence;
+9. a 1,000-cycle deterministic integration matrix and 60-minute target-host soak.
 
 ## Active directive
 
-- Directive: `COMPANION-P00-QUAL-001`
-- Status: `ARCHITECT REVIEW 03 — NARROW EVIDENCE-BINDING CORRECTION REQUIRED`
-- Original verified pre-directive baseline: `4cfb0d5d62cd85737f88cd151d250ccf292a7e6d`
-- Task-packet publication: `f8fc3149fcf039d2cec468aa8c3a37acdaf620d9`
-- Reviewed final-hardening head: `fd6f4752ed4fed33c79bbcf8d1da2475724c40ba`
-- Required hardening merge: `bbbe5cedd8f82779e3f3d3c369cfb70ba99e9135`
-- Focused hardening commit: `65ba92299338ae5b0484579cd089fa3bc7d99b28`
-- Final hardening reconciliation: `fd6f4752ed4fed33c79bbcf8d1da2475724c40ba`
-- Architect Review 01 commit: `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`
-- Architect Review 02 commit: `0cce392a3706f26530d0bccf00d095c444b18279`
-- Architect Review 03 repository authority: `.agent/tasks/active/COMPANION-P00-QUAL-001/ARCHITECT_REVIEW_03.md`
-- Architect Review 03 Notion authority: https://app.notion.com/p/3d6833cb27ff81b38ea9e132d31888ab
-- Notion directive: https://app.notion.com/p/3d6833cb27ff815e90e8de161e6de185
-- Required Notion report: https://app.notion.com/p/3d6833cb27ff81c7a89acb29ced1a1cc
-- GitHub Issue #4: https://github.com/SketchOTP/companion/issues/4
-- Pull request #5: https://github.com/SketchOTP/companion/pull/5
-- Active packet: `.agent/tasks/active/COMPANION-P00-QUAL-001/`
-- Required task branch: `codex/p00-qual-001`
-- Required publication: existing draft/unmerged PR #5
+- Directive: `COMPANION-P01-FOUNDATION-001`
+- Status: `ISSUED — ACTIVE`
+- Accepted qualification merge baseline: `80dab0c1942e4a799328a957331381104b892945`
+- Notion directive: https://app.notion.com/p/3d7833cb27ff815ebe3ed1999f05beba
+- Required Notion report: https://app.notion.com/p/3d7833cb27ff81c5b0eee3e6c98b54b5
+- GitHub Issue #6: https://github.com/SketchOTP/companion/issues/6
+- Active packet: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/`
+- Required branch: `codex/p01-foundation-001`
+- Required publication: one unmerged pull request to `main`
 - Acceptance authority: ChatGPT AI Architect
-- Roadmap Phase 01: `CLOSED`
-- Product implementation: `CLOSED`
+- Roadmap Phase 02 and later: `CLOSED`
+- Product capability claims: `PROHIBITED`
 
-## Adopted architecture authority
+## Completed qualification gate
 
-- Canonical Architecture v1.0: https://app.notion.com/p/3d6833cb27ff81e99c52dc33b53f2556
-- Architecture acceptance review: https://app.notion.com/p/3d6833cb27ff81d88785f64d0629286c
-- Repository mirror: `.agent/ARCHITECTURE_V1.md`
-- Accepted architecture/archive commit: `4cfb0d5d62cd85737f88cd151d250ccf292a7e6d`
-- Completed architecture packet: `.agent/tasks/completed/COMPANION-P00-ARCH-001/`
-- GitHub Issue #3: closed as completed
+- Directive: `COMPANION-P00-QUAL-001`
+- Final reviewed head: `75740ad399f6d3068f3061821f058a2bb461b9e6`
+- Merge commit: `80dab0c1942e4a799328a957331381104b892945`
+- Architect acceptance: https://app.notion.com/p/3d6833cb27ff819fabc2e5c9cb443aae
+- GitHub PR #5: merged
+- GitHub Issue #4: closed as completed
+- Archived packet: `.agent/tasks/completed/COMPANION-P00-QUAL-001/`
+
+The accepted evidence remains bounded. It establishes no organism, memory, embodiment, speech, vision, learning, dreaming, caregiving, notification, security-certification, lifetime-reliability or product capability.
+
+## Adopted Phase 01 technology direction
+
+- Authoritative service foundations: Rust 1.98.1.
+- Python: qualification tooling and future nonauthoritative model/perception adapters only.
+- Embodiment engine: exact official Godot 4.7.2 Linux x86_64 artifact.
+- Persistence: exact SQLite 3.53.4 for separate single-writer local development stores; release qualification remains conditional.
+- Direct-care transport: supervisor-created private `AF_UNIX` `SOCK_SEQPACKET`, kernel credentials, pidfd/generation binding, rotated capability material and care-owned receipts under the documented threat ceiling.
+- Supervision: project-owned Rust `ops-supervisor`; systemd-user may be an optional non-installed outer launcher.
+- Canonical event profile: `JCS-RFC8785-v1` / `sha-256-jcs-event-v1`, bounded to authoritative integer/fixed-point/string values.
+- Storage: local XDG paths on ext4/NVMe; no canonical database, WAL, lock, runtime socket or backup staging in the SSHFS checkout.
+
+Exact runtime crate versions remain subject to the active directive's dependency envelope, locks, rights review and Architect acceptance of the resulting pull request.
 
 ## Protected operator work
 
-The primary SSHFS worktree contains operator-owned uncommitted Graft changes to root `.gitignore` and `AGENTS.md`. They remain protected. Codex must continue only in the clean local-ext4/NVMe secondary worktree and must not commit, discard, reset, overwrite, stash, reformat, read into evidence, or reinterpret the protected edits.
+The primary SSHFS worktree has operator-owned uncommitted changes to root `.gitignore` and `AGENTS.md`. Codex must not read their modified contents into evidence, commit, discard, reset, overwrite, stash, reformat or otherwise alter them. Work must use a clean secondary worktree on local ext4/NVMe.
 
-## Evidence retained by Architect Review 03
+## Foundation boundary
 
-- Weak same-UID pathname injection: accepted evidence of insufficiency.
-- Actual multi-process `SOCK_SEQPACKET`, kernel-credential, pidfd, generation, capability, restart, replay, and revocation observations: retained as bounded candidate evidence.
-- Python/Rust/oracle bounded profile and release-build timing/resource observations: retained; language remains unselected.
-- SQLite identity, overlap, migration, restore, page-limit, and narrow `xSync` observations: retained as bounded candidate evidence; database remains unselected.
-- Godot 4.7.2 artifact and transient systemd-user evidence: previously accepted and must not be rerun without a material change.
+Phase 01 may implement engineering foundations and synthetic process/store/IPC behavior only. It may not implement or claim:
 
-## Narrow correction boundary
+- mon personality, real needs, drives, goals or autonomy;
+- long-term memory, learning or dreaming;
+- production sprites or Phase 02 embodiment capability;
+- webcam/microphone capture, STT, TTS or model inference;
+- biometrics, real user/contact data or notification delivery;
+- live spoken-help detection, care escalation or safety efficacy;
+- medical, emergency, security-certification, reliability or SLA claims.
 
-Qualification-only source and sanitized result records may remain under `experiments/p00-foundation-qual/`. Generated binaries, toolchains, downloaded artifacts, databases, WAL files, secrets, private paths, and raw machine-specific data remain outside Git.
+## Canonical snapshots
 
-No Rust, IPC mechanism, SQLite, systemd supervisor, canonicalization package, Godot dependency, or other dependency is adopted. No product module, Godot project, media path, biometric, notification, live safety behavior, Phase 01 transition, security certification, reliability claim, or product-capability claim is authorized.
+After the Phase 00 acceptance decisions, the Architecture Decision Ledger contains 52 records by construction: 31 Adopted, 19 Interim and 2 Rejected. The latest Research Evidence Register snapshot is 55 records. Codex must query live Notion before relying on counts.
 
-## Canonical counts at Architect Review 03
+## Delivery cadence
 
-- Architecture decisions: `45` total — `27 Adopted`, `16 Interim`, `2 Rejected`.
-- Research evidence: `55` total.
-
-Counts are snapshots. Codex must query live Notion before publication.
-
-## Correction cycle state
-
-- Architect Review 01: `CONTINUE — FOCUSED CORRECTIONS REQUIRED` (main `9ea7cdbb824a9d5be88181a4374df7a4e593fbbe`).
-- The original Candidate 1/2 IPC, JCS, serial-reader, migration-guard, and count-only restore claims remain historical limitations and are not reused as corrected evidence.
-- Corrected real-process IPC, oracle-backed JCS/profile parity, synchronized SQLite overlap, migration rejection, full backup equivalence, induced page-limit failure, and adapted VFS fault points are target-tested in the secondary worktree; submitted in `07d2bda94c341e72e5aa974f32a99b45b7c806fa`.
-- Final live evidence-register requery returned 55 rows, including Evidence 54 (`pidfd_getfd(2)`) and Evidence 55 (SQLite I/O/crash/concurrency methods); no material authority discrepancy remains.
-- PR #5 and Issue #4 remain open; no merge, adoption, Phase 01 opening, or product capability is authorized.
+Normal work now uses phase-sized or major-milestone-sized directives with internal checkpoints. Codex must complete the whole phase while feasible and may return early only for a precise stop-condition blocker supported by evidence.
 
 ## Next review point
 
-Codex merges current `origin/main` normally into the existing `codex/p00-qual-001` branch, performs only the evidence-binding correction defined by `ARCHITECT_REVIEW_03.md`, updates draft PR #5, Notion, and Issue #4, leaves the PR and issue open, and stops for independent Architect review.
-The prior hardening and reconciliation commits remain historical. This cycle is limited to one narrow evidence-binding correction and at most one publication-reconciliation commit; no merge of PR #5 or adoption follows.
-
-## Review 03 correction status
-
-- Required review merge: `1997e01` (normal merge of `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2`).
-- Committed result bundle is being regenerated from sanitized runner output; current pre-publication result hashes are recorded in `results/provenance.json`.
-- Validator now recomputes result and fixture SHA-256 values, avoids circular validation input, and supports final evidence-commit ancestry binding. The exact evidence commit remains pending until the narrow correction commit is created, followed by one allowed reconciliation commit.
-- IPC and SQLite summaries are derived from fail-closed assertions and explicit evidence classes/state digests. Unsupported JCS claims are removed; queue overflow remains deferred.
+Codex completes the full Phase 01 task packet, pushes `codex/p01-foundation-001`, opens one pull request, publishes the complete Notion report and Issue #6 result, leaves both open, and stops for independent Architect review.
