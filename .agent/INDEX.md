@@ -8,7 +8,7 @@
 - Master roadmap: https://app.notion.com/p/3d5833cb27ff81dd88faeb0c95b6f44e
 - Governance contract: https://app.notion.com/p/3d5833cb27ff81e2b3b2eabc70f9f6b3
 - Adopted Architecture v1.0: https://app.notion.com/p/3d6833cb27ff81e99c52dc33b53f2556
-- Foundation qualification acceptance: https://app.notion.com/p/3d6833cb27ff819fabc2e5c9cb443aae
+- Qualification acceptance: https://app.notion.com/p/3d6833cb27ff819fabc2e5c9cb443aae
 - Approved mon design: https://app.notion.com/p/3d5833cb27ff8108a3acf202fc268b6d
 - Sprite production contract: https://app.notion.com/p/3d5833cb27ff81989d95f604112e25ba
 - Open decisions: https://app.notion.com/p/3d5833cb27ff81118ac8e4139ce1c873
@@ -19,23 +19,21 @@
 - Active roadmap phase: `01 — Environment and Engineering Foundation`
 - Phase acceptance: `NOT GRANTED`
 - Active directive: `COMPANION-P01-FOUNDATION-001`
-- Current continuation: `ARCHITECT REVIEW 03 — EVIDENCE-DRIVEN PHASE CLOSEOUT`
+- Current continuation: `ARCHITECT REVIEW 04 — EVIDENCE SEMANTICS CORRECTION`
+- Reviewed task head: `62f1f08f2878aa6be457183050fbd982afbcb47d`
 - Notion directive: https://app.notion.com/p/3d7833cb27ff815ebe3ed1999f05beba
 - Notion report: https://app.notion.com/p/3d7833cb27ff81c5b0eee3e6c98b54b5
-- Notion Architect Review 03: https://app.notion.com/p/3d7833cb27ff8107ae2ae0078ea57718
+- Notion Architect Review 04: https://app.notion.com/p/3d7833cb27ff81ea95e4e313f695a988
 - GitHub Issue #6: https://github.com/SketchOTP/companion/issues/6
 - Pull request #7: https://github.com/SketchOTP/companion/pull/7
 - Active task packet: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/`
 - Full original directive: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/CODEX_FULL_DIRECTIVE.md`
-- Current review authority: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/ARCHITECT_REVIEW_03.md`
+- Current review authority: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/ARCHITECT_REVIEW_04.md`
 - Required task branch: `codex/p01-foundation-001`
 - Required clean secondary worktree: `YES`
 - Required publication: `CONTINUE EXISTING DRAFT/UNMERGED PR #7`
-- Original Phase 01 baseline: `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`
-- Architect Review 02 main: `4eb57b394573f2c0ee0e0d3385bbaf4fceebd8bc`
-- Reviewed continuation head: `a96a152386b76c7aa133c6f7b478be1ddecbf472`
 - Architecture v1.0: `ADOPTED`
-- Phase 02 and later: `CLOSED`
+- Roadmap Phase 02 and later: `CLOSED`
 - Product capability: `NOT ESTABLISHED`
 
 ## Completed gates
@@ -43,85 +41,82 @@
 - Canonical ingest: `.agent/tasks/completed/COMPANION-P00-INGEST-001/`
 - Linux environment evidence: `.agent/tasks/completed/COMPANION-P00-ENV-001/`
 - Architecture v1.0: `.agent/tasks/completed/COMPANION-P00-ARCH-001/`
-- Foundation technology qualification: `.agent/tasks/completed/COMPANION-P00-QUAL-001/`
+- Foundation qualification: `.agent/tasks/completed/COMPANION-P00-QUAL-001/`
 
-## Review 03 retained progress
+## Review 04 retained implementation
 
-- Rust 1.98.1 workspace and role-specific binaries
+- Rust 1.98.1 workspace and six role binaries
 - exact Godot 4.7.2 and SQLite 3.53.4 identities
-- fail-closed exact SQLite build and runtime identity verification
-- direct SQLite FFI, prepared statements, committed migrations, and store tools
-- corrected XDG defaults and unsafe-placement refusal
-- RustCrypto HMAC, aligned public safety wire fields, private capability pipes,
-  retained producer pidfd, generation rotation, and direct-pair rebuilding
-- resident control socket, post-initialization readiness direction, liveness,
-  signal shutdown, and orphan-cleanup foundations
-- nine schemas and matching Rust types
-- Godot UDS/display topology direction and bounded habitat shell
-- improved SBOM, exact-source CI, green final CI, and preserved negative evidence
-- one bounded 3,600-second resident synthetic soak
+- fail-closed exact SQLite build, direct FFI, prepared statements, and migrations
+- RustCrypto HMAC and aligned safety-message fields
+- private capability pipes, kernel credentials, retained pidfd, generation and
+  direct-pair rotation
+- XDG storage boundaries
+- resident supervisor and control socket
+- care receipt and attempt persistence
+- Godot UDS/reconnect direction
+- exact artifact hashes, lockfile, component inventory, and green CI
+- prior 3,600-second resident run as bounded residency evidence
 
-## Review 03 acceptance blockers
+## Review 04 rejected evidence
 
-- resident control `inject` and `reconnect` commands remain deferred
-- current 3,000-message run is valid-plus-duplicate only; seeds do not vary the
-  system and restart/invalid/recovery categories are absent
-- direct-care raw duplicate-key, malformed-frame, replay, freshness, durable
-  rejected-attempt, and same-user attack handling remain incomplete
-- readiness and health are not fully generation-bound or role/store/channel/
-  bridge observed
-- failure matrix omits startup/readiness/crash-loop, store/vault, stale-state,
-  contract, backup/restore, actual Godot reconnect, and display-loss cases
-- soak proves command acceptance rather than full recovery invariants and does
-  not keep a real Godot client/window active
-- contract fixtures and semantic/wire drift coverage remain incomplete
-- bootstrap assumes prior private-cache layout; vulnerability/license checks are
-  policy-only; CI and closeout evidence omit required recovery/artifact gates
+- The current 3,000-message `PASS`: 2,805 attempts were accepted while hundreds
+  of requested categories were invalid; the runner did not assert expected
+  outcomes or reasons.
+- The raw control-kind mapping: producer mutations require `inject_*` names, but
+  most category names are forwarded unchanged and fall through to valid packet
+  generation.
+- The 37/37 scenario result: several scenarios are command acknowledgments,
+  field-presence checks, or uninduced failures.
+- The complete-wire contract claim: the script derives `actual_wire_domains`
+  from schema filenames rather than recorded wire executions.
+- The broad recovery interpretation of the 3,600-second soak.
 
 ## Mandatory Codex startup
 
-1. Protect the primary SSHFS worktree and its operator-owned `.gitignore` and
+1. Protect the primary SSHFS worktree and operator-owned `.gitignore` and
    `AGENTS.md` modifications.
 2. Continue only in the existing local-ext4/NVMe secondary worktree.
-3. Fetch current `origin/main` and task branch.
-4. Merge `origin/main` normally; do not rebase, reset, or force-push.
-5. Read `ARCHITECT_REVIEW_03.md` and the live Notion Review 03 in full.
+3. Fetch current `origin/main` and `origin/codex/p01-foundation-001`.
+4. Merge current `origin/main` normally; do not rebase, reset, or force-push.
+5. Read `ARCHITECT_REVIEW_04.md` and the live Notion Review 04 completely.
 6. Re-fetch the directive, report, canonical project, roadmap, Architecture
-   v1.0, ADR/evidence databases, PR #7, and Issue #6.
-7. Preserve retained code, completed Phase 00 evidence, and prior failed results.
-8. Complete the entire evidence-driven closeout in the existing PR.
+   v1.0, PR #7, and Issue #6.
+7. Preserve retained source and all negative evidence.
+8. Execute only the narrow semantic correction; do not reopen broad hardening.
 9. Update Notion, PR #7, Issue #6, and Authority state; leave PR and issue open.
-10. Return only after the complete gate passes or one genuine blocker is proven.
+10. Stop for independent review after the corrected acceptance package passes.
 
-## Phase 01 closeout package
+## Required Phase 01 minimum closeout
 
-- complete versioned control plane and generation-bound observed health
-- fail-closed direct-care malformed/replay/duplicate-key/unauthorized handling
-  with append-only attempt audit and restart-persistent idempotency
-- one resident 3,000-message mixed category matrix whose retained seeds alter
-  deterministic scenarios
-- complete Phase 01 failure/recovery matrix
-- all nine contracts with explicit positive/negative fixtures, Rust round trips,
-  semantic drift checks, actual-wire tests, and profile bounds
-- one Godot process proving UDS connect/loss/restart/reconnect, target-screen,
-  geometry, simulated display loss/fallback/restoration, and target-host Openbox
-  placement
-- deterministic fetch-or-verify bootstrap, locked advisory/license/source/bans
-  policy, validated complete component inventory, CI evidence artifacts, and
-  tamper-detecting closeout manifest
-- one corrected continuously resident 3,600-second target-host soak proving
-  complete failure, degradation, and recovery invariants
+- exhaustive typed injection mapping with unknown-kind rejection
+- truthful 3,000-message resident matrix with exact outcomes/reasons and zero
+  invalid safety acceptance
+- ordinary-observation path to companion-core with no care-authority mutation
+- persistent duplicate/idempotency proof across care restart
+- producer rotation and old generation/MAC/endpoint rejection
+- care-store fail-closed degradation and recovery
+- twelve directly exercised foundation acceptance groups
+- focused JSON Schema/Rust round trips and real wire tests for direct-care and
+  ordinary observation
+- same-process Godot client state reconnect, topology simulation, and bounded
+  Openbox placement metadata
+- focused 900-second resident regression
+- semantic closeout validator plus tamper-negative check
 
 ## Explicit deferrals
 
-Broad SQLite VFS/power-cut/lifetime qualification, formal legal counsel review,
-production security certification, product reliability/SLA, and every Phase
-02–10 product capability remain outside Phase 01.
+- cargo-deny/advisory database analysis and formal legal review
+- broad SQLite VFS, realistic power-cut, and lifetime reliability testing
+- physical monitor hot-unplug
+- production security/reliability/SLA claims
+- all organism, memory, learning, dreaming, production embodiment, media,
+  speech, vision, biometrics, notifications, and care-efficacy capability
 
 ## Protected-work rule
 
 Do not commit, discard, reset, overwrite, stash, reformat, read into evidence,
-or reinterpret the operator-owned primary-worktree modifications.
+copy, or reinterpret the operator-owned primary-worktree modifications.
 
 ## Historical ledgers
 
