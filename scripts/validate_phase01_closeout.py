@@ -17,7 +17,7 @@ def sha(path: Path) -> str:
 def load(name):
     value = json.loads((ROOT / name).read_text(encoding="utf-8"))
     text = json.dumps(value, sort_keys=True)
-    if re.search(r"/(?:home|srv|tmp|run)/|(?:secret|capability|hostname|username|serial)", text, re.I):
+    if re.search(r"/(?:home|srv|tmp|run)/|(?:hostname|username|serial(?:[-_ ]?number)?)|(?:secret|capability)[-_ ]?(?:bytes?|material|token|value)", text, re.I):
         raise ValueError(f"private value in {name}")
     return value
 

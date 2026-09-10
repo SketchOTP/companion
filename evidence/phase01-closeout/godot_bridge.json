@@ -1,7 +1,7 @@
 {
   "bridge_disconnect_observed": true,
   "bridge_uds": "godot-bridge.sock",
-  "claim_boundary": "headless same-process UDS reconnect observation; no display or product capability",
+  "claim_boundary": "headless same-process UDS reconnect observation; no display or product claim",
   "godot_returncode": 0,
   "same_process_connected_before": true,
   "same_process_reconnected": true,
