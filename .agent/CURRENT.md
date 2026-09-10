@@ -8,44 +8,47 @@ Roadmap Phase 00 is complete at the implementation-opening boundary.
 Architecture v1.0 remains adopted. Roadmap Phase 01 — Environment and
 Engineering Foundation is active but **not accepted**.
 
-PR #7 at `3fbc4284d2a0053034c0e5dea2cd97cb61e6330f` received Architect Review 02.
-The implementation made substantial progress, but the phase still lacks an
-evidence-bound resident control plane, contract-aligned direct-care
-authentication, exact SQLite identity in CI, real Godot UDS integration, the
-complete failure matrix, and the continuously resident injected soak.
+PR #7 at `a96a152386b76c7aa133c6f7b478be1ddecbf472` received Architect Review 03.
+The branch contains substantial executable foundation work and a bounded
+resident soak, but the final acceptance evidence still omits the complete
+resident invalid/recovery matrix, fail-closed direct-care rejection audit,
+generation-bound health, actual Godot reconnect/display recovery, complete
+contract conformance, and evidence-bound supply-chain gates.
 
 ## Active objective
 
-Complete the final Phase 01 integration gate in the existing phase-sized PR:
+Complete one evidence-driven Phase 01 closeout run in the existing PR:
 
-1. observed supervisor readiness, liveness, health, restart/backoff,
-   crash-loop, signal, and orphan behavior;
-2. channel/generation/capability rotation with retained pidfd-equivalent
-   binding and contract-aligned canonical HMAC verification;
-3. durable care receipts and idempotency across restart with fail-closed store
-   loss;
-4. mandatory exact SQLite 3.53.4 source identity in local acceptance and CI;
-5. semantic schema/type/wire compatibility and full positive/negative fixtures;
-6. real Godot 4.7 UDS handshake, target-screen placement, geometry, reconnect,
-   and display-loss fallback;
-7. observed health/log/network state rather than hard-coded conclusions;
-8. deterministic artifact bootstrap, real vulnerability/license checks,
-   complete SBOM, provenance, and CI evidence;
-9. one resident 3,000-message matrix, full failure/recovery matrix, and one
-   continuously resident 3,600-second target-host soak with controlled failures.
+1. finish the versioned resident control plane and generation-bound observed
+   health;
+2. make direct-care malformed/replay/duplicate-key/unauthorized handling
+   durable and fail closed;
+3. drive one resident foundation through at least 3,000 mixed valid, invalid,
+   restart, persistence, and recovery messages with seeds that alter scenarios;
+4. execute the complete Phase 01 failure/recovery matrix;
+5. complete all nine contracts with explicit fixtures, Rust round trips,
+   semantic drift checks, and actual-wire tests;
+6. prove one Godot process survives bridge loss/restart and display
+   loss/restoration with selected-screen and geometry recovery;
+7. complete deterministic fetch-or-verify bootstrap, locked advisory/license
+   policy, validated component inventory, CI artifacts, and tamper-detecting
+   closeout evidence;
+8. rerun one continuously resident 3,600-second target-host soak after those
+   corrections and assert full degradation/recovery invariants.
 
-Broad SQLite VFS/power-cut/lifetime qualification is deferred to later
-resilience and release phases; it is not a Phase 01 blocker.
+Broad SQLite VFS/power-cut/lifetime qualification, formal legal counsel review,
+production security/reliability claims, and all Phase 02–10 product capability
+remain explicitly deferred.
 
 ## Active directive and review
 
 - Directive: `COMPANION-P01-FOUNDATION-001`
-- Status: `ARCHITECT REVIEW 02 — CONTINUE; FINAL RESIDENT INTEGRATION GATE`
-- Original Phase 01 routing baseline: `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`
-- Architect Review 01 main: `3325d8a30406657c1c247fe126f7d3b4ce89de10`
-- Reviewed continuation head: `3fbc4284d2a0053034c0e5dea2cd97cb61e6330f`
-- Repository review: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/ARCHITECT_REVIEW_02.md`
-- Notion review: https://app.notion.com/p/3d7833cb27ff810ba5abd1e1c4ee2237
+- Status: `ARCHITECT REVIEW 03 — CONTINUE; EVIDENCE-DRIVEN PHASE CLOSEOUT`
+- Original Phase 01 baseline: `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`
+- Architect Review 02 main: `4eb57b394573f2c0ee0e0d3385bbaf4fceebd8bc`
+- Reviewed continuation head: `a96a152386b76c7aa133c6f7b478be1ddecbf472`
+- Repository review: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/ARCHITECT_REVIEW_03.md`
+- Notion review: https://app.notion.com/p/3d7833cb27ff8107ae2ae0078ea57718
 - Notion directive: https://app.notion.com/p/3d7833cb27ff815ebe3ed1999f05beba
 - Notion report: https://app.notion.com/p/3d7833cb27ff81c5b0eee3e6c98b54b5
 - GitHub Issue #6: https://github.com/SketchOTP/companion/issues/6
@@ -59,39 +62,44 @@ resilience and release phases; it is not a Phase 01 blocker.
 
 ## Retained progress
 
-Retain the Rust workspace, role-specific binaries, direct SQLite FFI and
-prepared statements, corrected XDG defaults, initial resident supervisor and
-control socket, private capability pipes, kernel-credential transport,
-care-owned store, OS boot/monotonic utilities, nine schema/type names, Godot
-project/display helper, bootstrap scripts, green CI history, and all preserved
-negative evidence.
+Retain the Rust workspace and role binaries, exact Rust/Godot/SQLite identities,
+fail-closed exact SQLite build, direct FFI/prepared statements, committed
+migration roots, corrected XDG defaults, RustCrypto HMAC, aligned safety wire
+fields, private capability transport, retained producer pidfd, direct-pair
+rotation, care store, resident control socket, post-initialization readiness
+direction, nine schemas/types, Godot UDS/display helpers, improved SBOM, green
+CI, bounded 3,000-message happy-path evidence, and the completed resident soak.
 
 ## Current material gaps
 
-- Health marks registry entries healthy/ready without live readiness or liveness.
-- Producer and care terminate after bounded cycles and are not rebuilt under the
-  direct-care lifecycle.
-- The producer pidfd is observed then dropped rather than retained as active
-  generation authority.
-- The safety schema/type requires `capability`, while the wire message sends
-  `mac`.
-- Custom HMAC-like code and string equality remain in the trust path.
-- The 3,000-message driver uses three `--once` foundations and does not cover
-  invalid/restart/recovery categories.
-- The failure matrix does not exercise its named recovery properties.
-- CI can fall back to host SQLite instead of exact 3.53.4.
-- Contract drift checks test names rather than semantic compatibility.
-- Godot and Rust use different bridge-state paths; no real handshake exists.
-- CI vulnerability/license/SBOM evidence remains policy-only or incomplete.
-- The required continuously resident injected 60-minute soak was not run.
+- `inject` and `reconnect` control commands remain deferred placeholders.
+- The 3,000-message driver sends valid candidates plus one duplicate only and
+  does not use its retained seeds to vary system behavior.
+- Direct-care parsing does not reject decoded duplicate keys before ordinary
+  deserialization; malformed input can terminate care; replay is not rejected;
+  duplicate attempts are not preserved in a separate append-only attempt log.
+- Health does not yet report complete role/store/channel/bridge observations,
+  and readiness marker lifecycle is not generation-safe.
+- The failure matrix omits startup/readiness/crash-loop, store/vault,
+  stale-channel, invalid-contract, backup/restore, actual Godot reconnect, and
+  display-loss scenarios.
+- The current soak asserts command acceptance rather than every recovery
+  invariant and does not keep a real Godot client/window active.
+- Contract validation lacks the complete explicit negative fixture corpus and
+  robust semantic/wire compatibility gate.
+- Bootstrap still assumes the earlier private cache; vulnerability/license
+  checks are policy-only; CI omits several recovery and evidence-artifact gates.
 
 ## Mandatory Codex continuation
 
-Codex cannot see operator–Architect chat. It must read the repository Review 02
-and exact Notion Review 02, merge current `origin/main` normally into the
-existing branch, preserve the protected primary worktree, complete the whole
-phase gate in the same PR, update Notion/GitHub, and stop for independent
-review.
+Codex cannot see operator–Architect chat. It must read repository and Notion
+Architect Review 03, merge current `origin/main` normally into the existing
+branch, preserve the protected primary worktree, complete the whole closeout in
+one run, update Notion/GitHub, and stop for independent review.
+
+Do not return another partial result while the complete closeout remains
+feasible. A return before completion requires one genuine stop-condition
+blocker with attempted alternatives and exact evidence.
 
 ## Protected operator work
 
@@ -110,121 +118,6 @@ capability, security certification, production reliability, SLA, or Phase
 
 ## Next review point
 
-Codex completes the final resident integration gate in PR #7, publishes one
-reconciled result with direct evidence, leaves PR #7 and Issue #6 open, and
-stops for independent Architect acceptance.
-
-## Review 01 continuation update — 2026-09-10
-
-The continuation replaces the one-shot service entry point with a resident
-`ops-supervisor` and explicit `--once` test mode, separate role binaries,
-supervisor-backed health, direct SQLite ABI calls with prepared statements and
-the Online Backup API, corrected XDG defaults with fail-closed placement, and
-private capability delivery for the real direct-care socket. Three retained
-seeds now drive 3,000 actual packet cycles through separate processes. The
-remaining full failure/recovery injection, target-host Godot recovery, exact
-3.53.4 host-library binding verification, and completed continuous 60-minute
-injected soak remain tracked as unqualified until independently observed.
-
-## Review 01 continuation recheck — 2026-09-10
-
-The private exact SQLite 3.53.4 amalgamation build path is now exercised when
-`COMPANION_SQLITE_SOURCE` is present; the resulting release binary statically
-exposes SQLite 3.53.4 and has no SQLite dynamic dependency. The verification
-script also starts a resident supervisor before querying the operator health
-command, so the health result reflects live child state. The bounded verify
-run completed successfully. Full injected one-hour soak, broad restart and
-display-loss recovery, adversarial IPC, and VFS/power-loss coverage remain
-unrun and continue to block phase acceptance.
-
-## Publication re-fetch — 2026-09-10
-
-The live Architecture Decision Ledger currently has 52 rows (31 Adopted,
-19 Interim, 2 Rejected); the live Research Evidence Register has 55 rows
-(42 Grade A, 11 Grade B, 2 Grade C, 0 Grade D). The branch and PR remain
-unaccepted pending the explicitly unrun long soak and recovery matrices.
-
-## Final publication reconciliation — 2026-09-10
-
-The task branch is `codex/p01-foundation-001` at
-`19eb169c26e10106004a910f3cce763b44c3c44a`, matching the remote branch.
-Historical bounded soak observations remain retained, but the final status is
-`PHASE 01 CANDIDATE — ARCHITECT REVIEW REQUIRED`: no continuous-resident
-injected soak, broad process-replacement/adversarial IPC matrix, target-host
-display-loss recovery, or complete SQLite VFS/power-loss matrix was executed.
-Architecture v1.0 remains adopted, Roadmap Phase 02+ remain closed, and no
-product capability or dependency was self-approved.
-
-## CI ancestry correction — 2026-09-10
-
-The final task-branch head is `4cfc1c512b2da6c7b25087cd35627cb7eb10bdda`,
-matching the remote branch. The workflow now retains full Git history so the
-accepted-qualification evidence validator can verify ancestry on CI; both
-push and pull-request runs passed. Phase 01 remains a candidate pending the
-continuous injected soak and recovery/fault gates listed below.
-
-## Architect Review 02 continuation — 2026-09-10
-
-The final-integration correction is implemented on the existing task branch.
-The resident supervisor now publishes post-initialization readiness markers,
-live liveness/health states, retained producer pidfd liveness, control-command
-driven ordinary restart and direct-care channel/generation/capability rebuild.
-The wire contract uses `auth_scheme` plus `mac` and RustCrypto HMAC verification
-over canonical bytes. Exact SQLite source digest verification is mandatory in
-acceptance builds and CI, and health exposes runtime version/source-id/options.
-All nine schemas have positive/negative semantic checks; Godot uses a real
-`StreamPeerUDS` bridge; the cycle matrix is one resident 3,000-packet run; and
-the failure matrix exercises observed restart/rotation/recovery.
-
-The current local verify run fails at `/proc` census because `PR_SET_DUMPABLE=0`
-correctly prevents child descriptor inspection (`PermissionError`), and the
-required continuously resident 3,600-second injected soak was not run. These
-remain explicit acceptance blockers. Architecture v1.0 remains adopted,
-Roadmap Phase 02+ remain closed, and no product capability or dependency is
-self-approved.
-
-## Review 02 evidence correction — 2026-09-10
-
-The runtime checker now records the intentional `/proc/<pid>/fd` denial as an
-observability limitation while using `ss -H -tunp` to observe AF_INET/AF_INET6
-ownership for the supervisor and children. The corrected lifecycle check
-passed with zero owned network sockets, live readiness, synthetic care
-coverage, and clean shutdown. The resident producer and care services now
-publish readiness before entering their steady-state loops. Phase 01 remains a
-candidate until the required continuous injected soak and broader deferred
-recovery surfaces are independently reviewed.
-
-## Phase 01 final integration evidence — 2026-09-10
-
-The first 3,600-second soak attempt failed closed on one startup
-`FileNotFoundError` while the supervisor control socket was still binding
-(`59` samples); that failure is retained as history. The driver now waits for
-the control socket before polling. A fresh full run passed with one resident
-supervisor, `60` samples over `3,600` seconds, zero failures, the four required
-synthetic injections, zero process-owned network sockets, and no checkout
-writes (`2026-09-10T13:10:15Z`–`2026-09-10T14:10:15Z`). This is bounded E3
-engineering evidence, not production reliability, safety efficacy, or Phase 01
-acceptance. The candidate remains for Architect review; Architecture v1.0 is
-adopted, later phases and product implementation remain closed.
-
-## Publication state — 2026-09-10
-
-The focused Phase 01 implementation/evidence commit is
-`905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`; the evidence summary binds this
-commit. A reconciliation commit will restore executable bits and record final
-publication state. The branch remains a candidate pending Architect review;
-no merge, phase transition, dependency adoption, or product capability is
-claimed.
-
-The executable-bit/publication reconciliation is complete in
-`626f34313af8a77393bd4bf841e4fc955ca00048`; the later readiness correction is
-`12ee47bc5f4c556777eae43f35e3ec2f89f39e15`. Fresh push
-(`34488896386`) and pull-request (`34488902059`) workflows both passed.
-
-## CI readiness correction — 2026-09-10
-
-The first push workflow on the published head failed closed because the
-runtime checker queried health before the control socket was ready (run
-`34488050143`); the pull-request workflow passed under different timing. The
-checker now waits for endpoint readiness. This correction is recorded for the
-next CI run; no product scope or acceptance status changes.
+Codex completes Architect Review 03 in PR #7, publishes one fully evidence-bound
+result, leaves PR #7 and Issue #6 open, and stops for independent Architect
+acceptance.
