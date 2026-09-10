@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          # The committed qualification validator verifies evidence ancestry;
+          # retain history so that check is meaningful on CI as well as locally.
+          fetch-depth: 0
       - name: Install exact Rust toolchain on ephemeral runner
         run: rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
       - name: Rust locked checks
