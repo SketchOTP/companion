@@ -8,44 +8,47 @@ Roadmap Phase 00 is complete at the implementation-opening boundary.
 Architecture v1.0 remains adopted. Roadmap Phase 01 — Environment and
 Engineering Foundation is active but **not accepted**.
 
-PR #7 at `3fbc4284d2a0053034c0e5dea2cd97cb61e6330f` received Architect Review 02.
-The implementation made substantial progress, but the phase still lacks an
-evidence-bound resident control plane, contract-aligned direct-care
-authentication, exact SQLite identity in CI, real Godot UDS integration, the
-complete failure matrix, and the continuously resident injected soak.
+PR #7 at `a96a152386b76c7aa133c6f7b478be1ddecbf472` received Architect Review 03.
+The branch contains substantial executable foundation work and a bounded
+resident soak, but the final acceptance evidence still omits the complete
+resident invalid/recovery matrix, fail-closed direct-care rejection audit,
+generation-bound health, actual Godot reconnect/display recovery, complete
+contract conformance, and evidence-bound supply-chain gates.
 
 ## Active objective
 
-Complete the final Phase 01 integration gate in the existing phase-sized PR:
+Complete one evidence-driven Phase 01 closeout run in the existing PR:
 
-1. observed supervisor readiness, liveness, health, restart/backoff,
-   crash-loop, signal, and orphan behavior;
-2. channel/generation/capability rotation with retained pidfd-equivalent
-   binding and contract-aligned canonical HMAC verification;
-3. durable care receipts and idempotency across restart with fail-closed store
-   loss;
-4. mandatory exact SQLite 3.53.4 source identity in local acceptance and CI;
-5. semantic schema/type/wire compatibility and full positive/negative fixtures;
-6. real Godot 4.7 UDS handshake, target-screen placement, geometry, reconnect,
-   and display-loss fallback;
-7. observed health/log/network state rather than hard-coded conclusions;
-8. deterministic artifact bootstrap, real vulnerability/license checks,
-   complete SBOM, provenance, and CI evidence;
-9. one resident 3,000-message matrix, full failure/recovery matrix, and one
-   continuously resident 3,600-second target-host soak with controlled failures.
+1. finish the versioned resident control plane and generation-bound observed
+   health;
+2. make direct-care malformed/replay/duplicate-key/unauthorized handling
+   durable and fail closed;
+3. drive one resident foundation through at least 3,000 mixed valid, invalid,
+   restart, persistence, and recovery messages with seeds that alter scenarios;
+4. execute the complete Phase 01 failure/recovery matrix;
+5. complete all nine contracts with explicit fixtures, Rust round trips,
+   semantic drift checks, and actual-wire tests;
+6. prove one Godot process survives bridge loss/restart and display
+   loss/restoration with selected-screen and geometry recovery;
+7. complete deterministic fetch-or-verify bootstrap, locked advisory/license
+   policy, validated component inventory, CI artifacts, and tamper-detecting
+   closeout evidence;
+8. rerun one continuously resident 3,600-second target-host soak after those
+   corrections and assert full degradation/recovery invariants.
 
-Broad SQLite VFS/power-cut/lifetime qualification is deferred to later
-resilience and release phases; it is not a Phase 01 blocker.
+Broad SQLite VFS/power-cut/lifetime qualification, formal legal counsel review,
+production security/reliability claims, and all Phase 02–10 product capability
+remain explicitly deferred.
 
 ## Active directive and review
 
 - Directive: `COMPANION-P01-FOUNDATION-001`
-- Status: `ARCHITECT REVIEW 02 — CONTINUE; FINAL RESIDENT INTEGRATION GATE`
-- Original Phase 01 routing baseline: `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`
-- Architect Review 01 main: `3325d8a30406657c1c247fe126f7d3b4ce89de10`
-- Reviewed continuation head: `3fbc4284d2a0053034c0e5dea2cd97cb61e6330f`
-- Repository review: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/ARCHITECT_REVIEW_02.md`
-- Notion review: https://app.notion.com/p/3d7833cb27ff810ba5abd1e1c4ee2237
+- Status: `ARCHITECT REVIEW 03 — CONTINUE; EVIDENCE-DRIVEN PHASE CLOSEOUT`
+- Original Phase 01 baseline: `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`
+- Architect Review 02 main: `4eb57b394573f2c0ee0e0d3385bbaf4fceebd8bc`
+- Reviewed continuation head: `a96a152386b76c7aa133c6f7b478be1ddecbf472`
+- Repository review: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/ARCHITECT_REVIEW_03.md`
+- Notion review: https://app.notion.com/p/3d7833cb27ff8107ae2ae0078ea57718
 - Notion directive: https://app.notion.com/p/3d7833cb27ff815ebe3ed1999f05beba
 - Notion report: https://app.notion.com/p/3d7833cb27ff81c5b0eee3e6c98b54b5
 - GitHub Issue #6: https://github.com/SketchOTP/companion/issues/6
@@ -59,39 +62,44 @@ resilience and release phases; it is not a Phase 01 blocker.
 
 ## Retained progress
 
-Retain the Rust workspace, role-specific binaries, direct SQLite FFI and
-prepared statements, corrected XDG defaults, initial resident supervisor and
-control socket, private capability pipes, kernel-credential transport,
-care-owned store, OS boot/monotonic utilities, nine schema/type names, Godot
-project/display helper, bootstrap scripts, green CI history, and all preserved
-negative evidence.
+Retain the Rust workspace and role binaries, exact Rust/Godot/SQLite identities,
+fail-closed exact SQLite build, direct FFI/prepared statements, committed
+migration roots, corrected XDG defaults, RustCrypto HMAC, aligned safety wire
+fields, private capability transport, retained producer pidfd, direct-pair
+rotation, care store, resident control socket, post-initialization readiness
+direction, nine schemas/types, Godot UDS/display helpers, improved SBOM, green
+CI, bounded 3,000-message happy-path evidence, and the completed resident soak.
 
 ## Current material gaps
 
-- Health marks registry entries healthy/ready without live readiness or liveness.
-- Producer and care terminate after bounded cycles and are not rebuilt under the
-  direct-care lifecycle.
-- The producer pidfd is observed then dropped rather than retained as active
-  generation authority.
-- The safety schema/type requires `capability`, while the wire message sends
-  `mac`.
-- Custom HMAC-like code and string equality remain in the trust path.
-- The 3,000-message driver uses three `--once` foundations and does not cover
-  invalid/restart/recovery categories.
-- The failure matrix does not exercise its named recovery properties.
-- CI can fall back to host SQLite instead of exact 3.53.4.
-- Contract drift checks test names rather than semantic compatibility.
-- Godot and Rust use different bridge-state paths; no real handshake exists.
-- CI vulnerability/license/SBOM evidence remains policy-only or incomplete.
-- The required continuously resident injected 60-minute soak was not run.
+- `inject` and `reconnect` control commands remain deferred placeholders.
+- The 3,000-message driver sends valid candidates plus one duplicate only and
+  does not use its retained seeds to vary system behavior.
+- Direct-care parsing does not reject decoded duplicate keys before ordinary
+  deserialization; malformed input can terminate care; replay is not rejected;
+  duplicate attempts are not preserved in a separate append-only attempt log.
+- Health does not yet report complete role/store/channel/bridge observations,
+  and readiness marker lifecycle is not generation-safe.
+- The failure matrix omits startup/readiness/crash-loop, store/vault,
+  stale-channel, invalid-contract, backup/restore, actual Godot reconnect, and
+  display-loss scenarios.
+- The current soak asserts command acceptance rather than every recovery
+  invariant and does not keep a real Godot client/window active.
+- Contract validation lacks the complete explicit negative fixture corpus and
+  robust semantic/wire compatibility gate.
+- Bootstrap still assumes the earlier private cache; vulnerability/license
+  checks are policy-only; CI omits several recovery and evidence-artifact gates.
 
 ## Mandatory Codex continuation
 
-Codex cannot see operator–Architect chat. It must read the repository Review 02
-and exact Notion Review 02, merge current `origin/main` normally into the
-existing branch, preserve the protected primary worktree, complete the whole
-phase gate in the same PR, update Notion/GitHub, and stop for independent
-review.
+Codex cannot see operator–Architect chat. It must read repository and Notion
+Architect Review 03, merge current `origin/main` normally into the existing
+branch, preserve the protected primary worktree, complete the whole closeout in
+one run, update Notion/GitHub, and stop for independent review.
+
+Do not return another partial result while the complete closeout remains
+feasible. A return before completion requires one genuine stop-condition
+blocker with attempted alternatives and exact evidence.
 
 ## Protected operator work
 
@@ -110,6 +118,6 @@ capability, security certification, production reliability, SLA, or Phase
 
 ## Next review point
 
-Codex completes the final resident integration gate in PR #7, publishes one
-reconciled result with direct evidence, leaves PR #7 and Issue #6 open, and
-stops for independent Architect acceptance.
+Codex completes Architect Review 03 in PR #7, publishes one fully evidence-bound
+result, leaves PR #7 and Issue #6 open, and stops for independent Architect
+acceptance.
