@@ -132,3 +132,14 @@ The live Architecture Decision Ledger currently has 52 rows (31 Adopted,
 19 Interim, 2 Rejected); the live Research Evidence Register has 55 rows
 (42 Grade A, 11 Grade B, 2 Grade C, 0 Grade D). The branch and PR remain
 unaccepted pending the explicitly unrun long soak and recovery matrices.
+
+## Final publication reconciliation — 2026-09-10
+
+The task branch is `codex/p01-foundation-001` at
+`19eb169c26e10106004a910f3cce763b44c3c44a`, matching the remote branch.
+Historical bounded soak observations remain retained, but the final status is
+`PHASE 01 CANDIDATE — ARCHITECT REVIEW REQUIRED`: no continuous-resident
+injected soak, broad process-replacement/adversarial IPC matrix, target-host
+display-loss recovery, or complete SQLite VFS/power-loss matrix was executed.
+Architecture v1.0 remains adopted, Roadmap Phase 02+ remain closed, and no
+product capability or dependency was self-approved.

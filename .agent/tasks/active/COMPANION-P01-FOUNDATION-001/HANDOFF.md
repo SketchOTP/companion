@@ -93,3 +93,15 @@ been run in this continuation. They remain `NOT RUN`/unqualified and prevent
 Phase 01 acceptance. The branch remains a phase-sized candidate awaiting
 Architect review; Architecture v1.0 stays adopted, Roadmap Phase 02+ stays
 closed, and no product capability or dependency is self-approved.
+
+## Final publication reconciliation — 2026-09-10
+
+The final task-branch head is `19eb169c26e10106004a910f3cce763b44c3c44a`.
+The earlier 60-minute entry above is retained as historical evidence of
+repeated bounded supervisor invocations; it is not a continuously resident
+soak. The current authoritative status is therefore `NOT ACCEPTED` pending
+the unrun continuously resident injected soak, broad process replacement and
+descriptor attack matrix, target-host display-loss recovery, and complete
+SQLite VFS/power-loss matrix. This reconciliation does not alter the
+implementation or claim any product, safety, security, reliability, or SLA
+capability.

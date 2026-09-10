@@ -142,3 +142,8 @@ No real organism, memory, learning, dreaming, production sprite body, camera/mic
 - `EXTERNAL.md` — external sources and dispositions
 
 `CURRENT.md` is mutable. Historical ledgers are append-only after adoption.
+
+The final publication head for `COMPANION-P01-FOUNDATION-001` is
+`19eb169c26e10106004a910f3cce763b44c3c44a`. Historical bounded 60-minute
+repeated-invocation evidence is retained, while the continuous injected soak
+and broad recovery/fault surfaces remain `NOT RUN`; Phase 01 is not accepted.

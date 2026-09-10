@@ -97,3 +97,13 @@ canonical project, roadmap, Architect Review 01, GitHub Issue #6, and PR #7
 were re-fetched or inspected. Retrieval confidence remains `ADEQUATE`; no
 material authority contradiction was found. Notion and GitHub state still
 record the phase as active and unaccepted.
+
+## Final publication reconciliation — 2026-09-10
+
+Final evidence is published from `19eb169c26e10106004a910f3cce763b44c3c44a`.
+The 60-minute result is explicitly bounded synthetic repeated-invocation
+evidence, not a continuous resident soak. Continuous injected residency,
+process replacement and adversarial descriptor coverage, display-loss
+recovery, and complete SQLite VFS/power-loss coverage remain `NOT RUN` and
+unqualified. No later phase, dependency, product, safety, security, or
+reliability capability is claimed.
