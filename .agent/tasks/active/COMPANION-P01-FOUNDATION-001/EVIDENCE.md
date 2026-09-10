@@ -107,3 +107,12 @@ process replacement and adversarial descriptor coverage, display-loss
 recovery, and complete SQLite VFS/power-loss coverage remain `NOT RUN` and
 unqualified. No later phase, dependency, product, safety, security, or
 reliability capability is claimed.
+
+## CI ancestry correction — 2026-09-10
+
+The workflow correction is published at
+`4cfc1c512b2da6c7b25087cd35627cb7eb10bdda` with `fetch-depth: 0` for
+evidence-ancestry verification. Push run `34464690282` and pull-request run
+`34464693372` both passed all configured checks. This does not close the
+continuous soak, process-replacement/adversarial IPC, display-loss, or
+complete SQLite VFS/power-loss gates.

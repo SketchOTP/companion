@@ -143,3 +143,11 @@ injected soak, broad process-replacement/adversarial IPC matrix, target-host
 display-loss recovery, or complete SQLite VFS/power-loss matrix was executed.
 Architecture v1.0 remains adopted, Roadmap Phase 02+ remain closed, and no
 product capability or dependency was self-approved.
+
+## CI ancestry correction — 2026-09-10
+
+The final task-branch head is `4cfc1c512b2da6c7b25087cd35627cb7eb10bdda`,
+matching the remote branch. The workflow now retains full Git history so the
+accepted-qualification evidence validator can verify ancestry on CI; both
+push and pull-request runs passed. Phase 01 remains a candidate pending the
+continuous injected soak and recovery/fault gates listed below.

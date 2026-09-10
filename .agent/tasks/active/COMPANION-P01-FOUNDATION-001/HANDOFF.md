@@ -105,3 +105,12 @@ descriptor attack matrix, target-host display-loss recovery, and complete
 SQLite VFS/power-loss matrix. This reconciliation does not alter the
 implementation or claim any product, safety, security, reliability, or SLA
 capability.
+
+## CI ancestry correction — 2026-09-10
+
+The final publication head is
+`4cfc1c512b2da6c7b25087cd35627cb7eb10bdda`. The only code change after the
+prior handoff reconciliation is the CI checkout `fetch-depth: 0`, required
+for the committed evidence-ancestry validator. Both resulting CI runs
+passed. The candidate remains unaccepted pending the explicitly unrun
+continuous injected soak and recovery/fault matrices.

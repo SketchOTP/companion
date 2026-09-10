@@ -147,3 +147,8 @@ The final publication head for `COMPANION-P01-FOUNDATION-001` is
 `19eb169c26e10106004a910f3cce763b44c3c44a`. Historical bounded 60-minute
 repeated-invocation evidence is retained, while the continuous injected soak
 and broad recovery/fault surfaces remain `NOT RUN`; Phase 01 is not accepted.
+
+The final CI-corrected publication head is
+`4cfc1c512b2da6c7b25087cd35627cb7eb10bdda`. Full-history CI verification
+passed; the continuous injected soak and broad recovery/fault surfaces remain
+`NOT RUN` and unqualified.
