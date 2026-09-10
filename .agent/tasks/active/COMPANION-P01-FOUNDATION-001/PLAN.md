@@ -116,3 +116,13 @@ workflow results before reporting CI status.
 Fresh push run `34488896386` and pull-request run `34488902059` both passed on
 `12ee47bc5f4c556777eae43f35e3ec2f89f39e15`; the CI correction is complete and
 the candidate is ready for independent Architect review.
+
+## Review 03 closeout plan
+
+1. Build and test the corrected resident controls and strict care validation.
+2. Run the seed-diverse 3,000-message and 37-scenario matrices.
+3. Complete the corrected resident soak and sanitize its output.
+4. Bind fixture/result hashes and Git ancestry in the committed closeout
+   manifest; run the validator and tamper-negative test.
+5. Re-run required host-independent checks, inspect the final diff, publish on
+   the existing PR, and stop for Architect review.

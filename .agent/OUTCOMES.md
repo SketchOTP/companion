@@ -548,3 +548,13 @@ fresh remote run is required before calling push CI green.
 Fresh push run `34488896386` and pull-request run `34488902059` both passed on
 `12ee47bc5f4c556777eae43f35e3ec2f89f39e15`; the CI readiness correction is
 therefore verified remotely. The candidate remains subject to Architect review.
+
+## 2026-09-10 — Architect Review 03 closeout execution
+
+The closeout implementation adds a seed-diverse resident 3,000-message matrix,
+37-scenario fail-closed control-plane matrix, generation-bound readiness fields,
+strict UTC safety-envelope validation, deterministic artifact bootstrap paths,
+and a committed closeout evidence validator. The corrected 3,600-second soak is
+running on the target host; no result is accepted until its final output,
+hashes, and ancestry are independently verified. This branch remains a Phase 01
+candidate; no product capability, dependency adoption, or later phase is claimed.

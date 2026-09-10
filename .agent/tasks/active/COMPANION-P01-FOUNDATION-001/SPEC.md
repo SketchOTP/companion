@@ -34,3 +34,11 @@ durability, direct SQLite binding, XDG refusal, live health, and actual process
 cycles are required to be backed by executable observations. Any unrun
 target-host recovery or long-duration scenario remains `NOT RUN` and cannot be
 upgraded by summary prose.
+
+## Review 03 closeout delta
+
+Resident controls, seed-diverse mixed traffic, strict care validation and
+failure/recovery evidence are now driven by executable scripts. Sanitized
+outputs are committed under `evidence/phase01-closeout/` and independently
+bound by hash, fixture and ancestry validation. The phase remains a candidate
+until Architect review; no later-phase or product capability is included.

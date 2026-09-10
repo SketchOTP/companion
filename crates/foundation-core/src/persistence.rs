@@ -196,6 +196,12 @@ impl Store {
                 }
             }
         }
+        // The care attempt journal was added after the initial schema. Keep
+        // upgrades idempotent for already-created development stores without
+        // changing the authoritative schema version in this foundation slice.
+        if self.authority == "care" {
+            self.exec("CREATE TABLE IF NOT EXISTS safety_attempts (id INTEGER PRIMARY KEY, candidate_id TEXT, accepted INTEGER NOT NULL, duplicate INTEGER NOT NULL, reason TEXT NOT NULL, created_utc TEXT NOT NULL);")?;
+        }
         let sql = format!(
             "INSERT OR REPLACE INTO authority_meta(k,v) VALUES ('authority', '{}');",
             self.authority.replace('\'', "''")
@@ -233,6 +239,27 @@ impl Store {
             ));
         }
         self.insert("INSERT OR IGNORE INTO safety_receipts(candidate_id,accepted,duplicate,reason,created_utc) VALUES (?1,?2,?3,?4,?5);", &[(1,candidate_id),(4,reason),(5,utc)], &[(2, accepted), (3, duplicate)])
+    }
+    pub fn append_attempt(
+        &self,
+        candidate_id: Option<&str>,
+        accepted: bool,
+        duplicate: bool,
+        reason: &str,
+        utc: &str,
+    ) -> Result<bool, StoreError> {
+        if self.authority != "care" {
+            return Err(StoreError::Authority(
+                "safety_attempts belongs to care".into(),
+            ));
+        }
+        let sql = "INSERT INTO safety_attempts(candidate_id,accepted,duplicate,reason,created_utc) VALUES (?1,?2,?3,?4,?5);";
+        let value = candidate_id.unwrap_or("");
+        self.insert(
+            sql,
+            &[(1, value), (4, reason), (5, utc)],
+            &[(2, accepted), (3, duplicate)],
+        )
     }
     fn insert(
         &self,

@@ -61,3 +61,12 @@ The Research Phase 01 Notion hierarchy contains the project's research evidence 
 - Godot 4.7.2 maintenance release and archive: https://godotengine.org/article/maintenance-release-godot-4-7-2/ (MIT; official artifact SHA retained in project records).
 - SQLite 3.53.4 release log and public-domain source: https://www.sqlite.org/releaselog/3_53_4.html and https://sqlite.org/.
 - Disposition: exact cached identities were verified locally; no new dependency or production capability was adopted by this candidate.
+
+## Architect Review 03 closeout discovery (2026-09-10)
+
+- Sources rechecked: official Godot 4.7 StreamPeer/UDS and window-screen API
+  documentation; Rust/cargo-deny advisory, license, ban and source-check
+  documentation.
+- Disposition: Godot polling and explicit screen selection are implemented in
+  the neutral shell; cargo-deny remains an environment-dependent policy gate
+  and is not silently installed or adopted. No strategic direction changed.

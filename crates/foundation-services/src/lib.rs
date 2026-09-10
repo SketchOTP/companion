@@ -60,8 +60,11 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
         .ok()
         .and_then(|v| v.parse::<i32>().ok());
     let mut bridge_listener = None;
+    let control_fd = env::var("COMPANION_PRODUCER_CONTROL_FD")
+        .ok()
+        .and_then(|v| v.parse::<i32>().ok());
     match role {
-        "sensor-gateway" => producer(fd, cap_fd, &boot, &mut seq)?,
+        "sensor-gateway" => producer(fd, cap_fd, control_fd, &boot, &mut seq)?,
         "care-core" => care(fd, cap_fd, &boot, &mut seq)?,
         "companion-core" => ordinary_store("companion", &boot, &mut seq)?,
         "identity-consent-vault" => ordinary_store("vault", &boot, &mut seq)?,
@@ -135,6 +138,21 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
         return Ok(());
     }
     while !STOP.load(Ordering::SeqCst) {
+        if matches!(role, "companion-core" | "identity-consent-vault") {
+            let authority = if role == "companion-core" {
+                "companion"
+            } else {
+                "vault"
+            };
+            let paths = XdgPaths::resolve("companion")?;
+            if paths
+                .runtime
+                .join(format!("{authority}-store-fault"))
+                .exists()
+            {
+                return Err(format!("{authority} store fault injected").into());
+            }
+        }
         std::thread::sleep(Duration::from_millis(100));
     }
     logging::emit(role, "stopped", seq, &boot, Some("signal"));
@@ -146,7 +164,19 @@ fn write_ready_marker(role: &str) -> Result<(), Box<dyn std::error::Error>> {
         let dir = std::path::PathBuf::from(dir);
         std::fs::create_dir_all(&dir)?;
         let marker = dir.join(format!("{role}.ready"));
-        std::fs::write(marker, format!("pid={}\n", std::process::id()))?;
+        let generation = env::var("COMPANION_GENERATION").unwrap_or_else(|_| "bootstrap".into());
+        let value = json!({
+            "role": role,
+            "pid": std::process::id(),
+            "generation": generation,
+            "boot_id": logging::boot_id(),
+            "sequence": 1,
+            "initialization_status": "ready",
+            "store_status": if matches!(role, "companion-core" | "care-core" | "identity-consent-vault") { "integrity_checked" } else { "not_applicable" },
+            "channel_status": if matches!(role, "sensor-gateway" | "care-core") { "seqpacket" } else { "not_applicable" },
+            "protocol_version": FOUNDATION_VERSION,
+        });
+        std::fs::write(marker, serde_json::to_vec(&value)?)?;
     }
     Ok(())
 }
@@ -166,6 +196,10 @@ fn ordinary_store(
     seq: &mut u64,
 ) -> Result<(), Box<dyn std::error::Error>> {
     let paths = XdgPaths::resolve("companion")?;
+    let fault_marker = paths.runtime.join(format!("{authority}-store-fault"));
+    if fault_marker.exists() {
+        return Err(format!("{authority} store fault injected").into());
+    }
     let _store = Store::open(&paths, authority)?;
     logging::emit(
         authority,
@@ -271,7 +305,7 @@ fn valid_safety_shape(value: &serde_json::Value) -> bool {
         && object
             .get("observed_at")
             .and_then(|v| v.as_str())
-            .is_some_and(|v| v.ends_with('Z'))
+            .is_some_and(valid_datetime)
         && object
             .get("confidence_milli")
             .and_then(|v| v.as_u64())
@@ -283,9 +317,31 @@ fn valid_safety_shape(value: &serde_json::Value) -> bool {
         && object.get("replay").and_then(|v| v.as_bool()).is_some()
 }
 
+fn valid_datetime(value: &str) -> bool {
+    // Bounded RFC3339 UTC profile used by the safety envelope.  Keeping this
+    // parser local avoids platform-dependent date libraries in the service
+    // boundary while still rejecting malformed/future-shaped strings.
+    let bytes = value.as_bytes();
+    bytes.len() == 20
+        && bytes[4] == b'-'
+        && bytes[7] == b'-'
+        && bytes[10] == b'T'
+        && bytes[13] == b':'
+        && bytes[16] == b':'
+        && bytes[19] == b'Z'
+        && bytes
+            .iter()
+            .enumerate()
+            .all(|(i, b)| matches!(i, 4 | 7 | 10 | 13 | 16 | 19) || b.is_ascii_digit())
+        && value[11..13].parse::<u8>().is_ok_and(|h| h < 24)
+        && value[14..16].parse::<u8>().is_ok_and(|m| m < 60)
+        && value[17..19].parse::<u8>().is_ok_and(|s| s < 60)
+}
+
 fn producer(
     fd: Option<i32>,
     cap_fd: Option<i32>,
+    control_fd: Option<i32>,
     boot: &str,
     seq: &mut u64,
 ) -> Result<(), Box<dyn std::error::Error>> {
@@ -293,6 +349,7 @@ fn producer(
     let sock = unsafe { OwnedFd::from_raw_fd(raw) };
     let secret = read_capability(cap_fd)?;
     let generation = env::var("COMPANION_GENERATION")?;
+    write_ready_marker("sensor-gateway")?;
     let cycles: usize = env::var("COMPANION_CYCLES")
         .ok()
         .and_then(|v| v.parse().ok())
@@ -303,6 +360,7 @@ fn producer(
         .filter(|seed| !seed.is_empty())
         .map(str::to_owned)
         .collect();
+    let mut last_packet: Option<Vec<u8>> = None;
     for index in 0..cycles {
         let seed = &seeds[index % seeds.len()];
         let mut id_bytes = Uuid::parse_str(&generation)
@@ -319,6 +377,7 @@ fn producer(
         packet["mac"] = json!(mac(&secret, &bytes)?);
         let encoded = serde_json::to_vec(&packet)?;
         ipc::send(&sock, &encoded)?;
+        last_packet = Some(encoded.clone());
         if index == 0 {
             ipc::send(&sock, &encoded)?;
         }
@@ -331,7 +390,119 @@ fn producer(
         Some("seqpacket"),
     );
     *seq += 1;
+    if !env::args().any(|a| a == "--once") {
+        if let Some(raw) = control_fd {
+            let control = unsafe { OwnedFd::from_raw_fd(raw) };
+            let flags = unsafe { libc::fcntl(control.as_raw_fd(), libc::F_GETFL) };
+            if flags >= 0 {
+                unsafe {
+                    libc::fcntl(control.as_raw_fd(), libc::F_SETFL, flags | libc::O_NONBLOCK);
+                }
+            }
+            let mut pending = Vec::new();
+            while !STOP.load(Ordering::SeqCst) {
+                let mut pfd = libc::pollfd {
+                    fd: control.as_raw_fd(),
+                    events: libc::POLLIN,
+                    revents: 0,
+                };
+                let ready = unsafe { libc::poll(&mut pfd, 1, 100) };
+                if ready <= 0 {
+                    continue;
+                }
+                let mut chunk = [0u8; 4096];
+                let n = unsafe {
+                    libc::read(control.as_raw_fd(), chunk.as_mut_ptr().cast(), chunk.len())
+                };
+                if n <= 0 {
+                    break;
+                }
+                pending.extend_from_slice(&chunk[..n as usize]);
+                while let Some(index) = pending.iter().position(|b| *b == b'\n') {
+                    let line: Vec<u8> = pending.drain(..=index).collect();
+                    let command = String::from_utf8_lossy(&line).trim().to_owned();
+                    let (packet, remember) =
+                        command_packet(&command, &secret, &generation, last_packet.as_deref())?;
+                    if let Some(packet) = packet {
+                        ipc::send(&sock, &packet)?;
+                        if remember {
+                            last_packet = Some(packet);
+                        }
+                    }
+                }
+            }
+        } else {
+            while !STOP.load(Ordering::SeqCst) {
+                std::thread::sleep(Duration::from_millis(100));
+            }
+        }
+    }
     Ok(())
+}
+
+#[allow(clippy::type_complexity)]
+fn command_packet(
+    command: &str,
+    secret: &[u8],
+    generation: &str,
+    previous: Option<&[u8]>,
+) -> Result<(Option<Vec<u8>>, bool), Box<dyn std::error::Error>> {
+    if command == "inject_duplicate" {
+        return Ok((previous.map(ToOwned::to_owned), false));
+    }
+    if command == "inject_replay" {
+        if let Some(previous) = previous {
+            let mut value: serde_json::Value = serde_json::from_slice(previous)?;
+            value["replay"] = json!(true);
+            return Ok((Some(serde_json::to_vec(&value)?), false));
+        }
+        return Ok((None, false));
+    }
+    if command == "inject_malformed" {
+        return Ok((Some(b"{malformed".to_vec()), false));
+    }
+    if command == "inject_duplicate_key" {
+        return Ok((
+            Some(br#"{"schema_major":1,"a":1,"\u0061":2}"#.to_vec()),
+            false,
+        ));
+    }
+    if command == "inject_unsupported_major" {
+        return Ok((
+            Some(
+                br#"{"schema_major":2,"message_id":"00000000-0000-4000-8000-000000000099"}"#
+                    .to_vec(),
+            ),
+            false,
+        ));
+    }
+    let id = Uuid::new_v4().to_string();
+    let mut value = json!({"schema_major":1,"message_id":id,"producer_generation":generation,"auth_scheme":"hmac-sha256-jcs-v1","observed_at":"2026-01-01T00:00:00Z","confidence_milli":900,"quality_milli":900,"replay":false});
+    if command == "inject_stale_generation" || command == "inject_forged_producer" {
+        value["producer_generation"] = json!("stale-generation");
+    }
+    if command == "inject_unknown_field" || command == "inject_companion_state" {
+        value["mood"] = json!("forbidden");
+    }
+    if command == "inject_invalid_uuid" {
+        value["message_id"] = json!("not-a-uuid");
+    }
+    if command == "inject_invalid_datetime" {
+        value["observed_at"] = json!("not-a-date");
+    }
+    if command == "inject_ordinary" || command == "inject_ordinary_observation" {
+        value["ordinary_observation"] = json!(true);
+    }
+    if command == "inject_invalid_mac" {
+        value["mac"] = json!("00");
+        return Ok((Some(serde_json::to_vec(&value)?), false));
+    }
+    if command == "inject_replay" {
+        value["replay"] = json!(true);
+    }
+    let unsigned = canonical::canonical_event(&serde_json::to_vec(&value)?)?;
+    value["mac"] = json!(mac(secret, &unsigned)?);
+    Ok((Some(serde_json::to_vec(&value)?), true))
 }
 
 fn care(
@@ -348,18 +519,73 @@ fn care(
     let expected_generation = env::var("COMPANION_GENERATION")?;
     let paths = XdgPaths::resolve("companion")?;
     let store = Store::open(&paths, "care")?;
+    write_ready_marker("care-core")?;
+    let fault_marker = paths.runtime.join("care-store-fault");
     let cycles: usize = env::var("COMPANION_CYCLES")
         .ok()
         .and_then(|v| v.parse().ok())
         .unwrap_or(1);
     let mut seen = std::collections::HashSet::new();
-    for _ in 0..(cycles + 1) {
-        let (data, cred) = ipc::receive_with_credentials(&sock, 16 * 1024)?;
-        let value: serde_json::Value = serde_json::from_slice(&data)?;
-        let msg = value
-            .get("message_id")
-            .and_then(|v| v.as_str())
-            .unwrap_or("unknown");
+    let mut handled = 0usize;
+    loop {
+        if fault_marker.exists() {
+            let _ = std::fs::remove_file(paths.runtime.join("ready").join("care-core.ready"));
+            return Err("care store fault injected".into());
+        }
+        let mut ready = libc::pollfd {
+            fd: sock.as_raw_fd(),
+            events: libc::POLLIN,
+            revents: 0,
+        };
+        let polled = unsafe { libc::poll(&mut ready, 1, 250) };
+        if polled == 0 {
+            if env::args().any(|a| a == "--once") && handled > cycles {
+                break;
+            }
+            if STOP.load(Ordering::SeqCst) {
+                break;
+            }
+            continue;
+        }
+        let (data, cred) = match ipc::receive_with_credentials(&sock, 16 * 1024) {
+            Ok(value) => value,
+            Err(error) => {
+                if error
+                    .to_string()
+                    .contains("Resource temporarily unavailable")
+                {
+                    continue;
+                }
+                break;
+            }
+        };
+        handled += 1;
+        let parsed = canonical::reject_duplicate_keys(&data).and_then(|_| {
+            serde_json::from_slice::<serde_json::Value>(&data)
+                .map_err(canonical::CanonicalError::from)
+        });
+        let value = match parsed {
+            Ok(value) => value,
+            Err(error) => {
+                let reason = if error.to_string().contains("duplicate") {
+                    "duplicate_decoded_key"
+                } else {
+                    "malformed_frame"
+                };
+                let _ = store.append_attempt(
+                    None,
+                    false,
+                    false,
+                    reason,
+                    &format!("boot:{boot}:{}", logging::monotonic_ns()),
+                )?;
+                logging::emit("care-core", "care_rejected", *seq, boot, Some(reason));
+                *seq += 1;
+                continue;
+            }
+        };
+        let msg = value.get("message_id").and_then(|v| v.as_str());
+        let msg_label = msg.unwrap_or("untrusted");
         let shape_valid = valid_safety_shape(&value);
         let mut unsigned = value.clone();
         let supplied = unsigned
@@ -368,26 +594,49 @@ fn care(
             .unwrap_or("")
             .to_owned();
         unsigned.as_object_mut().map(|o| o.remove("mac"));
-        let unsigned_bytes = canonical::canonical_event(&serde_json::to_vec(&unsigned)?)?;
-        let duplicate = seen.contains(msg) || store.receipt_exists(msg)?;
+        let unsigned_bytes = serde_json::to_vec(&unsigned)
+            .ok()
+            .and_then(|bytes| canonical::canonical_event(&bytes).ok());
+        let duplicate = if let Some(id) = msg {
+            seen.contains(id) || store.receipt_exists(id)?
+        } else {
+            false
+        };
+        let mut reason = if duplicate { "duplicate" } else { "rejected" };
         let valid = cred.pid == expected_pid
+            && cred.uid == unsafe { libc::geteuid() }
             && shape_valid
             && value.get("producer_generation").and_then(|v| v.as_str())
                 == Some(expected_generation.as_str())
             && value.get("auth_scheme").and_then(|v| v.as_str()) == Some("hmac-sha256-jcs-v1")
-            && verify_mac(&secret, &unsigned_bytes, &supplied)
+            && unsigned_bytes
+                .as_ref()
+                .is_some_and(|bytes| verify_mac(&secret, bytes, &supplied))
+            && !value
+                .get("replay")
+                .and_then(|v| v.as_bool())
+                .unwrap_or(true)
             && !duplicate;
-        seen.insert(msg.to_owned());
-        let inserted = store.append_receipt(
+        if valid {
+            reason = "accepted";
+        }
+        if let Some(id) = msg {
+            seen.insert(id.to_owned());
+            let _ = store.append_receipt(
+                id,
+                valid,
+                duplicate,
+                reason,
+                &format!("boot:{boot}:{}", logging::monotonic_ns()),
+            )?;
+        }
+        let inserted_attempt = store.append_attempt(
             msg,
             valid,
             duplicate,
-            if valid { "accepted" } else { "rejected" },
+            reason,
             &format!("boot:{boot}:{}", logging::monotonic_ns()),
         )?;
-        if valid && !inserted {
-            return Err("care receipt was not durable".into());
-        }
         logging::emit(
             "care-core",
             if valid {
@@ -397,17 +646,16 @@ fn care(
             },
             *seq,
             boot,
-            Some(if valid {
-                "durable"
-            } else {
-                "authentication_failed"
-            }),
+            Some(reason),
         );
         *seq += 1;
         println!(
             "{}",
-            json!({"accepted":valid,"duplicate":duplicate,"message_id":msg,"pid":cred.pid,"durable":inserted})
+            json!({"accepted":valid,"duplicate":duplicate,"message_id":msg_label,"pid":cred.pid,"durable":inserted_attempt,"reason":reason})
         );
+        if env::args().any(|a| a == "--once") && handled > cycles {
+            break;
+        }
     }
     Ok(())
 }
@@ -428,12 +676,19 @@ fn spawn_direct_children(
     ready_dir: &std::path::Path,
     secret: &[u8],
     boot: &str,
-) -> Result<(ChildEntry, Option<ChildEntry>), Box<dyn std::error::Error>> {
+) -> Result<(ChildEntry, Option<ChildEntry>, OwnedFd), Box<dyn std::error::Error>> {
     let (producer_endpoint, care_endpoint) = ipc::seqpacket_pair()?;
     ipc::enable_passcred(&producer_endpoint)?;
     ipc::enable_passcred(&care_endpoint)?;
     let (producer_cap_read, producer_cap_write) = pipe()?;
     let (care_cap_read, care_cap_write) = pipe()?;
+    let (producer_control_read, producer_control_write) = pipe()?;
+    // Seed capability pipes before child exec so readiness cannot race a
+    // blocking capability read during initialization.
+    write_fd(&producer_cap_write, secret)?;
+    if env::var_os("COMPANION_SKIP_CARE").is_none() {
+        write_fd(&care_cap_write, secret)?;
+    }
     let generation = Uuid::new_v4().to_string();
     let generation_number = DIRECT_GENERATION.fetch_add(1, Ordering::SeqCst) + 1;
     let producer = spawn(
@@ -441,6 +696,7 @@ fn spawn_direct_children(
         "sensor-gateway",
         Some(producer_endpoint.as_raw_fd()),
         Some(producer_cap_read.as_raw_fd()),
+        Some(producer_control_read.as_raw_fd()),
         Some(&generation),
         None,
         ready_dir,
@@ -476,6 +732,7 @@ fn spawn_direct_children(
             "care-core",
             Some(care_endpoint.as_raw_fd()),
             Some(care_cap_read.as_raw_fd()),
+            None,
             Some(&generation),
             Some(producer_pid),
             ready_dir,
@@ -487,11 +744,8 @@ fn spawn_direct_children(
     drop(producer_endpoint);
     drop(care_endpoint);
     drop(producer_cap_read);
+    drop(producer_control_read);
     drop(care_cap_read);
-    write_fd(&producer_cap_write, secret)?;
-    if care.is_some() {
-        write_fd(&care_cap_write, secret)?;
-    }
     drop(producer_cap_write);
     drop(care_cap_write);
     let producer_entry = ChildEntry {
@@ -512,7 +766,7 @@ fn spawn_direct_children(
         ready_path: ready_dir.join("care-core.ready"),
         pidfd: None,
     });
-    Ok((producer_entry, care_entry))
+    Ok((producer_entry, care_entry, producer_control_write))
 }
 
 fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
@@ -549,7 +803,17 @@ fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
             );
             continue;
         }
-        let child = spawn(&exe, role, None, None, None, None, &ready_dir)?;
+        let child_generation = format!("{}-{}", role, Uuid::new_v4());
+        let child = spawn(
+            &exe,
+            role,
+            None,
+            None,
+            None,
+            Some(&child_generation),
+            None,
+            &ready_dir,
+        )?;
         let ready_path = ready_dir.join(format!("{role}.ready"));
         children.push(ChildEntry {
             role: role.into(),
@@ -561,7 +825,8 @@ fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
             pidfd: None,
         });
     }
-    let (producer_entry, care_entry) = spawn_direct_children(&exe, &ready_dir, &secret, &boot)?;
+    let (producer_entry, care_entry, mut producer_control) =
+        spawn_direct_children(&exe, &ready_dir, &secret, &boot)?;
     children.push(producer_entry);
     if let Some(care_entry) = care_entry {
         children.push(care_entry);
@@ -574,7 +839,7 @@ fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
             let _ = stream.set_read_timeout(Some(Duration::from_millis(50)));
             let _ = stream.read_to_end(&mut request);
             let command = serde_json::from_slice::<serde_json::Value>(&request).ok();
-            let response = handle_control(command.as_ref(), &mut children);
+            let response = handle_control(command.as_ref(), &mut children, Some(&producer_control));
             if response.get("command").and_then(|v| v.as_str()) == Some("shutdown") {
                 STOP.store(true, Ordering::SeqCst);
             }
@@ -605,10 +870,23 @@ fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
                     && entry.restarts < 3
                 {
                     std::thread::sleep(entry.backoff);
-                    let replacement = spawn(&exe, &entry.role, None, None, None, None, &ready_dir)?;
+                    // Remove the old acknowledgement before spawning. This
+                    // avoids a replacement inheriting stale readiness.
+                    let _ = std::fs::remove_file(&entry.ready_path);
+                    let child_generation = format!("{}-{}", entry.role, Uuid::new_v4());
+                    let replacement = spawn(
+                        &exe,
+                        &entry.role,
+                        None,
+                        None,
+                        None,
+                        Some(&child_generation),
+                        None,
+                        &ready_dir,
+                    )?;
                     let mut old = std::mem::replace(&mut entry.child, replacement);
                     let _ = old.wait();
-                    let _ = std::fs::remove_file(&entry.ready_path);
+                    let _ = wait_ready(&entry.ready_path, Duration::from_secs(5));
                     logging::emit(
                         "ops-supervisor",
                         "child_restarted",
@@ -642,8 +920,9 @@ fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
             children.retain(|entry| !matches!(entry.role.as_str(), "sensor-gateway" | "care-core"));
             std::thread::sleep(Duration::from_millis(100));
             secret = Uuid::new_v4().as_bytes().to_vec();
-            let (producer_entry, care_entry) =
+            let (producer_entry, care_entry, new_control) =
                 spawn_direct_children(&exe, &ready_dir, &secret, &boot)?;
+            producer_control = new_control;
             children.push(producer_entry);
             if let Some(care_entry) = care_entry {
                 children.push(care_entry);
@@ -685,13 +964,32 @@ fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
 
+fn wait_ready(path: &std::path::Path, timeout: Duration) -> bool {
+    let deadline = Instant::now() + timeout;
+    while Instant::now() < deadline {
+        if let Ok(bytes) = std::fs::read(path)
+            && let Ok(value) = serde_json::from_slice::<serde_json::Value>(&bytes)
+            && value.get("initialization_status").and_then(|v| v.as_str()) == Some("ready")
+        {
+            return true;
+        }
+        std::thread::sleep(Duration::from_millis(25));
+    }
+    false
+}
+
 fn health_json(children: &mut [ChildEntry]) -> String {
     let mut rows = Vec::new();
     for entry in children.iter_mut() {
+        let marker = std::fs::read(&entry.ready_path)
+            .ok()
+            .and_then(|bytes| serde_json::from_slice::<serde_json::Value>(&bytes).ok());
         let state = match entry.child.try_wait() {
             Ok(Some(_)) if entry.restarts >= 3 => "crash_loop",
             Ok(Some(_)) => "failed",
-            Ok(None) if entry.ready_path.exists() => "healthy",
+            Ok(None) if ready_marker_valid(&entry.ready_path, entry.child.id(), &entry.role) => {
+                "healthy"
+            }
             Ok(None) => "starting",
             Err(_) => "degraded",
         };
@@ -706,7 +1004,11 @@ fn health_json(children: &mut [ChildEntry]) -> String {
             "state":state,
             "health":state,
             "pidfd_bound":entry.pidfd.is_some(),
-            "pidfd_alive":entry.pidfd.as_ref().is_some_and(pidfd_alive)
+            "pidfd_alive":entry.pidfd.as_ref().is_some_and(pidfd_alive),
+            "readiness_generation":marker.as_ref().and_then(|v| v.get("generation")).cloned().unwrap_or(serde_json::Value::Null),
+            "readiness_boot_id":marker.as_ref().and_then(|v| v.get("boot_id")).cloned().unwrap_or(serde_json::Value::Null),
+            "store_status":marker.as_ref().and_then(|v| v.get("store_status")).cloned().unwrap_or(serde_json::Value::Null),
+            "channel_status":marker.as_ref().and_then(|v| v.get("channel_status")).cloned().unwrap_or(serde_json::Value::Null)
         }));
     }
     let care_coverage = if children.iter_mut().any(|e| {
@@ -719,7 +1021,24 @@ fn health_json(children: &mut [ChildEntry]) -> String {
         "degraded"
     };
     let (sqlite_version, sqlite_source_id) = runtime_identity();
-    serde_json::to_string(&json!({"version":FOUNDATION_VERSION,"status":"resident","children":rows,"care_coverage":care_coverage,"network":"deny_by_default","boot_id":logging::boot_id(),"sqlite":{"version":sqlite_version,"source_id":sqlite_source_id,"compile_options":runtime_compile_options()}})).unwrap_or_else(|_|"{\"status\":\"health_serialization_failed\"}".into())
+    serde_json::to_string(&json!({"version":FOUNDATION_VERSION,"status":"resident","children":rows,"care_coverage":care_coverage,"network_policy":"deny_by_default","network_observation":"external_process_census_required","boot_id":logging::boot_id(),"sqlite":{"version":sqlite_version,"source_id":sqlite_source_id,"compile_options":runtime_compile_options()}})).unwrap_or_else(|_|"{\"status\":\"health_serialization_failed\"}".into())
+}
+
+fn ready_marker_valid(path: &std::path::Path, pid: u32, role: &str) -> bool {
+    std::fs::read(path)
+        .ok()
+        .and_then(|bytes| serde_json::from_slice::<serde_json::Value>(&bytes).ok())
+        .is_some_and(|v| {
+            v.get("role").and_then(|x| x.as_str()) == Some(role)
+                && v.get("pid").and_then(|x| x.as_u64()) == Some(pid as u64)
+                && v.get("initialization_status").and_then(|x| x.as_str()) == Some("ready")
+                && v.get("boot_id")
+                    .and_then(|x| x.as_str())
+                    .is_some_and(|x| !x.is_empty())
+                && v.get("generation")
+                    .and_then(|x| x.as_str())
+                    .is_some_and(|x| !x.is_empty())
+        })
 }
 
 fn pidfd_alive(fd: &OwnedFd) -> bool {
@@ -735,6 +1054,7 @@ fn pidfd_alive(fd: &OwnedFd) -> bool {
 fn handle_control(
     command: Option<&serde_json::Value>,
     children: &mut [ChildEntry],
+    producer_control: Option<&OwnedFd>,
 ) -> serde_json::Value {
     let Some(command) = command else {
         return json!({});
@@ -746,7 +1066,7 @@ fn handle_control(
     match name {
         "health" => json!({"command":"health","health":health_json(children)}),
         "shutdown" => json!({"command":"shutdown","accepted":true}),
-        "kill" | "fail" | "restart" | "rotate" => {
+        "kill" | "fail" | "restart" | "rotate" | "disconnect" => {
             let role = command.get("role").and_then(|v| v.as_str()).unwrap_or("");
             if let Some(entry) = children.iter().find(|entry| entry.role == role) {
                 let result = unsafe { libc::kill(entry.child.id() as libc::pid_t, libc::SIGKILL) };
@@ -755,8 +1075,49 @@ fn handle_control(
                 json!({"command":name,"role":role,"accepted":false,"reason":"unknown_role"})
             }
         }
-        "inject" | "reconnect" => {
-            json!({"command":name,"accepted":false,"reason":"deferred_to_phase_01_control_matrix"})
+        "inject" => {
+            let kind = command
+                .get("kind")
+                .and_then(|v| v.as_str())
+                .unwrap_or("valid");
+            let opcode = match kind {
+                "valid" | "valid_safety_candidate" => "inject_valid",
+                "ordinary_observation" => "inject_ordinary",
+                other => other,
+            };
+            if let Some(fd) = producer_control {
+                let result = write_fd(fd, format!("{opcode}\n").as_bytes());
+                return json!({"command":"inject","kind":kind,"accepted":result.is_ok(),"observed":"producer_control_channel"});
+            }
+            json!({"command":"inject","kind":kind,"accepted":false,"reason":"producer_control_unavailable"})
+        }
+        "reconnect" => {
+            json!({"command":"reconnect","accepted":std::fs::write(XdgPaths::resolve("companion").ok().map(|p| p.runtime.join("bridge-command.json")).unwrap_or_default(), b"{\"command\":\"reconnect\"}").is_ok()})
+        }
+        "set_test_display_topology"
+        | "set_test_store_fault"
+        | "clear_test_fault"
+        | "checkpoint_store"
+        | "verify_store" => {
+            let path = XdgPaths::resolve("companion").ok().map(|p| {
+                if matches!(name, "set_test_store_fault" | "clear_test_fault") {
+                    let authority = command
+                        .get("authority")
+                        .and_then(|v| v.as_str())
+                        .unwrap_or("care");
+                    p.runtime.join(format!("{authority}-store-fault"))
+                } else {
+                    p.runtime.join("test-control.json")
+                }
+            });
+            let accepted = path.as_ref().is_some_and(|p| {
+                if name == "clear_test_fault" {
+                    std::fs::remove_file(p).is_ok() || !p.exists()
+                } else {
+                    std::fs::write(p, serde_json::to_vec(command).unwrap_or_default()).is_ok()
+                }
+            });
+            json!({"command":name,"accepted":accepted,"observed":"control_state_recorded"})
         }
         _ => json!({"command":name,"accepted":false,"reason":"unsupported_command"}),
     }
@@ -780,11 +1141,13 @@ fn write_fd(fd: &OwnedFd, data: &[u8]) -> Result<(), std::io::Error> {
     }
 }
 
+#[allow(clippy::too_many_arguments)]
 fn spawn(
     exe: &std::path::Path,
     role: &str,
     endpoint: Option<i32>,
     cap: Option<i32>,
+    control: Option<i32>,
     generation: Option<&str>,
     expected_pid: Option<u32>,
     ready_dir: &std::path::Path,
@@ -802,6 +1165,9 @@ fn spawn(
     if let Some(fd) = cap {
         cmd.env("COMPANION_CAP_FD", fd.to_string());
     }
+    if let Some(fd) = control {
+        cmd.env("COMPANION_PRODUCER_CONTROL_FD", fd.to_string());
+    }
     if let Some(g) = generation {
         cmd.env("COMPANION_GENERATION", g);
     }
@@ -812,7 +1178,7 @@ fn spawn(
     unsafe {
         cmd.pre_exec(move || {
             harden()?;
-            for fd in [endpoint, cap].into_iter().flatten() {
+            for fd in [endpoint, cap, control].into_iter().flatten() {
                 let flags = libc::fcntl(fd, libc::F_GETFD);
                 if flags < 0 {
                     return Err(std::io::Error::last_os_error());
@@ -860,5 +1226,13 @@ mod tests {
         let mut major = valid;
         major["schema_major"] = json!(2);
         assert!(!valid_safety_shape(&major));
+    }
+
+    #[test]
+    fn safety_shape_rejects_invalid_datetime_and_accepts_bounded_utc() {
+        assert!(valid_datetime("2026-01-01T00:00:00Z"));
+        assert!(!valid_datetime("2026-01-01T24:00:00Z"));
+        assert!(!valid_datetime("not-a-date"));
+        assert!(!valid_datetime("2026-01-01T00:00:00+00:00"));
     }
 }

@@ -2,7 +2,7 @@
 """Verify exact private-cache artifacts without modifying the host."""
 import hashlib, os, pathlib, subprocess, sys
 root=pathlib.Path(os.environ.get("QUAL_ROOT", pathlib.Path.home()/".cache/companion/qualification/COMPANION-P00-QUAL-001"))
-godot=pathlib.Path(os.environ.get("GODOT_BIN", root/"artifacts/godot-4.7.2-standard.L8kXdw/Godot_v4.7.2-stable_linux.x86_64"))
+godot=pathlib.Path(os.environ.get("GODOT_BIN", root/"artifacts/godot-4.7.2-standard/Godot_v4.7.2-stable_linux.x86_64"))
 godot_archive=root/"artifacts/Godot_v4.7.2-stable_linux.x86_64.zip"
 sqlite=pathlib.Path(os.environ.get("COMPANION_SQLITE_BIN", root/"artifacts/sqlite3-3.53.4"))
 expected="cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4"

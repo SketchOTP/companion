@@ -1,3 +1,4 @@
 PRAGMA user_version=1;
 CREATE TABLE IF NOT EXISTS authority_meta (k TEXT PRIMARY KEY, v TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS safety_receipts (id INTEGER PRIMARY KEY, candidate_id TEXT UNIQUE NOT NULL, accepted INTEGER NOT NULL, duplicate INTEGER NOT NULL, reason TEXT NOT NULL, created_utc TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS safety_attempts (id INTEGER PRIMARY KEY, candidate_id TEXT, accepted INTEGER NOT NULL, duplicate INTEGER NOT NULL, reason TEXT NOT NULL, created_utc TEXT NOT NULL);

@@ -174,3 +174,12 @@ injected soak was not run in this correction cycle. The branch therefore
 remains a Phase 01 candidate awaiting Architect review; Architecture v1.0 is
 unchanged, Phase 02+ remain closed, and no dependency or product capability is
 self-approved.
+
+## Review 03 closeout handoff
+
+The branch now includes the resident control-plane and evidence-binding
+correction. Final handoff requires the committed sanitized closeout bundle,
+hash/fixture/ancestry validator, 3,000-message matrix, 37-scenario matrix,
+Godot reconnect result, and corrected 3,600-second soak. PR #7 and Issue #6
+remain open for independent Architect review; Architecture v1.0 remains
+adopted, Phase 02+ remain closed, and no product capability is claimed.

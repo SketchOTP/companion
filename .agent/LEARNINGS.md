@@ -356,3 +356,14 @@ supervision, reliability, or production readiness.
 - Fresh push run `34488896386` and pull-request run `34488902059` passed after
   the readiness correction, confirming the harness fix without expanding any
   product or security claim.
+
+## 2026-09-10 — Review 03 evidence binding
+
+- A resident matrix must make seeds alter deterministic category ordering and
+  must assert every durable attempt, not only command acceptance.
+- Readiness is an observed, role-bound acknowledgement; marker presence alone
+  is insufficient. Runtime policy fields (such as network deny-by-default)
+  must remain distinct from process-attributed census observations.
+- Phase closeout summaries require committed hashes, fixture binding, Git
+  ancestry, deterministic generation, and a tamper-negative validator. A
+  generated validation file is output, never evidence input.

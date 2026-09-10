@@ -30,12 +30,18 @@ def main():
     binary=os.environ.get("FOUNDATION_SUPERVISOR","target/release/ops-supervisor"); started=time.time(); samples=[]; failures=[]; injections=[]
     baseline_checkout=subprocess.run(["git","status","--porcelain=v1","--",".",":!.gitignore"],capture_output=True,text=True,check=True).stdout
     with tempfile.TemporaryDirectory(prefix="companion-soak-") as root:
-        env=os.environ.copy(); env["COMPANION_XDG_ROOT"]=root; proc=subprocess.Popen([binary],env=env,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL); resident_observed=proc.poll() is None; control=pathlib.Path(root)/"companion"/"supervisor.sock"; startup_deadline=time.time()+10
+        env=os.environ.copy(); env["COMPANION_XDG_ROOT"]=root; proc=subprocess.Popen([binary],env=env,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+        godot_proc = None
+        if env.get("GODOT_BIN"):
+            godot_proc = subprocess.Popen([env["GODOT_BIN"], "--headless", "--path", str(pathlib.Path(__file__).resolve().parents[1]/"godot")], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        godot_resident_observed = bool(godot_proc and godot_proc.poll() is None)
+        resident_observed=proc.poll() is None; control=pathlib.Path(root)/"companion"/"supervisor.sock"; startup_deadline=time.time()+10
         while time.time() < startup_deadline and not control.exists() and proc.poll() is None:
             time.sleep(0.05)
         if not control.exists():
             proc.terminate()
             proc.wait(timeout=15)
+            if godot_proc and godot_proc.poll() is None: godot_proc.terminate(); godot_proc.wait(timeout=10)
             raise RuntimeError("supervisor control socket did not become ready")
         deadline=started+a.duration_seconds
         while time.time()<deadline:
@@ -49,14 +55,30 @@ def main():
                     if offset <= elapsed < offset + a.interval:
                         marker=f"{role}:{action}";
                         if marker not in injections:
-                            response=command(control,{"command":action,"role":role}); injections.append(marker); failures.extend([] if response.get("accepted") else [{"phase":"injection","role":role,"response":response}])
+                            before = next((x for x in snap.get("children",[]) if x.get("role")==role), {})
+                            response=command(control,{"command":action,"role":role}); injections.append(marker)
+                            if response.get("accepted") is not True:
+                                failures.append({"phase":"injection","role":role,"response":response})
+                            else:
+                                deadline_recovery=time.time()+min(20, max(5, a.interval))
+                                recovered=False; degraded_seen=False
+                                while time.time()<deadline_recovery:
+                                    current=command(control,{"command":"health"}); current=json.loads(current["health"]) if "health" in current else current
+                                    if current.get("care_coverage")=="degraded": degraded_seen=True
+                                    row=next((x for x in current.get("children",[]) if x.get("role")==role), {})
+                                    changed = row.get("pid") != before.get("pid") or row.get("generation") != before.get("generation") or row.get("restarts",0)>before.get("restarts",0)
+                                    if action=="fail": changed = degraded_seen and current.get("care_coverage")=="synthetic" and row.get("pid") != before.get("pid")
+                                    if changed: recovered=True; break
+                                    time.sleep(.1)
+                                if not recovered: failures.append({"phase":"recovery","role":role,"action":action})
             except Exception as exc: failures.append({"phase":"health","error_class":type(exc).__name__})
             time.sleep(min(a.interval,max(0,deadline-time.time())))
         try: command(control,{"command":"shutdown"})
         except Exception as exc: failures.append({"phase":"shutdown","error_class":type(exc).__name__})
         proc.wait(timeout=15)
+        if godot_proc and godot_proc.poll() is None: godot_proc.terminate(); godot_proc.wait(timeout=10)
     checkout_changed=any(sample.get("checkout_write_detected") for sample in samples)
     network_counts=[sample.get("network",{}).get("owned_count") for sample in samples]
     network_error=any(sample.get("network",{}).get("error") for sample in samples)
-    result={"status":"PASS" if not failures and proc.returncode==0 and len(samples)>0 and len(injections)==4 and not checkout_changed and not network_error and all(count==0 for count in network_counts) else "FAIL","started_utc":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime(started)),"ended_utc":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),"duration_seconds":a.duration_seconds,"samples":len(samples),"failures":failures,"injections":injections,"resident_supervisor_observed":resident_observed,"checkout_write_detected":checkout_changed,"network_owned_counts":network_counts,"evidence_ceiling":"E3_TARGET_TESTED","claim_boundary":"resident synthetic engineering soak with controlled failures; not production reliability or safety efficacy"}; a.output.parent.mkdir(parents=True,exist_ok=True); a.output.write_text(json.dumps(result,indent=2,sort_keys=True)+"\n",encoding="utf-8"); print(json.dumps(result,sort_keys=True))
+    result={"status":"PASS" if not failures and proc.returncode==0 and len(samples)>0 and len(injections)==4 and not checkout_changed and not network_error and all(count==0 for count in network_counts) else "FAIL","started_utc":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime(started)),"ended_utc":time.strftime("%Y-%m-%dT%H:%M:%SZ",time.gmtime()),"duration_seconds":a.duration_seconds,"samples":len(samples),"failures":failures,"injections":injections,"resident_supervisor_observed":resident_observed,"godot_process_observed":godot_resident_observed,"checkout_write_detected":checkout_changed,"network_owned_counts":network_counts,"evidence_ceiling":"E3_TARGET_TESTED","claim_boundary":"resident synthetic engineering soak with controlled failures; not production reliability or safety efficacy"}; a.output.parent.mkdir(parents=True,exist_ok=True); a.output.write_text(json.dumps(result,indent=2,sort_keys=True)+"\n",encoding="utf-8"); print(json.dumps(result,sort_keys=True))
 if __name__=="__main__": main()

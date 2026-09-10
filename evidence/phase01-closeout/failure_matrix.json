@@ -1,0 +1,63 @@
+{
+  "claim_boundary": "synthetic control-plane scenario observations only; no production reliability or safety claim",
+  "duration_seconds": 22.515,
+  "evidence_ceiling": "E3_TARGET_TESTED",
+  "observations": {
+    "checkpoint_store": {
+      "accepted": true,
+      "command": "checkpoint_store",
+      "observed": "control_state_recorded"
+    },
+    "set_test_display_topology": {
+      "accepted": true,
+      "command": "set_test_display_topology",
+      "observed": "control_state_recorded"
+    },
+    "verify_store": {
+      "accepted": true,
+      "command": "verify_store",
+      "observed": "control_state_recorded"
+    }
+  },
+  "scenario_count": 37,
+  "scenarios": {
+    "backup_restore": true,
+    "care_outage": true,
+    "care_recovery": true,
+    "care_restart": true,
+    "care_store_unavailable": true,
+    "checkpoint": true,
+    "companion_absent": true,
+    "companion_db_absent_care": true,
+    "companion_restart": true,
+    "companion_store_corrupt": true,
+    "companion_store_unavailable": true,
+    "crash_loop_visibility": true,
+    "display_loss_fallback": true,
+    "display_restore_geometry": true,
+    "duplicate_idempotency": true,
+    "fresh_restore": true,
+    "godot_bridge_failure": true,
+    "godot_bridge_restart": true,
+    "godot_client_connection": true,
+    "godot_client_reconnect": true,
+    "identity_vault_restart": true,
+    "incompatible_migration": true,
+    "integrity_check": true,
+    "invalid_candidate_rejection": true,
+    "malformed_contract": true,
+    "malformed_framing": true,
+    "producer_generation_rotation": true,
+    "readiness_timeout_guard": true,
+    "sensor_restart": true,
+    "shutdown_orphan_cleanup": true,
+    "stale_capability_rejection": true,
+    "stale_endpoint_rejection": true,
+    "startup_failure": true,
+    "startup_ready": true,
+    "unsafe_storage_refusal": true,
+    "vault_denied_operation": true,
+    "vault_outage": true
+  },
+  "status": "PASS"
+}

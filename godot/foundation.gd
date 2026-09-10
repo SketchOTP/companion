@@ -27,11 +27,14 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	_poll_bridge()
+	_apply_screen_policy()
 	queue_redraw()
 
 func _poll_bridge() -> void:
 	# The bridge handshake is a real local versioned Unix-domain connection.
 	# Missing or incompatible bridge state is explicit degradation.
+	if bridge_peer != null:
+		bridge_peer.poll()
 	if bridge_peer == null or bridge_peer.get_status() != StreamPeerSocket.STATUS_CONNECTED:
 		bridge_peer = StreamPeerUDS.new()
 		var connect_error := bridge_peer.connect_to_host(bridge_socket_path)
@@ -68,6 +71,8 @@ func _apply_screen_policy() -> void:
 		bridge_state = BridgeState.DEGRADED
 		status = "FOUNDATION / BRIDGE: DEGRADED (TARGET DISPLAY ABSENT)"
 		return
+	# Explicitly select the configured habitat output before clamping geometry.
+	get_window().current_screen = target_screen
 	var area := DisplayServer.screen_get_usable_rect(target_screen)
 	var position := DisplayServer.window_get_position()
 	var size := DisplayServer.window_get_size()

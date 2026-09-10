@@ -133,3 +133,11 @@ or reinterpret the operator-owned primary-worktree modifications.
 - `EXTERNAL.md` — external sources and dispositions
 
 `CURRENT.md` is mutable. Historical ledgers are append-only after adoption.
+
+## Review 03 closeout routing
+
+The active Phase 01 work is the final evidence-binding closeout in
+`codex/p01-foundation-001`. Read `ARCHITECT_REVIEW_03.md`, the closeout
+evidence bundle under `evidence/phase01-closeout/`, and the resident matrix
+outputs before any acceptance statement. Do not open Phase 02 or claim product
+capability.

@@ -291,3 +291,13 @@ does not change the Phase 01 candidate boundary.
 Fresh push run `34488896386` and pull-request run `34488902059` both passed on
 `12ee47bc5f4c556777eae43f35e3ec2f89f39e15`; CI status is now reconciled. The
 candidate remains unaccepted pending Architect review.
+
+## COMPANION-P01-FOUNDATION-001 — Architect Review 03 closeout (2026-09-10)
+
+The final closeout run adds resident control-plane coverage, fail-closed
+direct-care audit handling, semantic contract checks, deterministic artifact
+bootstrap policy, and independently bound evidence. The result remains a Phase
+01 foundation candidate until Architect review. Architecture v1.0 remains
+adopted; Phase 02+ and product implementation remain closed. No organism,
+memory, speech, vision, learning, dreaming, notification, caregiving efficacy,
+security certification, reliability, or SLA claim is allowed.

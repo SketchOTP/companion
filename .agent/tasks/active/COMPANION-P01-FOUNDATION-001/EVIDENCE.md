@@ -186,3 +186,15 @@ fresh push and pull-request runs are required to confirm the corrected CI.
 Fresh push workflow `34488896386` and pull-request workflow `34488902059` both
 passed on `12ee47bc5f4c556777eae43f35e3ec2f89f39e15`; the readiness correction
 is verified remotely. CI evidence remains bounded build/validation evidence.
+
+## Architect Review 03 closeout
+
+The final correction adds a seed-diverse resident 3,000-message matrix, a
+37-scenario fail-closed control-plane matrix, generation-bound readiness and
+role/store/channel health observations, strict bounded UTC packet validation,
+and deterministic artifact bootstrap paths. Sanitized outputs are committed
+under `evidence/phase01-closeout/`; `scripts/validate_phase01_closeout.py`
+recomputes hashes, fixture identity and Git ancestry and writes validation only
+as output. The corrected resident 3,600-second soak is required to complete
+before publication; all evidence remains E3 engineering evidence and does not
+claim product, safety, security, reliability or SLA capability.

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Headless Godot 4.7 UDS handshake and disconnect/reconnect smoke test."""
-import argparse, json, os, pathlib, signal, subprocess, tempfile, time
+import argparse, json, os, pathlib, signal, socket, subprocess, tempfile, time
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--output", type=pathlib.Path, required=True); args = ap.parse_args()
@@ -16,11 +16,27 @@ def main():
         while time.time() < deadline and not sock.exists(): time.sleep(.05)
         if not sock.exists():
             proc.kill(); raise SystemExit("bridge socket did not appear")
-        godot_run = subprocess.run([godot, "--headless", "--path", "godot", "--quit-after", "1"], env=env, capture_output=True, text=True, timeout=10)
-        connected = state.exists() and json.loads(state.read_text()).get("state") == "connected"
+        godot_run = subprocess.Popen([godot, "--headless", "--path", "godot", "--quit-after", "600"], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        time.sleep(1.0)
+        connected_before = state.exists() and json.loads(state.read_text()).get("state") == "connected"
         proc.send_signal(signal.SIGTERM); proc.wait(timeout=5)
-        disconnected_run = subprocess.run([godot, "--headless", "--path", "godot", "--quit-after", "1"], env=env, capture_output=True, text=True, timeout=10)
-        result = {"status": "PASS" if godot_run.returncode == 0 and connected and disconnected_run.returncode == 0 else "FAIL", "connected_state_observed": connected, "godot_connected_returncode": godot_run.returncode, "godot_after_bridge_stop_returncode": disconnected_run.returncode, "bridge_uds": str(sock.name), "claim_boundary": "headless UDS protocol and degraded disconnect observation; no display or product capability"}
+        disconnected_observed = False
+        try:
+            probe = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM); probe.settimeout(.5); probe.connect(str(sock)); probe.close()
+        except OSError:
+            disconnected_observed = True
+        replacement = subprocess.Popen([bridge], env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        deadline = time.time() + 8
+        reconnected = False
+        while time.time() < deadline and godot_run.poll() is None:
+            if state.exists():
+                try: reconnected = json.loads(state.read_text()).get("state") == "connected"
+                except json.JSONDecodeError: pass
+            if reconnected: break
+            time.sleep(.1)
+        godot_run.wait(timeout=10)
+        replacement.send_signal(signal.SIGTERM); replacement.wait(timeout=5)
+        result = {"status": "PASS" if godot_run.returncode == 0 and connected_before and disconnected_observed and reconnected else "FAIL", "same_process_connected_before": connected_before, "bridge_disconnect_observed": disconnected_observed, "same_process_reconnected": reconnected, "godot_returncode": godot_run.returncode, "bridge_uds": str(sock.name), "claim_boundary": "headless same-process UDS reconnect observation; no display or product capability"}
     args.output.parent.mkdir(parents=True, exist_ok=True); args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8"); print(json.dumps(result, sort_keys=True))
     if result["status"] != "PASS": raise SystemExit(1)
 if __name__ == "__main__": main()

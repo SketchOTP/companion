@@ -426,3 +426,12 @@ run is required for green push evidence.
 Fresh push run `34488896386` and pull-request run `34488902059` both passed on
 `12ee47bc5f4c556777eae43f35e3ec2f89f39e15`. The CI evidence is reconciled;
 the branch remains a candidate pending independent Architect review.
+
+## 2026-09-10 — Architect Review 03 narrow closeout
+
+Review 03 remains `CONTINUE — PHASE 01 NOT ACCEPTED` until the final resident
+closeout evidence is independently accepted. The branch continues on
+`codex/p01-foundation-001`; protected primary-worktree changes remain untouched.
+The closeout work is limited to foundation controls, synthetic evidence and
+governance records. Architecture v1.0 is unchanged and adopted, while Phase 02+
+and all product capability remain closed.

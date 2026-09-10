@@ -17,16 +17,22 @@ cargo clippy --workspace --all-targets --all-features --locked -- -D warnings
 cargo test --workspace --locked
 cargo build --workspace --locked --release
 python3 scripts/validate_schemas.py
+python3 scripts/contract_closeout.py
 python3 scripts/check_contract_types.py
 python3 scripts/cycle_matrix.py --cycles 1000 --seeds 17,23,41 --output "$COMPANION_XDG_ROOT/cycle-results.json"
 python3 scripts/storage_smoke.py --output "$COMPANION_XDG_ROOT/storage-results.json"
 python3 scripts/sqlite_identity_check.py --output "$COMPANION_XDG_ROOT/sqlite-identity-results.json"
 python3 scripts/direct_care_smoke.py --output "$COMPANION_XDG_ROOT/care-results.json"
 python3 scripts/failure_matrix.py --output "$COMPANION_XDG_ROOT/failure-results.json"
+python3 scripts/phase01_closeout.py --cycles 3000 --seeds 17,23,41 --output "$COMPANION_XDG_ROOT/phase01-closeout-results.json"
+if test -f evidence/phase01-closeout/manifest.json; then
+  python3 scripts/validate_phase01_closeout.py
+fi
 if test -n "${GODOT_BIN:-}"; then
   python3 scripts/godot_bridge_smoke.py --output "$COMPANION_XDG_ROOT/godot-bridge-results.json"
 fi
-python3 scripts/generate_sbom.py --output "$COMPANION_XDG_ROOT/sbom.spdx.json"
+SOURCE_DATE_EPOCH="${SOURCE_DATE_EPOCH:-0}" python3 scripts/generate_sbom.py --output "$COMPANION_XDG_ROOT/sbom.spdx.json"
+python3 scripts/validate_sbom.py --input "$COMPANION_XDG_ROOT/sbom.spdx.json"
 python3 scripts/security_checks.py
 FOUNDATION_SUPERVISOR=target/release/ops-supervisor COMPANION_XDG_ROOT="$COMPANION_XDG_ROOT" target/release/ops-supervisor >"$COMPANION_XDG_ROOT/supervisor.log" 2>&1 &
 SUPERVISOR_PID=$!

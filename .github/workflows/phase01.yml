@@ -48,13 +48,22 @@ jobs:
           "$GODOT_BIN" --headless --path godot --editor --quit
       - name: Deterministic matrix
         run: python3 scripts/cycle_matrix.py --cycles 1000 --seeds 17,23,41
+      - name: Resident Phase 01 closeout controls
+        run: |
+          python3 scripts/contract_closeout.py > /tmp/contract-closeout.json
+          python3 scripts/failure_matrix.py --output /tmp/failure-matrix.json
+          python3 scripts/phase01_closeout.py --cycles 3000 --seeds 17,23,41 --output /tmp/phase01-closeout.json
       - name: Forbidden data scan
         run: |
           ! git grep -nE '(/home/|/srv/|sshfs|BEGIN (RSA|OPENSSH) PRIVATE KEY|api[_-]?key)' -- ':!experiments/p00-foundation-qual/results/*'
           git diff --check
       - name: SBOM and license inventory
-        run: python3 scripts/generate_sbom.py --output /tmp/phase01-sbom.spdx.json
+        run: |
+          SOURCE_DATE_EPOCH=0 python3 scripts/generate_sbom.py --output /tmp/phase01-sbom.spdx.json
+          python3 scripts/validate_sbom.py --input /tmp/phase01-sbom.spdx.json
       - name: Accepted qualification evidence validator
         run: python3 experiments/p00-foundation-qual/scripts/validate_results.py
+      - name: Phase 01 closeout evidence validator
+        run: python3 scripts/validate_phase01_closeout.py
       - name: Offline dependency policy
         run: python3 scripts/security_checks.py
