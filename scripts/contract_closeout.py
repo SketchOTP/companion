@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Complete deterministic contract fixture gate for all nine Phase 01 schemas."""
-import copy, json, pathlib, uuid
+import copy, json, os, pathlib, uuid
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 try:
     import jsonschema
@@ -66,7 +66,7 @@ def main():
     duplicate=b'{"a":1,"\\u0061":2}'
     try:
         import subprocess
-        subprocess.run(["/home/sketch/.cargo/bin/cargo","test","-p","foundation-core","escaped_duplicate_is_rejected","--locked"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+        subprocess.run([os.environ.get("CARGO", "cargo"),"test","-p","foundation-core","escaped_duplicate_is_rejected","--locked"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
         duplicate_ok=True
     except Exception: duplicate_ok=False
     if not duplicate_ok: errors.append("decoded duplicate fixture was not rejected")
