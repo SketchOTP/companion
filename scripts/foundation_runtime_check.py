@@ -42,6 +42,8 @@ def main():
             time.sleep(.05)
         health, error = {}, None
         try:
+            if not control.exists():
+                raise FileNotFoundError("supervisor control socket did not become ready")
             health = query(control)
         except Exception as exc:
             error = type(exc).__name__

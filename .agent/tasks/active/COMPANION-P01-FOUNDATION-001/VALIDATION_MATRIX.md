@@ -150,5 +150,10 @@ security, reliability, or safety capability.
 claimed.
 
 18. `PASSED` — the committed evidence summary binds implementation commit
-    `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`; final reconciliation is limited
-    to mode/state bookkeeping.
+   `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`; final reconciliation is limited
+   to mode/state bookkeeping.
+
+19. `FAILED` — first push CI run `34488050143` observed degraded health before
+    the supervisor control socket was ready and exited nonzero.
+20. `PASSED` — runtime checker now waits for explicit supervisor endpoint
+    readiness before querying; fresh CI execution remains required.

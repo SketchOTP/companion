@@ -103,6 +103,13 @@ care coverage, zero owned network sockets, and clean shutdown. Phase 01 remains
 a candidate pending the required continuous injected soak and other explicitly
 unqualified surfaces; no product or dependency adoption is claimed.
 
+## CI readiness correction — 2026-09-10
+
+Push workflow `34488050143` failed closed on a supervisor startup race while
+pull-request workflow `34488058839` passed. `foundation_runtime_check.py` now
+waits for endpoint readiness; fresh push and pull-request runs are required to
+confirm the correction before any Architect acceptance.
+
 ## Review 01 continuation — current technical result
 
 The current secondary worktree contains a resident supervisor implementation,

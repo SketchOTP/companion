@@ -105,3 +105,10 @@ The focused implementation/evidence commit is
 `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`; the summary binds this SHA. One
 reconciliation commit remains allowed for executable modes and final branch
 state only, followed by push and independent Architect review.
+
+## CI correction — 2026-09-10
+
+The initial push workflow exposed a health-query startup race and failed
+closed. The runtime checker now waits for supervisor endpoint readiness;
+publish this narrow correction and inspect both fresh push and pull-request
+workflow results before reporting CI status.

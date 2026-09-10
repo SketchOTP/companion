@@ -209,3 +209,7 @@ independent Architect review and no later phase is open.
 The committed evidence summary is bound to implementation commit
 `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`; a final reconciliation commit is
 pending only for executable-bit and publication-state bookkeeping.
+
+The first push CI run on the final head exposed a startup-readiness race in
+the runtime checker and failed closed; the pull-request run passed. The
+checker correction is included on the task branch for a fresh CI execution.

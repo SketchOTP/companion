@@ -51,5 +51,13 @@
     "evidence_ceiling": "E3_TARGET_TESTED",
     "claim_boundary": "resident synthetic engineering soak with controlled failures; not production reliability or safety efficacy"
   },
+  "ci": {
+    "initial_push_run": 34488050143,
+    "initial_push_result": "FAILED_STARTUP_RACE_IN_RUNTIME_CHECK",
+    "initial_pull_request_run": 34488058839,
+    "initial_pull_request_result": "PASSED",
+    "readiness_wait_added": true,
+    "claim_boundary": "CI workflow evidence is configuration/build validation, not production capability"
+  },
   "claim_boundary": "Bounded synthetic engineering evidence only; no product capability, safety efficacy, security certification, production reliability, or SLA claim."
 }

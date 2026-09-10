@@ -215,3 +215,11 @@ commit. A reconciliation commit will restore executable bits and record final
 publication state. The branch remains a candidate pending Architect review;
 no merge, phase transition, dependency adoption, or product capability is
 claimed.
+
+## CI readiness correction — 2026-09-10
+
+The first push workflow on the published head failed closed because the
+runtime checker queried health before the control socket was ready (run
+`34488050143`); the pull-request workflow passed under different timing. The
+checker now waits for endpoint readiness. This correction is recorded for the
+next CI run; no product scope or acceptance status changes.

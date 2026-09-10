@@ -346,3 +346,9 @@ supervision, reliability, or production readiness.
   fix rather than relabeling it.
 - The corrected resident run completed 3,600 seconds with 60 samples and four
   injections without claiming production reliability.
+
+## 2026-09-10 — CI readiness race
+
+- Local and pull-request timing can mask a supervisor startup race that fails
+  a push workflow. Runtime checkers must wait for the control endpoint and
+  retain a nonzero result when readiness is never observed.

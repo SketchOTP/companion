@@ -174,3 +174,11 @@ The focused implementation/evidence commit is
 `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`; the committed soak summary binds
 this SHA and records the exact PASS result. A subsequent reconciliation commit
 will contain only executable-bit and final publication-state bookkeeping.
+
+## CI readiness correction — 2026-09-10
+
+On the published head, push workflow `34488050143` failed closed because
+`foundation_runtime_check.py` queried health before the supervisor socket was
+ready; pull-request workflow `34488058839` passed. The checker now waits for
+the endpoint before querying. This is an evidence-harness correction only;
+fresh push and pull-request runs are required to confirm the corrected CI.

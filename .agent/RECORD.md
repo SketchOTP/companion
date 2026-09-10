@@ -414,3 +414,11 @@ final 3,600-second result summary, and append-only state updates were published
 in `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`. The summary's `evidence_commit`
 points to this commit; a final reconciliation commit is limited to executable
 mode and publication-state bookkeeping. No acceptance is self-claimed.
+
+## 2026-09-10 — Post-publication CI correction
+
+Push workflow `34488050143` failed closed when the runtime checker queried
+health before the supervisor control socket was ready; PR workflow
+`34488058839` passed under different scheduling. The checker now waits for
+explicit endpoint readiness. The failed run remains retained and a fresh CI
+run is required for green push evidence.
