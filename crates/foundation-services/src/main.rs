@@ -25,7 +25,10 @@ fn role() -> String {
 fn main() {
     let name = role();
     if name == "ops-supervisor" && env::args().any(|arg| arg == "--health") {
-        println!("{{\"version\":\"{}\",\"status\":\"not_running\",\"network\":\"deny_by_default\",\"privacy_class\":\"PUBLIC_METADATA\"}}", FOUNDATION_VERSION);
+        println!(
+            "{{\"version\":\"{}\",\"status\":\"not_running\",\"network\":\"deny_by_default\",\"privacy_class\":\"PUBLIC_METADATA\"}}",
+            FOUNDATION_VERSION
+        );
         return;
     }
     let result = if name == "ops-supervisor" {
@@ -147,7 +150,13 @@ fn shell(name: &str) -> Result<(), Box<dyn std::error::Error>> {
         }
     }
     if name == "godot-bridge" {
-        emit(name, "bridge_handshake", 2, &boot, Some("neutral_habitat_boundary"));
+        emit(
+            name,
+            "bridge_handshake",
+            2,
+            &boot,
+            Some("neutral_habitat_boundary"),
+        );
     }
     if env::args().any(|arg| arg == "--hold") {
         thread::sleep(Duration::from_secs(2));
