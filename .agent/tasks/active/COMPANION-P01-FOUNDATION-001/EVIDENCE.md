@@ -86,3 +86,14 @@ replacement and capability rotation; target-host display-loss recovery;
 adversarial descriptor/capability attacks; and the complete SQLite VFS,
 power-loss, and long-duration matrix. These are recorded as `NOT RUN`, not
 converted to passes.
+
+## Live authority re-fetch — 2026-09-10
+
+Immediately before publication reconciliation, the live Architecture Decision
+Ledger query returned 52 rows (31 Adopted, 19 Interim, 2 Rejected). The live
+Research Evidence Register query returned 55 rows (42 Grade A, 11 Grade B,
+2 Grade C, 0 Grade D). The required Phase 01 directive, coder report,
+canonical project, roadmap, Architect Review 01, GitHub Issue #6, and PR #7
+were re-fetched or inspected. Retrieval confidence remains `ADEQUATE`; no
+material authority contradiction was found. Notion and GitHub state still
+record the phase as active and unaccepted.

@@ -125,3 +125,10 @@ command, so the health result reflects live child state. The bounded verify
 run completed successfully. Full injected one-hour soak, broad restart and
 display-loss recovery, adversarial IPC, and VFS/power-loss coverage remain
 unrun and continue to block phase acceptance.
+
+## Publication re-fetch — 2026-09-10
+
+The live Architecture Decision Ledger currently has 52 rows (31 Adopted,
+19 Interim, 2 Rejected); the live Research Evidence Register has 55 rows
+(42 Grade A, 11 Grade B, 2 Grade C, 0 Grade D). The branch and PR remain
+unaccepted pending the explicitly unrun long soak and recovery matrices.
