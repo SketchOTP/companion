@@ -167,3 +167,10 @@ sockets, and no checkout writes. This is `E3_TARGET_TESTED` synthetic
 engineering evidence only. It does not establish production reliability,
 safety efficacy, or Phase 01 acceptance; display-loss, broader adversarial
 descriptor, and deferred SQLite VFS/power-loss surfaces remain unqualified.
+
+## Publication binding — 2026-09-10
+
+The focused implementation/evidence commit is
+`905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`; the committed soak summary binds
+this SHA and records the exact PASS result. A subsequent reconciliation commit
+will contain only executable-bit and final publication-state bookkeeping.

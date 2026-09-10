@@ -277,3 +277,8 @@ explicit control-socket readiness wait, a fresh 3,600-second resident run
 passed; its exact timestamps, samples, injections, and bounded evidence
 ceiling are recorded in `evidence/phase01-review02-summary.json`. The PR
 remains unmerged and Phase 01 remains subject to independent review.
+
+Focused implementation commit `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`
+contains the resident foundation and final soak evidence. The only remaining
+local reconciliation is metadata/state bookkeeping; publication will continue
+on the existing branch without merging PR #7.

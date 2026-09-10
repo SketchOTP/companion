@@ -406,3 +406,11 @@ the fresh run completed from `2026-09-10T13:10:15Z` to
 injections for companion restart, producer rotation, Godot restart, and care
 failure, zero process-owned network sockets, and no checkout writes. Evidence
 is bounded E3 and remains subject to independent Architect acceptance.
+
+## 2026-09-10 — Focused publication commit
+
+The resident foundation, strict care recovery assertion, corrected soak driver,
+final 3,600-second result summary, and append-only state updates were published
+in `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`. The summary's `evidence_commit`
+points to this commit; a final reconciliation commit is limited to executable
+mode and publication-state bookkeeping. No acceptance is self-claimed.

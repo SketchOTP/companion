@@ -534,4 +534,8 @@ matrix, exact host SQLite 3.53.4 identity, and a full injected continuous
   the driver now waits for readiness. A fresh resident 3,600-second run passed
   with 60 samples, zero failures, four injections, zero process-owned network
   sockets, and no checkout writes. This remains bounded E3 engineering
-  evidence and a candidate for independent Architect review.
+evidence and a candidate for independent Architect review.
+
+The focused foundation/evidence commit is `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`.
+Its committed soak summary is bound to that SHA; a reconciliation commit will
+record the final branch and publication state without changing scope.

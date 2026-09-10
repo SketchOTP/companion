@@ -206,3 +206,12 @@ writes (`2026-09-10T13:10:15Z`–`2026-09-10T14:10:15Z`). This is bounded E3
 engineering evidence, not production reliability, safety efficacy, or Phase 01
 acceptance. The candidate remains for Architect review; Architecture v1.0 is
 adopted, later phases and product implementation remain closed.
+
+## Publication state — 2026-09-10
+
+The focused Phase 01 implementation/evidence commit is
+`905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`; the evidence summary binds this
+commit. A reconciliation commit will restore executable bits and record final
+publication state. The branch remains a candidate pending Architect review;
+no merge, phase transition, dependency adoption, or product capability is
+claimed.

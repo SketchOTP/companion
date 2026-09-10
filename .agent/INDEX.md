@@ -205,3 +205,7 @@ a corrected `3,600`-second resident soak (`60` samples, zero failures, four
 injections, zero process-owned network sockets, no checkout writes). The soak
 is bounded E3 engineering evidence only; the Phase 01 candidate still awaits
 independent Architect review and no later phase is open.
+
+The committed evidence summary is bound to implementation commit
+`905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`; a final reconciliation commit is
+pending only for executable-bit and publication-state bookkeeping.

@@ -85,6 +85,14 @@ result is bounded `E3_TARGET_TESTED` engineering evidence. The branch remains
 a Phase 01 candidate awaiting Architect review; Architecture v1.0 remains
 adopted, Roadmap Phase 02+ and product implementation remain closed.
 
+## Publication binding — 2026-09-10
+
+Implementation and evidence are in commit
+`905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`; `evidence/phase01-review02-summary.json`
+records that SHA and the corrected full-duration soak. The branch remains
+`codex/p01-foundation-001`, PR #7 stays draft/open/unmerged, Issue #6 stays
+open, and independent Architect review is required.
+
 ## Evidence correction — current run
 
 The prior `/proc` census failure is preserved as history. The corrected

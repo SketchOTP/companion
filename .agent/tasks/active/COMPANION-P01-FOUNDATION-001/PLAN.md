@@ -98,3 +98,10 @@ socket was available. The harness was corrected to wait for explicit endpoint
 readiness, then rerun for the full 3,600 seconds. The corrected result passed
 with 60 samples, zero failures, and all four controlled injections; the exact
 timestamps and bounded evidence ceiling are recorded in the evidence summary.
+
+## Publication binding — 2026-09-10
+
+The focused implementation/evidence commit is
+`905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`; the summary binds this SHA. One
+reconciliation commit remains allowed for executable modes and final branch
+state only, followed by push and independent Architect review.

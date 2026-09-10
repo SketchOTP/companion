@@ -147,4 +147,8 @@ security, reliability, or safety capability.
     checkout writes (`E3_TARGET_TESTED`).
 17. `PASSED` — soak evidence remains bounded synthetic engineering evidence;
     no production reliability, safety efficacy, or later-phase capability is
-    claimed.
+claimed.
+
+18. `PASSED` — the committed evidence summary binds implementation commit
+    `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`; final reconciliation is limited
+    to mode/state bookkeeping.
