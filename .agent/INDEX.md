@@ -210,6 +210,10 @@ The committed evidence summary is bound to implementation commit
 `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`; a final reconciliation commit is
 pending only for executable-bit and publication-state bookkeeping.
 
+The reconciliation completed at `626f34313af8a77393bd4bf841e4fc955ca00048`,
+and the readiness correction is `12ee47bc5f4c556777eae43f35e3ec2f89f39e15`.
+Fresh push run `34488896386` and pull-request run `34488902059` both passed.
+
 The first push CI run on the final head exposed a startup-readiness race in
 the runtime checker and failed closed; the pull-request run passed. The
 checker correction is included on the task branch for a fresh CI execution.

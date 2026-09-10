@@ -422,3 +422,7 @@ health before the supervisor control socket was ready; PR workflow
 `34488058839` passed under different scheduling. The checker now waits for
 explicit endpoint readiness. The failed run remains retained and a fresh CI
 run is required for green push evidence.
+
+Fresh push run `34488896386` and pull-request run `34488902059` both passed on
+`12ee47bc5f4c556777eae43f35e3ec2f89f39e15`. The CI evidence is reconciled;
+the branch remains a candidate pending independent Architect review.

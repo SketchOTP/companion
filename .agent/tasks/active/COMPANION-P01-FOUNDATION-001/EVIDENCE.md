@@ -182,3 +182,7 @@ On the published head, push workflow `34488050143` failed closed because
 ready; pull-request workflow `34488058839` passed. The checker now waits for
 the endpoint before querying. This is an evidence-harness correction only;
 fresh push and pull-request runs are required to confirm the corrected CI.
+
+Fresh push workflow `34488896386` and pull-request workflow `34488902059` both
+passed on `12ee47bc5f4c556777eae43f35e3ec2f89f39e15`; the readiness correction
+is verified remotely. CI evidence remains bounded build/validation evidence.

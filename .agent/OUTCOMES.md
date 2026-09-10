@@ -544,3 +544,7 @@ The first push workflow failed closed on a control-socket readiness race in
 `foundation_runtime_check.py`; the PR workflow passed. The checker was
 corrected to wait for explicit endpoint readiness before health polling. A
 fresh remote run is required before calling push CI green.
+
+Fresh push run `34488896386` and pull-request run `34488902059` both passed on
+`12ee47bc5f4c556777eae43f35e3ec2f89f39e15`; the CI readiness correction is
+therefore verified remotely. The candidate remains subject to Architect review.

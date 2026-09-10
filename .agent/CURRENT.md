@@ -216,6 +216,11 @@ publication state. The branch remains a candidate pending Architect review;
 no merge, phase transition, dependency adoption, or product capability is
 claimed.
 
+The executable-bit/publication reconciliation is complete in
+`626f34313af8a77393bd4bf841e4fc955ca00048`; the later readiness correction is
+`12ee47bc5f4c556777eae43f35e3ec2f89f39e15`. Fresh push
+(`34488896386`) and pull-request (`34488902059`) workflows both passed.
+
 ## CI readiness correction — 2026-09-10
 
 The first push workflow on the published head failed closed because the

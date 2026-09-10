@@ -157,3 +157,6 @@ claimed.
     the supervisor control socket was ready and exited nonzero.
 20. `PASSED` — runtime checker now waits for explicit supervisor endpoint
     readiness before querying; fresh CI execution remains required.
+
+21. `PASSED` — fresh push workflow `34488896386` and pull-request workflow
+    `34488902059` both passed on `12ee47bc5f4c556777eae43f35e3ec2f89f39e15`.

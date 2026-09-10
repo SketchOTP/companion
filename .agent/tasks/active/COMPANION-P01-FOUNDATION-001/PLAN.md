@@ -112,3 +112,7 @@ The initial push workflow exposed a health-query startup race and failed
 closed. The runtime checker now waits for supervisor endpoint readiness;
 publish this narrow correction and inspect both fresh push and pull-request
 workflow results before reporting CI status.
+
+Fresh push run `34488896386` and pull-request run `34488902059` both passed on
+`12ee47bc5f4c556777eae43f35e3ec2f89f39e15`; the CI correction is complete and
+the candidate is ready for independent Architect review.

@@ -74,6 +74,11 @@ Architecture v1.0 remains adopted, Roadmap Phase 02+ remain closed, and no
 product capability or dependency beyond the authorized baseline is
 self-approved.
 
+Fresh push workflow `34488896386` and pull-request workflow `34488902059` both
+passed on `12ee47bc5f4c556777eae43f35e3ec2f89f39e15`; the CI readiness fix is
+verified. PR #7 remains draft/open/unmerged and Issue #6 remains open for
+independent Architect review.
+
 ## Final resident soak correction — 2026-09-10
 
 The first 3,600-second run failed closed on a control-socket startup race and

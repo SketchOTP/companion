@@ -287,3 +287,7 @@ Post-publication CI run `34488050143` failed closed on runtime-check startup
 readiness while PR run `34488058839` passed. The runtime checker now waits for
 the supervisor control endpoint; this is a narrow evidence/CI correction and
 does not change the Phase 01 candidate boundary.
+
+Fresh push run `34488896386` and pull-request run `34488902059` both passed on
+`12ee47bc5f4c556777eae43f35e3ec2f89f39e15`; CI status is now reconciled. The
+candidate remains unaccepted pending Architect review.

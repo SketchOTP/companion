@@ -352,3 +352,7 @@ supervision, reliability, or production readiness.
 - Local and pull-request timing can mask a supervisor startup race that fails
   a push workflow. Runtime checkers must wait for the control endpoint and
   retain a nonzero result when readiness is never observed.
+
+- Fresh push run `34488896386` and pull-request run `34488902059` passed after
+  the readiness correction, confirming the harness fix without expanding any
+  product or security claim.
