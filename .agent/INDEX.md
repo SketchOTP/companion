@@ -19,20 +19,21 @@
 - Active roadmap phase: `01 — Environment and Engineering Foundation`
 - Phase acceptance: `NOT GRANTED`
 - Active directive: `COMPANION-P01-FOUNDATION-001`
-- Current continuation: `ARCHITECT REVIEW 01 — COMPLETE THE ACTUAL RESIDENT FOUNDATION`
+- Current continuation: `ARCHITECT REVIEW 02 — FINAL RESIDENT INTEGRATION GATE`
 - Notion directive: https://app.notion.com/p/3d7833cb27ff815ebe3ed1999f05beba
-- Required Notion report: https://app.notion.com/p/3d7833cb27ff81c5b0eee3e6c98b54b5
-- Notion Architect Review 01: https://app.notion.com/p/3d7833cb27ff81b58987ca15fda7c0f1
+- Notion report: https://app.notion.com/p/3d7833cb27ff81c5b0eee3e6c98b54b5
+- Notion Architect Review 02: https://app.notion.com/p/3d7833cb27ff810ba5abd1e1c4ee2237
 - GitHub Issue #6: https://github.com/SketchOTP/companion/issues/6
 - Pull request #7: https://github.com/SketchOTP/companion/pull/7
 - Active task packet: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/`
 - Full original directive: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/CODEX_FULL_DIRECTIVE.md`
-- Current review authority: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/ARCHITECT_REVIEW_01.md`
+- Current review authority: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/ARCHITECT_REVIEW_02.md`
 - Required task branch: `codex/p01-foundation-001`
 - Required clean secondary worktree: `YES`
 - Required publication: `CONTINUE EXISTING DRAFT/UNMERGED PR #7`
-- Original Phase 01 routing baseline: `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`
-- Reviewed candidate head: `9d9e897d8fe6d74b0f4c3aedceab5761c55cc9be`
+- Original Phase 01 baseline: `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`
+- Architect Review 01 main: `3325d8a30406657c1c247fe126f7d3b4ce89de10`
+- Reviewed continuation head: `3fbc4284d2a0053034c0e5dea2cd97cb61e6330f`
 - Architecture v1.0: `ADOPTED`
 - Phase 02 and later: `CLOSED`
 - Product capability: `NOT ESTABLISHED`
@@ -53,41 +54,69 @@ phase capabilities remain unqualified. Awaiting independent Architect review.
 - Linux environment evidence: `.agent/tasks/completed/COMPANION-P00-ENV-001/`
 - Architecture v1.0: `.agent/tasks/completed/COMPANION-P00-ARCH-001/`
 - Foundation qualification: `.agent/tasks/completed/COMPANION-P00-QUAL-001/`
-- Qualification PR #5: merged at `80dab0c1942e4a799328a957331381104b892945`
-- Qualification Issue #4: closed as completed
 
-## Architect Review 01 disposition
+## Review 02 retained progress
 
-Retained:
+- Rust workspace and role-specific binaries
+- direct SQLite FFI and prepared-statement direction
+- corrected XDG defaults
+- resident supervisor/control-socket foundation
+- private capability pipes, sequenced-packet transport, and care store
+- boot ID and monotonic utilities
+- nine schemas and matching type names
+- Godot habitat/display helper
+- deterministic bootstrap direction and green CI history
 
-- modular Rust workspace and exact Rust/Godot/SQLite identities;
-- initial schemas, canonicalization, migrations, XDG guard, role targets, supervisor entry point, Godot shell, scripts, docs, and basic CI;
-- protected-work handling and bounded window observation.
+## Review 02 acceptance blockers
 
-Not accepted:
+- self-asserting health and pre-initialization readiness
+- no complete producer/care replacement and revocation lifecycle
+- dropped pidfd rather than retained generation binding
+- safety schema/type/wire mismatch
+- custom HMAC-like implementation
+- three one-shot message runs rather than one complete resident matrix
+- incomplete/fake failure cases
+- exact SQLite source not mandatory in CI
+- name-only schema/type drift check
+- mismatched Rust/Godot bridge paths and no UDS handshake
+- incomplete vulnerability, license, SBOM, and evidence artifacts
+- no continuously resident injected 60-minute soak
 
-- one-shot supervisor and repeated-invocation soak;
-- descriptor/capability ownership and direct-care durability;
-- subprocess/PATH-selected SQLite persistence;
-- incomplete XDG, contract, Godot, health, CI, SBOM, bootstrap, and provenance behavior;
-- synthetic category-count matrix and partial failure/recovery matrix.
+## Mandatory Codex startup
 
-## Mandatory Codex continuation startup
+1. Protect the primary SSHFS worktree and its operator-owned `.gitignore` and
+   `AGENTS.md` modifications.
+2. Continue only in the existing local-ext4/NVMe secondary worktree.
+3. Fetch current `origin/main` and task branch.
+4. Merge `origin/main` normally; do not rebase, reset, or force-push.
+5. Read `ARCHITECT_REVIEW_02.md` and the live Notion Review 02 in full.
+6. Re-fetch the directive, report, canonical project, roadmap, Architecture
+   v1.0, ADR/evidence databases, PR #7, and Issue #6.
+7. Preserve retained code and negative evidence.
+8. Complete the whole final integration gate in the existing PR.
+9. Update Notion, PR #7, Issue #6, and Authority state; leave PR and issue open.
+10. Stop for independent Architect review only after all gates pass or one
+    genuine blocker is proven.
 
-Codex cannot see the operator–Architect conversation. Do not infer hidden decisions.
+## Phase 01 final completion package
 
-1. Inspect the protected primary SSHFS worktree read-only without reading modified root `.gitignore` or `AGENTS.md` contents into evidence.
-2. Fetch current `origin/main` and `origin/codex/p01-foundation-001`.
-3. Continue only in the existing clean local-ext4/NVMe secondary worktree.
-4. Merge current `origin/main` normally into the task branch. Do not rebase, reset, rewrite, or force-push.
-5. Read root and nested `AGENTS.md`, `.agents/skills/authority/SKILL.md`, `.agent/PROJECT_GOAL.md`, `.agent/PROJECT_PROFILE.md`, `.agent/CURRENT.md`, `.agent/ARCHITECTURE_V1.md`, this index, and every active packet file.
-6. Read `ARCHITECT_REVIEW_01.md` completely.
-7. Fetch the live Notion Architect review, directive, report, canonical project, roadmap, Architecture v1.0, live ADR/evidence databases, PR #7, and Issue #6 with all comments.
-8. Preserve useful current source and completed Phase 00 evidence. Do not restart the repository or repeat unaffected work.
-9. Complete every workstream in the Architect review within the same PR. Use coherent subsystem commits but do not return after each internal checkpoint.
-10. Update Notion, PR #7, Issue #6, task records, and Authority state; leave the PR and issue open; stop for independent review.
+- observed resident supervision and health
+- complete producer/care channel, pidfd/generation, and capability rotation
+- reviewed canonical HMAC implementation and matching external contract
+- durable care receipts/idempotency and store-loss degradation
+- mandatory exact SQLite 3.53.4 local/CI identity
+- committed migrations and bounded persistence recovery
+- semantic contract/type/wire drift validation
+- real Godot 4.7 UDS bridge and display recovery
+- observed logs, resource, network, and checkout-write state
+- deterministic artifact bootstrap, vulnerability/license tooling, complete
+  SBOM, provenance, and CI artifacts
+- one resident 3,000-message category matrix
+- complete Phase 01 failure/recovery matrix
+- one continuously resident 3,600-second target-host soak with controlled
+  companion, producer, Godot, and care failure/recovery
 
-## Required Phase 01 completion package
+## Explicit deferrals
 
 - continuously resident supervisor with readiness, health, restart/backoff, crash-loop, signal, and orphan behavior;
 - exact descriptor ownership, private capability delivery, live-generation binding, persistent care receipts/idempotency, and actual same-user attack tests;
@@ -124,20 +153,21 @@ recovery/fault matrices remain unrun and must not be represented as accepted.
 - JSON Schema Draft 2020-12 and `JCS-RFC8785-v1` bounded canonical event profile.
 - XDG-aligned local storage and default-deny outbound network.
 
+Broad SQLite VFS/power-cut/lifetime qualification, production security
+certification, product reliability/SLA, and every Phase 02–10 product
+capability remain outside Phase 01.
+
 ## Protected-work rule
 
-The operator-owned primary-worktree changes are outside every Codex task unless separately authorized. Do not commit, discard, reset, overwrite, stash, reformat, read into evidence, or reinterpret them.
-
-## Scope boundary
-
-No real organism, memory, learning, dreaming, production sprite body, camera/microphone capture, STT/TTS, model inference, biometrics, real contacts, notification delivery, spoken-help recognition, live escalation, medical capability, security certification, production reliability, SLA, or Phase 02–10 capability may be added or claimed.
+Do not commit, discard, reset, overwrite, stash, reformat, read into evidence,
+or reinterpret the operator-owned primary-worktree modifications.
 
 ## Historical ledgers
 
-- `DIRECTIVES.md` — issued directives and acceptance boundaries
+- `DIRECTIVES.md` — directives and acceptance boundaries
 - `OUTCOMES.md` — results and evidence
 - `LEARNINGS.md` — durable verified learnings
-- `RECORD.md` — decisions, milestones and reversals
+- `RECORD.md` — decisions, milestones, and reversals
 - `REPO_MAP.md` — repository structure and ownership
 - `EXTERNAL.md` — external sources and dispositions
 
