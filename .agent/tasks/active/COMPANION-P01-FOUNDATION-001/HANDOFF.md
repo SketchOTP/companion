@@ -183,3 +183,11 @@ hash/fixture/ancestry validator, 3,000-message matrix, 37-scenario matrix,
 Godot reconnect result, and corrected 3,600-second soak. PR #7 and Issue #6
 remain open for independent Architect review; Architecture v1.0 remains
 adopted, Phase 02+ remain closed, and no product capability is claimed.
+
+## Final publication handoff — 2026-09-10
+
+Final task-branch head `5a4ca0b1fcda0412d9e5ed326e1d0cafea2a4b96` is pushed.
+The committed evidence bundle and fail-closed validator are ready for
+independent Architect review. PR #7 is OPEN/DRAFT/UNMERGED and Issue #6 is
+OPEN. Architecture v1.0 remains adopted; Phase 01 and product implementation
+remain pending; no dependency or product capability is self-approved.

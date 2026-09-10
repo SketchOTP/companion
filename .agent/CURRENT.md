@@ -128,3 +128,12 @@ Resident closeout implementation is in progress on the existing branch. The
 working tree contains only Phase 01 foundation and evidence changes; the
 primary SSHFS worktree remains protected. Architecture v1.0 remains adopted,
 Roadmap Phase 02+ and product implementation remain closed.
+
+## Final evidence-binding submission — 2026-09-10
+
+The final resident soak completed PASS at 3,600 seconds with 60 samples, four
+controlled injections, no failures, headless Godot observed, and no checkout
+writes. Committed closeout evidence is bound by manifest hashes, fixture hash,
+and Git ancestry; the validator passes and a tampered temporary result fails.
+Task branch head is `5a4ca0b1fcda0412d9e5ed326e1d0cafea2a4b96`, PR #7 remains
+OPEN/DRAFT/UNMERGED, and Issue #6 remains OPEN. Phase 01 is not self-accepted.

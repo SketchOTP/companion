@@ -558,3 +558,12 @@ and a committed closeout evidence validator. The corrected 3,600-second soak is
 running on the target host; no result is accepted until its final output,
 hashes, and ancestry are independently verified. This branch remains a Phase 01
 candidate; no product capability, dependency adoption, or later phase is claimed.
+
+## 2026-09-10 — Final evidence-binding result
+
+The corrected resident soak passed for 3,600 seconds (60 samples, four
+controlled injections, zero failures, no checkout writes). The committed
+manifest records observed UTC timestamps and exact result/fixture hashes.
+`python3 scripts/validate_phase01_closeout.py` passed; a deliberately altered
+temporary result failed with exit 1. This remains E3 bounded engineering
+evidence and does not accept Phase 01 or claim product capability.

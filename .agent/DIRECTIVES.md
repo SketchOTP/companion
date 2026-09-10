@@ -301,3 +301,11 @@ bootstrap policy, and independently bound evidence. The result remains a Phase
 adopted; Phase 02+ and product implementation remain closed. No organism,
 memory, speech, vision, learning, dreaming, notification, caregiving efficacy,
 security certification, reliability, or SLA claim is allowed.
+
+## Final evidence-binding publication — 2026-09-10
+
+Final task-branch head `5a4ca0b1fcda0412d9e5ed326e1d0cafea2a4b96` adds the
+committed closeout manifest and sanitized 3,600-second soak. Hash, fixture and
+ancestry validation passes; tamper-negative validation fails as expected.
+The candidate remains unaccepted pending Architect review. No dependency,
+mechanism, Roadmap Phase 02 transition, or product capability is self-approved.

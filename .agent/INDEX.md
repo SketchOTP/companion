@@ -141,3 +141,7 @@ The active Phase 01 work is the final evidence-binding closeout in
 evidence bundle under `evidence/phase01-closeout/`, and the resident matrix
 outputs before any acceptance statement. Do not open Phase 02 or claim product
 capability.
+
+Final submission is published at `5a4ca0b1fcda0412d9e5ed326e1d0cafea2a4b96`.
+The committed closeout manifest, sanitized soak, and validator output are
+bounded evidence pending Architect review, not phase acceptance.

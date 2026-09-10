@@ -42,3 +42,11 @@ failure/recovery evidence are now driven by executable scripts. Sanitized
 outputs are committed under `evidence/phase01-closeout/` and independently
 bound by hash, fixture and ancestry validation. The phase remains a candidate
 until Architect review; no later-phase or product capability is included.
+
+## Final evidence-binding state
+
+The closeout bundle is committed and independently validated. All claims are
+bounded to observed foundation engineering evidence; no product capability,
+dependency adoption, security certification, safety efficacy, reliability, or
+SLA claim is made. Earlier failures and deferred work remain historical and
+visible.

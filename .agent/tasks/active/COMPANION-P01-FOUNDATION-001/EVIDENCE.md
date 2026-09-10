@@ -198,3 +198,14 @@ recomputes hashes, fixture identity and Git ancestry and writes validation only
 as output. The corrected resident 3,600-second soak is required to complete
 before publication; all evidence remains E3 engineering evidence and does not
 claim product, safety, security, reliability or SLA capability.
+
+## Final evidence-binding result — 2026-09-10
+
+Sanitized closeout evidence is committed under `evidence/phase01-closeout/`.
+The manifest records fixture SHA-256
+`569b94e68f93f70e040c62d5d53610624cdea61f6296f6de84d8fff18d6b8e5f`, exact
+result hashes, observed UTC execution timestamps, and an ancestor evidence
+commit. The validator passed the committed result set; the tamper-negative
+altered result exited nonzero. The resident soak is E3 bounded engineering
+evidence only: 3,600 seconds, 60 samples, four injections, zero failures,
+headless Godot observed, and no checkout writes.

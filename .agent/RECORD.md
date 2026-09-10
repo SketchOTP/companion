@@ -435,3 +435,13 @@ closeout evidence is independently accepted. The branch continues on
 The closeout work is limited to foundation controls, synthetic evidence and
 governance records. Architecture v1.0 is unchanged and adopted, while Phase 02+
 and all product capability remain closed.
+
+## 2026-09-10 — Final evidence-binding publication
+
+Final candidate head is `5a4ca0b1fcda0412d9e5ed326e1d0cafea2a4b96` on
+`codex/p01-foundation-001`, pushed normally. The resident 3,600-second soak
+passed with four controlled injections, no failures, and no checkout writes.
+The committed manifest binds result/fixture hashes and ancestry; the validator
+passed and the tamper-negative copy failed closed. PR #7 remains OPEN/DRAFT/
+UNMERGED and Issue #6 remains OPEN. Architecture v1.0 remains adopted; Phase
+01 and product implementation remain pending Architect acceptance.

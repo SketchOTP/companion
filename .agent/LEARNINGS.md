@@ -367,3 +367,7 @@ supervision, reliability, or production readiness.
 - Phase closeout summaries require committed hashes, fixture binding, Git
   ancestry, deterministic generation, and a tamper-negative validator. A
   generated validation file is output, never evidence input.
+
+- A resident soak is only a clean target-host observation when the
+  checkout-write sentinel remains false for the entire interval. Sanitization
+  must accept count-only runner summaries as well as detailed sample arrays.

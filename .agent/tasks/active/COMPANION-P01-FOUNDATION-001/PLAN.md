@@ -117,6 +117,13 @@ Fresh push run `34488896386` and pull-request run `34488902059` both passed on
 `12ee47bc5f4c556777eae43f35e3ec2f89f39e15`; the CI correction is complete and
 the candidate is ready for independent Architect review.
 
+## Final evidence-binding completion — 2026-09-10
+
+The corrected 3,600-second resident soak and sanitized evidence manifest are
+committed. Hash, fixture, ancestry, matrix, contract, and soak validation
+passed, and a temporary tampered result failed closed. Publication is complete
+on the existing branch; stop for independent Architect review.
+
 ## Review 03 closeout plan
 
 1. Build and test the corrected resident controls and strict care validation.
