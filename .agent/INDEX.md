@@ -228,3 +228,12 @@ and minimal temporal-motion proof gate. Use `assets/source/p02/canon/` and
 directional catalogue and broad core pack are superseded evidence only. The
 focused `phase02-canon-motion-proof` workflow is the relevant CI path; operator
 visual approval is still required.
+
+## R02 result routing
+
+The current task-branch result is `3d2ce3c45e32a110520c9fd1378113216188fb8b`
+after normal merge `6e16c25` of Architect Review 02. Use
+`assets/source/p02/canon/`, `assets/source/p02/proof-motion/`, and
+`assets/source/p02/review/r02/` for the bounded six-track/front-left proof.
+Local headless Godot proof passed in a temporary copy; vector rasterization,
+dedicated Openbox playback, and operator visual approval remain pending.

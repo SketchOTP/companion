@@ -128,3 +128,18 @@ and exact Godot artifact in CI. Godot playback was not run locally because the
 executable is absent, and the dedicated Openbox target remains unavailable.
 Operator visual approval is the next gate; do not scale to eight directions or
 the complete family library before that decision.
+
+## R02 execution correction — 2026-09-11
+
+The exact Godot 4.7.2 artifact was downloaded only to a private temporary
+directory, hash-verified, and run in a temporary project copy with the
+headless proof test; the observed result was `STATUS=0` with zero errors,
+five frame markers, and one completion. This does not establish target-host
+Openbox playback or visual approval. The committed focused workflow remains
+the reproducibility path; no downloaded binary or generated full-frame corpus
+is part of the repository tree.
+
+Correction publication: `3d2ce3c45e32a110520c9fd1378113216188fb8b`, following
+normal merge `6e16c25` of Architect Review 02 (`origin/main`
+`7709aba7a777ab611da56a8e340f6bd17f7bf5b1`). The task branch remote equals
+this head. PR #9 remains draft/open/unmerged and Issue #8 remains open.
