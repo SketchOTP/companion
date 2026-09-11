@@ -634,3 +634,11 @@ change, anatomy, and five tamper-negative mutations. Actual Godot headless
 24 FPS and rejected missing-track selection with no `ERROR:` output. Candidate
 art remains pending operator/Architect review; full library and Openbox remain
 deferred.
+
+## 2026-09-11 — R03 hosted-CI fixture correction
+
+Hosted workflows initially failed because the shared contract closeout used an
+empty synthetic fixture for `mon-temporal-track-v2`. The narrow mapping fix was
+published as `83909a894ad47e101bcf369b707f636624302a52`; focused Phase 02 run
+`34631901926` and inherited Phase 01 run `34631901998` then passed. No visual
+approval, Phase 02 acceptance, or later capability was inferred.

@@ -23,8 +23,11 @@ normal review merge `77ebc5c19285d97c467caedbcb3f7c3be083a4a0`):
 - PR #9: draft, open, unmerged
 - Phase 03 and later: closed
 
-R03 publication is a candidate-only correction. The PR and Issue #8 remain open;
-operator visual approval and the later Openbox gate remain unrun.
+R03 publication is a candidate-only correction. The latest narrow CI repair is
+`83909a894ad47e101bcf369b707f636624302a52`; focused Phase 02 run `34631901926`
+and inherited Phase 01 run `34631901998` are green at that head. The PR and
+Issue #8 remain open; operator visual approval and the later Openbox gate remain
+unrun.
 
 ## Review 03 disposition
 

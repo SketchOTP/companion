@@ -180,3 +180,12 @@ after the normal Architect-review merge `77ebc5c19285d97c467caedbcb3f7c3be083a4a
 The remote task branch must remain equal to this candidate head. PR #9 remains
 draft/open/unmerged and Issue #8 remains open; no visual approval or Phase 02
 acceptance is claimed.
+
+## Hosted CI correction — 2026-09-11
+
+After publication, hosted runs exposed that the shared contract closeout did
+not map the v2 temporal-track fixture, causing a false workflow failure. The
+narrow fix `83909a894ad47e101bcf369b707f636624302a52` adds that mapping without
+changing product scope. Focused Phase 02 run `34631901926` and inherited Phase
+01 run `34631901998` now complete successfully. This does not change the
+candidate-only visual or Openbox gates.

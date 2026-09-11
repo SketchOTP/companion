@@ -428,3 +428,9 @@ and derive contact evidence from rendered pixels as well as sidecars. A
 headless dummy renderer may support actual `AnimatedSprite2D` signal playback
 while exposing no readable SubViewport texture; record the deterministic raster
 mirror limitation rather than claiming a Godot raster bake.
+
+## 2026-09-11 — Hosted contract gates must cover new fixtures
+
+Adding a new schema can break inherited gates when their fixture maps are
+explicit. The v2 temporal-track fixture must be included in the shared
+contract closeout; hosted Phase 02 and Phase 01 runs are the regression proof.

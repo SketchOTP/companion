@@ -508,3 +508,11 @@ frame-change signals and no `ERROR:` lines. Evidence is bounded `E3_TARGET_TESTE
 operator visual approval, full-family/all-direction production, Openbox
 endurance, and Phase 02 acceptance remain open. Architecture v1.0 and Phase 01
 remain unchanged; no later capability was adopted.
+
+## 2026-09-11 — R03 hosted CI repair
+
+Commit `83909a894ad47e101bcf369b707f636624302a52` corrected the shared
+contract-closeout fixture mapping for `mon-temporal-track-v2` after hosted CI
+exposed the omission. Focused Phase 02 run `34631901926` and inherited Phase 01
+run `34631901998` are green. Candidate-only status, protected-work handling,
+and the operator/Openbox gates are unchanged.
