@@ -8,91 +8,120 @@ Roadmap Phase 00 is complete. Architecture v1.0 remains adopted. Roadmap Phase
 01 is accepted at the bounded engineering-foundation boundary and merged in
 `fc31717bba8c4833736d1792d7a5fe1c6cca4900`.
 
-Roadmap Phase 02 — Mon Body, Habitat, and Sprite Pipeline is now active under
-`COMPANION-P02-EMBODIMENT-001`.
+Roadmap Phase 02 — Mon Body, Habitat, and Sprite Pipeline remains active but is
+**not accepted**. PR #9 at
+`9a65b8db032c97e13fce5d6a305989d32f2cc879` is continued under Architect
+Review 01.
 
-## Phase 01 accepted boundary
+## Architect Review 01 disposition
 
-Accepted:
+The dedicated 1366x768 Openbox target was unavailable, so final target-host
+playback is legitimately blocked. It is not the only blocker.
 
-- Rust 1.98.1 workspace and six service shells;
-- exact Godot 4.7.2 and SQLite 3.53.4 development identities;
-- resident supervisor/control foundation;
-- local XDG placement and authority-separated development stores;
-- bounded synthetic direct-care transport;
-- Godot UDS/headless habitat foundation;
-- CI, component inventory, and bounded target-host execution.
+Independent review found:
 
-Not accepted from Phase 01:
+- no dedicated Phase 02 workflow and a failing inherited Phase 01 workflow;
+- the exact approved native identity source was not durably available to Codex;
+- each current clip uses eight directional views as temporal frames;
+- the 256-image count is a directional pose catalog, not a temporal animation
+  library;
+- Godot frame duration is interpreted incorrectly;
+- generated geometry is not derived from the approved reference package and
+  uses Python process-randomized `hash()` values;
+- declared root stability and atlas gutters are not established by rendered
+  evidence;
+- bulk generated PNGs, duplicate runtime copies, atlases, and ZIP output are
+  committed to ordinary Git contrary to the adopted artifact policy; and
+- operator review assets were referenced through local paths instead of being
+  attached or published accessibly.
 
-- production sensor ingress;
-- complete attacker/security qualification;
-- complete contract wire, persistence recovery, or physical display recovery;
-- advisory/legal clearance;
-- product reliability, safety efficacy, or product capability.
+The 32-family, 256-animation-frame, eight-direction animation, atlas-gutter,
+10,000-transition, runtime-performance, Phase 02 CI, and operator-review-ready
+claims are superseded as Phase 02 evidence.
 
-Canonical acceptance:
-https://app.notion.com/p/3d8833cb27ff813a96e2f9d7b27b009f
+## Active objective
 
-Archived packet:
-`.agent/tasks/completed/COMPANION-P01-FOUNDATION-001/`
+Complete one substantial correction in the existing Phase 02 branch and PR:
 
-## Active Phase 02 objective
+1. obtain and hash-verify the exact native approved identity and turnaround;
+2. rebuild the construction model from those sources;
+3. separate direction selection from temporal frame progression;
+4. produce an identity-faithful temporal core-motion approval pack;
+5. correct Godot FPS, relative-duration, transition, event, interruption,
+   continuation, and BodyA/BodyB semantics;
+6. validate rendered root/contact/anatomy/alpha properties;
+7. implement real trim, extrusion, gutter, and source-placement reconstruction;
+8. remove bulk generated binaries from the final ordinary-Git tree;
+9. add dedicated Phase 02 CI and versioned workflow artifacts;
+10. publish operator-accessible visual and motion review materials.
 
-Deliver one identity-faithful, continuously animated sprite body and the
-production-capable pipeline that creates, validates, packages, and reviews it:
+Bulk completion of the remaining 32-family library waits for operator approval
+of identity, diagonal construction, and the temporal core-motion language.
 
-1. preserve exact approved visual references;
-2. lock construction, anatomy, palette, and candidate diagonal views;
-3. implement deterministic MON_FRAME_V1 authoring/export/atlas tooling;
-4. produce at least 32 clip families and 256 unique body-frame sources;
-5. implement layered MonAvatar, MonAnimationClip, and MonAnimationDirector;
-6. integrate semantic embodiment intents/results through the Godot bridge;
-7. lock bounded Openbox window size/scale/screen/recovery behavior;
-8. publish automated QA and operator-visible visual review materials;
-9. pass a 10,000-case transition matrix and two-hour target-host playback;
-10. publish versioned asset artifacts plus local export/restore evidence.
-
-## Active directive
+## Active directive and review
 
 - Directive: `COMPANION-P02-EMBODIMENT-001`
+- Status: `ARCHITECT REVIEW 01 — REFERENCE AND TEMPORAL-ANIMATION CORRECTION`
+- Reviewed task head: `9a65b8db032c97e13fce5d6a305989d32f2cc879`
+- Repository review:
+  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_01.md`
+- Notion review:
+  https://app.notion.com/p/3d8833cb27ff81778c22d2c73cf0dc9f
 - Notion directive:
   https://app.notion.com/p/3d8833cb27ff810e858acd029ac0ea05
 - Notion report:
   https://app.notion.com/p/3d8833cb27ff817d9d01d754ec852c10
 - GitHub Issue #8:
   https://github.com/SketchOTP/companion/issues/8
-- Active packet: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/`
+- Pull request #9:
+  https://github.com/SketchOTP/companion/pull/9
 - Required branch: `codex/p02-embodiment-001`
-- Required publication: one open/unmerged phase-sized pull request to `main`
-- Acceptance: ChatGPT AI Architect plus explicit operator visual approval
+- Required publication: continue existing draft/open/unmerged PR #9
+- Acceptance authority: ChatGPT AI Architect plus explicit operator visual
+  approval
 - Phase 03 and later: `CLOSED`
+
+## Retained implementation
+
+Retain exact Godot 4.7.2, the accepted Phase 01 foundation, the animation schema
+and manifest direction, layered `MonAvatar` structure, bridge/habitat direction,
+deterministic ZIP metadata correction, and useful QA/review/build scaffolding.
+Retain all negative and rejected asset evidence.
 
 ## Fixed embodiment authority
 
-- Exact Godot 4.7.2.
-- Bounded resizable habitat on the dedicated 1366×768 Openbox display.
-- Approved purple mon identity and hard anatomy invariants.
-- MON_FRAME_V1 1024×1024 RGBA/sRGB, root `(512,896)`, baseline `896`, safety
-  region `x=64..960`, `y=32..960`, no source crop, zero root drift, 24 Hz grid.
-- Runtime raster sprite library; authoring may use controlled vector/pose source.
-- Godot owns only rendering/animation execution state.
+- Approved original purple mon and hard anatomy/style invariants.
+- `MON_FRAME_V1`: 1024x1024 RGBA/sRGB, transparent, root `(512,896)`, baseline
+  `896`, safety region `x=64..960`, `y=32..960`, zero root drift, 24 Hz timing
+  grid, no source crop, no encoded translation.
+- Direction is a selection axis. Each direction requires its own temporal track.
+- Runtime embodiment remains raster sprite-frame based.
+- Godot owns only animation execution state.
 - No canonical organism, memory, perception, speech, identity, contact, or care
-  authority in Godot.
+  authority may enter Godot.
 
-## Asset storage policy
+## Asset storage boundary
 
-Commit authored source, manifests, tools, hashes, and selected review
-materials. Publish the full generated PNG/atlas corpus as deterministic versioned
-artifacts and local export bundles. Do not configure Git LFS. Keep ordinary-Git
-binary payload within the active directive budget.
+The final Phase 02 tree keeps approved references, authored source, clip specs,
+manifests, validators, Godot resources, hashes, and selected review derivatives.
+The full generated frame corpus, atlases, and packs must be produced as
+versioned workflow artifacts and local export bundles. Do not configure Git LFS
+or rewrite branch history. A later accepted Phase 02 merge is expected to use a
+squash merge so rejected intermediate binary blobs do not enter `main` history.
+
+## Target-host boundary
+
+The final two-hour Openbox playback remains blocked until the actual dedicated
+target is available. Codex may run headless and current-session development
+checks without changing host configuration. It may not reconfigure displays,
+compositors, services, audio, power, or the existing Godot 4.6 installation.
 
 ## Protected operator work
 
 The primary SSHFS worktree contains operator-owned uncommitted root
 `.gitignore` and `AGENTS.md` changes. Do not read their modified contents into
 evidence, commit, discard, reset, overwrite, stash, copy, reformat, or
-reinterpret them. Execute Phase 02 from a clean local ext4/NVMe secondary
+reinterpret them. Continue only in the clean local ext4/NVMe secondary
 worktree.
 
 ## Product boundary
@@ -105,7 +134,7 @@ completion is established or authorized.
 
 ## Next review point
 
-Codex completes the entire Phase 02 directive, publishes the source, generated
-artifact manifests, visual review sheets, target-host evidence, Notion report,
-Issue #8 result, and one unmerged PR, then stops for Architect and operator
-visual review.
+Codex executes Architect Review 01 in the existing Phase 02 branch and PR. It
+returns either the complete accessible reference/construction/core-motion
+approval package with green dedicated CI, or one precise reference-transfer
+blocker before further bulk generation. Architect and operator review follow.
