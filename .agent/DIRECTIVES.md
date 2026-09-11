@@ -233,8 +233,90 @@ transition, or product capability is adopted.
 - Final live Research Evidence Register requery returned 55 rows; Evidence 54 (`pidfd_getfd(2)`) and Evidence 55 (SQLite I/O/crash/concurrency methods) were verified and incorporated.
 - Independent Architect review is required; Codex does not self-accept.
 
+### COMPANION-P01-FOUNDATION-001 — Phase 01 execution (2026-09-09)
+
+- Architect authorized the complete engineering foundation on `codex/p01-foundation-001` from main `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`.
+- Scope includes Rust workspace, contracts, XDG guard, six synthetic shells, direct care transport, separate SQLite stores, neutral Godot shell, health/tooling, CI/provenance and bounded synthetic evidence.
+- No later-phase capability, media, model, biometrics, notifications, product runtime or host mutation is authorized. Independent Architect review remains required.
+
 ### Architect Review 03 — narrow evidence-binding correction (2026-09-09)
 
 - Current authority is `.agent/tasks/active/COMPANION-P00-QUAL-001/ARCHITECT_REVIEW_03.md`; review commit `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2` was merged normally as `1997e01`.
 - Scope is limited to provenance/result binding, fail-closed IPC evidence labels and assertions, exact JCS/toolchain claim alignment, and SQLite before/after state derivation. Accepted Godot and systemd work is retained without rerun.
 - No dependency, mechanism, Phase 01 transition, product implementation, security certification, reliability claim, safety efficacy, or product capability is adopted. PR #5 and Issue #4 remain open.
+
+### Phase 01 execution publication — awaiting independent review
+
+- `COMPANION-P01-FOUNDATION-001` was executed as one phase-sized candidate on `codex/p01-foundation-001` from main `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`.
+- The candidate contains only the authorized Rust/Godot/contracts/storage/process/observability/CI foundation and synthetic evidence; no later-phase product behavior was introduced.
+- Local locked verification, clean-clone verification, remote CI, bounded Openbox validation, and the 3-seed/3,000-cycle matrix were recorded. The 60-minute synthetic soak was run separately and its exact status is bound in the final evidence summary.
+- Publication is through PR #7, which remains open and unmerged; Issue #6 remains open. Architect acceptance and any downstream phase transition remain pending.
+## COMPANION-P01-FOUNDATION-001 — Review 01 continuation (2026-09-10)
+
+Status: `IMPLEMENTED CANDIDATE — ARCHITECT REVIEW REQUIRED`
+
+The active directive remains phase-sized and permits continuation on the
+existing PR. Work is confined to engineering foundations and synthetic
+evidence. The resident supervisor, direct-care boundary, SQLite/XDG/library
+corrections, live health, and actual packet-cycle runner were updated without
+opening Phase 02 or introducing product behavior. Remaining unqualified gates
+are recorded in the task validation matrix and handoff.
+
+## COMPANION-P01-FOUNDATION-001 — Architect Review 02 continuation (2026-09-10)
+
+Continue the existing phase-sized PR with resident integration hardening. The
+authorized scope covers live readiness/health and lifecycle control, direct-care
+RustCrypto HMAC and channel rotation, exact SQLite source/runtime identity,
+semantic contract validation, real Godot UDS handshake, observed failure
+matrix, and one-resident message matrix. The 3,600-second injected soak and
+any host modification remain unrun/non-authorized. Do not merge PR #7, open
+later phases, or claim product/security/reliability capability.
+
+The initial full-duration soak failed closed on a startup race. After an
+explicit control-socket readiness wait, a fresh 3,600-second resident run
+passed; its exact timestamps, samples, injections, and bounded evidence
+ceiling are recorded in `evidence/phase01-review02-summary.json`. The PR
+remains unmerged and Phase 01 remains subject to independent review.
+
+Focused implementation commit `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`
+contains the resident foundation and final soak evidence. The only remaining
+local reconciliation is metadata/state bookkeeping; publication will continue
+on the existing branch without merging PR #7.
+
+Post-publication CI run `34488050143` failed closed on runtime-check startup
+readiness while PR run `34488058839` passed. The runtime checker now waits for
+the supervisor control endpoint; this is a narrow evidence/CI correction and
+does not change the Phase 01 candidate boundary.
+
+Fresh push run `34488896386` and pull-request run `34488902059` both passed on
+`12ee47bc5f4c556777eae43f35e3ec2f89f39e15`; CI status is now reconciled. The
+candidate remains unaccepted pending Architect review.
+
+## COMPANION-P01-FOUNDATION-001 — Architect Review 03 closeout (2026-09-10)
+
+The final closeout run adds resident control-plane coverage, fail-closed
+direct-care audit handling, semantic contract checks, deterministic artifact
+bootstrap policy, and independently bound evidence. The result remains a Phase
+01 foundation candidate until Architect review. Architecture v1.0 remains
+adopted; Phase 02+ and product implementation remain closed. No organism,
+memory, speech, vision, learning, dreaming, notification, caregiving efficacy,
+security certification, reliability, or SLA claim is allowed.
+
+## Final evidence-binding publication — 2026-09-10
+
+Final task-branch head `5a4ca0b1fcda0412d9e5ed326e1d0cafea2a4b96` adds the
+committed closeout manifest and sanitized 3,600-second soak. Hash, fixture and
+ancestry validation passes; tamper-negative validation fails as expected.
+The candidate remains unaccepted pending Architect review. No dependency,
+mechanism, Roadmap Phase 02 transition, or product capability is self-approved.
+
+## COMPANION-P01-FOUNDATION-001 — Architect Review 04 correction (2026-09-10)
+
+Continue the existing PR with one narrow evidence-semantics correction. Replace
+raw injection fallthrough with exhaustive typed `InjectionKind`; run a truthful
+3,000-message resident matrix with exact outcomes/reasons; replace the false
+37/37 matrix with twelve directly exercised groups; bind ordinary/direct-care
+wire evidence; prove Godot client state/topology recovery; run a focused
+900-second resident regression; and enforce all equations with a fail-closed
+semantic validator. Preserve earlier false results as superseded history. Do
+not open later phases, adopt mechanisms, or claim product capability.

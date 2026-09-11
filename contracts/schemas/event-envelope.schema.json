@@ -1,0 +1,13 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://companion.local/schema/event-envelope-v1.json",
+  "type":"object","additionalProperties":false,
+  "required":["schema_major","event_type","message_id","boot_id","monotonic_ns","utc_observed","utc_uncertainty_us","event_sequence","payload"],
+  "properties":{
+    "schema_major":{"const":1},"event_type":{"type":"string","minLength":1,"maxLength":128},
+    "message_id":{"type":"string","format":"uuid"},"boot_id":{"type":"string","minLength":1,"maxLength":128},
+    "monotonic_ns":{"type":"integer","minimum":0},"utc_observed":{"type":"string","format":"date-time"},
+    "utc_uncertainty_us":{"type":"integer","minimum":0,"maximum":86400000000},"event_sequence":{"type":"integer","minimum":0},
+    "causation_id":{"anyOf":[{"type":"string","format":"uuid"},{"type":"null"}]},"payload":{"type":"object"}
+  }
+}

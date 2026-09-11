@@ -1,0 +1,45 @@
+{
+  "bridge_disconnect_observed": true,
+  "bridge_uds": "godot-bridge.sock",
+  "claim_boundary": "headless same-process UDS reconnect and deterministic topology fallback observation; no display or product capability",
+  "client_state_observations": [
+    {
+      "evidence_class": "RUNTIME_OBSERVED",
+      "state": "connecting"
+    },
+    {
+      "evidence_class": "RUNTIME_OBSERVED",
+      "state": "connected"
+    },
+    {
+      "evidence_class": "RUNTIME_OBSERVED",
+      "state": "disconnected/degraded"
+    },
+    {
+      "evidence_class": "RUNTIME_OBSERVED",
+      "state": "reconnecting"
+    },
+    {
+      "evidence_class": "RUNTIME_OBSERVED",
+      "state": "connected"
+    }
+  ],
+  "client_state_sequence": [
+    "connecting",
+    "connected",
+    "disconnected/degraded",
+    "reconnecting",
+    "connected"
+  ],
+  "godot_returncode": 0,
+  "same_process_connected_before": true,
+  "same_process_reconnected": true,
+  "status": "PASS",
+  "topology_fallback": {
+    "evidence_class": "RUNTIME_OBSERVED",
+    "selected_target_available": true,
+    "status": "PASS",
+    "target_absent_fallback": true,
+    "target_restored_geometry": true
+  }
+}

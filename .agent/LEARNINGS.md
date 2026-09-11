@@ -278,3 +278,110 @@ Process-boundary summaries label runtime and kernel observations separately from
 code-inspected ownership facts. SQLite summaries derive claims from independent
 before/after state and fixed expected counts rather than observed values or
 hand-curated booleans.
+
+## COMPANION-L-003 — Phase-sized foundations still preserve explicit ceilings
+
+A runnable engineering foundation can be delivered without smuggling product
+behavior across roadmap gates. Synthetic care packets, neutral Godot status,
+development stores and deterministic cycle matrices are E3 engineering
+evidence only; visible/long-duration and remote CI checks remain separately
+identified when not executed.
+
+## COMPANION-L-004 — Phase 01 evidence must distinguish bounded soak from residency
+
+A phase-sized foundation can provide executable service shells, direct
+synthetic care transport, isolated development stores, a neutral Godot habitat,
+and deterministic message evidence without becoming a living companion. The
+60-minute soak used repeated bounded supervisor invocations at a fixed interval;
+its timestamps and failures are evidence of that harness only, not proof of a
+continuous resident runtime, production reliability, safety efficacy, or SLA.
+
+### Recheck trigger
+
+Any future claim about continuous operation, restart durability, service
+supervision, reliability, or production readiness.
+## 2026-09-10 — Resident foundation continuation
+
+- A resident supervisor must expose a stable control socket and keep child
+  lifecycle state in memory; one-shot invocations cannot support health or soak
+  claims.
+- Capability bytes can be delivered through a private inherited pipe while the
+  endpoint itself remains close-on-exec until the intended child handoff.
+- Same-user care authentication requires kernel credentials and a MAC; a
+  declared producer field or environment secret is not an authority source.
+- Direct SQLite ABI binding removes PATH/subprocess ambiguity, but exact source
+  identity still needs host-level verification before release claims.
+- XDG defaults and missing runtime bases must fail closed; `/tmp` is never a
+  canonical-state fallback.
+
+## 2026-09-10 — Architect Review 02 integration hardening
+
+- Readiness is only meaningful when emitted after store/channel initialization
+  and cross-checked against a live child handle; a registry boolean is not
+  health evidence.
+- Direct-care replacement must close the old socketpair and rotate both the
+  generation and capability; retaining a pidfd makes liveness observable but
+  does not expand the documented threat ceiling.
+- Exact SQLite source hashing in `build.rs` prevents a host-library fallback
+  from silently entering acceptance builds; runtime version/source-id/options
+  must still be recorded.
+- Child dumpability hardening can make `/proc` census unavailable to a same
+  user; that is a real observability failure to report, not permission to
+  downgrade the security setting.
+
+## 2026-09-10 — Evidence correction
+
+- A hardened child may legitimately deny `/proc/<pid>/fd` traversal. Preserve
+  that denial as an observation and use process-attributed `ss` output for the
+  no-egress check; never reinterpret inaccessible descriptors as zero sockets.
+- Resident producer and care roles must emit readiness only after their packet
+  and store initialization, then remain alive until an explicit supervisor
+  shutdown so health and recovery probes observe a real resident foundation.
+
+## 2026-09-10 — Soak startup-race correction
+
+- A long-running harness must wait for the supervisor control endpoint before
+  its first health request; otherwise a legitimate bind race becomes a false
+  soak failure. Preserve the failed run and rerun the full duration after the
+  fix rather than relabeling it.
+- The corrected resident run completed 3,600 seconds with 60 samples and four
+  injections without claiming production reliability.
+
+## 2026-09-10 — CI readiness race
+
+- Local and pull-request timing can mask a supervisor startup race that fails
+  a push workflow. Runtime checkers must wait for the control endpoint and
+  retain a nonzero result when readiness is never observed.
+
+- Fresh push run `34488896386` and pull-request run `34488902059` passed after
+  the readiness correction, confirming the harness fix without expanding any
+  product or security claim.
+
+## 2026-09-10 — Review 03 evidence binding
+
+- A resident matrix must make seeds alter deterministic category ordering and
+  must assert every durable attempt, not only command acceptance.
+- Readiness is an observed, role-bound acknowledgement; marker presence alone
+  is insufficient. Runtime policy fields (such as network deny-by-default)
+  must remain distinct from process-attributed census observations.
+- Phase closeout summaries require committed hashes, fixture binding, Git
+  ancestry, deterministic generation, and a tamper-negative validator. A
+  generated validation file is output, never evidence input.
+
+- A resident soak is only a clean target-host observation when the
+  checkout-write sentinel remains false for the entire interval. Sanitization
+must accept count-only runner summaries as well as detailed sample arrays.
+
+## 2026-09-10 — Architect Review 04 evidence semantics
+
+- Injection categories must be an exhaustive typed enum with a one-to-one
+  mutation mapping; unknown values must fail before transport and no default
+  branch may silently create a valid packet.
+- A resident message matrix must assert requested/applied/status/reason and
+  derive care-attempt, outcome, ordinary-event, and invalid-acceptance counts;
+  category presence alone is not evidence.
+- Scenario evidence is credible only when the named behavior is induced and a
+  before/after invariant is observed. Control acknowledgments are not storage,
+  display, migration, or recovery results.
+- Result summaries need committed hashes, fixture identity, ancestry, and a
+  validator that emits (rather than consumes) its own validation output.

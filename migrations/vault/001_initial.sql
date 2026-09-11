@@ -1,0 +1,3 @@
+PRAGMA user_version=1;
+CREATE TABLE IF NOT EXISTS authority_meta (k TEXT PRIMARY KEY, v TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS privileged_audit (id INTEGER PRIMARY KEY, event_type TEXT NOT NULL, outcome TEXT NOT NULL, created_utc TEXT NOT NULL);

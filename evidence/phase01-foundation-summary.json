@@ -1,0 +1,26 @@
+{
+  "directive": "COMPANION-P01-FOUNDATION-001",
+  "status": "IMPLEMENTED_AWAITING_ARCHITECT_REVIEW",
+  "evidence_ceiling": "E3_TARGET_TESTED",
+  "commit_at_local_verification": "e58302e284b5eb6ca0be740cfba6c29c63c77b2d",
+  "fixture_sha256": "e6fda05c29ed661a0f127ff008f6f64a3dfa71fc0ba7a7529e2fb12c98ce8b0a",
+  "cargo_lock_sha256": "353b7df09ce2333da030c94fba483b040378ccb622f2a072f0b33f7886a81124",
+  "rust": {"version": "1.98.1", "profile": "debug_and_release", "tests": "passed"},
+  "godot": {"version": "4.7.2.stable.official.ed1daf0bf", "sha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4", "headless": "passed", "visible_window": "passed_640x360_bounded_test_no_media_capture"},
+  "sqlite": {"version": "3.53.4", "stores": ["companion", "care", "vault"], "wal": true, "integrity": "observed"},
+  "care_path": {"transport": "AF_UNIX SOCK_SEQPACKET", "independent_of_companion": true, "duplicate_idempotency": "observed"},
+  "matrix": {"seeds": [17, 23, 41], "cycles_per_seed": 1000, "total_cycles": 3000, "status": "passed"},
+  "soak_60_minute": {
+    "status": "PASS",
+    "started_utc": "2026-09-10T01:17:56Z",
+    "ended_utc": "2026-09-10T02:17:59Z",
+    "duration_seconds": 3600,
+    "samples": 60,
+    "failures": [],
+    "evidence_ceiling": "E3_TARGET_TESTED",
+    "claim_boundary": "synthetic engineering soak only",
+    "semantics": "repeated bounded supervisor invocations at a 60-second interval; not a continuous resident runtime"
+  },
+  "openbox_window": "PASSED_BOUNDED_VISIBLE_TEST",
+  "product_capability": "not_claimed"
+}

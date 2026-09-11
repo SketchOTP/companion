@@ -97,3 +97,15 @@ Codex completes Architect Review 04 in PR #7 and returns one truthful,
 evidence-bound result. A passing result is intended to trigger Phase 01 merge,
 archive, and immediate issuance of the complete Roadmap Phase 02 embodiment
 directive.
+
+## Architect Review 04 — evidence-semantics correction
+
+The earlier 3,000-message and 37-scenario passes are superseded. The corrected
+resident matrix uses exhaustive typed `InjectionKind`, exact outcomes/reasons,
+3,000 messages over seeds 17/23/41, zero invalid acceptance, and ordinary-
+observation separation. A directly exercised twelve-group matrix, actual
+Godot client-state/topology probe, and 900-second resident regression are
+committed under `experiments/p00-foundation-qual/results/phase01-review04/`.
+The semantic validator recomputes hashes, fixture identity, ancestry, and
+equations; five tamper mutations fail closed. This remains bounded E3 evidence
+only and Phase 01 remains pending independent Architect acceptance.

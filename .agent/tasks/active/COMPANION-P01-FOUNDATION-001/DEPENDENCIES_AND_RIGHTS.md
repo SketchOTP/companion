@@ -1,6 +1,6 @@
 # Dependencies and Rights — COMPANION-P01-FOUNDATION-001
 
-Status: `PENDING CODEX EXECUTION`
+Status: `IMPLEMENTED — AWAITING ARCHITECT REVIEW`
 
 For every tool, crate, action, artifact or generator used by Phase 01, record:
 

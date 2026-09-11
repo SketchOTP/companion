@@ -1,0 +1,1 @@
+{"$schema":"https://json-schema.org/draft/2020-12/schema","$id":"https://companion.local/schema/embodiment-intent-v1.json","type":"object","additionalProperties":false,"required":["schema_major","intent_id","kind"],"properties":{"schema_major":{"const":1},"intent_id":{"type":"string","format":"uuid"},"kind":{"type":"string","minLength":1},"parameters":{"type":"object"}}}

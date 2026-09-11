@@ -1,6 +1,6 @@
 # Phase 01 Specification — COMPANION-P01-FOUNDATION-001
 
-Status: `PENDING CODEX EXECUTION`
+Status: `IMPLEMENTED — AWAITING ARCHITECT REVIEW`
 
 ## Phase outcome
 
@@ -26,3 +26,37 @@ No mon organism, real memory, learning, dreaming, production sprites, media capt
 ## Evidence rule
 
 Every claimed result must map to an exact command, test, structured artifact, commit and evidence ceiling. Missing, failed and blocked outcomes remain visible.
+
+## Review 01 continuation contract
+
+The implementation is a candidate only. Resident lifecycle, direct-care
+durability, direct SQLite binding, XDG refusal, live health, and actual process
+cycles are required to be backed by executable observations. Any unrun
+target-host recovery or long-duration scenario remains `NOT RUN` and cannot be
+upgraded by summary prose.
+
+## Review 03 closeout delta
+
+Resident controls, seed-diverse mixed traffic, strict care validation and
+failure/recovery evidence are now driven by executable scripts. Sanitized
+outputs are committed under `evidence/phase01-closeout/` and independently
+bound by hash, fixture and ancestry validation. The phase remains a candidate
+until Architect review; no later-phase or product capability is included.
+
+## Final evidence-binding state
+
+The closeout bundle is committed and independently validated. All claims are
+bounded to observed foundation engineering evidence; no product capability,
+dependency adoption, security certification, safety efficacy, reliability, or
+SLA claim is made. Earlier failures and deferred work remain historical and
+visible.
+
+## Architect Review 04 semantic correction
+
+The prior 3,000-message and 37-scenario results are explicitly superseded.
+Review 04 requires exhaustive `InjectionKind` mapping, exact category equations,
+ordinary/care authority separation, twelve directly exercised groups, actual
+wire execution references, Godot client-state/topology observation, and a
+900-second resident regression. The corrected evidence is committed under
+`experiments/p00-foundation-qual/results/phase01-review04/`; acceptance remains
+with the Architect.

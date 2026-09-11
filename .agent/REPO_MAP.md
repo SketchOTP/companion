@@ -42,6 +42,14 @@ Qualification binaries, toolchains, Godot archives, SQLite sources/builds, datab
 - `.agent/EXTERNAL.md` — append-only external discovery ledger.
 - `.agent/tasks/` — conditional complex-task packets.
 
+## Phase 01 additions
+
+- `Cargo.toml`, `Cargo.lock`, `crates/` — locked Rust foundation workspace.
+- `contracts/`, `migrations/` — authored schemas, fixture and authority-store migrations.
+- `godot/` — neutral Godot 4.7.2 habitat boundary.
+- `scripts/` — offline bootstrap, verification, health, artifact, matrix, soak and SBOM tooling.
+- `evidence/` — sanitized foundation summaries only; runtime outputs remain private.
+
 ## Known sensitive/high-risk areas
 
 No implementation exists. Future sensitive areas include identity/memory persistence, biometrics and perception, consent, trusted contacts, escalation policy/audit, backup/export/restore, secrets, and personal routine data.

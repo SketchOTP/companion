@@ -1,0 +1,69 @@
+name: phase01-foundation
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          # The committed qualification validator verifies evidence ancestry;
+          # retain history so that check is meaningful on CI as well as locally.
+          fetch-depth: 0
+      - name: Install exact Rust toolchain on ephemeral runner
+        run: rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
+      - name: Fetch and verify exact SQLite 3.53.4 source
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/sqlite"
+          curl --fail --location --retry 3 https://www.sqlite.org/2026/sqlite-amalgamation-3530400.zip -o "$RUNNER_TEMP/sqlite/sqlite.zip"
+          unzip -q "$RUNNER_TEMP/sqlite/sqlite.zip" -d "$RUNNER_TEMP/sqlite"
+          test "$(sha256sum "$RUNNER_TEMP/sqlite/sqlite-amalgamation-3530400/sqlite3.c" | awk '{print $1}')" = "b1dd5d74ec7f29055a6684fa06fb3c2f6821c87dd38f9a458dfd2e8a1db28189"
+          echo "COMPANION_SQLITE_SOURCE=$RUNNER_TEMP/sqlite/sqlite-amalgamation-3530400/sqlite3.c" >> "$GITHUB_ENV"
+      - name: Rust locked checks (exact SQLite source)
+        run: |
+          test -f "$COMPANION_SQLITE_SOURCE"
+          cargo fmt --all -- --check
+          cargo clippy --workspace --all-targets --all-features --locked -- -D warnings
+          cargo test --workspace --locked
+          cargo build --workspace --locked --release
+      - name: Fetch and verify exact Godot 4.7.2 artifact
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/godot"
+          curl --fail --location --retry 3 https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip -o "$RUNNER_TEMP/godot/godot.zip"
+          test "$(sha256sum "$RUNNER_TEMP/godot/godot.zip" | awk '{print $1}')" = "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4"
+          unzip -q "$RUNNER_TEMP/godot/godot.zip" -d "$RUNNER_TEMP/godot"
+          echo "GODOT_BIN=$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" >> "$GITHUB_ENV"
+          chmod +x "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64"
+      - name: Contract validation
+        run: |
+          python3 -m pip install --disable-pip-version-check --no-input 'jsonschema==4.25.1'
+          python3 scripts/validate_schemas.py
+          python3 scripts/check_contract_types.py
+          python3 scripts/foundation_runtime_check.py --output /tmp/runtime-results.json
+          "$GODOT_BIN" --headless --path godot --editor --quit
+      - name: Deterministic matrix
+        run: python3 scripts/cycle_matrix.py --cycles 1000 --seeds 17,23,41
+      - name: Resident Phase 01 closeout controls
+        run: |
+          python3 scripts/contract_closeout.py
+          python3 scripts/failure_matrix.py --output /tmp/failure-matrix.json
+          python3 scripts/phase01_closeout.py --cycles 3000 --seeds 17,23,41 --output /tmp/phase01-closeout.json
+      - name: Forbidden data scan
+        run: |
+          ! git grep -nE '(/home/|/srv/|sshfs|BEGIN (RSA|OPENSSH) PRIVATE KEY|api[_-]?key)' -- ':!experiments/p00-foundation-qual/results/*'
+          git diff --check
+      - name: SBOM and license inventory
+        run: |
+          SOURCE_DATE_EPOCH=0 python3 scripts/generate_sbom.py --output /tmp/phase01-sbom.spdx.json
+          python3 scripts/validate_sbom.py --input /tmp/phase01-sbom.spdx.json
+      - name: Accepted qualification evidence validator
+        run: python3 experiments/p00-foundation-qual/scripts/validate_results.py
+      - name: Phase 01 closeout evidence validator
+        run: python3 scripts/validate_phase01_closeout.py
+      - name: Offline dependency policy
+        run: python3 scripts/security_checks.py

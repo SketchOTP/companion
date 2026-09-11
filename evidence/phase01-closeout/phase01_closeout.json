@@ -1,0 +1,44 @@
+{
+  "attempts": 3008,
+  "claim_boundary": "resident synthetic foundation closeout only; no product, safety efficacy, security certification, reliability, or SLA claim",
+  "counts": {
+    "companion_state": 197,
+    "duplicate": 214,
+    "duplicate_key": 196,
+    "invalid_datetime": 197,
+    "invalid_mac": 198,
+    "invalid_uuid": 199,
+    "malformed": 198,
+    "ordinary_observation": 199,
+    "replay": 197,
+    "stale_generation": 199,
+    "unauthorized_sender": 197,
+    "unknown_field": 196,
+    "unsupported_major": 199,
+    "valid": 414
+  },
+  "cycles": 3000,
+  "duration_seconds": 303.447,
+  "evidence_ceiling": "E3_TARGET_TESTED",
+  "lifecycle": {
+    "bridge_replacement": true,
+    "care_degraded_recovered": true,
+    "care_store_fault_recovery": true,
+    "clean_shutdown": true,
+    "companion_restart": true,
+    "mixed_messages": true,
+    "producer_rotation": true,
+    "startup_ready": true
+  },
+  "rejection_reasons": {
+    "accepted": 2805,
+    "duplicate": 4,
+    "rejected": 199
+  },
+  "seeds": [
+    17,
+    23,
+    41
+  ],
+  "status": "PASS"
+}

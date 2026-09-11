@@ -1,0 +1,54 @@
+{
+  "schema": "companion-p01-review04-v1",
+  "evidence_commit": "c9a859aa1ad89ad607eb6b83470b2ce9446583fe",
+  "execution_date": "2026-09-10",
+  "timestamp_precision": "date-only UTC",
+  "sanitized_host_class": "Linux x86_64 local ext4/NVMe",
+  "commands": [
+    "cargo test --workspace --locked",
+    "cargo build --workspace --locked --release",
+    "FOUNDATION_SUPERVISOR=target/release/ops-supervisor python3 scripts/phase01_closeout.py --cycles 3000 --seeds 17,23,41",
+    "FOUNDATION_SUPERVISOR=target/release/ops-supervisor FOUNDATION_BRIDGE=target/release/godot-bridge GODOT_BIN=<private-cache>/Godot_v4.7.2-stable_linux.x86_64 python3 scripts/failure_matrix.py",
+    "FOUNDATION_BRIDGE=target/release/godot-bridge GODOT_BIN=<private-cache>/Godot_v4.7.2-stable_linux.x86_64 python3 scripts/godot_bridge_smoke.py",
+    "CARGO=<pinned-cargo> python3 scripts/contract_closeout.py --wire-evidence <phase01-result>",
+    "FOUNDATION_SUPERVISOR=target/release/ops-supervisor python3 scripts/regression900.py --duration-seconds 900",
+    "python3 experiments/p00-foundation-qual/scripts/validate_phase01_review04.py",
+    "python3 experiments/p00-foundation-qual/scripts/tamper_negative_review04.py"
+  ],
+  "candidate_versions": {
+    "rust": "rustc 1.98.1 stable",
+    "godot": "4.7.2.stable.official.ed1daf0bf",
+    "sqlite": "3.53.4 exact official amalgamation",
+    "python": "CPython 3.12 existing host executable"
+  },
+  "oracle": {
+    "package": "canonicalize",
+    "version": "5.0.0",
+    "license": "Apache-2.0",
+    "node_engine": ">=22",
+    "node_runtime": "v24.20.0",
+    "npm_integrity": "sha512-O/NCg79G0/TWoD3Fo6scOMfP4p7/TsxRXVmRo9mEfD6h/5y5o1wtVbKyBO0E2i7FEcqe5tRijyAH/IWHIHMH4w==",
+    "tarball_sha256": "5e13234695e05dc1398c84e7bc12aaee7c69a6e23b52325b9cb54f6a307427b0",
+    "repository": "https://github.com/erdtman/canonicalize.git"
+  },
+  "source_identities": {
+    "godot_sha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4",
+    "sqlite_source_id": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+    "sqlite_published_sha3_256": "67f423e9ebbbdc473cbc4772c872ee6b89f31fde4ed0279a5c25d5f65c043a16"
+  },
+  "fixture_sha256": "569b94e68f93f70e040c62d5d53610624cdea61f6296f6de84d8fff18d6b8e5f",
+  "result_file_sha256": {
+    "phase01_closeout.json": "ebcdd6512c8bf886557eed3b64ee72cf2b56df094018a6460330a44490b9cdc8",
+    "failure_matrix.json": "a3c2c54945088dc897a02174ef04d78c66adedb30504608065951a3116dd4a11",
+    "contract_closeout.json": "fba67cd83794afe2c30e44a35c535b56ccc72cdabc3ce97ccff5d7cac64a9ed2",
+    "godot_bridge.json": "55b4531de317c6528e7840ac4e47c9aea8690e8e77d30087fec09f80674c3f5b",
+    "regression900.json": "366d8e27039344da46268a49cae4fb2bd94fdde254b9fbdb304de023b925c4a7"
+  },
+  "evidence_ceiling": "E3_TARGET_TESTED; bounded synthetic foundation evidence only; no product, security, safety, reliability, or SLA claim",
+  "deferrals": [
+    "cargo-deny/advisory database analysis and formal legal review",
+    "broad SQLite VFS, physical power-loss, lifetime, and endurance qualification",
+    "repeated crash-loop endurance and physical monitor hot-unplug",
+    "all Roadmap Phase 02-10 product capabilities"
+  ]
+}

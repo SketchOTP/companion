@@ -1,6 +1,6 @@
 # Process, Supervisor and Direct-Care IPC — COMPANION-P01-FOUNDATION-001
 
-Status: `PENDING CODEX EXECUTION`
+Status: `IMPLEMENTED — AWAITING ARCHITECT REVIEW`
 
 Document the implemented process graph and authority boundaries for:
 
@@ -27,3 +27,47 @@ Required proof:
 - no companion, Godot, model, mood, memory or language message can create/suppress a care transition.
 
 State the exact bounded threat ceiling. Do not claim security certification or spoken-help capability.
+
+## Implemented topology
+
+`ops-supervisor` creates an `AF_UNIX` `SOCK_SEQPACKET` pair with close-on-exec,
+enables `SO_PASSCRED`, provisions one generation/capability pair, and passes
+the producer endpoint only to `sensor-gateway` and the care endpoint only to
+`care-core`. The children are separate OS processes and each applies
+`PR_SET_DUMPABLE=0` in its own pre-exec hook. Care receives actual packets,
+checks the supplied generation/capability and duplicate message id, and writes
+care receipts to its own store. The supervisor is trusted for lifecycle and
+capability provisioning; this is a bounded synthetic foundation and not a
+security certification. Full adversarial restart/descriptor matrix remains an
+Architect-directed follow-up evidence surface.
+
+## Review 01 continuation
+
+The resident implementation now exposes a private supervisor control socket;
+`--once` is explicit test mode. Role targets are separate binaries. Endpoints
+remain close-on-exec until intended child handoff, and capability bytes travel
+through a private inherited pipe rather than argv, environment, logs, or files.
+Care verifies kernel credentials and a SHA-256 MAC, and persists each receipt
+before reporting durable acceptance. The supervisor is trusted for lifecycle
+and provisioning, not domain or care decisions. Complete producer replacement,
+pidfd race, and broad adversarial evidence remain unqualified until separately
+run.
+
+## Architect Review 02 continuation
+
+Readiness is now written after each role completes initialization. The
+supervisor health response derives `state` (`starting`, `healthy`, `failed`,
+`crash_loop`, or `degraded`) from live child handles and readiness markers and
+retains a producer pidfd with an observable liveness poll. Versioned local
+control commands support health, fail/restart/rotate and shutdown. Killing a
+direct producer or care child closes the old socketpair, reaps the peer,
+rotates the UUID generation and capability bytes, and starts a fresh pair;
+the supervisor remains the trusted lifecycle/capability provisioner.
+
+The direct-care packet is schema-aligned (`auth_scheme`, canonical `mac`,
+UUID message id, observed timestamp, bounded quality/confidence) and uses the
+RustCrypto `hmac` verification API with a domain separator. Runtime tests
+observed the one-resident packet matrix and bounded restart/rotation/outage
+matrix. `/proc` descriptor census is intentionally recorded as failed when
+child dumpability hardening returns `PermissionError`; root/kernel/full-account
+and compromised-authorized-producer threats remain outside the ceiling.

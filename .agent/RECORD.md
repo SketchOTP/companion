@@ -346,3 +346,113 @@ summaries from runner outcomes and complete state comparisons.
 The result remains provisional for independent Architect review. Architecture
 v1.0 remains adopted and unchanged; Roadmap Phase 01, dependency/mechanism
 adoption, product implementation, and capability claims remain closed.
+
+## 2026-09-09 — COMPANION-P01-FOUNDATION-001 implementation
+
+Phase 01 foundation work was implemented on the clean local secondary branch
+from main `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`. The work adds only
+engineering foundation, synthetic qualification tooling, neutral habitat
+shell, contracts, migrations, docs and evidence. Architecture v1.0 remains
+adopted; Phase 02 and later remain closed. This record is a candidate result
+awaiting independent Architect review, not a self-acceptance.
+
+## 2026-09-10 — COMPANION-P01-FOUNDATION-001 publication reconciliation
+
+The phase-sized foundation candidate was executed in the clean local-ext4/NVMe
+secondary worktree on `codex/p01-foundation-001` from
+`4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`. It contains only the authorized
+Rust/Godot/contracts/storage/process/observability/CI foundation and synthetic
+evidence. The bounded 60-minute soak was run separately and its exact
+sanitized result is recorded in the evidence summary.
+
+The candidate is published for independent Architect review through PR #7 and
+Issue #6. Architecture v1.0 remains adopted; Roadmap Phase 02 and later,
+product implementation and product-capability claims remain closed. The soak
+and all partial/unqualified recovery surfaces are engineering evidence only.
+## 2026-09-10 — Phase 01 Review 01 continuation record
+
+Architect Review 01 was merged normally into `codex/p01-foundation-001` as
+`22d64f4`. The continuation preserves the rejected candidate and adds a
+resident supervisor, direct SQLite store, process-separated service binaries,
+private capability provisioning, fail-closed XDG resolution, supervisor-backed
+health, and actual resident-process message-cycle evidence. No dependency,
+later roadmap phase, product capability, security certification, or reliability
+claim was adopted by Codex.
+
+## 2026-09-10 — Phase 01 Architect Review 02 continuation
+
+The existing task branch received resident control-plane, direct-care
+authentication/rotation, exact SQLite, semantic contracts, Godot UDS, and
+integration-driver corrections. One resident synthetic run and bounded
+failure/recovery tests passed. Full acceptance was not claimed because the
+runtime `/proc` census failed under intentional dumpability hardening and the
+required 3,600-second injected soak was not run. Architecture v1.0 remains
+adopted; Roadmap Phase 02+ and product capability remain closed.
+
+## 2026-09-10 — Resident evidence correction
+
+The runtime no-egress check now reports process-attributed socket ownership
+from `ss` and separately records the permission boundary created by child
+dumpability hardening. Producer and care services publish post-initialization
+readiness before entering resident loops. Existing non-passes remain in the
+audit trail; no acceptance or product capability is inferred.
+
+## 2026-09-10 — Final resident soak evidence
+
+The initial full-duration soak failed closed after one control-socket startup
+race (`FileNotFoundError`, 59 samples). After adding an explicit readiness wait,
+the fresh run completed from `2026-09-10T13:10:15Z` to
+`2026-09-10T14:10:15Z` for `3,600` seconds: `PASS`, 60 samples, zero failures,
+injections for companion restart, producer rotation, Godot restart, and care
+failure, zero process-owned network sockets, and no checkout writes. Evidence
+is bounded E3 and remains subject to independent Architect acceptance.
+
+## 2026-09-10 — Focused publication commit
+
+The resident foundation, strict care recovery assertion, corrected soak driver,
+final 3,600-second result summary, and append-only state updates were published
+in `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`. The summary's `evidence_commit`
+points to this commit; a final reconciliation commit is limited to executable
+mode and publication-state bookkeeping. No acceptance is self-claimed.
+
+## 2026-09-10 — Post-publication CI correction
+
+Push workflow `34488050143` failed closed when the runtime checker queried
+health before the supervisor control socket was ready; PR workflow
+`34488058839` passed under different scheduling. The checker now waits for
+explicit endpoint readiness. The failed run remains retained and a fresh CI
+run is required for green push evidence.
+
+Fresh push run `34488896386` and pull-request run `34488902059` both passed on
+`12ee47bc5f4c556777eae43f35e3ec2f89f39e15`. The CI evidence is reconciled;
+the branch remains a candidate pending independent Architect review.
+
+## 2026-09-10 — Architect Review 03 narrow closeout
+
+Review 03 remains `CONTINUE — PHASE 01 NOT ACCEPTED` until the final resident
+closeout evidence is independently accepted. The branch continues on
+`codex/p01-foundation-001`; protected primary-worktree changes remain untouched.
+The closeout work is limited to foundation controls, synthetic evidence and
+governance records. Architecture v1.0 is unchanged and adopted, while Phase 02+
+and all product capability remain closed.
+
+## 2026-09-10 — Final evidence-binding publication
+
+Final candidate head is `5a4ca0b1fcda0412d9e5ed326e1d0cafea2a4b96` on
+`codex/p01-foundation-001`, pushed normally. The resident 3,600-second soak
+passed with four controlled injections, no failures, and no checkout writes.
+The committed manifest binds result/fixture hashes and ancestry; the validator
+passed and the tamper-negative copy failed closed. PR #7 remains OPEN/DRAFT/
+UNMERGED and Issue #6 remains OPEN. Architecture v1.0 remains adopted; Phase
+01 and product implementation remain pending Architect acceptance.
+
+## 2026-09-10 — Phase 01 Review 04 correction record
+
+Architect Review 04 continued the phase without changing Architecture v1.0.
+The first closeout's invalid-category and 37-scenario claims were marked
+superseded, then replaced by exhaustive typed injection, exact 3,000-message
+equations, twelve directly exercised groups, actual wire references, Godot
+client/topology evidence, and a 900-second resident regression. The semantic
+validator and five tamper-negative mutations passed. This is bounded E3
+engineering evidence only; Phase 01 remains unaccepted and no dependency,
+security mechanism, later phase, or product capability was adopted.

@@ -128,3 +128,24 @@ copy, or reinterpret the operator-owned primary-worktree modifications.
 - `EXTERNAL.md` — external sources and dispositions
 
 `CURRENT.md` is mutable. Historical ledgers are append-only after adoption.
+
+## Review 03 closeout routing
+
+The active Phase 01 work is the final evidence-binding closeout in
+`codex/p01-foundation-001`. Read `ARCHITECT_REVIEW_03.md`, the closeout
+evidence bundle under `evidence/phase01-closeout/`, and the resident matrix
+outputs before any acceptance statement. Do not open Phase 02 or claim product
+capability.
+
+Final submission is published at `5a4ca0b1fcda0412d9e5ed326e1d0cafea2a4b96`.
+The committed closeout manifest, sanitized soak, and validator output are
+bounded evidence pending Architect review, not phase acceptance.
+
+## Review 04 continuation
+
+The active correction is limited to evidence semantics. Use
+`experiments/p00-foundation-qual/results/phase01-review04/` and
+`experiments/p00-foundation-qual/scripts/validate_phase01_review04.py` as the
+current machine-readable result and validator. The old 3,000-message and
+37-scenario summaries remain historical superseded evidence. Architecture v1.0
+is adopted, Phase 01 is not accepted, and PR #7 / Issue #6 remain open.

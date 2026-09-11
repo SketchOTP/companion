@@ -475,6 +475,21 @@ Architecture v1.0 is unchanged, Phase 01 is closed, and adoption is none.
 - Notion coder report and parent directive were updated and re-fetched with the correction commit and 45/55 live ledger counts: `PASSED`.
 - Architect acceptance: `NOT RUN`; no downstream authority created.
 
+## COMPANION-P01-FOUNDATION-001 — Phase 01 foundation candidate
+
+- Local secondary implementation: locked Rust workspace, nine schemas, canonical event profile, XDG refusal, six role binaries, supervisor/direct care path, separate store migrations, Godot shell, health, scripts, CI and evidence summaries.
+- Local verification: locked format/clippy/tests, exact cached artifact checks, schema validation, three-store backup/restore smoke, direct-care packet and duplicate smoke, headless Godot and bounded visible window probe, 3-seed/3,000-cycle matrix.
+- `NOT RUN`: 60-minute soak and remote CI execution. No acceptance or downstream phase transition claimed.
+
+## COMPANION-P01-FOUNDATION-001 — Phase 01 publication reconciliation
+
+- The phase-sized foundation candidate was executed in the clean local-ext4/NVMe secondary worktree on `codex/p01-foundation-001` from `4171a02385b67f3e8d7ecbd6349d45c0bf1e0a8e`.
+- Locked Rust, contracts, XDG guard, six synthetic shells, direct care transport, isolated stores, neutral Godot shell, health/tooling, CI source, SBOM tooling, and the 3-seed/3,000-cycle matrix remain in scope.
+- The required 60-minute synthetic soak was run with `scripts/soak.py --duration-seconds 3600 --interval 60`; its exact sanitized status, timestamps, sample count and failure list are recorded in the final evidence summary.
+- Final soak result: `PASS`, 60 samples, zero failures, `2026-09-10T01:17:56Z`–`2026-09-10T02:17:59Z`, 3,600 seconds.
+- The soak is repeated bounded supervisor invocations, not a continuous resident process and not production reliability evidence. The failure matrix, display-loss recovery and later-phase capability surfaces remain explicitly partial or unqualified.
+- Architecture v1.0 remains adopted; Roadmap Phase 02 and later, product implementation, dependency expansion and product-capability claims remain closed pending Architect review.
+
 ## COMPANION-P00-QUAL-001 — Architect Review 03 narrow evidence-binding correction
 
 - Date: 2026-09-09 America/New_York; review merge `1997e01` from `origin/main` `2ce221d7d9d359e3b23a3b2d9c2619fe709ddae2`.
@@ -482,3 +497,85 @@ Architecture v1.0 is unchanged, Phase 01 is closed, and adoption is none.
 - IPC fields are labeled `RUNTIME_OBSERVED`, `KERNEL_OBSERVED`, or `CODE_INSPECTED`; outage semantics use `normal_coverage_claimed=false`; stale/restart/old-channel/capability and descriptor outcomes are asserted fail-closed.
 - SQLite derives exact before/during/after reader counts, multi-row fault atomicity, pre-existing-state preservation, checkpoint full-state equality, and VFS exit/file-class/flags/ordinal assertions.
 - Evidence remains bounded `E3_TARGET_TESTED` candidate evidence (Godot retained `E1_OBSERVED`, systemd retained `E3_TARGET_TESTED`). Architecture v1.0 remains adopted; dependencies, Phase 01, and product implementation remain closed; Architect acceptance is pending.
+## 2026-09-10 — Phase 01 Architect Review 01 continuation
+
+Implemented a resident supervisor control loop with explicit `--once` test
+mode, separate role binaries, private endpoint handoff, private capability
+pipes, HMAC verification, kernel credentials, persistent care receipts, direct
+SQLite ABI/prepared statements, corrected XDG defaults, live health querying,
+and an actual three-seed/3,000-packet process matrix. Local debug/release,
+format, clippy, workspace tests, schema validation, storage/direct-care smoke,
+and runtime lifecycle checks pass. Target-host display recovery, broad kill
+matrix, exact host SQLite 3.53.4 identity, and a full injected continuous
+60-minute soak remain unqualified. Phase 01 remains unaccepted pending review.
+
+## COMPANION-P01-FOUNDATION-001 — Architect Review 02 continuation (2026-09-10)
+
+- Live resident health/readiness, direct-care HMAC/channel rotation, exact
+  SQLite source gating/runtime identity, semantic schema checks, Godot UDS
+  handshake, one-resident 3,000-packet matrix, and bounded failure/recovery
+  observations were added on the existing branch.
+- `scripts/verify.sh` failed at the `/proc` census because child-level
+  `PR_SET_DUMPABLE=0` blocks descriptor inspection; the failure is preserved.
+- The required 3,600-second injected soak was not run. Phase 01 remains a
+  candidate for independent Architect review; Architecture v1.0 is adopted,
+  Phase 02+ and product implementation remain closed, and no dependency or
+  capability is self-approved.
+
+## COMPANION-P01-FOUNDATION-001 — evidence correction (2026-09-10)
+
+- Corrected `foundation_runtime_check.py` to observe process-owned network
+  sockets with `ss -H -tunp`; the expected `PR_SET_DUMPABLE=0` `/proc` denial is
+  retained as an explicit limitation.
+- Rebuilt the resident producer/care lifecycle so readiness markers are
+  published after role initialization and both roles remain resident until
+  supervisor shutdown. The failure matrix passed after this correction.
+- The first 3,600-second soak failed closed on a startup control-socket race;
+  the driver now waits for readiness. A fresh resident 3,600-second run passed
+  with 60 samples, zero failures, four injections, zero process-owned network
+  sockets, and no checkout writes. This remains bounded E3 engineering
+evidence and a candidate for independent Architect review.
+
+The focused foundation/evidence commit is `905a2c3980acfd8ee0ea2d58d3ba640701d9a7a0`.
+Its committed soak summary is bound to that SHA; a reconciliation commit will
+record the final branch and publication state without changing scope.
+
+The first push workflow failed closed on a control-socket readiness race in
+`foundation_runtime_check.py`; the PR workflow passed. The checker was
+corrected to wait for explicit endpoint readiness before health polling. A
+fresh remote run is required before calling push CI green.
+
+Fresh push run `34488896386` and pull-request run `34488902059` both passed on
+`12ee47bc5f4c556777eae43f35e3ec2f89f39e15`; the CI readiness correction is
+therefore verified remotely. The candidate remains subject to Architect review.
+
+## 2026-09-10 — Architect Review 03 closeout execution
+
+The closeout implementation adds a seed-diverse resident 3,000-message matrix,
+37-scenario fail-closed control-plane matrix, generation-bound readiness fields,
+strict UTC safety-envelope validation, deterministic artifact bootstrap paths,
+and a committed closeout evidence validator. The corrected 3,600-second soak is
+running on the target host; no result is accepted until its final output,
+hashes, and ancestry are independently verified. This branch remains a Phase 01
+candidate; no product capability, dependency adoption, or later phase is claimed.
+
+## 2026-09-10 — Final evidence-binding result
+
+The corrected resident soak passed for 3,600 seconds (60 samples, four
+controlled injections, zero failures, no checkout writes). The committed
+manifest records observed UTC timestamps and exact result/fixture hashes.
+`python3 scripts/validate_phase01_closeout.py` passed; a deliberately altered
+temporary result failed with exit 1. This remains E3 bounded engineering
+evidence and does not accept Phase 01 or claim product capability.
+
+## 2026-09-10 — Architect Review 04 semantic correction
+
+The superseded invalid-input and 37/37 passes remain preserved. The corrected
+resident run passed 3,000 actual messages over seeds 17/23/41 with exact totals:
+3,000 requested/observed, 396 accepted, 2,405 rejected, 199 duplicates,
+`invalid_accepted=0`, 2,802 care attempts, 198 care outcomes, and zero ordinary
+care rows. All twelve directly exercised foundation groups passed. The Godot
+headless client sequence and topology fallback probe passed, as did the
+900-second resident regression. The result bundle and semantic validator live
+under `experiments/p00-foundation-qual/results/phase01-review04/`; evidence is
+bounded E3 and Phase 01 remains pending Architect acceptance.

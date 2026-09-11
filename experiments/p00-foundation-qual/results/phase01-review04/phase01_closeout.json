@@ -1,0 +1,439 @@
+{
+  "categories": {
+    "duplicate_decoded_key": {
+      "accepted": 0,
+      "applied": 201,
+      "care_attempt_delta": 201,
+      "care_outcome_delta": 0,
+      "category": "duplicate_decoded_key",
+      "companion_event_delta": 0,
+      "duplicate": 0,
+      "expected_reason": "duplicate_decoded_key",
+      "expected_status": "rejected",
+      "reasons": {
+        "duplicate_decoded_key": 201
+      },
+      "rejected": 201,
+      "requested": 201,
+      "transport_path": "direct-care"
+    },
+    "duplicate_safety_candidate": {
+      "accepted": 0,
+      "applied": 199,
+      "care_attempt_delta": 199,
+      "care_outcome_delta": 0,
+      "category": "duplicate_safety_candidate",
+      "companion_event_delta": 0,
+      "duplicate": 199,
+      "expected_reason": "duplicate",
+      "expected_status": "duplicate",
+      "reasons": {
+        "duplicate": 199
+      },
+      "rejected": 0,
+      "requested": 199,
+      "transport_path": "direct-care"
+    },
+    "forbidden_companion_state": {
+      "accepted": 0,
+      "applied": 198,
+      "care_attempt_delta": 198,
+      "care_outcome_delta": 0,
+      "category": "forbidden_companion_state",
+      "companion_event_delta": 0,
+      "duplicate": 0,
+      "expected_reason": "forbidden_companion_state",
+      "expected_status": "rejected",
+      "reasons": {
+        "forbidden_companion_state": 198
+      },
+      "rejected": 198,
+      "requested": 198,
+      "transport_path": "direct-care"
+    },
+    "invalid_datetime": {
+      "accepted": 0,
+      "applied": 201,
+      "care_attempt_delta": 201,
+      "care_outcome_delta": 0,
+      "category": "invalid_datetime",
+      "companion_event_delta": 0,
+      "duplicate": 0,
+      "expected_reason": "invalid_datetime",
+      "expected_status": "rejected",
+      "reasons": {
+        "invalid_datetime": 201
+      },
+      "rejected": 201,
+      "requested": 201,
+      "transport_path": "direct-care"
+    },
+    "invalid_mac": {
+      "accepted": 0,
+      "applied": 201,
+      "care_attempt_delta": 201,
+      "care_outcome_delta": 0,
+      "category": "invalid_mac",
+      "companion_event_delta": 0,
+      "duplicate": 0,
+      "expected_reason": "invalid_mac",
+      "expected_status": "rejected",
+      "reasons": {
+        "invalid_mac": 201
+      },
+      "rejected": 201,
+      "requested": 201,
+      "transport_path": "direct-care"
+    },
+    "invalid_uuid": {
+      "accepted": 0,
+      "applied": 201,
+      "care_attempt_delta": 201,
+      "care_outcome_delta": 0,
+      "category": "invalid_uuid",
+      "companion_event_delta": 0,
+      "duplicate": 0,
+      "expected_reason": "invalid_uuid",
+      "expected_status": "rejected",
+      "reasons": {
+        "invalid_uuid": 201
+      },
+      "rejected": 201,
+      "requested": 201,
+      "transport_path": "direct-care"
+    },
+    "malformed_frame": {
+      "accepted": 0,
+      "applied": 201,
+      "care_attempt_delta": 201,
+      "care_outcome_delta": 0,
+      "category": "malformed_frame",
+      "companion_event_delta": 0,
+      "duplicate": 0,
+      "expected_reason": "malformed_frame",
+      "expected_status": "rejected",
+      "reasons": {
+        "malformed_frame": 201
+      },
+      "rejected": 201,
+      "requested": 201,
+      "transport_path": "direct-care"
+    },
+    "replay_safety_candidate": {
+      "accepted": 0,
+      "applied": 200,
+      "care_attempt_delta": 200,
+      "care_outcome_delta": 0,
+      "category": "replay_safety_candidate",
+      "companion_event_delta": 0,
+      "duplicate": 0,
+      "expected_reason": "replay_rejected",
+      "expected_status": "rejected",
+      "reasons": {
+        "replay_rejected": 200
+      },
+      "rejected": 200,
+      "requested": 200,
+      "transport_path": "direct-care"
+    },
+    "stale_generation": {
+      "accepted": 0,
+      "applied": 201,
+      "care_attempt_delta": 201,
+      "care_outcome_delta": 0,
+      "category": "stale_generation",
+      "companion_event_delta": 0,
+      "duplicate": 0,
+      "expected_reason": "stale_generation",
+      "expected_status": "rejected",
+      "reasons": {
+        "stale_generation": 201
+      },
+      "rejected": 201,
+      "requested": 201,
+      "transport_path": "direct-care"
+    },
+    "stale_mac": {
+      "accepted": 0,
+      "applied": 200,
+      "care_attempt_delta": 200,
+      "care_outcome_delta": 0,
+      "category": "stale_mac",
+      "companion_event_delta": 0,
+      "duplicate": 0,
+      "expected_reason": "stale_mac",
+      "expected_status": "rejected",
+      "reasons": {
+        "stale_mac": 200
+      },
+      "rejected": 200,
+      "requested": 200,
+      "transport_path": "direct-care"
+    },
+    "unauthorized_sender": {
+      "accepted": 0,
+      "applied": 199,
+      "care_attempt_delta": 199,
+      "care_outcome_delta": 0,
+      "category": "unauthorized_sender",
+      "companion_event_delta": 0,
+      "duplicate": 0,
+      "expected_reason": "unauthorized_sender",
+      "expected_status": "rejected",
+      "reasons": {
+        "unauthorized_sender": 199
+      },
+      "rejected": 199,
+      "requested": 199,
+      "transport_path": "direct-care"
+    },
+    "unknown_field": {
+      "accepted": 0,
+      "applied": 201,
+      "care_attempt_delta": 201,
+      "care_outcome_delta": 0,
+      "category": "unknown_field",
+      "companion_event_delta": 0,
+      "duplicate": 0,
+      "expected_reason": "unknown_field",
+      "expected_status": "rejected",
+      "reasons": {
+        "unknown_field": 201
+      },
+      "rejected": 201,
+      "requested": 201,
+      "transport_path": "direct-care"
+    },
+    "unsupported_schema_major": {
+      "accepted": 0,
+      "applied": 201,
+      "care_attempt_delta": 201,
+      "care_outcome_delta": 0,
+      "category": "unsupported_schema_major",
+      "companion_event_delta": 0,
+      "duplicate": 0,
+      "expected_reason": "unsupported_schema_major",
+      "expected_status": "rejected",
+      "reasons": {
+        "unsupported_schema_major": 201
+      },
+      "rejected": 201,
+      "requested": 201,
+      "transport_path": "direct-care"
+    },
+    "valid_ordinary_observation": {
+      "accepted": 198,
+      "applied": 198,
+      "care_attempt_delta": 0,
+      "care_outcome_delta": 0,
+      "category": "valid_ordinary_observation",
+      "companion_event_delta": 198,
+      "duplicate": 0,
+      "expected_reason": "ordinary_observation",
+      "expected_status": "accepted",
+      "reasons": {
+        "ordinary_observation": 198
+      },
+      "rejected": 0,
+      "requested": 198,
+      "transport_path": "ordinary"
+    },
+    "valid_safety_candidate": {
+      "accepted": 198,
+      "applied": 198,
+      "care_attempt_delta": 198,
+      "care_outcome_delta": 198,
+      "category": "valid_safety_candidate",
+      "companion_event_delta": 0,
+      "duplicate": 0,
+      "expected_reason": "accepted",
+      "expected_status": "accepted",
+      "reasons": {
+        "accepted": 198
+      },
+      "rejected": 0,
+      "requested": 198,
+      "transport_path": "direct-care"
+    }
+  },
+  "claim_boundary": "resident synthetic foundation evidence only; no product, safety efficacy, security certification, reliability, or SLA claim",
+  "cycles": 3000,
+  "duration_seconds": 348.973,
+  "equations": {
+    "accepted": 396,
+    "accounting_exact": true,
+    "care_attempt_rows": 2802,
+    "care_outcome_rows": 198,
+    "duplicate": 199,
+    "invalid_accepted": 0,
+    "observed_total": 3000,
+    "ordinary_care_attempt_rows": 0,
+    "ordinary_care_outcome_rows": 0,
+    "rejected": 2405,
+    "requested_total": 3000
+  },
+  "evidence_ceiling": "E3_TARGET_TESTED",
+  "expectations": {
+    "duplicate_decoded_key": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 0,
+      "category": "duplicate_decoded_key",
+      "companion_event_delta": 0,
+      "expected_reason": "duplicate_decoded_key",
+      "expected_status": "rejected",
+      "transport_path": "direct-care"
+    },
+    "duplicate_safety_candidate": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 0,
+      "category": "duplicate_safety_candidate",
+      "companion_event_delta": 0,
+      "expected_reason": "duplicate",
+      "expected_status": "duplicate",
+      "transport_path": "direct-care"
+    },
+    "forbidden_companion_state": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 0,
+      "category": "forbidden_companion_state",
+      "companion_event_delta": 0,
+      "expected_reason": "forbidden_companion_state",
+      "expected_status": "rejected",
+      "transport_path": "direct-care"
+    },
+    "invalid_datetime": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 0,
+      "category": "invalid_datetime",
+      "companion_event_delta": 0,
+      "expected_reason": "invalid_datetime",
+      "expected_status": "rejected",
+      "transport_path": "direct-care"
+    },
+    "invalid_mac": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 0,
+      "category": "invalid_mac",
+      "companion_event_delta": 0,
+      "expected_reason": "invalid_mac",
+      "expected_status": "rejected",
+      "transport_path": "direct-care"
+    },
+    "invalid_uuid": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 0,
+      "category": "invalid_uuid",
+      "companion_event_delta": 0,
+      "expected_reason": "invalid_uuid",
+      "expected_status": "rejected",
+      "transport_path": "direct-care"
+    },
+    "malformed_frame": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 0,
+      "category": "malformed_frame",
+      "companion_event_delta": 0,
+      "expected_reason": "malformed_frame",
+      "expected_status": "rejected",
+      "transport_path": "direct-care"
+    },
+    "replay_safety_candidate": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 0,
+      "category": "replay_safety_candidate",
+      "companion_event_delta": 0,
+      "expected_reason": "replay_rejected",
+      "expected_status": "rejected",
+      "transport_path": "direct-care"
+    },
+    "stale_generation": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 0,
+      "category": "stale_generation",
+      "companion_event_delta": 0,
+      "expected_reason": "stale_generation",
+      "expected_status": "rejected",
+      "transport_path": "direct-care"
+    },
+    "stale_mac": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 0,
+      "category": "stale_mac",
+      "companion_event_delta": 0,
+      "expected_reason": "stale_mac",
+      "expected_status": "rejected",
+      "transport_path": "direct-care"
+    },
+    "unauthorized_sender": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 0,
+      "category": "unauthorized_sender",
+      "companion_event_delta": 0,
+      "expected_reason": "unauthorized_sender",
+      "expected_status": "rejected",
+      "transport_path": "direct-care"
+    },
+    "unknown_field": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 0,
+      "category": "unknown_field",
+      "companion_event_delta": 0,
+      "expected_reason": "unknown_field",
+      "expected_status": "rejected",
+      "transport_path": "direct-care"
+    },
+    "unsupported_schema_major": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 0,
+      "category": "unsupported_schema_major",
+      "companion_event_delta": 0,
+      "expected_reason": "unsupported_schema_major",
+      "expected_status": "rejected",
+      "transport_path": "direct-care"
+    },
+    "valid_ordinary_observation": {
+      "care_attempt_delta": 0,
+      "care_outcome_delta": 0,
+      "category": "valid_ordinary_observation",
+      "companion_event_delta": 1,
+      "expected_reason": "ordinary_observation",
+      "expected_status": "accepted",
+      "transport_path": "ordinary"
+    },
+    "valid_safety_candidate": {
+      "care_attempt_delta": 1,
+      "care_outcome_delta": 1,
+      "category": "valid_safety_candidate",
+      "companion_event_delta": 0,
+      "expected_reason": "accepted",
+      "expected_status": "accepted",
+      "transport_path": "direct-care"
+    }
+  },
+  "lifecycle": {
+    "care_alive_after_hostile": true,
+    "care_degraded_recovered": true,
+    "care_store_fault_degraded": true,
+    "care_store_recovered": true,
+    "clean_shutdown": true,
+    "invalid_accepted_zero": true,
+    "mixed_messages": true,
+    "ordinary_separated": true,
+    "persistent_idempotency": true,
+    "producer_rotation": true,
+    "startup_ready": true,
+    "unknown_kind_rejected_before_transport": true
+  },
+  "seeds": [
+    17,
+    23,
+    41
+  ],
+  "status": "PASS",
+  "unknown_kind": {
+    "accepted": false,
+    "command": "inject",
+    "kind": "not_a_real_injection",
+    "reason": "unknown_injection_kind"
+  }
+}

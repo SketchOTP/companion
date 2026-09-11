@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = ["crates/foundation-core", "crates/foundation-services"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+rust-version = "1.98"
+
+[workspace.dependencies]
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = { version = "1.0.145", features = ["preserve_order"] }
+sha2 = "0.10.9"
+hmac = "0.12.1"
+libc = "0.2.176"
+thiserror = "2.0.17"
+tracing = "0.1.41"
+uuid = { version = "1.18.1", features = ["v4", "serde"] }

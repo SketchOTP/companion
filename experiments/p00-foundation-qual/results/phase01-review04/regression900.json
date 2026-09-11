@@ -1,0 +1,22 @@
+{
+  "claim_boundary": "focused resident synthetic regression; not product reliability, safety efficacy, security certification, or SLA evidence",
+  "duration_seconds": 900,
+  "evidence_ceiling": "E3_TARGET_TESTED",
+  "failures": [],
+  "observations": {
+    "bridge_restarted": true,
+    "checkout_unchanged": true,
+    "clean_shutdown": true,
+    "duplicate_after_care_restart": true,
+    "invalid_rejected": true,
+    "network_census_complete": true,
+    "producer_rotated": true,
+    "stale_rejected": true,
+    "store_fault_blocked": true,
+    "store_fault_degraded": true,
+    "store_recovered": true,
+    "valid_accepted": true
+  },
+  "samples": 176,
+  "status": "PASS"
+}
