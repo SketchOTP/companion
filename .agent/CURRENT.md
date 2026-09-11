@@ -2,39 +2,94 @@
 
 ## Current stage
 
-Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adopted. Roadmap Phase 01 remains accepted.
+Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains
+adopted. Roadmap Phase 01 remains accepted.
 
-PR #9 at reviewed head `4a111435381ff2d364cd705edbb1d65da46ea886` is continued under:
+PR #9 at reviewed head `1183795843f26de6b69f0a2a0828ee288f32e415`
+is continued under:
 
-- Directive: `COMPANION-P02-EMBODIMENT-001-R03`
-- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_03.md`
-- Notion review: https://app.notion.com/p/3d8833cb27ff812f8102dbc79891053e
+- Directive: `COMPANION-P02-EMBODIMENT-001-R04`
+- Repository review:
+  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_04.md`
+- Notion review:
+  https://app.notion.com/p/3d8833cb27ff81b0ae0bd8815885e2f6
 - Issue #8: open
 - PR #9: draft, open, unmerged
 - Phase 03 and later: closed
 
-## Review 03 disposition
+## Review 04 disposition
 
-Retain the exact approved references, final-tree generated-output cleanup, deterministic build plumbing, focused Phase 02 workflow, green inherited Phase 01 workflow, and the initial facing/time separation direction.
+Retain:
 
-Do not accept the submitted body source, authoring comparison, articulated-motion claim, walk/contact result, facing-transition result, rendered root/contact result, contract alignment, timing result, Godot playback result, or operator-review readiness.
+- exact approved native references and hashes;
+- final-tree removal of prior generated bulk outputs;
+- useful 24 Hz and temporal-track direction;
+- artifact publication and focused workflow infrastructure;
+- green inherited Phase 01 workflow.
+
+Do not accept:
+
+- the R03 rendered character;
+- `MON_BODY_SOURCE_V2` as a production visual source;
+- the Godot-rig source-of-truth claim;
+- the duplicate Python raster source;
+- identity fidelity, motion-language quality, facing-transition quality, or
+  operator-review readiness;
+- the current contract/runtime/CI claim as complete.
 
 ## Main blocker
 
-The references are available, but no complete editable identity-faithful body source exists. The current proof globally deforms an upper image band while leaving the lower body and feet unchanged. Independent artifact comparison found rows `y=820..1023` byte-identical across every frame of every submitted track, including all eight walk frames, while contact metadata alternates feet.
+The coding agent is still inventing identity-critical artwork. Canonical R04 and
+R10 assign the original sprite library to the AI Architect under operator
+approval. The R03 output is visibly a different construction: polygon torso,
+segmented limbs, bead-like digits/toes, angular eyes, and triangular crown
+spikes rather than the approved smooth rounded mon.
+
+The source is also split between a procedural GDScript drawing and a separate
+procedural Python renderer. The TSCN contains Bone2D names but no Skeleton2D-bound
+visual geometry. There is no single identity-faithful visual source of truth.
+
+## Adopted visual-authorship boundary
+
+- AI Architect creates or edits production source art and temporal key poses.
+- Operator approves identity, construction, and motion language.
+- Codex owns lossless intake, typed contracts, deterministic derivatives,
+  packaging, runtime integration, CI, and evidence.
+- Codex may create only obviously synthetic non-product fixtures.
+- Godot executes approved sprite tracks; it does not own identity truth.
+
+The decision is recorded in the Architecture Decision Ledger and Architect
+Review 04.
 
 ## Active objective
 
-Codex must create `MON_BODY_SOURCE_V2` as an editable Godot-native layered body with explicit anatomy and pivots, then produce genuinely articulated idle, walk, facing-transition, and listen-to-acknowledge motion. The actual schema, Rust type, generated track data, and Godot runtime must agree. Timing must use explicit 24 FPS and integer relative tick weights. Review output must include normal-speed and quarter-speed motion, silhouette playback, root/contact playback, frame strips, event logs, and tamper-negative evidence.
+Codex must complete only R04:
 
-The primary authoring proof uses existing Godot 4.7.2 layered 2D tools, bounded skeletal deformation, authored replacement drawings where required, and deterministic bake to `MON_FRAME_V1`. Runtime remains raster sprite-frame based.
+1. merge current `origin/main` normally;
+2. supersede R03 procedural character art and duplicate renderers while
+   preserving negative evidence;
+3. create `MON_AUTHORED_FRAME_PACK_V1` and
+   `ARCHITECT_FRAME_REQUEST_V1.md`;
+4. implement byte-preserving frame intake with no automatic art mutation;
+5. strongly type landmarks, contacts, events, timing, facing, approval state,
+   and provenance across schema/Rust/Godot;
+6. make generated-pack Rust validation non-skipping;
+7. emit `started` only after the exact requested first frame is visible;
+8. prove missing/corrupt/tamper failure and recovery;
+9. keep Phase 01 and Phase 02 CI green;
+10. return `READY_FOR_ARCHITECT_FRAME_PACK`.
 
-Do not expand the full library or run final Openbox endurance before this proof receives operator and Architect approval.
+Codex must not create new production character artwork or request operator visual
+approval in this directive.
 
 ## Protected work
 
-The primary SSHFS worktree contains operator-owned modified `.gitignore` and `AGENTS.md`. Do not inspect their modified contents for evidence or alter them. Continue only in the local ext4/NVMe secondary worktree.
+The primary SSHFS worktree contains operator-owned modified `.gitignore` and
+`AGENTS.md`. Do not inspect their modified contents for evidence or alter them.
+Continue only in the local ext4/NVMe secondary worktree.
 
 ## Capability boundary
 
-No production embodiment, continuous aliveness, or Phase 03+ capability is accepted. The current branch contains useful source-transfer and CI progress plus retained negative evidence.
+No production embodiment, approved motion language, continuous aliveness, or
+Phase 03+ capability is accepted. The branch contains useful source-transfer,
+contract, and CI scaffolding plus retained negative evidence.
