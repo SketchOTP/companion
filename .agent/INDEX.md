@@ -140,3 +140,12 @@ capability.
 Final submission is published at `5a4ca0b1fcda0412d9e5ed326e1d0cafea2a4b96`.
 The committed closeout manifest, sanitized soak, and validator output are
 bounded evidence pending Architect review, not phase acceptance.
+
+## Review 04 continuation
+
+The active correction is limited to evidence semantics. Use
+`experiments/p00-foundation-qual/results/phase01-review04/` and
+`experiments/p00-foundation-qual/scripts/validate_phase01_review04.py` as the
+current machine-readable result and validator. The old 3,000-message and
+37-scenario summaries remain historical superseded evidence. Architecture v1.0
+is adopted, Phase 01 is not accepted, and PR #7 / Issue #6 remain open.

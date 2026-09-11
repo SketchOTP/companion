@@ -309,3 +309,14 @@ committed closeout manifest and sanitized 3,600-second soak. Hash, fixture and
 ancestry validation passes; tamper-negative validation fails as expected.
 The candidate remains unaccepted pending Architect review. No dependency,
 mechanism, Roadmap Phase 02 transition, or product capability is self-approved.
+
+## COMPANION-P01-FOUNDATION-001 — Architect Review 04 correction (2026-09-10)
+
+Continue the existing PR with one narrow evidence-semantics correction. Replace
+raw injection fallthrough with exhaustive typed `InjectionKind`; run a truthful
+3,000-message resident matrix with exact outcomes/reasons; replace the false
+37/37 matrix with twelve directly exercised groups; bind ordinary/direct-care
+wire evidence; prove Godot client state/topology recovery; run a focused
+900-second resident regression; and enforce all equations with a fail-closed
+semantic validator. Preserve earlier false results as superseded history. Do
+not open later phases, adopt mechanisms, or claim product capability.

@@ -191,3 +191,16 @@ The committed evidence bundle and fail-closed validator are ready for
 independent Architect review. PR #7 is OPEN/DRAFT/UNMERGED and Issue #6 is
 OPEN. Architecture v1.0 remains adopted; Phase 01 and product implementation
 remain pending; no dependency or product capability is self-approved.
+
+## Architect Review 04 handoff
+
+The existing branch now contains the narrow semantic correction. The earlier
+3,000-message and 37-scenario `PASS` claims remain historical and are marked
+superseded. Current committed evidence is in
+`experiments/p00-foundation-qual/results/phase01-review04/` with manifest,
+sanitized result files, validator output, and tamper-negative runner. The
+corrected equations, twelve groups, contract wire paths, Godot state/topology,
+and 900-second regression are independently checked. This remains bounded E3
+engineering evidence; PR #7 and Issue #6 remain open for Architect review.
+Architecture v1.0 remains adopted, Phase 01 remains unaccepted, and no
+dependency or product capability is self-approved.

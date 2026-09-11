@@ -1,0 +1,264 @@
+{
+  "claim_boundary": "directly exercised synthetic foundation groups only; no product, safety, security, reliability, or SLA claim",
+  "duration_seconds": 12.458,
+  "evidence_ceiling": "E3_TARGET_TESTED",
+  "exercised_pass_count": 12,
+  "group_count": 12,
+  "groups": {
+    "care_outage_recovery": {
+      "after": "synthetic",
+      "before": "synthetic",
+      "during": "degraded",
+      "status": "PASS"
+    },
+    "care_store_fault": {
+      "coverage_during_fault": "degraded",
+      "durable_acceptance_prevented": true,
+      "fault_input_control_response_accepted": true,
+      "integrity_verified_before_restore": true,
+      "status": "PASS"
+    },
+    "companion_independence": {
+      "care_ready": true,
+      "companion_absent": true,
+      "direct_care_input_without_companion": true,
+      "status": "PASS",
+      "synthetic_companion_copy_integrity_rejected": true
+    },
+    "direct_pair_replacement": {
+      "care_pid_changed": true,
+      "coverage_degraded": true,
+      "producer_generation_changed": true,
+      "producer_pid_changed": true,
+      "status": "PASS"
+    },
+    "exact_persistence": {
+      "status": "PASS",
+      "storage_smoke": {
+        "backup_restore_equivalent": true,
+        "care_receipts": 2,
+        "claim_boundary": "synthetic SQLite development-store smoke only",
+        "evidence_ceiling": "E3_TARGET_TESTED",
+        "integrity": true,
+        "rust_store_process": true,
+        "separate_store_count": 3,
+        "state_digest": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+        "status": "PASS"
+      }
+    },
+    "godot_recovery": {
+      "client_state": [
+        "connecting",
+        "connected",
+        "disconnected/degraded",
+        "reconnecting",
+        "connected"
+      ],
+      "client_state_observations": [
+        {
+          "evidence_class": "RUNTIME_OBSERVED",
+          "state": "connecting"
+        },
+        {
+          "evidence_class": "RUNTIME_OBSERVED",
+          "state": "connected"
+        },
+        {
+          "evidence_class": "RUNTIME_OBSERVED",
+          "state": "disconnected/degraded"
+        },
+        {
+          "evidence_class": "RUNTIME_OBSERVED",
+          "state": "reconnecting"
+        },
+        {
+          "evidence_class": "RUNTIME_OBSERVED",
+          "state": "connected"
+        }
+      ],
+      "same_process_reconnect": true,
+      "status": "PASS",
+      "topology_fallback": {
+        "evidence_class": "RUNTIME_OBSERVED",
+        "selected_target_available": true,
+        "status": "PASS",
+        "target_absent_fallback": true,
+        "target_restored_geometry": true
+      }
+    },
+    "invalid_input": {
+      "no_durable_acceptance": true,
+      "no_incident_transition": true,
+      "observations": [
+        {
+          "care_alive": true,
+          "expected_reason": "replay_rejected",
+          "kind": "replay_safety_candidate",
+          "observed_reason": "replay_rejected"
+        },
+        {
+          "care_alive": true,
+          "expected_reason": "malformed_frame",
+          "kind": "malformed_frame",
+          "observed_reason": "malformed_frame"
+        },
+        {
+          "care_alive": true,
+          "expected_reason": "duplicate_decoded_key",
+          "kind": "duplicate_decoded_key",
+          "observed_reason": "duplicate_decoded_key"
+        },
+        {
+          "care_alive": true,
+          "expected_reason": "unsupported_schema_major",
+          "kind": "unsupported_schema_major",
+          "observed_reason": "unsupported_schema_major"
+        },
+        {
+          "care_alive": true,
+          "expected_reason": "unknown_field",
+          "kind": "unknown_field",
+          "observed_reason": "unknown_field"
+        },
+        {
+          "care_alive": true,
+          "expected_reason": "invalid_uuid",
+          "kind": "invalid_uuid",
+          "observed_reason": "invalid_uuid"
+        },
+        {
+          "care_alive": true,
+          "expected_reason": "invalid_datetime",
+          "kind": "invalid_datetime",
+          "observed_reason": "invalid_datetime"
+        },
+        {
+          "care_alive": true,
+          "expected_reason": "stale_generation",
+          "kind": "stale_generation",
+          "observed_reason": "stale_generation"
+        },
+        {
+          "care_alive": true,
+          "expected_reason": "invalid_mac",
+          "kind": "invalid_mac",
+          "observed_reason": "invalid_mac"
+        },
+        {
+          "care_alive": true,
+          "expected_reason": "stale_mac",
+          "kind": "stale_mac",
+          "observed_reason": "stale_mac"
+        },
+        {
+          "care_alive": true,
+          "expected_reason": "unauthorized_sender",
+          "kind": "unauthorized_sender",
+          "observed_reason": "unauthorized_sender"
+        },
+        {
+          "care_alive": true,
+          "expected_reason": "forbidden_companion_state",
+          "kind": "forbidden_companion_state",
+          "observed_reason": "forbidden_companion_state"
+        }
+      ],
+      "status": "PASS"
+    },
+    "ordinary_role_restart": {
+      "backoff_observed": true,
+      "observations": [
+        {
+          "new_pid_present": true,
+          "old_pid_present": true,
+          "old_terminated": true,
+          "pid_changed": true,
+          "restart_count": 1,
+          "role": "companion-core"
+        },
+        {
+          "new_pid_present": true,
+          "old_pid_present": true,
+          "old_terminated": true,
+          "pid_changed": true,
+          "restart_count": 1,
+          "role": "identity-consent-vault"
+        },
+        {
+          "new_pid_present": true,
+          "old_pid_present": true,
+          "old_terminated": true,
+          "pid_changed": true,
+          "restart_count": 1,
+          "role": "godot-bridge"
+        }
+      ],
+      "status": "PASS"
+    },
+    "persistent_idempotency": {
+      "attempt_incremented": true,
+      "duplicate_after_care_restart": true,
+      "status": "PASS"
+    },
+    "shutdown_boundary": {
+      "census_tool": "ss -H -tunp",
+      "checkout_status_unchanged": true,
+      "children_dead": true,
+      "network_after_owned": 0,
+      "network_before_owned": 0,
+      "shutdown_accepted": true,
+      "status": "PASS"
+    },
+    "startup_readiness": {
+      "roles": [
+        {
+          "channel_status": "not_applicable",
+          "generation_present": true,
+          "pid_present": true,
+          "ready": true,
+          "role": "companion-core",
+          "store_status": "integrity_checked"
+        },
+        {
+          "channel_status": "not_applicable",
+          "generation_present": true,
+          "pid_present": true,
+          "ready": true,
+          "role": "identity-consent-vault",
+          "store_status": "integrity_checked"
+        },
+        {
+          "channel_status": "not_applicable",
+          "generation_present": true,
+          "pid_present": true,
+          "ready": true,
+          "role": "godot-bridge",
+          "store_status": "not_applicable"
+        },
+        {
+          "channel_status": "seqpacket",
+          "generation_present": true,
+          "pid_present": true,
+          "ready": true,
+          "role": "sensor-gateway",
+          "store_status": "not_applicable"
+        },
+        {
+          "channel_status": "seqpacket",
+          "generation_present": true,
+          "pid_present": true,
+          "ready": true,
+          "role": "care-core",
+          "store_status": "integrity_checked"
+        }
+      ],
+      "status": "PASS"
+    },
+    "xdg_refusal": {
+      "rust_path_tests_returncode": 0,
+      "status": "PASS",
+      "unsafe_path_cases": "checkout/network/relative/symlink/permissions/runtime covered by path library tests"
+    }
+  },
+  "status": "PASS"
+}

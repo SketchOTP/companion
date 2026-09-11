@@ -152,6 +152,26 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
             {
                 return Err(format!("{authority} store fault injected").into());
             }
+            if role == "companion-core" {
+                let observation = paths.runtime.join("ordinary-observation.json");
+                if let Ok(bytes) = std::fs::read(&observation) {
+                    if let Ok(value) = serde_json::from_slice::<serde_json::Value>(&bytes) {
+                        let message_id = value
+                            .get("message_id")
+                            .and_then(|v| v.as_str())
+                            .unwrap_or("ordinary");
+                        let store = Store::open(&paths, "companion")?;
+                        let payload = serde_json::to_string(&value)?;
+                        let _ = store.append_event(
+                            message_id,
+                            "ordinary_observation",
+                            &payload,
+                            &format!("boot:{}:{}", boot, logging::monotonic_ns()),
+                        )?;
+                    }
+                    let _ = std::fs::remove_file(&observation);
+                }
+            }
         }
         std::thread::sleep(Duration::from_millis(100));
     }
@@ -317,6 +337,24 @@ fn valid_safety_shape(value: &serde_json::Value) -> bool {
         && object.get("replay").and_then(|v| v.as_bool()).is_some()
 }
 
+fn object_has_unknown_field(value: &serde_json::Value) -> bool {
+    let Some(object) = value.as_object() else {
+        return true;
+    };
+    let allowed = [
+        "schema_major",
+        "message_id",
+        "producer_generation",
+        "auth_scheme",
+        "mac",
+        "observed_at",
+        "confidence_milli",
+        "quality_milli",
+        "replay",
+    ];
+    object.keys().any(|key| !allowed.contains(&key.as_str()))
+}
+
 fn valid_datetime(value: &str) -> bool {
     // Bounded RFC3339 UTC profile used by the safety envelope.  Keeping this
     // parser local avoids platform-dependent date libraries in the service
@@ -378,9 +416,25 @@ fn producer(
         let encoded = serde_json::to_vec(&packet)?;
         ipc::send(&sock, &encoded)?;
         last_packet = Some(encoded.clone());
+        if let Ok(paths) = XdgPaths::resolve("companion") {
+            let _ = std::fs::write(paths.runtime.join("last-safety-packet.json"), &encoded);
+        }
         if index == 0 {
             ipc::send(&sock, &encoded)?;
         }
+    }
+    if let Ok(paths) = XdgPaths::resolve("companion")
+        && let Ok(mut packet) = std::fs::read(paths.runtime.join("last-safety-packet.json"))
+        && let Ok(mut value) = serde_json::from_slice::<serde_json::Value>(&packet)
+    {
+        value["producer_generation"] = json!(generation);
+        value["replay"] = json!(false);
+        let mut unsigned = value.clone();
+        unsigned.as_object_mut().map(|o| o.remove("mac"));
+        let bytes = canonical::canonical_event(&serde_json::to_vec(&unsigned)?)?;
+        value["mac"] = json!(mac(&secret, &bytes)?);
+        packet = serde_json::to_vec(&value)?;
+        last_packet = Some(packet);
     }
     logging::emit(
         "sensor-gateway",
@@ -440,6 +494,96 @@ fn producer(
     Ok(())
 }
 
+#[derive(Clone, Copy, Debug, Eq, PartialEq)]
+enum InjectionKind {
+    ValidOrdinaryObservation,
+    ValidSafetyCandidate,
+    DuplicateSafetyCandidate,
+    ReplaySafetyCandidate,
+    MalformedFrame,
+    DuplicateDecodedKey,
+    UnsupportedSchemaMajor,
+    UnknownField,
+    InvalidUuid,
+    InvalidDateTime,
+    StaleGeneration,
+    InvalidMac,
+    StaleMac,
+    UnauthorizedSender,
+    ForbiddenCompanionState,
+}
+
+impl InjectionKind {
+    fn parse(value: &str) -> Option<Self> {
+        Some(match value {
+            "valid_ordinary_observation" | "ordinary_observation" => Self::ValidOrdinaryObservation,
+            "valid_safety_candidate" | "valid" | "inject_valid" => Self::ValidSafetyCandidate,
+            "duplicate_safety_candidate" | "duplicate" | "inject_duplicate" => {
+                Self::DuplicateSafetyCandidate
+            }
+            "replay_safety_candidate" | "replay" | "inject_replay" => Self::ReplaySafetyCandidate,
+            "malformed_frame" | "malformed" | "inject_malformed" => Self::MalformedFrame,
+            "duplicate_decoded_key" | "duplicate_key" | "inject_duplicate_key" => {
+                Self::DuplicateDecodedKey
+            }
+            "unsupported_schema_major" | "unsupported_major" | "inject_unsupported_major" => {
+                Self::UnsupportedSchemaMajor
+            }
+            "unknown_field" | "inject_unknown_field" => Self::UnknownField,
+            "invalid_uuid" | "inject_invalid_uuid" => Self::InvalidUuid,
+            "invalid_datetime" | "inject_invalid_datetime" => Self::InvalidDateTime,
+            "stale_generation" | "inject_stale_generation" => Self::StaleGeneration,
+            "invalid_mac" | "inject_invalid_mac" => Self::InvalidMac,
+            "stale_mac" | "inject_stale_mac" => Self::StaleMac,
+            "unauthorized_sender" | "forged_producer" | "inject_unauthorized_sender" => {
+                Self::UnauthorizedSender
+            }
+            "forbidden_companion_state" | "companion_state" | "inject_companion_state" => {
+                Self::ForbiddenCompanionState
+            }
+            _ => return None,
+        })
+    }
+    fn normalized(self) -> &'static str {
+        match self {
+            Self::ValidOrdinaryObservation => "valid_ordinary_observation",
+            Self::ValidSafetyCandidate => "valid_safety_candidate",
+            Self::DuplicateSafetyCandidate => "duplicate_safety_candidate",
+            Self::ReplaySafetyCandidate => "replay_safety_candidate",
+            Self::MalformedFrame => "malformed_frame",
+            Self::DuplicateDecodedKey => "duplicate_decoded_key",
+            Self::UnsupportedSchemaMajor => "unsupported_schema_major",
+            Self::UnknownField => "unknown_field",
+            Self::InvalidUuid => "invalid_uuid",
+            Self::InvalidDateTime => "invalid_datetime",
+            Self::StaleGeneration => "stale_generation",
+            Self::InvalidMac => "invalid_mac",
+            Self::StaleMac => "stale_mac",
+            Self::UnauthorizedSender => "unauthorized_sender",
+            Self::ForbiddenCompanionState => "forbidden_companion_state",
+        }
+    }
+    fn opcode(self) -> Option<&'static str> {
+        Some(match self {
+            Self::ValidSafetyCandidate => "inject_valid",
+            Self::DuplicateSafetyCandidate => "inject_duplicate",
+            Self::ReplaySafetyCandidate => "inject_replay",
+            Self::MalformedFrame => "inject_malformed",
+            Self::DuplicateDecodedKey => "inject_duplicate_key",
+            Self::UnsupportedSchemaMajor => "inject_unsupported_major",
+            Self::UnknownField => "inject_unknown_field",
+            Self::InvalidUuid => "inject_invalid_uuid",
+            Self::InvalidDateTime => "inject_invalid_datetime",
+            Self::StaleGeneration => "inject_stale_generation",
+            Self::InvalidMac => "inject_invalid_mac",
+            Self::StaleMac => "inject_stale_mac",
+            Self::UnauthorizedSender => "inject_unauthorized_sender",
+            Self::ForbiddenCompanionState => "inject_companion_state",
+            Self::ValidOrdinaryObservation => return None,
+        })
+    }
+}
+
 #[allow(clippy::type_complexity)]
 fn command_packet(
     command: &str,
@@ -447,6 +591,10 @@ fn command_packet(
     generation: &str,
     previous: Option<&[u8]>,
 ) -> Result<(Option<Vec<u8>>, bool), Box<dyn std::error::Error>> {
+    let kind = InjectionKind::parse(command).ok_or("unknown injection opcode")?;
+    if kind == InjectionKind::ValidOrdinaryObservation {
+        return Ok((None, false));
+    }
     if command == "inject_duplicate" {
         return Ok((previous.map(ToOwned::to_owned), false));
     }
@@ -481,8 +629,14 @@ fn command_packet(
     if command == "inject_stale_generation" || command == "inject_forged_producer" {
         value["producer_generation"] = json!("stale-generation");
     }
-    if command == "inject_unknown_field" || command == "inject_companion_state" {
+    if command == "inject_unauthorized_sender" {
+        value["producer_generation"] = json!("attacker");
+    }
+    if command == "inject_unknown_field" {
         value["mood"] = json!("forbidden");
+    }
+    if command == "inject_companion_state" {
+        value["companion_state"] = json!("forbidden");
     }
     if command == "inject_invalid_uuid" {
         value["message_id"] = json!("not-a-uuid");
@@ -500,9 +654,16 @@ fn command_packet(
     if command == "inject_replay" {
         value["replay"] = json!(true);
     }
+    if kind == InjectionKind::StaleMac {
+        value["mac"] = json!("0000000000000000000000000000000000000000000000000000000000000000");
+        return Ok((Some(serde_json::to_vec(&value)?), false));
+    }
     let unsigned = canonical::canonical_event(&serde_json::to_vec(&value)?)?;
     value["mac"] = json!(mac(secret, &unsigned)?);
-    Ok((Some(serde_json::to_vec(&value)?), true))
+    Ok((
+        Some(serde_json::to_vec(&value)?),
+        kind == InjectionKind::ValidSafetyCandidate,
+    ))
 }
 
 fn care(
@@ -597,12 +758,50 @@ fn care(
         let unsigned_bytes = serde_json::to_vec(&unsigned)
             .ok()
             .and_then(|bytes| canonical::canonical_event(&bytes).ok());
-        let duplicate = if let Some(id) = msg {
+        let duplicate_id = if let Some(id) = msg {
             seen.contains(id) || store.receipt_exists(id)?
         } else {
             false
         };
-        let mut reason = if duplicate { "duplicate" } else { "rejected" };
+        let replayed = value.get("replay").and_then(|v| v.as_bool()) == Some(true);
+        let duplicate = duplicate_id && !replayed;
+        let mut reason = if replayed {
+            "replay_rejected"
+        } else if duplicate {
+            "duplicate"
+        } else {
+            "rejected"
+        };
+        if !duplicate {
+            reason = if value.get("schema_major").and_then(|v| v.as_u64()) != Some(1) {
+                "unsupported_schema_major"
+            } else if value.get("companion_state").is_some() {
+                "forbidden_companion_state"
+            } else if object_has_unknown_field(&value) {
+                "unknown_field"
+            } else if msg.is_none() || msg.and_then(|v| Uuid::parse_str(v).ok()).is_none() {
+                "invalid_uuid"
+            } else if value
+                .get("observed_at")
+                .and_then(|v| v.as_str())
+                .is_none_or(|v| !valid_datetime(v))
+            {
+                "invalid_datetime"
+            } else if value.get("producer_generation").and_then(|v| v.as_str()) == Some("attacker")
+            {
+                "unauthorized_sender"
+            } else if value.get("producer_generation").and_then(|v| v.as_str())
+                != Some(expected_generation.as_str())
+            {
+                "stale_generation"
+            } else if replayed {
+                "replay_rejected"
+            } else if supplied.len() == 64 {
+                "stale_mac"
+            } else {
+                "invalid_mac"
+            };
+        }
         let valid = cred.pid == expected_pid
             && cred.uid == unsafe { libc::geteuid() }
             && shape_valid
@@ -620,7 +819,9 @@ fn care(
         if valid {
             reason = "accepted";
         }
-        if let Some(id) = msg {
+        if (valid || duplicate)
+            && let Some(id) = msg
+        {
             seen.insert(id.to_owned());
             let _ = store.append_receipt(
                 id,
@@ -1076,20 +1277,32 @@ fn handle_control(
             }
         }
         "inject" => {
-            let kind = command
-                .get("kind")
-                .and_then(|v| v.as_str())
-                .unwrap_or("valid");
-            let opcode = match kind {
-                "valid" | "valid_safety_candidate" => "inject_valid",
-                "ordinary_observation" => "inject_ordinary",
-                other => other,
+            let requested = command.get("kind").and_then(|v| v.as_str()).unwrap_or("");
+            let Some(kind) = InjectionKind::parse(requested) else {
+                return json!({"command":"inject","kind":requested,"accepted":false,"reason":"unknown_injection_kind"});
             };
+            if kind == InjectionKind::ValidOrdinaryObservation {
+                let paths = XdgPaths::resolve("companion");
+                let id = command
+                    .get("request_id")
+                    .and_then(|v| v.as_str())
+                    .unwrap_or("ordinary-request");
+                let observation = json!({"message_id": id, "kind":"ordinary_observation", "source":"sensor-gateway"});
+                let accepted = paths.ok().is_some_and(|p| {
+                    std::fs::write(
+                        p.runtime.join("ordinary-observation.json"),
+                        serde_json::to_vec(&observation).unwrap_or_default(),
+                    )
+                    .is_ok()
+                });
+                return json!({"command":"inject","kind":requested,"normalized_kind":kind.normalized(),"request_id":id,"transport_path":"ordinary-observation","accepted":accepted,"producer_mutation":"ordinary_observation"});
+            }
+            let opcode = kind.opcode().unwrap_or("inject_valid");
             if let Some(fd) = producer_control {
                 let result = write_fd(fd, format!("{opcode}\n").as_bytes());
-                return json!({"command":"inject","kind":kind,"accepted":result.is_ok(),"observed":"producer_control_channel"});
+                return json!({"command":"inject","kind":requested,"normalized_kind":kind.normalized(),"request_id":command.get("request_id").cloned().unwrap_or(json!(null)),"producer_mutation":opcode,"accepted":result.is_ok(),"observed":"producer_control_channel"});
             }
-            json!({"command":"inject","kind":kind,"accepted":false,"reason":"producer_control_unavailable"})
+            json!({"command":"inject","kind":requested,"normalized_kind":kind.normalized(),"accepted":false,"reason":"producer_control_unavailable"})
         }
         "reconnect" => {
             json!({"command":"reconnect","accepted":std::fs::write(XdgPaths::resolve("companion").ok().map(|p| p.runtime.join("bridge-command.json")).unwrap_or_default(), b"{\"command\":\"reconnect\"}").is_ok()})
@@ -1234,5 +1447,36 @@ mod tests {
         assert!(!valid_datetime("2026-01-01T24:00:00Z"));
         assert!(!valid_datetime("not-a-date"));
         assert!(!valid_datetime("2026-01-01T00:00:00+00:00"));
+    }
+
+    #[test]
+    fn injection_kind_is_exhaustive_and_rejects_unknown() {
+        let names = [
+            "valid_ordinary_observation",
+            "valid_safety_candidate",
+            "duplicate_safety_candidate",
+            "replay_safety_candidate",
+            "malformed_frame",
+            "duplicate_decoded_key",
+            "unsupported_schema_major",
+            "unknown_field",
+            "invalid_uuid",
+            "invalid_datetime",
+            "stale_generation",
+            "invalid_mac",
+            "stale_mac",
+            "unauthorized_sender",
+            "forbidden_companion_state",
+        ];
+        for name in names {
+            let kind = InjectionKind::parse(name).expect("known injection kind");
+            assert_eq!(InjectionKind::parse(kind.normalized()), Some(kind));
+            if kind == InjectionKind::ValidOrdinaryObservation {
+                assert!(kind.opcode().is_none());
+            } else {
+                assert!(kind.opcode().is_some());
+            }
+        }
+        assert!(InjectionKind::parse("totally_unknown").is_none());
     }
 }

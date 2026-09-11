@@ -567,3 +567,15 @@ manifest records observed UTC timestamps and exact result/fixture hashes.
 `python3 scripts/validate_phase01_closeout.py` passed; a deliberately altered
 temporary result failed with exit 1. This remains E3 bounded engineering
 evidence and does not accept Phase 01 or claim product capability.
+
+## 2026-09-10 — Architect Review 04 semantic correction
+
+The superseded invalid-input and 37/37 passes remain preserved. The corrected
+resident run passed 3,000 actual messages over seeds 17/23/41 with exact totals:
+3,000 requested/observed, 396 accepted, 2,405 rejected, 199 duplicates,
+`invalid_accepted=0`, 2,802 care attempts, 198 care outcomes, and zero ordinary
+care rows. All twelve directly exercised foundation groups passed. The Godot
+headless client sequence and topology fallback probe passed, as did the
+900-second resident regression. The result bundle and semantic validator live
+under `experiments/p00-foundation-qual/results/phase01-review04/`; evidence is
+bounded E3 and Phase 01 remains pending Architect acceptance.

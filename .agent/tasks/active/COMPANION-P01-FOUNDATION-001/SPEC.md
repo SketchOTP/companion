@@ -50,3 +50,13 @@ bounded to observed foundation engineering evidence; no product capability,
 dependency adoption, security certification, safety efficacy, reliability, or
 SLA claim is made. Earlier failures and deferred work remain historical and
 visible.
+
+## Architect Review 04 semantic correction
+
+The prior 3,000-message and 37-scenario results are explicitly superseded.
+Review 04 requires exhaustive `InjectionKind` mapping, exact category equations,
+ordinary/care authority separation, twelve directly exercised groups, actual
+wire execution references, Godot client-state/topology observation, and a
+900-second resident regression. The corrected evidence is committed under
+`experiments/p00-foundation-qual/results/phase01-review04/`; acceptance remains
+with the Architect.

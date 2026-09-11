@@ -1,109 +1,103 @@
 #!/usr/bin/env python3
-"""Fail-closed, resident Phase 01 closeout matrix.
-
-This drives the real supervisor control socket and inspects only synthetic
-XDG state. It is evidence infrastructure, not Companion product behavior.
-"""
-import argparse, json, os, pathlib, signal, socket, sqlite3, subprocess, tempfile, time, uuid
+"""Fail-closed resident injection and authority-separation matrix."""
+import argparse, json, os, pathlib, signal, socket, sqlite3, subprocess, tempfile, time
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+KINDS = [
+    ("valid_safety_candidate", "direct-care", "accepted", "accepted", 1, 1),
+    ("duplicate_safety_candidate", "direct-care", "duplicate", "duplicate", 1, 0),
+    ("replay_safety_candidate", "direct-care", "rejected", "replay_rejected", 1, 0),
+    ("malformed_frame", "direct-care", "rejected", "malformed_frame", 1, 0),
+    ("duplicate_decoded_key", "direct-care", "rejected", "duplicate_decoded_key", 1, 0),
+    ("unsupported_schema_major", "direct-care", "rejected", "unsupported_schema_major", 1, 0),
+    ("unknown_field", "direct-care", "rejected", "unknown_field", 1, 0),
+    ("invalid_uuid", "direct-care", "rejected", "invalid_uuid", 1, 0),
+    ("invalid_datetime", "direct-care", "rejected", "invalid_datetime", 1, 0),
+    ("stale_generation", "direct-care", "rejected", "stale_generation", 1, 0),
+    ("invalid_mac", "direct-care", "rejected", "invalid_mac", 1, 0),
+    ("stale_mac", "direct-care", "rejected", "stale_mac", 1, 0),
+    ("unauthorized_sender", "direct-care", "rejected", "unauthorized_sender", 1, 0),
+    ("forbidden_companion_state", "direct-care", "rejected", "forbidden_companion_state", 1, 0),
+    ("valid_ordinary_observation", "ordinary", "accepted", "ordinary_observation", 0, 0),
+]
+EXPECTATIONS = {n: {"category": n, "transport_path": p, "expected_status": s, "expected_reason": r, "care_attempt_delta": a, "care_outcome_delta": o, "companion_event_delta": int(p == "ordinary")} for n, p, s, r, a, o in KINDS}
 
-def command(sock_path, payload):
+def command(path, payload):
     with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
-        s.settimeout(3); s.connect(str(sock_path)); s.sendall((json.dumps(payload)+"\n").encode()); s.shutdown(socket.SHUT_WR)
-        data = s.recv(65536)
-    return json.loads(data)
+        s.settimeout(5); s.connect(str(path)); s.sendall((json.dumps(payload, separators=(",", ":")) + "\n").encode()); s.shutdown(socket.SHUT_WR); return json.loads(s.recv(65536))
 
-def health(sock_path):
-    r = command(sock_path, {"command":"health"})
-    return json.loads(r["health"]) if "health" in r else r
+def health(path):
+    v = command(path, {"command": "health"}); return json.loads(v["health"]) if "health" in v else v
 
-def wait_for(sock_path, predicate, timeout=8):
-    deadline = time.time()+timeout; last = {}
+def wait_for(path, predicate, timeout=10):
+    deadline = time.time() + timeout; last = {}
     while time.time() < deadline:
         try:
-            last = health(sock_path)
+            last = health(path)
             if predicate(last): return last
-        except (OSError, ValueError, KeyError): pass
+        except (OSError, ValueError, KeyError, TypeError): pass
         time.sleep(.05)
     return last
 
-def attempts(db):
-    if not db.exists(): return 0
+def role(snap, name): return next((x for x in snap.get("children", []) if x.get("role") == name), None)
+
+def db_counts(path):
     try:
-        with sqlite3.connect(db, timeout=1) as c:
-            return c.execute("select count(*) from safety_attempts").fetchone()[0]
+        with sqlite3.connect(path, timeout=2) as c:
+            return {"attempts": c.execute("SELECT count(*) FROM safety_attempts").fetchone()[0], "receipts": c.execute("SELECT count(*) FROM safety_receipts").fetchone()[0]}
+    except sqlite3.Error: return {"attempts": 0, "receipts": 0}
+
+def event_count(path):
+    try:
+        with sqlite3.connect(path, timeout=2) as c: return c.execute("SELECT count(*) FROM event_log WHERE event_type='ordinary_observation'").fetchone()[0]
     except sqlite3.Error: return 0
 
-def send(sock_path, kind, db, baseline):
-    response = command(sock_path, {"command":"inject", "kind":kind})
-    if response.get("accepted") is not True: raise RuntimeError(f"control injection rejected: {kind}: {response}")
-    deadline=time.time()+5
-    while time.time()<deadline and attempts(db) <= baseline: time.sleep(.01)
-    return attempts(db) == baseline+1
-
-def row(snapshot, role): return next((x for x in snapshot.get("children",[]) if x.get("role")==role), None)
+def wait_increase(fn, old, timeout=5):
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        value = fn()
+        if value > old: return value
+        time.sleep(.02)
+    return fn()
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument("--output", required=True, type=pathlib.Path); ap.add_argument("--cycles", type=int, default=3000); ap.add_argument("--seeds", default="17,23,41"); args=ap.parse_args()
-    if args.cycles < 3000: raise SystemExit("cycles must be at least 3000")
-    binary=os.environ.get("FOUNDATION_SUPERVISOR", str(ROOT/"target/release/ops-supervisor")); seeds=[int(x) for x in args.seeds.split(",") if x]
-    categories=["valid","duplicate","replay","malformed","unsupported_major","unknown_field","invalid_uuid","invalid_datetime","duplicate_key","stale_generation","invalid_mac","companion_state","ordinary_observation","unauthorized_sender"]
-    counts={k:0 for k in categories}; lifecycle={}; started=time.time()
+    ap = argparse.ArgumentParser(); ap.add_argument("--output", required=True, type=pathlib.Path); ap.add_argument("--cycles", type=int, default=3000); ap.add_argument("--seeds", default="17,23,41"); args = ap.parse_args()
+    if args.cycles < 3000 or args.cycles % 3: raise SystemExit("cycles must be >=3000 and divisible by 3")
+    seeds = [int(x) for x in args.seeds.split(",") if x]; binary = os.environ.get("FOUNDATION_SUPERVISOR", str(ROOT / "target/release/ops-supervisor")); started = time.time()
+    categories = {k: dict(EXPECTATIONS[k], requested=0, applied=0, accepted=0, rejected=0, duplicate=0, reasons={}, care_attempt_delta=0, care_outcome_delta=0, companion_event_delta=0) for k in EXPECTATIONS}; lifecycle = {}
     with tempfile.TemporaryDirectory(prefix="companion-closeout-") as root:
-        env=os.environ.copy(); env.update(COMPANION_XDG_ROOT=root, COMPANION_CYCLES="1", COMPANION_SEEDS=','.join(map(str,seeds)))
-        proc=subprocess.Popen([binary], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        runtime=pathlib.Path(root)/"companion"; sock=runtime/"supervisor.sock"; care_db=runtime/"../companion/care.sqlite3"
-        # Store::open places the care DB under data/companion; override roots map all bases here.
-        care_db=pathlib.Path(root)/"companion"/"care.sqlite3"
+        env = os.environ.copy(); env.update(COMPANION_XDG_ROOT=root, COMPANION_CYCLES="1", COMPANION_SEEDS=','.join(map(str, seeds))); proc = subprocess.Popen([binary], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        control = pathlib.Path(root) / "companion" / "supervisor.sock"; care_db = pathlib.Path(root) / "companion" / "care.sqlite3"; companion_db = pathlib.Path(root) / "companion" / "companion.sqlite3"
         try:
-            snap=wait_for(sock, lambda x: {"companion-core","identity-consent-vault","godot-bridge","sensor-gateway","care-core"}.issubset({r.get("role") for r in x.get("children",[])}) and all(r.get("ready") for r in x.get("children",[])), 10)
-            lifecycle["startup_ready"] = bool(row(snap,"care-core") and row(snap,"sensor-gateway")) and all(r.get("ready") for r in snap.get("children",[]))
-            if not lifecycle["startup_ready"]: raise RuntimeError("roles did not become ready")
-            before_attempts=attempts(care_db)
-            # Three deterministic seed segments alter category order.
-            target=args.cycles
-            for i in range(target):
-                seed=seeds[i % len(seeds)]
-                kind="valid" if i % 13 == 0 else categories[(i + seed) % len(categories)]
-                if kind=="valid" and counts["valid"]>0 and i % 29 == 0: kind="duplicate"
-                if kind == "unauthorized_sender": kind = "forged_producer"
-                if kind not in counts and kind != "forged_producer": kind="valid"
-                count_key = "unauthorized_sender" if kind == "forged_producer" else kind
-                if send(sock, kind, care_db, before_attempts): counts[count_key]+=1; before_attempts+=1
-                else: raise RuntimeError(f"attempt not durably observed: {kind}")
-            lifecycle["mixed_messages"] = sum(counts.values()) == target
-            old_companion=row(snap,"companion-core")["pid"]
-            command(sock,{"command":"restart","role":"companion-core"})
-            snap=wait_for(sock, lambda x: row(x,"companion-core") and row(x,"companion-core").get("pid") != old_companion and row(x,"companion-core").get("ready") is True)
-            lifecycle["companion_restart"] = bool(row(snap,"companion-core") and row(snap,"companion-core").get("restarts",0)>=1)
-            old_sensor=row(snap,"sensor-gateway")["pid"]; old_generation=row(snap,"sensor-gateway")["generation"]
-            command(sock,{"command":"rotate","role":"sensor-gateway"})
-            snap=wait_for(sock, lambda x: row(x,"sensor-gateway") and row(x,"sensor-gateway").get("pid") != old_sensor and row(x,"sensor-gateway").get("generation") != old_generation)
-            lifecycle["producer_rotation"] = bool(row(snap,"sensor-gateway") and row(snap,"sensor-gateway").get("pid") != old_sensor)
-            old_care=row(snap,"care-core")["pid"]
-            command(sock,{"command":"fail","role":"care-core"})
-            degraded=wait_for(sock, lambda x: x.get("care_coverage")=="degraded", 3)
-            recovered=wait_for(sock, lambda x: x.get("care_coverage")=="synthetic" and row(x,"care-core") and row(x,"care-core").get("pid") != old_care, 10)
-            lifecycle["care_degraded_recovered"] = degraded.get("care_coverage")=="degraded" and recovered.get("care_coverage")=="synthetic"
-            command(sock,{"command":"set_test_store_fault"})
-            degraded_store=wait_for(sock, lambda x: x.get("care_coverage")=="degraded", 5)
-            command(sock,{"command":"clear_test_fault"})
-            recovered_store=wait_for(sock, lambda x: x.get("care_coverage")=="synthetic", 10)
-            lifecycle["care_store_fault_recovery"] = degraded_store.get("care_coverage")=="degraded" and recovered_store.get("care_coverage")=="synthetic"
-            command(sock,{"command":"disconnect","role":"godot-bridge"})
-            bridge=wait_for(sock, lambda x: row(x,"godot-bridge") and row(x,"godot-bridge").get("restarts",0)>=1, 10)
-            lifecycle["bridge_replacement"] = bool(row(bridge,"godot-bridge") and row(bridge,"godot-bridge").get("restarts",0)>=1)
-            command(sock,{"command":"shutdown"}); proc.wait(timeout=10)
-            lifecycle["clean_shutdown"] = proc.returncode==0
+            snap = wait_for(control, lambda s: len(s.get("children", [])) == 5 and all(x.get("ready") for x in s.get("children", [])), 12); lifecycle["startup_ready"] = len(snap.get("children", [])) == 5 and all(x.get("ready") for x in snap.get("children", []))
+            if not lifecycle["startup_ready"]: raise RuntimeError("roles not ready")
+            time.sleep(.2); baseline = db_counts(care_db); event_baseline = event_count(companion_db)
+            unknown = command(control, {"command":"inject", "kind":"not_a_real_injection", "request_id":"unknown"}); lifecycle["unknown_kind_rejected_before_transport"] = unknown.get("accepted") is False and unknown.get("reason") == "unknown_injection_kind"
+            per_seed = args.cycles // len(seeds); order = list(EXPECTATIONS)
+            for i in range(args.cycles):
+                seed = seeds[i // per_seed]; kind = order[(i + seed) % len(order)]; categories[kind]["requested"] += 1; before = db_counts(care_db); before_events = event_count(companion_db)
+                response = command(control, {"command":"inject", "kind":kind, "request_id":f"seed-{seed}-{i}"}); categories[kind]["applied"] += 1
+                if response.get("normalized_kind") != kind or response.get("accepted") is not True: raise RuntimeError(f"typed injection mismatch {kind}: {response}")
+                if kind == "valid_ordinary_observation":
+                    after_events = wait_increase(lambda: event_count(companion_db), before_events); after = db_counts(care_db); status, reason = ("accepted", "ordinary_observation") if after_events == before_events + 1 else ("rejected", "ordinary_observation"); categories[kind]["companion_event_delta"] += after_events - before_events
+                else:
+                    wait_increase(lambda: db_counts(care_db)["attempts"], before["attempts"]); after = db_counts(care_db); reason = next(iter(sqlite3.connect(care_db).execute("SELECT reason FROM safety_attempts ORDER BY id DESC LIMIT 1")), (None,))[0]; status = "duplicate" if reason == "duplicate" else ("accepted" if reason == "accepted" else "rejected"); categories[kind]["care_attempt_delta"] += after["attempts"] - before["attempts"]; categories[kind]["care_outcome_delta"] += after["receipts"] - before["receipts"]
+                categories[kind][status] += 1; categories[kind]["reasons"][reason] = categories[kind]["reasons"].get(reason, 0) + 1
+                if status != EXPECTATIONS[kind]["expected_status"] or reason != EXPECTATIONS[kind]["expected_reason"]: raise RuntimeError(f"outcome mismatch {kind}: {status}/{reason}")
+            lifecycle["mixed_messages"] = sum(v["requested"] for v in categories.values()) == args.cycles; invalid = [k for k, v in EXPECTATIONS.items() if v["expected_status"] == "rejected"]; lifecycle["invalid_accepted_zero"] = sum(categories[k]["accepted"] for k in invalid) == 0; lifecycle["ordinary_separated"] = categories["valid_ordinary_observation"]["care_attempt_delta"] == 0 and categories["valid_ordinary_observation"]["care_outcome_delta"] == 0 and event_count(companion_db) > event_baseline; lifecycle["care_alive_after_hostile"] = bool(role(health(control), "care-core") and role(health(control), "care-core").get("ready"))
+            old_care = role(health(control), "care-core"); command(control, {"command":"fail", "role":"care-core"}); degraded = wait_for(control, lambda s: s.get("care_coverage") == "degraded", 5); recovered = wait_for(control, lambda s: role(s,"care-core") and role(s,"care-core").get("pid") != old_care["pid"] and s.get("care_coverage") == "synthetic", 12); lifecycle["care_degraded_recovered"] = degraded.get("care_coverage") == "degraded" and recovered.get("care_coverage") == "synthetic"
+            before = db_counts(care_db); command(control, {"command":"inject", "kind":"duplicate_safety_candidate", "request_id":"restart-duplicate"}); wait_increase(lambda: db_counts(care_db)["attempts"], before["attempts"]); lifecycle["persistent_idempotency"] = db_counts(care_db)["attempts"] == before["attempts"] + 1 and next(iter(sqlite3.connect(care_db).execute("SELECT reason FROM safety_attempts ORDER BY id DESC LIMIT 1")), (None,))[0] == "duplicate"
+            old_sensor = role(recovered, "sensor-gateway"); command(control, {"command":"rotate", "role":"sensor-gateway"}); rotated = wait_for(control, lambda s: role(s,"sensor-gateway") and role(s,"sensor-gateway").get("pid") != old_sensor["pid"] and role(s,"sensor-gateway").get("generation") != old_sensor["generation"], 12); lifecycle["producer_rotation"] = bool(role(rotated, "sensor-gateway"))
+            fault = command(control, {"command":"set_test_store_fault", "authority":"care"}); lifecycle["care_store_fault_degraded"] = fault.get("accepted") is True and wait_for(control, lambda s: s.get("care_coverage") == "degraded", 5).get("care_coverage") == "degraded"; command(control, {"command":"clear_test_fault", "authority":"care"}); lifecycle["care_store_recovered"] = wait_for(control, lambda s: s.get("care_coverage") == "synthetic", 12).get("care_coverage") == "synthetic"; command(control, {"command":"shutdown"}); proc.wait(timeout=12); lifecycle["clean_shutdown"] = proc.returncode == 0
         finally:
-            if proc.poll() is None:
-                proc.send_signal(signal.SIGTERM); proc.wait(timeout=10)
-        expected_rejections={k for k in categories if k not in ("valid",)}
-        with sqlite3.connect(care_db) as c:
-            rows=c.execute("select reason,count(*) from safety_attempts group by reason").fetchall()
-        reasons=dict(rows)
-        result={"status":"PASS" if lifecycle.get("mixed_messages") and all(lifecycle.values()) and attempts(care_db)>=target else "FAIL", "cycles":target,"seeds":seeds,"counts":counts,"lifecycle":lifecycle,"rejection_reasons":reasons,"attempts":attempts(care_db),"evidence_ceiling":"E3_TARGET_TESTED","claim_boundary":"resident synthetic foundation closeout only; no product, safety efficacy, security certification, reliability, or SLA claim","duration_seconds":round(time.time()-started,3)}
-    args.output.parent.mkdir(parents=True,exist_ok=True); args.output.write_text(json.dumps(result,indent=2,sort_keys=True)+"\n",encoding="utf-8"); print(json.dumps(result,sort_keys=True))
-    if result["status"] != "PASS": raise SystemExit(1)
-if __name__=="__main__": main()
+            if proc.poll() is None: proc.send_signal(signal.SIGTERM); proc.wait(timeout=12)
+    requested_total = sum(v["requested"] for v in categories.values())
+    accepted = sum(v["accepted"] for v in categories.values())
+    rejected = sum(v["rejected"] for v in categories.values())
+    duplicate = sum(v["duplicate"] for v in categories.values())
+    invalid_accepted = sum(v["accepted"] for name, v in categories.items() if EXPECTATIONS[name]["expected_status"] == "rejected")
+    equations = {"requested_total": requested_total, "observed_total": accepted + rejected + duplicate, "accepted": accepted, "rejected": rejected, "duplicate": duplicate, "invalid_accepted": invalid_accepted, "care_attempt_rows": sum(v["care_attempt_delta"] for v in categories.values()), "care_outcome_rows": sum(v["care_outcome_delta"] for v in categories.values()), "ordinary_care_attempt_rows": categories["valid_ordinary_observation"]["care_attempt_delta"], "ordinary_care_outcome_rows": categories["valid_ordinary_observation"]["care_outcome_delta"]}
+    equations["accounting_exact"] = requested_total == equations["observed_total"] == args.cycles and equations["invalid_accepted"] == 0 and equations["ordinary_care_attempt_rows"] == equations["ordinary_care_outcome_rows"] == 0
+    result = {"status":"PASS" if equations["accounting_exact"] and all(lifecycle.values()) else "FAIL", "cycles":args.cycles, "seeds":seeds, "expectations":EXPECTATIONS, "categories":categories, "equations":equations, "lifecycle":lifecycle, "unknown_kind":unknown, "evidence_ceiling":"E3_TARGET_TESTED", "claim_boundary":"resident synthetic foundation evidence only; no product, safety efficacy, security certification, reliability, or SLA claim", "duration_seconds":round(time.time()-started,3)}; args.output.parent.mkdir(parents=True, exist_ok=True); args.output.write_text(json.dumps(result, indent=2, sort_keys=True)+"\n", encoding="utf-8"); print(json.dumps(result, sort_keys=True)); raise SystemExit(0 if result["status"] == "PASS" else 1)
+
+if __name__ == "__main__": main()

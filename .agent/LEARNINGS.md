@@ -370,4 +370,18 @@ supervision, reliability, or production readiness.
 
 - A resident soak is only a clean target-host observation when the
   checkout-write sentinel remains false for the entire interval. Sanitization
-  must accept count-only runner summaries as well as detailed sample arrays.
+must accept count-only runner summaries as well as detailed sample arrays.
+
+## 2026-09-10 — Architect Review 04 evidence semantics
+
+- Injection categories must be an exhaustive typed enum with a one-to-one
+  mutation mapping; unknown values must fail before transport and no default
+  branch may silently create a valid packet.
+- A resident message matrix must assert requested/applied/status/reason and
+  derive care-attempt, outcome, ordinary-event, and invalid-acceptance counts;
+  category presence alone is not evidence.
+- Scenario evidence is credible only when the named behavior is induced and a
+  before/after invariant is observed. Control acknowledgments are not storage,
+  display, migration, or recovery results.
+- Result summaries need committed hashes, fixture identity, ancestry, and a
+  validator that emits (rather than consumes) its own validation output.

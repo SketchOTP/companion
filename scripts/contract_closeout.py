@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Complete deterministic contract fixture gate for all nine Phase 01 schemas."""
-import copy, json, os, pathlib, uuid
+import argparse, copy, json, os, pathlib, uuid
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 try:
     import jsonschema
@@ -25,7 +25,21 @@ def sample(schema):
 
 def check(instance,schema): jsonschema.Draft202012Validator(schema,format_checker=jsonschema.FormatChecker()).validate(instance)
 def main():
-    reports={}; errors=[]
+    ap=argparse.ArgumentParser(); ap.add_argument("--wire-evidence",type=pathlib.Path); ap.add_argument("--output",type=pathlib.Path); args=ap.parse_args()
+    reports={}; errors=[]; wire_executions=[]
+    if args.wire_evidence:
+        try:
+            wire=json.loads(args.wire_evidence.read_text())
+            life=wire.get("lifecycle",{}); cats=wire.get("categories",{})
+            if wire.get("status") != "PASS" or not life.get("ordinary_separated") or not life.get("mixed_messages"):
+                errors.append("wire evidence did not pass ordinary/direct-care execution checks")
+            else:
+                wire_executions=[
+                    {"domain":"ordinary_observation","path":"control->companion-core","observed_messages":cats.get("valid_ordinary_observation",{}).get("requested",0)},
+                    {"domain":"safety_candidate","path":"control->producer->care-core","observed_messages":cats.get("valid_safety_candidate",{}).get("requested",0)},
+                ]
+        except (OSError, json.JSONDecodeError, TypeError) as exc:
+            errors.append(f"wire evidence unavailable: {type(exc).__name__}")
     for path in sorted((ROOT/"contracts/schemas").glob("*.schema.json")):
         schema=json.loads(path.read_text()); valid=sample(schema); cases={"valid":True}
         try: check(valid,schema)
@@ -70,7 +84,10 @@ def main():
         duplicate_ok=True
     except Exception: duplicate_ok=False
     if not duplicate_ok: errors.append("decoded duplicate fixture was not rejected")
-    result={"status":"PASS" if not errors else "FAIL","schemas":reports,"decoded_duplicate_fixture_sha256":__import__('hashlib').sha256(duplicate).hexdigest(),"actual_wire_domains":sorted(reports),"errors":errors}
+    result={"status":"PASS" if not errors else "FAIL","schemas":reports,"decoded_duplicate_fixture_sha256":__import__('hashlib').sha256(duplicate).hexdigest(),"wire_executions":wire_executions,"errors":errors}
+    encoded=json.dumps(result,indent=2,sort_keys=True)+"\n"
+    if args.output:
+        args.output.parent.mkdir(parents=True,exist_ok=True); args.output.write_text(encoded)
     print(json.dumps(result,sort_keys=True))
     if errors: raise SystemExit(1)
 if __name__=="__main__": main()

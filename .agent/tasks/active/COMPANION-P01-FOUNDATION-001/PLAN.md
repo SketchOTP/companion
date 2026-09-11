@@ -133,3 +133,15 @@ on the existing branch; stop for independent Architect review.
    manifest; run the validator and tamper-negative test.
 5. Re-run required host-independent checks, inspect the final diff, publish on
    the existing PR, and stop for Architect review.
+
+## Architect Review 04 execution record
+
+The narrow correction replaced raw category fallthrough with exhaustive typed
+injection, ran a truthful 3,000-message resident matrix over seeds 17/23/41,
+and directly exercised twelve acceptance groups. Contract wire executions are
+derived from the resident ordinary/direct-care run; Godot client state and
+topology fallback are observed by the headless bridge probe. A focused
+900-second resident regression passed lifecycle, store-fault, restart,
+idempotency, checkout, and network-census assertions. The committed Review 04
+bundle is validated by `validate_phase01_review04.py`; tamper-negative mutations
+all fail. No later-phase behavior or dependency adoption is claimed.

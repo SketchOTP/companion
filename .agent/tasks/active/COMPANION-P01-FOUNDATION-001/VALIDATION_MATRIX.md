@@ -159,4 +159,28 @@ claimed.
     readiness before querying; fresh CI execution remains required.
 
 21. `PASSED` — fresh push workflow `34488896386` and pull-request workflow
-    `34488902059` both passed on `12ee47bc5f4c556777eae43f35e3ec2f89f39e15`.
+   `34488902059` both passed on `12ee47bc5f4c556777eae43f35e3ec2f89f39e15`.
+
+## Architect Review 04 semantic validation
+
+1. `PASSED` — exhaustive typed injection mapping and unknown-kind rejection.
+2. `PASSED` — 3,000 actual resident messages over seeds 17/23/41 with exact
+   equations, stable reasons, and `invalid_accepted=0`.
+3. `PASSED` — ordinary observations reached companion-core and produced zero
+   care-attempt/outcome rows; direct-care traffic remained separate.
+4. `PASSED` — persistent duplicate handling survived care restart.
+5. `PASSED` — twelve acceptance groups were directly exercised and all passed.
+6. `PASSED` — nine schemas and Rust fixtures passed focused negative checks;
+   wire executions are derived from the resident process result, not filenames.
+7. `PASSED` — same-process Godot client state sequence and runtime topology
+   fallback/restoration probe passed; no display capture was used.
+8. `PASSED` — focused 900-second resident regression passed all required
+   lifecycle, recovery, checkout, and network-census assertions.
+9. `PASSED` — the semantic validator recomputed hashes, fixture, ancestry,
+   equations, groups, and explicit boundaries.
+10. `PASSED` — five tamper-negative mutations each caused nonzero validation.
+
+The previous 3,000-message and 37-scenario passes are superseded, not deleted.
+All current results remain bounded `E3_TARGET_TESTED` engineering evidence;
+Architecture v1.0 remains adopted, Phase 01 remains unaccepted, and later-phase
+product/security/reliability/SLA capability remains closed.

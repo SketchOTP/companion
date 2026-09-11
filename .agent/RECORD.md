@@ -445,3 +445,14 @@ The committed manifest binds result/fixture hashes and ancestry; the validator
 passed and the tamper-negative copy failed closed. PR #7 remains OPEN/DRAFT/
 UNMERGED and Issue #6 remains OPEN. Architecture v1.0 remains adopted; Phase
 01 and product implementation remain pending Architect acceptance.
+
+## 2026-09-10 — Phase 01 Review 04 correction record
+
+Architect Review 04 continued the phase without changing Architecture v1.0.
+The first closeout's invalid-category and 37-scenario claims were marked
+superseded, then replaced by exhaustive typed injection, exact 3,000-message
+equations, twelve directly exercised groups, actual wire references, Godot
+client/topology evidence, and a 900-second resident regression. The semantic
+validator and five tamper-negative mutations passed. This is bounded E3
+engineering evidence only; Phase 01 remains unaccepted and no dependency,
+security mechanism, later phase, or product capability was adopted.

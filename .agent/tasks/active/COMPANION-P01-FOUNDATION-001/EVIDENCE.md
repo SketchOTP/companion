@@ -209,3 +209,22 @@ commit. The validator passed the committed result set; the tamper-negative
 altered result exited nonzero. The resident soak is E3 bounded engineering
 evidence only: 3,600 seconds, 60 samples, four injections, zero failures,
 headless Godot observed, and no checkout writes.
+
+## Architect Review 04 semantic correction — 2026-09-10
+
+The prior invalid-input `PASS` and 37/37 scenario result are preserved as
+superseded history. The corrected run used one exhaustive typed injection
+protocol and a resident 3,000-message matrix over seeds 17, 23, and 41:
+`requested_total=3000`, `observed_total=3000`, `accepted=396`,
+`rejected=2405`, `duplicate=199`, `invalid_accepted=0`,
+`care_attempt_rows=2802`, `care_outcome_rows=198`, and ordinary care deltas of
+zero. Every category's normalized mutation and stable rejection reason matched
+its predeclared expectation.
+
+The directly exercised twelve-group matrix, actual ordinary/direct-care wire
+references, headless Godot client sequence and topology probe, and 900-second
+resident regression all report `PASS` at bounded `E3_TARGET_TESTED`. The
+semantic validator recomputed result/fixture hashes and Git ancestry without
+reading generated validation output; five tamper mutations all exited
+nonzero. Broader product, security, reliability, SLA, and later-phase claims
+remain unqualified.
