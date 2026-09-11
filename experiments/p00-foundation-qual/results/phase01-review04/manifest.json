@@ -1,6 +1,6 @@
 {
   "schema": "companion-p01-review04-v1",
-  "evidence_commit": "a0e394dc4b6545a882ecb214ccfc8f5944e4f23c",
+  "evidence_commit": "c9a859aa1ad89ad607eb6b83470b2ce9446583fe",
   "execution_date": "2026-09-10",
   "timestamp_precision": "date-only UTC",
   "sanitized_host_class": "Linux x86_64 local ext4/NVMe",
