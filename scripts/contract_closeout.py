@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Complete deterministic contract fixture gate for all nine Phase 01 schemas."""
+"""Complete deterministic contract fixture gate for all committed schemas."""
 import argparse, copy, json, os, pathlib, uuid
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 try:
@@ -48,6 +48,7 @@ def main():
             "mon-animation-clip.schema.json": "mon-animation-clip-v1.json",
             "mon-animation-track.schema.json": "mon-animation-track-v1.json",
             "mon-temporal-track-v2.schema.json": "mon-temporal-track-v2.json",
+            "mon-authored-frame-pack-v1.schema.json": "mon-authored-frame-pack-v1.json",
         }.get(path.name)
         if fixture_name:
             fixture_path = ROOT / "contracts/fixtures" / fixture_name

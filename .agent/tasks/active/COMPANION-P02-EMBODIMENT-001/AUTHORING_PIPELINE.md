@@ -67,3 +67,11 @@ derivatives. The bake contains no reference-pixel copy or whole-image warp.
 Godot remains the editable source and raster `SpriteFrames` runtime; the Python
 mirror exists only because the pinned dummy renderer cannot expose a readable
 SubViewport texture. Full atlas/pack and library scale remain deferred.
+# R04 authorship and intake boundary
+
+The AI Architect authors identity-critical full-frame source poses. Codex does
+not generate, warp, repair, or interpolate production pixels. The sole active
+pipeline is immutable source validation, byte-preserving content-addressed
+copy, separate deterministic derivatives, local export/restore, and Godot
+runtime integration. R02/R03 procedural authoring paths are superseded
+negative evidence and never a fallback.

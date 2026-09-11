@@ -118,3 +118,14 @@ prove identity approval, production animation quality, full eight-direction or
 32-family coverage, atlas/pack scale, Openbox behavior, runtime performance,
 product capability, or any later roadmap phase. The full library and dedicated
 Openbox endurance remain deferred until operator and Architect approval.
+# R04 superseding evidence
+
+The authoritative R04 evidence bundle is generated under
+`experiments/p02-embodiment/results/r04/`. It binds exact approved-reference
+hashes, byte-preserving source/CAS/runtime hashes, eight intake rejection
+cases, required-path Rust round-trip results, Godot first-frame/event ordering,
+corrupt-pack degradation/restoration, and local export/restore equivalence.
+The validator consumes the result hashes and rejects semantic tampering.
+
+R03 visual, rig, identity, and motion claims are `SUPERSEDED` and remain only
+as negative evidence. R04 produces no production character pixels.

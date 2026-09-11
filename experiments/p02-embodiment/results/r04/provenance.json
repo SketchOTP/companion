@@ -1,0 +1,22 @@
+{
+  "commands": [
+    "python3 experiments/p02-embodiment/scripts/run_r04_evidence.py --out OUT --godot GODOT",
+    "python3 experiments/p02-embodiment/scripts/validate_r04_results.py --results OUT --tamper-negative"
+  ],
+  "evidence_ceiling": "E3_TARGET_TESTED synthetic intake/runtime boundary only; no production art or Phase 02 acceptance",
+  "execution_date_utc": "2026-09-11",
+  "profile": "COMPANION_P02_R04_EVIDENCE_V1",
+  "result_sha256": {
+    "contract_validation.json": "06fac443a056483003d0294f1df6a2f3cfe93e3d3b7f2196b089755a136afa5d",
+    "export_restore.json": "73cbb5ac980d7d0a0eaf89503a01cac7f9923be8f157241f0e2dd7ab886fa148",
+    "godot_runtime.json": "1149a0a7c5214f348d528348a38bb4fc2e5b11ed2db3a958c6646f1b3adb73d1",
+    "intake_validation.json": "3d4118db7e088c44e9064f6f5a5f3628d91c657c08c69b20ed6ba5a808bf9eb2",
+    "rust_contract.json": "bd5711181828c78ec17394d8941474d13ac4b6deb2951cbc6944c31e24802615",
+    "source_intake.json": "36703eda6c279da0897728c4dd4ef5f72bca402f84ff7bb5925855eee7caf105"
+  },
+  "runtimes": {
+    "godot": "4.7.2.stable.official.ed1daf0bf",
+    "python": "system qualification tooling",
+    "rust": "1.98.1"
+  }
+}

@@ -100,3 +100,20 @@ The Research Phase 01 Notion hierarchy contains the project's research evidence 
   expand scope and create an unreviewed dependency.
 - Recheck: after operator selects the construction/motion language or before
   any authoring-tool dependency is proposed.
+
+## COMPANION-P02-EMBODIMENT-001-R04 — Godot intake and presentation APIs
+
+- Date: 2026-09-11 America/New_York.
+- Trigger: Review 04 requires source-byte preservation and an exact observable
+  presentation point before the runtime emits `started`.
+- Sources: official Godot 4.7 `SpriteFrames`, `AnimatedSprite2D`, image import,
+  `Image`, and `ImageTexture` documentation.
+- Disposition: `REFERENCE`. `SpriteFrames` relative weights at explicit 24 FPS
+  preserve 1/24-second ticks; `AnimatedSprite2D` exposes frame change and
+  completion observations; source PNGs may remain immutable while Godot uses
+  derived import/cache or in-memory texture data.
+- Material result: R04 loads validated external PNG bytes into derived
+  `ImageTexture` objects, waits one process frame, confirms visible frame zero,
+  then permits `started`. No external dependency or art tool was adopted.
+- Recheck: before changing Godot version, image import mode, timing semantics,
+  or the presentation acknowledgment boundary.

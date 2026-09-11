@@ -20,6 +20,7 @@ mapping = {
     "backup-manifest.schema.json": "BackupManifest",
     "mon-animation-track.schema.json": "MonAnimationTrack",
     "mon-temporal-track-v2.schema.json": "MonTemporalTrackV2",
+    "mon-authored-frame-pack-v1.schema.json": "MonAuthoredFramePackV1",
 }
 text = (ROOT / "crates/foundation-core/src/contracts.rs").read_text(encoding="utf-8")
 errors = []
@@ -38,9 +39,11 @@ def compatible(spec, rust_type):
     typ = spec.get("type")
     if typ == "boolean": return rust_type == "bool"
     if typ == "integer": return any(token in rust_type for token in ("u8", "u16", "u32", "u64", "i32", "i64"))
-    if typ == "object": return "Value" in rust_type or "Map" in rust_type
+    if typ == "object": return "Value" in rust_type or "Map" in rust_type or rust_type[:1].isupper()
     if typ == "string": return "String" in rust_type or "str" in rust_type
     if isinstance(typ, list): return "Option" in rust_type
+    if "$ref" in spec: return rust_type[:1].isupper() or "Vec" in rust_type
+    if typ == "array": return "Vec" in rust_type
     if "anyOf" in spec: return "Option" in rust_type or "String" in rust_type
     return True
 

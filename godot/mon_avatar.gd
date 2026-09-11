@@ -5,18 +5,18 @@ extends Node2D
 signal frame_marker(event: Dictionary)
 signal clip_completed(event: Dictionary)
 signal clip_failed(event: Dictionary)
+signal presentation_observed(event: Dictionary)
 
-const FRAME_ROOT := "res://assets/p02-core/"
-const R03_FRAME_ROOT := "res://assets/p02-r03/"
 const ANIMATION_FPS := 24.0
-const TRACK_STAGE := "candidate"
-const Director = preload("res://mon_animation_director.gd")
-var clip_manifest: Dictionary = {}
-var temporal_tracks: Array = []
-var loaded_clips: Dictionary = {}
+const ALLOWED_APPROVALS := {"production": ["operator_approved"], "review": ["candidate", "operator_approved"], "test": ["synthetic_test_only"]}
+var pack: Dictionary = {}
+var pack_root := ""
+var loaded_tracks: Dictionary = {}
 var active_body := 0
-var current_clip := ""
-var generation := "godot-p02-v1"
+var current_track := ""
+var current_family := ""
+var current_track_data: Dictionary = {}
+var generation := "godot-p02-r04"
 
 @onready var body_a: AnimatedSprite2D = $BodyA
 @onready var body_b: AnimatedSprite2D = $BodyB
@@ -27,97 +27,143 @@ func _ready() -> void:
 	body_b.frame_changed.connect(_on_frame_changed.bind(body_b))
 	body_a.animation_finished.connect(_on_animation_finished.bind(body_a))
 	body_b.animation_finished.connect(_on_animation_finished.bind(body_b))
-	_load_manifest()
+	_load_pack()
 	director.configure(self, int(OS.get_environment("COMPANION_P02_SEED")) if OS.get_environment("COMPANION_P02_SEED").is_valid_int() else 17)
-	request_initial_intent()
 
-func request_initial_intent() -> void:
-	director.request_intent("idle")
+func _observe(name: String, details: Dictionary = {}) -> void:
+	var event := {"event": name, "generation": generation}
+	event.merge(details)
+	presentation_observed.emit(event)
+	if director != null and director.has_method("_observe"):
+		director._observe(name, details)
 
-func supports_v2_tracks() -> bool:
-	for candidate in temporal_tracks:
-		if int(candidate.get("version", 1)) == 2:
-			return true
-	return false
-
-func _load_manifest() -> void:
-	var manifest_path := FRAME_ROOT + "temporal_tracks.json"
-	var file := FileAccess.open(manifest_path, FileAccess.READ)
+func _load_pack() -> void:
+	var configured := OS.get_environment("COMPANION_R04_PACK_PATH")
+	if configured.is_empty():
+		clip_failed.emit({"event_type": "clip_failed", "reason": "pack_path_missing", "generation": generation})
+		return
+	var path := configured
+	if not path.is_absolute_path():
+		path = ProjectSettings.globalize_path(path)
+	var file := FileAccess.open(path, FileAccess.READ)
 	if file == null:
-		manifest_path = R03_FRAME_ROOT + "temporal_tracks_v2.json"
-		file = FileAccess.open(manifest_path, FileAccess.READ)
-	if file == null:
-		clip_failed.emit({"schema_major":1,"event_type":"clip_failed","status":"degraded","reason":"pack_manifest_missing","generation":generation})
+		clip_failed.emit({"event_type": "clip_failed", "reason": "pack_manifest_missing", "generation": generation})
 		return
 	var parsed = JSON.parse_string(file.get_as_text())
-	if parsed is Dictionary:
-		clip_manifest = parsed
-		temporal_tracks = parsed.get("tracks", [])
+	if not parsed is Dictionary or parsed.get("profile") != "MON_AUTHORED_FRAME_PACK_V1" or int(parsed.get("schema_version", 0)) != 1:
+		clip_failed.emit({"event_type": "clip_failed", "reason": "pack_manifest_invalid", "generation": generation})
+		return
+	pack = parsed
+	pack_root = path.get_base_dir()
 
-func _frames_for(track_id: String) -> SpriteFrames:
-	if loaded_clips.has(track_id): return loaded_clips[track_id]
+func _operation() -> String:
+	var value := OS.get_environment("COMPANION_P02_PACK_OPERATION")
+	return value if value in ALLOWED_APPROVALS else "production"
+
+func _eligible() -> bool:
+	return String(pack.get("approval_state", "")) in ALLOWED_APPROVALS[_operation()]
+
+func _resolve_track(family: String, facing: String, posture: String, variant: int) -> Dictionary:
+	for candidate in pack.get("tracks", []):
+		if candidate.get("family") == family and candidate.get("facing") == facing and candidate.get("posture") == posture and int(candidate.get("variant", 0)) == variant:
+			return candidate
+	return {}
+
+func _runtime_path(frame: Dictionary) -> String:
+	for relation in pack.get("source_runtime_relationships", []):
+		if relation.get("source_sha256") == frame.get("source_sha256"):
+			return pack_root.path_join(String(relation.get("runtime_asset")))
+	return ""
+
+func _build_frames(track: Dictionary) -> Dictionary:
+	var track_id := String(track.get("track_id", ""))
+	if loaded_tracks.has(track_id):
+		return {"ok": true, "frames": loaded_tracks[track_id]}
 	var frames := SpriteFrames.new()
 	frames.remove_animation("default")
 	frames.add_animation(track_id)
-	var track: Dictionary = {}
-	for candidate in temporal_tracks:
-		if candidate.get("track_id", "") == track_id: track = candidate; break
-	if track.is_empty():
-		clip_failed.emit({"schema_major":1,"event_type":"clip_failed","track_id":track_id,"status":"degraded","reason":"track_missing","generation":generation})
-		return frames
-	frames.set_animation_loop(track_id, track.get("loop_mode", "once") == "loop")
+	frames.set_animation_loop(track_id, track.get("completion") == "loop")
 	frames.set_animation_speed(track_id, ANIMATION_FPS)
-	var frame_root := R03_FRAME_ROOT if int(track.get("version", 1)) == 2 else FRAME_ROOT
 	for item in track.get("frames", []):
-		var texture := load(frame_root + String(item.get("path", "")))
-		# SpriteFrames duration is a relative weight. Integer MON_FRAME_V1
-		# ticks are weights at the declared 24 Hz animation FPS.
-		if texture is Texture2D: frames.add_frame(track_id, texture, float(item.get("duration_ticks", 1)))
+		var frame_path := _runtime_path(item)
+		if frame_path.is_empty() or not FileAccess.file_exists(frame_path):
+			return {"ok": false, "reason": "frame_missing"}
+		if FileAccess.get_sha256(frame_path) != String(item.get("source_sha256", "")):
+			return {"ok": false, "reason": "frame_hash_mismatch"}
+		var image := Image.new()
+		if image.load(frame_path) != OK:
+			return {"ok": false, "reason": "frame_corrupt"}
+		var texture := ImageTexture.create_from_image(image)
+		if texture == null:
+			return {"ok": false, "reason": "frame_unloadable"}
+		frames.add_frame(track_id, texture, float(item.get("duration_ticks", 0)))
 	if frames.get_frame_count(track_id) == 0:
-		clip_failed.emit({"schema_major":1,"event_type":"clip_failed","track_id":track_id,"status":"degraded","reason":"track_frames_missing","generation":generation})
-	loaded_clips[track_id] = frames
-	return frames
+		return {"ok": false, "reason": "track_empty"}
+	loaded_tracks[track_id] = frames
+	return {"ok": true, "frames": frames}
 
-func play_clip(clip_id: String) -> void:
-	play_track(clip_id, "front_left", "neutral", 1, TRACK_STAGE)
+func present_track(family: String, facing: String, posture: String, variant: int) -> Dictionary:
+	var track := _resolve_track(family, facing, posture, variant)
+	if track.is_empty():
+		return _presentation_failure(family, "track_missing")
+	var track_id := String(track["track_id"])
+	_observe("track_resolved", {"track_id": track_id})
+	if not _eligible():
+		return _presentation_failure(family, "approval_ineligible")
+	if int(pack.get("timing", {}).get("fps", 0)) != 24 or pack.get("timing", {}).get("tick_unit") != "1/24_second":
+		return _presentation_failure(family, "timing_invalid")
+	_observe("track_validated", {"track_id": track_id, "approval_state": pack.get("approval_state")})
+	var built := _build_frames(track)
+	if not built.get("ok", false):
+		return _presentation_failure(family, String(built.get("reason", "frame_load_failed")))
+	_observe("first_frame_loaded", {"track_id": track_id, "frame": 0})
+	var target: AnimatedSprite2D = body_b if active_body == 0 else body_a
+	var old: AnimatedSprite2D = body_a if active_body == 0 else body_b
+	target.sprite_frames = built["frames"]
+	target.animation = track_id
+	target.frame = 0
+	target.visible = true
+	target.modulate.a = 1.0
+	target.pause()
+	old.visible = false
+	active_body = 1 - active_body
+	current_track = track_id
+	current_family = family
+	current_track_data = track
+	await get_tree().process_frame
+	var current: AnimatedSprite2D = body_a if active_body == 0 else body_b
+	if current != target or not target.visible or target.frame != 0 or target.sprite_frames.get_frame_texture(track_id, 0) == null:
+		return _presentation_failure(family, "first_frame_not_presented")
+	_observe("first_frame_presented", {"track_id": track_id, "frame": 0})
+	return {"status": "first_frame_presented", "track_id": track_id, "frame": 0}
 
-func play_track(family: String, direction: String = "front_left", posture: String = "neutral", variant: int = 1, stage: String = TRACK_STAGE) -> void:
-	var track_id := _track_id_for(family, direction, posture, variant, stage)
-	var frames := _frames_for(track_id)
-	if frames.get_animation_names().has(track_id) and frames.get_frame_count(track_id) > 0:
-		var target: AnimatedSprite2D = body_b if active_body == 0 else body_a
-		target.sprite_frames = frames
-		target.animation = track_id
-		target.frame = 0
-		target.play()
-		target.visible = true
-		target.modulate.a = 0.0
-		var old: AnimatedSprite2D = body_a if active_body == 0 else body_b
-		var tween := create_tween().set_parallel(true)
-		tween.tween_property(target, "modulate:a", 1.0, 0.08)
-		if old.visible: tween.tween_property(old, "modulate:a", 0.0, 0.08)
-		tween.chain().tween_callback(func(): old.visible = false)
-		active_body = 1 - active_body
-		current_clip = family
-		frame_marker.emit({"schema_major":1,"event_type":"frame_marker","clip_id":family,"track_id":track_id,"frame":0,"generation":generation})
-	else:
-		clip_failed.emit({"schema_major":1,"event_type":"clip_failed","clip_id":family,"track_id":track_id,"status":"degraded","reason":"corrupt_or_empty_pack","generation":generation})
+func start_presented_track() -> void:
+	var current: AnimatedSprite2D = body_a if active_body == 0 else body_b
+	current.play()
 
-func _track_id_for(family: String, facing: String, posture: String, variant: int, stage: String) -> String:
-	for candidate in temporal_tracks:
-		var candidate_facing := String(candidate.get("facing", candidate.get("direction", "")))
-		if candidate.get("family", "") == family and candidate_facing == facing and candidate.get("posture", "") == posture and int(candidate.get("variant", 1)) == variant:
-			return String(candidate.get("track_id", ""))
-	return "mon-body-v1:%s:%s:%s:%s:%d" % [stage, family, facing, posture, variant]
+func _presentation_failure(family: String, reason: String) -> Dictionary:
+	var event := {"event_type": "clip_failed", "clip_id": family, "status": "failed", "reason": reason, "generation": generation}
+	clip_failed.emit(event)
+	return event
 
 func _on_frame_changed(sprite: AnimatedSprite2D) -> void:
-	if sprite.visible and sprite == (body_a if active_body == 0 else body_b):
-		frame_marker.emit({"schema_major":1,"event_type":"frame_marker","clip_id":current_clip,"track_id":sprite.animation,"frame":sprite.frame,"generation":generation})
+	var current: AnimatedSprite2D = body_a if active_body == 0 else body_b
+	if sprite.visible and sprite == current:
+		var event := {"event": "frame_changed", "clip_id": current_family, "track_id": current_track, "frame": sprite.frame, "generation": generation}
+		frame_marker.emit(event)
+		_observe("frame_changed", event)
+		for marker in current_track_data.get("events", []):
+			if int(marker.get("frame_index", -1)) == sprite.frame:
+				_observe("track_event", {"track_id": current_track, "name": marker.get("name"), "tick": marker.get("tick"), "frame": sprite.frame})
 
 func _on_animation_finished(sprite: AnimatedSprite2D) -> void:
-	if sprite.visible and not sprite.sprite_frames.get_animation_loop(sprite.animation):
-		clip_completed.emit({"schema_major":1,"event_type":"clip_completed","clip_id":current_clip,"track_id":sprite.animation,"generation":generation})
+	var current: AnimatedSprite2D = body_a if active_body == 0 else body_b
+	if sprite.visible and sprite == current and not sprite.sprite_frames.get_animation_loop(sprite.animation):
+		var event := {"event": "completed", "clip_id": current_family, "track_id": current_track, "generation": generation}
+		clip_completed.emit(event)
+		_observe("completed", event)
+		_observe("visible_state", visible_state())
 
 func visible_state() -> Dictionary:
 	var current: AnimatedSprite2D = body_a if active_body == 0 else body_b
-	return {"schema_major":1,"event_type":"current_visible_body_state","clip_id":current_clip,"track_id":current.animation,"frame":current.frame,"playing":current.is_playing(),"generation":generation}
+	return {"schema_major": 1, "event_type": "current_visible_body_state", "event": "visible_state", "clip_id": current_family, "track_id": current_track, "frame": current.frame, "playing": current.is_playing(), "generation": generation}

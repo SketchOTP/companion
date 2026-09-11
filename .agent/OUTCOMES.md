@@ -642,3 +642,13 @@ empty synthetic fixture for `mon-temporal-track-v2`. The narrow mapping fix was
 published as `83909a894ad47e101bcf369b707f636624302a52`; focused Phase 02 run
 `34631901926` and inherited Phase 01 run `34631901998` then passed. No visual
 approval, Phase 02 acceptance, or later capability was inferred.
+
+## 2026-09-11 — R04 local authored-frame boundary
+
+The R03 procedural art path is disconnected and explicitly labeled rejected
+negative evidence. A synthetic-only two-frame pack passed byte-preserving
+intake, content-addressed copy, explicit Rust deserialization/reserialization,
+Godot exact-track selection, first-frame-before-started ordering, 24 Hz timing,
+missing/ineligible/hash-corrupt rejection, and restoration. Eight source/timing/
+contact/event tamper cases failed closed. Hosted CI and publication remain
+required before handoff; no production art or Phase 02 acceptance is claimed.

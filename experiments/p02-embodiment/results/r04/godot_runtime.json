@@ -1,0 +1,43 @@
+{
+  "authored_pack": {
+    "errors": [],
+    "observations": {
+      "corrupt_reason": "frame_hash_mismatch",
+      "duration_weights": [
+        1,
+        2
+      ],
+      "fps": 24,
+      "ineligible_reason": "approval_ineligible",
+      "missing_track_reason": "track_missing",
+      "restored_status": "started",
+      "valid_event_order": [
+        "intent_received",
+        "track_resolved",
+        "track_validated",
+        "first_frame_loaded",
+        "first_frame_presented",
+        "started",
+        "frame_changed",
+        "track_event",
+        "completed",
+        "visible_state"
+      ]
+    },
+    "status": "PASS"
+  },
+  "identity_smoke": {
+    "candidate_art": false,
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "errors": [],
+    "fixture_role": "one_frame_import_smoke_only",
+    "format": "RGBA8",
+    "source_mutated": false,
+    "status": "PASS"
+  },
+  "status": "PASSED",
+  "unexpected_error_output": false
+}

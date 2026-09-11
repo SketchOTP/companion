@@ -70,3 +70,13 @@ operator visual review and the dedicated Openbox target gate.
    tamper-negative mutations; preserve review GIFs, strips, overlays, and logs.
 6. Run focused and inherited checks, then stop for operator visual approval
    before any full-library expansion or Openbox run.
+# R04 superseding plan
+
+1. Preserve exact references and the rejected R02/R03 audit trail.
+2. Publish the authored-frame request and strongly typed pack contract.
+3. Implement immutable intake, content-addressed storage, and local
+   export/restore.
+4. Correct Godot exact-track resolution and first-frame acknowledgment order.
+5. Exercise only an identity smoke import and obvious synthetic test pack.
+6. Run fail-closed negative, Rust, Godot, clean-clone, and hosted CI gates.
+7. Publish the bounded result and return for Architect-authored frames.

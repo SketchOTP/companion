@@ -60,6 +60,15 @@ Include exact:
 Do not state that the art, three-quarter views, animation library, or phase is
 approved unless the operator and Architect explicitly approve it.
 
+## R04 handoff contract
+
+Return `CODEX RESULT — COMPANION-P02-EMBODIMENT-001-R04` with the superseded
+R03 paths, intake layout, Architect frame request, explicit schema/Rust type
+inventory, source-preservation hashes, actual generated-pack Rust result,
+Godot event order, failure/recovery matrix, hosted workflow/artifact IDs, and
+final status `READY_FOR_ARCHITECT_FRAME_PACK`. Do not request visual approval;
+no production frames have landed.
+
 ## Codex execution summary
 
 The candidate implementation is ready for review with automated evidence, but

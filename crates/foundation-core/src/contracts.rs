@@ -181,6 +181,186 @@ pub struct MonTemporalTracksV2 {
     pub tracks: Vec<MonTemporalTrackV2>,
 }
 
+/// Immutable externally authored frame-pack boundary. Production eligibility
+/// is a manifest property, never something inferred from a filename.
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum Facing {
+    Front,
+    FrontRight,
+    Right,
+    BackRight,
+    Back,
+    BackLeft,
+    Left,
+    FrontLeft,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum Posture {
+    Neutral,
+    Listening,
+    Acknowledging,
+    Walking,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum ApprovalState {
+    Candidate,
+    OperatorApproved,
+    Rejected,
+    SyntheticTestOnly,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum ContactState {
+    Planted,
+    Swing,
+    Clear,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum TrackCompletion {
+    Once,
+    Loop,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct LandmarkPoint {
+    pub x: u16,
+    pub y: u16,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct FrameLandmarks {
+    pub root: LandmarkPoint,
+    pub head: LandmarkPoint,
+    pub eye_left: LandmarkPoint,
+    pub eye_right: LandmarkPoint,
+    pub hand_left: LandmarkPoint,
+    pub hand_right: LandmarkPoint,
+    pub foot_left: LandmarkPoint,
+    pub foot_right: LandmarkPoint,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct ContactSpan {
+    pub landmark: String,
+    pub state: ContactState,
+    pub start_tick: u32,
+    pub end_tick: u32,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct AnimationEvent {
+    pub name: String,
+    pub tick: u32,
+    pub frame_index: u16,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct TimingProfile {
+    pub fps: u16,
+    pub tick_unit: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct FrameProvenance {
+    pub authored_by: String,
+    pub method: String,
+    pub source_revision: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct PackProvenance {
+    pub art_authority: String,
+    pub generation_or_edit_method: String,
+    pub source_authority: String,
+    pub rights_record: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct InterruptionRange {
+    pub start_tick: u32,
+    pub end_tick: u32,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct ApprovedReferenceHashes {
+    pub identity_sha256: String,
+    pub turnaround_sha256: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct SourceRuntimeRelationship {
+    pub source_sha256: String,
+    pub content_address: String,
+    pub runtime_asset: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct AuthoredFrame {
+    pub frame_id: String,
+    pub frame_index: u16,
+    pub filename: String,
+    pub sidecar_filename: String,
+    pub duration_ticks: u16,
+    pub source_sha256: String,
+    pub root: LandmarkPoint,
+    pub landmarks: FrameLandmarks,
+    pub provenance: FrameProvenance,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct AuthoredTrack {
+    pub track_id: String,
+    pub family: String,
+    pub facing: Facing,
+    pub posture: Posture,
+    pub variant: u16,
+    pub entry_posture: Posture,
+    pub exit_posture: Posture,
+    pub completion: TrackCompletion,
+    pub frames: Vec<AuthoredFrame>,
+    pub contacts: Vec<ContactSpan>,
+    pub events: Vec<AnimationEvent>,
+    pub interruption_ranges: Vec<InterruptionRange>,
+    pub track_checksum: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct MonAuthoredFramePackV1 {
+    pub profile: String,
+    pub schema_version: u16,
+    pub pack_id: Uuid,
+    pub pack_revision: String,
+    pub body_revision: String,
+    pub developmental_stage: String,
+    pub approval_state: ApprovalState,
+    pub approved_references: ApprovedReferenceHashes,
+    pub provenance: PackProvenance,
+    pub timing: TimingProfile,
+    pub tracks: Vec<AuthoredTrack>,
+    pub source_runtime_relationships: Vec<SourceRuntimeRelationship>,
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct EmbodimentEvent {
     pub schema_major: u16,
@@ -218,8 +398,8 @@ pub struct DegradedState {
 #[cfg(test)]
 mod tests {
     use super::{
-        MonAnimationClip, MonAnimationTrack, MonAnimationTrackFrame, MonTemporalTrackV2,
-        MonTemporalTracksV2,
+        ApprovalState, MonAnimationClip, MonAnimationTrack, MonAnimationTrackFrame,
+        MonAuthoredFramePackV1, MonTemporalTrackV2, MonTemporalTracksV2,
     };
 
     #[test]
@@ -324,5 +504,20 @@ mod tests {
             assert_eq!(round_trip.version, 2);
             assert_eq!(round_trip.fps, 24);
         }
+    }
+
+    #[test]
+    fn authored_frame_pack_fixture_round_trips_with_explicit_types() {
+        let fixture = include_str!("../../../contracts/fixtures/mon-authored-frame-pack-v1.json");
+        let pack: MonAuthoredFramePackV1 =
+            serde_json::from_str(fixture).expect("R04 authored pack fixture deserializes");
+        assert_eq!(pack.profile, "MON_AUTHORED_FRAME_PACK_V1");
+        assert_eq!(pack.approval_state, ApprovalState::SyntheticTestOnly);
+        assert_eq!(pack.timing.fps, 24);
+        assert_eq!(pack.tracks[0].frames[0].root.x, 512);
+        let encoded = serde_json::to_vec(&pack).expect("R04 pack reserializes");
+        let decoded: MonAuthoredFramePackV1 =
+            serde_json::from_slice(&encoded).expect("R04 pack round trips");
+        assert_eq!(pack, decoded);
     }
 }

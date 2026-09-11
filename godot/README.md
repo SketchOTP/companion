@@ -6,17 +6,24 @@ qualification cache and is never committed. Geometry belongs in XDG state,
 not this checkout. The shell deliberately contains no sprites, media capture,
 speech, model inference, organism behavior, or care behavior.
 
-The Phase 02 workflow stages the generated `MON_TEMPORAL_TRACKS_V1` artifact
-under `godot/assets/p02-core/` for ephemeral import and headless playback. A
-local run may do the same from the private output of
-`build_core_motion.py`; the generated corpus is intentionally absent from the
-ordinary-Git tree. `MonAvatar` loads one SpriteFrames animation per temporal
-track at an explicit 12 FPS and reports observed frame/completion markers.
+R04 accepts only `MON_AUTHORED_FRAME_PACK_V1`. `MonAvatar` reads an explicit
+pack path, independently enforces operation-specific approval eligibility,
+checks every source hash, and constructs a 24 FPS `SpriteFrames` track from
+integer 1/24-second duration weights. Source PNGs remain outside Godot's
+generated import cache and are loaded into derived `ImageTexture` objects
+without source mutation.
 
-## Architect Review 02 proof mode
+## Superseded proof modes
 
-The active workflow stages the private output of `build_motion_proof.py` as
-`res://assets/p02-core/`. The headless check expects exactly six proof tracks at
-the `front_left` facing and observes frame-marker events from the actual
-`AnimatedSprite2D` signal path. The previous all-direction track counts are
-superseded and are not loaded by the proof scene.
+R02/R03 procedural proof scripts and resources are retained only as negative
+evidence. They are not imported by `MonAvatar`, are not a runtime fallback, and
+must not be presented as candidate production art.
+
+## R04 synthetic runtime gate
+
+`r04_authored_pack_test.gd` uses an obviously geometric
+`synthetic_test_only` pack. It proves exact track selection, first-frame
+presentation before `started`, 24 Hz duration weights, event/completion order,
+and fail-closed missing, ineligible, and hash-corrupt paths followed by
+restoration. `r04_identity_smoke_test.gd` loads the exact approved identity as
+a one-frame import smoke fixture only; it is not candidate animation.

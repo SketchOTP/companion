@@ -1,17 +1,23 @@
 # Phase 02 embodiment qualification and asset pipeline
 
-This directory contains deterministic, disposable authoring and validation
-tools for `COMPANION-P02-EMBODIMENT-001`.  It is not the Companion organism,
-memory, speech, perception, care, or production runtime.  Generated drawings
-are identity-faithful candidates and remain pending operator visual approval.
+This directory contains deterministic, disposable intake and validation tools
+for `COMPANION-P02-EMBODIMENT-001`. It is not the Companion organism, memory,
+speech, perception, care, or production runtime. R04 generates only obvious
+geometric test graphics; all production character pixels belong to the AI
+Architect and visual approval belongs to the Operator.
 
 The pipeline uses only Python's standard library and the already available
 Pillow runtime for local rasterization.  No package is added to the production
 workspace.  The historical `build_assets.py` and `build_core_motion.py`
-outputs are retained as rejected/superseded evidence. The active
-reference-grounded gate is `build_motion_proof.py`, which reads the exact native
-identity PNG, emits six bounded temporal proof tracks, and writes generated
+outputs are retained as rejected/superseded evidence. Historical
+`build_motion_proof.py` reads the exact native identity PNG, emits six bounded
+temporal proof tracks, and writes generated
 frames to a caller-owned artifact directory (never the Git tree).
+
+The active R04 path is `build_r04_synthetic_pack.py` →
+`intake_authored_frame_pack.py` → actual Rust pack validation →
+`r04_authored_pack_test.gd`. Intake copies source bytes without alteration;
+R03 has no path into `MonAvatar`.
 
 Run from the repository root:
 
@@ -47,18 +53,14 @@ raster proof was rendered while the `resvg` vector rasterizer was unavailable on
 the current host; this is an explicit comparison limitation, not a dependency
 adoption.
 
-## R03 articulated-body correction
+## R03 rejected negative evidence
 
-`build_r03_motion.py` is the active R03 proof baker. It reads the explicit
-`MON_BODY_SOURCE_V2` hierarchy, emits a deterministic `MON_TEMPORAL_TRACKS_V2`
-manifest, and writes generated frames and review derivatives to a caller-owned
-temporary directory. `validate_r03_motion.py` derives root, contacts, safety
-bounds, temporal change, source-part coverage, checksums, and Draft 2020-12
-schema results from those outputs and includes tamper-negative mutations.
+`build_r03_motion.py` is retained only to reproduce the rejected R03 output
+with `--negative-evidence`. It reads the explicit
+`MON_BODY_SOURCE_V2` description and writes the formerly submitted output to a
+caller-owned temporary directory. Its metadata checks are retained only to
+show what the rejected experiment asserted; they are not identity, rig,
+contact, or motion-quality evidence.
 
-Godot's `r03_temporal_playback_test.gd` loads every actual generated PNG into
-`AnimatedSprite2D`, sets 24 FPS, uses integer duration ticks as relative
-weights, and observes frame progression and completion. The headless dummy
-renderer cannot expose a readable SubViewport texture, so the Python baker is
-explicitly a qualification-only raster mirror of the editable Godot source;
-this does not claim a production authoring method or operator approval.
+Godot's old `r03_temporal_playback_test.gd` is likewise historical negative
+evidence. R04 has no code path from these files to `MonAvatar`.

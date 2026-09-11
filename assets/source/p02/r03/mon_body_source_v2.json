@@ -1,5 +1,6 @@
 {
   "profile": "MON_BODY_SOURCE_V2",
+  "evidence_status": "REJECTED_AS_PRODUCTION_ART_NEGATIVE_EVIDENCE_ONLY",
   "body_revision": "mon-body-v2-r03",
   "source_references": {
     "identity_master_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",

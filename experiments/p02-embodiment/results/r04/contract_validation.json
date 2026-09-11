@@ -1,0 +1,6 @@
+{
+  "draft_2020_12": "schemas_semantic_ok count=13 positive_and_negative=all",
+  "generated_pack_schema_validated_by_intake": true,
+  "rust_schema_crosswalk": "contract_semantic_crosswalk_ok count=12 required_fields_and_types=checked",
+  "status": "PASSED"
+}

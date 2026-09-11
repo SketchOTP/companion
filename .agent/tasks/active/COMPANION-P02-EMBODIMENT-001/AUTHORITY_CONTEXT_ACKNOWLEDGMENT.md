@@ -81,3 +81,25 @@ scale, final pack/atlas production, dedicated Openbox endurance, and operator
 visual approval remain closed gates. Architecture v1.0 and Phase 01 remain
 unchanged; no organism, memory, speech, perception, care, or Phase 03+ work is
 authorized.
+
+## Architect Review 04 delta acknowledgment — 2026-09-11
+
+Review 04, the live Phase 02 directive/report, canonical project, end goal,
+Architecture v1.0, R04, R10, ADR-54, ADR-55, PR #9, and Issue #8 were fetched
+and reconciled. Live queries returned 55 ADRs (33 Adopted, 20 Interim, 2
+Rejected) and 56 evidence records. Both exact approved PNGs were directly
+inspected and their committed hashes remain exact.
+
+The R03 body and procedural renderers are rejected negative evidence and are
+not candidate art or fallback code. Production pixels and temporal key poses
+belong to the AI Architect; visual approval belongs to the Operator. Codex is
+authorized only to implement immutable intake, typed contracts, derivatives,
+Godot presentation, CI, and evidence, using obvious synthetic graphics for
+tests.
+
+Secondary work began clean apart from protected local Graft artifacts
+(`.gitignore` modified and `.ignore` untracked), which were not read, altered,
+staged, or committed. `origin/main` at
+`c06feea4966294dd741c740d2b8ccfd4443abcbd` merged normally as
+`928ba4b8e52b8cadb9c8861ad066d2d8a91366a4`. Retrieval confidence is
+`ADEQUATE`; R04 execution is authorized by this preflight: `YES`.

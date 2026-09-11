@@ -56,3 +56,12 @@ proof gate only. It supersedes the prior pre-approval counts of 32 families,
 current proof is six front-left tracks and 26 drawings. Operator selection of
 construction and motion language is required before scale expansion; neither
 the vector/path nor layered-raster candidate is adopted.
+# R04 superseding specification
+
+The active deliverable is no longer a Codex-authored body or motion proof. It
+is `MON_AUTHORED_FRAME_PACK_V1`, the exact
+`ARCHITECT_FRAME_REQUEST_V1.md`, byte-preserving content-addressed intake,
+explicit Rust contract types, and fail-closed Godot presentation. Production
+packaging accepts only `operator_approved`; all R03 art is negative evidence.
+The required final status is `READY_FOR_ARCHITECT_FRAME_PACK` and does not
+accept Phase 02.

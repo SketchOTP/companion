@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
-"""Bake the R03 articulated proof from the editable Godot body source.
+"""Reproduce rejected R03 procedural output as negative evidence only.
 
-The source of truth is ``godot/mon_body_source_v2.tscn`` and its explicit
-named part hierarchy.  The deterministic Python baker mirrors those named
-parts for a review-only MON_FRAME_V1 raster bake because the Godot dummy
-renderer cannot expose a readable SubViewport texture.  Godot remains the
-editable authoring source and validates/plays the resulting raster tracks.
+This former procedural renderer did not share a visual source of truth with
+the Godot scene and did not preserve the approved identity. It is guarded so
+it cannot silently function as a production or runtime fallback.
 """
 from __future__ import annotations
 
@@ -256,7 +254,9 @@ def overlay(paths: list[Path], out: Path, mode: str) -> None:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(); ap.add_argument("--out", type=Path, required=True); ap.add_argument("--godot"); ap.add_argument("--clean", action="store_true"); args = ap.parse_args()
+    ap = argparse.ArgumentParser(); ap.add_argument("--out", type=Path, required=True); ap.add_argument("--godot"); ap.add_argument("--clean", action="store_true"); ap.add_argument("--negative-evidence", action="store_true"); args = ap.parse_args()
+    if not args.negative_evidence:
+        raise SystemExit("R03 is rejected negative evidence; pass --negative-evidence to reproduce it explicitly")
     out = args.out.resolve()
     if args.clean and out.exists(): shutil.rmtree(out)
     out.mkdir(parents=True, exist_ok=True)

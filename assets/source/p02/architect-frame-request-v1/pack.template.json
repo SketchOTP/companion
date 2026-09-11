@@ -1,0 +1,22 @@
+{
+  "profile": "MON_AUTHORED_FRAME_PACK_V1",
+  "schema_version": 1,
+  "pack_id": "00000000-0000-4000-8000-000000000000",
+  "pack_revision": "replace-me-v1",
+  "body_revision": "replace-me-v1",
+  "developmental_stage": "candidate",
+  "approval_state": "candidate",
+  "approved_references": {
+    "identity_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+    "turnaround_sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
+  },
+  "provenance": {
+    "art_authority": "AI Architect",
+    "generation_or_edit_method": "describe exact authoring and edits",
+    "source_authority": "durable authority URL or record ID",
+    "rights_record": "durable rights and source record"
+  },
+  "timing": {"fps": 24, "tick_unit": "1/24_second"},
+  "tracks": [],
+  "source_runtime_relationships": []
+}

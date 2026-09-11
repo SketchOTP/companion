@@ -1,9 +1,13 @@
 class_name MonBodySourceV2
 extends Node2D
 
-## Editable, Godot-native R03 authoring source.  The rendered body is made of
-## explicit named parts and bounded transforms; the runtime still consumes
-## baked raster frames.  No organism or care state is represented here.
+## REJECTED R03 NEGATIVE EVIDENCE ONLY. This procedural body is not a
+## production source, runtime fallback, or operator-review candidate.
+
+func _ready() -> void:
+	if OS.get_environment("COMPANION_ALLOW_R03_NEGATIVE_EVIDENCE") != "1":
+		visible = false
+		set_process(false)
 
 const ROOT := Vector2(512, 896)
 const BASE := Color("7541D4")

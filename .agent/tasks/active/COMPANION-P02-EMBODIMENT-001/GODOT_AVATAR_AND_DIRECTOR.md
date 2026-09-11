@@ -56,3 +56,10 @@ focused `r03_temporal_playback_test.gd` creates actual `AnimatedSprite2D`
 resources from every generated frame, observes frame-change signals and
 terminal once-track state, and rejects missing-track selection. Godot owns only
 presentation execution; no organism or care authority is introduced.
+# R04 runtime acknowledgment boundary
+
+The director resolves an exact authored track and delegates presentation to
+`MonAvatar`. Missing, ineligible, malformed, hash-mismatched, corrupt, or
+unloadable tracks emit failure and never emit `started`. `started` follows an
+observed visible frame-zero assignment after one process frame. Playback then
+uses explicit 24 FPS and integer relative-duration weights.

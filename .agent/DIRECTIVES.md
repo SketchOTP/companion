@@ -362,3 +362,12 @@ schema/Rust/Godot contracts, 24-FPS raster playback, rendered root/contact QA,
 tamper negatives, and accessible review derivatives. Do not scale the library,
 run Openbox endurance, or request operator approval until this candidate proof
 is complete. Preserve all R02 proxy-motion evidence as superseded history.
+
+## 2026-09-11 — Architect Review 04 authored-frame boundary
+
+Supersede R03 visual invention and preserve it only as negative evidence.
+Codex must implement `MON_AUTHORED_FRAME_PACK_V1`, an unambiguous Architect
+frame request, immutable content-addressed intake, explicit Rust types, and a
+Godot first-frame-before-started runtime gate. Only obvious synthetic graphics
+may be generated. Return `READY_FOR_ARCHITECT_FRAME_PACK`; do not request
+operator approval or accept Phase 02.

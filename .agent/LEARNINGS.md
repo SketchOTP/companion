@@ -434,3 +434,12 @@ mirror limitation rather than claiming a Godot raster bake.
 Adding a new schema can break inherited gates when their fixture maps are
 explicit. The v2 temporal-track fixture must be included in the shared
 contract closeout; hosted Phase 02 and Phase 01 runs are the regression proof.
+
+## 2026-09-11 — Immutable art authority beats procedural repair
+
+Identity fidelity cannot be recovered by adding more metadata to a coding-
+agent renderer. Keep Architect-authored full-frame PNG bytes immutable, make
+approval an explicit manifest state, separate content-addressed sources from
+derivatives, and acknowledge playback only after frame zero is actually
+selected, loaded, and observed. Synthetic geometry is useful for protocol
+tests precisely because it cannot be mistaken for production character art.

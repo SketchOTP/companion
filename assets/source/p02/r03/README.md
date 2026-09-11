@@ -1,17 +1,16 @@
-# R03 editable embodiment proof
+# R03 superseded negative evidence
 
-This directory contains the candidate `MON_BODY_SOURCE_V2` hierarchy and
-selected review derivatives for Architect and operator review. It is not an
-approved production body. The six-view turnaround and identity master under
-`assets/source/p02/references/` are the canonical inputs; their hashes are
-recorded in `mon_body_source_v2.json`.
+Status: `REJECTED_AS_PRODUCTION_ART` / `NEGATIVE_EVIDENCE_ONLY`.
 
-The Godot scene is the editable source with explicit pivots, limbs, digits,
-feet, replacement-drawing slots, and bounded pose controls. The deterministic
-Python baker in `experiments/p02-embodiment/scripts/build_r03_motion.py`
-mirrors those named source parts to produce review-only full-canvas PNGs and
-ordered motion artifacts. Runtime animation remains raster `SpriteFrames`;
-the Godot scene is not a skeletal-runtime substitute.
+This directory preserves the rejected R03 `MON_BODY_SOURCE_V2` hierarchy and
+selected derivatives so the failed claim remains auditable. It is not a
+candidate body, production source, runtime fallback, or operator-review pack.
+The visual implementation did not preserve the approved identity and its two
+procedural renderers were not one source of truth.
 
-All diagonals, temporal tracks, anatomy, palette, and motion in this directory
-remain `CANDIDATE_PENDING_OPERATOR_APPROVAL`.
+The R03 Godot scene and Python baker are deliberately disconnected from the
+R04 intake/runtime path. Reproducing this failure requires an explicit
+negative-evidence switch. No procedural character renderer is a fallback.
+
+Production identity-critical pixels must arrive through
+`ARCHITECT_FRAME_REQUEST_V1.md` as Architect-authored immutable frames.

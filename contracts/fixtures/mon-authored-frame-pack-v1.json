@@ -1,0 +1,46 @@
+{
+  "profile": "MON_AUTHORED_FRAME_PACK_V1",
+  "schema_version": 1,
+  "pack_id": "00000000-0000-4000-8000-000000000401",
+  "pack_revision": "synthetic-r04-v1",
+  "body_revision": "synthetic-geometric-v1",
+  "developmental_stage": "synthetic",
+  "approval_state": "synthetic_test_only",
+  "approved_references": {
+    "identity_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+    "turnaround_sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
+  },
+  "provenance": {
+    "art_authority": "synthetic_test_fixture",
+    "generation_or_edit_method": "obvious geometric test fixture",
+    "source_authority": "COMPANION-P02-EMBODIMENT-001-R04",
+    "rights_record": "project-authored synthetic test data; not production character art"
+  },
+  "timing": {"fps": 24, "tick_unit": "1/24_second"},
+  "tracks": [{
+    "track_id": "synthetic:test_pulse:front:neutral:1",
+    "family": "test_pulse",
+    "facing": "front",
+    "posture": "neutral",
+    "variant": 1,
+    "entry_posture": "neutral",
+    "exit_posture": "neutral",
+    "completion": "once",
+    "frames": [{
+      "frame_id": "test_pulse_front_neutral_01_000",
+      "frame_index": 0,
+      "filename": "test_pulse__front__neutral__v01__f000.png",
+      "sidecar_filename": "test_pulse__front__neutral__v01__f000.frame.json",
+      "duration_ticks": 1,
+      "source_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "root": {"x": 512, "y": 896},
+      "landmarks": {"root": {"x": 512, "y": 896}, "head": {"x": 512, "y": 256}, "eye_left": {"x": 448, "y": 320}, "eye_right": {"x": 576, "y": 320}, "hand_left": {"x": 320, "y": 560}, "hand_right": {"x": 704, "y": 560}, "foot_left": {"x": 448, "y": 896}, "foot_right": {"x": 576, "y": 896}},
+      "provenance": {"authored_by": "synthetic_fixture_builder", "method": "geometric test pattern", "source_revision": "r04-v1"}
+    }],
+    "contacts": [{"landmark": "foot_left", "state": "planted", "start_tick": 0, "end_tick": 1}],
+    "events": [{"name": "test_marker", "tick": 0, "frame_index": 0}],
+    "interruption_ranges": [{"start_tick": 0, "end_tick": 1}],
+    "track_checksum": "0000000000000000000000000000000000000000000000000000000000000000"
+  }],
+  "source_runtime_relationships": [{"source_sha256": "0000000000000000000000000000000000000000000000000000000000000000", "content_address": "sha256/00/0000000000000000000000000000000000000000000000000000000000000000.png", "runtime_asset": "frames/test_pulse_front_neutral_01_000.png"}]
+}

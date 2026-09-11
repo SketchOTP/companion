@@ -57,3 +57,9 @@ anatomy coverage, frame/track hashes, schema, and 24-FPS timing. Five
 tamper-negative mutations fail closed. Review derivatives for all five tracks
 are committed under `assets/source/p02/r03/review/`; operator approval is still
 pending and no full-library review may be requested.
+# R04 review boundary
+
+No visual approval package is produced or requested. The approved identity is
+used only as a one-frame import smoke fixture. The geometric animation pack is
+`synthetic_test_only`. Operator review begins only after the AI Architect lands
+the bounded pack described by `ARCHITECT_FRAME_REQUEST_V1.md`.

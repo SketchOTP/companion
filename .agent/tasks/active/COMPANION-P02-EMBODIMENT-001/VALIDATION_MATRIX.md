@@ -90,3 +90,18 @@ verification.  Openbox two-hour playback remains `NOT RUN`.
 
 R03 status is bounded `E3_TARGET_TESTED` candidate evidence; operator visual
 approval, complete library, Openbox endurance, and later phases remain deferred.
+# R04 superseding validation matrix
+
+| Check | Required result |
+|---|---|
+| Valid synthetic intake | PASSED; exact source/CAS/runtime bytes |
+| Wrong dimensions / mode / hash | REJECTED with exact reason |
+| Ineligible approval | REJECTED before presentation |
+| Missing landmark | REJECTED |
+| Contact / duration / event tamper | REJECTED |
+| Missing required Rust pack path | nonzero |
+| Actual generated-pack Rust round trip | PASSED |
+| Exact Godot track | frame zero presented before `started` |
+| Missing/corrupt pack | failed/degraded; no `started` |
+| Restored pack | exact track starts |
+| Clean clone and hosted CI | required before handoff |

@@ -1,0 +1,23 @@
+{
+  "frame_id": "walk_front_left_walking_01_000",
+  "frame_index": 0,
+  "filename": "walk__front_left__walking__v01__f000.png",
+  "duration_ticks": 1,
+  "source_sha256": "replace-with-exact-lowercase-sha256",
+  "root": {"x": 512, "y": 896},
+  "landmarks": {
+    "root": {"x": 512, "y": 896},
+    "head": {"x": 512, "y": 256},
+    "eye_left": {"x": 448, "y": 320},
+    "eye_right": {"x": 576, "y": 320},
+    "hand_left": {"x": 320, "y": 560},
+    "hand_right": {"x": 704, "y": 560},
+    "foot_left": {"x": 448, "y": 896},
+    "foot_right": {"x": 576, "y": 896}
+  },
+  "provenance": {
+    "authored_by": "AI Architect",
+    "method": "exact source-frame method",
+    "source_revision": "replace-me-v1"
+  }
+}

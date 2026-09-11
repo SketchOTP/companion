@@ -516,3 +516,12 @@ contract-closeout fixture mapping for `mon-temporal-track-v2` after hosted CI
 exposed the omission. Focused Phase 02 run `34631901926` and inherited Phase 01
 run `34631901998` are green. Candidate-only status, protected-work handling,
 and the operator/Openbox gates are unchanged.
+
+## 2026-09-11 — R04 branch reconciliation and implementation record
+
+Review 04 commit `c06feea4966294dd741c740d2b8ccfd4443abcbd` merged normally as
+`928ba4b8e52b8cadb9c8861ad066d2d8a91366a4`. The protected primary changes
+and secondary Graft artifacts were not altered. R04 replaces the candidate-art
+path with immutable authored-frame intake and a synthetic-only runtime gate.
+Architecture v1.0 and accepted Phase 01 remain unchanged; Phase 02 remains
+active and unaccepted.
