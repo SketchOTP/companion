@@ -9,7 +9,7 @@ def main():
     # Four diagonal candidates are represented by authored direction frames and
     # explicitly marked as candidates; no mirror is used.
     im,d=canvas("MON_CONSTRUCTION_V1 — diagonal candidates (operator review)")
-    names=["greeting_NE_075.png","greeting_SE_077.png","retreat_SW_173.png","retreat_NW_175.png"]
+    names=["greeting_NE_073.png","greeting_SE_075.png","retreat_SW_173.png","retreat_NW_175.png"]
     for i,n in enumerate(names):
         p=OUT/"frames"/n
         if p.exists():
