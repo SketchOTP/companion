@@ -47,3 +47,11 @@ Core generation/validation is bounded engineering evidence only.  The prior
 direction-catalog timing and transition numbers are superseded.  Required
 10,000 real temporal transition cases and two-hour dedicated 1366×768 Openbox
 playback remain pending until operator motion approval and target access.
+
+## R04 status
+
+`NOT RUN` for production motion, 10,000 production temporal transitions,
+dedicated Openbox playback, and two-hour endurance. R04 intentionally supplies
+an immutable intake/runtime boundary, not production animation. The retained
+prior timing and target-host observations do not establish the absent
+Architect-authored pack or Phase 02 acceptance.

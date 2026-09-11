@@ -443,3 +443,12 @@ approval an explicit manifest state, separate content-addressed sources from
 derivatives, and acknowledge playback only after frame zero is actually
 selected, loaded, and observed. Synthetic geometry is useful for protocol
 tests precisely because it cannot be mistaken for production character art.
+
+## 2026-09-11 — Scope private-data gates to the changed evidence surface
+
+A repository-wide literal scan can fail on preserved historical evidence even
+when the new intake/runtime boundary contains no private identifier. Keep the
+gate fail-closed on every R04 source, result, workflow, and active-state file,
+remove new hard-coded private paths, and preserve older records rather than
+rewriting them to satisfy a new scope. Hosted run `34655914553` exposed this
+distinction; `34656090767` verified the corrected gate.

@@ -129,3 +129,49 @@ The validator consumes the result hashes and rejects semantic tampering.
 
 R03 visual, rig, identity, and motion claims are `SUPERSEDED` and remain only
 as negative evidence. R04 produces no production character pixels.
+
+## R04 local and hosted result
+
+- Implementation commit: `652cf24368ad8fab03c0439da7e3ca3a75638657`.
+- Fail-closed CI correction: `7a79ddf9400a0d7cacd781d418fffdc625ec3c57`.
+- Valid source intake: `PASSED`; both synthetic frames were byte-identical
+  across input, CAS, and runtime copies.
+- Negative intake cases: wrong dimensions, wrong mode, source-hash tamper,
+  ineligible approval, missing landmark, contact tamper, duration tamper, and
+  event-order tamper were each `REJECTED` for the expected reason.
+- Actual generated-pack Rust round-trip: `PASSED`; missing required pack path
+  returned nonzero.
+- Godot: exact track selected, first frame observed before `started`, 24 Hz
+  relative weights `[1,2]`, missing/ineligible/hash-corrupt rejection, and
+  restoration recovery all `PASSED`; no unexpected `ERROR:` output.
+- Evidence validator: `PASSED`; result-hash, byte-equality, rejection-reason,
+  and event-order tampering each produced rejection.
+- Clean-clone reproduction at implementation commit: `PASSED`; tracked diff
+  remained empty.
+- Focused Phase 02 hosted run `34656090767`: `PASSED`.
+- Artifact `10285600941`,
+  `phase02-embodiment-r04-e4ce8522624ac8e66cc727cb6d18d85b5b028903`,
+  GitHub digest
+  `sha256:39c56c9d43968e870005065b6bebf19700791986c017496b1ea5a03e0e14ff1f`.
+
+Hosted run `34655914553` is preserved as a failed attempt: every substantive
+R04 gate passed, but an over-broad historical private-path scan failed. Commit
+`7a79ddf9400a0d7cacd781d418fffdc625ec3c57` scopes that check to the R04
+surface and removes the hard-coded historical private path; it does not weaken
+the source-intake or runtime gates.
+
+Inherited Phase 01 run `34656090763` is also preserved as failed evidence. Its
+resident closeout observed one `valid_ordinary_observation` as rejected because
+the evidence loop could observe persistence before the companion process had
+removed the shared marker file, permitting a later write/remove race. The
+bounded correction requires both the exact event increment and marker removal
+before another ordinary observation can be submitted. This tightens the
+existing Phase 01 evidence barrier; it does not qualify the single-file handoff
+as production sensor ingress. The corrected local 3,000-message matrix passed:
+3,000 requested and observed, 396 accepted, 2,405 rejected, 199 duplicate,
+zero invalid accepted, 2,802 care attempts, 198 care outcomes, and 198 ordinary
+companion events with zero ordinary care rows.
+
+Evidence ceiling remains `E3_TARGET_TESTED` for the synthetic intake/runtime
+boundary. No production character pixels, accepted body, approved animation,
+visual aliveness, target-host endurance, or Phase 02 acceptance is claimed.

@@ -63,3 +63,12 @@ tracks at one `front_left` facing: idle/breathe (6), walk (8), two orient
 connectors (3 each), listen (3), and acknowledge (3), for 26 drawings. Full
 direction and family expansion waits for operator selection of the canon and
 motion language.
+
+## R04 superseding boundary
+
+No R02 or R03 frame is candidate production animation. The production library
+count is zero until an Architect-authored `MON_AUTHORED_FRAME_PACK_V1` is
+accepted through byte-preserving intake and operator visual approval. R04 uses
+only one approved-identity import smoke frame and an unmistakably geometric
+`synthetic_test_only` timing pack. Full family, facing, and motion-language
+coverage is deferred; no procedural character-art fallback remains.

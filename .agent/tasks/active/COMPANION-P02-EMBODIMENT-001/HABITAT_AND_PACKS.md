@@ -47,3 +47,15 @@ reserved gutter placement, and source-space trim metadata on ≤4096×4096 pages
 The complete frame/atlas corpus is generated as a workflow artifact/private
 local export; only manifests and selected review derivatives remain in Git.
 The dedicated Openbox target remains unavailable and is not reconfigured.
+
+## R04 authored-source storage boundary
+
+Canonical Architect PNG bytes are copied without mutation into
+content-addressed source storage. Runtime copies, review derivatives, atlases,
+and export archives are separate generated outputs. A deterministic local ZIP
+export restored eight files into a fresh directory with an equal tree digest;
+archive SHA-256 is
+`7655de20516eb61aa5bc9f0564960eafe3fa8f52e1461ee8161f565a796bcd00`.
+Godot import metadata and runtime textures are derived without rewriting the
+source PNG. Production atlas scale, Openbox playback, and endurance remain
+deferred pending the Architect frame pack and later visual approval.

@@ -652,3 +652,21 @@ Godot exact-track selection, first-frame-before-started ordering, 24 Hz timing,
 missing/ineligible/hash-corrupt rejection, and restoration. Eight source/timing/
 contact/event tamper cases failed closed. Hosted CI and publication remain
 required before handoff; no production art or Phase 02 acceptance is claimed.
+
+## 2026-09-11 — R04 hosted authored-frame boundary
+
+The focused Phase 02 workflow passed at
+`7a79ddf9400a0d7cacd781d418fffdc625ec3c57` as run `34656090767`. It
+published artifact `10285600941` with GitHub digest
+`sha256:39c56c9d43968e870005065b6bebf19700791986c017496b1ea5a03e0e14ff1f`.
+The result proves only the synthetic byte-preserving intake/runtime boundary:
+required-path Rust round-trip, exact-track Godot selection, first-frame-before-
+started ordering, fail-closed corruption/ineligibility handling, and recovery.
+R03 visual assets remain rejected negative evidence. No production art,
+operator approval, Phase 02 acceptance, or later capability is inferred.
+
+Inherited Phase 01 run `34656090763` failed at the resident closeout after an
+ordinary-observation handoff race. The evidence harness now waits for both the
+exact persisted event and removal of the shared marker before proceeding. The
+failure remains historical evidence and the final branch is not ready until a
+new exact-head Phase 01 run succeeds.

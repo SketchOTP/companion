@@ -105,3 +105,34 @@ approval, complete library, Openbox endurance, and later phases remain deferred.
 | Missing/corrupt pack | failed/degraded; no `started` |
 | Restored pack | exact track starts |
 | Clean clone and hosted CI | required before handoff |
+
+## R04 executed result
+
+| Check | Status | Observation |
+|---|---|---|
+| Valid source intake | `PASSED` | input, content-addressed, and runtime bytes/hash equal for both synthetic frames |
+| Wrong dimension | `PASSED` | rejected as `wrong_dimensions` |
+| Wrong mode | `PASSED` | rejected as `wrong_mode` |
+| Source-hash tamper | `PASSED` | rejected as `source_hash_mismatch` |
+| Approval-state rejection | `PASSED` | rejected as `approval_ineligible` |
+| Missing landmark | `PASSED` | rejected as `landmark_missing` |
+| Contact tamper | `PASSED` | rejected as `contact_invalid` |
+| Duration tamper | `PASSED` | rejected as `duration_invalid` |
+| Event-order tamper | `PASSED` | rejected as `event_order_invalid` |
+| Missing generated-pack path | `PASSED` | Rust validator returned nonzero |
+| Actual generated-pack Rust round trip | `PASSED` | required exported path consumed; one typed track reserialized |
+| Godot exact-track selection | `PASSED` | exact synthetic track selected at 24 FPS |
+| First-frame acknowledgment order | `PASSED` | `first_frame_presented` observed before `started` |
+| Missing track | `PASSED` | `track_missing`; no `started` |
+| Ineligible pack | `PASSED` | `approval_ineligible`; no `started` |
+| Corrupt frame | `PASSED` | `frame_hash_mismatch`, degraded |
+| Restoration | `PASSED` | restored exact pack emitted `started` after frame-zero presentation |
+| Result validator tamper negatives | `PASSED` | hash, byte equality, rejection reason, and event order each rejected |
+| Clean clone at implementation commit | `PASSED` | complete R04 evidence plus Cargo/contract checks; tracked diff empty |
+| Focused Phase 02 hosted run | `PASSED` | run `34656090767`; artifact `10285600941` |
+| Inherited Phase 01 hosted run | `FAILED` | run `34656090763` exposed an intermittent ordinary-observation marker race |
+| Corrected 3,000-message local matrix | `PASSED` | 3,000/3,000 exact accounting; 198/198 ordinary observations persisted with the consumption barrier |
+
+The failed inherited run is not converted to a pass. Final reconciliation and
+new exact-head hosted Phase 01 validation remain required. Production art, animation,
+Openbox endurance, and Phase 02 acceptance remain `NOT RUN`.

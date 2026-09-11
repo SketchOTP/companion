@@ -525,3 +525,20 @@ and secondary Graft artifacts were not altered. R04 replaces the candidate-art
 path with immutable authored-frame intake and a synthetic-only runtime gate.
 Architecture v1.0 and accepted Phase 01 remain unchanged; Phase 02 remains
 active and unaccepted.
+
+## 2026-09-11 — R04 hosted evidence record
+
+Implementation `652cf24368ad8fab03c0439da7e3ca3a75638657` and CI correction
+`7a79ddf9400a0d7cacd781d418fffdc625ec3c57` were pushed without rewriting
+history. Focused Phase 02 run `34656090767` passed and artifact `10285600941`
+was retained with digest
+`sha256:39c56c9d43968e870005065b6bebf19700791986c017496b1ea5a03e0e14ff1f`.
+The earlier run `34655914553` remains recorded as failed because its private-
+path scan included historical files beyond the R04 surface. PR #9 and Issue #8
+remain open; the PR remains draft and unmerged. This record does not approve a
+dependency, body, animation, product capability, or Phase 02.
+
+Inherited Phase 01 run `34656090763` failed on an intermittent shared-marker
+cleanup race in its ordinary-observation evidence loop. The narrow follow-up
+adds a consumption barrier to that test harness without changing authority,
+runtime topology, product behavior, or the accepted Phase 01 claim boundary.

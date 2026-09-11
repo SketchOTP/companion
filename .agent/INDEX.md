@@ -23,6 +23,8 @@
 - Phase acceptance: `NOT GRANTED`
 - Active directive: `COMPANION-P02-EMBODIMENT-001-R04`
 - Reviewed task head: `1183795843f26de6b69f0a2a0828ee288f32e415`
+- Review 04 merge: `928ba4b8e52b8cadb9c8861ad066d2d8a91366a4`
+- R04 implementation head: `7a79ddf9400a0d7cacd781d418fffdc625ec3c57`
 - Repository review:
   `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_04.md`
 - Notion review:
@@ -113,3 +115,15 @@ the operator-owned primary-worktree `.gitignore` or `AGENTS.md` changes.
 
 No production embodiment, motion-language approval, continuous aliveness, or
 Phase 03+ capability is accepted.
+
+## R04 implementation pointer
+
+- Contract: `contracts/schemas/mon-authored-frame-pack-v1.schema.json`
+- Architect landing request:
+  `assets/source/p02/architect-frame-request-v1/ARCHITECT_FRAME_REQUEST_V1.md`
+- Intake/runtime boundary:
+  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/R04_INTAKE_RUNTIME_BOUNDARY.md`
+- Evidence bundle: `experiments/p02-embodiment/results/r04/`
+- Focused hosted evidence: run `34656090767`, artifact `10285600941`, digest
+  `sha256:39c56c9d43968e870005065b6bebf19700791986c017496b1ea5a03e0e14ff1f`
+- Bounded result after complete publication: `READY_FOR_ARCHITECT_FRAME_PACK`

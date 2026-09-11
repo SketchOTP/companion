@@ -198,3 +198,29 @@ narrow fix `83909a894ad47e101bcf369b707f636624302a52` adds that mapping without
 changing product scope. Focused Phase 02 run `34631901926` and inherited Phase
 01 run `34631901998` now complete successfully. This does not change the
 candidate-only visual or Openbox gates.
+
+## R04 implementation handoff — 2026-09-11
+
+Review 04 was incorporated by normal merge
+`928ba4b8e52b8cadb9c8861ad066d2d8a91366a4`. Implementation commit
+`652cf24368ad8fab03c0439da7e3ca3a75638657` and fail-closed CI correction
+`7a79ddf9400a0d7cacd781d418fffdc625ec3c57` replace procedural production-art
+selection with an immutable Architect-authored frame-pack boundary.
+
+The landing contract is
+`assets/source/p02/architect-frame-request-v1/ARCHITECT_FRAME_REQUEST_V1.md`;
+the schema is `contracts/schemas/mon-authored-frame-pack-v1.schema.json`; the
+evidence bundle is `experiments/p02-embodiment/results/r04/`. Exact source bytes
+are copied into content-addressed and runtime locations without mutation.
+Production packaging permits only `operator_approved`; review and synthetic
+test operations are explicit. Rust validation requires the generated path.
+Godot resolves and validates the exact track, loads and observes frame zero,
+and only then emits `started`.
+
+Focused hosted run `34656090767` passed and published artifact `10285600941`
+with GitHub digest
+`sha256:39c56c9d43968e870005065b6bebf19700791986c017496b1ea5a03e0e14ff1f`.
+The inherited Phase 01 exact-head run must also complete successfully before
+external handoff. PR #9 remains draft/open/unmerged and Issue #8 remains open.
+No visual approval is requested. Subject to final exact-head validation and
+publication, the bounded status is `READY_FOR_ARCHITECT_FRAME_PACK`.

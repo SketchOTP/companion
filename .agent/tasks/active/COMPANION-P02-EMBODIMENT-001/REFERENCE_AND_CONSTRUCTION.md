@@ -63,3 +63,14 @@ front, profile, and front-left masters share the approved reference hashes.
 
 The source and review derivatives remain candidate-only. No diagonal or motion
 quality is operator-approved.
+
+## R04 superseding construction authority
+
+`MON_BODY_SOURCE_V2`, its procedural Godot renderer, and its Python bake are
+rejected negative evidence and are not production construction sources. The
+exact approved identity and turnaround bytes remain unchanged. New neutral
+construction masters and temporal key poses must arrive from the AI Architect
+using `ARCHITECT_FRAME_REQUEST_V1.md`; Codex performs lossless intake and does
+not invent, repair, warp, recolor, resize, crop, recompress, or infer those
+pixels or landmarks. Operator construction and motion approval remains
+`NOT RUN`.
