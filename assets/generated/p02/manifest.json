@@ -18,7 +18,7 @@
   "generated_by": "experiments/p02-embodiment/scripts/build_assets.py",
   "mouth_overlays": 8,
   "pack": "assets/generated/p02/mon-embodiment-p02-v1.zip",
-  "pack_sha256": "127a28a7e4a5cb86c99719ebe59953788883d537a4155975ee9a09279bbbad98",
+  "pack_sha256": "2ab74f5dbb56795a4807e837271ee8ad1eb14085e892f613604278e78ae6535f",
   "profile": "MON_FRAME_V1",
   "root": [
     512,

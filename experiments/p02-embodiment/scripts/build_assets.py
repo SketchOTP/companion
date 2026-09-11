@@ -123,8 +123,16 @@ def main() -> None:
     # Pack only metadata + frames (no executable or external data).
     pack=OUT/"mon-embodiment-p02-v1.zip"
     with zipfile.ZipFile(pack,"w",zipfile.ZIP_DEFLATED,compresslevel=9) as z:
-        for p in sorted((OUT/"frames").glob("*.png")): z.write(p, p.relative_to(OUT).as_posix())
-        z.write(OUT/"clip_manifest.json","clip_manifest.json"); z.write(OUT/"atlas_manifest.json","atlas_manifest.json")
+        # Pin ZIP metadata so a clean-room rebuild has byte-identical output.
+        # Filesystem mtimes are not evidence and must not enter the artifact.
+        entries = [(p, p.relative_to(OUT).as_posix()) for p in sorted((OUT/"frames").glob("*.png"))]
+        entries += [(OUT/"clip_manifest.json", "clip_manifest.json"), (OUT/"atlas_manifest.json", "atlas_manifest.json")]
+        for p, name in entries:
+            info = zipfile.ZipInfo(name, date_time=(1980, 1, 1, 0, 0, 0))
+            info.create_system = 3
+            info.external_attr = 0o644 << 16
+            info.compress_type = zipfile.ZIP_DEFLATED
+            z.writestr(info, p.read_bytes(), compress_type=zipfile.ZIP_DEFLATED, compresslevel=9)
     # Selected review materials.
     review=OUT/"review"; review.mkdir(exist_ok=True)
     sheet(frame_paths[:64],review/"eight_direction_sheet.png","Eight-direction candidate sheet")
