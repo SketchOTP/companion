@@ -21,12 +21,12 @@
 
 - Active roadmap phase: `02 — Mon Body, Habitat, and Sprite Pipeline`
 - Phase acceptance: `NOT GRANTED`
-- Active directive: `COMPANION-P02-EMBODIMENT-001-R04`
-- Reviewed task head: `1183795843f26de6b69f0a2a0828ee288f32e415`
+- Active directive: `COMPANION-P02-EMBODIMENT-001-R04-C01`
+- Reviewed task head: `ee2e47595271777bfbb253a6639c6ebac7198a1b`
 - Repository review:
-  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_04.md`
+  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_05.md`
 - Notion review:
-  https://app.notion.com/p/3d8833cb27ff81b0ae0bd8815885e2f6
+  https://app.notion.com/p/3d8833cb27ff81588285f477678ad3d3
 - Phase 02 directive:
   https://app.notion.com/p/3d8833cb27ff810e858acd029ac0ea05
 - Phase 02 report:
@@ -52,57 +52,73 @@
 - Phase 01 merge:
   `fc31717bba8c4833736d1792d7a5fe1c6cca4900`
 
-## Review 04 retained boundary
+## Review 05 retained boundary
 
-Retain:
+Retain as bounded evidence:
 
-- exact approved references and verified hashes;
-- removal of prior bulk generated output from the final tree;
-- useful temporal-track and 24 Hz direction;
-- deterministic artifact-publishing and CI infrastructure;
-- accepted Phase 01 foundation.
+- exact approved references and hashes;
+- synthetic source-byte preservation and content-addressed copies;
+- approval-state enforcement;
+- generated-pack Rust consumption and missing-path rejection;
+- 24 Hz relative-duration configuration;
+- synthetic missing/corrupt/restored-track behavior;
+- green Phase 01 and Phase 02 workflows;
+- R04 artifact `10285933356` and digest
+  `sha256:071348be8021b5dddb45f4fda068e27effbd9cb3d145a6a505ab2b98b8458516`.
 
-Reject as Phase 02 proof:
+Do not accept:
 
-- R03 visual identity and motion quality;
-- `MON_BODY_SOURCE_V2` as a production rig;
-- the claimed Godot source of truth;
-- the duplicate Python procedural renderer;
-- facing-transition and operator-review readiness;
-- complete schema/Rust/generated-pack/Godot equivalence;
-- complete runtime-start/event/degradation evidence.
+- `READY_FOR_ARCHITECT_FRAME_PACK`;
+- combined source and ingested pack authority;
+- orientation or occluded-landmark support;
+- complete R10 landmark support;
+- atomic production intake;
+- exact PNG profile enforcement;
+- complete runtime pack integrity;
+- physical first-frame presentation;
+- exact event/timing behavior;
+- Phase 02.
 
-## Adopted authority boundary
+## Decisive blocker
+
+The current schema assigns one facing to a whole track and forces all filenames
+to use that facing, while the requested orientation clips change facing over
+time. It also requires concrete coordinates for landmarks that can be occluded.
+The Architect cannot supply a truthful conforming pack until R04-C01 corrects
+those semantics.
+
+## Adopted contract split
+
+- `MON_AUTHORED_FRAME_SOURCE_PACK_V1` — immutable Architect input.
+- `MON_INGESTED_FRAME_PACK_V1` — validated derived runtime/build authority.
+- `MON_FRAME_INTAKE_RECEIPT_V1` — validation and atomic-publication evidence.
+
+Runtime relationships and content addresses are never written back into the
+Architect source manifest.
+
+## R04-C01 required package
+
+1. Source/ingested/receipt schema split.
+2. Track entry/exit facing plus per-frame facing/posture/action phase.
+3. Explicit visible/occluded/not-applicable landmark states and complete R10
+   landmarks.
+4. Bounded request-profile completeness enforcement.
+5. Unique IDs/files/assets and explicit reuse/hold semantics.
+6. Direct PNG IHDR, bit-depth, color-type, sRGB, alpha, transparency, and safety
+   validation.
+7. Fresh staged atomic intake.
+8. Pack/track/reference/path/relationship integrity in Godot.
+9. Render-commit observation rather than physical-presentation overclaim.
+10. Exact event tick/frame consistency and expanded tamper cases.
+11. Actual ingested-pack Rust validation and green Phase 01/Phase 02 CI.
+12. Final status `READY_FOR_ARCHITECT_FRAME_PACK`.
+
+## Authority boundary
 
 Identity-critical sprite pixels and temporal key poses are authored by the AI
-Architect and approved by the operator. Codex must not invent production
-character art. Codex owns byte-preserving intake, contracts, deterministic
-build derivatives, packaging, Godot integration, CI, and evidence. Synthetic
-non-product fixtures are permitted only when unmistakably labeled.
-
-## R04 required package
-
-1. Supersede R03 procedural art while preserving negative evidence.
-2. Define `MON_AUTHORED_FRAME_PACK_V1`.
-3. Publish `ARCHITECT_FRAME_REQUEST_V1.md` for neutral construction and the
-   bounded idle/walk/orient/listen-acknowledge proof.
-4. Implement immutable, content-addressed, byte-preserving source intake.
-5. Strongly type contract data across schema, Rust, fixtures, and Godot.
-6. Make generated-pack Rust validation non-vacuous.
-7. Resolve and validate the exact track before acknowledgment; emit `started`
-   only after first-frame presentation.
-8. Prove missing/corrupt/tamper failure and recovery.
-9. Keep Phase 01 and Phase 02 CI green.
-10. Return `READY_FOR_ARCHITECT_FRAME_PACK` without requesting operator visual
-    approval.
-
-## Artifact and future-authoring boundary
-
-Full-frame Architect-authored raster key poses are the primary identity-critical
-source. Layered eye/mouth/accessory sprites remain available for combinatorial
-control. No Blender, hidden 3D, or new authoring dependency is adopted in R04.
-A hidden 3D-to-sprite experiment is a future contingency only if the approved
-raster-key-pose path fails under a separate bounded directive.
+Architect and approved by the operator. Codex owns byte-preserving intake,
+contracts, build derivatives, packaging, Godot integration, CI, and evidence.
+Codex may create only unmistakably synthetic non-product fixtures.
 
 ## Protected-work rule
 
@@ -111,5 +127,5 @@ the operator-owned primary-worktree `.gitignore` or `AGENTS.md` changes.
 
 ## Capability boundary
 
-No production embodiment, motion-language approval, continuous aliveness, or
-Phase 03+ capability is accepted.
+No production frame pack, accepted construction, approved motion, production
+embodiment, continuous aliveness, or Phase 03+ capability is established.
