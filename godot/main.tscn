@@ -4,6 +4,7 @@
 [ext_resource path="res://mon_avatar.gd" type="Script" id="2"]
 [ext_resource path="res://mon_animation_director.gd" type="Script" id="3"]
 [ext_resource path="res://embodiment_bridge.gd" type="Script" id="4"]
+[ext_resource path="res://foundation.gd" type="Script" id="5"]
 
 [node name="MonHabitat" type="Node2D"]
 layout_mode = 3
@@ -13,6 +14,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
+
+[node name="Foundation" type="Control" parent="."]
+mouse_filter = 2
+script = ExtResource("5")
 
 [node name="MonAvatar" type="Node2D" parent="."]
 script = ExtResource("2")
