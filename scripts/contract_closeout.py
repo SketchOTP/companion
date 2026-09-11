@@ -19,7 +19,9 @@ def sample(schema):
         elif spec.get("type")=="integer": out[key]=spec.get("minimum",0)
         elif spec.get("type")=="object": out[key]={}
         elif spec.get("type")=="array": out[key]=[]
-        elif "pattern" in spec: out[key]="0"*64
+        elif "pattern" in spec:
+            pattern = spec["pattern"]
+            out[key] = "synthetic_id" if "^[a-z]" in pattern else ("0"*64 if "[0-9a-f]" in pattern else "synthetic")
         else: out[key]="synthetic"
     return out
 
@@ -41,7 +43,12 @@ def main():
         except (OSError, json.JSONDecodeError, TypeError) as exc:
             errors.append(f"wire evidence unavailable: {type(exc).__name__}")
     for path in sorted((ROOT/"contracts/schemas").glob("*.schema.json")):
-        schema=json.loads(path.read_text()); valid=sample(schema); cases={"valid":True}
+        schema=json.loads(path.read_text()); valid=sample(schema)
+        fixture_name = {"mon-animation-clip.schema.json":"mon-animation-clip-v1.json", "mon-animation-track.schema.json":"mon-animation-track-v1.json"}.get(path.name)
+        if fixture_name:
+            fixture_path = ROOT / "contracts/fixtures" / fixture_name
+            if fixture_path.exists(): valid = json.loads(fixture_path.read_text())
+        cases={"valid":True}
         try: check(valid,schema)
         except Exception as exc: errors.append(f"{path.name}: valid fixture: {exc}"); continue
         required=schema.get("required",[]); props=schema.get("properties",{})
@@ -80,7 +87,8 @@ def main():
     duplicate=b'{"a":1,"\\u0061":2}'
     try:
         import subprocess
-        subprocess.run([os.environ.get("CARGO", "cargo"),"test","-p","foundation-core","escaped_duplicate_is_rejected","--locked"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
+        cargo = os.environ.get("CARGO") or (str(pathlib.Path.home() / ".cargo/bin/cargo") if (pathlib.Path.home() / ".cargo/bin/cargo").exists() else "cargo")
+        subprocess.run([cargo,"test","-p","foundation-core","escaped_duplicate_is_rejected","--locked"],cwd=ROOT,check=True,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL)
         duplicate_ok=True
     except Exception: duplicate_ok=False
     if not duplicate_ok: errors.append("decoded duplicate fixture was not rejected")

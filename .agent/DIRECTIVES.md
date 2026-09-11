@@ -335,3 +335,11 @@ clean-room rebuilds in `6c81838899c943ea8d195230f9849140f0b54f5f`.
 
 The candidate review sheet was then corrected to render all four diagonal
 views in `26571cbab782e5fc0ea712f577b8112767f05782`.
+# 2026-09-11 — Architect Review 01 continuation
+
+`COMPANION-P02-EMBODIMENT-001` continues on `codex/p02-embodiment-001` after
+exact native reference transfer. The correction is limited to reference-
+grounded construction, temporal core tracks, Godot timing/track loading, real
+atlas packaging/QA, artifact publication, and dedicated Phase 02 CI. Operator
+visual approval and the dedicated Openbox target run remain required; no later
+phase or product capability is authorized.

@@ -97,5 +97,22 @@
     "candidate_approval": "PENDING_OPERATOR_VISUAL_REVIEW",
     "status": "PASSED",
     "validator": "experiments/p02-embodiment/scripts/validate_assets.py"
+  },
+  "superseding_correction": {
+    "native_identity_directly_verified": true,
+    "native_turnaround_directly_verified": true,
+    "current_core_manifest": "assets/source/p02/core-motion/manifest.json",
+    "current_temporal_tracks": "assets/source/p02/core-motion/temporal_tracks.json",
+    "current_core_frame_count": 334,
+    "current_core_track_count": 66,
+    "current_core_unique_frame_count": 166,
+    "candidate_status": "CANDIDATE_PENDING_OPERATOR_VISUAL_APPROVAL",
+    "superseded_claims": [
+      "old 32-family directional catalog as temporal animation",
+      "old eight-direction single-sequence playback",
+      "old flush atlas gutter/extrusion claim",
+      "old 10000-transition result as temporal evidence"
+    ],
+    "generated_corpus_policy": "workflow_artifact_and_private_local_export_only"
   }
 }

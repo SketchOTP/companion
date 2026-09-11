@@ -17,3 +17,12 @@ The ≥2-hour dedicated Openbox target-host playback is `NOT RUN`: the active
 session exposes dual 3840×2160 outputs under GNOME Shell/mutter rather than the
 authorized dedicated 1366×768 Openbox target. This is an explicit limitation,
 not a pass or product claim.
+
+## Review 01 correction
+
+`core-motion-correction.json` records the exact native reference hashes and the
+reference-grounded temporal core candidate. Full generated frames and atlases
+are private build outputs and workflow artifacts; selected review sheets under
+`assets/source/p02/review/` are the accessible visual candidates. The
+correction is not Phase 02 acceptance and does not waive the dedicated Openbox
+target or operator visual-approval gates.

@@ -67,3 +67,11 @@ Report only `PASSED`, `FAILED`, `BLOCKED`, `NOT RUN`, or `NOT APPLICABLE`.
 63. Phase 03+ closed.
 64. No prohibited capability or claim.
 65. Operator visual approval correctly pending or recorded.
+# Architect Review 01 correction — current validation (2026-09-11)
+
+Local Python syntax/schema/contract checks and the private core-motion build
+returned zero errors.  A second clean-process build was byte-identical in the
+generated manifest, track definitions, frame corpus, and atlas pages.  Godot
+4.7.2 headless and hosted Phase 02 CI are not run in this worktree because the
+artifact is not installed; the workflow downloads it ephemerally after hash
+verification.  Openbox two-hour playback remains `NOT RUN`.

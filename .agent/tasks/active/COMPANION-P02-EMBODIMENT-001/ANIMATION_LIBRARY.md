@@ -46,3 +46,11 @@ eight directions with explicit fallback metadata. Frame hashes are unique; no
 metadata-only, translated, scaled, or mirrored duplicate is counted. These
 remain visual presentations and do not implement organism, speech, memory,
 perception, or care policy.
+# Architect Review 01 correction — temporal core candidate (2026-09-11)
+
+The previous one-frame-per-direction catalog is retained as rejected history.
+`assets/source/p02/core-motion/temporal_tracks.json` now defines independent
+temporal sequences keyed by body revision, stage, family, direction, posture,
+and variant.  The core candidate contains idle A/B/C, walk, run, turn, and
+focused proof tracks; direction is not a temporal frame.  Full 32-family
+completion remains deferred until operator visual approval.

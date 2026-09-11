@@ -40,3 +40,11 @@ QA passed for all ten schemas with valid, missing-required, and unknown-field
 cases. Review derivatives include construction diagonal candidates, palette /
 anatomy, eight-direction, family, transition, eye, and mouth sheets. They are
 new candidates pending operator review; automated QA is not visual approval.
+# Architect Review 01 correction — review package (2026-09-11)
+
+The committed review set now includes native six-view correspondence, diagonal
+candidates, proportion/root grid, anatomy/palette, pose/shadow limits, and the
+temporal core/idle-variant sheets.  `validate_core_motion.py` checks rendered
+canvas, alpha, safety bounds, root landmarks, hashes, track floors, atlas
+placement, and overlap.  All new construction, diagonal, motion, and identity
+decisions remain pending operator visual approval.

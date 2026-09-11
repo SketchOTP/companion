@@ -32,3 +32,11 @@ points.
 Use coherent commits for authority/reference, pipeline/contracts, construction
 sources, animation library, Godot runtime, QA/artifacts, target evidence, and
 publication. Do not return between commits. Do not combine unrelated cleanup.
+
+## Review 01 continuation checkpoint — 2026-09-11
+
+Native reference transfer is complete. Execute the bounded correction through
+the reference-grounded core pack, selected review publication, real temporal
+track/runtime semantics, trim/extrude atlas validation, binary-tree cleanup,
+and dedicated workflow. The corrected candidate remains unapproved pending
+operator visual review and the dedicated Openbox target gate.

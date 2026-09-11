@@ -1,0 +1,76 @@
+name: phase02-embodiment
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  embodiment:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - name: Install pinned qualification Python tools
+        run: python3 -m pip install --disable-pip-version-check --no-input 'Pillow==11.3.0' 'jsonschema==4.25.1'
+      - name: Verify exact native references
+        run: |
+          set -euo pipefail
+          test "$(sha256sum assets/source/p02/references/identity-approved.png | awk '{print $1}')" = 86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56
+          test "$(sha256sum assets/source/p02/references/turnaround-approved.png | awk '{print $1}')" = 3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4
+      - name: Rust locked foundation checks
+        run: |
+          export PATH="$HOME/.cargo/bin:$PATH"
+          rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
+          cargo fmt --all -- --check
+          cargo clippy --workspace --all-targets --all-features --locked -- -D warnings
+          cargo test --workspace --locked
+      - name: Build and validate core motion twice
+        run: |
+          set -euo pipefail
+          A="$RUNNER_TEMP/core-a"; B="$RUNNER_TEMP/core-b"
+          python3 experiments/p02-embodiment/scripts/build_core_motion.py --out "$A" --clean
+          python3 experiments/p02-embodiment/scripts/build_core_motion.py --out "$B" --clean
+          python3 experiments/p02-embodiment/scripts/validate_core_motion.py --out "$A"
+          diff -rq "$A" "$B"
+          python3 experiments/p02-embodiment/scripts/build_review_package.py --out "$RUNNER_TEMP/review" --core "$A"
+          python3 experiments/p02-embodiment/scripts/write_review_manifest.py --out "$RUNNER_TEMP/review"
+          mkdir -p godot/assets/p02-core
+          cp -a "$A"/. godot/assets/p02-core/
+      - name: Validate contracts and selected review derivatives
+        run: |
+          python3 scripts/validate_schemas.py
+          PATH="$HOME/.cargo/bin:$PATH" python3 scripts/contract_closeout.py
+      - name: Verify Godot 4.7.2 import and headless habitat
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/godot"
+          curl --fail --location --retry 3 https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip -o "$RUNNER_TEMP/godot/godot.zip"
+          test "$(sha256sum "$RUNNER_TEMP/godot/godot.zip" | awk '{print $1}')" = cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4
+          unzip -q "$RUNNER_TEMP/godot/godot.zip" -d "$RUNNER_TEMP/godot"
+          GODOT="$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64"; chmod +x "$GODOT"
+          "$GODOT" --headless --path godot --editor --quit
+          "$GODOT" --headless --path godot --script res://p02_temporal_headless_test.gd
+          COMPANION_P02_HEADLESS=1 "$GODOT" --headless --path godot --quit-after 3
+      - name: Artifact and source-budget checks
+        run: |
+          set -euo pipefail
+          ! git ls-files -z assets/generated/p02 godot/assets/p02 | grep -z .
+          python3 - <<'PY'
+          from pathlib import Path
+          total=sum(p.stat().st_size for p in Path('assets/source/p02').rglob('*') if p.is_file())
+          assert total < 100*1024*1024, total
+          PY
+      - name: Upload Phase 02 review and generated packs
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+        with:
+          name: phase02-embodiment-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/core-a
+            ${{ runner.temp }}/review
+            assets/source/p02/review
+            assets/source/p02/reference_manifest.json
+          if-no-files-found: error

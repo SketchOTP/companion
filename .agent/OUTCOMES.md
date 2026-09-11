@@ -604,3 +604,12 @@ evidence; target-host playback and visual approval remain pending.
 The diagonal candidate sheet now renders all four source views. Asset QA
 remains green and the correction is published at
 `26571cbab782e5fc0ea712f577b8112767f05782`; visual approval remains pending.
+# Superseding Phase 02 evidence — 2026-09-11
+
+Native identity (`86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56`)
+and turnaround (`3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4`)
+were directly verified. A clean private build produced 66 temporal tracks and
+334 MON_FRAME_V1 drawings; rendered/atlas validation returned zero errors. The
+prior directional catalog, 32-family completion, and 10,000-transition claims
+remain superseded. Candidate art is pending operator review, hosted CI, and
+Openbox target playback.

@@ -41,3 +41,9 @@ foundation. The target-host probe found no dedicated 1366×768 Openbox output
 in the current session; the required two-hour continuous target-host run is
 `NOT RUN` pending the authorized target display/session. No reliability claim
 is made.
+# Architect Review 01 correction — evidence boundary (2026-09-11)
+
+Core generation/validation is bounded engineering evidence only.  The prior
+direction-catalog timing and transition numbers are superseded.  Required
+10,000 real temporal transition cases and two-hour dedicated 1366×768 Openbox
+playback remain pending until operator motion approval and target access.

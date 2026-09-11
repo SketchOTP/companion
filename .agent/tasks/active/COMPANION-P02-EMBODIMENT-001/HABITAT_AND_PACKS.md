@@ -40,3 +40,10 @@ metadata-only host probe observed an X11 desktop with two 3840×2160 outputs and
 GNOME Shell/mutter framing rather than the dedicated 1366×768 Openbox target;
 no display configuration was changed, so physical habitat and two-hour
 playback remain unverified. The generated tree is 11 MB; no Git LFS was added.
+# Architect Review 01 correction — artifact packaging (2026-09-11)
+
+The core exporter performs transparent-bound trim, four-pixel edge extrusion,
+reserved gutter placement, and source-space trim metadata on ≤4096×4096 pages.
+The complete frame/atlas corpus is generated as a workflow artifact/private
+local export; only manifests and selected review derivatives remain in Git.
+The dedicated Openbox target remains unavailable and is not reconfigured.

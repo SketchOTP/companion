@@ -1,0 +1,18 @@
+{
+  "track_id": "mon-body-v1:candidate:idle_breathe_a:N:neutral:1",
+  "clip_id": "idle_breathe_a",
+  "version": 1,
+  "body_revision": "mon-body-v1",
+  "stage": "candidate",
+  "family": "idle_breathe_a",
+  "direction": "N",
+  "posture": "neutral",
+  "variant": 1,
+  "source_revision": "p02-native-reference-v1",
+  "source_reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+  "frame_profile": "MON_FRAME_V1",
+  "frames": [{"frame_id": "idle_breathe_a_N_1_00", "duration_ticks": 1, "path": "frames/idle_breathe_a_N_1_00.png", "sha256": "0000000000000000000000000000000000000000000000000000000000000000"}],
+  "loop_mode": "loop",
+  "root_motion_policy": "forbidden",
+  "track_checksum": "0000000000000000000000000000000000000000000000000000000000000000"
+}

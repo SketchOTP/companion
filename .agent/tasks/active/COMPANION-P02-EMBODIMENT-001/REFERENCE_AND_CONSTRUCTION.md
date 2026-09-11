@@ -35,3 +35,11 @@ anatomy, landmarks, and bounded pose limits. Review sheets are in
 `assets/generated/p02/review/`; all new diagonal and motion drawings remain
 `PENDING_OPERATOR_VISUAL_REVIEW`.
 -
+# Architect Review 01 correction — native-reference gate satisfied (2026-09-11)
+
+The exact native identity and turnaround files are now committed and hash
+verified.  `assets/source/p02/construction_model_v2.json` and the review sheets
+under `assets/source/p02/review/` bind the construction grid, palette, anatomy,
+landmarks, shadow footprint, pose limits, six-view correspondence, and four
+unapproved diagonal candidates to those source hashes.  The old SVG remains a
+noncanonical inspected derivative only.

@@ -32,6 +32,16 @@ Godot 4.7.2 and ready to receive later body-neutral organism intents.
 - Bulk generated binary packs are artifacts, not ordinary-Git history.
 - Operator visual approval is mandatory and cannot be self-issued.
 
+## Review 01 continuation boundary — 2026-09-11
+
+The exact native identity and turnaround references are now directly available
+and hash-verified. The immediate deliverable is the reference-grounded
+temporal core-motion approval package plus corrected Godot timing, atlas
+packaging, rendered QA, and dedicated Phase 02 CI. The historical directional
+catalog is rejected as temporal evidence. Remaining full-family production and
+the target Openbox endurance gate wait for operator visual approval and target
+access.
+
 ## Evidence ceiling
 
 Phase 02 may establish bounded engineering and visual candidate evidence only.

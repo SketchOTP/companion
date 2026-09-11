@@ -18,6 +18,7 @@ mapping = {
     "embodiment-intent.schema.json": "EmbodimentIntent",
     "vault-decision.schema.json": "VaultDecision",
     "backup-manifest.schema.json": "BackupManifest",
+    "mon-animation-track.schema.json": "MonAnimationTrack",
 }
 text = (ROOT / "crates/foundation-core/src/contracts.rs").read_text(encoding="utf-8")
 errors = []

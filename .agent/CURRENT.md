@@ -146,3 +146,20 @@ existing Phase 02 branch and PR. It returns either the complete accessible
 reference/construction/core-motion approval package with green dedicated CI, or
 one precise reference-transfer blocker before further bulk generation.
 Architect and operator review follow.
+
+## Architect Review 01 continuation — 2026-09-11
+
+Exact native references are now available in the secondary worktree and were
+verified against their authority hashes. A normal merge of `origin/main` was
+recorded as `01dc7bb0a65f61b44cb0948342bdd5280db84eba`.
+
+The correction adds a reference-grounded construction model, deterministic
+temporal core tracks, rendered-pixel/atlas validation, selected review sheets,
+and a dedicated Phase 02 workflow. The former directional 256-frame corpus
+was removed from the final tree; its historical commits remain intact.
+
+Current candidate evidence is 66 temporal tracks, 334 generated MON_FRAME_V1
+drawings, 166 byte-distinct outputs, 21 trim/extrude atlas pages, and zero
+local core-validator errors. These are candidate `E2_REPRODUCED` observations
+only. Operator visual approval, hosted Phase 02 CI, and dedicated Openbox
+two-hour playback remain open gates.

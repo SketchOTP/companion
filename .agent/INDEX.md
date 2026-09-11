@@ -200,3 +200,21 @@ tracked pack.
 The four-view diagonal review sheet was corrected in
 `26571cbab782e5fc0ea712f577b8112767f05782` and is still pending operator
 approval.
+
+## Architect Review 01 continuation — current correction
+
+Exact native references are committed under `assets/source/p02/references/`:
+
+- identity PNG SHA-256:
+  `86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56`;
+- turnaround PNG SHA-256:
+  `3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4`.
+
+The reference-grounded core candidate is described by
+`assets/source/p02/core-motion/temporal_tracks.json` and
+`construction_model_v2.json`. Full frames/atlases are private build outputs
+published by `.github/workflows/phase02-embodiment.yml`; selected review PNGs
+are committed under `assets/source/p02/review/`. Local build and
+`validate_core_motion.py` checks pass with 66 tracks and 334 drawings. Phase
+02 remains active/not accepted pending hosted CI, operator visual approval,
+and target Openbox playback.

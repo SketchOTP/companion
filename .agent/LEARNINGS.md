@@ -400,3 +400,12 @@ evidence. The Phase 02 pack now pins both and rebuilds byte-identically.
 
 - Review derivatives must be checked visually, not only by path existence:
   corrected filenames restored the complete four-view diagonal sheet.
+# Phase 02 correction learning — 2026-09-11
+
+Direction must be a track-selection key, never a temporal frame index. Binding
+construction to the exact native reference requires hashing the source before
+each export and retaining the native file unchanged. Declared atlas gutters do
+not count: trim rectangles, edge extrusion, reserved pixels, and reconstruction
+metadata must be measured in the generated page. Generated frame/atlas blobs
+belong in workflow artifacts; selected review derivatives and source manifests
+belong in Git.

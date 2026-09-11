@@ -87,3 +87,27 @@ The diagonal review-material correction is published at
 `26571cbab782e5fc0ea712f577b8112767f05782`; the regenerated sheet contains all
 four candidate views and the asset manifest remains green. Operator visual
 approval and dedicated Openbox playback are still required.
+
+## Architect Review 01 correction handoff — 2026-09-11
+
+Exact native source transfer is now complete and verified:
+
+- `assets/source/p02/references/identity-approved.png` — SHA-256
+  `86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56`;
+- `assets/source/p02/references/turnaround-approved.png` — SHA-256
+  `3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4`.
+
+New committed candidate sources are `construction_model_v2.json`,
+`core-motion/temporal_tracks.json`, `core-motion/atlas_manifest.json`, and
+`core-motion/manifest.json`.  The deterministic builder is
+`experiments/p02-embodiment/scripts/build_core_motion.py`; the fail-closed
+validator is `validate_core_motion.py`.  A fresh build produced 66 tracks and
+334 drawings; the validator returned zero errors.  Full frames and atlas pages
+are generated into private output and uploaded by
+`.github/workflows/phase02-embodiment.yml`.
+
+The Godot adapter now loads one temporal track per direction/family/posture/
+variant, declares animation FPS 12, passes integer tick weights as relative
+durations, emits observed frame/completion markers, and performs a bounded
+BodyA/BodyB crossfade.  The package remains a visual candidate pending
+operator and Architect review; no product capability is claimed.

@@ -41,3 +41,11 @@ pack; `validate_assets.py` performs fail-closed canvas, alpha, safety,
 uniqueness, timing, direction, and pack checks. Rebuilding reproduced the
 manifest and source hashes. Generated binaries are versioned artifacts;
 authored sources and manifests are Git-authoritative.
+# Architect Review 01 correction — deterministic source path (2026-09-11)
+
+The selected authoring path is reference-grounded raster export from the exact
+native identity source with explicit stable family/direction/frame parameters.
+`build_core_motion.py` writes all generated frames and trim/extrude atlases to a
+private caller-provided output.  Byte-identical clean-process rebuilding is
+validated before any artifact publication; no runtime rig or authoring tool is
+a production dependency.
