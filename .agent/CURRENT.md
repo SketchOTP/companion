@@ -3,41 +3,51 @@
 ## Current stage
 
 Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains
-adopted. Roadmap Phase 01 remains accepted.
+adopted. Roadmap Phase 01 remains accepted. Phase 03 and later remain closed.
 
 PR #9 was continued from reviewed head
 `1183795843f26de6b69f0a2a0828ee288f32e415`. Review 04 was merged normally as
 `928ba4b8e52b8cadb9c8861ad066d2d8a91366a4`; the current R04 implementation
 head is `7a79ddf9400a0d7cacd781d418fffdc625ec3c57`.
+PR #9 at reviewed head `ee2e47595271777bfbb253a6639c6ebac7198a1b`
+is continued under:
 
-- Directive: `COMPANION-P02-EMBODIMENT-001-R04`
+- Directive: `COMPANION-P02-EMBODIMENT-001-R04-C01`
 - Repository review:
-  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_04.md`
+  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_05.md`
 - Notion review:
-  https://app.notion.com/p/3d8833cb27ff81b0ae0bd8815885e2f6
+  https://app.notion.com/p/3d8833cb27ff81588285f477678ad3d3
 - Issue #8: open
 - PR #9: draft, open, unmerged
-- Phase 03 and later: closed
 
-## Review 04 disposition
+## Review 05 disposition
+
+R04 is partially accepted at a bounded synthetic engineering boundary.
 
 Retain:
 
-- exact approved native references and hashes;
-- final-tree removal of prior generated bulk outputs;
-- useful 24 Hz and temporal-track direction;
-- artifact publication and focused workflow infrastructure;
-- green inherited Phase 01 workflow.
+- exact approved reference hashes;
+- byte-preserving synthetic source intake;
+- content-addressed copies and export/restore evidence;
+- manifest approval-state enforcement;
+- non-skipping generated-pack Rust validation;
+- 24 Hz relative-duration configuration;
+- synthetic missing/corrupt/restored-track behavior;
+- green Phase 01 and focused Phase 02 workflows.
 
 Do not accept:
 
-- the R03 rendered character;
-- `MON_BODY_SOURCE_V2` as a production visual source;
-- the Godot-rig source-of-truth claim;
-- the duplicate Python raster source;
-- identity fidelity, motion-language quality, facing-transition quality, or
-  operator-review readiness;
-- the current contract/runtime/CI claim as complete.
+- `READY_FOR_ARCHITECT_FRAME_PACK`;
+- the combined source/runtime pack contract as final;
+- orientation-track representability;
+- occluded-landmark representability;
+- complete R10 landmark coverage;
+- atomic production intake;
+- complete PNG source-profile validation;
+- full runtime pack/track/reference integrity;
+- physical or target first-frame presentation;
+- exact measured event/tick behavior;
+- Phase 02 acceptance.
 
 ## Review 04 finding retained as history
 
@@ -47,18 +57,26 @@ approval. That R03 output remains only rejected negative evidence.
 
 The former procedural GDScript and Python renderers are disconnected from the
 candidate production path and cannot be selected as fallbacks.
+The current Architect-input contract cannot truthfully represent the requested
+front-to-front-left orientation tracks because facing exists only at track level
+and filenames must match that one facing. It also requires concrete coordinates
+for landmarks that can be occluded in profile or turned poses.
 
-## Adopted visual-authorship boundary
+Supplying art now would force false metadata and an immediate breaking schema
+migration. The contract must be corrected before identity-critical frames are
+authored.
 
-- AI Architect creates or edits production source art and temporal key poses.
-- Operator approves identity, construction, and motion language.
-- Codex owns lossless intake, typed contracts, deterministic derivatives,
-  packaging, runtime integration, CI, and evidence.
-- Codex may create only obviously synthetic non-product fixtures.
-- Godot executes approved sprite tracks; it does not own identity truth.
+## Adopted source/runtime authority split
 
-The decision is recorded in the Architecture Decision Ledger and Architect
-Review 04.
+The Architecture Decision Ledger now requires:
+
+1. `MON_AUTHORED_FRAME_SOURCE_PACK_V1` — immutable Architect input;
+2. `MON_INGESTED_FRAME_PACK_V1` — validated derived runtime/build document;
+3. `MON_FRAME_INTAKE_RECEIPT_V1` — input/output digests, byte equality,
+   validation result, and atomic publication state.
+
+Source manifests do not contain runtime-derived paths or content addresses.
+Godot consumes only a validated ingested pack.
 
 ## R04 implementation result
 
@@ -82,9 +100,35 @@ The branch now provides:
 
 The inherited Phase 01 exact-head workflow is still being observed before final
 publication. R04 is not Phase 02 acceptance and does not request visual review.
+Codex must execute only R04-C01:
 
-Codex must not create new production character artwork or request operator visual
-approval in this directive.
+1. split source, ingested, and receipt schemas;
+2. add track entry/exit facing and per-frame facing/posture/action phase;
+3. represent visible, occluded, and not-applicable landmarks without invented
+   coordinates;
+4. include the complete canonical R10 landmark set and typed optional anchors;
+5. enforce the bounded frame-request families, counts, endpoints, and events;
+6. enforce unique identities and explicit source-asset reuse/hold semantics;
+7. validate PNG IHDR bit depth/color type, actual sRGB, nonempty alpha,
+   transparency, and safety region;
+8. stage and atomically publish intake into a fresh destination;
+9. bind pack, track, reference, relationship, and path integrity in Godot;
+10. observe the render boundary before a render-commit acknowledgment;
+11. prove exact event tick/frame consistency and the expanded tamper matrix;
+12. keep Phase 01 and Phase 02 CI green;
+13. return `READY_FOR_ARCHITECT_FRAME_PACK` only after the correction passes.
+
+Codex must not create production character pixels or request operator visual
+approval.
+
+## Authority records
+
+- Live ledger after Review 05: 56 ADRs — 34 adopted, 20 interim, 2 rejected.
+- Research evidence: 58 records.
+- New adopted ruling: Architect source packs and ingested runtime packs are
+  separate immutable contracts.
+- New official evidence: W3C PNG profile semantics and Godot render-observation
+  semantics.
 
 ## Protected work
 
@@ -97,3 +141,6 @@ Continue only in the local ext4/NVMe secondary worktree.
 No production embodiment, approved motion language, continuous aliveness, or
 Phase 03+ capability is accepted. When exact-head validation and publication
 complete, the bounded handoff status is `READY_FOR_ARCHITECT_FRAME_PACK`.
+No Architect-authored production frame pack, accepted body construction,
+approved motion language, production embodiment, visual aliveness, or Phase 03+
+capability exists. R04 establishes useful synthetic intake/runtime evidence only.
