@@ -1,0 +1,3 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+{"errors":[],"intent":{"clip_id":"gaze","event_type":"clip_started","generation":"godot-p02-v1","intent_id":"0000000000000000000000000019f0a2","interruptible":true,"priority":0,"reason":"deterministic_selection","schema_major":1,"sequence":2,"status":"started","version":"MonAnimationDirector-v1"},"layer_names":["Shadow","AccessoryBack","BodyA","BodyB","FaceOrEyes","MouthViseme","HeldObject","AccessoryFront","Effects","AnimationPlayer","MonAnimationDirector"],"status":"PASSED","visible":{"clip_id":"gaze","event_type":"current_visible_body_state","frame":0,"generation":"godot-p02-v1","playing":true,"schema_major":1}}

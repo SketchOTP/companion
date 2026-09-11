@@ -25,3 +25,13 @@ Document and link:
 List exact artifact paths and hashes for construction, anatomy/palette, and
 eight-direction sheets. Distinguish operator-approved source from new candidate
 art. Record every rejected construction version and reason.
+
+## Executed result
+
+`assets/source/p02/reference_manifest.json` binds the authority-declared
+identity hash and directly inspected derivative, plus the native turnaround
+PNG hash. `construction_model.md` records the grid, palette, silhouette,
+anatomy, landmarks, and bounded pose limits. Review sheets are in
+`assets/generated/p02/review/`; all new diagonal and motion drawings remain
+`PENDING_OPERATOR_VISUAL_REVIEW`.
+-

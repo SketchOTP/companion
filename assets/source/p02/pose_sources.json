@@ -1,0 +1,2067 @@
+{
+  "canvas": [
+    1024,
+    1024
+  ],
+  "profile": "MON_FRAME_V1",
+  "root": [
+    512,
+    896
+  ],
+  "safety_region": [
+    64,
+    32,
+    960,
+    960
+  ],
+  "sources": [
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "idle_breathe_a",
+      "phase": 0,
+      "revision": "p02-source-v1",
+      "source_id": "pose-000"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "idle_breathe_a",
+      "phase": 1,
+      "revision": "p02-source-v1",
+      "source_id": "pose-001"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "idle_breathe_a",
+      "phase": 2,
+      "revision": "p02-source-v1",
+      "source_id": "pose-002"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "idle_breathe_a",
+      "phase": 3,
+      "revision": "p02-source-v1",
+      "source_id": "pose-003"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "idle_breathe_a",
+      "phase": 4,
+      "revision": "p02-source-v1",
+      "source_id": "pose-004"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "idle_breathe_a",
+      "phase": 5,
+      "revision": "p02-source-v1",
+      "source_id": "pose-005"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "idle_breathe_a",
+      "phase": 6,
+      "revision": "p02-source-v1",
+      "source_id": "pose-006"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "idle_breathe_a",
+      "phase": 7,
+      "revision": "p02-source-v1",
+      "source_id": "pose-007"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "idle_breathe_b",
+      "phase": 8,
+      "revision": "p02-source-v1",
+      "source_id": "pose-008"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "idle_breathe_b",
+      "phase": 9,
+      "revision": "p02-source-v1",
+      "source_id": "pose-009"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "idle_breathe_b",
+      "phase": 10,
+      "revision": "p02-source-v1",
+      "source_id": "pose-010"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "idle_breathe_b",
+      "phase": 11,
+      "revision": "p02-source-v1",
+      "source_id": "pose-011"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "idle_breathe_b",
+      "phase": 12,
+      "revision": "p02-source-v1",
+      "source_id": "pose-012"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "idle_breathe_b",
+      "phase": 13,
+      "revision": "p02-source-v1",
+      "source_id": "pose-013"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "idle_breathe_b",
+      "phase": 14,
+      "revision": "p02-source-v1",
+      "source_id": "pose-014"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "idle_breathe_b",
+      "phase": 15,
+      "revision": "p02-source-v1",
+      "source_id": "pose-015"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "idle_breathe_c",
+      "phase": 16,
+      "revision": "p02-source-v1",
+      "source_id": "pose-016"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "idle_breathe_c",
+      "phase": 17,
+      "revision": "p02-source-v1",
+      "source_id": "pose-017"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "idle_breathe_c",
+      "phase": 18,
+      "revision": "p02-source-v1",
+      "source_id": "pose-018"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "idle_breathe_c",
+      "phase": 19,
+      "revision": "p02-source-v1",
+      "source_id": "pose-019"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "idle_breathe_c",
+      "phase": 20,
+      "revision": "p02-source-v1",
+      "source_id": "pose-020"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "idle_breathe_c",
+      "phase": 21,
+      "revision": "p02-source-v1",
+      "source_id": "pose-021"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "idle_breathe_c",
+      "phase": 22,
+      "revision": "p02-source-v1",
+      "source_id": "pose-022"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "idle_breathe_c",
+      "phase": 23,
+      "revision": "p02-source-v1",
+      "source_id": "pose-023"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "gaze",
+      "phase": 24,
+      "revision": "p02-source-v1",
+      "source_id": "pose-024"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "gaze",
+      "phase": 25,
+      "revision": "p02-source-v1",
+      "source_id": "pose-025"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "gaze",
+      "phase": 26,
+      "revision": "p02-source-v1",
+      "source_id": "pose-026"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "gaze",
+      "phase": 27,
+      "revision": "p02-source-v1",
+      "source_id": "pose-027"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "gaze",
+      "phase": 28,
+      "revision": "p02-source-v1",
+      "source_id": "pose-028"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "gaze",
+      "phase": 29,
+      "revision": "p02-source-v1",
+      "source_id": "pose-029"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "gaze",
+      "phase": 30,
+      "revision": "p02-source-v1",
+      "source_id": "pose-030"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "gaze",
+      "phase": 31,
+      "revision": "p02-source-v1",
+      "source_id": "pose-031"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "listen",
+      "phase": 32,
+      "revision": "p02-source-v1",
+      "source_id": "pose-032"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "listen",
+      "phase": 33,
+      "revision": "p02-source-v1",
+      "source_id": "pose-033"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "listen",
+      "phase": 34,
+      "revision": "p02-source-v1",
+      "source_id": "pose-034"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "listen",
+      "phase": 35,
+      "revision": "p02-source-v1",
+      "source_id": "pose-035"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "listen",
+      "phase": 36,
+      "revision": "p02-source-v1",
+      "source_id": "pose-036"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "listen",
+      "phase": 37,
+      "revision": "p02-source-v1",
+      "source_id": "pose-037"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "listen",
+      "phase": 38,
+      "revision": "p02-source-v1",
+      "source_id": "pose-038"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "listen",
+      "phase": 39,
+      "revision": "p02-source-v1",
+      "source_id": "pose-039"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "think",
+      "phase": 40,
+      "revision": "p02-source-v1",
+      "source_id": "pose-040"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "think",
+      "phase": 41,
+      "revision": "p02-source-v1",
+      "source_id": "pose-041"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "think",
+      "phase": 42,
+      "revision": "p02-source-v1",
+      "source_id": "pose-042"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "think",
+      "phase": 43,
+      "revision": "p02-source-v1",
+      "source_id": "pose-043"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "think",
+      "phase": 44,
+      "revision": "p02-source-v1",
+      "source_id": "pose-044"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "think",
+      "phase": 45,
+      "revision": "p02-source-v1",
+      "source_id": "pose-045"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "think",
+      "phase": 46,
+      "revision": "p02-source-v1",
+      "source_id": "pose-046"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "think",
+      "phase": 47,
+      "revision": "p02-source-v1",
+      "source_id": "pose-047"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "acknowledge",
+      "phase": 48,
+      "revision": "p02-source-v1",
+      "source_id": "pose-048"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "acknowledge",
+      "phase": 49,
+      "revision": "p02-source-v1",
+      "source_id": "pose-049"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "acknowledge",
+      "phase": 50,
+      "revision": "p02-source-v1",
+      "source_id": "pose-050"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "acknowledge",
+      "phase": 51,
+      "revision": "p02-source-v1",
+      "source_id": "pose-051"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "acknowledge",
+      "phase": 52,
+      "revision": "p02-source-v1",
+      "source_id": "pose-052"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "acknowledge",
+      "phase": 53,
+      "revision": "p02-source-v1",
+      "source_id": "pose-053"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "acknowledge",
+      "phase": 54,
+      "revision": "p02-source-v1",
+      "source_id": "pose-054"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "acknowledge",
+      "phase": 55,
+      "revision": "p02-source-v1",
+      "source_id": "pose-055"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "speak_neutral",
+      "phase": 56,
+      "revision": "p02-source-v1",
+      "source_id": "pose-056"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "speak_neutral",
+      "phase": 57,
+      "revision": "p02-source-v1",
+      "source_id": "pose-057"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "speak_neutral",
+      "phase": 58,
+      "revision": "p02-source-v1",
+      "source_id": "pose-058"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "speak_neutral",
+      "phase": 59,
+      "revision": "p02-source-v1",
+      "source_id": "pose-059"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "speak_neutral",
+      "phase": 60,
+      "revision": "p02-source-v1",
+      "source_id": "pose-060"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "speak_neutral",
+      "phase": 61,
+      "revision": "p02-source-v1",
+      "source_id": "pose-061"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "speak_neutral",
+      "phase": 62,
+      "revision": "p02-source-v1",
+      "source_id": "pose-062"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "speak_neutral",
+      "phase": 63,
+      "revision": "p02-source-v1",
+      "source_id": "pose-063"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "interrupt",
+      "phase": 64,
+      "revision": "p02-source-v1",
+      "source_id": "pose-064"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "interrupt",
+      "phase": 65,
+      "revision": "p02-source-v1",
+      "source_id": "pose-065"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "interrupt",
+      "phase": 66,
+      "revision": "p02-source-v1",
+      "source_id": "pose-066"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "interrupt",
+      "phase": 67,
+      "revision": "p02-source-v1",
+      "source_id": "pose-067"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "interrupt",
+      "phase": 68,
+      "revision": "p02-source-v1",
+      "source_id": "pose-068"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "interrupt",
+      "phase": 69,
+      "revision": "p02-source-v1",
+      "source_id": "pose-069"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "interrupt",
+      "phase": 70,
+      "revision": "p02-source-v1",
+      "source_id": "pose-070"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "interrupt",
+      "phase": 71,
+      "revision": "p02-source-v1",
+      "source_id": "pose-071"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "greeting",
+      "phase": 72,
+      "revision": "p02-source-v1",
+      "source_id": "pose-072"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "greeting",
+      "phase": 73,
+      "revision": "p02-source-v1",
+      "source_id": "pose-073"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "greeting",
+      "phase": 74,
+      "revision": "p02-source-v1",
+      "source_id": "pose-074"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "greeting",
+      "phase": 75,
+      "revision": "p02-source-v1",
+      "source_id": "pose-075"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "greeting",
+      "phase": 76,
+      "revision": "p02-source-v1",
+      "source_id": "pose-076"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "greeting",
+      "phase": 77,
+      "revision": "p02-source-v1",
+      "source_id": "pose-077"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "greeting",
+      "phase": 78,
+      "revision": "p02-source-v1",
+      "source_id": "pose-078"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "greeting",
+      "phase": 79,
+      "revision": "p02-source-v1",
+      "source_id": "pose-079"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "unknown_observer",
+      "phase": 80,
+      "revision": "p02-source-v1",
+      "source_id": "pose-080"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "unknown_observer",
+      "phase": 81,
+      "revision": "p02-source-v1",
+      "source_id": "pose-081"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "unknown_observer",
+      "phase": 82,
+      "revision": "p02-source-v1",
+      "source_id": "pose-082"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "unknown_observer",
+      "phase": 83,
+      "revision": "p02-source-v1",
+      "source_id": "pose-083"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "unknown_observer",
+      "phase": 84,
+      "revision": "p02-source-v1",
+      "source_id": "pose-084"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "unknown_observer",
+      "phase": 85,
+      "revision": "p02-source-v1",
+      "source_id": "pose-085"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "unknown_observer",
+      "phase": 86,
+      "revision": "p02-source-v1",
+      "source_id": "pose-086"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "unknown_observer",
+      "phase": 87,
+      "revision": "p02-source-v1",
+      "source_id": "pose-087"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "sit",
+      "phase": 88,
+      "revision": "p02-source-v1",
+      "source_id": "pose-088"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "sit",
+      "phase": 89,
+      "revision": "p02-source-v1",
+      "source_id": "pose-089"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "sit",
+      "phase": 90,
+      "revision": "p02-source-v1",
+      "source_id": "pose-090"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "sit",
+      "phase": 91,
+      "revision": "p02-source-v1",
+      "source_id": "pose-091"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "sit",
+      "phase": 92,
+      "revision": "p02-source-v1",
+      "source_id": "pose-092"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "sit",
+      "phase": 93,
+      "revision": "p02-source-v1",
+      "source_id": "pose-093"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "sit",
+      "phase": 94,
+      "revision": "p02-source-v1",
+      "source_id": "pose-094"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "sit",
+      "phase": 95,
+      "revision": "p02-source-v1",
+      "source_id": "pose-095"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "lie",
+      "phase": 96,
+      "revision": "p02-source-v1",
+      "source_id": "pose-096"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "lie",
+      "phase": 97,
+      "revision": "p02-source-v1",
+      "source_id": "pose-097"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "lie",
+      "phase": 98,
+      "revision": "p02-source-v1",
+      "source_id": "pose-098"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "lie",
+      "phase": 99,
+      "revision": "p02-source-v1",
+      "source_id": "pose-099"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "lie",
+      "phase": 100,
+      "revision": "p02-source-v1",
+      "source_id": "pose-100"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "lie",
+      "phase": 101,
+      "revision": "p02-source-v1",
+      "source_id": "pose-101"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "lie",
+      "phase": 102,
+      "revision": "p02-source-v1",
+      "source_id": "pose-102"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "lie",
+      "phase": 103,
+      "revision": "p02-source-v1",
+      "source_id": "pose-103"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "sleep",
+      "phase": 104,
+      "revision": "p02-source-v1",
+      "source_id": "pose-104"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "sleep",
+      "phase": 105,
+      "revision": "p02-source-v1",
+      "source_id": "pose-105"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "sleep",
+      "phase": 106,
+      "revision": "p02-source-v1",
+      "source_id": "pose-106"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "sleep",
+      "phase": 107,
+      "revision": "p02-source-v1",
+      "source_id": "pose-107"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "sleep",
+      "phase": 108,
+      "revision": "p02-source-v1",
+      "source_id": "pose-108"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "sleep",
+      "phase": 109,
+      "revision": "p02-source-v1",
+      "source_id": "pose-109"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "sleep",
+      "phase": 110,
+      "revision": "p02-source-v1",
+      "source_id": "pose-110"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "sleep",
+      "phase": 111,
+      "revision": "p02-source-v1",
+      "source_id": "pose-111"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "dream_neutral",
+      "phase": 112,
+      "revision": "p02-source-v1",
+      "source_id": "pose-112"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "dream_neutral",
+      "phase": 113,
+      "revision": "p02-source-v1",
+      "source_id": "pose-113"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "dream_neutral",
+      "phase": 114,
+      "revision": "p02-source-v1",
+      "source_id": "pose-114"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "dream_neutral",
+      "phase": 115,
+      "revision": "p02-source-v1",
+      "source_id": "pose-115"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "dream_neutral",
+      "phase": 116,
+      "revision": "p02-source-v1",
+      "source_id": "pose-116"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "dream_neutral",
+      "phase": 117,
+      "revision": "p02-source-v1",
+      "source_id": "pose-117"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "dream_neutral",
+      "phase": 118,
+      "revision": "p02-source-v1",
+      "source_id": "pose-118"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "dream_neutral",
+      "phase": 119,
+      "revision": "p02-source-v1",
+      "source_id": "pose-119"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "wake",
+      "phase": 120,
+      "revision": "p02-source-v1",
+      "source_id": "pose-120"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "wake",
+      "phase": 121,
+      "revision": "p02-source-v1",
+      "source_id": "pose-121"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "wake",
+      "phase": 122,
+      "revision": "p02-source-v1",
+      "source_id": "pose-122"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "wake",
+      "phase": 123,
+      "revision": "p02-source-v1",
+      "source_id": "pose-123"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "wake",
+      "phase": 124,
+      "revision": "p02-source-v1",
+      "source_id": "pose-124"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "wake",
+      "phase": 125,
+      "revision": "p02-source-v1",
+      "source_id": "pose-125"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "wake",
+      "phase": 126,
+      "revision": "p02-source-v1",
+      "source_id": "pose-126"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "wake",
+      "phase": 127,
+      "revision": "p02-source-v1",
+      "source_id": "pose-127"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "stretch",
+      "phase": 128,
+      "revision": "p02-source-v1",
+      "source_id": "pose-128"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "stretch",
+      "phase": 129,
+      "revision": "p02-source-v1",
+      "source_id": "pose-129"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "stretch",
+      "phase": 130,
+      "revision": "p02-source-v1",
+      "source_id": "pose-130"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "stretch",
+      "phase": 131,
+      "revision": "p02-source-v1",
+      "source_id": "pose-131"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "stretch",
+      "phase": 132,
+      "revision": "p02-source-v1",
+      "source_id": "pose-132"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "stretch",
+      "phase": 133,
+      "revision": "p02-source-v1",
+      "source_id": "pose-133"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "stretch",
+      "phase": 134,
+      "revision": "p02-source-v1",
+      "source_id": "pose-134"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "stretch",
+      "phase": 135,
+      "revision": "p02-source-v1",
+      "source_id": "pose-135"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "walk",
+      "phase": 136,
+      "revision": "p02-source-v1",
+      "source_id": "pose-136"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "walk",
+      "phase": 137,
+      "revision": "p02-source-v1",
+      "source_id": "pose-137"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "walk",
+      "phase": 138,
+      "revision": "p02-source-v1",
+      "source_id": "pose-138"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "walk",
+      "phase": 139,
+      "revision": "p02-source-v1",
+      "source_id": "pose-139"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "walk",
+      "phase": 140,
+      "revision": "p02-source-v1",
+      "source_id": "pose-140"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "walk",
+      "phase": 141,
+      "revision": "p02-source-v1",
+      "source_id": "pose-141"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "walk",
+      "phase": 142,
+      "revision": "p02-source-v1",
+      "source_id": "pose-142"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "walk",
+      "phase": 143,
+      "revision": "p02-source-v1",
+      "source_id": "pose-143"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "run",
+      "phase": 144,
+      "revision": "p02-source-v1",
+      "source_id": "pose-144"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "run",
+      "phase": 145,
+      "revision": "p02-source-v1",
+      "source_id": "pose-145"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "run",
+      "phase": 146,
+      "revision": "p02-source-v1",
+      "source_id": "pose-146"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "run",
+      "phase": 147,
+      "revision": "p02-source-v1",
+      "source_id": "pose-147"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "run",
+      "phase": 148,
+      "revision": "p02-source-v1",
+      "source_id": "pose-148"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "run",
+      "phase": 149,
+      "revision": "p02-source-v1",
+      "source_id": "pose-149"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "run",
+      "phase": 150,
+      "revision": "p02-source-v1",
+      "source_id": "pose-150"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "run",
+      "phase": 151,
+      "revision": "p02-source-v1",
+      "source_id": "pose-151"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "hop",
+      "phase": 152,
+      "revision": "p02-source-v1",
+      "source_id": "pose-152"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "hop",
+      "phase": 153,
+      "revision": "p02-source-v1",
+      "source_id": "pose-153"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "hop",
+      "phase": 154,
+      "revision": "p02-source-v1",
+      "source_id": "pose-154"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "hop",
+      "phase": 155,
+      "revision": "p02-source-v1",
+      "source_id": "pose-155"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "hop",
+      "phase": 156,
+      "revision": "p02-source-v1",
+      "source_id": "pose-156"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "hop",
+      "phase": 157,
+      "revision": "p02-source-v1",
+      "source_id": "pose-157"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "hop",
+      "phase": 158,
+      "revision": "p02-source-v1",
+      "source_id": "pose-158"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "hop",
+      "phase": 159,
+      "revision": "p02-source-v1",
+      "source_id": "pose-159"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "approach",
+      "phase": 160,
+      "revision": "p02-source-v1",
+      "source_id": "pose-160"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "approach",
+      "phase": 161,
+      "revision": "p02-source-v1",
+      "source_id": "pose-161"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "approach",
+      "phase": 162,
+      "revision": "p02-source-v1",
+      "source_id": "pose-162"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "approach",
+      "phase": 163,
+      "revision": "p02-source-v1",
+      "source_id": "pose-163"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "approach",
+      "phase": 164,
+      "revision": "p02-source-v1",
+      "source_id": "pose-164"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "approach",
+      "phase": 165,
+      "revision": "p02-source-v1",
+      "source_id": "pose-165"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "approach",
+      "phase": 166,
+      "revision": "p02-source-v1",
+      "source_id": "pose-166"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "approach",
+      "phase": 167,
+      "revision": "p02-source-v1",
+      "source_id": "pose-167"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "retreat",
+      "phase": 168,
+      "revision": "p02-source-v1",
+      "source_id": "pose-168"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "retreat",
+      "phase": 169,
+      "revision": "p02-source-v1",
+      "source_id": "pose-169"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "retreat",
+      "phase": 170,
+      "revision": "p02-source-v1",
+      "source_id": "pose-170"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "retreat",
+      "phase": 171,
+      "revision": "p02-source-v1",
+      "source_id": "pose-171"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "retreat",
+      "phase": 172,
+      "revision": "p02-source-v1",
+      "source_id": "pose-172"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "retreat",
+      "phase": 173,
+      "revision": "p02-source-v1",
+      "source_id": "pose-173"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "retreat",
+      "phase": 174,
+      "revision": "p02-source-v1",
+      "source_id": "pose-174"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "retreat",
+      "phase": 175,
+      "revision": "p02-source-v1",
+      "source_id": "pose-175"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "stop",
+      "phase": 176,
+      "revision": "p02-source-v1",
+      "source_id": "pose-176"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "stop",
+      "phase": 177,
+      "revision": "p02-source-v1",
+      "source_id": "pose-177"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "stop",
+      "phase": 178,
+      "revision": "p02-source-v1",
+      "source_id": "pose-178"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "stop",
+      "phase": 179,
+      "revision": "p02-source-v1",
+      "source_id": "pose-179"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "stop",
+      "phase": 180,
+      "revision": "p02-source-v1",
+      "source_id": "pose-180"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "stop",
+      "phase": 181,
+      "revision": "p02-source-v1",
+      "source_id": "pose-181"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "stop",
+      "phase": 182,
+      "revision": "p02-source-v1",
+      "source_id": "pose-182"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "stop",
+      "phase": 183,
+      "revision": "p02-source-v1",
+      "source_id": "pose-183"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "curiosity",
+      "phase": 184,
+      "revision": "p02-source-v1",
+      "source_id": "pose-184"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "curiosity",
+      "phase": 185,
+      "revision": "p02-source-v1",
+      "source_id": "pose-185"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "curiosity",
+      "phase": 186,
+      "revision": "p02-source-v1",
+      "source_id": "pose-186"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "curiosity",
+      "phase": 187,
+      "revision": "p02-source-v1",
+      "source_id": "pose-187"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "curiosity",
+      "phase": 188,
+      "revision": "p02-source-v1",
+      "source_id": "pose-188"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "curiosity",
+      "phase": 189,
+      "revision": "p02-source-v1",
+      "source_id": "pose-189"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "curiosity",
+      "phase": 190,
+      "revision": "p02-source-v1",
+      "source_id": "pose-190"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "curiosity",
+      "phase": 191,
+      "revision": "p02-source-v1",
+      "source_id": "pose-191"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "inspection",
+      "phase": 192,
+      "revision": "p02-source-v1",
+      "source_id": "pose-192"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "inspection",
+      "phase": 193,
+      "revision": "p02-source-v1",
+      "source_id": "pose-193"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "inspection",
+      "phase": 194,
+      "revision": "p02-source-v1",
+      "source_id": "pose-194"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "inspection",
+      "phase": 195,
+      "revision": "p02-source-v1",
+      "source_id": "pose-195"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "inspection",
+      "phase": 196,
+      "revision": "p02-source-v1",
+      "source_id": "pose-196"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "inspection",
+      "phase": 197,
+      "revision": "p02-source-v1",
+      "source_id": "pose-197"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "inspection",
+      "phase": 198,
+      "revision": "p02-source-v1",
+      "source_id": "pose-198"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "inspection",
+      "phase": 199,
+      "revision": "p02-source-v1",
+      "source_id": "pose-199"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "hesitation",
+      "phase": 200,
+      "revision": "p02-source-v1",
+      "source_id": "pose-200"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "hesitation",
+      "phase": 201,
+      "revision": "p02-source-v1",
+      "source_id": "pose-201"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "hesitation",
+      "phase": 202,
+      "revision": "p02-source-v1",
+      "source_id": "pose-202"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "hesitation",
+      "phase": 203,
+      "revision": "p02-source-v1",
+      "source_id": "pose-203"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "hesitation",
+      "phase": 204,
+      "revision": "p02-source-v1",
+      "source_id": "pose-204"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "hesitation",
+      "phase": 205,
+      "revision": "p02-source-v1",
+      "source_id": "pose-205"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "hesitation",
+      "phase": 206,
+      "revision": "p02-source-v1",
+      "source_id": "pose-206"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "hesitation",
+      "phase": 207,
+      "revision": "p02-source-v1",
+      "source_id": "pose-207"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "refusal",
+      "phase": 208,
+      "revision": "p02-source-v1",
+      "source_id": "pose-208"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "refusal",
+      "phase": 209,
+      "revision": "p02-source-v1",
+      "source_id": "pose-209"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "refusal",
+      "phase": 210,
+      "revision": "p02-source-v1",
+      "source_id": "pose-210"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "refusal",
+      "phase": 211,
+      "revision": "p02-source-v1",
+      "source_id": "pose-211"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "refusal",
+      "phase": 212,
+      "revision": "p02-source-v1",
+      "source_id": "pose-212"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "refusal",
+      "phase": 213,
+      "revision": "p02-source-v1",
+      "source_id": "pose-213"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "refusal",
+      "phase": 214,
+      "revision": "p02-source-v1",
+      "source_id": "pose-214"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "refusal",
+      "phase": 215,
+      "revision": "p02-source-v1",
+      "source_id": "pose-215"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "surprise",
+      "phase": 216,
+      "revision": "p02-source-v1",
+      "source_id": "pose-216"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "surprise",
+      "phase": 217,
+      "revision": "p02-source-v1",
+      "source_id": "pose-217"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "surprise",
+      "phase": 218,
+      "revision": "p02-source-v1",
+      "source_id": "pose-218"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "surprise",
+      "phase": 219,
+      "revision": "p02-source-v1",
+      "source_id": "pose-219"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "surprise",
+      "phase": 220,
+      "revision": "p02-source-v1",
+      "source_id": "pose-220"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "surprise",
+      "phase": 221,
+      "revision": "p02-source-v1",
+      "source_id": "pose-221"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "surprise",
+      "phase": 222,
+      "revision": "p02-source-v1",
+      "source_id": "pose-222"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "surprise",
+      "phase": 223,
+      "revision": "p02-source-v1",
+      "source_id": "pose-223"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "calm_joy",
+      "phase": 224,
+      "revision": "p02-source-v1",
+      "source_id": "pose-224"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "calm_joy",
+      "phase": 225,
+      "revision": "p02-source-v1",
+      "source_id": "pose-225"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "calm_joy",
+      "phase": 226,
+      "revision": "p02-source-v1",
+      "source_id": "pose-226"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "calm_joy",
+      "phase": 227,
+      "revision": "p02-source-v1",
+      "source_id": "pose-227"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "calm_joy",
+      "phase": 228,
+      "revision": "p02-source-v1",
+      "source_id": "pose-228"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "calm_joy",
+      "phase": 229,
+      "revision": "p02-source-v1",
+      "source_id": "pose-229"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "calm_joy",
+      "phase": 230,
+      "revision": "p02-source-v1",
+      "source_id": "pose-230"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "calm_joy",
+      "phase": 231,
+      "revision": "p02-source-v1",
+      "source_id": "pose-231"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "disappointment",
+      "phase": 232,
+      "revision": "p02-source-v1",
+      "source_id": "pose-232"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "disappointment",
+      "phase": 233,
+      "revision": "p02-source-v1",
+      "source_id": "pose-233"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "disappointment",
+      "phase": 234,
+      "revision": "p02-source-v1",
+      "source_id": "pose-234"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "disappointment",
+      "phase": 235,
+      "revision": "p02-source-v1",
+      "source_id": "pose-235"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "disappointment",
+      "phase": 236,
+      "revision": "p02-source-v1",
+      "source_id": "pose-236"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "disappointment",
+      "phase": 237,
+      "revision": "p02-source-v1",
+      "source_id": "pose-237"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "disappointment",
+      "phase": 238,
+      "revision": "p02-source-v1",
+      "source_id": "pose-238"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "disappointment",
+      "phase": 239,
+      "revision": "p02-source-v1",
+      "source_id": "pose-239"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "tiredness",
+      "phase": 240,
+      "revision": "p02-source-v1",
+      "source_id": "pose-240"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "tiredness",
+      "phase": 241,
+      "revision": "p02-source-v1",
+      "source_id": "pose-241"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "tiredness",
+      "phase": 242,
+      "revision": "p02-source-v1",
+      "source_id": "pose-242"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "tiredness",
+      "phase": 243,
+      "revision": "p02-source-v1",
+      "source_id": "pose-243"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "tiredness",
+      "phase": 244,
+      "revision": "p02-source-v1",
+      "source_id": "pose-244"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "tiredness",
+      "phase": 245,
+      "revision": "p02-source-v1",
+      "source_id": "pose-245"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "tiredness",
+      "phase": 246,
+      "revision": "p02-source-v1",
+      "source_id": "pose-246"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "tiredness",
+      "phase": 247,
+      "revision": "p02-source-v1",
+      "source_id": "pose-247"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "N",
+      "family": "boredom",
+      "phase": 248,
+      "revision": "p02-source-v1",
+      "source_id": "pose-248"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NE",
+      "family": "boredom",
+      "phase": 249,
+      "revision": "p02-source-v1",
+      "source_id": "pose-249"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "E",
+      "family": "boredom",
+      "phase": 250,
+      "revision": "p02-source-v1",
+      "source_id": "pose-250"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SE",
+      "family": "boredom",
+      "phase": 251,
+      "revision": "p02-source-v1",
+      "source_id": "pose-251"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "S",
+      "family": "boredom",
+      "phase": 252,
+      "revision": "p02-source-v1",
+      "source_id": "pose-252"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "SW",
+      "family": "boredom",
+      "phase": 253,
+      "revision": "p02-source-v1",
+      "source_id": "pose-253"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "W",
+      "family": "boredom",
+      "phase": 254,
+      "revision": "p02-source-v1",
+      "source_id": "pose-254"
+    },
+    {
+      "authoring": "controlled-raster-key-pose",
+      "direction": "NW",
+      "family": "boredom",
+      "phase": 255,
+      "revision": "p02-source-v1",
+      "source_id": "pose-255"
+    }
+  ]
+}

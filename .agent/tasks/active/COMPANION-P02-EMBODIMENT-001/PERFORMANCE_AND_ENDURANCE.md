@@ -30,3 +30,14 @@ Record:
 
 The run must fail on an unmet required invariant. Its evidence ceiling remains
 bounded engineering evidence, not production reliability or an SLA.
+
+## Executed result
+
+The deterministic transition runner passed 10,000 cases over seeds 17, 23, and
+41 with zero illegal transitions, invalid resource references, root drift, or
+unrecovered bridge disconnects (`evidence/phase02/transition_matrix.json`). A
+five-second synthetic smoke passed but did not start Godot or the resident
+foundation. The target-host probe found no dedicated 1366×768 Openbox output
+in the current session; the required two-hour continuous target-host run is
+`NOT RUN` pending the authorized target display/session. No reliability claim
+is made.

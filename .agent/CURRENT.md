@@ -109,3 +109,11 @@ Codex completes the entire Phase 02 directive, publishes the source, generated
 artifact manifests, visual review sheets, target-host evidence, Notion report,
 Issue #8 result, and one unmerged PR, then stops for Architect and operator
 visual review.
+
+## Codex execution note — 2026-09-11
+
+The deterministic embodiment candidate is implemented in the secondary
+worktree: source/export/atlas tooling, 32-family frame corpus, MonAnimationClip,
+layered Godot avatar/director/bridge, bounded habitat policy, and QA evidence.
+The active host is not the dedicated Openbox target, so target-host playback
+and operator visual approval remain open gates.

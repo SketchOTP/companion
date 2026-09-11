@@ -29,3 +29,15 @@ Document:
 Record exact commands, environment, tool versions/integrity, source hashes,
 result hashes, normalized nondeterminism if any, and byte-for-byte or semantic
 reproducibility result.
+
+## Executed result
+
+Controlled raster key-pose/in-between authoring was selected for this bounded
+candidate because Pillow 10.2.0 is available locally, produces deterministic
+RGBA PNG bytes, and keeps runtime animation raster-frame based. Layered vector
+shape authoring remains a viable future source format. `build_assets.py` emits
+256 unique 1024² frames, landmarks, clip metadata, 16 4096² atlases, and a zip
+pack; `validate_assets.py` performs fail-closed canvas, alpha, safety,
+uniqueness, timing, direction, and pack checks. Rebuilding reproduced the
+manifest and source hashes. Generated binaries are versioned artifacts;
+authored sources and manifests are Git-authoritative.

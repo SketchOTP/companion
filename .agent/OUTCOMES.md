@@ -579,3 +579,15 @@ headless client sequence and topology fallback probe passed, as did the
 900-second resident regression. The result bundle and semantic validator live
 under `experiments/p00-foundation-qual/results/phase01-review04/`; evidence is
 bounded E3 and Phase 01 remains pending Architect acceptance.
+
+## 2026-09-11 — Phase 02 embodiment candidate
+
+Created an original identity-faithful candidate package with 256 unique
+1024×1024 RGBA body frames across 32 semantic families and eight directions,
+24 eye overlays, eight mouth overlays, deterministic atlases/packs, and review
+sheets. Added MonAnimationClip schema/Rust type, layered Godot MonAvatar and
+semantic director, versioned bridge events, bounded habitat policy, contract
+and asset validators, and a 10,000-case deterministic transition result. The
+current host exposes a dual-4K X11/GNOME topology rather than the dedicated
+Openbox target, so target-host playback and operator visual approval remain
+pending; no Phase 03+ or product claims are made.

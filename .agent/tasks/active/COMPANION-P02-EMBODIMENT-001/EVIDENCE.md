@@ -33,3 +33,14 @@ Bind:
 Separate direct observations, reproduced builds, target tests, operator visual
 approval, hypotheses, and deferrals. Never treat generated art, automated QA, or
 playback as operator approval or organism/product capability.
+
+## Bound evidence package
+
+- Reference metadata and inspected derivatives: `E1_OBSERVED`.
+- Deterministic source/export/atlas/pack and automated QA: `E2_REPRODUCED`.
+- Godot headless layered-avatar test and 10,000-case transition runner:
+  `E3_TARGET_TESTED` (synthetic presentation only).
+- Target-host Openbox habitat and two-hour playback: `NOT RUN` because the
+  current session exposes a different display topology; no host settings were
+  changed.
+- Operator identity/motion approval: `PENDING`.

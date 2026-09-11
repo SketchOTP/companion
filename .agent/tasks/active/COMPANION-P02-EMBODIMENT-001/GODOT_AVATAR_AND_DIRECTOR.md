@@ -29,3 +29,15 @@ start, frame/event, interruption, completion, and failure/degradation.
 
 Include 10,000-case retained-seed transition results, illegal-transition count,
 selection latency, bridge round-trip latency, and tamper-negative evidence.
+
+## Executed result
+
+`godot/main.tscn` contains the required layered `MonAvatar` tree. The avatar
+loads `SpriteFrames` from the generated raster manifest and alternates BodyA /
+BodyB; `MonAnimationDirector` performs deterministic seed-based selection,
+recent-use suppression, legal connector fallback, interruptible semantic
+intents, and versioned results. `EmbodimentBridge` emits versioned intent,
+frame, completion, interruption, and degradation-shaped events. The headless
+Godot 4.7.2 test reports a live `gaze` intent and visible body state. Missing
+manifest/empty clips degrade explicitly. Canonical state and care policy are
+not present in these scripts.

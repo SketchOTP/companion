@@ -28,7 +28,7 @@ def sample(schema: dict) -> dict:
         elif spec.get("format") == "date-time":
             result[key] = "2026-01-01T00:00:00Z"
         elif "pattern" in spec:
-            result[key] = "0" * 64
+            result[key] = "0" * 64 if "[0-9a-f]" in spec["pattern"] else "synthetic_value"
         elif spec.get("type") == "boolean":
             result[key] = False
         elif spec.get("type") == "integer":
@@ -66,6 +66,10 @@ for name in NAMES:
         if schema.get("type") != "object" or schema.get("additionalProperties") is not False:
             errors.append(f"{name}: unsafe object policy")
         valid = sample(schema)
+        if name == "mon-animation-clip.schema.json":
+            fixture = ROOT / "contracts" / "fixtures" / "mon-animation-clip-v1.json"
+            if fixture.exists():
+                valid = json.loads(fixture.read_text(encoding="utf-8"))
         validate(valid, schema)
         for mutation in (
             lambda v: v.pop(next(iter(schema.get("required", []))), None),

@@ -59,3 +59,14 @@ Include exact:
 
 Do not state that the art, three-quarter views, animation library, or phase is
 approved unless the operator and Architect explicitly approve it.
+
+## Codex execution summary
+
+The candidate implementation is ready for review with automated evidence, but
+the phase is not self-accepted. Asset QA and the 10,000-case deterministic
+transition matrix passed; the Godot 4.7.2 headless layered-avatar test passed.
+The current session exposes two 3840×2160 X11 outputs with GNOME Shell/mutter,
+not the dedicated Openbox target, so the required two-hour target-host run is
+`NOT RUN`. New construction, diagonal views, frames, and motion remain pending
+operator visual approval. No organism, memory, speech, perception, care, or
+Phase 03+ capability was implemented or claimed.

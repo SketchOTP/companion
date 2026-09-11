@@ -29,3 +29,14 @@ texture memory, load latency, first-use stall, hashes, and corruption handling.
 List what is committed, what is generated locally, what is published as a
 versioned artifact, and how the complete asset bundle is exported/restored
 without GitHub. Confirm ordinary-Git binary budget and no Git LFS change.
+
+## Executed result
+
+`godot/habitat_policy.md` and `embodiment_habitat.gd` lock a 640×360 logical
+base, 960×540 initial window, 640×360 minimum, 1366×768 maximum, canvas-items
+keep-aspect scaling, uniform raster scaling, target screen 0, visible-area
+clamping, `user://` geometry persistence, and primary-screen fallback. The
+metadata-only host probe observed an X11 desktop with two 3840×2160 outputs and
+GNOME Shell/mutter framing rather than the dedicated 1366×768 Openbox target;
+no display configuration was changed, so physical habitat and two-hour
+playback remain unverified. The generated tree is 11 MB; no Git LFS was added.

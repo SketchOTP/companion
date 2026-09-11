@@ -456,3 +456,12 @@ client/topology evidence, and a 900-second resident regression. The semantic
 validator and five tamper-negative mutations passed. This is bounded E3
 engineering evidence only; Phase 01 remains unaccepted and no dependency,
 security mechanism, later phase, or product capability was adopted.
+
+## 2026-09-11 — Phase 02 embodiment candidate record
+
+The Phase 02 candidate adds only embodiment presentation assets, contracts,
+Godot adapter/director code, and deterministic QA tooling. It preserves the
+approved identity constraints and Phase 01 authority boundaries. The generated
+corpus is reproducible and versioned; operator approval is explicitly pending.
+The current host topology prevents claiming dedicated Openbox playback, so the
+phase remains open for Architect and operator review.

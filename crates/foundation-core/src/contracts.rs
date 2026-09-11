@@ -82,6 +82,35 @@ pub struct EmbodimentResult {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct MonAnimationClip {
+    pub clip_id: String,
+    pub version: u16,
+    pub body_revision: String,
+    pub stage: String,
+    pub direction_coverage: Vec<String>,
+    pub start_posture: String,
+    pub end_posture: String,
+    pub behavior_tags: Vec<String>,
+    pub affect_compatibility: Vec<String>,
+    pub energy_compatibility: Vec<String>,
+    pub loop_mode: String,
+    pub root_motion_policy: String,
+    pub pack_revision: String,
+    pub checksum: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct EmbodimentEvent {
+    pub schema_major: u16,
+    pub event_type: String,
+    pub intent_id: uuid::Uuid,
+    pub clip_id: Option<String>,
+    pub frame: Option<u32>,
+    pub status: String,
+    pub generation: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct VaultDecision {
     pub schema_major: u16,
     pub decision_id: Uuid,
@@ -102,4 +131,32 @@ pub struct DegradedState {
     pub role: String,
     pub status: String,
     pub reason: String,
+}
+
+#[cfg(test)]
+mod tests {
+    use super::MonAnimationClip;
+
+    #[test]
+    fn mon_animation_clip_round_trips_project_profile_fields() {
+        let clip = MonAnimationClip {
+            clip_id: "idle_breathe_a".into(),
+            version: 1,
+            body_revision: "mon-body-v1".into(),
+            stage: "candidate".into(),
+            direction_coverage: vec!["N".into(), "NE".into()],
+            start_posture: "neutral".into(),
+            end_posture: "neutral".into(),
+            behavior_tags: vec!["idle".into()],
+            affect_compatibility: vec!["neutral".into()],
+            energy_compatibility: vec!["low".into()],
+            loop_mode: "loop".into(),
+            root_motion_policy: "forbidden".into(),
+            pack_revision: "p02-pack-v1".into(),
+            checksum: "0".repeat(64),
+        };
+        let bytes = serde_json::to_vec(&clip).expect("serialize");
+        let decoded: MonAnimationClip = serde_json::from_slice(&bytes).expect("deserialize");
+        assert_eq!(clip, decoded);
+    }
 }

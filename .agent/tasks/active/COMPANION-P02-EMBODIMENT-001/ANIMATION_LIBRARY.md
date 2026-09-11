@@ -36,3 +36,13 @@ repeat/cooldown/rarity, pack, validation checksum, and visual-review status.
 
 Record legal direction fallback and the approval state of all diagonal art. No
 unapproved mirror may be counted as production left/right coverage.
+
+## Executed result
+
+The candidate manifest records 32 semantic families, 256 unique body-frame
+sources, eight direction identifiers, 24 eye overlays, eight mouth overlays,
+and three distinct high-frequency idle families. Every family declares all
+eight directions with explicit fallback metadata. Frame hashes are unique; no
+metadata-only, translated, scaled, or mirrored duplicate is counted. These
+remain visual presentations and do not implement organism, speech, memory,
+perception, or care policy.

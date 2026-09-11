@@ -320,3 +320,12 @@ wire evidence; prove Godot client state/topology recovery; run a focused
 900-second resident regression; and enforce all equations with a fail-closed
 semantic validator. Preserve earlier false results as superseded history. Do
 not open later phases, adopt mechanisms, or claim product capability.
+
+## COMPANION-P02-EMBODIMENT-001 — execution record (2026-09-11)
+
+Execute the complete Phase 02 embodiment package: reference/construction
+model, deterministic MON_FRAME_V1 raster pipeline, clip contracts and library,
+layered Godot avatar/director, bridge, bounded habitat, packs, QA, review
+materials, 10,000-case transition evidence, and target playback. New art is a
+candidate pending operator review; no organism, memory, speech, perception,
+care, or later-phase capability is authorized.

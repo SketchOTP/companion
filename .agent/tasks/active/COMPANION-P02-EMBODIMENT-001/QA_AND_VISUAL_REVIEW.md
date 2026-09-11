@@ -30,3 +30,13 @@ pending. Preserve rejected frames and reasons.
 Codex cannot self-approve identity or animation quality. List exact operator
 questions and the minimum review artifact needed for each. Do not conflate
 technical validation with visual approval.
+
+## Executed result
+
+Automated asset QA passed: 256/256 decodable RGBA frames, 256 unique hashes,
+32 families, eight directions, 24 eye overlays, eight mouth overlays, safety
+region and zero-root-drift metadata, valid pack and atlas dimensions. Contract
+QA passed for all ten schemas with valid, missing-required, and unknown-field
+cases. Review derivatives include construction diagonal candidates, palette /
+anatomy, eight-direction, family, transition, eye, and mouth sheets. They are
+new candidates pending operator review; automated QA is not visual approval.

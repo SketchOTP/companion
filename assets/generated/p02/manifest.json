@@ -1,0 +1,34 @@
+{
+  "atlas_pages": 16,
+  "candidate_status": "pending_operator_visual_approval",
+  "default_drawings_per_second": 12,
+  "directions": [
+    "N",
+    "NE",
+    "E",
+    "SE",
+    "S",
+    "SW",
+    "W",
+    "NW"
+  ],
+  "eye_overlays": 24,
+  "families": 32,
+  "frame_count": 256,
+  "generated_by": "experiments/p02-embodiment/scripts/build_assets.py",
+  "mouth_overlays": 8,
+  "pack": "assets/generated/p02/mon-embodiment-p02-v1.zip",
+  "pack_sha256": "127a28a7e4a5cb86c99719ebe59953788883d537a4155975ee9a09279bbbad98",
+  "profile": "MON_FRAME_V1",
+  "root": [
+    512,
+    896
+  ],
+  "safety_region": [
+    64,
+    32,
+    960,
+    960
+  ],
+  "timing_grid_hz": 24
+}
