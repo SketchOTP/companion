@@ -3,58 +3,80 @@
 ## Entry points
 
 - `AGENTS.md` — mandatory Authority router for Codex.
-- `project_goal.md` — root pointer to the durable project goal; not a second goal authority.
-- `.agent/INDEX.md` — project-state retrieval router.
-- `.agents/skills/authority/SKILL.md` — mandatory Codex Authority lifecycle.
+- `.agent/INDEX.md` — current project-state router.
+- `.agents/skills/authority/SKILL.md` — Authority lifecycle.
+- `Cargo.toml` — Rust foundation workspace.
+- `godot/project.godot` — Godot 4.7 embodiment project.
 
-## Major modules / packages
+## Accepted Phase 01 foundation
 
-No application module or package exists or is authorized. `experiments/p00-foundation-qual/` is a disposable non-product qualification harness area with Python/Rust synthetic shells, oracle-backed JCS checks, multi-process IPC scripts, and exact SQLite/VFS scripts; its qualification-only Rust lock and cached oracle are not production dependency declarations.
+- `crates/foundation-core/` — contracts, canonicalization, XDG paths,
+  persistence, IPC, logging, and version foundations.
+- `crates/foundation-services/` — ops-supervisor, companion-core, care-core,
+  identity-consent-vault, sensor-gateway, and godot-bridge shells.
+- `contracts/` — versioned JSON Schemas and fixtures.
+- `migrations/` — companion/care/vault development migrations.
+- `godot/` — neutral bounded habitat and bridge foundation.
+- `scripts/` — bootstrap, verification, health, matrices, artifact, SBOM, and
+  evidence tooling.
+- `evidence/` — sanitized bounded engineering evidence.
+- `experiments/p00-foundation-qual/` — preserved disposable Phase 00
+  qualification harnesses; not product runtime.
 
-## Important interfaces / contracts
+## Active Phase 02 planned ownership
 
-- `.agents/skills/authority/references/directive-contract.md` — Architect-to-Codex directive contract.
-- `.agents/skills/authority/references/result-contract.md` — Codex-to-Architect result contract.
-- `.agents/skills/authority/references/evidence.md` — evidence ladder.
-- `.agents/skills/authority/references/state-files.md` — project-state update rules.
-- `.agents/skills/authority/references/safety.md` — safety boundary.
-- `.agents/skills/external-discovery/SKILL.md` — prior-art/reuse workflow.
+Codex must extend the repository with a clean structure equivalent to:
 
-## Tests
+- `assets/reference/approved/` — exact approved identity/turnaround masters and
+  manifests.
+- `assets/authoring/` — project-authored construction, vector/pose/keyframe, and
+  body-revision sources.
+- `assets/clips/` — clip specifications and landmark/contact/event tracks.
+- `assets/review/` — selected contact sheets and review derivatives within the
+  ordinary-Git binary budget.
+- `crates/embodiment-contracts/` or an equivalent bounded module —
+  MonAnimationClip and intent/result types.
+- `godot/mon/` — MonAvatar, layers, animation director, resource import, and
+  test scenes.
+- `tools/embodiment/` or equivalent — deterministic frame export, validation,
+  atlas/pack, contact-sheet, artifact, and evidence tooling.
+- `evidence/phase02-embodiment/` — sanitized manifests/results, not the complete
+  generated PNG corpus.
 
-No application test suite or governance test runner exists. Governance is validated with explicit structural/content/Git checks recorded in `.agent/OUTCOMES.md`.
+The exact directory names may change when a cleaner modular layout is justified,
+but source/reference/generated/runtime/review/evidence ownership must remain
+unambiguous.
 
-## Generated / cache / build areas
+## Generated and binary outputs
 
-Qualification binaries, toolchains, Godot archives, SQLite sources/builds, databases, WAL files, sockets, raw measurements, and temporary VFS runners are private local XDG cache/state outside Git. Existing `.gitignore` and protected primary Graft changes are untouched.
+Bulk full-canvas PNG frames, atlases, runtime packs, complete contact sheets, and
+motion artifacts are deterministic versioned build/CI artifacts and local export
+bundles. They are not ordinary-Git history by default. Do not configure Git LFS
+without separate Architect/operator authority.
 
-## Governance / agent files
+Private tool caches, build output, imported Godot cache, runtime data, databases,
+WAL files, sockets, logs, and temporary measurements remain outside Git under
+validated local XDG paths.
 
-- `.authority/VERSION.json` — Authority package/baseline provenance.
-- `.agent/PROJECT_GOAL.md` — durable goal and permanent constraints.
-- `.agent/PROJECT_PROFILE.md` — verified repository and technical profile.
-- `.agent/CURRENT.md` — mutable current snapshot.
-- `.agent/DIRECTIVES.md` — append-only directive ledger.
-- `.agent/OUTCOMES.md` — append-only outcome/evidence ledger.
-- `.agent/LEARNINGS.md` — append-only durable learnings.
-- `.agent/RECORD.md` — append-only decisions and governance events.
-- `.agent/REPO_MAP.md` — this repository map.
-- `.agent/EXTERNAL.md` — append-only external discovery ledger.
-- `.agent/tasks/` — conditional complex-task packets.
+## Governance
 
-## Phase 01 additions
+- `.agent/CURRENT.md` — mutable current state.
+- `.agent/INDEX.md` — retrieval map.
+- `.agent/DIRECTIVES.md`, `OUTCOMES.md`, `LEARNINGS.md`, `RECORD.md`,
+  `EXTERNAL.md` — append-only history after adoption.
+- `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/` — active task.
+- `.agent/tasks/completed/COMPANION-P01-FOUNDATION-001/` — accepted Phase 01
+  packet and Architect acceptance.
 
-- `Cargo.toml`, `Cargo.lock`, `crates/` — locked Rust foundation workspace.
-- `contracts/`, `migrations/` — authored schemas, fixture and authority-store migrations.
-- `godot/` — neutral Godot 4.7.2 habitat boundary.
-- `scripts/` — offline bootstrap, verification, health, artifact, matrix, soak and SBOM tooling.
-- `evidence/` — sanitized foundation summaries only; runtime outputs remain private.
+## Sensitive/high-risk boundaries
 
-## Known sensitive/high-risk areas
+Godot and asset tooling may not own organism state, memory, biometric identity,
+consent, secrets, contacts, care policy, incidents, or notification authority.
+No media capture, speech/model dependency, real user data, or live care behavior
+is authorized in Phase 02.
 
-No implementation exists. Future sensitive areas include identity/memory persistence, biometrics and perception, consent, trusted contacts, escalation policy/audit, backup/export/restore, secrets, and personal routine data.
+## Protected operator files
 
-## Preserved bootstrap files
-
-- `.gitignore` — initial GitHub bootstrap file; unchanged by Authority installation.
-- `LICENSE` — Apache License 2.0; unchanged by Authority installation.
+The primary SSHFS worktree contains operator-owned modifications to root
+`.gitignore` and `AGENTS.md`. Do not read the modified contents into evidence or
+commit/reset/stash/overwrite/reformat/copy them.

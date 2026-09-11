@@ -1,0 +1,29 @@
+{
+  "schema": "companion-mon-asset-manifest-v1",
+  "status": "PENDING_CODEX_EXECUTION",
+  "canonical_frame_profile": "MON_FRAME_V1",
+  "approved_references": [],
+  "body_revision": null,
+  "palette": [],
+  "directions": [
+    "front",
+    "front_left",
+    "left",
+    "back_left",
+    "back",
+    "back_right",
+    "right",
+    "front_right"
+  ],
+  "clip_families": [],
+  "body_frame_sources": [],
+  "overlays": {
+    "eye_gaze_blink": [],
+    "mouth_shapes": []
+  },
+  "packs": [],
+  "review_artifacts": [],
+  "validation": {
+    "status": "NOT_RUN"
+  }
+}

@@ -4,108 +4,108 @@
 
 Planning Phase 02 remains the governing delivery roadmap.
 
-Roadmap Phase 00 is complete at the implementation-opening boundary.
-Architecture v1.0 remains adopted. Roadmap Phase 01 — Environment and
-Engineering Foundation is active but **not accepted**.
+Roadmap Phase 00 is complete. Architecture v1.0 remains adopted. Roadmap Phase
+01 is accepted at the bounded engineering-foundation boundary and merged in
+`fc31717bba8c4833736d1792d7a5fe1c6cca4900`.
 
-PR #7 at `62f1f08f2878aa6be457183050fbd982afbcb47d` received
-Architect Review 04. The implementation is substantial and retained, but the
-current evidence semantics are invalid: the 3,000-message matrix accepted most
-requested invalid categories, the 37-scenario matrix often treats command
-acknowledgment as scenario completion, and contract/Godot evidence overstates
-what was directly exercised.
+Roadmap Phase 02 — Mon Body, Habitat, and Sprite Pipeline is now active under
+`COMPANION-P02-EMBODIMENT-001`.
 
-## Active objective
+## Phase 01 accepted boundary
 
-Complete one narrow Phase 01 evidence-semantics correction in the existing PR:
+Accepted:
 
-1. replace raw injection-string fallthrough with an exhaustive typed mapping;
-2. run one truthful 3,000-message resident matrix with exact expected outcomes
-   and reasons;
-3. replace the false 37/37 result with twelve directly exercised acceptance
-   groups;
-4. add focused schema/Rust round trips and actual-wire tests;
-5. prove Godot client-state reconnect, simulated topology recovery, and bounded
-   Openbox placement;
-6. run one focused 900-second resident regression after correction; and
-7. bind all semantic equations in a fail-closed validator.
+- Rust 1.98.1 workspace and six service shells;
+- exact Godot 4.7.2 and SQLite 3.53.4 development identities;
+- resident supervisor/control foundation;
+- local XDG placement and authority-separated development stores;
+- bounded synthetic direct-care transport;
+- Godot UDS/headless habitat foundation;
+- CI, component inventory, and bounded target-host execution.
 
-The prior 3,600-second run remains bounded resident evidence. Do not repeat it
-unless the supervisor lifecycle changes materially.
+Not accepted from Phase 01:
 
-## Active directive and review
+- production sensor ingress;
+- complete attacker/security qualification;
+- complete contract wire, persistence recovery, or physical display recovery;
+- advisory/legal clearance;
+- product reliability, safety efficacy, or product capability.
 
-- Directive: `COMPANION-P01-FOUNDATION-001`
-- Status: `ARCHITECT REVIEW 04 — EVIDENCE SEMANTICS CORRECTION`
-- Reviewed task head: `62f1f08f2878aa6be457183050fbd982afbcb47d`
-- Repository review: `.agent/tasks/active/COMPANION-P01-FOUNDATION-001/ARCHITECT_REVIEW_04.md`
-- Notion review: https://app.notion.com/p/3d7833cb27ff81ea95e4e313f695a988
-- Notion directive: https://app.notion.com/p/3d7833cb27ff815ebe3ed1999f05beba
-- Notion report: https://app.notion.com/p/3d7833cb27ff81c5b0eee3e6c98b54b5
-- GitHub Issue #6: https://github.com/SketchOTP/companion/issues/6
-- Pull request #7: https://github.com/SketchOTP/companion/pull/7
-- Required branch: `codex/p01-foundation-001`
-- Required publication: continue existing draft/unmerged PR #7
-- Acceptance authority: ChatGPT AI Architect
-- Roadmap Phase 02 and later: `CLOSED`
-- Product capability: `NOT ESTABLISHED`
+Canonical acceptance:
+https://app.notion.com/p/3d8833cb27ff813a96e2f9d7b27b009f
 
-## Retained implementation
+Archived packet:
+`.agent/tasks/completed/COMPANION-P01-FOUNDATION-001/`
 
-Retain the Rust workspace and role binaries, exact Rust/Godot/SQLite identities,
-exact SQLite source build and direct FFI, prepared statements and migrations,
-RustCrypto HMAC, private capability channels, kernel credentials, retained
-producer pidfd, direct-pair rotation, XDG boundaries, resident supervisor,
-care receipt/attempt storage, Godot UDS direction, current component inventory,
-green CI history, and completed 3,600-second resident run.
+## Active Phase 02 objective
 
-## Rejected or superseded evidence
+Deliver one identity-faithful, continuously animated sprite body and the
+production-capable pipeline that creates, validates, packages, and reviews it:
 
-- `phase01_closeout.json` does not establish invalid-input rejection: it records
-  2,805 accepted attempts and only 199 rejected attempts while hundreds of
-  invalid categories were requested.
-- The control plane forwards raw category names while producer mutations expect
-  `inject_*` opcodes.
-- The 37-scenario matrix includes uninduced startup/readiness/crash-loop cases
-  and control acknowledgments labeled as storage, display, vault, and recovery
-  outcomes.
-- The contract script labels schema names as actual wire domains without
-  exercising all wire paths.
-- The 3,600-second soak proves bounded residency and process replacement, not
-  every claimed recovery invariant.
+1. preserve exact approved visual references;
+2. lock construction, anatomy, palette, and candidate diagonal views;
+3. implement deterministic MON_FRAME_V1 authoring/export/atlas tooling;
+4. produce at least 32 clip families and 256 unique body-frame sources;
+5. implement layered MonAvatar, MonAnimationClip, and MonAnimationDirector;
+6. integrate semantic embodiment intents/results through the Godot bridge;
+7. lock bounded Openbox window size/scale/screen/recovery behavior;
+8. publish automated QA and operator-visible visual review materials;
+9. pass a 10,000-case transition matrix and two-hour target-host playback;
+10. publish versioned asset artifacts plus local export/restore evidence.
 
-## Explicit deferrals
+## Active directive
 
-The following are not Phase 01 blockers:
+- Directive: `COMPANION-P02-EMBODIMENT-001`
+- Notion directive:
+  https://app.notion.com/p/3d8833cb27ff810e858acd029ac0ea05
+- Notion report:
+  https://app.notion.com/p/3d8833cb27ff817d9d01d754ec852c10
+- GitHub Issue #8:
+  https://github.com/SketchOTP/companion/issues/8
+- Active packet: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/`
+- Required branch: `codex/p02-embodiment-001`
+- Required publication: one open/unmerged phase-sized pull request to `main`
+- Acceptance: ChatGPT AI Architect plus explicit operator visual approval
+- Phase 03 and later: `CLOSED`
 
-- cargo-deny/advisory database analysis;
-- formal legal review;
-- broad SQLite VFS, physical power-loss, and lifetime qualification;
-- physical monitor hot-unplug; and
-- every Roadmap Phase 02–10 capability.
+## Fixed embodiment authority
+
+- Exact Godot 4.7.2.
+- Bounded resizable habitat on the dedicated 1366×768 Openbox display.
+- Approved purple mon identity and hard anatomy invariants.
+- MON_FRAME_V1 1024×1024 RGBA/sRGB, root `(512,896)`, baseline `896`, safety
+  region `x=64..960`, `y=32..960`, no source crop, zero root drift, 24 Hz grid.
+- Runtime raster sprite library; authoring may use controlled vector/pose source.
+- Godot owns only rendering/animation execution state.
+- No canonical organism, memory, perception, speech, identity, contact, or care
+  authority in Godot.
+
+## Asset storage policy
+
+Commit authored source, manifests, tools, hashes, and selected review
+materials. Publish the full generated PNG/atlas corpus as deterministic versioned
+artifacts and local export bundles. Do not configure Git LFS. Keep ordinary-Git
+binary payload within the active directive budget.
 
 ## Protected operator work
 
 The primary SSHFS worktree contains operator-owned uncommitted root
-`.gitignore` and `AGENTS.md` changes. They remain outside this directive. Do
-not read their modified contents into evidence, commit, discard, reset,
-overwrite, stash, reformat, copy, or reinterpret them.
+`.gitignore` and `AGENTS.md` changes. Do not read their modified contents into
+evidence, commit, discard, reset, overwrite, stash, copy, reformat, or
+reinterpret them. Execute Phase 02 from a clean local ext4/NVMe secondary
+worktree.
+
+## Product boundary
+
+No organism, needs, drives, goals, personality, autonomy, autobiographical
+memory, learning, development, dreaming, camera/microphone, STT/TTS, model,
+biometric, contact, notification, spoken-help, live care, security
+certification, product reliability, medical/emergency capability, or Phase 03+
+completion is established or authorized.
 
 ## Next review point
 
-Codex completes Architect Review 04 in PR #7 and returns one truthful,
-evidence-bound result. A passing result is intended to trigger Phase 01 merge,
-archive, and immediate issuance of the complete Roadmap Phase 02 embodiment
-directive.
-
-## Architect Review 04 — evidence-semantics correction
-
-The earlier 3,000-message and 37-scenario passes are superseded. The corrected
-resident matrix uses exhaustive typed `InjectionKind`, exact outcomes/reasons,
-3,000 messages over seeds 17/23/41, zero invalid acceptance, and ordinary-
-observation separation. A directly exercised twelve-group matrix, actual
-Godot client-state/topology probe, and 900-second resident regression are
-committed under `experiments/p00-foundation-qual/results/phase01-review04/`.
-The semantic validator recomputes hashes, fixture identity, ancestry, and
-equations; five tamper mutations fail closed. This remains bounded E3 evidence
-only and Phase 01 remains pending independent Architect acceptance.
+Codex completes the entire Phase 02 directive, publishes the source, generated
+artifact manifests, visual review sheets, target-host evidence, Notion report,
+Issue #8 result, and one unmerged PR, then stops for Architect and operator
+visual review.
