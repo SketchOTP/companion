@@ -130,6 +130,57 @@ pub struct MonAnimationTrackFrame {
     pub sha256: String,
 }
 
+/// R03 temporal track contract. Facing is a selection key; frame order is
+/// temporal and carries source-space landmarks and contact/event evidence.
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct MonTemporalTrackV2 {
+    pub track_id: String,
+    pub clip_id: String,
+    pub version: u16,
+    pub body_revision: String,
+    pub stage: String,
+    pub family: String,
+    pub facing: String,
+    pub travel_direction: Option<String>,
+    pub posture: String,
+    pub variant: u16,
+    pub source_revision: String,
+    pub source_reference_sha256: String,
+    pub frame_profile: String,
+    pub fps: u16,
+    pub frames: Vec<MonTemporalTrackFrameV2>,
+    pub loop_mode: String,
+    pub root_motion_policy: String,
+    pub entry_posture: String,
+    pub exit_posture: String,
+    pub events: Vec<serde_json::Value>,
+    pub interruptible_ranges: Vec<Vec<u32>>,
+    pub source_checksum: String,
+    pub pack_revision: String,
+    pub track_checksum: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct MonTemporalTrackFrameV2 {
+    pub frame_id: String,
+    pub frame_index: u32,
+    pub duration_ticks: u16,
+    pub path: String,
+    pub sha256: String,
+    pub source_pose_id: String,
+    pub landmarks: serde_json::Value,
+    pub contacts: Vec<serde_json::Value>,
+    pub events: Vec<serde_json::Value>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct MonTemporalTracksV2 {
+    pub profile: String,
+    pub body_revision: String,
+    pub timing: serde_json::Value,
+    pub tracks: Vec<MonTemporalTrackV2>,
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct EmbodimentEvent {
     pub schema_major: u16,
@@ -166,7 +217,10 @@ pub struct DegradedState {
 
 #[cfg(test)]
 mod tests {
-    use super::{MonAnimationClip, MonAnimationTrack, MonAnimationTrackFrame};
+    use super::{
+        MonAnimationClip, MonAnimationTrack, MonAnimationTrackFrame, MonTemporalTrackV2,
+        MonTemporalTracksV2,
+    };
 
     #[test]
     fn mon_animation_clip_round_trips_project_profile_fields() {
@@ -221,5 +275,54 @@ mod tests {
         assert_eq!(track, decoded);
         assert_eq!(decoded.direction, "N");
         assert_eq!(decoded.frames.len(), 1);
+    }
+
+    #[test]
+    fn r03_temporal_fixture_round_trips_with_facing_and_landmarks() {
+        let fixture = include_str!("../../../contracts/fixtures/mon-temporal-track-v2.json");
+        let track: MonTemporalTrackV2 =
+            serde_json::from_str(fixture).expect("R03 fixture deserializes");
+        assert_eq!(track.version, 2);
+        assert_eq!(track.facing, "front_left");
+        assert_eq!(
+            track.frames[0].landmarks["root"],
+            serde_json::json!([512, 896])
+        );
+        let encoded = serde_json::to_vec(&track).expect("R03 fixture reserializes");
+        let decoded: MonTemporalTrackV2 =
+            serde_json::from_slice(&encoded).expect("R03 fixture round trips");
+        assert_eq!(track, decoded);
+    }
+
+    #[test]
+    fn r03_tracks_wrapper_round_trips() {
+        let wrapper = MonTemporalTracksV2 {
+            profile: "MON_TEMPORAL_TRACKS_V2".into(),
+            body_revision: "mon-body-v2-r03".into(),
+            timing: serde_json::json!({"fps": 24, "unit": "1/24s"}),
+            tracks: Vec::new(),
+        };
+        let decoded: MonTemporalTracksV2 =
+            serde_json::from_slice(&serde_json::to_vec(&wrapper).unwrap()).unwrap();
+        assert_eq!(wrapper, decoded);
+    }
+
+    #[test]
+    fn r03_generated_tracks_round_trip_when_bundle_is_provided() {
+        let Ok(path) = std::env::var("R03_TRACKS_PATH") else {
+            return;
+        };
+        let bytes = std::fs::read(path).expect("R03 generated tracks readable");
+        let decoded: MonTemporalTracksV2 =
+            serde_json::from_slice(&bytes).expect("R03 generated tracks deserialize");
+        assert_eq!(decoded.profile, "MON_TEMPORAL_TRACKS_V2");
+        assert!(!decoded.tracks.is_empty());
+        for track in decoded.tracks {
+            let encoded = serde_json::to_vec(&track).expect("R03 track reserialize");
+            let round_trip: MonTemporalTrackV2 =
+                serde_json::from_slice(&encoded).expect("R03 track re-deserialize");
+            assert_eq!(round_trip.version, 2);
+            assert_eq!(round_trip.fps, 24);
+        }
     }
 }

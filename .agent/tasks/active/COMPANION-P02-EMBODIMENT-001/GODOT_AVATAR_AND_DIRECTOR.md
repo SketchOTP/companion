@@ -48,3 +48,11 @@ passes integer 24 Hz tick weights as SpriteFrames relative durations, and
 emits frame-marker and completion events from actual AnimatedSprite2D signals.
 `MonAnimationDirector` selects by family/direction/posture/variant with recent
 use suppression; Godot remains a nonauthoritative presentation adapter.
+# R03 Godot semantics
+
+`MonAvatar` now supports v2 facing-selected tracks and declares 24 FPS, using
+integer MON_FRAME_V1 duration ticks as relative `SpriteFrames` weights. The
+focused `r03_temporal_playback_test.gd` creates actual `AnimatedSprite2D`
+resources from every generated frame, observes frame-change signals and
+terminal once-track state, and rejects missing-track selection. Godot owns only
+presentation execution; no organism or care authority is introduced.

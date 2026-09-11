@@ -64,3 +64,20 @@ Phase 02 execution authorized by this preflight: `YES`
 Set `YES` only when every mandatory source and both visual references are
 materially available, hashes are explainable, no material conflict remains, and
 the protected worktree can remain untouched.
+
+## Architect Review 03 delta acknowledgment — 2026-09-11
+
+The R02 proof is superseded because it used a flattened-image band warp,
+direction-as-time catalog, declared rather than rendered contacts, and a
+schema-incompatible proof envelope. The authorized correction is limited to a
+real editable `MON_BODY_SOURCE_V2`, five small articulated temporal tracks,
+24-FPS raster playback semantics, source/render-derived QA, and accessible
+candidate review derivatives. The Python baker is a deterministic qualification
+mirror of the Godot source because the dummy renderer has no readable
+SubViewport texture; it is not a production authoring-method adoption.
+
+The exact native references remain hash-verified. Full-family/all-direction
+scale, final pack/atlas production, dedicated Openbox endurance, and operator
+visual approval remain closed gates. Architecture v1.0 and Phase 01 remain
+unchanged; no organism, memory, speech, perception, care, or Phase 03+ work is
+authorized.

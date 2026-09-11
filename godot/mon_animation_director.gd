@@ -7,14 +7,14 @@ signal intent_completed(result: Dictionary)
 signal intent_degraded(result: Dictionary)
 
 const VERSION := "MonAnimationDirector-v1"
-const CLIPS := ["idle_breathe_a", "idle_breathe_b", "idle_breathe_c", "gaze", "listen", "think", "acknowledge", "speak_neutral", "interrupt", "greeting", "unknown_observer", "sit_stand", "stand_sit", "lie_down", "sleep", "dream_neutral", "wake", "stretch", "walk", "run", "hop", "approach", "retreat", "stop", "curiosity", "inspection", "hesitation", "refusal", "surprise", "calm_joy", "disappointment", "tiredness", "boredom", "sensor_degraded"]
-const CONNECTORS := {"idle_breathe_a": ["gaze", "listen", "think", "greeting", "walk", "run"], "walk": ["stop", "run", "approach", "retreat"], "run": ["stop", "walk", "approach", "retreat"], "stop": ["idle_breathe_a", "gaze", "listen"], "sleep": ["wake", "dream_neutral"], "wake": ["stretch", "idle_breathe_a"]}
+const CLIPS := ["idle_breathe", "idle_breathe_a", "idle_breathe_b", "idle_breathe_c", "gaze", "listen", "listen_acknowledge", "think", "acknowledge", "speak_neutral", "interrupt", "greeting", "unknown_observer", "sit_stand", "stand_sit", "lie_down", "sleep", "dream_neutral", "wake", "stretch", "walk", "run", "hop", "approach", "retreat", "stop", "curiosity", "inspection", "hesitation", "refusal", "surprise", "calm_joy", "disappointment", "tiredness", "boredom", "sensor_degraded"]
+const CONNECTORS := {"idle_breathe": ["gaze", "listen_acknowledge", "think", "greeting", "walk", "run"], "idle_breathe_a": ["gaze", "listen", "think", "greeting", "walk", "run"], "walk": ["stop", "run", "approach", "retreat"], "run": ["stop", "walk", "approach", "retreat"], "stop": ["idle_breathe", "idle_breathe_a", "gaze", "listen"], "sleep": ["wake", "dream_neutral"], "wake": ["stretch", "idle_breathe"]}
 var deterministic_seed: int = 17
 var recent: Array[String] = []
-var current_clip := "idle_breathe_a"
+var current_clip := "idle_breathe"
 var sequence: int = 0
 var avatar: Node
-var current_direction := "N"
+var current_direction := "front_left"
 var current_posture := "neutral"
 var current_variant := 1
 
@@ -22,11 +22,13 @@ func configure(target: Node, seed: int = 17) -> void:
 	avatar = target
 	deterministic_seed = seed
 
-func request_intent(kind: String, priority: int = 0, interruptible: bool = true, direction: String = "N", posture: String = "neutral", affect: String = "neutral", energy: String = "medium", variant: int = 1) -> Dictionary:
+func request_intent(kind: String, priority: int = 0, interruptible: bool = true, direction: String = "front_left", posture: String = "neutral", affect: String = "neutral", energy: String = "medium", variant: int = 1) -> Dictionary:
 	sequence += 1
 	var normalized := kind if kind in CLIPS else "idle_breathe_a"
 	var candidates: Array[String] = [normalized]
-	if normalized == "idle": candidates = ["idle_breathe_a", "idle_breathe_b", "idle_breathe_c"]
+	if normalized == "idle":
+		candidates = ["idle_breathe_a", "idle_breathe_b", "idle_breathe_c"]
+		if avatar != null and avatar.has_method("supports_v2_tracks") and avatar.supports_v2_tracks(): candidates = ["idle_breathe"]
 	var selected := _choose(candidates)
 	var legal := _legal_transition(current_clip, selected)
 	if not legal:
@@ -48,7 +50,7 @@ func request_intent(kind: String, priority: int = 0, interruptible: bool = true,
 	current_direction = direction
 	current_posture = posture
 	var selected_variant := variant
-	if kind == "idle": selected_variant = ["idle_breathe_a", "idle_breathe_b", "idle_breathe_c"].find(selected) + 1
+	if kind == "idle" and selected.begins_with("idle_breathe_"): selected_variant = ["idle_breathe_a", "idle_breathe_b", "idle_breathe_c"].find(selected) + 1
 	current_variant = selected_variant
 	recent.push_front(selected)
 	if recent.size() > 4: recent.pop_back()

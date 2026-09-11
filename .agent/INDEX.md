@@ -12,6 +12,11 @@
 
 ## Current pointers
 
+- R03 correction merge: `77ebc5c19285d97c467caedbcb3f7c3be083a4a0`
+- R03 candidate source: `assets/source/p02/r03/mon_body_source_v2.json`
+- R03 generated result: `experiments/p02-embodiment/results/r03/`
+- R03 Godot playback: `godot/r03_temporal_playback_test.gd`
+
 - Active roadmap phase: `02 — Mon Body, Habitat, and Sprite Pipeline`
 - Phase acceptance: `NOT GRANTED`
 - Active directive: `COMPANION-P02-EMBODIMENT-001-R03`

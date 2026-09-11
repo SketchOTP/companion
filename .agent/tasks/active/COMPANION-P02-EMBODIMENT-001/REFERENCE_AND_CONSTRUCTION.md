@@ -52,3 +52,14 @@ palette precedence, and the turnaround orthographic/anatomy precedence. The
 previous broad construction and diagonal catalogue is superseded evidence.
 Current review material is the R02 package under
 `assets/source/p02/review/r02/`; all choices remain operator-pending.
+# R03 construction correction
+
+`MON_BODY_SOURCE_V2` is the current candidate source. It is a Godot-native
+editable hierarchy with explicit torso, head/spike, eye/pupil/mouth, bilateral
+arm/forearm/hand/finger01/finger02/thumb, and bilateral thigh/lower-leg/foot/
+toe01/toe02/toe03 parts, stable pivots/rest transforms, palette roles,
+deformation allowances, facing availability, and replacement policies. Neutral
+front, profile, and front-left masters share the approved reference hashes.
+
+The source and review derivatives remain candidate-only. No diagonal or motion
+quality is operator-approved.

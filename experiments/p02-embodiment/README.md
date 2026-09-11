@@ -46,3 +46,19 @@ The vector/path and layered-raster sources are both retained as candidates in
 raster proof was rendered while the `resvg` vector rasterizer was unavailable on
 the current host; this is an explicit comparison limitation, not a dependency
 adoption.
+
+## R03 articulated-body correction
+
+`build_r03_motion.py` is the active R03 proof baker. It reads the explicit
+`MON_BODY_SOURCE_V2` hierarchy, emits a deterministic `MON_TEMPORAL_TRACKS_V2`
+manifest, and writes generated frames and review derivatives to a caller-owned
+temporary directory. `validate_r03_motion.py` derives root, contacts, safety
+bounds, temporal change, source-part coverage, checksums, and Draft 2020-12
+schema results from those outputs and includes tamper-negative mutations.
+
+Godot's `r03_temporal_playback_test.gd` loads every actual generated PNG into
+`AnimatedSprite2D`, sets 24 FPS, uses integer duration ticks as relative
+weights, and observes frame progression and completion. The headless dummy
+renderer cannot expose a readable SubViewport texture, so the Python baker is
+explicitly a qualification-only raster mirror of the editable Godot source;
+this does not claim a production authoring method or operator approval.

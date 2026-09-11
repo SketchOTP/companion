@@ -353,3 +353,12 @@ grounded construction, temporal core tracks, Godot timing/track loading, real
 atlas packaging/QA, artifact publication, and dedicated Phase 02 CI. Operator
 visual approval and the dedicated Openbox target run remain required; no later
 phase or product capability is authorized.
+
+## 2026-09-11 — Architect Review 03 R03 correction
+
+Continue the existing Phase 02 branch with a narrow source-and-motion proof:
+`MON_BODY_SOURCE_V2`, five explicitly articulated temporal tracks, aligned v2
+schema/Rust/Godot contracts, 24-FPS raster playback, rendered root/contact QA,
+tamper negatives, and accessible review derivatives. Do not scale the library,
+run Openbox endurance, or request operator approval until this candidate proof
+is complete. Preserve all R02 proxy-motion evidence as superseded history.

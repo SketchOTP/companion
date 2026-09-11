@@ -418,3 +418,13 @@ generating direction or family counts. A direction is a selection axis; a
 temporal track is the ordered drawings inside one facing. When a candidate
 rasterizer is unavailable, record that limitation instead of silently adopting
 another tool.
+
+## 2026-09-11 — R03 motion semantics
+
+An editable body requires independent part IDs, pivots, and replacement policy;
+a flattened reference or global band warp cannot establish articulation. Keep
+direction as a track-selection key, use 24 FPS with integer relative weights,
+and derive contact evidence from rendered pixels as well as sidecars. A
+headless dummy renderer may support actual `AnimatedSprite2D` signal playback
+while exposing no readable SubViewport texture; record the deterministic raster
+mirror limitation rather than claiming a Godot raster bake.

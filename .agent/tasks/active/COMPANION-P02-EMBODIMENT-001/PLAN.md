@@ -54,3 +54,19 @@ operator visual review and the dedicated Openbox target gate.
 7. Run the focused headless Godot proof when the pinned executable is available.
 8. Stop for operator selection before eight-direction/full-family production and
    the dedicated Openbox endurance gate.
+
+## Architect Review 03 — R03 correction plan (2026-09-11)
+
+1. Preserve the exact native references and rejected R02 outputs; do not repeat
+   the withdrawn hash claim or count proxy motion as temporal evidence.
+2. Author `MON_BODY_SOURCE_V2` as a real editable Godot hierarchy with stable
+   pivots, complete limbs/digits/toes, neutral masters, and replacement slots.
+3. Bake only five bounded temporal tracks from explicit part poses: six-frame
+   idle, eight-phase walk, two four-pose facing connectors, and listen-to-
+   acknowledge reaction.
+4. Align the generated track schema, Rust type, fixture, and Godot
+   `AnimatedSprite2D` playback at 24 FPS with integer relative tick weights.
+5. Derive rendered root/contact/safety/temporal-change assertions and execute
+   tamper-negative mutations; preserve review GIFs, strips, overlays, and logs.
+6. Run focused and inherited checks, then stop for operator visual approval
+   before any full-library expansion or Openbox run.

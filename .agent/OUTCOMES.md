@@ -622,3 +622,15 @@ were directly verified. A clean private build produced 66 temporal tracks and
 prior directional catalog, 32-family completion, and 10,000-transition claims
 remain superseded. Candidate art is pending operator review, hosted CI, and
 Openbox target playback.
+
+## 2026-09-11 — R03 source and temporal proof
+
+Added an explicit editable Godot body hierarchy with complete bilateral limbs,
+digits, toes, pivots, replacement slots, and neutral masters. The deterministic
+R03 bake produced five tracks and 28 rendered frames (25 unique hashes); the
+fail-closed validator passed schema, hashes, safety, root/contact, temporal
+change, anatomy, and five tamper-negative mutations. Actual Godot headless
+`AnimatedSprite2D` playback observed frame-change signals for every track at
+24 FPS and rejected missing-track selection with no `ERROR:` output. Candidate
+art remains pending operator/Architect review; full library and Openbox remain
+deferred.

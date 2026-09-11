@@ -497,3 +497,14 @@ proof package: six front-left tracks and 26 generated drawings in private
 outputs, committed review derivatives and manifests, and a focused proof
 workflow. The prior broad core remains superseded; operator visual approval is
 the next gate.
+
+## 2026-09-11 — Architect Review 03 R03 correction
+
+Normal merge `77ebc5c19285d97c467caedbcb3f7c3be083a4a0` incorporated the review
+without rewriting history. The current candidate is `MON_BODY_SOURCE_V2` plus
+five temporal tracks and selected review derivatives. Python/schema and Rust
+contract checks passed; Godot 4.7.2 headless playback passed with observed
+frame-change signals and no `ERROR:` lines. Evidence is bounded `E3_TARGET_TESTED`;
+operator visual approval, full-family/all-direction production, Openbox
+endurance, and Phase 02 acceptance remain open. Architecture v1.0 and Phase 01
+remain unchanged; no later capability was adopted.

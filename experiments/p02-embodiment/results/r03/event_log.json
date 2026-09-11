@@ -1,0 +1,241 @@
+{
+  "events": [
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_00",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_01",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_02",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_03",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_04",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_05",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "breath_peak",
+      "frame_index": 2,
+      "observed": "pose_and_render",
+      "track_id": "mon-body-v2-r03:candidate:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "loop",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_00",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_01",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_02",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_03",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_04",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_05",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_06",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_07",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:walk:front_left:neutral:1"
+    },
+    {
+      "event": "left_contact",
+      "frame_index": 0,
+      "observed": "pose_and_render",
+      "track_id": "mon-body-v2-r03:candidate:walk:front_left:neutral:1"
+    },
+    {
+      "event": "right_contact",
+      "frame_index": 4,
+      "observed": "pose_and_render",
+      "track_id": "mon-body-v2-r03:candidate:walk:front_left:neutral:1"
+    },
+    {
+      "event": "loop",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_00",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_to_front_left:front:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_01",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_to_front_left:front:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_02",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_to_front_left:front:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_03",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_to_front_left:front:neutral:1"
+    },
+    {
+      "event": "facing_changed",
+      "frame_index": 3,
+      "observed": "pose_and_render",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_to_front_left:front:neutral:1"
+    },
+    {
+      "event": "completed",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_to_front_left:front:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_00",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_left_to_front:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_01",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_left_to_front:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_02",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_left_to_front:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_03",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_left_to_front:front_left:neutral:1"
+    },
+    {
+      "event": "facing_changed",
+      "frame_index": 3,
+      "observed": "pose_and_render",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_left_to_front:front_left:neutral:1"
+    },
+    {
+      "event": "completed",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_left_to_front:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_00",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:listen_acknowledge:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_01",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:listen_acknowledge:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_02",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:listen_acknowledge:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_03",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:listen_acknowledge:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_04",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:listen_acknowledge:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_05",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:listen_acknowledge:front_left:neutral:1"
+    },
+    {
+      "event": "attention_lead",
+      "frame_index": 1,
+      "observed": "pose_and_render",
+      "track_id": "mon-body-v2-r03:candidate:listen_acknowledge:front_left:neutral:1"
+    },
+    {
+      "event": "acknowledge",
+      "frame_index": 4,
+      "observed": "pose_and_render",
+      "track_id": "mon-body-v2-r03:candidate:listen_acknowledge:front_left:neutral:1"
+    },
+    {
+      "event": "completed",
+      "observed": "deterministic_raster_bake",
+      "track_id": "mon-body-v2-r03:candidate:listen_acknowledge:front_left:neutral:1"
+    }
+  ],
+  "fps": 24,
+  "profile": "MON_R03_EVENT_LOG_V1"
+}

@@ -1,0 +1,15 @@
+{
+  "body_source_sha256": "26ee698e6e46fa059f883298c507f17e5fff4389c9f06cdcbf42548ab58fc71c",
+  "evidence_ceiling": "E3_TARGET_TESTED",
+  "fps": 24,
+  "frame_profile": "MON_FRAME_V1",
+  "generated_frames_are_bounded_proof": true,
+  "generator": "build_r03_motion.py",
+  "godot_source": "godot/mon_body_source_v2.tscn",
+  "godot_version": "4.7.2.stable.official.ed1daf0bf",
+  "identity_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+  "operator_approval": "pending",
+  "rebuild_command": "python3 experiments/p02-embodiment/scripts/build_r03_motion.py --out OUT --clean",
+  "rights": "project-authored candidate source; approved references retained under their canonical authority",
+  "turnaround_sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
+}

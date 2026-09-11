@@ -58,3 +58,12 @@ Two explicit authoring candidates are retained: the layered vector/path source
 rendered and vector proof `NOT_RUN_EXTERNAL_RASTERIZER_UNAVAILABLE` because no
 `resvg` executable is installed. This is a recorded limitation, not an adopted
 dependency or a selection decision.
+# R03 authoring correction
+
+The bounded proof uses explicit part poses from `MON_BODY_SOURCE_V2`, a
+deterministic MON_FRAME_V1 raster bake, landmark/contact sidecars, and
+normal/quarter-speed, silhouette, root/contact, and ordered-strip review
+derivatives. The bake contains no reference-pixel copy or whole-image warp.
+Godot remains the editable source and raster `SpriteFrames` runtime; the Python
+mirror exists only because the pinned dummy renderer cannot expose a readable
+SubViewport texture. Full atlas/pack and library scale remain deferred.

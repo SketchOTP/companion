@@ -19,6 +19,7 @@ mapping = {
     "vault-decision.schema.json": "VaultDecision",
     "backup-manifest.schema.json": "BackupManifest",
     "mon-animation-track.schema.json": "MonAnimationTrack",
+    "mon-temporal-track-v2.schema.json": "MonTemporalTrackV2",
 }
 text = (ROOT / "crates/foundation-core/src/contracts.rs").read_text(encoding="utf-8")
 errors = []

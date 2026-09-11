@@ -66,8 +66,8 @@ for name in NAMES:
         if schema.get("type") != "object" or schema.get("additionalProperties") is not False:
             errors.append(f"{name}: unsafe object policy")
         valid = sample(schema)
-        if name in {"mon-animation-clip.schema.json", "mon-animation-track.schema.json"}:
-            fixture_name = "mon-animation-clip-v1.json" if name == "mon-animation-clip.schema.json" else "mon-animation-track-v1.json"
+        if name in {"mon-animation-clip.schema.json", "mon-animation-track.schema.json", "mon-temporal-track-v2.schema.json"}:
+            fixture_name = {"mon-animation-clip.schema.json": "mon-animation-clip-v1.json", "mon-animation-track.schema.json": "mon-animation-track-v1.json", "mon-temporal-track-v2.schema.json": "mon-temporal-track-v2.json"}[name]
             fixture = ROOT / "contracts" / "fixtures" / fixture_name
             if fixture.exists():
                 valid = json.loads(fixture.read_text(encoding="utf-8"))

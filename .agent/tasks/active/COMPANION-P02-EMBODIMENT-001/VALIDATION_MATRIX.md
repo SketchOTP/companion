@@ -75,3 +75,18 @@ generated manifest, track definitions, frame corpus, and atlas pages.  Godot
 4.7.2 headless and hosted Phase 02 CI are not run in this worktree because the
 artifact is not installed; the workflow downloads it ephemerally after hash
 verification.  Openbox two-hour playback remains `NOT RUN`.
+# R03 validation matrix
+
+| Property | Positive observation | Tamper-negative |
+| --- | --- | --- |
+| Root | rendered track landmarks remain `[512,896]` | one-pixel root mutation rejected |
+| Planted contact | idle and active contacts remain on baseline | contact shift rejected |
+| Swing foot | walk rendered x/y displacement across phases | frozen/shifted contact rejected |
+| Anatomy | bilateral hierarchy includes every digit/toe | removed digit rejected |
+| Facing | connector endpoint frame hashes differ | endpoint reuse rejected |
+| Timing | Godot `SpriteFrames` speed 24, integer weights | zero duration/schema mutation rejected |
+| Track selection | every generated family starts; missing family is rejected | nonexistent track never emits start |
+| Schema/Rust | actual v2 tracks validate and round-trip | malformed field/schema mutation rejected |
+
+R03 status is bounded `E3_TARGET_TESTED` candidate evidence; operator visual
+approval, complete library, Openbox endurance, and later phases remain deferred.

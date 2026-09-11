@@ -91,3 +91,30 @@ candidate is explicitly `NOT_RUN_EXTERNAL_RASTERIZER_UNAVAILABLE` because
 and dedicated hosted workflow are pending execution, and operator visual
 approval is not granted. The old 66-track/334-drawing and 32-family claims are
 superseded as Phase 02 evidence.
+
+## R03 correction evidence — 2026-09-11
+
+### Reference and source
+
+- Native identity reference SHA-256 `86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56` and turnaround SHA-256 `3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4` remain exact and unchanged.
+- `MON_BODY_SOURCE_V2` is committed as JSON plus `godot/mon_body_source_v2.tscn`/`.gd`; the hierarchy contains bilateral arm/forearm/hand/finger01/finger02/thumb and thigh/lower-leg/foot/toe01/toe02/toe03 parts with pivots and source traceability.
+
+### Rendered proof
+
+- `build_r03_motion.py` produced five tracks and 28 deterministic 1024x1024 RGBA frames in `/tmp/companion-p02-r03-proof`; 25 frame pixel hashes are unique. A second clean build was byte-identical after timestamps were excluded from deterministic output.
+- `validate_r03_motion.py` returned `PASS`. It checked Draft 2020-12 schema, frame hashes, root `[512,896]`, safety bounds, idle planted contacts, walk swing-foot displacement, facing endpoint differences, source-part coverage, 24 FPS, and track checksums.
+- Tamper-negative mutations (root one pixel, duration zero, active-contact shift, endpoint hash reuse, missing bilateral digit) were each rejected.
+- Review derivatives are normal and quarter-speed GIFs, silhouette and root/contact overlays, and ordered strips for all five tracks under `assets/source/p02/r03/review/`. They remain candidate art pending operator review.
+
+### Godot and contracts
+
+- `r03_temporal_playback_test.gd` loaded every actual generated PNG into `AnimatedSprite2D`, set animation speed to 24, applied integer duration ticks as relative weights, observed frame-change signals for every track, and checked once-track terminal state. It returned `PASS`; captured output contains no `ERROR:` lines and only expected Bone2D leaf warnings.
+- `scripts/validate_schemas.py`, `scripts/check_contract_types.py`, `cargo fmt --all -- --check`, and `cargo test --workspace --locked` (with `R03_TRACKS_PATH` set) passed. Rust tests include generated-wrapper deserialization/re-serialization.
+
+### Evidence ceiling and deferrals
+
+These are bounded `E3_TARGET_TESTED` engineering observations. They do not
+prove identity approval, production animation quality, full eight-direction or
+32-family coverage, atlas/pack scale, Openbox behavior, runtime performance,
+product capability, or any later roadmap phase. The full library and dedicated
+Openbox endurance remain deferred until operator and Architect approval.

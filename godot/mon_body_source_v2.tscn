@@ -1,0 +1,110 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource path="res://mon_body_source_v2.gd" type="Script" id="1"]
+
+[node name="MonBodySourceV2" type="Node2D"]
+script = ExtResource("1")
+
+[node name="Rig" type="Node2D" parent="."]
+
+[node name="PelvisRoot" type="Bone2D" parent="Rig"]
+position = Vector2(512, 760)
+
+[node name="Torso" type="Bone2D" parent="Rig/PelvisRoot"]
+position = Vector2(0, -110)
+
+[node name="Head" type="Bone2D" parent="Rig/PelvisRoot/Torso"]
+position = Vector2(0, -260)
+
+[node name="ArmLeft" type="Bone2D" parent="Rig/PelvisRoot/Torso"]
+position = Vector2(-113, -80)
+
+[node name="UpperArmLeft" type="Bone2D" parent="Rig/PelvisRoot/Torso/ArmLeft"]
+position = Vector2(0, 100)
+
+[node name="ForearmLeft" type="Bone2D" parent="Rig/PelvisRoot/Torso/ArmLeft/UpperArmLeft"]
+position = Vector2(-52, 106)
+
+[node name="HandLeft" type="Bone2D" parent="Rig/PelvisRoot/Torso/ArmLeft/UpperArmLeft/ForearmLeft"]
+position = Vector2(-32, 92)
+
+[node name="Finger01" type="Bone2D" parent="Rig/PelvisRoot/Torso/ArmLeft/UpperArmLeft/ForearmLeft/HandLeft"]
+position = Vector2(-20, 16)
+
+[node name="Finger02" type="Bone2D" parent="Rig/PelvisRoot/Torso/ArmLeft/UpperArmLeft/ForearmLeft/HandLeft"]
+position = Vector2(-2, 20)
+
+[node name="Thumb" type="Bone2D" parent="Rig/PelvisRoot/Torso/ArmLeft/UpperArmLeft/ForearmLeft/HandLeft"]
+position = Vector2(-26, -16)
+
+[node name="ArmRight" type="Bone2D" parent="Rig/PelvisRoot/Torso"]
+position = Vector2(113, -80)
+
+[node name="UpperArmRight" type="Bone2D" parent="Rig/PelvisRoot/Torso/ArmRight"]
+position = Vector2(0, 100)
+
+[node name="ForearmRight" type="Bone2D" parent="Rig/PelvisRoot/Torso/ArmRight/UpperArmRight"]
+position = Vector2(52, 106)
+
+[node name="HandRight" type="Bone2D" parent="Rig/PelvisRoot/Torso/ArmRight/UpperArmRight/ForearmRight"]
+position = Vector2(32, 92)
+
+[node name="Finger01" type="Bone2D" parent="Rig/PelvisRoot/Torso/ArmRight/UpperArmRight/ForearmRight/HandRight"]
+position = Vector2(20, 16)
+
+[node name="Finger02" type="Bone2D" parent="Rig/PelvisRoot/Torso/ArmRight/UpperArmRight/ForearmRight/HandRight"]
+position = Vector2(2, 20)
+
+[node name="Thumb" type="Bone2D" parent="Rig/PelvisRoot/Torso/ArmRight/UpperArmRight/ForearmRight/HandRight"]
+position = Vector2(26, -16)
+
+[node name="LegLeft" type="Bone2D" parent="Rig/PelvisRoot"]
+position = Vector2(-47, -15)
+
+[node name="ThighLeft" type="Bone2D" parent="Rig/PelvisRoot/LegLeft"]
+position = Vector2(0, -5)
+
+[node name="LowerLegLeft" type="Bone2D" parent="Rig/PelvisRoot/LegLeft/ThighLeft"]
+position = Vector2(-10, 82)
+
+[node name="FootLeft" type="Bone2D" parent="Rig/PelvisRoot/LegLeft/ThighLeft/LowerLegLeft"]
+position = Vector2(-6, 93)
+
+[node name="Toe01" type="Bone2D" parent="Rig/PelvisRoot/LegLeft/ThighLeft/LowerLegLeft/FootLeft"]
+position = Vector2(-38, 0)
+
+[node name="Toe02" type="Bone2D" parent="Rig/PelvisRoot/LegLeft/ThighLeft/LowerLegLeft/FootLeft"]
+position = Vector2(-14, 0)
+
+[node name="Toe03" type="Bone2D" parent="Rig/PelvisRoot/LegLeft/ThighLeft/LowerLegLeft/FootLeft"]
+position = Vector2(10, 0)
+
+[node name="LegRight" type="Bone2D" parent="Rig/PelvisRoot"]
+position = Vector2(47, -15)
+
+[node name="ThighRight" type="Bone2D" parent="Rig/PelvisRoot/LegRight"]
+position = Vector2(0, -5)
+
+[node name="LowerLegRight" type="Bone2D" parent="Rig/PelvisRoot/LegRight/ThighRight"]
+position = Vector2(10, 82)
+
+[node name="FootRight" type="Bone2D" parent="Rig/PelvisRoot/LegRight/ThighRight/LowerLegRight"]
+position = Vector2(6, 93)
+
+[node name="Toe01" type="Bone2D" parent="Rig/PelvisRoot/LegRight/ThighRight/LowerLegRight/FootRight"]
+position = Vector2(-10, 0)
+
+[node name="Toe02" type="Bone2D" parent="Rig/PelvisRoot/LegRight/ThighRight/LowerLegRight/FootRight"]
+position = Vector2(14, 0)
+
+[node name="Toe03" type="Bone2D" parent="Rig/PelvisRoot/LegRight/ThighRight/LowerLegRight/FootRight"]
+position = Vector2(38, 0)
+
+[node name="ReplacementDrawings" type="Node2D" parent="."]
+
+[node name="Hands" type="Node2D" parent="ReplacementDrawings"]
+[node name="Feet" type="Node2D" parent="ReplacementDrawings"]
+[node name="Face" type="Node2D" parent="ReplacementDrawings"]
+[node name="HeadSilhouette" type="Node2D" parent="ReplacementDrawings"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

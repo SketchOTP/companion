@@ -2,6 +2,14 @@
 
 ## Current stage
 
+R03 correction work is in progress on the existing task branch after normal
+merge `77ebc5c19285d97c467caedbcb3f7c3be083a4a0` of Architect Review 03.
+The new candidate is `MON_BODY_SOURCE_V2` with five genuinely temporal tracks
+(idle, walk, two facing connectors, and listen/acknowledge), a v2 schema/Rust
+contract, deterministic rendered review output, and a Godot 4.7.2 playback
+probe. It remains candidate-only pending visual review; no full-library or
+Openbox endurance gate is being claimed.
+
 Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adopted. Roadmap Phase 01 remains accepted.
 
 PR #9 at reviewed head `4a111435381ff2d364cd705edbb1d65da46ea886` is continued under:

@@ -48,3 +48,12 @@ temporal core/idle-variant sheets.  `validate_core_motion.py` checks rendered
 canvas, alpha, safety bounds, root landmarks, hashes, track floors, atlas
 placement, and overlap.  All new construction, diagonal, motion, and identity
 decisions remain pending operator visual approval.
+# R03 review gate
+
+The R03 validator checks rendered pixels and source hierarchy rather than
+declared metadata alone: 1024x1024 RGBA canvas, safety bounds, fixed root,
+planted idle contacts, walk swing displacement, facing endpoint differences,
+anatomy coverage, frame/track hashes, schema, and 24-FPS timing. Five
+tamper-negative mutations fail closed. Review derivatives for all five tracks
+are committed under `assets/source/p02/r03/review/`; operator approval is still
+pending and no full-library review may be requested.

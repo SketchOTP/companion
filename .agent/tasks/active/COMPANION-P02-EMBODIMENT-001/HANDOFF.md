@@ -143,3 +143,32 @@ Correction publication: `3d2ce3c45e32a110520c9fd1378113216188fb8b`, following
 normal merge `6e16c25` of Architect Review 02 (`origin/main`
 `7709aba7a777ab611da56a8e340f6bd17f7bf5b1`). The task branch remote equals
 this head. PR #9 remains draft/open/unmerged and Issue #8 remains open.
+
+## R03 correction handoff — 2026-09-11
+
+Architect Review 03 is continued after normal merge
+`77ebc5c19285d97c467caedbcb3f7c3be083a4a0`. The correction adds
+`MON_BODY_SOURCE_V2` with an explicit editable Godot part hierarchy, a
+deterministic part-pose raster bake, and five candidate temporal tracks:
+`idle_breathe` (6), `walk` (8), two facing connectors (4 each), and
+`listen_acknowledge` (6). The generated result contains 28 full-canvas frames
+in private output with 25 unique pixel hashes; selected normal/quarter-speed,
+silhouette, root/contact, and ordered-strip derivatives are committed under
+`assets/source/p02/r03/review/`.
+
+The v2 Draft 2020-12 track schema, Rust `MonTemporalTrackV2` type, committed
+fixture, generated manifest, and Godot loader agree on facing as selection,
+24 FPS, and integer relative duration weights. `validate_r03_motion.py` derives
+root, contacts, safety bounds, source anatomy, checksums, temporal change, and
+schema results and passes five deterministic tamper-negative mutations. The
+Godot headless probe loads every generated PNG into `AnimatedSprite2D`, observes
+actual frame-change signals for every track, checks 24 FPS configuration and
+terminal playback state, and rejects a missing track; no `ERROR:` output was
+observed. Godot emitted Bone2D leaf warnings only.
+
+This remains a candidate proof, not operator or Architect approval. The Python
+bake is explicitly a qualification-only mirror of the editable Godot source
+because the dummy renderer cannot expose a readable SubViewport texture. Full
+library, all-direction production, final atlas/pack scale, two-hour Openbox
+playback, and operator visual approval remain deferred. Protected primary
+`.gitignore`/`AGENTS.md` changes remain untouched.

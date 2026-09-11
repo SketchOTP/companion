@@ -7,8 +7,9 @@ signal clip_completed(event: Dictionary)
 signal clip_failed(event: Dictionary)
 
 const FRAME_ROOT := "res://assets/p02-core/"
-const ANIMATION_FPS := 12.0
-const TRACK_STAGE := "proof"
+const R03_FRAME_ROOT := "res://assets/p02-r03/"
+const ANIMATION_FPS := 24.0
+const TRACK_STAGE := "candidate"
 const Director = preload("res://mon_animation_director.gd")
 var clip_manifest: Dictionary = {}
 var temporal_tracks: Array = []
@@ -33,8 +34,18 @@ func _ready() -> void:
 func request_initial_intent() -> void:
 	director.request_intent("idle")
 
+func supports_v2_tracks() -> bool:
+	for candidate in temporal_tracks:
+		if int(candidate.get("version", 1)) == 2:
+			return true
+	return false
+
 func _load_manifest() -> void:
-	var file := FileAccess.open(FRAME_ROOT + "temporal_tracks.json", FileAccess.READ)
+	var manifest_path := FRAME_ROOT + "temporal_tracks.json"
+	var file := FileAccess.open(manifest_path, FileAccess.READ)
+	if file == null:
+		manifest_path = R03_FRAME_ROOT + "temporal_tracks_v2.json"
+		file = FileAccess.open(manifest_path, FileAccess.READ)
 	if file == null:
 		clip_failed.emit({"schema_major":1,"event_type":"clip_failed","status":"degraded","reason":"pack_manifest_missing","generation":generation})
 		return
@@ -56,10 +67,11 @@ func _frames_for(track_id: String) -> SpriteFrames:
 		return frames
 	frames.set_animation_loop(track_id, track.get("loop_mode", "once") == "loop")
 	frames.set_animation_speed(track_id, ANIMATION_FPS)
+	var frame_root := R03_FRAME_ROOT if int(track.get("version", 1)) == 2 else FRAME_ROOT
 	for item in track.get("frames", []):
-		var texture := load(FRAME_ROOT + String(item.get("path", "")))
-		# SpriteFrames duration is a relative weight. Integer 24 Hz ticks are
-		# retained as weights at the declared 12 drawings/s animation FPS.
+		var texture := load(frame_root + String(item.get("path", "")))
+		# SpriteFrames duration is a relative weight. Integer MON_FRAME_V1
+		# ticks are weights at the declared 24 Hz animation FPS.
 		if texture is Texture2D: frames.add_frame(track_id, texture, float(item.get("duration_ticks", 1)))
 	if frames.get_frame_count(track_id) == 0:
 		clip_failed.emit({"schema_major":1,"event_type":"clip_failed","track_id":track_id,"status":"degraded","reason":"track_frames_missing","generation":generation})
@@ -70,7 +82,7 @@ func play_clip(clip_id: String) -> void:
 	play_track(clip_id, "front_left", "neutral", 1, TRACK_STAGE)
 
 func play_track(family: String, direction: String = "front_left", posture: String = "neutral", variant: int = 1, stage: String = TRACK_STAGE) -> void:
-	var track_id := "mon-body-v1:%s:%s:%s:%s:%d" % [stage, family, direction, posture, variant]
+	var track_id := _track_id_for(family, direction, posture, variant, stage)
 	var frames := _frames_for(track_id)
 	if frames.get_animation_names().has(track_id) and frames.get_frame_count(track_id) > 0:
 		var target: AnimatedSprite2D = body_b if active_body == 0 else body_a
@@ -90,6 +102,13 @@ func play_track(family: String, direction: String = "front_left", posture: Strin
 		frame_marker.emit({"schema_major":1,"event_type":"frame_marker","clip_id":family,"track_id":track_id,"frame":0,"generation":generation})
 	else:
 		clip_failed.emit({"schema_major":1,"event_type":"clip_failed","clip_id":family,"track_id":track_id,"status":"degraded","reason":"corrupt_or_empty_pack","generation":generation})
+
+func _track_id_for(family: String, facing: String, posture: String, variant: int, stage: String) -> String:
+	for candidate in temporal_tracks:
+		var candidate_facing := String(candidate.get("facing", candidate.get("direction", "")))
+		if candidate.get("family", "") == family and candidate_facing == facing and candidate.get("posture", "") == posture and int(candidate.get("variant", 1)) == variant:
+			return String(candidate.get("track_id", ""))
+	return "mon-body-v1:%s:%s:%s:%s:%d" % [stage, family, facing, posture, variant]
 
 func _on_frame_changed(sprite: AnimatedSprite2D) -> void:
 	if sprite.visible and sprite == (body_a if active_body == 0 else body_b):
