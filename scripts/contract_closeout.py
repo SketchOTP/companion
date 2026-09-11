@@ -44,7 +44,11 @@ def main():
             errors.append(f"wire evidence unavailable: {type(exc).__name__}")
     for path in sorted((ROOT/"contracts/schemas").glob("*.schema.json")):
         schema=json.loads(path.read_text()); valid=sample(schema)
-        fixture_name = {"mon-animation-clip.schema.json":"mon-animation-clip-v1.json", "mon-animation-track.schema.json":"mon-animation-track-v1.json"}.get(path.name)
+        fixture_name = {
+            "mon-animation-clip.schema.json": "mon-animation-clip-v1.json",
+            "mon-animation-track.schema.json": "mon-animation-track-v1.json",
+            "mon-temporal-track-v2.schema.json": "mon-temporal-track-v2.json",
+        }.get(path.name)
         if fixture_name:
             fixture_path = ROOT / "contracts/fixtures" / fixture_name
             if fixture_path.exists(): valid = json.loads(fixture_path.read_text())
