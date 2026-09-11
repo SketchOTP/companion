@@ -112,6 +112,19 @@ def main() -> int:
 
     result_names = ["intake_validation.json", "source_intake.json", "rust_contract.json", "godot_runtime.json", "export_restore.json", "contract_validation.json"]
     stable(output / "provenance.json", {"profile": "COMPANION_P02_R04_EVIDENCE_V1", "execution_date_utc": "2026-09-11", "commands": ["python3 experiments/p02-embodiment/scripts/run_r04_evidence.py --out OUT --godot GODOT", "python3 experiments/p02-embodiment/scripts/validate_r04_results.py --results OUT --tamper-negative"], "runtimes": {"rust": "1.98.1", "godot": "4.7.2.stable.official.ed1daf0bf", "python": "system qualification tooling"}, "evidence_ceiling": "E3_TARGET_TESTED synthetic intake/runtime boundary only; no production art or Phase 02 acceptance", "result_sha256": {name: sha(output / name) for name in result_names}})
+    (output / "README.md").write_text(
+        "# R04 authored-frame boundary evidence\n\n"
+        "This sanitized bundle contains synthetic-only bounded E3 intake and runtime evidence. "
+        "It does not contain or approve production character art.\n\n"
+        "Regenerate with the exact Rust 1.98.1 and Godot 4.7.2 qualification artifacts:\n\n"
+        "```bash\n"
+        "python3 experiments/p02-embodiment/scripts/run_r04_evidence.py --out OUT --godot \"$GODOT_BIN\"\n"
+        "python3 experiments/p02-embodiment/scripts/validate_r04_results.py --results OUT --tamper-negative\n"
+        "```\n\n"
+        "Generated PNGs, content-addressed storage, Cargo targets, Godot caches, local export ZIPs, "
+        "restored trees, and tamper copies remain outside Git.\n",
+        encoding="utf-8",
+    )
     print(json.dumps({"status": "PASSED", "results": result_names}, sort_keys=True))
     return 0
 

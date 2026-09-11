@@ -216,7 +216,7 @@ def render_pose(render_pose_spec: dict) -> tuple[Image.Image, dict]:
 
 
 def find_godot(value: str | None) -> str:
-    candidates = [value, os.environ.get("GODOT"), shutil.which("godot"), "/home/sketch/.cache/companion/qualification/COMPANION-P00-QUAL-001/artifacts/godot-4.7.2-standard/Godot_v4.7.2-stable_linux.x86_64"]
+    candidates = [value, os.environ.get("GODOT"), shutil.which("godot")]
     for candidate in candidates:
         if candidate and Path(candidate).is_file() and os.access(candidate, os.X_OK):
             return candidate

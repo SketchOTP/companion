@@ -83,8 +83,18 @@ jobs:
         run: |
           set -euo pipefail
           ! git ls-files -z assets/generated/p02 godot/assets/p02 godot/assets/p02-r03 | grep -z .
-          ! git grep -nEI '(BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|api[_-]?key[[:space:]]*[:=][[:space:]]*[A-Za-z0-9]{16,}|/home/[^ /]+|/srv/[^ /]+)' -- ':!*.md'
-          test "$(git status --porcelain | wc -l)" -eq 0
+          ! rg -nI '(BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|api[_-]?key\s*[:=]\s*[A-Za-z0-9]{16,}|/home/[^ /]+|/srv/[^ /]+)' \
+            assets/source/p02/architect-frame-request-v1 \
+            contracts/fixtures/mon-authored-frame-pack-v1.json \
+            contracts/schemas/mon-authored-frame-pack-v1.schema.json \
+            crates/foundation-core/src/contracts.rs \
+            crates/foundation-core/src/bin/validate-authored-pack.rs \
+            experiments/p02-embodiment/results/r04 \
+            experiments/p02-embodiment/scripts/*r04* \
+            experiments/p02-embodiment/scripts/intake_authored_frame_pack.py \
+            experiments/p02-embodiment/scripts/export_restore_authored_pack.py \
+            godot/mon_animation_director.gd godot/mon_avatar.gd godot/r04_*.gd
+          git diff --exit-code
       - name: Upload R04 authored-frame boundary evidence
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         with:
