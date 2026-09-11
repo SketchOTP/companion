@@ -70,3 +70,17 @@ The Research Phase 01 Notion hierarchy contains the project's research evidence 
 - Disposition: Godot polling and explicit screen selection are implemented in
   the neutral shell; cargo-deny remains an environment-dependent policy gate
   and is not silently installed or adopted. No strategic direction changed.
+
+## COMPANION-P02-EMBODIMENT-001 discovery (2026-09-11)
+
+- Sources rechecked: official Godot 4.7 AnimatedSprite2D and Window API
+  documentation; approved Notion visual bible and sprite-production contract;
+  existing local Pillow runtime for disposable raster authoring.
+- Overlap: the visual bible/R10 remain canonical identity authority; Godot
+  documentation informs adapter API use, not product behavior.
+- Disposition: `REFERENCE` Godot APIs; `BUILD` deterministic local authoring,
+  validation, atlas, and review tooling; no production dependency was added.
+- Rationale: a full-canvas raster pipeline preserves MON_FRAME_V1 invariants,
+  supports reproducible packs, and keeps Godot presentation-only.
+- Recheck: before operator approval, target-host playback, dependency change,
+  or any future animation/runtime capability claim.
