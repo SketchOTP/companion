@@ -42,6 +42,8 @@
   `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/CODEX_FULL_DIRECTIVE.md`
 - Current review authority:
   `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_01.md`
+- Review source-recheck correction:
+  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_01_CORRECTION.md`
 - Required branch: `codex/p02-embodiment-001`
 - Required secondary worktree: local ext4/NVMe
 - Required publication: continue existing draft/open/unmerged PR #9
@@ -101,6 +103,14 @@ safety efficacy, and product capability.
 - Phase 02 CI completion.
 - Operator-review readiness based on local-only file paths.
 
+## Source-recheck correction
+
+The initial review statement that the current generator uses Python runtime
+`hash()` is withdrawn. The reviewed file uses explicit family/direction indices
+and trigonometric expressions. Deterministic authoring still requires explicit,
+stable inputs and byte-identical clean-process rebuilds. All other review
+findings remain active.
+
 ## Mandatory Codex startup
 
 1. Protect the primary SSHFS worktree and operator-owned `.gitignore` and
@@ -108,7 +118,8 @@ safety efficacy, and product capability.
 2. Continue only in the existing local-ext4/NVMe secondary worktree.
 3. Fetch current `origin/main` and `origin/codex/p02-embodiment-001`.
 4. Merge current `origin/main` normally; do not rebase, reset, or force-push.
-5. Read `ARCHITECT_REVIEW_01.md` and the live Notion review completely.
+5. Read `ARCHITECT_REVIEW_01.md`,
+   `ARCHITECT_REVIEW_01_CORRECTION.md`, and the live Notion review completely.
 6. Re-fetch the Phase 02 directive/report, canonical project, roadmap,
    Architecture v1.0, Phase 01 acceptance, visual bible, R04, R10, PR #9, and
    Issue #8.
@@ -133,7 +144,7 @@ safety efficacy, and product capability.
 - real playback events, transitions, interruption, continuation, and BodyA/B
   handoff;
 - rendered root/contact/anatomy/alpha QA;
-- deterministic geometry without Python runtime `hash()`;
+- explicit stable authored geometry and byte-identical clean-process rebuilds;
 - real trim, extrusion, gutter, and source-placement reconstruction;
 - bulk generated binary removal from the final ordinary-Git tree;
 - dedicated immutable Phase 02 workflow and named artifacts;

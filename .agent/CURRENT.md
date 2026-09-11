@@ -11,7 +11,7 @@ Roadmap Phase 00 is complete. Architecture v1.0 remains adopted. Roadmap Phase
 Roadmap Phase 02 — Mon Body, Habitat, and Sprite Pipeline remains active but is
 **not accepted**. PR #9 at
 `9a65b8db032c97e13fce5d6a305989d32f2cc879` is continued under Architect
-Review 01.
+Review 01 and its source-recheck correction.
 
 ## Architect Review 01 disposition
 
@@ -26,14 +26,19 @@ Independent review found:
 - the 256-image count is a directional pose catalog, not a temporal animation
   library;
 - Godot frame duration is interpreted incorrectly;
-- generated geometry is not derived from the approved reference package and
-  uses Python process-randomized `hash()` values;
-- declared root stability and atlas gutters are not established by rendered
-  evidence;
+- generated construction geometry is not derived from the exact approved native
+  reference package;
+- visible body placement moves while fixed root/contact metadata is declared;
+- declared atlas gutters and extrusion are not physically implemented;
 - bulk generated PNGs, duplicate runtime copies, atlases, and ZIP output are
   committed to ordinary Git contrary to the adopted artifact policy; and
 - operator review assets were referenced through local paths instead of being
   attached or published accessibly.
+
+A source recheck withdrew the initial statement that the reviewed generator uses
+Python runtime `hash()`. No `hash()` call was found in that file. This does not
+change the verdict or the requirement for explicit, stable authoring inputs and
+byte-identical clean-process rebuilding.
 
 The 32-family, 256-animation-frame, eight-direction animation, atlas-gutter,
 10,000-transition, runtime-performance, Phase 02 CI, and operator-review-ready
@@ -65,6 +70,8 @@ of identity, diagonal construction, and the temporal core-motion language.
 - Reviewed task head: `9a65b8db032c97e13fce5d6a305989d32f2cc879`
 - Repository review:
   `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_01.md`
+- Source-recheck correction:
+  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_01_CORRECTION.md`
 - Notion review:
   https://app.notion.com/p/3d8833cb27ff81778c22d2c73cf0dc9f
 - Notion directive:
@@ -134,7 +141,8 @@ completion is established or authorized.
 
 ## Next review point
 
-Codex executes Architect Review 01 in the existing Phase 02 branch and PR. It
-returns either the complete accessible reference/construction/core-motion
-approval package with green dedicated CI, or one precise reference-transfer
-blocker before further bulk generation. Architect and operator review follow.
+Codex executes Architect Review 01 and the source-recheck correction in the
+existing Phase 02 branch and PR. It returns either the complete accessible
+reference/construction/core-motion approval package with green dedicated CI, or
+one precise reference-transfer blocker before further bulk generation.
+Architect and operator review follow.
