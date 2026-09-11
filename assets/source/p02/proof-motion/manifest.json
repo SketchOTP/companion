@@ -1,0 +1,22 @@
+{
+  "default_fps": 12,
+  "drawings": 26,
+  "facing": "front_left",
+  "profile": "MON_FRAME_V1",
+  "root": [
+    512,
+    896
+  ],
+  "safety_region": [
+    64,
+    32,
+    960,
+    960
+  ],
+  "source_identity_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+  "source_turnaround_sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4",
+  "status": "CANDIDATE_PENDING_OPERATOR_APPROVAL",
+  "timing_grid_hz": 24,
+  "tracks": 6,
+  "unique_drawings": 26
+}

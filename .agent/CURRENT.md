@@ -164,3 +164,14 @@ Codex returns the exact-reference, embodiment-canon, and minimal temporal-motion
 proof package with green inherited and focused CI. The operator then selects or
 rejects the production construction, authoring method, and motion language.
 Only an approved result may unlock full Phase 02 scale production.
+
+## Architect Review 02 — canon and minimal motion proof (2026-09-11)
+
+The active gate is narrowed to P02-A/P02-B. The earlier 66-track/334-drawing
+core and 10,000-transition claims are superseded as proof; their generated
+metadata remains historical evidence. The current candidate binds the exact
+native references to `MON_BODY_SOURCE_V1` and six front-left temporal tracks
+(26 drawings). The vector/path and layered-raster authoring representations
+remain candidates; the host lacks `resvg`, so vector rasterization is explicitly
+not run. No eight-direction or full-family expansion is authorized before
+operator choice. Phase 02 remains active/not accepted.

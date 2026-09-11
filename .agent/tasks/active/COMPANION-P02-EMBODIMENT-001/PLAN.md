@@ -40,3 +40,17 @@ the reference-grounded core pack, selected review publication, real temporal
 track/runtime semantics, trim/extrude atlas validation, binary-tree cleanup,
 and dedicated workflow. The corrected candidate remains unapproved pending
 operator visual review and the dedicated Openbox target gate.
+
+## Architect Review 02 replanned execution
+
+1. Merge the Architect review normally (merge `6e16c25`).
+2. Verify exact native references and retain rejected full-library history.
+3. Define `MON_BODY_SOURCE_V1` precedence, landmarks, anatomy, and limits.
+4. Compare layered vector/path and layered raster candidates without adopting
+   an unavailable rasterizer.
+5. Build and validate only the front-left idle, walk, connector, and reaction
+   tracks; compare two clean processes byte-for-byte.
+6. Publish accessible construction and motion sheets with hashes.
+7. Run the focused headless Godot proof when the pinned executable is available.
+8. Stop for operator selection before eight-direction/full-family production and
+   the dedicated Openbox endurance gate.

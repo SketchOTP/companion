@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Build the Phase 02 core motion candidate.
+"""Build the superseded Phase 02 core motion candidate.
 
 This is qualification/authoring infrastructure, not a runtime dependency.  It
 uses the exact operator-approved identity PNG as the visual source, applies
 small authored, non-uniform pose deformations around the fixed source root,
 and emits deterministic MON_FRAME_V1 drawings, temporal tracks and atlases.
 Generated frames are intentionally written to a caller-provided build
-directory so CI can upload them as artifacts without adding bulk blobs to Git.
+directory so the historical result can be inspected without adding bulk blobs
+to Git. Architect Review 02 supersedes this broad output; active work uses
+``build_motion_proof.py`` until operator canon approval.
 """
 from __future__ import annotations
 

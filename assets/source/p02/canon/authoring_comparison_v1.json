@@ -1,0 +1,49 @@
+{
+  "decision": "DEFERRED_TO_OPERATOR_AFTER_ACCESSIBLE_REVIEW",
+  "identity_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+  "profile": "MON_AUTHORING_COMPARISON_V1",
+  "raster_candidate": {
+    "alpha_bbox": [
+      0,
+      17,
+      1220,
+      1240
+    ],
+    "dimensions_compared": [
+      "silhouette",
+      "face",
+      "palette",
+      "edge_shadow",
+      "hands",
+      "feet",
+      "root",
+      "contacts"
+    ],
+    "pixel_canvas": [
+      1254,
+      1254
+    ],
+    "reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+    "rendered_proof": true,
+    "source": "raster_key_pose_source_v1.json",
+    "status": "CANDIDATE_REVIEW_REQUIRED"
+  },
+  "status": "CANDIDATE_PENDING_OPERATOR_DECISION",
+  "vector_candidate": {
+    "dimensions_compared": [
+      "silhouette",
+      "face",
+      "palette",
+      "edge_shadow",
+      "hands",
+      "feet",
+      "root",
+      "contacts"
+    ],
+    "rasterizer": "resvg not installed on this host",
+    "reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+    "rendered_proof": false,
+    "source": "mon_body_source_v1.svg",
+    "status": "NOT_RUN_EXTERNAL_RASTERIZER_UNAVAILABLE"
+  }
+}

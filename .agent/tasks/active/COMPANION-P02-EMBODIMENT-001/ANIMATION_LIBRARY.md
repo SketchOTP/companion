@@ -54,3 +54,12 @@ temporal sequences keyed by body revision, stage, family, direction, posture,
 and variant.  The core candidate contains idle A/B/C, walk, run, turn, and
 focused proof tracks; direction is not a temporal frame.  Full 32-family
 completion remains deferred until operator visual approval.
+
+## Architect Review 02 correction
+
+The former 32-family directional catalogue is superseded and must not be
+counted as temporal animation. The active proof contains exactly six temporal
+tracks at one `front_left` facing: idle/breathe (6), walk (8), two orient
+connectors (3 each), listen (3), and acknowledge (3), for 26 drawings. Full
+direction and family expansion waits for operator selection of the canon and
+motion language.

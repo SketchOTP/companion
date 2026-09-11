@@ -47,3 +47,12 @@ access.
 Phase 02 may establish bounded engineering and visual candidate evidence only.
 It cannot establish aliveness, organism autonomy, perception, caregiving,
 security certification, product reliability, or release suitability.
+
+## Architect Review 02 scope correction
+
+The immediate scope is the exact-reference, production-canon, and minimal-motion
+proof gate only. It supersedes the prior pre-approval counts of 32 families,
+256 temporal drawings, eight-direction coverage, and 10,000 transitions. The
+current proof is six front-left tracks and 26 drawings. Operator selection of
+construction and motion language is required before scale expansion; neither
+the vector/path nor layered-raster candidate is adopted.

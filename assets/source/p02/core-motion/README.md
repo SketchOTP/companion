@@ -1,4 +1,10 @@
-# Phase 02 core-motion candidate
+# Phase 02 core-motion candidate — superseded history
+
+Architect Review 02 supersedes this broad 66-track/334-drawing candidate as a
+pre-approval motion proof. Its generated metadata was removed from the final
+tree; the prior generation remains available in published Git history as
+rejected evidence. Use `assets/source/p02/proof-motion/` for the current
+bounded gate.
 
 This directory contains committed, authored temporal-track specifications and
 their deterministic manifest.  The source reference gate is bound to the

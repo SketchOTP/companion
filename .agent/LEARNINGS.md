@@ -409,3 +409,12 @@ not count: trim rectangles, edge extrusion, reserved pixels, and reconstruction
 metadata must be measured in the generated page. Generated frame/atlas blobs
 belong in workflow artifacts; selected review derivatives and source manifests
 belong in Git.
+
+## 2026-09-11 — Canon before scale
+
+Approved raster references are art direction, not an editable rig. Lock source
+precedence, construction pivots, and a small real motion language before
+generating direction or family counts. A direction is a selection axis; a
+temporal track is the ordered drawings inside one facing. When a candidate
+rasterizer is unavailable, record that limitation instead of silently adopting
+another tool.

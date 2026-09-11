@@ -4,73 +4,23 @@
     "identity_native_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
     "turnaround_sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
   },
-  "body_frame_sources": 256,
+  "body_frame_sources": 26,
   "body_revision": "mon-body-v1",
   "canonical_frame_profile": "MON_FRAME_V1",
   "clip_families": [
-    "idle_breathe_a",
-    "idle_breathe_b",
-    "idle_breathe_c",
-    "gaze",
-    "listen",
-    "think",
-    "acknowledge",
-    "speak_neutral",
-    "interrupt",
-    "greeting",
-    "unknown_observer",
-    "sit",
-    "lie",
-    "sleep",
-    "dream_neutral",
-    "wake",
-    "stretch",
+    "idle_breathe",
     "walk",
-    "run",
-    "hop",
-    "approach",
-    "retreat",
-    "stop",
-    "curiosity",
-    "inspection",
-    "hesitation",
-    "refusal",
-    "surprise",
-    "calm_joy",
-    "disappointment",
-    "tiredness",
-    "boredom"
+    "orient_front_to_front_left",
+    "orient_front_left_to_front",
+    "listen",
+    "acknowledge"
   ],
-  "directions": [
-    "N",
-    "NE",
-    "E",
-    "SE",
-    "S",
-    "SW",
-    "W",
-    "NW"
-  ],
+  "directions": ["front_left"],
   "overlays": {
-    "eye_gaze_blink": 24,
-    "mouth_shapes": 8
+    "eye_gaze_blink": "DEFERRED_UNTIL_OPERATOR_CANON_APPROVAL",
+    "mouth_shapes": "DEFERRED_UNTIL_OPERATOR_CANON_APPROVAL"
   },
-  "packs": [
-    {
-      "name": "mon-embodiment-p02-v1.zip",
-      "sha256": "2ab74f5dbb56795a4807e837271ee8ad1eb14085e892f613604278e78ae6535f",
-      "status": "generated"
-    },
-    {
-      "count": 16,
-      "gutter_px": 4,
-      "max_dimensions": [
-        4096,
-        4096
-      ],
-      "name": "atlas_pages"
-    }
-  ],
+  "packs": [],
   "palette_roles": [
     "outline",
     "body",
@@ -81,31 +31,30 @@
     "mouth"
   ],
   "review_artifacts": [
-    "assets/generated/p02/review/construction_diagonal_candidates.png",
-    "assets/generated/p02/review/eight_direction_sheet.png",
-    "assets/generated/p02/review/eye_overlay_sheet.png",
-    "assets/generated/p02/review/family_contact_sheet.png",
-    "assets/generated/p02/review/habitat_viewport_still.png",
-    "assets/generated/p02/review/mouth_overlay_sheet.png",
-    "assets/generated/p02/review/palette_anatomy_sheet.png",
-    "assets/generated/p02/review/transition_sheet.png"
+    "assets/source/p02/review/r02/construction_front_profile_frontleft.png",
+    "assets/source/p02/review/r02/root_contact_overlay.png",
+    "assets/source/p02/review/r02/authoring_comparison.png",
+    "assets/source/p02/review/r02/idle_breathe_front_left.png",
+    "assets/source/p02/review/r02/walk_front_left.png",
+    "assets/source/p02/review/r02/connectors_reactions.png"
   ],
   "schema": "companion-mon-asset-manifest-v1",
   "status": "CODEX_GENERATED_CANDIDATE_PENDING_OPERATOR_APPROVAL",
-  "unique_body_frame_sha256": 256,
+  "unique_body_frame_sha256": 26,
   "validation": {
     "candidate_approval": "PENDING_OPERATOR_VISUAL_REVIEW",
-    "status": "PASSED",
-    "validator": "experiments/p02-embodiment/scripts/validate_assets.py"
+    "status": "CANDIDATE_PROOF_PASSED",
+    "validator": "experiments/p02-embodiment/scripts/validate_motion_proof.py"
   },
   "superseding_correction": {
     "native_identity_directly_verified": true,
     "native_turnaround_directly_verified": true,
-    "current_core_manifest": "assets/source/p02/core-motion/manifest.json",
-    "current_temporal_tracks": "assets/source/p02/core-motion/temporal_tracks.json",
-    "current_core_frame_count": 334,
-    "current_core_track_count": 66,
-    "current_core_unique_frame_count": 166,
+    "current_core_manifest": "assets/source/p02/proof-motion/manifest.json",
+    "current_temporal_tracks": "assets/source/p02/proof-motion/temporal_tracks.json",
+    "current_core_frame_count": 26,
+    "current_core_track_count": 6,
+    "current_core_unique_frame_count": 26,
+    "current_gate": "R02_MINIMAL_MOTION_PROOF",
     "candidate_status": "CANDIDATE_PENDING_OPERATOR_VISUAL_APPROVAL",
     "superseded_claims": [
       "old 32-family directional catalog as temporal animation",
@@ -113,6 +62,7 @@
       "old flush atlas gutter/extrusion claim",
       "old 10000-transition result as temporal evidence"
     ],
-    "generated_corpus_policy": "workflow_artifact_and_private_local_export_only"
+    "generated_corpus_policy": "workflow_artifact_and_private_local_export_only",
+    "historical_scale_counts": {"families": 32, "directions": 8, "frames": 256, "core_tracks": 66, "core_drawings": 334}
   }
 }

@@ -1,0 +1,197 @@
+{
+  "events": [
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_idle_breathe_00",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_idle_breathe_01",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_idle_breathe_02",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_idle_breathe_03",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_idle_breathe_04",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_idle_breathe_05",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "loop_or_completion",
+      "expected_runtime_observation": true,
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:idle_breathe:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_walk_00",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_walk_01",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_walk_02",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_walk_03",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_walk_04",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_walk_05",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_walk_06",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_walk_07",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:walk:front_left:neutral:1"
+    },
+    {
+      "event": "loop_or_completion",
+      "expected_runtime_observation": true,
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:walk:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_turn_fwd_00",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:orient_front_to_front_left:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_turn_fwd_01",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:orient_front_to_front_left:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_turn_fwd_02",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:orient_front_to_front_left:front_left:neutral:1"
+    },
+    {
+      "event": "loop_or_completion",
+      "expected_runtime_observation": true,
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:orient_front_to_front_left:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_turn_rev_00",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:orient_front_left_to_front:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_turn_rev_01",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:orient_front_left_to_front:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_turn_rev_02",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:orient_front_left_to_front:front_left:neutral:1"
+    },
+    {
+      "event": "loop_or_completion",
+      "expected_runtime_observation": true,
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:orient_front_left_to_front:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_listen_00",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:listen:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_listen_01",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:listen:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_listen_02",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:listen:front_left:neutral:1"
+    },
+    {
+      "event": "loop_or_completion",
+      "expected_runtime_observation": true,
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:listen:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_acknowledge_00",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:acknowledge:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_acknowledge_01",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:acknowledge:front_left:neutral:1"
+    },
+    {
+      "event": "frame_marker",
+      "frame_id": "proof_acknowledge_02",
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:acknowledge:front_left:neutral:1"
+    },
+    {
+      "event": "loop_or_completion",
+      "expected_runtime_observation": true,
+      "observed_by": "proof-builder-render",
+      "track_id": "mon-body-v1:proof:acknowledge:front_left:neutral:1"
+    }
+  ],
+  "status": "RUNTIME_OBSERVATION_REQUIRED"
+}

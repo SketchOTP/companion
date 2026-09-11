@@ -111,3 +111,20 @@ variant, declares animation FPS 12, passes integer tick weights as relative
 durations, emits observed frame/completion markers, and performs a bounded
 BodyA/BodyB crossfade.  The package remains a visual candidate pending
 operator and Architect review; no product capability is claimed.
+
+## Architect Review 02 continuation handoff
+
+The active result is now `MON_BODY_SOURCE_V1` plus a bounded
+`MON_TEMPORAL_PROOF_V1` candidate: one `front_left` facing, six tracks, and 26
+temporal drawings. Exact native reference hashes are bound in the canon and
+proof manifests. Two clean private builds are byte-identical and the fail-closed
+proof validator passes rendered canvas/root/safety checks. Review derivatives and
+source files are committed under `assets/source/p02/canon/` and
+`assets/source/p02/review/r02/`.
+
+The raster candidate rendered; the vector candidate is explicitly unrun because
+the host has no `resvg` rasterizer. The focused workflow stages the proof output
+and exact Godot artifact in CI. Godot playback was not run locally because the
+executable is absent, and the dedicated Openbox target remains unavailable.
+Operator visual approval is the next gate; do not scale to eight directions or
+the complete family library before that decision.

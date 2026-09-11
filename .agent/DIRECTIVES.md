@@ -335,6 +335,16 @@ clean-room rebuilds in `6c81838899c943ea8d195230f9849140f0b54f5f`.
 
 The candidate review sheet was then corrected to render all four diagonal
 views in `26571cbab782e5fc0ea712f577b8112767f05782`.
+
+## COMPANION-P02-EMBODIMENT-001 — Architect Review 02 R02 continuation (2026-09-11)
+
+Replan the active work to the exact-reference, production-canon, and minimal
+motion-proof gate. Preserve prior generated work as rejected history, remove
+bulk generated metadata/output from the final tree, and compare layered vector
+and raster authoring candidates without adopting either. Produce only one
+front-left idle proof, walk proof, orient connector pair, and listen/
+acknowledge proof. Stop for operator selection before eight-direction or
+full-family expansion. The dedicated workflow is `phase02-canon-motion-proof`.
 # 2026-09-11 — Architect Review 01 continuation
 
 `COMPANION-P02-EMBODIMENT-001` continues on `codex/p02-embodiment-001` after

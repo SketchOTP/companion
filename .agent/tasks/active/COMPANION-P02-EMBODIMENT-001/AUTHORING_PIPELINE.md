@@ -49,3 +49,12 @@ native identity source with explicit stable family/direction/frame parameters.
 private caller-provided output.  Byte-identical clean-process rebuilding is
 validated before any artifact publication; no runtime rig or authoring tool is
 a production dependency.
+
+## Architect Review 02 correction
+
+Two explicit authoring candidates are retained: the layered vector/path source
+(`mon_body_source_v1.svg`) and the layered raster key-pose source
+(`raster_key_pose_source_v1.json`). The bounded comparison records raster proof
+rendered and vector proof `NOT_RUN_EXTERNAL_RASTERIZER_UNAVAILABLE` because no
+`resvg` executable is installed. This is a recorded limitation, not an adopted
+dependency or a selection decision.

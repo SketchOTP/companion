@@ -12,3 +12,11 @@ local run may do the same from the private output of
 `build_core_motion.py`; the generated corpus is intentionally absent from the
 ordinary-Git tree. `MonAvatar` loads one SpriteFrames animation per temporal
 track at an explicit 12 FPS and reports observed frame/completion markers.
+
+## Architect Review 02 proof mode
+
+The active workflow stages the private output of `build_motion_proof.py` as
+`res://assets/p02-core/`. The headless check expects exactly six proof tracks at
+the `front_left` facing and observes frame-marker events from the actual
+`AnimatedSprite2D` signal path. The previous all-direction track counts are
+superseded and are not loaded by the proof scene.

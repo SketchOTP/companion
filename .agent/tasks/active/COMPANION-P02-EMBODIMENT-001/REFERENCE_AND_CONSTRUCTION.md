@@ -43,3 +43,12 @@ under `assets/source/p02/review/` bind the construction grid, palette, anatomy,
 landmarks, shadow footprint, pose limits, six-view correspondence, and four
 unapproved diagonal candidates to those source hashes.  The old SVG remains a
 noncanonical inspected derivative only.
+
+## Architect Review 02 correction
+
+The active construction authority is `assets/source/p02/canon/mon_body_source_v1.json`.
+It gives hard anatomy invariants precedence, the identity master style/face/
+palette precedence, and the turnaround orthographic/anatomy precedence. The
+previous broad construction and diagonal catalogue is superseded evidence.
+Current review material is the R02 package under
+`assets/source/p02/review/r02/`; all choices remain operator-pending.

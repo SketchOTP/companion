@@ -604,6 +604,15 @@ evidence; target-host playback and visual approval remain pending.
 The diagonal candidate sheet now renders all four source views. Asset QA
 remains green and the correction is published at
 `26571cbab782e5fc0ea712f577b8112767f05782`; visual approval remains pending.
+
+## 2026-09-11 — Architect Review 02 canon reset
+
+Merged Architect Review 02 normally and narrowed the active deliverable to the
+production-body canon plus minimal motion proof. Added exact-reference-bound
+layered vector and raster source candidates, a six-track front-left proof (26
+temporal drawings), review strips, root/contact overlay, and a focused immutable
+workflow. The prior 32-family/66-track scale is retained only as superseded
+negative evidence; operator approval and later scale remain open.
 # Superseding Phase 02 evidence — 2026-09-11
 
 Native identity (`86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56`)

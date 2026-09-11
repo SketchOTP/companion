@@ -487,3 +487,13 @@ boundary changed.
   pages; local fail-closed validator passes.
 - No operator visual approval, Openbox target playback, or Phase 02 acceptance
   has been granted. Architecture v1.0 remains adopted; Phase 03+ remains closed.
+
+## 2026-09-11 — Architect Review 02 replan
+
+`origin/main` advanced through the Architect's root-cause and canon-replan
+commits. Merge `6e16c25` incorporated that authority without rewriting the
+published branch. The active result is now a small exact-reference and motion
+proof package: six front-left tracks and 26 generated drawings in private
+outputs, committed review derivatives and manifests, and a focused proof
+workflow. The prior broad core remains superseded; operator visual approval is
+the next gate.

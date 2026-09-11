@@ -7,25 +7,42 @@ are identity-faithful candidates and remain pending operator visual approval.
 
 The pipeline uses only Python's standard library and the already available
 Pillow runtime for local rasterization.  No package is added to the production
-workspace.  The historical `build_assets.py` output is retained as rejected
-direction-catalog evidence.  The current reference-grounded core gate is
-`build_core_motion.py`, which reads the exact native identity PNG, emits
-independent temporal tracks, and writes the generated corpus to a caller-owned
-artifact directory (never the Git tree).
+workspace.  The historical `build_assets.py` and `build_core_motion.py`
+outputs are retained as rejected/superseded evidence. The active
+reference-grounded gate is `build_motion_proof.py`, which reads the exact native
+identity PNG, emits six bounded temporal proof tracks, and writes generated
+frames to a caller-owned artifact directory (never the Git tree).
 
 Run from the repository root:
 
 ```text
-CORE_OUT="$(mktemp -d /tmp/companion-p02-core.XXXXXX)"
-python3 experiments/p02-embodiment/scripts/build_core_motion.py --out "$CORE_OUT" --clean
-python3 experiments/p02-embodiment/scripts/validate_core_motion.py --out "$CORE_OUT"
-python3 experiments/p02-embodiment/scripts/build_review_package.py --out "$(mktemp -d /tmp/companion-p02-review.XXXXXX)"
+PROOF_OUT="$(mktemp -d /tmp/companion-p02-proof.XXXXXX)"
+python3 experiments/p02-embodiment/scripts/build_motion_proof.py --out "$PROOF_OUT" --clean
+python3 experiments/p02-embodiment/scripts/validate_motion_proof.py --out "$PROOF_OUT"
+python3 experiments/p02-embodiment/scripts/compare_authoring_candidates.py \
+  --proof "$PROOF_OUT" --out "$PROOF_OUT/authoring-comparison.json"
 ```
 
-The core output includes `temporal_tracks.json`, `atlas_manifest.json`,
-`manifest.json`, full-canvas frames, trim/extrude atlases, and review sheets.
-All generated outputs are deterministic for the pinned script and are safe to
-rebuild in a clean checkout.  Runtime state and temporary exports belong in a
-private XDG directory, never in the checkout or an SSHFS mount.  Review PNGs
-under `assets/source/p02/review/` are selected derivatives only; the complete
-corpus and packs are workflow artifacts/local export bundles.
+The proof output includes `temporal_tracks.json`, `manifest.json`, 26
+full-canvas candidate frames, and selected review strips. All generated output
+is deterministic for the pinned script and is safe to rebuild in a clean
+checkout. Runtime state and temporary exports belong in a private XDG
+directory, never in the checkout or an SSHFS mount. Review PNGs under
+`assets/source/p02/review/r02/` are selected derivatives only; library-scale
+corpus and packs remain deferred until operator approval.
+## R02 canon and motion-proof scope
+
+Architect Review 02 supersedes the prior full-library run. The active
+qualification surface is now the exact-reference and minimal motion-proof
+gate. `build_motion_proof.py` emits one `front_left` facing with six temporal
+tracks (26 drawings total) into a private output directory. It must be run in
+two clean processes and compared byte-for-byte. `validate_motion_proof.py`
+fails closed on reference hashes, track shape, timing, root, safety bounds and
+within-track duplicates. The resulting candidate remains pending operator
+approval; no eight-direction or 32-family production is authorized.
+
+The vector/path and layered-raster sources are both retained as candidates in
+`assets/source/p02/canon/`. `compare_authoring_candidates.py` records that the
+raster proof was rendered while the `resvg` vector rasterizer was unavailable on
+the current host; this is an explicit comparison limitation, not a dependency
+adoption.

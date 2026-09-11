@@ -1,4 +1,6 @@
 {
+  "status": "SUPERSEDED_DIRECTIONAL_CATALOG_NOT_TEMPORAL_EVIDENCE",
+  "superseded_by": "assets/source/p02/canon/mon_body_source_v1.json",
   "canvas": [
     1024,
     1024

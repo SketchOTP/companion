@@ -84,3 +84,19 @@ The Research Phase 01 Notion hierarchy contains the project's research evidence 
   supports reproducible packs, and keeps Godot presentation-only.
 - Recheck: before operator approval, target-host playback, dependency change,
   or any future animation/runtime capability claim.
+
+## COMPANION-P02-EMBODIMENT-001 R02 authoring comparison (2026-09-11)
+
+- Sources: official [resvg repository](https://github.com/linebender/resvg)
+  (Apache-2.0 OR MIT static SVG renderer) and [Krita manual/license
+  references](https://docs.krita.org/en/KritaFAQ.html) (GPL application with
+  raster and vector authoring facilities).
+- Overlap: both can support authoring exploration; neither is part of the
+  approved runtime foundation.
+- Disposition: `BENCHMARK` resvg and Krita only if the operator requests a
+  future bounded comparison; current host has no resvg or Krita executable.
+- Rationale: the current raster proof is reproducible with existing Pillow;
+  installing or adopting an authoring tool before the canon decision would
+  expand scope and create an unreviewed dependency.
+- Recheck: after operator selects the construction/motion language or before
+  any authoring-tool dependency is proposed.

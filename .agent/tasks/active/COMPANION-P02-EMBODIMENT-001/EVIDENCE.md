@@ -72,3 +72,22 @@ The dedicated Phase 02 workflow is now present but its hosted run and the
 dedicated Openbox two-hour target run remain pending.  Godot headless playback
 is not claimed locally because the exact 4.7.2 executable is not installed in
 this worktree; the workflow stages it ephemerally after hash verification.
+
+## Architect Review 02 — superseding bounded proof
+
+Exact native reference evidence is directly available in Git and rechecked:
+identity `86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56`
+(1254×1254 RGBA) and turnaround
+`3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4`
+(1448×1086 RGB). The new `MON_BODY_SOURCE_V1` precedence model and six
+front-left proof tracks are candidate evidence only. Two clean private builds
+produced byte-identical output; `validate_motion_proof.py` passed with 6 tracks,
+26 drawings, and 26 within-pack unique drawings. Review strips are committed
+under `assets/source/p02/review/r02/` with hashes in their manifest.
+
+The layered-raster candidate rendered the bounded proof. The layered-vector
+candidate is explicitly `NOT_RUN_EXTERNAL_RASTERIZER_UNAVAILABLE` because
+`resvg` is not installed; no dependency was adopted. Godot runtime event proof
+and dedicated hosted workflow are pending execution, and operator visual
+approval is not granted. The old 66-track/334-drawing and 32-family claims are
+superseded as Phase 02 evidence.

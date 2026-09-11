@@ -8,6 +8,7 @@ signal clip_failed(event: Dictionary)
 
 const FRAME_ROOT := "res://assets/p02-core/"
 const ANIMATION_FPS := 12.0
+const TRACK_STAGE := "proof"
 const Director = preload("res://mon_animation_director.gd")
 var clip_manifest: Dictionary = {}
 var temporal_tracks: Array = []
@@ -66,9 +67,9 @@ func _frames_for(track_id: String) -> SpriteFrames:
 	return frames
 
 func play_clip(clip_id: String) -> void:
-	play_track(clip_id, "N", "neutral", 1)
+	play_track(clip_id, "front_left", "neutral", 1, TRACK_STAGE)
 
-func play_track(family: String, direction: String = "N", posture: String = "neutral", variant: int = 1, stage: String = "candidate") -> void:
+func play_track(family: String, direction: String = "front_left", posture: String = "neutral", variant: int = 1, stage: String = TRACK_STAGE) -> void:
 	var track_id := "mon-body-v1:%s:%s:%s:%s:%d" % [stage, family, direction, posture, variant]
 	var frames := _frames_for(track_id)
 	if frames.get_animation_names().has(track_id) and frames.get_frame_count(track_id) > 0:

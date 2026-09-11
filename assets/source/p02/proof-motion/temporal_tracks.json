@@ -1,0 +1,1192 @@
+{
+  "profile": "MON_TEMPORAL_PROOF_V1",
+  "source_identity_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+  "source_turnaround_sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4",
+  "tracks": [
+    {
+      "body_revision": "mon-body-v1",
+      "connectors": {
+        "entry": [
+          "neutral"
+        ],
+        "exit": [
+          "neutral"
+        ]
+      },
+      "contacts": {
+        "declared_contact_spans": [],
+        "planted_contact_drift_px": 0
+      },
+      "direction": "front_left",
+      "family": "idle_breathe",
+      "frame_profile": "MON_FRAME_V1",
+      "frames": [
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 0
+            }
+          ],
+          "frame_id": "proof_idle_breathe_00",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_idle_breathe_00.png",
+          "sha256": "e0a123f1b10dfa5ae59508763604de23169fbe1e1b0b265a17d2704eb4982104"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 1
+            }
+          ],
+          "frame_id": "proof_idle_breathe_01",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_idle_breathe_01.png",
+          "sha256": "d1b27856c07de098e7b9b512132363f828ca23e7827aaa948fd57863256cfd68"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 3
+            }
+          ],
+          "frame_id": "proof_idle_breathe_02",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_idle_breathe_02.png",
+          "sha256": "fd19f62e1cc98128b3288c09d6dbba426491be699385784c2224958366c4f55a"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 4
+            }
+          ],
+          "frame_id": "proof_idle_breathe_03",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_idle_breathe_03.png",
+          "sha256": "00649c5b70fbdac93d1f9598a05bbdf24883bc60b947a09c867b0ac7d566e789"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 5
+            }
+          ],
+          "frame_id": "proof_idle_breathe_04",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_idle_breathe_04.png",
+          "sha256": "7c36e0036d6633fa43addf1dd5e4cfcfe68e5dc4692fd7a75398ef47fc8495ad"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 7
+            }
+          ],
+          "frame_id": "proof_idle_breathe_05",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_idle_breathe_05.png",
+          "sha256": "5362cd6345a3a19bff65b6edeba2cd578766cff7cc46567067f3be509f7b9a11"
+        }
+      ],
+      "interruptible_ranges": [
+        [
+          0,
+          8
+        ]
+      ],
+      "loop_mode": "loop",
+      "posture": "neutral",
+      "root_motion_policy": "forbidden",
+      "seam": {
+        "first_frame": "proof_idle_breathe_00",
+        "last_frame": "proof_idle_breathe_05",
+        "root_drift_px": 0
+      },
+      "source_reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+      "source_revision": "p02-native-reference-v1",
+      "stage": "proof",
+      "track_id": "mon-body-v1:proof:idle_breathe:front_left:neutral:1",
+      "variant": 1,
+      "version": 1
+    },
+    {
+      "body_revision": "mon-body-v1",
+      "connectors": {
+        "entry": [
+          "neutral"
+        ],
+        "exit": [
+          "neutral"
+        ]
+      },
+      "contacts": {
+        "declared_contact_spans": [
+          "proof_walk_00",
+          "proof_walk_01",
+          "proof_walk_02",
+          "proof_walk_03",
+          "proof_walk_04",
+          "proof_walk_05",
+          "proof_walk_06",
+          "proof_walk_07"
+        ],
+        "planted_contact_drift_px": 0
+      },
+      "direction": "front_left",
+      "family": "walk",
+      "frame_profile": "MON_FRAME_V1",
+      "frames": [
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 0
+            }
+          ],
+          "frame_id": "proof_walk_00",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_walk_00.png",
+          "sha256": "84aa0e6984a4de68cc67c04463a5f68ea8c161eca50c924a497aa8bb13add25d"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 1
+            }
+          ],
+          "frame_id": "proof_walk_01",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_walk_01.png",
+          "sha256": "cd23525fa30e3cd728397663977f7cf00b83c4ccc8717a89522a23fd4657d33e"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 3
+            }
+          ],
+          "frame_id": "proof_walk_02",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_walk_02.png",
+          "sha256": "15546e4e59ffccf66409733896b569dee56d2f5ff7d0a5457ed18c1c89283eb5"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 4
+            }
+          ],
+          "frame_id": "proof_walk_03",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_walk_03.png",
+          "sha256": "26676109c5b90df93efccc1805194af0c822ee79cedfcf42877fefa19cb7dd4c"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 5
+            }
+          ],
+          "frame_id": "proof_walk_04",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_walk_04.png",
+          "sha256": "03c35527969058332417951b2e2cedf8334369f227c8f43bcd078635a40c3177"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 7
+            }
+          ],
+          "frame_id": "proof_walk_05",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_walk_05.png",
+          "sha256": "a36a4f6dcd9ee0b270eba523641992ccde5728d72e7d4add1ee7cd15fde63d3a"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 8
+            }
+          ],
+          "frame_id": "proof_walk_06",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_walk_06.png",
+          "sha256": "01dd634764becbe540508c8bb807b9959011977c463959a36d378ff0461c57dc"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 9
+            }
+          ],
+          "frame_id": "proof_walk_07",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_walk_07.png",
+          "sha256": "c604ac83c4097ff8da54f443179ec7b7b29b0f735d2aa75fd5e3c634dff9a624"
+        }
+      ],
+      "interruptible_ranges": [
+        [
+          0,
+          11
+        ]
+      ],
+      "loop_mode": "loop",
+      "posture": "neutral",
+      "root_motion_policy": "forbidden",
+      "seam": {
+        "first_frame": "proof_walk_00",
+        "last_frame": "proof_walk_07",
+        "root_drift_px": 0
+      },
+      "source_reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+      "source_revision": "p02-native-reference-v1",
+      "stage": "proof",
+      "track_id": "mon-body-v1:proof:walk:front_left:neutral:1",
+      "variant": 1,
+      "version": 1
+    },
+    {
+      "body_revision": "mon-body-v1",
+      "connectors": {
+        "entry": [
+          "neutral"
+        ],
+        "exit": [
+          "neutral"
+        ]
+      },
+      "contacts": {
+        "declared_contact_spans": [],
+        "planted_contact_drift_px": 0
+      },
+      "direction": "front_left",
+      "family": "orient_front_to_front_left",
+      "frame_profile": "MON_FRAME_V1",
+      "frames": [
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 0
+            }
+          ],
+          "frame_id": "proof_turn_fwd_00",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_turn_fwd_00.png",
+          "sha256": "b01021463cd2417959e80e7d8f08574d7a45780e567d73aa8efca037fc3e959e"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 1
+            }
+          ],
+          "frame_id": "proof_turn_fwd_01",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_turn_fwd_01.png",
+          "sha256": "ad9b533903c52c5d8587a825312c3256e7678c3eb3310a2c34946216b07b8e2f"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 3
+            }
+          ],
+          "frame_id": "proof_turn_fwd_02",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_turn_fwd_02.png",
+          "sha256": "2c3996eb3fe6275d4e529450cf56e6943a89f935a0e38796c80da77bf7c96ce2"
+        }
+      ],
+      "interruptible_ranges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "loop_mode": "once",
+      "posture": "neutral",
+      "root_motion_policy": "forbidden",
+      "seam": {
+        "first_frame": "proof_turn_fwd_00",
+        "last_frame": "proof_turn_fwd_02",
+        "root_drift_px": 0
+      },
+      "source_reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+      "source_revision": "p02-native-reference-v1",
+      "stage": "proof",
+      "track_id": "mon-body-v1:proof:orient_front_to_front_left:front_left:neutral:1",
+      "variant": 1,
+      "version": 1
+    },
+    {
+      "body_revision": "mon-body-v1",
+      "connectors": {
+        "entry": [
+          "neutral"
+        ],
+        "exit": [
+          "neutral"
+        ]
+      },
+      "contacts": {
+        "declared_contact_spans": [],
+        "planted_contact_drift_px": 0
+      },
+      "direction": "front_left",
+      "family": "orient_front_left_to_front",
+      "frame_profile": "MON_FRAME_V1",
+      "frames": [
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 0
+            }
+          ],
+          "frame_id": "proof_turn_rev_00",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_turn_rev_00.png",
+          "sha256": "ae52d7d43b1c22bc3c588b77063408de5e9e6e36079f45d116a8cb55545829d6"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 1
+            }
+          ],
+          "frame_id": "proof_turn_rev_01",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_turn_rev_01.png",
+          "sha256": "8d32f2302b4708bd9ad981c0087f47c62e499ea6df4cad3b973730f0fc89ef8d"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 3
+            }
+          ],
+          "frame_id": "proof_turn_rev_02",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_turn_rev_02.png",
+          "sha256": "5267f1288f59da0d216ed3dd56c837bad197638b05d7f687d95fd563dd9b2a4c"
+        }
+      ],
+      "interruptible_ranges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "loop_mode": "once",
+      "posture": "neutral",
+      "root_motion_policy": "forbidden",
+      "seam": {
+        "first_frame": "proof_turn_rev_00",
+        "last_frame": "proof_turn_rev_02",
+        "root_drift_px": 0
+      },
+      "source_reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+      "source_revision": "p02-native-reference-v1",
+      "stage": "proof",
+      "track_id": "mon-body-v1:proof:orient_front_left_to_front:front_left:neutral:1",
+      "variant": 1,
+      "version": 1
+    },
+    {
+      "body_revision": "mon-body-v1",
+      "connectors": {
+        "entry": [
+          "neutral"
+        ],
+        "exit": [
+          "neutral"
+        ]
+      },
+      "contacts": {
+        "declared_contact_spans": [],
+        "planted_contact_drift_px": 0
+      },
+      "direction": "front_left",
+      "family": "listen",
+      "frame_profile": "MON_FRAME_V1",
+      "frames": [
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 0
+            }
+          ],
+          "frame_id": "proof_listen_00",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_listen_00.png",
+          "sha256": "648723025bead04512459dc6938849719a820c7dffacd790e554756a8f78e700"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 1
+            }
+          ],
+          "frame_id": "proof_listen_01",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_listen_01.png",
+          "sha256": "ad4ae822ace12bb8ff44137b7fd3b6a744eccf652a85ea72b6cd4d48ed128b14"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 3
+            }
+          ],
+          "frame_id": "proof_listen_02",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_listen_02.png",
+          "sha256": "b89efc63cd9b03ecd1062993154447ea3656ed16c92572f7cd46be80f2e4c64b"
+        }
+      ],
+      "interruptible_ranges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "loop_mode": "once",
+      "posture": "neutral",
+      "root_motion_policy": "forbidden",
+      "seam": {
+        "first_frame": "proof_listen_00",
+        "last_frame": "proof_listen_02",
+        "root_drift_px": 0
+      },
+      "source_reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+      "source_revision": "p02-native-reference-v1",
+      "stage": "proof",
+      "track_id": "mon-body-v1:proof:listen:front_left:neutral:1",
+      "variant": 1,
+      "version": 1
+    },
+    {
+      "body_revision": "mon-body-v1",
+      "connectors": {
+        "entry": [
+          "neutral"
+        ],
+        "exit": [
+          "neutral"
+        ]
+      },
+      "contacts": {
+        "declared_contact_spans": [],
+        "planted_contact_drift_px": 0
+      },
+      "direction": "front_left",
+      "family": "acknowledge",
+      "frame_profile": "MON_FRAME_V1",
+      "frames": [
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 0
+            }
+          ],
+          "frame_id": "proof_acknowledge_00",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_acknowledge_00.png",
+          "sha256": "f2c39e94805fdd0ac9a6107a3b11a32cd50a5f531aa02b82b6f74240ffcc23f9"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 1
+            }
+          ],
+          "frame_id": "proof_acknowledge_01",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_acknowledge_01.png",
+          "sha256": "1985c4c8c3a391ac5e231e9994362d74ff0297868d913d365dfa4b679238d9df"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 3
+            }
+          ],
+          "frame_id": "proof_acknowledge_02",
+          "landmarks": {
+            "left_foot": [
+              397,
+              896
+            ],
+            "right_foot": [
+              627,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/proof_acknowledge_02.png",
+          "sha256": "bc1349b75dd16e775d18a8a5a4224647af9c85610de1d6618a3d3a235caf2d67"
+        }
+      ],
+      "interruptible_ranges": [
+        [
+          0,
+          4
+        ]
+      ],
+      "loop_mode": "once",
+      "posture": "neutral",
+      "root_motion_policy": "forbidden",
+      "seam": {
+        "first_frame": "proof_acknowledge_00",
+        "last_frame": "proof_acknowledge_02",
+        "root_drift_px": 0
+      },
+      "source_reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+      "source_revision": "p02-native-reference-v1",
+      "stage": "proof",
+      "track_id": "mon-body-v1:proof:acknowledge:front_left:neutral:1",
+      "variant": 1,
+      "version": 1
+    }
+  ]
+}

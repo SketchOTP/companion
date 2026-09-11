@@ -219,3 +219,12 @@ security-certification, product-reliability, medical, emergency, SLA, or Phase
 - `RECORD.md` — decisions/milestones/reversals
 - `REPO_MAP.md` — repository ownership map
 - `EXTERNAL.md` — external source dispositions
+
+## Current Review 02 gate
+
+`COMPANION-P02-EMBODIMENT-001` is in the exact-reference, production-canon,
+and minimal temporal-motion proof gate. Use `assets/source/p02/canon/` and
+`assets/source/p02/proof-motion/` as the current candidate authority. The old
+directional catalogue and broad core pack are superseded evidence only. The
+focused `phase02-canon-motion-proof` workflow is the relevant CI path; operator
+visual approval is still required.
