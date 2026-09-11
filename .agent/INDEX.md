@@ -111,3 +111,7 @@ approval remain pending.
 The pack reproducibility fix is published at
 `6c81838899c943ea8d195230f9849140f0b54f5f`; clean-room bytes now match the
 tracked pack.
+
+The four-view diagonal review sheet was corrected in
+`26571cbab782e5fc0ea712f577b8112767f05782` and is still pending operator
+approval.

@@ -598,3 +598,9 @@ The generated pack writer now fixes ZIP timestamps and metadata. A clean-room
 rebuild produced byte-identical pack and manifest hashes; the fix is published
 at `6c81838899c943ea8d195230f9849140f0b54f5f`. This is still bounded asset
 evidence; target-host playback and visual approval remain pending.
+
+## 2026-09-11 — Four-view review-sheet correction
+
+The diagonal candidate sheet now renders all four source views. Asset QA
+remains green and the correction is published at
+`26571cbab782e5fc0ea712f577b8112767f05782`; visual approval remains pending.

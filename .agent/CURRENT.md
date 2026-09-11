@@ -121,3 +121,6 @@ and operator visual approval remain open gates.
 Reproducibility reconciliation commit `6c81838899c943ea8d195230f9849140f0b54f5f`
 pins ZIP metadata and confirms a byte-identical clean-room pack rebuild;
 target-host playback and operator visual approval remain open.
+
+The latest review-material correction is `26571cbab782e5fc0ea712f577b8112767f05782`;
+all four diagonal candidates are visible in the regenerated review sheet.

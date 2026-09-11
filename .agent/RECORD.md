@@ -471,3 +471,9 @@ phase remains open for Architect and operator review.
 Commit `6c81838899c943ea8d195230f9849140f0b54f5f` pins ZIP entry metadata and
 records a byte-identical clean-room rebuild. No scope or capability boundary
 changed; the target-host and operator-review gates remain open.
+
+## 2026-09-11 — Four-view review-material correction
+
+Commit `26571cbab782e5fc0ea712f577b8112767f05782` corrects the diagonal-sheet
+filenames and visibly restores all four candidate views. No scope or approval
+boundary changed.

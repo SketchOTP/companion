@@ -82,3 +82,8 @@ manifest SHA-256 is
 The focused fix is published in commit
 `6c81838899c943ea8d195230f9849140f0b54f5f`; target-host Openbox playback and
 operator visual approval remain open gates.
+
+The diagonal review-material correction is published at
+`26571cbab782e5fc0ea712f577b8112767f05782`; the regenerated sheet contains all
+four candidate views and the asset manifest remains green. Operator visual
+approval and dedicated Openbox playback are still required.

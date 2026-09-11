@@ -396,4 +396,7 @@ must accept count-only runner summaries as well as detailed sample arrays.
 
 - ZIP archives are not reproducible by default: filesystem timestamps and
   platform metadata must be pinned before a clean-room pack hash can be used as
-  evidence. The Phase 02 pack now pins both and rebuilds byte-identically.
+evidence. The Phase 02 pack now pins both and rebuilds byte-identically.
+
+- Review derivatives must be checked visually, not only by path existence:
+  corrected filenames restored the complete four-view diagonal sheet.

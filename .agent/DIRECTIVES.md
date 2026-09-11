@@ -332,3 +332,6 @@ care, or later-phase capability is authorized.
 
 The final candidate reconciliation pins ZIP metadata for byte-identical
 clean-room rebuilds in `6c81838899c943ea8d195230f9849140f0b54f5f`.
+
+The candidate review sheet was then corrected to render all four diagonal
+views in `26571cbab782e5fc0ea712f577b8112767f05782`.
