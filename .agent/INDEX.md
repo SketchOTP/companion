@@ -15,6 +15,8 @@
   https://app.notion.com/p/3d6833cb27ff81e99c52dc33b53f2556
 - Visual bible:
   https://app.notion.com/p/3d5833cb27ff8108a3acf202fc268b6d
+- Embodiment research:
+  https://app.notion.com/p/3d5833cb27ff81d79680f362491287a7
 - Sprite contract:
   https://app.notion.com/p/3d5833cb27ff81989d95f604112e25ba
 - GitHub: https://github.com/SketchOTP/companion
@@ -23,33 +25,32 @@
 
 - Active roadmap phase: `02 — Mon Body, Habitat, and Sprite Pipeline`
 - Phase acceptance: `NOT GRANTED`
-- Active directive: `COMPANION-P02-EMBODIMENT-001`
-- Current continuation:
-  `ARCHITECT REVIEW 01 — REFERENCE AND TEMPORAL-ANIMATION CORRECTION`
-- Reviewed task head: `9a65b8db032c97e13fce5d6a305989d32f2cc879`
+- Active phase directive: `COMPANION-P02-EMBODIMENT-001`
+- Current bounded directive: `COMPANION-P02-EMBODIMENT-001-R02`
+- Current disposition: `REPLAN — EMBODIMENT CANON AND MOTION PROOF`
+- Reviewed implementation head:
+  `9a65b8db032c97e13fce5d6a305989d32f2cc879`
 - Notion directive:
   https://app.notion.com/p/3d8833cb27ff810e858acd029ac0ea05
 - Notion report:
   https://app.notion.com/p/3d8833cb27ff817d9d01d754ec852c10
-- Notion Architect Review 01:
-  https://app.notion.com/p/3d8833cb27ff81778c22d2c73cf0dc9f
-- GitHub Issue #8:
-  https://github.com/SketchOTP/companion/issues/8
-- Pull request #9:
-  https://github.com/SketchOTP/companion/pull/9
-- Active packet: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/`
-- Full directive:
-  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/CODEX_FULL_DIRECTIVE.md`
-- Current review authority:
+- Notion Architect Review 02:
+  https://app.notion.com/p/3d8833cb27ff81969b32f2387bfc51de
+- Repository Architect Review 02:
+  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_02.md`
+- Approved-reference transfer:
+  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/APPROVED_REFERENCE_TRANSFER.md`
+- Prior Architect Review 01:
   `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_01.md`
-- Review source-recheck correction:
+- Review 01 source correction:
   `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_01_CORRECTION.md`
+- GitHub Issue #8: open
+- Pull request #9: draft/open/unmerged
 - Required branch: `codex/p02-embodiment-001`
 - Required secondary worktree: local ext4/NVMe
-- Required publication: continue existing draft/open/unmerged PR #9
 - Acceptance authority: ChatGPT AI Architect plus explicit operator visual
   approval
-- Phase 03 and later: `CLOSED`
+- Phase 03 and later: closed
 
 ## Completed gates
 
@@ -75,104 +76,139 @@ workspace, six shells, resident supervisor, XDG placement, separate development
 stores, bounded synthetic care transport, Godot UDS/headless habitat, CI, and
 bounded target-host execution.
 
-Carried forward: production sensor ingress, complete lifecycle/contract/store/
-display evidence, direct-care adversarial qualification, advisory/legal review,
-broad SQLite fault/power/lifetime evidence, security certification, reliability,
-safety efficacy, and product capability.
+Not accepted: production sensor ingress, organism state, broad persistence and
+display recovery, direct-care product qualification, security certification,
+reliability, safety efficacy, or product capability.
 
-## Review 01 retained Phase 02 implementation
+## Architect Review 02 root blocker
 
-- Exact Godot 4.7.2 and accepted Phase 01 foundation.
-- Initial animation schema and manifest direction.
-- Layered `MonAvatar` scene hierarchy.
-- Bridge and habitat integration direction.
-- Deterministic ZIP metadata correction.
-- QA, review, build, and clean-room scaffolding where corrected.
-- All failed and rejected asset evidence.
+The project has approved art references but no approved machine-readable
+production embodiment canon or motion language. The original Phase 02 execution
+order demanded numeric scale before those authorities and prohibited the
+operator feedback checkpoint needed to establish them.
 
-## Review 01 superseded Phase 02 evidence
+The resulting implementation is reproducible but semantically wrong:
 
-- `32 families x 8 directions = 256 images` as temporal animation coverage.
-- 256 unique body-animation-frame completion.
-- Eight-direction temporal animation.
-- Zero-root-drift proof derived only from declared metadata.
-- Four-pixel atlas gutter/extrusion claim for the flush full-canvas grid.
-- 10,000 real animation-transition proof.
-- Five-second synthetic timing as Godot runtime performance.
-- Identity fidelity based on a constructed derivative.
-- Phase 02 CI completion.
-- Operator-review readiness based on local-only file paths.
+- family and direction are used to make one procedural pose each;
+- directional views are played as temporal frames;
+- declared roots/contacts replace rendered evidence;
+- transition and performance scripts report synthetic or tautological passes;
+- Godot timing and BodyA/BodyB semantics are incomplete;
+- bulk generated binaries entered ordinary Git before approval; and
+- no dedicated passing Phase 02 workflow exists.
 
-## Source-recheck correction
+The dedicated Openbox output is a final endurance gate, not the present root
+blocker. Accepted environment evidence places it on logical X screen 1, so an
+explicit existing-screen probe must occur before it is declared unavailable.
 
-The initial review statement that the current generator uses Python runtime
-`hash()` is withdrawn. The reviewed file uses explicit family/direction indices
-and trigonometric expressions. Deterministic authoring still requires explicit,
-stable inputs and byte-identical clean-process rebuilds. All other review
-findings remain active.
+## Exact approved reference authority
 
-## Mandatory Codex startup
+Recovered and independently verified:
 
-1. Protect the primary SSHFS worktree and operator-owned `.gitignore` and
-   `AGENTS.md` modifications.
-2. Continue only in the existing local-ext4/NVMe secondary worktree.
-3. Fetch current `origin/main` and `origin/codex/p02-embodiment-001`.
-4. Merge current `origin/main` normally; do not rebase, reset, or force-push.
-5. Read `ARCHITECT_REVIEW_01.md`,
-   `ARCHITECT_REVIEW_01_CORRECTION.md`, and the live Notion review completely.
-6. Re-fetch the Phase 02 directive/report, canonical project, roadmap,
-   Architecture v1.0, Phase 01 acceptance, visual bible, R04, R10, PR #9, and
-   Issue #8.
-7. Query the live ADR and evidence registers.
-8. Obtain exact durable access to the approved identity and turnaround before
-   further bulk body generation.
-9. Preserve retained source and negative evidence.
-10. Execute only the reference and temporal-animation correction.
-11. Update Notion, PR #9, Issue #8, and Authority state; leave PR and issue open.
-12. Stop for Architect and operator review after the accessible approval package
-    passes.
+- `mon.visual_reference.v1`
+  - filename: `confident_purple_ghost_mascot.png`
+  - SHA-256:
+    `86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56`
+  - 1254x1254 RGBA PNG
+- `mon.turnaround_reference.v1`
+  - filename: `purple_monster_turnaround_sheet.png`
+  - SHA-256:
+    `3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4`
+  - 1448x1086 RGB PNG
 
-## Required correction package
+Codex must ingest those exact files and a manifest into repository authority
+before creating further body candidates. The files establish complementary
+visual direction, not a complete production rig.
 
-- exact native reference retrieval and hash verification;
-- identity-grounded construction, anatomy, palette, diagonal, root/contact, and
-  temporal-motion review sheets;
-- direction separated from temporal track progression;
-- real eight-direction temporal idle/breath, walk, and run proof tracks plus
-  orient connectors and focused behavior proofs;
-- explicit Godot FPS and relative-tick timing;
-- real playback events, transitions, interruption, continuation, and BodyA/B
-  handoff;
-- rendered root/contact/anatomy/alpha QA;
-- explicit stable authored geometry and byte-identical clean-process rebuilds;
-- real trim, extrusion, gutter, and source-placement reconstruction;
-- bulk generated binary removal from the final ordinary-Git tree;
-- dedicated immutable Phase 02 workflow and named artifacts;
-- repair of the inherited Phase 01 workflow failure;
-- directly accessible Notion/GitHub visual-review materials;
-- explicit continuing Openbox target-playback blocker.
+## R02 required package
+
+### Authority and evidence reset
+
+- merge current `origin/main` normally;
+- ingest and verify exact approved references;
+- preserve current output as rejected/superseded evidence;
+- remove bulk generated corpus/atlases/pack from the final tree;
+- replace regex-guessed contract samples with committed fixtures;
+- restore inherited Phase 01 CI.
+
+### Embodiment canon
+
+- explicit visual-authority precedence matrix;
+- bounded vector/path versus layered-raster comparison;
+- neutral front, profile, and front-left construction candidate;
+- anatomy, palette, silhouette, root/contact, and source-traceability overlays;
+- pinned deterministic export with two clean-process identical results.
+
+### Minimal motion proof
+
+- one 6-8 drawing front-left idle/breathe loop;
+- one eight-drawing front-left walk loop with planted contacts;
+- one three-drawing front↔front-left orient connector pair;
+- one listen/acknowledge temporal reaction;
+- 1x and 0.25x playback plus frame strips and root/contact overlays.
+
+### Focused contract and runtime proof
+
+- direction separated from temporal progression;
+- concrete track key:
+  `stage + body_revision + family + direction + posture + variant`;
+- explicit 24 FPS and integer relative-duration ticks;
+- observed frame, event, loop/completion, interruption, and degradation logs;
+- actual accepted Phase 01 transport path where the bridge boundary is claimed.
+
+### Focused CI and publication
+
+- inherited Phase 01 workflow green;
+- focused Phase 02 proof workflow green;
+- source-derived QA and tamper-negative evidence;
+- accessible named review artifacts;
+- no full-library, target-endurance, or product claims.
+
+## Operator gate
+
+R02 stops for one operator decision:
+
+1. approve or reject the production construction;
+2. select the authoring path; and
+3. approve or reject the motion language.
+
+Only an approved result unlocks all-eight-direction core motion, remaining
+semantic families, final atlas/pack production, live 10,000-case transition
+qualification, and two-hour Openbox playback.
+
+## Evidence law
+
+Every accepted claim must include induced stimulus, raw observation,
+independent derived assertion, and a negative or tamper case. Identifier/count
+coverage, metadata equality, hard-coded zero counters, and self-reported
+performance constants are not capability evidence.
 
 ## Artifact policy
 
-The final Phase 02 tree retains exact approved references, authored source,
-clip specifications, manifests, validators, Godot resources, hashes, and
-selected review derivatives. The complete generated frame corpus, duplicate
-runtime copies, atlases, and packs are produced as versioned workflow artifacts
-and local export bundles. Do not configure Git LFS or rewrite public branch
-history. Accepted Phase 02 publication is expected to use a squash merge.
+The final Phase 02 tree keeps exact references, authored source, construction and
+track specifications, manifests, validators, Godot resources, hashes, and
+selected review derivatives. Bulk generated frames, duplicate runtime copies,
+atlases, and packs are workflow/local/release artifacts. Do not configure Git
+LFS or rewrite public branch history. Eventual acceptance uses a squash merge.
+
+## Openbox qualification
+
+Accepted environment evidence observed a 1366x768 output on logical X screen 1.
+Use explicit X `display.screen` addressing, such as the authorized
+environment-equivalent of `DISPLAY=:0.1`, before declaring the target absent.
+Do not alter display, compositor, service, audio, or power configuration.
 
 ## Protected-work rule
 
 Do not commit, discard, reset, overwrite, stash, reformat, read into evidence,
 copy, or reinterpret the operator-owned primary-worktree modifications.
 
-## Explicit boundaries
+## Hard boundary
 
-The dedicated Openbox two-hour playback remains blocked until the actual target
-is available. Phase 03 and later are closed. No organism, memory, learning,
-dreaming, camera, microphone, speech, model, biometric, notification, care,
-security-certification, product-reliability, medical, emergency, or SLA
-capability is established.
+Godot remains presentation-only. No organism, memory, learning, dreaming,
+camera, microphone, speech, model, biometric, contact, notification, care,
+security-certification, product-reliability, medical, emergency, SLA, or Phase
+03+ capability is established.
 
 ## Historical records
 
@@ -183,38 +219,3 @@ capability is established.
 - `RECORD.md` — decisions/milestones/reversals
 - `REPO_MAP.md` — repository ownership map
 - `EXTERNAL.md` — external source dispositions
-
-## Current execution evidence
-
-`experiments/p02-embodiment/` contains deterministic candidate authoring,
-validation, transition, host-probe, and playback-smoke tooling. Generated
-assets and review sheets are under `assets/generated/p02/`; authored source and
-reference metadata are under `assets/source/p02/`. This is bounded visual
-embodiment evidence only; the dedicated Openbox two-hour run and operator
-approval remain pending.
-
-The pack reproducibility fix is published at
-`6c81838899c943ea8d195230f9849140f0b54f5f`; clean-room bytes now match the
-tracked pack.
-
-The four-view diagonal review sheet was corrected in
-`26571cbab782e5fc0ea712f577b8112767f05782` and is still pending operator
-approval.
-
-## Architect Review 01 continuation — current correction
-
-Exact native references are committed under `assets/source/p02/references/`:
-
-- identity PNG SHA-256:
-  `86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56`;
-- turnaround PNG SHA-256:
-  `3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4`.
-
-The reference-grounded core candidate is described by
-`assets/source/p02/core-motion/temporal_tracks.json` and
-`construction_model_v2.json`. Full frames/atlases are private build outputs
-published by `.github/workflows/phase02-embodiment.yml`; selected review PNGs
-are committed under `assets/source/p02/review/`. Local build and
-`validate_core_motion.py` checks pass with 66 tracks and 334 drawings. Phase
-02 remains active/not accepted pending hosted CI, operator visual approval,
-and target Openbox playback.
