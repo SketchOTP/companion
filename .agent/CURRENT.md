@@ -12,7 +12,9 @@ Openbox endurance gate is being claimed.
 
 Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adopted. Roadmap Phase 01 remains accepted.
 
-PR #9 at reviewed head `4a111435381ff2d364cd705edbb1d65da46ea886` is continued under:
+PR #9 at reviewed head `4a111435381ff2d364cd705edbb1d65da46ea886` is continued under the
+published R03 candidate head `448ea93bb53f2f4f1742b5fdcc9837bc631464f4` (after
+normal review merge `77ebc5c19285d97c467caedbcb3f7c3be083a4a0`):
 
 - Directive: `COMPANION-P02-EMBODIMENT-001-R03`
 - Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_03.md`
@@ -20,6 +22,9 @@ PR #9 at reviewed head `4a111435381ff2d364cd705edbb1d65da46ea886` is continued u
 - Issue #8: open
 - PR #9: draft, open, unmerged
 - Phase 03 and later: closed
+
+R03 publication is a candidate-only correction. The PR and Issue #8 remain open;
+operator visual approval and the later Openbox gate remain unrun.
 
 ## Review 03 disposition
 

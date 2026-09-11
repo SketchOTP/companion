@@ -172,3 +172,11 @@ because the dummy renderer cannot expose a readable SubViewport texture. Full
 library, all-direction production, final atlas/pack scale, two-hour Openbox
 playback, and operator visual approval remain deferred. Protected primary
 `.gitignore`/`AGENTS.md` changes remain untouched.
+
+## R03 publication reconciliation — 2026-09-11
+
+The R03 candidate is published at `448ea93bb53f2f4f1742b5fdcc9837bc631464f4`,
+after the normal Architect-review merge `77ebc5c19285d97c467caedbcb3f7c3be083a4a0`.
+The remote task branch must remain equal to this candidate head. PR #9 remains
+draft/open/unmerged and Issue #8 remains open; no visual approval or Phase 02
+acceptance is claimed.

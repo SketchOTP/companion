@@ -21,6 +21,7 @@
 - Phase acceptance: `NOT GRANTED`
 - Active directive: `COMPANION-P02-EMBODIMENT-001-R03`
 - Reviewed task head: `4a111435381ff2d364cd705edbb1d65da46ea886`
+- R03 candidate head: `448ea93bb53f2f4f1742b5fdcc9837bc631464f4`
 - Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_03.md`
 - Notion review: https://app.notion.com/p/3d8833cb27ff812f8102dbc79891053e
 - Phase 02 directive: https://app.notion.com/p/3d8833cb27ff810e858acd029ac0ea05

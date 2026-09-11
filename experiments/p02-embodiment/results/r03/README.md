@@ -15,7 +15,7 @@ jsonschema runtimes:
 OUT="$(mktemp -d /tmp/companion-p02-r03.XXXXXX)"
 python3 experiments/p02-embodiment/scripts/build_r03_motion.py --out "$OUT" --clean
 python3 experiments/p02-embodiment/scripts/validate_r03_motion.py --out "$OUT" --tamper-negative > /tmp/r03-validation.json
-R03_TRACKS_PATH="$OUT/temporal_tracks_v2.json" PATH="/home/sketch/.cargo/bin:$PATH" cargo test --workspace --locked
+R03_TRACKS_PATH="$OUT/temporal_tracks_v2.json" cargo test --workspace --locked
 GODOT=/path/to/Godot_v4.7.2-stable_linux.x86_64
 "$GODOT" --headless --path godot --script res://r03_temporal_playback_test.gd -- --out="$OUT" > /tmp/r03-godot.log
 ! grep -q 'ERROR:' /tmp/r03-godot.log
