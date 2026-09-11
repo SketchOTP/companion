@@ -99,6 +99,37 @@ pub struct MonAnimationClip {
     pub checksum: String,
 }
 
+/// A temporal body track. Direction selects a track; it is never a frame in
+/// the temporal sequence. Runtime consumers may deserialize this type without
+/// taking ownership of organism or care state.
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct MonAnimationTrack {
+    pub track_id: String,
+    pub clip_id: String,
+    pub version: u16,
+    pub body_revision: String,
+    pub stage: String,
+    pub family: String,
+    pub direction: String,
+    pub posture: String,
+    pub variant: u16,
+    pub source_revision: String,
+    pub source_reference_sha256: String,
+    pub frame_profile: String,
+    pub frames: Vec<MonAnimationTrackFrame>,
+    pub loop_mode: String,
+    pub root_motion_policy: String,
+    pub track_checksum: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct MonAnimationTrackFrame {
+    pub frame_id: String,
+    pub duration_ticks: u16,
+    pub path: String,
+    pub sha256: String,
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct EmbodimentEvent {
     pub schema_major: u16,
@@ -135,7 +166,7 @@ pub struct DegradedState {
 
 #[cfg(test)]
 mod tests {
-    use super::MonAnimationClip;
+    use super::{MonAnimationClip, MonAnimationTrack, MonAnimationTrackFrame};
 
     #[test]
     fn mon_animation_clip_round_trips_project_profile_fields() {
@@ -158,5 +189,37 @@ mod tests {
         let bytes = serde_json::to_vec(&clip).expect("serialize");
         let decoded: MonAnimationClip = serde_json::from_slice(&bytes).expect("deserialize");
         assert_eq!(clip, decoded);
+    }
+
+    #[test]
+    fn temporal_track_round_trips_with_direction_as_selection_key() {
+        let track = MonAnimationTrack {
+            track_id: "mon-body-v1:candidate:idle_breathe_a:N:neutral:1".into(),
+            clip_id: "idle_breathe_a".into(),
+            version: 1,
+            body_revision: "mon-body-v1".into(),
+            stage: "candidate".into(),
+            family: "idle_breathe_a".into(),
+            direction: "N".into(),
+            posture: "neutral".into(),
+            variant: 1,
+            source_revision: "p02-native-reference-v1".into(),
+            source_reference_sha256: "0".repeat(64),
+            frame_profile: "MON_FRAME_V1".into(),
+            frames: vec![MonAnimationTrackFrame {
+                frame_id: "idle_breathe_a_N_1_00".into(),
+                duration_ticks: 1,
+                path: "frames/x.png".into(),
+                sha256: "0".repeat(64),
+            }],
+            loop_mode: "loop".into(),
+            root_motion_policy: "forbidden".into(),
+            track_checksum: "0".repeat(64),
+        };
+        let decoded: MonAnimationTrack =
+            serde_json::from_slice(&serde_json::to_vec(&track).unwrap()).unwrap();
+        assert_eq!(track, decoded);
+        assert_eq!(decoded.direction, "N");
+        assert_eq!(decoded.frames.len(), 1);
     }
 }
