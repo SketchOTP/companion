@@ -393,3 +393,7 @@ must accept count-only runner summaries as well as detailed sample arrays.
 - Automated animation and headless Godot evidence cannot substitute for
   operator review of identity, diagonal construction, motion quality, or
   target-display behavior.
+
+- ZIP archives are not reproducible by default: filesystem timestamps and
+  platform metadata must be pinned before a clean-room pack hash can be used as
+  evidence. The Phase 02 pack now pins both and rebuilds byte-identically.

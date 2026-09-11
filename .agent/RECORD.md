@@ -465,3 +465,9 @@ approved identity constraints and Phase 01 authority boundaries. The generated
 corpus is reproducible and versioned; operator approval is explicitly pending.
 The current host topology prevents claiming dedicated Openbox playback, so the
 phase remains open for Architect and operator review.
+
+## 2026-09-11 — Phase 02 pack reproducibility fix
+
+Commit `6c81838899c943ea8d195230f9849140f0b54f5f` pins ZIP entry metadata and
+records a byte-identical clean-room rebuild. No scope or capability boundary
+changed; the target-host and operator-review gates remain open.

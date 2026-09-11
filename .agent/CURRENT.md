@@ -117,3 +117,7 @@ worktree: source/export/atlas tooling, 32-family frame corpus, MonAnimationClip,
 layered Godot avatar/director/bridge, bounded habitat policy, and QA evidence.
 The active host is not the dedicated Openbox target, so target-host playback
 and operator visual approval remain open gates.
+
+Reproducibility reconciliation commit `6c81838899c943ea8d195230f9849140f0b54f5f`
+pins ZIP metadata and confirms a byte-identical clean-room pack rebuild;
+target-host playback and operator visual approval remain open.

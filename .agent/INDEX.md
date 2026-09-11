@@ -107,3 +107,7 @@ assets and review sheets are under `assets/generated/p02/`; authored source and
 reference metadata are under `assets/source/p02/`. This is bounded visual
 embodiment evidence only; the dedicated Openbox two-hour run and operator
 approval remain pending.
+
+The pack reproducibility fix is published at
+`6c81838899c943ea8d195230f9849140f0b54f5f`; clean-room bytes now match the
+tracked pack.

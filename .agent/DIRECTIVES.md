@@ -329,3 +329,6 @@ layered Godot avatar/director, bridge, bounded habitat, packs, QA, review
 materials, 10,000-case transition evidence, and target playback. New art is a
 candidate pending operator review; no organism, memory, speech, perception,
 care, or later-phase capability is authorized.
+
+The final candidate reconciliation pins ZIP metadata for byte-identical
+clean-room rebuilds in `6c81838899c943ea8d195230f9849140f0b54f5f`.

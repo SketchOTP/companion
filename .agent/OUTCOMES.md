@@ -591,3 +591,10 @@ and asset validators, and a 10,000-case deterministic transition result. The
 current host exposes a dual-4K X11/GNOME topology rather than the dedicated
 Openbox target, so target-host playback and operator visual approval remain
 pending; no Phase 03+ or product claims are made.
+
+## 2026-09-11 — Pack reproducibility reconciliation
+
+The generated pack writer now fixes ZIP timestamps and metadata. A clean-room
+rebuild produced byte-identical pack and manifest hashes; the fix is published
+at `6c81838899c943ea8d195230f9849140f0b54f5f`. This is still bounded asset
+evidence; target-host playback and visual approval remain pending.
