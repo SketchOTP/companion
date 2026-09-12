@@ -1,5 +1,13 @@
 # Current Project State
 
+## Operator black-background request — 2026-09-12
+
+Godot clear color and foundation backdrop now black. One separately generated
+black-backed front candidate passes an actual Xvfb still-render check. Original
+approved images unchanged. This removes cutout dependency for the still preview,
+not transparent-pack intake. See `R05_BLACK_BACKDROP_RESULT.md` in the active
+packet. Full gait conversion/actions remain unfinished; no Phase02 acceptance.
+
 ## Latest continuation — clean-source preparation blocked, 2026-09-12
 
 After operator `proceed`, generated five missing right gait roles, one targeted

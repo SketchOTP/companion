@@ -449,3 +449,13 @@ the bounded 8-track candidate review pack. Normalize to MON_FRAME_V1, run the
 actual pack through immutable intake, Rust, Godot, QA, CI, and artifact
 publication, then stop for Architect/operator review. Do not scale the library,
 merge the PR, close Issue #8, run Openbox endurance, or begin Phase 03.
+
+## 2026-09-12 — Operator black-backdrop workaround
+
+Operator explicitly requested black-backed art plus black Godot background.
+Changed clear color and foundation backdrop, generated one separate front
+candidate via built-in imagegen, and verified actual Xvfb frame_post_draw plus
+black viewport corners. Missing image and headless no-render fail as expected.
+No cutout API, billing change, new dependency, original-art mutation or intake
+waiver. Opaque still review works; full action conversion remains unfinished.
+See active R05_BLACK_BACKDROP_RESULT.md. No Phase02 acceptance or Phase03 work.

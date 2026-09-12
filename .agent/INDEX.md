@@ -12,6 +12,8 @@
 
 ## Current pointers
 
+- Latest operator workaround: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_BLACK_BACKDROP_RESULT.md` — Godot black backdrop and one front still preview; transparent contracts unchanged.
+
 - Latest continuation: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_CONTINUATION_RESULT.md` — new right-key studies preserved; clean-source stage blocked by Photoroom HTTP402 and RGB-only fallback.
 - Continuation hashes/results: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_CONTINUATION_RESULTS.json`.
 

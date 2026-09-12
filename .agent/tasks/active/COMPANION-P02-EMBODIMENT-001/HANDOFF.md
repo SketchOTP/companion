@@ -420,3 +420,13 @@ fallback RGB/no alpha rejected. Raw strip and normal/quarter key-study GIFs
 are diagnostics, not full action or motion acceptance. Nine retained helper tests
 pass; actual v2 intake/runtime NOT RUN. Restore cutout access; no billing change.
 See R05_AUTHOR_002_CONTINUATION_RESULT.md and exact continuation result JSON.
+
+## 2026-09-12 — Operator black-backdrop workaround
+
+Operator explicitly requested black-backed art plus black Godot background.
+Changed clear color and foundation backdrop, generated one separate front
+candidate via built-in imagegen, and verified actual Xvfb frame_post_draw plus
+black viewport corners. Missing image and headless no-render fail as expected.
+No cutout API, billing change, new dependency, original-art mutation or intake
+waiver. Opaque still review works; full action conversion remains unfinished.
+See active R05_BLACK_BACKDROP_RESULT.md. No Phase02 acceptance or Phase03 work.
