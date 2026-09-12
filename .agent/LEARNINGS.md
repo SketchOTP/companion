@@ -536,3 +536,16 @@ absence of bytes into the wrong command and closes the peer, producing an
 intermittent client-side broken pipe. Bound both frame size and wait time,
 require explicit framing, and treat empty, timed-out, oversized, or malformed
 requests as errors rather than health fallbacks.
+
+## 2026-09-12 — Review media can misrepresent authored timing and completion
+
+Use track duration_ticks for every review derivative and preserve once versus
+loop semantics. Hardcoded 84 ms infinite GIF loops turned short orientation
+and response tracks into repeated shaking/flicking. Fixing that exporter is
+necessary but cannot repair distorted anatomy or false gait. One-frame contact
+spans are not meaningful planted-stance evidence. More generated images and
+different hashes are not substitutes for coherent limb correspondence.
+
+A cloud cutout's RGBA alpha extrema and unchanged dimensions do not establish
+clean source boundaries or unchanged geometry. Inspect against contrasting
+backgrounds, test perimeter contamination, and preserve original/returned bytes.

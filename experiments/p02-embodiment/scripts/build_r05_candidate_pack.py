@@ -20,6 +20,7 @@ from pathlib import Path
 from statistics import median
 
 from PIL import Image, ImageDraw
+from review_timing import save_review_animation
 
 IDENTITY_SHA = "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56"
 TURNAROUND_SHA = "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
@@ -325,10 +326,10 @@ def make_review(out: Path, tracks: list[dict]) -> None:
         strip.save(review / f"{track['family']}-{track['selection_facing']}-strip.png", "PNG", optimize=False)
 
         frames = [image.resize((512, 512), Image.Resampling.LANCZOS) for image in images]
-        normal = [frame for frame in frames for _ in range(2)]
-        quarter = [frame for frame in frames for _ in range(8)]
-        normal[0].save(review / f"{track['family']}-{track['selection_facing']}-normal.gif", save_all=True, append_images=normal[1:], duration=42, loop=0, disposal=2)
-        quarter[0].save(review / f"{track['family']}-{track['selection_facing']}-quarter.gif", save_all=True, append_images=quarter[1:], duration=42, loop=0, disposal=2)
+        timing = {}
+        for name, factor in (("normal", 1), ("quarter", 4)):
+            timing[name] = save_review_animation(review / f"{track['family']}-{track['selection_facing']}-{name}.gif", frames, track, factor)
+        stable(review / f"{track['family']}-{track['selection_facing']}-timing.json", timing)
 
         silhouettes: list[Image.Image] = []
         for image in images:
@@ -337,7 +338,7 @@ def make_review(out: Path, tracks: list[dict]) -> None:
             ink = Image.new("RGBA", image.size, (22, 18, 34, 255))
             silhouette.alpha_composite(Image.composite(ink, Image.new("RGBA", image.size), mask))
             silhouettes.append(silhouette.resize((512, 512), Image.Resampling.LANCZOS))
-        silhouettes[0].save(review / f"{track['family']}-{track['selection_facing']}-silhouette.gif", save_all=True, append_images=silhouettes[1:], duration=84, loop=0, disposal=2)
+        save_review_animation(review / f"{track['family']}-{track['selection_facing']}-silhouette.gif", silhouettes, track)
 
         overlay_frames: list[Image.Image] = []
         for image, frame in zip(images, track["frames"], strict=True):
@@ -352,7 +353,7 @@ def make_review(out: Path, tracks: list[dict]) -> None:
                     y = value["point"]["y"]
                     draw.ellipse((x - 6, y - 6, x + 6, y + 6), fill=(255, 220, 0, 255))
             overlay_frames.append(overlay.resize((512, 512), Image.Resampling.LANCZOS))
-        overlay_frames[0].save(review / f"{track['family']}-{track['selection_facing']}-root-contact.gif", save_all=True, append_images=overlay_frames[1:], duration=84, loop=0, disposal=2)
+        save_review_animation(review / f"{track['family']}-{track['selection_facing']}-root-contact.gif", overlay_frames, track)
 
 
 def main() -> int:

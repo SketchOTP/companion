@@ -1,5 +1,9 @@
 # R05 bounded candidate sprite sources
 
+**SUPERSEDED FOR VISUAL REVIEW: the operator rejected every R05-v1 preview.**
+Read `OPERATOR_REJECTION.md` first. The following source/build description is
+retained for historical technical reproduction, not as a current approval request.
+
 This directory contains the image-generation source sheets for
 `COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-001`.  Architect Review 10 and adopted
 ADR-57 authorize Codex and the approved image-generation tool to create these

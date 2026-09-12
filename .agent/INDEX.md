@@ -12,6 +12,10 @@
 
 ## Current pointers
 
+- Latest visual disposition: **all R05-v1 previews operator-rejected**.
+- Current correction/evidence: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_OPERATOR_REJECTION_01.md`.
+- Replacement motion: **NOT READY**, no new visual approval request.
+
 - Active roadmap phase: `02 — Mon Body, Habitat, and Sprite Pipeline`
 - Phase acceptance: `NOT GRANTED`
 - Pre-art gate: `READY_FOR_ARCHITECT_FRAME_PACK — ACCEPTED`

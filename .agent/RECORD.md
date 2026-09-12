@@ -664,3 +664,13 @@ passed Phase 01 runs `34696075240` and `34696077231` and Phase 02 runs
 The prior `34695094043` failure remains preserved. The next gate is operator
 and Architect review of the candidate package; no visual or Phase 02 approval
 is inferred.
+
+## 2026-09-12 — Operator rejection supersedes R05 visual-readiness record
+
+From d0440d2df83d0d344eac9a2f8c907e464d358ff0, normal main merge was already
+current. Both worktrees' unrelated/protected modifications were preserved.
+Notion directive/report received the explicit operator rejection before further
+art iteration. Review timing, cutout adapter, focused tests, rejected-v1 CI
+artifact labeling and the correction/attempt records were added. No production
+pack was approved or silently replaced; eight new generation studies remain
+unqualified. New source-pack/Rust/Godot acceptance was not run against them.

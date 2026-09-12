@@ -1,5 +1,13 @@
 # EVIDENCE — COMPANION-P02-EMBODIMENT-001
 
+## Latest evidence ceiling — 2026-09-12
+
+The operator rejected all R05-v1 animation previews. Their CI and marker results
+do not establish acceptable cutouts, hands, gait or smooth motion. The correction
+and eight unqualified generation attempts are recorded in
+`R05_OPERATOR_REJECTION_01.md` and `r05-v2-attempts.json`. New cutout/preview tests
+are not replacement source-pack, runtime or visual acceptance evidence.
+
 ## Source register
 
 For every materially used external source or tool record title, owner, date,

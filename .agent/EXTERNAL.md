@@ -137,3 +137,20 @@ The Research Phase 01 Notion hierarchy contains the project's research evidence 
 The implementation and sanitized evidence bundle were published without new
 external dependencies. Official Godot 4.7.2 behavior remains reference-only;
 the synthetic render-commit observation is not physical display evidence.
+
+## 2026-09-12 — Operator-authorized source cutout providers
+
+- Scope: source-art background removal, following the operator's explicit iHero
+  suggestion; never runtime, CI network calls, or immutable intake.
+- Local prior art: iHero background-removal provider boundary inspected read-only.
+  Its order/notification jobs were not run; unrelated credentials were not used.
+- Official API sources: https://www.remove.bg/api and
+  https://docs.photoroom.com/remove-background-api-basic-plan/quickstart-guide .
+- Disposition: reuse HTTP provider boundary with stdlib multipart image upload;
+  no new package or art-authoring dependency. Secret value never recorded.
+- remove.bg observed HTTP402; Photoroom returned three same-dimension RGBA PNGs.
+  Response and input hashes retained separately; final source eligibility not
+  inferred from successful transport. See R05_OPERATOR_REJECTION_01.
+- Rights: operator-authorized derivatives of project-approved original art;
+  provider service use is not a new assertion of legal clearance or production
+  visual approval. No real personal data was submitted.

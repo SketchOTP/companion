@@ -782,3 +782,14 @@ both independent Phase 01 runs and both Phase 02 runs passed. Phase 02
 published the complete candidate source/review/intake/playback artifact. This
 supports the bounded technical review handoff only; the candidate artwork and
 motion are still awaiting operator visual judgment, and Phase 02 remains open.
+
+## 2026-09-12 — Operator rejects all R05-v1 art; replacement is incomplete
+
+The operator's visual judgment is now REJECTED for every R05-v1 preview. Green
+outlines, incomplete/fast breathing, invalid walk leg exchange, unstable hands,
+head-shaking orientation and fast listen/acknowledge remain failed art evidence.
+The review timing/once-loop bug is corrected and six tests pass. The authorized
+iHero-backed cutout investigation obtained three Photoroom RGBA outputs; three
+adapter test methods pass, while remove.bg returned HTTP402. Eight fresh art
+attempts remain rejected/study-only, not a qualified replacement pack. Prior
+technical passes do not establish motion quality. See R05_OPERATOR_REJECTION_01.

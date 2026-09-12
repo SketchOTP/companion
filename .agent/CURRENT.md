@@ -1,5 +1,15 @@
 # Current Project State
 
+## Latest operator disposition — 2026-09-12
+
+All R05-v1 previews are **REJECTED**, not awaiting approval. Cutout contamination,
+motion/hand defects and overly fast looping were reported by the operator.
+The current correction is recorded in
+`tasks/active/COMPANION-P02-EMBODIMENT-001/R05_OPERATOR_REJECTION_01.md`.
+Codex candidate authorship remains authorized. Replacement motion is **NOT READY**;
+new generated studies are not counted as a completed pack. Prior technical passes
+below are historical and do not override the operator's rejection.
+
 ## Current stage
 
 Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adopted. Roadmap Phase 01 remains accepted. Phase 03 and later remain closed.

@@ -1,5 +1,13 @@
 # HANDOFF — COMPANION-P02-EMBODIMENT-001
 
+## Latest disposition — operator rejection, 2026-09-12
+
+R05-v1 visual review FAILED. All previews were rejected. Current work is PARTIAL:
+preview timing and the cutout-provider adapter have focused regression tests,
+but no replacement motion pack is ready. Read `R05_OPERATOR_REJECTION_01.md`
+and `r05-v2-attempts.json`; do not request approval of old or new study images.
+Previous handoffs below remain historical, not current visual acceptance.
+
 Return the canonical result in this structure:
 
 ```text
