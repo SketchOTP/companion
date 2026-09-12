@@ -1,27 +1,83 @@
 {
+  "atomic_publication": true,
+  "category_equations": {
+    "accepted": 0,
+    "duplicate": 0,
+    "rejected": 20,
+    "requested_total": 20
+  },
+  "invalid_accepted": 0,
   "negative_cases": {
     "approval_state": {
       "reason": "approval_ineligible",
+      "status": "REJECTED"
+    },
+    "blank_image": {
+      "reason": "blank_image",
       "status": "REJECTED"
     },
     "contact_tamper": {
       "reason": "contact_invalid",
       "status": "REJECTED"
     },
+    "duplicate_asset": {
+      "reason": "duplicate_source_asset",
+      "status": "REJECTED"
+    },
+    "duplicate_frame_id": {
+      "reason": "duplicate_frame_identity",
+      "status": "REJECTED"
+    },
+    "duplicate_track_id": {
+      "reason": "duplicate_track_id",
+      "status": "REJECTED"
+    },
     "duration_tamper": {
       "reason": "duration_invalid",
       "status": "REJECTED"
     },
-    "event_order_tamper": {
-      "reason": "event_order_invalid",
+    "event_tick_tamper": {
+      "reason": "event_tick_frame_mismatch",
+      "status": "REJECTED"
+    },
+    "incomplete_profile": {
+      "reason": "request_profile_incomplete",
+      "status": "REJECTED"
+    },
+    "invalid_landmark_state": {
+      "reason": "landmark_state_invalid",
       "status": "REJECTED"
     },
     "missing_landmark": {
       "reason": "landmark_missing",
       "status": "REJECTED"
     },
+    "missing_srgb": {
+      "reason": "missing_srgb",
+      "status": "REJECTED"
+    },
+    "opaque_background": {
+      "reason": "opaque_background",
+      "status": "REJECTED"
+    },
+    "orientation_endpoint": {
+      "reason": "orientation_endpoint_mismatch",
+      "status": "REJECTED"
+    },
+    "path_traversal": {
+      "reason": "manifest_invalid",
+      "status": "REJECTED"
+    },
+    "sixteen_bit_rgba": {
+      "reason": "png_bit_depth_invalid",
+      "status": "REJECTED"
+    },
     "source_hash_tamper": {
       "reason": "source_hash_mismatch",
+      "status": "REJECTED"
+    },
+    "stale_destination": {
+      "reason": "destination_not_empty",
       "status": "REJECTED"
     },
     "wrong_dimension": {
@@ -29,12 +85,12 @@
       "status": "REJECTED"
     },
     "wrong_mode": {
-      "reason": "wrong_mode",
+      "reason": "png_color_type_invalid",
       "status": "REJECTED"
     }
   },
   "production_pixels_generated": false,
-  "profile": "MON_R04_INTAKE_VALIDATION_V1",
+  "profile": "MON_R04_C01_INTAKE_VALIDATION_V1",
   "status": "PASSED",
   "valid_intake": {
     "approval_state": "synthetic_test_only",
@@ -42,21 +98,28 @@
       {
         "byte_identical": true,
         "frame_id": "test_pulse_front_neutral_01_000",
-        "input_sha256": "7cefbad675b89b706eaec6b59b2c2e712f3ee144c77ab0d6d68c8880dafbf395",
-        "runtime_sha256": "7cefbad675b89b706eaec6b59b2c2e712f3ee144c77ab0d6d68c8880dafbf395",
-        "stored_sha256": "7cefbad675b89b706eaec6b59b2c2e712f3ee144c77ab0d6d68c8880dafbf395"
+        "input_sha256": "e1e113f604e6f424b2356a9388efbecea31dfead671c39f4adfc629675447d13",
+        "runtime_sha256": "e1e113f604e6f424b2356a9388efbecea31dfead671c39f4adfc629675447d13",
+        "source_asset_id": "asset_test_pulse_000",
+        "stored_sha256": "e1e113f604e6f424b2356a9388efbecea31dfead671c39f4adfc629675447d13"
       },
       {
         "byte_identical": true,
         "frame_id": "test_pulse_front_neutral_01_001",
-        "input_sha256": "625d50136d904ca0e5905f31f2b068242df118963284a862e261155ce8a89168",
-        "runtime_sha256": "625d50136d904ca0e5905f31f2b068242df118963284a862e261155ce8a89168",
-        "stored_sha256": "625d50136d904ca0e5905f31f2b068242df118963284a862e261155ce8a89168"
+        "input_sha256": "7339632dd03c7493ff3596734aaeeb0bbda66962f0ac5668a003f37bfd2a5ba0",
+        "runtime_sha256": "7339632dd03c7493ff3596734aaeeb0bbda66962f0ac5668a003f37bfd2a5ba0",
+        "source_asset_id": "asset_test_pulse_001",
+        "stored_sha256": "7339632dd03c7493ff3596734aaeeb0bbda66962f0ac5668a003f37bfd2a5ba0"
       }
     ],
+    "ingested_pack": "pack.json",
+    "ingested_pack_sha256": "5cc246a894519132b5258ea290f3fbf3f59ff62ae4a9b1f0e338dca3e81a0a5a",
     "operation": "test",
-    "profile": "MON_AUTHORED_FRAME_INTAKE_RESULT_V1",
+    "output_tree_sha256": "5b86c01a2fba9f95635852fd6de0d45ec5b4057f24df8563ff3c0bc5de9aa6c2",
+    "profile": "MON_FRAME_INTAKE_RECEIPT_V1",
+    "receipt": "receipt.json",
     "source_bytes_mutated": false,
+    "source_tree_sha256": "527932f1fb274415eb970c540c29b1c05f4b428600070b69b00bfc2e0680f571",
     "status": "PASSED"
   }
 }

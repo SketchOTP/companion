@@ -1,43 +1,5 @@
 {
-  "authored_pack": {
-    "errors": [],
-    "observations": {
-      "corrupt_reason": "frame_hash_mismatch",
-      "duration_weights": [
-        1,
-        2
-      ],
-      "fps": 24,
-      "ineligible_reason": "approval_ineligible",
-      "missing_track_reason": "track_missing",
-      "restored_status": "started",
-      "valid_event_order": [
-        "intent_received",
-        "track_resolved",
-        "track_validated",
-        "first_frame_loaded",
-        "first_frame_presented",
-        "started",
-        "frame_changed",
-        "track_event",
-        "completed",
-        "visible_state"
-      ]
-    },
-    "status": "PASS"
-  },
-  "identity_smoke": {
-    "candidate_art": false,
-    "dimensions": [
-      1254,
-      1254
-    ],
-    "errors": [],
-    "fixture_role": "one_frame_import_smoke_only",
-    "format": "RGBA8",
-    "source_mutated": false,
-    "status": "PASS"
-  },
+  "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\n{\n  \"errors\": [],\n  \"observations\": {\n    \"corrupt_reason\": \"frame_hash_mismatch\",\n    \"duration_weights\": [\n      1,\n      2\n    ],\n    \"fps\": 24,\n    \"ineligible_reason\": \"approval_ineligible\",\n    \"missing_track_reason\": \"track_missing\",\n    \"restored_status\": \"started\",\n    \"valid_event_order\": [\n      \"intent_received\",\n      \"track_resolved\",\n      \"track_validated\",\n      \"first_frame_loaded\",\n      \"first_frame_render_committed\",\n      \"started\",\n      \"frame_changed\",\n      \"track_event\",\n      \"completed\",\n      \"visible_state\"\n    ]\n  },\n  \"status\": \"PASS\"\n}\n",
   "status": "PASSED",
   "unexpected_error_output": false
 }

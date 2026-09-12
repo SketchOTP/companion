@@ -1,22 +1,32 @@
 {
   "commands": [
-    "python3 experiments/p02-embodiment/scripts/run_r04_evidence.py --out OUT --godot GODOT",
+    "python3 experiments/p02-embodiment/scripts/run_r04_evidence.py --out OUT --cargo CARGO --godot GODOT",
     "python3 experiments/p02-embodiment/scripts/validate_r04_results.py --results OUT --tamper-negative"
   ],
   "evidence_ceiling": "E3_TARGET_TESTED synthetic intake/runtime boundary only; no production art or Phase 02 acceptance",
-  "execution_date_utc": "2026-09-11",
-  "profile": "COMPANION_P02_R04_EVIDENCE_V1",
+  "execution_end_utc": "2026-09-12T00:58:02.880248Z",
+  "execution_start_utc": "2026-09-12T00:57:59.400413Z",
+  "fixture_sha256": {
+    "contracts/fixtures/mon-authored-frame-source-pack-v1.json": "2571a6c3069562900121902b074c374170c360d39ef9428a5d43c238383943d7",
+    "contracts/fixtures/mon-ingested-frame-pack-v1.json": "01c88a1adadea41b5d9cbd7eb24c49208ad346475e58e6debda3d23ab9e49c2f"
+  },
+  "git_commit": "04570503c957e34e2ddcf2f1ab1cb1151a352b59",
+  "profile": "COMPANION_P02_R04_C01_EVIDENCE_V1",
   "result_sha256": {
-    "contract_validation.json": "06fac443a056483003d0294f1df6a2f3cfe93e3d3b7f2196b089755a136afa5d",
-    "export_restore.json": "73cbb5ac980d7d0a0eaf89503a01cac7f9923be8f157241f0e2dd7ab886fa148",
-    "godot_runtime.json": "1149a0a7c5214f348d528348a38bb4fc2e5b11ed2db3a958c6646f1b3adb73d1",
-    "intake_validation.json": "3d4118db7e088c44e9064f6f5a5f3628d91c657c08c69b20ed6ba5a808bf9eb2",
-    "rust_contract.json": "bd5711181828c78ec17394d8941474d13ac4b6deb2951cbc6944c31e24802615",
-    "source_intake.json": "36703eda6c279da0897728c4dd4ef5f72bca402f84ff7bb5925855eee7caf105"
+    "contract_validation.json": "3e6f56bb9f4e9ccd510236b1c35f506e5b30ef6c43759fdaec54fa289e1a9d31",
+    "export_restore.json": "7cab90d34c5e1a08bfb0e78942d16e600dd3bd13ba036bf73dc356ba15a7ed18",
+    "godot_runtime.json": "ad55e1a5681b8e23b99fc9b01b54da87ff481f0446eaaaaf5c3f8b6a67f777e1",
+    "intake_validation.json": "7bb7d331b842d78735b0c2aef688e94be86f5a2ccc9282db943b828c17d4f76b",
+    "rust_contract.json": "08b4e554ed4538e2b5d3781c7ccb64dc17f2e1e87a00ff63aa9f8d32c4b21d92",
+    "source_intake.json": "10087e963f07839d4f316a891c7b02f2e364df2448912b7e0b347d037ca43465"
   },
   "runtimes": {
     "godot": "4.7.2.stable.official.ed1daf0bf",
-    "python": "system qualification tooling",
+    "python": "qualification interpreter",
     "rust": "1.98.1"
+  },
+  "source_identities": {
+    "identity_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+    "turnaround_sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
   }
 }

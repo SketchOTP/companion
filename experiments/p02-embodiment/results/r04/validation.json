@@ -1,1 +1,1 @@
-{"errors": [], "status": "PASSED", "tamper_negative": {"byte_equality": "REJECTED", "event_order": "REJECTED", "rejection_reason": "REJECTED", "result_hash": "REJECTED"}}
+{"errors": [], "status": "PASSED", "tamper_negative": {"acceptance_observation": "REJECTED", "category_outcome": "REJECTED", "invalid_accepted": "REJECTED", "rejection_reason": "REJECTED", "result_hash": "REJECTED"}}
