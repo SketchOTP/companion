@@ -12,6 +12,9 @@
 
 ## Current pointers
 
+- Latest black-motion continuation: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_BLACK_MOTION_RESULT.md` —52 black-backed drawings /23 diagnostic sequences; conversion and bounded review playback observed, complete motion FAILED/incomplete.
+- Current review evidence: `assets/review/p02/author002/black-motion-studies/README.md`; exact hashes/prompts, selected strips/GIFs and Godot result. No new visual approval requested.
+
 - Latest operator workaround: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_BLACK_BACKDROP_RESULT.md` — Godot black backdrop and one front still preview; transparent contracts unchanged.
 
 - Latest continuation: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_CONTINUATION_RESULT.md` — new right-key studies preserved; clean-source stage blocked by Photoroom HTTP402 and RGB-only fallback.

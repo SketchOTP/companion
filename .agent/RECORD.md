@@ -721,3 +721,12 @@ black viewport corners. Missing image and headless no-render fail as expected.
 No cutout API, billing change, new dependency, original-art mutation or intake
 waiver. Opaque still review works; full action conversion remains unfinished.
 See active R05_BLACK_BACKDROP_RESULT.md. No Phase02 acceptance or Phase03 work.
+
+## 2026-09-12 — Black motion study continuation
+
+Operator requested every outlined movement on black. Generated51 outputs from
+exact prior references and neighboring keys; preserved52 raw images including
+prior front. All23 diagnostic sequences loaded/played in explicit Godot review
+mode, not production intake. Motion gate failed; new in-betweens/turns remain
+unapproved, full drawing floors unfinished. Selected media, hashes and all
+prompts retained. Protected files unchanged; no Phase02/03 acceptance or scope.

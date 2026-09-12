@@ -26,7 +26,10 @@ def review_durations(ticks: list[int], slow_factor: int = 1) -> list[int]:
     return durations
 
 
-def save_review_animation(path: Path, images: list[Image.Image], track: dict, slow_factor: int = 1) -> dict:
+def save_review_animation(path: Path, images: list[Image.Image], track: dict, slow_factor: int = 1,
+                          backdrop_rgb: tuple[int, int, int] = (238, 238, 242)) -> dict:
+    if len(backdrop_rgb) != 3 or any(type(c) is not int or not 0 <= c <= 255 for c in backdrop_rgb):
+        raise ValueError("invalid_review_backdrop")
     if len(images) != len(track["frames"]):
         raise ValueError("review_frame_count_mismatch")
     completion = track["completion"]
@@ -39,7 +42,7 @@ def save_review_animation(path: Path, images: list[Image.Image], track: dict, sl
     # transparency destroying antialiased sprite edges. Source PNGs are untouched.
     frames = []
     for image in images:
-        backdrop = Image.new("RGBA", image.size, (238, 238, 242, 255))
+        backdrop = Image.new("RGBA", image.size, (*backdrop_rgb, 255))
         backdrop.alpha_composite(image.convert("RGBA"))
         frames.append(backdrop.convert("RGB"))
     frames[0].save(path, format="GIF", save_all=True, append_images=frames[1:],
@@ -47,4 +50,4 @@ def save_review_animation(path: Path, images: list[Image.Image], track: dict, sl
     return {"source_ticks": ticks, "source_fps": 24, "slow_factor": slow_factor,
             "review_duration_ms": durations, "completion": completion,
             "source_pixels_mutated": False, "gif_boundary_error_ms_max": 5,
-            "backdrop_rgb": [238, 238, 242]}
+            "backdrop_rgb": list(backdrop_rgb)}

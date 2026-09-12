@@ -1,5 +1,19 @@
 # Current Project State
 
+## Black motion continuation — 2026-09-12
+
+51 new imagegen outputs plus the prior black front image are preserved as 52
+black-backed drawings. Key studies cover all eight facings, front presence and
+both lateral actions. **Complete animation remains INCOMPLETE / visual gate
+FAILED:** several in-betweens do not progress toward the next passing key, and
+turn angles jump. No automatic approval transfer from the unchanged original
+operator selection. Further bulk interpolation stopped; no finished pack claim.
+
+Review export and Godot playback of 23 diagnostic sequences pass bounded checks,
+not motion-quality or contacts. See active `R05_BLACK_MOTION_RESULT.md` and
+`assets/review/p02/author002/black-motion-studies/README.md`. Opaque review mode
+does not weaken MON_FRAME_V1 or the historical transparent intake contracts.
+
 ## Operator black-background request — 2026-09-12
 
 Godot clear color and foundation backdrop now black. One separately generated

@@ -1,0 +1,119 @@
+{
+  "cache_after_digest": "70e384bc9ddfd85af2096512be6d054bab03b0c94eca039cf708c690526fd30e",
+  "cache_after_exists": true,
+  "cache_before_digest": "70e384bc9ddfd85af2096512be6d054bab03b0c94eca039cf708c690526fd30e",
+  "cache_before_exists": true,
+  "command": [
+    "xvfb-run",
+    "-a",
+    "-e",
+    "<qualification-temp>/playback/xvfb-wrapper.log",
+    "<absolute>/Godot_v4.7.2-stable_linux.x86_64",
+    "--log-file",
+    "<qualification-temp>/playback/godot.engine.log",
+    "--audio-driver",
+    "Dummy",
+    "--path",
+    "<absolute>/companion-black-motion-godot.DSmv2a",
+    "--script",
+    "res://black_motion_review.gd",
+    "--",
+    "--requests=<absolute>/requests.json"
+  ],
+  "display_server": ":1",
+  "elapsed_ms": 478.307,
+  "engine_log": "godot.engine.log",
+  "engine_log_sha256": "ca1db291d8652354a187ddcd104e49520881a1c046bbed09070a01ec2a395220",
+  "godot_error_count": 2,
+  "godot_error_lines": [
+    "SCRIPT ERROR: Parse Error: Cannot infer the type of \"presented\" variable because the value doesn't have a set type.",
+    "ERROR: Failed to load script \"res://black_motion_review.gd\" with error \"Parse error\"."
+  ],
+  "godot_error_lines_by_channel": {
+    "engine": [
+      "SCRIPT ERROR: Parse Error: Cannot infer the type of \"presented\" variable because the value doesn't have a set type.",
+      "ERROR: Failed to load script \"res://black_motion_review.gd\" with error \"Parse error\"."
+    ],
+    "stderr": [],
+    "stdout": [
+      "SCRIPT ERROR: Parse Error: Cannot infer the type of \"presented\" variable because the value doesn't have a set type.",
+      "ERROR: Failed to load script \"res://black_motion_review.gd\" with error \"Parse error\"."
+    ]
+  },
+  "godot_gate": "FAILED",
+  "godot_version": "4.7.2.stable.official.ed1daf0bf",
+  "godot_warning_count": 2,
+  "godot_warning_lines": [
+    "WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.",
+    "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+  ],
+  "godot_warning_lines_by_channel": {
+    "engine": [
+      "WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.",
+      "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+    ],
+    "stderr": [],
+    "stdout": [
+      "WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.",
+      "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+    ]
+  },
+  "label": "qualification",
+  "mode": "semantic",
+  "pack_sha256": "0b1e72352c86d95e13c051c9c5a5a4e9abc5a72d012fd31a56e7898fa4ab99af",
+  "process_exit_code": 1,
+  "renderer_driver": {
+    "display_server": ":1",
+    "renderer": "OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)",
+    "rendering_method": "observed in Godot output or unavailable"
+  },
+  "runner_version": "r04-c03-godot-runner-v1",
+  "semantic_test_result": null,
+  "status": "FAILED",
+  "stderr_log": "godot.stderr.log",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_log": "godot.stdout.log",
+  "stdout_sha256": "22c575eb78cb2d2b7da8d9b1900626551bc6ba2bb3aa7f1e78d375a1f391af4b",
+  "wrapper_diagnostics": [
+    "The XKEYBOARD keymap compiler (xkbcomp) reports:",
+    "> Warning:          Could not resolve keysym XF86CameraAccessEnable",
+    "> Warning:          Could not resolve keysym XF86CameraAccessDisable",
+    "> Warning:          Could not resolve keysym XF86CameraAccessToggle",
+    "> Warning:          Could not resolve keysym XF86NextElement",
+    "> Warning:          Could not resolve keysym XF86PreviousElement",
+    "> Warning:          Could not resolve keysym XF86AutopilotEngageToggle",
+    "> Warning:          Could not resolve keysym XF86MarkWaypoint",
+    "> Warning:          Could not resolve keysym XF86Sos",
+    "> Warning:          Could not resolve keysym XF86NavChart",
+    "> Warning:          Could not resolve keysym XF86FishingChart",
+    "> Warning:          Could not resolve keysym XF86SingleRangeRadar",
+    "> Warning:          Could not resolve keysym XF86DualRangeRadar",
+    "> Warning:          Could not resolve keysym XF86RadarOverlay",
+    "> Warning:          Could not resolve keysym XF86TraditionalSonar",
+    "> Warning:          Could not resolve keysym XF86ClearvuSonar",
+    "> Warning:          Could not resolve keysym XF86SidevuSonar",
+    "> Warning:          Could not resolve keysym XF86NavInfo",
+    "Errors from xkbcomp are not fatal to the X server",
+    "The XKEYBOARD keymap compiler (xkbcomp) reports:",
+    "> Warning:          Could not resolve keysym XF86CameraAccessEnable",
+    "> Warning:          Could not resolve keysym XF86CameraAccessDisable",
+    "> Warning:          Could not resolve keysym XF86CameraAccessToggle",
+    "> Warning:          Could not resolve keysym XF86NextElement",
+    "> Warning:          Could not resolve keysym XF86PreviousElement",
+    "> Warning:          Could not resolve keysym XF86AutopilotEngageToggle",
+    "> Warning:          Could not resolve keysym XF86MarkWaypoint",
+    "> Warning:          Could not resolve keysym XF86Sos",
+    "> Warning:          Could not resolve keysym XF86NavChart",
+    "> Warning:          Could not resolve keysym XF86FishingChart",
+    "> Warning:          Could not resolve keysym XF86SingleRangeRadar",
+    "> Warning:          Could not resolve keysym XF86DualRangeRadar",
+    "> Warning:          Could not resolve keysym XF86RadarOverlay",
+    "> Warning:          Could not resolve keysym XF86TraditionalSonar",
+    "> Warning:          Could not resolve keysym XF86ClearvuSonar",
+    "> Warning:          Could not resolve keysym XF86SidevuSonar",
+    "> Warning:          Could not resolve keysym XF86NavInfo",
+    "Errors from xkbcomp are not fatal to the X server"
+  ],
+  "xvfb_log": "xvfb-wrapper.log",
+  "xvfb_log_sha256": "b987a262609a3720f450ab6815ed90b2069dd47b7b012959ca19c325aebf5d55"
+}

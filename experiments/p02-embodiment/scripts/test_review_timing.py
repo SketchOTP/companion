@@ -47,6 +47,22 @@ class ReviewTimingTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 review_durations(ticks)
 
+    def test_explicit_black_review_backdrop(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / 'black.gif'
+            image = Image.new('RGBA', (16, 16), (0, 0, 0, 0))
+            image.putpixel((8, 8), (128, 40, 240, 255))
+            result = save_review_animation(path, [image], {'completion': 'once', 'frames': [{'duration_ticks': 6}]}, backdrop_rgb=(0, 0, 0))
+            self.assertEqual(result['backdrop_rgb'], [0, 0, 0])
+            with Image.open(path) as gif:
+                self.assertEqual(gif.convert('RGB').getpixel((0, 0)), (0, 0, 0))
+            self.assertEqual(image.getpixel((0, 0)), (0, 0, 0, 0))
+
+    def test_invalid_backdrop_fails(self):
+        for value in ((0, 0), (0, 0, 256), (True, 0, 0)):
+            with self.assertRaises(ValueError):
+                save_review_animation(Path('unused'), [], {}, backdrop_rgb=value)
+
 
 if __name__ == "__main__":
     unittest.main()

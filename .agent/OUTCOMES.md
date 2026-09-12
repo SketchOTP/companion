@@ -843,3 +843,12 @@ black viewport corners. Missing image and headless no-render fail as expected.
 No cutout API, billing change, new dependency, original-art mutation or intake
 waiver. Opaque still review works; full action conversion remains unfinished.
 See active R05_BLACK_BACKDROP_RESULT.md. No Phase02 acceptance or Phase03 work.
+
+## 2026-09-12 — Black motion studies, quality gate failed
+
+51 new black-backed outputs plus prior front;52 exact raw copies and23 diagnostic
+sequences preserved.13 focused tests and Godot4.7.2 Xvfb frame/order/timing review
+passed, zero final engine errors. Sparse front/start/stop/turn keys are not full
+motion. Left in-betweens do not consistently advance toward passing keys; turn
+angles also jump. Further interpolation stopped, no completed pack or approval
+request. R05_BLACK_MOTION_RESULT.md records the partial result and failed attempt.

@@ -574,3 +574,11 @@ alpha-only extraction. All seven decoded as RGB, not RGBA; a checkerboard was
 baked into the output. Six current Photoroom calls returned HTTP402 although
 earlier calls had succeeded. Do not infer alpha from a prompt/display or service
 availability from historical success. Account balance/cause was not inspected.
+
+## 2026-09-12 — Black backgrounds do not prove temporal interpolation
+
+Replacing checkerboards through imagegen can redraw shading and shape. New
+pixels are not automatically covered by approval of the original keys. A prompt
+using both neighboring keys can still yield a pose close to only one endpoint;
+compare the actual ordered strip before scaling that approach. Frame-order and
+timing tests can pass while gait progression visibly fails. Preserve both facts.

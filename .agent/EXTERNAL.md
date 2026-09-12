@@ -185,3 +185,14 @@ https://docs.photoroom.com/remove-background-api-basic-plan/quickstart-guide
 still documents segment endpoint and format/channels/size/crop parameters.
 Six live HTTP402 responses block this run. No new provider/dependency adopted.
 Recheck when authorized API access changes; do not infer specific balance.
+
+## 2026-09-12 — Black motion review, existing tooling only
+
+REFERENCE: official Godot4.7 SpriteFrames and AnimatedSprite2D documentation
+rechecked for relative duration weights,24FPS, frame_changed and completion:
+https://docs.godotengine.org/en/4.7/classes/class_spriteframes.html
+https://docs.godotengine.org/en/4.7/classes/class_animatedsprite2d.html
+REUSE: builtin imagegen with exact prior reference/neighboring-key images;
+existing Pillow derivative exporter and exact cached Godot4.7.2. All51 prompts
+preserved. No new dependency/provider, Photoroom call or rights clearance claim.
+Image edits can change identity pixels; no automatic transfer of visual approval.
