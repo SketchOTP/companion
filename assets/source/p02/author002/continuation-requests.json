@@ -1,0 +1,79 @@
+{
+  "directive": "COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-002",
+  "basis_commit": "8106ad949939b76b322f5956fd07a411d7b1ec34",
+  "generator": "built-in image_gen, reference edits",
+  "scope": "Missing right-profile gait keys only; approved selected sources unchanged",
+  "status": "BLOCKED_CUTOUT_PROVIDER_HTTP_402",
+  "studies": [
+    {
+      "id": "right_down_near",
+      "file": "exec-9868b502-dd82-46f8-8a4a-53bea10f806b.png",
+      "references": [
+        "exec-c3d2d9e3-ec47-47a3-8ba2-9bb3f9970f01.png",
+        "exec-7e4aa74a-619b-46c2-beb8-007608f01830.png"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: ONE candidate full-body sprite gait KEY, not a sheet. Use the provided OPERATOR-APPROVED mon images as exact design/pose anchors. Preserve exact purple flame-head contour, face, black eye/white pupil, smooth broad organic body, cel shadows, two broad fingers plus one thumb per hand and three integrated toes per foot. FULL RIGHT PROFILE throughout; face and all toes point screen-right, spikes sweep screen-left. Orthographic view, same camera and body proportions as references; no redesign, no perspective turn, no clothes, no props, no marks, no extra joints or digits. Image1 is the approved contact pose; image2 is approved passing pose. Draw the DOWN weight-acceptance KEY between them: the near bright leg remains forward screen-right, its broad foot now planted flat and its knee flexes a little to accept weight; pelvis lowers slightly. The far darker trailing heel lifts as weight transfers, its toes still touch ground behind. Preserve the near arm behind screen-left and far arm forward screen-right, reducing swing slightly toward passing. Do not exchange limb identities. Keep the entire character within generous margins of a square 1024x1024 canvas, intended source root512,896, planted baseline896. Genuinely transparent background and clean antialiased alpha; NO checkerboard pixels, no green, no shadow, no glow, no text. Only change the articulated gait pose specified, preserving identity and anatomy.",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "right_up_near",
+      "file": "exec-213938c9-ecdf-48ec-8d83-91d0676de123.png",
+      "references": [
+        "exec-7e4aa74a-619b-46c2-beb8-007608f01830.png",
+        "exec-9057a3ee-02c3-4cc2-94a0-a4a5b2622cfc.png"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: ONE candidate full-body sprite gait KEY, not a sheet. Use the provided OPERATOR-APPROVED mon images as exact design/pose anchors. Preserve exact purple flame-head contour, face, black eye/white pupil, smooth broad organic body, cel shadows, two broad fingers plus one thumb per hand and three integrated toes per foot. FULL RIGHT PROFILE throughout; face and all toes point screen-right, spikes sweep screen-left. Orthographic view, same camera and body proportions as references; no redesign, no perspective turn, no clothes, no props, no marks, no extra joints or digits. Image1 is approved near-leg support passing, image2 is opposite contact. Draw the UP key between them: near bright support leg extends with near heel starting to rise behind the pelvis, toe remains grounded. Far darker swing thigh advances toward screen-right, knee gently bent, whole broad FOOT nearly horizontal pointing right and clearly lifted above ground, preparing the next contact. It is a FOOT with a sole, not a dangling hand. Near arm swings forward and far arm backward, moving toward reference2. Small upward torso response. Keep the entire character within generous margins of a square 1024x1024 canvas, intended source root512,896, planted baseline896. Genuinely transparent background and clean antialiased alpha; NO checkerboard pixels, no green, no shadow, no glow, no text. Only change the articulated gait pose specified, preserving identity and anatomy.",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "right_down_far",
+      "file": "exec-8830d16a-ded6-4209-8281-b6a2dea806b5.png",
+      "references": [
+        "exec-9057a3ee-02c3-4cc2-94a0-a4a5b2622cfc.png",
+        "exec-188bc285-c713-41fc-a9d9-43c5d930bdd1.png"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: ONE candidate full-body sprite gait KEY, not a sheet. Use the provided OPERATOR-APPROVED mon images as exact design/pose anchors. Preserve exact purple flame-head contour, face, black eye/white pupil, smooth broad organic body, cel shadows, two broad fingers plus one thumb per hand and three integrated toes per foot. FULL RIGHT PROFILE throughout; face and all toes point screen-right, spikes sweep screen-left. Orthographic view, same camera and body proportions as references; no redesign, no perspective turn, no clothes, no props, no marks, no extra joints or digits. Image1 is the approved FAR darker leg forward contact, image2 neutral identity. Draw the next DOWN key: far darker leg stays forward screen-right with foot planted flat, far knee flexes accepting weight, pelvis slightly lowers. Near brighter trailing foot stays behind screen-left on its toes with heel rising. Near arm remains forward screen-right, far arm remains behind screen-left. Do not swap which leg is in front. Keep the entire character within generous margins of a square 1024x1024 canvas, intended source root512,896, planted baseline896. Genuinely transparent background and clean antialiased alpha; NO checkerboard pixels, no green, no shadow, no glow, no text. Only change the articulated gait pose specified, preserving identity and anatomy.",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "right_passing_far",
+      "file": "exec-e8f8e16c-0a8d-42b6-9dac-a6d8398a5c2d.png",
+      "references": [
+        "exec-9057a3ee-02c3-4cc2-94a0-a4a5b2622cfc.png",
+        "exec-188bc285-c713-41fc-a9d9-43c5d930bdd1.png"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: ONE candidate full-body sprite gait KEY, not a sheet. Use the provided OPERATOR-APPROVED mon images as exact design/pose anchors. Preserve exact purple flame-head contour, face, black eye/white pupil, smooth broad organic body, cel shadows, two broad fingers plus one thumb per hand and three integrated toes per foot. FULL RIGHT PROFILE throughout; face and all toes point screen-right, spikes sweep screen-left. Orthographic view, same camera and body proportions as references; no redesign, no perspective turn, no clothes, no props, no marks, no extra joints or digits. Draw FAR LEG SUPPORT PASSING key after contact in image1: far darker leg is now near vertical under pelvis, its broad flat foot points screen-right planted on baseline. Near brighter thigh swings forward; near knee points modestly screen-right, lower leg folds back naturally and the whole broad near FOOT is nearly HORIZONTAL pointing screen-right, lifted behind/beside the planted shin. Keep thigh and shin a continuous plausible curved leg, not reversed knee. Three rounded foot toes face forward, not dangling downward like fingers. Arms pass their neutral hanging position in counter-swing, near hand intact. Keep the entire character within generous margins of a square 1024x1024 canvas, intended source root512,896, planted baseline896. Genuinely transparent background and clean antialiased alpha; NO checkerboard pixels, no green, no shadow, no glow, no text. Only change the articulated gait pose specified, preserving identity and anatomy.",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "right_up_far",
+      "file": "exec-addd4a32-aef1-4691-8881-3308a610de2a.png",
+      "references": [
+        "exec-9057a3ee-02c3-4cc2-94a0-a4a5b2622cfc.png",
+        "exec-c3d2d9e3-ec47-47a3-8ba2-9bb3f9970f01.png"
+      ],
+      "prompt": "Use case: identity-preserve. Asset type: ONE candidate full-body sprite gait KEY, not a sheet. Use the provided OPERATOR-APPROVED mon images as exact design/pose anchors. Preserve exact purple flame-head contour, face, black eye/white pupil, smooth broad organic body, cel shadows, two broad fingers plus one thumb per hand and three integrated toes per foot. FULL RIGHT PROFILE throughout; face and all toes point screen-right, spikes sweep screen-left. Orthographic view, same camera and body proportions as references; no redesign, no perspective turn, no clothes, no props, no marks, no extra joints or digits. Draw FAR LEG SUPPORT UP key before image2 near-leg forward contact: far darker support leg extends behind pelvis, heel lifts with its toes still on baseline; near brighter swing thigh advances screen-right with knee moderately flexed and broad near FOOT nearly horizontal above floor ready to plant ahead. Near arm counter-swings back screen-left; far arm forward screen-right. Small upward weight response; never swap the near/far colors/occlusion. Keep the entire character within generous margins of a square 1024x1024 canvas, intended source root512,896, planted baseline896. Genuinely transparent background and clean antialiased alpha; NO checkerboard pixels, no green, no shadow, no glow, no text. Only change the articulated gait pose specified, preserving identity and anatomy.",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "right_passing_far_repair",
+      "file": "exec-5a4fe831-fad1-4e15-b023-12f6735b20b9.png",
+      "references": [
+        "exec-e8f8e16c-0a8d-42b6-9dac-a6d8398a5c2d.png",
+        "exec-49f685e2-0470-4a21-bb05-9114d60db24a.png"
+      ],
+      "prompt": "Use case precise-object-edit. Image1 is EDIT TARGET: the new right-facing far-leg-support passing key. Image2 is the operator-approved opposite-facing construction example ONLY for the broad, horizontal lifted foot anatomy, NOT for mirroring/replacing body. Correct ONLY image1's brighter NEAR SWING LEG from hip to toes: currently it bends backward into a hanging hand shape. Instead bring the near thigh gently FORWARD screen-right from hip, knee at about (760,960) in this1254-square framing; lower leg runs DOWN and BACK toward ankle about(665,1070), and broad near foot extends HORIZONTALLY RIGHT from ankle to roughly(825,1100), three rounded toes point SCREEN RIGHT. The whole near sole clears the ground by50px; do not plant it, do not make toes dangle vertically. Far darker supporting leg/foot remains exactly fixed on ground. Keep arms, hands, head, face, neck, body, silhouette, scale and shading unchanged; no high-knee march. Same neutral profile camera, same three-toed broad feet, integrated curved anatomy not jointed stick limbs. Transparent background, NO checkerboard pattern, no ground shadow, no text. One sprite only, preserve framing.",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "alpha_fallback",
+      "file": "exec-00126c35-1590-442f-ab69-1fd435b5960f.png",
+      "references": [
+        "exec-5a4fe831-fad1-4e15-b023-12f6735b20b9.png"
+      ],
+      "prompt": "Use case background-extraction. Remove ONLY the checkerboard backdrop from this image. Return the exact same purple character pose, scale, framing, anatomy, eyes, fingers and toes on a GENUINELY TRANSPARENT RGBA PNG with actual alpha=0 outside the subject. Preserve subject and antialiased edge colors without fringe. Do NOT draw or replace the checkerboard with white, black, gray, green or any other pixels. No background pattern, no redesign, no recoloring, no shadow. This is alpha cutout only, not new artwork. The subject must remain unchanged.",
+      "approval_state": "rejected",
+      "rejection_reason": "RGB_NO_ALPHA"
+    }
+  ]
+}

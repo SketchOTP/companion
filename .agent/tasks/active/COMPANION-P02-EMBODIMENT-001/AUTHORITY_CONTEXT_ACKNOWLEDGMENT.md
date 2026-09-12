@@ -242,3 +242,14 @@ inbetween gating and composed-world contacts. Protected primary edits were
 status-only; unrelated secondary edits excluded. Normal merge recorded in the
 AUTHOR-002 result. Execution subsequently stopped at the explicit anatomical
 key-pose condition; this acknowledgment does not attest successful visual QA.
+
+## 2026-09-12 — Post-approval continuation
+
+Operator explicitly approved construction and latest corrected gait selection,
+then instructed `proceed`. Selection commit 8106ad949939b76b322f5956fd07a411d7b1ec34
+matches origin/task; origin/main d07620c4ab2c874e65db85ff9866197a5784563c is
+already normally merged. Review11, Notion directive/report and PR9/Issue8 were
+re-fetched; the operator's selected-image approval is present in all bridges.
+Retrieval confidence ADEQUATE. This resumes bounded AUTHOR-002 work, not full
+library scale. Approved bytes stay unchanged; new keys/derivatives remain
+candidate. Primary status-only protection and unrelated secondary edits remain.

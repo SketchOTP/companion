@@ -175,3 +175,13 @@ system/art dependency. No credential or personal payload recorded. Successful
 transport is not visual/source eligibility. Toon Boom retrieval returned HTTP403
 and was not used as read evidence. Notion ZIP upload failures (MIME mismatch,
 then 5 MiB workspace limit) were retained; selected PNG attachments succeeded.
+
+## 2026-09-12 — Bounded authoring/cutout continuation recheck
+
+REFERENCE: https://www.adobe.com/creativecloud/animation/discover/animation-walk-cycle.html
+rechecked contact/passing/support exchange as supporting context, not visual
+approval or copied art. REUSE existing authorized Photoroom adapter:
+https://docs.photoroom.com/remove-background-api-basic-plan/quickstart-guide
+still documents segment endpoint and format/channels/size/crop parameters.
+Six live HTTP402 responses block this run. No new provider/dependency adopted.
+Recheck when authorized API access changes; do not infer specific balance.

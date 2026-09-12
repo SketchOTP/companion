@@ -1,5 +1,15 @@
 # Current Project State
 
+## Latest continuation — clean-source preparation blocked, 2026-09-12
+
+After operator `proceed`, generated five missing right gait roles, one targeted
+passing-foot repair and one failed alpha extraction. Prior approved selection
+is unchanged. Six Photoroom calls returned HTTP402 without output; built-in
+fallback returned RGB/no alpha. No new frames promoted. See active packet
+`R05_AUTHOR_002_CONTINUATION_RESULT.md` and `R05_AUTHOR_002_CONTINUATION_RESULTS.json`.
+Raw key-study strips/GIFs are diagnostics only. Restore authorized cutout access
+before source preparation; do not weaken alpha/intake gates or change billing.
+
 ## Latest operator visual approval — 2026-09-12
 
 The operator expressly approved **the construction sheet and the latest corrected
@@ -124,8 +134,8 @@ No previous green CI result overrides the operator's visual rejection.
 
 ## Not accepted
 
-- operator-approved production art;
-- accepted construction or motion language;
+- normalized/operator-approved production source pack;
+- accepted complete motion language (selected construction/static keys are approved);
 - visual aliveness;
 - complete 32-family/eight-direction library;
 - 10,000 live transition qualification;

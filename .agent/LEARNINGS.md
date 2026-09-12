@@ -566,3 +566,11 @@ defect. Evaluate the whole anatomically corresponding key set before adding
 in-betweens. A named passing pose, distinct hash or single support exchange is
 not evidence of a believable cycle. Eight HTTP200 RGBA cutouts still retained
 alpha=1 perimeter residue. Record that failed eligibility, not a clean-edge pass.
+
+## 2026-09-12 — Transparency requires file inspection
+
+Post-approval continuation produced six gait outputs and an explicit built-in
+alpha-only extraction. All seven decoded as RGB, not RGBA; a checkerboard was
+baked into the output. Six current Photoroom calls returned HTTP402 although
+earlier calls had succeeded. Do not infer alpha from a prompt/display or service
+availability from historical success. Account balance/cause was not inspected.

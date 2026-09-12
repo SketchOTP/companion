@@ -701,3 +701,13 @@ R05_AUTHOR_002_OPERATOR_SELECTION.json; scope in R05_AUTHOR_002_OPERATOR_APPROVA
 This supersedes coder visual non-acceptance for selected artwork only. Historical
 failures and superseded variants remain preserved. Complete actions, edge/source
 eligibility and v2 runtime QA remain unfinished. No Phase02 acceptance or merge.
+
+## 2026-09-12 — Post-approval authoring; cutout access blocked
+
+Approved eight construction/eleven static keys unchanged. Generated five missing
+right gait roles, one foot repair and one alpha-only fallback. Seven raw outputs
+preserved; six live Photoroom HTTP402 responses created no cutout. Built-in
+fallback RGB/no alpha rejected. Raw strip and normal/quarter key-study GIFs
+are diagnostics, not full action or motion acceptance. Nine retained helper tests
+pass; actual v2 intake/runtime NOT RUN. Restore cutout access; no billing change.
+See R05_AUTHOR_002_CONTINUATION_RESULT.md and exact continuation result JSON.

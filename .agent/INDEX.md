@@ -12,6 +12,9 @@
 
 ## Current pointers
 
+- Latest continuation: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_CONTINUATION_RESULT.md` — new right-key studies preserved; clean-source stage blocked by Photoroom HTTP402 and RGB-only fallback.
+- Continuation hashes/results: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_CONTINUATION_RESULTS.json`.
+
 - Latest operator decision: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_OPERATOR_APPROVAL.md` — construction sheet and latest corrected gait poses visually approved.
 - Exact approved selection: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_OPERATOR_SELECTION.json` — eight facings / eleven latest keys; superseded variants excluded.
 
