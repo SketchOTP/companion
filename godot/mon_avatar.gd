@@ -262,7 +262,13 @@ func present_track(family: String, facing: String, posture: String, variant: int
 
 func start_presented_track() -> void:
 	var current: AnimatedSprite2D = body_a if active_body == 0 else body_b
+	_emit_events_for_frame(current.frame)
 	current.play()
+
+func _emit_events_for_frame(frame_index: int) -> void:
+	for marker in current_track_data.get("events", []):
+		if int(marker.get("frame_index", -1)) == frame_index:
+			_observe("track_event", {"track_id": current_track, "event_id": marker.get("event_id"), "name": marker.get("name"), "tick": marker.get("tick"), "frame": frame_index})
 
 func _presentation_failure(family: String, reason: String) -> Dictionary:
 	var event := {"event_type": "clip_failed", "clip_id": family, "status": "failed", "reason": reason, "generation": generation}
@@ -274,9 +280,7 @@ func _on_frame_changed(sprite: AnimatedSprite2D) -> void:
 	if sprite.visible and sprite == current:
 		var event := {"event": "frame_changed", "clip_id": current_family, "track_id": current_track, "frame": sprite.frame, "generation": generation}
 		frame_marker.emit(event); _observe("frame_changed", event)
-		for marker in current_track_data.get("events", []):
-			if int(marker.get("frame_index", -1)) == sprite.frame:
-				_observe("track_event", {"track_id": current_track, "event_id": marker.get("event_id"), "name": marker.get("name"), "tick": marker.get("tick"), "frame": sprite.frame})
+		_emit_events_for_frame(sprite.frame)
 
 func _on_animation_finished(sprite: AnimatedSprite2D) -> void:
 	var current: AnimatedSprite2D = body_a if active_body == 0 else body_b

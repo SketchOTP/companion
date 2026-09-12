@@ -630,3 +630,16 @@ the same SHA and published artifact `10292635102` with digest
 The readiness correction is complete within scope. The handoff is
 `READY_FOR_ARCHITECT_FRAME_PACK`; Phase 02 remains active/unaccepted, PR #9
 remains draft/open/unmerged, and Issue #8 remains open.
+
+## 2026-09-12 — R05 local candidate-art record
+
+Merged Review 10 authority as
+`9e3ba3609da41b464b5eb3222a59f167df89c79c` and retained both protected
+worktrees unchanged. Six selected image-generation sources were committed with
+exact provenance; three unusable generations/selections remain recorded as
+negative evidence. The local candidate manifest
+`9711756c5f7f220827ba17528e9361f632e1bc39e0665df836de6426702c631d`
+passed 33-frame immutable review intake, Rust 1.98.1, Godot 4.7.2 cold/warm
+playback, rendered QA, export/restore, and five semantic tamper negatives.
+Operator approval, hosted exact-head CI/artifacts, PR merge, Phase 02 acceptance,
+and all later work remain open.

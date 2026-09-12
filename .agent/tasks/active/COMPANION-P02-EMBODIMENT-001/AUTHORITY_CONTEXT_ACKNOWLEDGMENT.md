@@ -7,7 +7,7 @@ Complete before changing assets or Godot embodiment code.
 - Local HEAD: `1060c1df1a0a9121d859c8ced67c3219acddf9b8`
 - origin/main: `1060c1df1a0a9121d859c8ced67c3219acddf9b8`
 - Branch: `codex/p02-embodiment-001`
-- Secondary worktree path/filesystem: `/home/sketch/Projects/companion-p02-embodiment-001`, local ext4/NVMe (`/dev/nvme1n1p2`)
+- Secondary worktree path/filesystem: sanitized local ext4/NVMe secondary worktree; exact private path and device identifier omitted from durable evidence.
 - Working tree: clean before implementation
 - Protected primary status observed read-only: status inspection was attempted; the SSHFS checkout remains protected and was not modified. The operator-owned `AGENTS.md` and `.gitignore` changes were not read, copied, staged, or committed.
 - PR/Issue state: Issue #8 open; no Phase 02 PR created yet.
@@ -206,3 +206,29 @@ final bounded handoff is `READY_FOR_ARCHITECT_FRAME_PACK`. Architecture v1.0
 remains adopted, Phase 01 remains accepted, Phase 02 remains active and
 unaccepted, PR #9 remains draft/open/unmerged, Issue #8 remains open, and no
 production art or later-phase capability was created.
+
+## Architect Review 10 / R05-AUTHOR-001 acknowledgment — 2026-09-12
+
+Architect Review 10 and adopted ADR-57 supersede the Review 09 art-authorship
+hold. The operator authorizes Codex and the approved image-generation tool to
+create identity-critical Phase 02 candidate sprite pixels while retaining the
+operator as final visual authority and the Architect as phase-acceptance
+authority.
+
+The published task branch started at
+`e42f3cb5c4b87d7852221e018b6759e539031c95`; `origin/main` at
+`8b5f18e48b124e16b0af87c76b02f2080e5121ad` was merged normally as
+`9e3ba3609da41b464b5eb3222a59f167df89c79c`. Live Notion retrieval verified 57
+ADR records and 58 research-evidence records, including adopted ADR-57. The
+Phase 02 directive/report, visual bible, R10 contract, PR #9, Issue #8, and
+repository authority materially agree.
+
+Both exact references were re-hashed successfully. The primary SSHFS worktree
+was inspected only with read-only status; its operator-owned `.gitignore` and
+`AGENTS.md` changes remain untouched. The local ext4/NVMe task worktree began
+explainably clean apart from its separately protected `.gitignore` and `.ignore`
+Graft artifacts, which remain uninspected and unstaged.
+
+Retrieval confidence: `ADEQUATE`. R05 candidate-art execution authorized by
+this preflight: `YES`. Architecture v1.0 remains adopted, Phase 01 remains
+accepted, Phase 02 remains active/unaccepted, and Phase 03 remains closed.

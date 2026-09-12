@@ -90,3 +90,16 @@ encoding flags, one explicit sRGB, terminal IEND, and no trailing bytes).
 Intake uses same-filesystem staging, fsync of authority files/directories,
 atomic rename, and an injected mid-intake failure. Exact Rust and Godot 4.7.2
 gates remain required; unavailable local executables are `NOT RUN`/`BLOCKED`.
+
+## R05 bounded candidate-art specification
+
+Architect Review 10 and ADR-57 authorize reference-conditioned candidate
+sprite generation. The current bounded package is exactly eight tuple-keyed
+tracks: three neutral construction facings, eight-frame front-left idle,
+eight-frame front-left walk, two reciprocal four-frame facing connectors, and
+six-frame listen/acknowledge. All sources use `approval_state=candidate` and
+must pass the accepted source/ingested/receipt, Rust, and Godot boundaries.
+
+The reciprocal connector may reuse the exact four authored poses in reverse;
+therefore the accounting is 33 frame occurrences and 29 unique source hashes.
+This package is an operator-review candidate, not the complete Phase 02 library.

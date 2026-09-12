@@ -89,6 +89,7 @@ def classify_logs(stdout: list[str], stderr: list[str], engine: list[str]) -> di
 def _extract_json(text: str) -> dict[str, Any] | None:
     decoder = json.JSONDecoder()
     found: dict[str, Any] | None = None
+    found_length = -1
     for index, char in enumerate(text):
         if char != "{":
             continue
@@ -96,14 +97,31 @@ def _extract_json(text: str) -> dict[str, Any] | None:
             value, end = decoder.raw_decode(text[index:])
         except json.JSONDecodeError:
             continue
-        if end and isinstance(value, dict):
+        # Godot tests emit a structured object containing nested observation
+        # objects.  Keep the widest decoded object so a nested trailing object
+        # cannot replace the actual test verdict.
+        if end > found_length and isinstance(value, dict):
             found = value
+            found_length = end
     return found
 
 
 def _sanitized(value: str, *, temp_root: Path | None = None) -> str:
     # Arguments are frequently encoded as ``--key=/private/path``.  Redact
-    # the path portion without changing the option spelling.
+    # the path portion without changing the option spelling.  Treat these
+    # before converting the whole token to Path: ``--key=/...`` itself is not
+    # an absolute Path even though its value is.
+    if "=" in value:
+        option, argument = value.split("=", 1)
+        argument_path = Path(argument)
+        if argument_path.is_absolute():
+            if temp_root is not None:
+                try:
+                    relative = argument_path.relative_to(temp_root)
+                    return f"{option}=<qualification-temp>/{relative.as_posix()}"
+                except ValueError:
+                    pass
+            return f"{option}=<absolute>/{argument_path.name}"
     if temp_root is not None:
         temp_text = str(temp_root)
         if temp_text in value:

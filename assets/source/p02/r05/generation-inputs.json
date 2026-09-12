@@ -1,0 +1,15 @@
+{
+  "profile": "R05_IMAGEGEN_INPUTS_V1",
+  "reference_sha256": {
+    "identity": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+    "turnaround": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
+  },
+  "source_sheet_sha256": {
+    "idle-breathe-sheet.png": "b201607ee9fcf170585a4d69f763cbe24b58fc93119054d086eae291f2ecffe7",
+    "listen-acknowledge-sheet.png": "2a0de17f14a9f7797ffad777f9ac46d2987cd19d508a51e5a58d34b5230a5855",
+    "neutral-construction-sheet.png": "aa6e2efd8cf7f9a2273bf22b9ebbbc6904fd364ba6749113087b4447617e2d39",
+    "neutral-right-profile.png": "7dd7bc596d27f10073ebbf4b4fbae15735992dc1569f9eaae59a3b6cbf485dd4",
+    "orient-front-to-front-left-sheet.png": "99ef17e22db3ac0514a082244a850ae7d8db427610ead01e62ce969587aed92d",
+    "walk-sheet.png": "01ba5c7a781fd6cd627632d3cd6ed4505498c990181b969c84e73dec5b4afe36"
+  }
+}

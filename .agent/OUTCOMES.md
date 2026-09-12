@@ -754,3 +754,13 @@ the exact candidate SHA `e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b`: initial
 job `103504776796`. The same SHA passed Phase 02 run `34674883457` / job
 `103502845517`. This is bounded qualification evidence; Phase 02 remains
 unaccepted and no production capability is claimed.
+
+## 2026-09-12 — R05 bounded candidate pack generated locally
+
+Reference-conditioned image generation produced six selected source images for
+the bounded review package. Deterministic normalization yielded 8 tracks, 33
+frame occurrences, and 29 unique source hashes. All 33 passed immutable review
+intake byte equality, actual Rust typed round-trip, exact Godot import/cold/warm
+playback, rendered bounds/contact QA, export/restore, and semantic tamper
+negatives. The art remains candidate and operator visual approval is pending;
+hosted CI and artifact publication are not yet counted.

@@ -157,3 +157,20 @@ Hosted Phase 01 initial plus two same-head reruns passed on
 that exact SHA. The readiness race is closed within scope. Final status:
 `READY_FOR_ARCHITECT_FRAME_PACK`; stop for Architect review and do not generate
 production art.
+
+## R05-AUTHOR-001 execution plan
+
+1. Verify Review 10/ADR-57 and both exact source hashes; merge current main.
+2. Generate bounded reference-conditioned source sheets and reject unusable
+   transparency, facing, anatomy, or stray-mark results before selection.
+3. Deterministically extract and normalize selected cells to MON_FRAME_V1;
+   generate typed source pack, sidecars, and review derivatives.
+4. Run immutable review intake, schema/crosswalk, actual Rust round-trip, exact
+   Godot import/cold/warm playback, failure/recovery, and export/restore.
+5. Run rendered bounds/contact QA and an independent semantic validator with
+   tamper negatives.
+6. Commit only source sheets, selected review derivatives, manifests, tooling,
+   and sanitized evidence; publish full frames/runtime packs as workflow
+   artifacts.
+7. Obtain green exact-head Phase 01 and Phase 02 CI, update project authorities,
+   and stop for Architect/operator visual review before library scale.

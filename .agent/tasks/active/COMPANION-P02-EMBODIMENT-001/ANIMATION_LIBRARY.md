@@ -72,3 +72,17 @@ accepted through byte-preserving intake and operator visual approval. R04 uses
 only one approved-identity import smoke frame and an unmistakably geometric
 `synthetic_test_only` timing pack. Full family, facing, and motion-language
 coverage is deferred; no procedural character-art fallback remains.
+
+## R05 bounded candidate inventory
+
+The operator-authorized candidate contains eight tracks and 33 frame
+occurrences: neutral construction at `front`, `right`, and `front_left` (one
+each); `idle_breathe/front_left` (8); `walk/front_left` (8);
+`orient_front_to_front_left/front` (4);
+`orient_front_left_to_front/front_left` (4); and
+`listen_acknowledge/front_left` (6). There are 29 unique source hashes because
+the reciprocal turn reverses the exact same four authored poses.
+
+This is a bounded review pack only. No other direction, family, eye/mouth
+overlay library, complete animation library, or approved motion language is
+claimed.

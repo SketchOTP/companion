@@ -54,6 +54,19 @@ Codex executes only `COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-001`:
 
 Do not expand to the complete 32-family/eight-direction library in this directive.
 
+## R05 candidate implementation state
+
+The bounded candidate source pack now exists locally and is submitted for
+hosted validation and visual review. It contains eight requested tracks, 33
+frame occurrences, and 29 unique source hashes. The reciprocal orientation
+track deliberately reuses the same four authored poses in reverse order.
+
+All assets remain `candidate`; operator visual approval is `PENDING`. Local
+immutable intake, actual Rust 1.98.1 round-trip, exact Godot 4.7.2 cold/warm
+playback, rendered bound/contact checks, export/restore, and semantic tamper
+negatives pass. Hosted Phase 01/Phase 02 results and artifact publication remain
+required before handoff.
+
 ## Exact source authority
 
 ```text

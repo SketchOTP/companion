@@ -1,0 +1,92 @@
+{
+  "profile": "COMPANION_P02_R05_IMAGEGEN_PROVENANCE_V1",
+  "authority": {
+    "architecture_review": "Architect Review 10",
+    "decision": "ADR-57",
+    "directive": "COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-001",
+    "operator_visual_approval": "PENDING"
+  },
+  "approved_references": {
+    "identity_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+    "turnaround_sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
+  },
+  "tool": {
+    "name": "OpenAI image generation",
+    "operation": "reference-conditioned generation",
+    "output_role": "candidate source sheets only"
+  },
+  "common_prompt_contract": [
+    "preserve the exact approved purple mon identity and turnaround",
+    "rounded unclothed organic body and sweeping flame-head silhouette",
+    "black eye fields with white pupils and a small simple mouth",
+    "exactly two fingers plus one thumb and exactly three toes",
+    "clean cel-shaded purple volume with stable shadow language",
+    "no accessories, symbols, extra anatomy, text, borders, cast shadow, 3D, or pixel-art conversion",
+    "uniform #00FF00 background for deterministic alpha normalization"
+  ],
+  "generations": [
+    {
+      "file": "imagegen/neutral-construction-sheet.png",
+      "sha256": "aa6e2efd8cf7f9a2273bf22b9ebbbc6904fd364ba6749113087b4447617e2d39",
+      "request": "neutral front, profile, and front-left construction candidates",
+      "status": "candidate_source"
+    },
+    {
+      "file": "imagegen/neutral-right-profile.png",
+      "sha256": "7dd7bc596d27f10073ebbf4b4fbae15735992dc1569f9eaae59a3b6cbf485dd4",
+      "request": "one neutral full-body profile whose face and body point toward canvas right",
+      "status": "candidate_source"
+    },
+    {
+      "file": "imagegen/idle-breathe-sheet.png",
+      "sha256": "b201607ee9fcf170585a4d69f763cbe24b58fc93119054d086eae291f2ecffe7",
+      "request": "eight front-left idle/breathe temporal drawings with a restrained inhale-exhale arc",
+      "status": "candidate_source"
+    },
+    {
+      "file": "imagegen/walk-sheet.png",
+      "sha256": "01ba5c7a781fd6cd627632d3cd6ed4505498c990181b969c84e73dec5b4afe36",
+      "request": "eight front-left walk phases with leg articulation and arm counter-swing",
+      "status": "candidate_source"
+    },
+    {
+      "file": "imagegen/orient-front-to-front-left-sheet.png",
+      "sha256": "99ef17e22db3ac0514a082244a850ae7d8db427610ead01e62ce969587aed92d",
+      "request": "four authored poses turning from front to front-left; reverse playback supplies the reciprocal candidate track",
+      "status": "candidate_source"
+    },
+    {
+      "file": "imagegen/listen-acknowledge-sheet.png",
+      "sha256": "2a0de17f14a9f7797ffad777f9ac46d2987cd19d508a51e5a58d34b5230a5855",
+      "request": "six front-left poses showing attention, body response, acknowledgement, and settling",
+      "status": "candidate_source"
+    }
+  ],
+  "rejected_generations": [
+    {
+      "sha256": "0ef3fd18814e9bada003dedae528815a39c09480b2900391b6d2218dfb1a7c87",
+      "reason": "checkerboard pixels were encoded into an RGB background rather than transparency"
+    },
+    {
+      "sha256": "2b1808f3e4b4a66762a4b3e6bd6ba150b837c29a410d63f845949421bc7da737",
+      "reason": "transparency edit still encoded a checkerboard RGB background"
+    },
+    {
+      "source_sha256": "aa6e2efd8cf7f9a2273bf22b9ebbbc6904fd364ba6749113087b4447617e2d39",
+      "cell": "profile",
+      "reason": "first profile cell faced left and included a stray separator mark; it is not selected"
+    }
+  ],
+  "normalization": {
+    "canvas": [1024, 1024],
+    "mode": "RGBA8 sRGB",
+    "root": [512, 896],
+    "baseline_y": 896,
+    "safety_region": [64, 32, 960, 960],
+    "source_crop": false,
+    "nonuniform_scale": false,
+    "chroma_key": "#00FF00",
+    "approval_state": "candidate"
+  },
+  "evidence_ceiling": "Candidate visual review and bounded engineering evidence only; no operator approval, production embodiment, or Phase 02 acceptance."
+}

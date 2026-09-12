@@ -517,3 +517,13 @@ one immutable SHA. The initial run plus two same-head reruns all passed after
 the probe required two separated complete-health samples. The Phase 02 result
 was rechecked on that same SHA; this supports the handoff status only and does
 not promote any Phase 02 or production claim.
+
+## 2026-09-12 — Candidate sprite generation needs truthful selection metadata
+
+Reference conditioning can preserve a recognizable identity while still
+producing unusable sheet cells: encoded checkerboards, reversed facing, stray
+marks, and stance/contact variation all occurred. Rejecting those sources before
+intake, generating a dedicated right-facing profile, and deriving contact spans
+from selected pixels avoided laundering art defects into metadata. Reciprocal
+orientation can truthfully reuse the same four poses in reverse, but occurrence
+and unique-source counts must remain separate.

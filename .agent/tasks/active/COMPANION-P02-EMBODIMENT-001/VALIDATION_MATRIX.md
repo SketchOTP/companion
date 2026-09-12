@@ -136,3 +136,26 @@ approval, complete library, Openbox endurance, and later phases remain deferred.
 The failed inherited run is not converted to a pass. Final reconciliation and
 new exact-head hosted Phase 01 validation remain required. Production art, animation,
 Openbox endurance, and Phase 02 acceptance remain `NOT RUN`.
+
+## R05-AUTHOR-001 local validation
+
+| Check | Status | Evidence |
+| --- | --- | --- |
+| Review 10 / ADR-57 authority | `PASSED` | live authority reconciled; candidate authorship authorized |
+| Exact reference hashes | `PASSED` | identity and turnaround hashes match |
+| Bounded request equation | `PASSED` | 8 tracks / 33 occurrences / 29 unique hashes |
+| Clean-process pack determinism | `PASSED` | source-tree digest equality |
+| MON_FRAME_V1 PNG/intake | `PASSED` | 33/33 byte-identical review intake |
+| Rust actual-pack round trip | `PASSED` | actual path returned 0; missing path returned nonzero |
+| Godot import/cold/warm | `PASSED` | exact 4.7.2; zero application errors |
+| All requested Godot tracks | `PASSED` | eight exact requested roles started |
+| Marker order | `PASSED` | footfalls, facing changes, attention/acknowledge/settled |
+| Production eligibility | `PASSED` | candidate rejected for production |
+| Corruption and recovery | `PASSED` | `frame_hash_mismatch`, then restored `started` |
+| Rendered bounds/contact QA | `PASSED` | zero safety/perimeter/drift failures |
+| Semantic tamper negatives | `PASSED` | 5/5 rejected |
+| Local export/fresh restore | `PASSED` | full restored hash equality |
+| Hosted Phase 01 | `NOT RUN` | pending exact-head publication |
+| Hosted Phase 02 / artifact | `NOT RUN` | pending exact-head publication |
+| Operator visual approval | `NOT RUN` | candidate package not self-approved |
+| Phase 02 acceptance | `NOT RUN` | requires Architect review and later gates |

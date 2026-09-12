@@ -439,3 +439,13 @@ and same-head rerun #2 job `103504776796`, all on
 job `103502845517` passed on the same SHA. This closes the C04 readiness gate
 only and does not accept Phase 02 or authorize production art, visual approval,
 or later-phase work.
+
+## 2026-09-12 — R05 operator-authorized candidate sprite pack
+
+Architect Review 10 and adopted ADR-57 supersede the prior Codex art-authorship
+hold. Continue PR #9 on `codex/p02-embodiment-001` and use the exact approved
+identity/turnaround references plus approved image generation to create only
+the bounded 8-track candidate review pack. Normalize to MON_FRAME_V1, run the
+actual pack through immutable intake, Rust, Godot, QA, CI, and artifact
+publication, then stop for Architect/operator review. Do not scale the library,
+merge the PR, close Issue #8, run Openbox endurance, or begin Phase 03.

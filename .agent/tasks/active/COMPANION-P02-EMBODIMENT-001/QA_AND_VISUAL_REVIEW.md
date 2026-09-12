@@ -63,3 +63,16 @@ No visual approval package is produced or requested. The approved identity is
 used only as a one-frame import smoke fixture. The geometric animation pack is
 `synthetic_test_only`. Operator review begins only after the AI Architect lands
 the bounded pack described by `ARCHITECT_FRAME_REQUEST_V1.md`.
+
+## R05 candidate review package
+
+Normal-speed, quarter-speed, ordered-strip, silhouette-only, and root/contact
+derivatives for all eight tracks are committed under
+`assets/source/p02/r05/review/` and regenerated into the full workflow artifact.
+Automated QA observes exact root metadata, transparent perimeter, source safety
+bounds, and declared planted-contact drift from rendered landmark positions.
+
+The selected candidate is recognizably grounded in the approved purple mon and
+shows temporal body/limb changes. Automated checks cannot decide silhouette,
+anatomy, expression, gait appeal, or motion quality. Those decisions remain
+explicitly `PENDING` for operator visual review.

@@ -315,3 +315,27 @@ Hosted evidence is E4 regression-protected for the readiness probe and E3
 target-tested for the bounded phase result. No Phase 02 acceptance, production
 art, operator visual approval, security certification, or reliability claim
 follows.
+
+## R05 local candidate-pack evidence — 2026-09-12
+
+The selected source pack is
+`05a17a00-0000-4000-8000-000000000001`, revision
+`r05-author-001-bounded-v1`, with 8 tracks, 33 frame occurrences, 29 unique
+source hashes, and `approval_state=candidate`. Its manifest SHA-256 is
+`9711756c5f7f220827ba17528e9361f632e1bc39e0665df836de6426702c631d`.
+
+Immutable review intake passed for all 33 frames with
+`input_sha256 == stored_sha256 == runtime_sha256`; the ingested manifest hash is
+`2c481246a1da47aa7188889884f095b12533290012470e18ee3cd44d490f6f7f`.
+Rust 1.98.1 consumed and reserialized that actual ingested manifest, while the
+missing-path invocation failed as required. Exact Godot
+`4.7.2.stable.official.ed1daf0bf` passed import plus cold/warm candidate-review
+playback with all eight tracks started, exact footfall/listen/orientation marker
+orders, production ineligibility, corrupt-frame degradation, restoration, and
+zero application `ERROR:` diagnostics.
+
+Rendered QA found zero safety/perimeter violations and zero measured drift in
+all declared planted-contact spans. The semantic validator passed and rejected
+five content-aware tamper mutations. Local export/fresh restore preserved all
+hashes. Evidence level is E3 target-tested engineering evidence; operator visual
+approval, hosted CI/artifact evidence, and Phase 02 acceptance remain open.

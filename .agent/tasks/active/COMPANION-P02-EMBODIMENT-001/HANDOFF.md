@@ -353,3 +353,18 @@ and rerun #2 job `103504776796`. Phase 02 passed on the same SHA in run
 digest `sha256:6efff4d21517c1983ddabfa86f9eaaf516ee60be0557625890d3ca7944f68fb8`.
 The exact bounded status is `READY_FOR_ARCHITECT_FRAME_PACK`. This does not
 accept Phase 02, approve visual identity, or authorize production art.
+
+## R05-AUTHOR-001 candidate handoff
+
+The bounded operator-review package is 8 tracks / 33 frame occurrences / 29
+unique source hashes. Its image-generation sheets, source hashes, rejected
+generations, deterministic MON_FRAME_V1 builder, source-pack manifest, selected
+normal/quarter/silhouette/root-contact/strip media, and sanitized local evidence
+are committed. Full normalized and ingested packs remain artifact output.
+
+Local immutable intake, Rust 1.98.1, exact Godot 4.7.2 import/cold/warm playback,
+rendered QA, export/restore, and five tamper negatives pass. All art remains
+`candidate`; the operator must decide identity fidelity, anatomy, proportions,
+gait/motion quality, facing transition, and listen/acknowledge readability.
+Hosted exact-head CI and artifact publication remain required before the final
+R05 return.

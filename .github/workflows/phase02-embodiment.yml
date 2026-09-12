@@ -1,4 +1,4 @@
-name: phase02-embodiment-r04
+name: phase02-embodiment-r05
 
 on:
   push:
@@ -101,6 +101,16 @@ jobs:
           python3 experiments/p02-embodiment/scripts/run_r04_evidence.py --out "$RUNNER_TEMP/r04-results" --godot "$GODOT_BIN"
           python3 experiments/p02-embodiment/scripts/validate_r04_results.py --results "$RUNNER_TEMP/r04-results" --tamper-negative | tee "$RUNNER_TEMP/r04-validation.json"
           cp "$RUNNER_TEMP/r04-validation.json" "$RUNNER_TEMP/r04-results/validation.json"
+      - name: Build and qualify actual R05 candidate review pack
+        env:
+          RUSTUP_TOOLCHAIN: 1.98.1
+        run: |
+          set -euo pipefail
+          python3 experiments/p02-embodiment/scripts/run_r05_candidate_evidence.py \
+            --out "$RUNNER_TEMP/r05-results" --godot "$GODOT_BIN"
+          python3 experiments/p02-embodiment/scripts/validate_r05_results.py \
+            --results "$RUNNER_TEMP/r05-results" --tamper-negative \
+            --output "$RUNNER_TEMP/r05-results/validation.json"
       - name: Repository, secret, and private-data policy
         run: |
           set -euo pipefail
@@ -122,6 +132,10 @@ jobs:
             experiments/p02-embodiment/scripts/intake_authored_frame_pack.py \
             experiments/p02-embodiment/scripts/export_restore_authored_pack.py \
             godot/mon_animation_director.gd godot/mon_avatar.gd godot/r04_*.gd
+          ! find assets/source/p02/r05 -type f -size +25M -print -quit | grep .
+          ! rg -nI '(BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|api[_-]?key\s*[:=]\s*[A-Za-z0-9]{16,}|/home/[^ /]+|/srv/[^ /]+)' \
+            assets/source/p02/r05 experiments/p02-embodiment/results/r05 \
+            experiments/p02-embodiment/scripts/*r05* godot/r04_authored_pack_test.gd godot/mon_avatar.gd
           git diff --exit-code
       - name: Upload R04 authored-frame boundary evidence and diagnostics
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
@@ -142,4 +156,14 @@ jobs:
             contracts/fixtures/mon-ingested-frame-pack-v1.json
             contracts/fixtures/mon-authored-frame-intake-receipt-v1.json
           if-no-files-found: warn
+        if: always()
+      - name: Upload R05 candidate source, review, intake, and playback evidence
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+        with:
+          name: phase02-embodiment-r05-candidate-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/r05-results
+            assets/source/p02/r05/review
+            assets/source/p02/r05/generation-provenance.json
+          if-no-files-found: error
         if: always()

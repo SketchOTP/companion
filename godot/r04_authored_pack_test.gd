@@ -41,20 +41,28 @@ func _run_track(fixture: Dictionary, family: String, facing: String, posture: St
 	var director: Node = fixture.director
 	var before := all_events.size()
 	var result: Dictionary = await director.request_intent(family, 0, true, facing, posture, "neutral", "medium", 1)
-	await create_timer(0.35).timeout
+	var wait_seconds := 0.35
+	if result.get("status") == "started":
+		var track: Dictionary = fixture.avatar.current_track_data
+		var total_ticks := 0
+		for frame in track.get("frames", []): total_ticks += int(frame.get("duration_ticks", 0))
+		wait_seconds = (max(total_ticks - 1, 1) if track.get("completion") == "loop" else total_ticks + 3) / 24.0
+	await create_timer(wait_seconds).timeout
 	var slice: Array = all_events.slice(before)
 	if result.get("status") != expected_status: errors.append("%s status=%s expected=%s" % [family, result.get("status"), expected_status])
 	if not _monotonic(slice): errors.append("%s event timestamps regressed" % family)
 	return {"result": result, "events": slice}
 
 func _run() -> void:
-	var args := OS.get_cmdline_user_args(); var pack_path := ""; var corrupt_path := ""
+	var args := OS.get_cmdline_user_args(); var pack_path := ""; var corrupt_path := ""; var operation := "test"
 	for arg in args:
 		if arg.begins_with("--pack="): pack_path = arg.trim_prefix("--pack=")
 		if arg.begins_with("--corrupt-pack="): corrupt_path = arg.trim_prefix("--corrupt-pack=")
+		if arg.begins_with("--operation="): operation = arg.trim_prefix("--operation=")
 	if pack_path.is_empty() or corrupt_path.is_empty(): _finish(["required pack arguments missing"], {}); return
+	if not operation in ["test", "review"]: _finish(["unsupported pack operation"], {}); return
 
-	var fixture := await _avatar(pack_path, "test")
+	var fixture := await _avatar(pack_path, operation)
 	var neutral := await _run_track(fixture, "neutral_construction", "front", "neutral")
 	var neutral_names := _names(neutral.events)
 	var required_prefix := ["intent_received", "track_resolved", "track_validated", "first_frame_loaded", "first_frame_presented", "first_frame_render_committed", "started"]
@@ -82,9 +90,16 @@ func _run() -> void:
 	var listen := await _run_track(fixture, "listen_acknowledge", "front_left", "listening")
 	var listen_markers: Array = listen.events.filter(func(item): return item.get("event") == "track_event").map(func(item): return item.get("name"))
 	if listen_markers != ["attention_acquired", "acknowledge", "settled"]: errors.append("listen/acknowledge event order mismatch: %s" % [listen_markers])
+	var neutral_right := await _run_track(fixture, "neutral_construction", "right", "neutral")
+	var neutral_front_left := await _run_track(fixture, "neutral_construction", "front_left", "neutral")
+	var reverse_orient := await _run_track(fixture, "orient_front_left_to_front", "front_left", "neutral")
+	for checked in [neutral_right, neutral_front_left, reverse_orient]:
+		if checked.result.get("status") != "started": errors.append("required R05 track did not start")
+	var reverse_markers: Array = reverse_orient.events.filter(func(item): return item.get("event") == "track_event").map(func(item): return item.get("name"))
+	if reverse_markers != ["facing_changed"]: errors.append("reverse orientation marker mismatch: %s" % [reverse_markers])
 	fixture.avatar.queue_free(); await process_frame
 
-	var missing_fixture := await _avatar(pack_path, "test")
+	var missing_fixture := await _avatar(pack_path, operation)
 	var missing: Dictionary = await missing_fixture.director.request_intent("missing_track", 0, true, "front", "neutral", "neutral", "medium", 1)
 	if missing.get("status") != "failed" or missing.get("reason") != "track_missing": errors.append("missing track did not fail closed")
 	missing_fixture.avatar.queue_free(); await process_frame
@@ -94,16 +109,16 @@ func _run() -> void:
 	if ineligible.get("reason") != "approval_ineligible": errors.append("invalid approval state was not rejected")
 	ineligible_fixture.avatar.queue_free(); await process_frame
 
-	var corrupt_fixture := await _avatar(corrupt_path, "test")
+	var corrupt_fixture := await _avatar(corrupt_path, operation)
 	var corrupt: Dictionary = await corrupt_fixture.director.request_intent("neutral_construction", 0, true, "front", "neutral", "neutral", "medium", 1)
 	if corrupt.get("reason") != "frame_hash_mismatch": errors.append("corrupt frame did not degrade")
 	corrupt_fixture.avatar.queue_free(); await process_frame
 
-	var restored_fixture := await _avatar(pack_path, "test")
+	var restored_fixture := await _avatar(pack_path, operation)
 	var restored: Dictionary = await restored_fixture.director.request_intent("neutral_construction", 0, true, "front", "neutral", "neutral", "medium", 1)
 	if restored.get("status") != "started": errors.append("restored pack did not recover")
 	restored_fixture.avatar.queue_free(); await process_frame
-	_finish(errors, {"valid_event_order": neutral_names, "walk_events": _names(walk.events), "walk_markers": walk_markers, "listen_markers": listen_markers, "missing_track_reason": missing.get("reason"), "ineligible_reason": ineligible.get("reason"), "corrupt_reason": corrupt.get("reason"), "restored_status": restored.get("status"), "fps": 24, "duration_weights": [1, 2], "render_observation": "RenderingServer.frame_post_draw"})
+	_finish(errors, {"valid_event_order": neutral_names, "walk_events": _names(walk.events), "walk_markers": walk_markers, "listen_markers": listen_markers, "reverse_orient_markers": reverse_markers, "required_tracks_started": 8, "missing_track_reason": missing.get("reason"), "ineligible_reason": ineligible.get("reason"), "corrupt_reason": corrupt.get("reason"), "restored_status": restored.get("status"), "fps": 24, "duration_weights": [1, 2], "render_observation": "RenderingServer.frame_post_draw"})
 
 func _finish(found: Array[String], observations: Dictionary) -> void:
 	print(JSON.stringify({"status": "PASS" if found.is_empty() else "FAIL", "errors": found, "observations": observations}, "  ")); quit(0 if found.is_empty() else 1)

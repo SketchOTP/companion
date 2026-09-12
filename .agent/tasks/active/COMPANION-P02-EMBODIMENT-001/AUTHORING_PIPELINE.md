@@ -75,3 +75,19 @@ pipeline is immutable source validation, byte-preserving content-addressed
 copy, separate deterministic derivatives, local export/restore, and Godot
 runtime integration. R02/R03 procedural authoring paths are superseded
 negative evidence and never a fallback.
+
+## R05 operator-authorized candidate pipeline
+
+Review 10 and ADR-57 authorize the image-generation tool as the visible-pixel
+author for this bounded candidate. Six retained RGB source sheets are grounded
+in both exact approved references and use a uniform green background solely for
+deterministic alpha extraction. The builder performs fixed cell selection,
+chroma-to-alpha conversion, uniform full-canvas scaling/translation, explicit
+sRGB encoding, typed sidecars, and review derivatives. It creates no procedural
+character geometry or new in-between artwork.
+
+Selected MON_FRAME_V1 frames are generated outside Git. Source sheets,
+provenance, the deterministic manifest, and selected review media are committed;
+the complete normalized source/ingested packs are workflow artifacts. Two
+checkerboard-background generations plus a left-facing/stray-mark profile cell
+remain recorded as rejected evidence.
