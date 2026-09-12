@@ -4,61 +4,80 @@
 
 Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adopted. Roadmap Phase 01 remains accepted. Phase 03 and later remain closed.
 
-PR #9 at reviewed head `4263ae7cc085475e9b80f1c00615639ebbba679b` is continued under:
+The bounded pre-art engineering gate is now accepted:
 
-- Directive: `COMPANION-P02-EMBODIMENT-001-R04-C04`
-- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_08.md`
-- Notion review: https://app.notion.com/p/3d9833cb27ff81f5a5e6f29d53888e48
-- Issue #8: open
-- PR #9: draft, open, unmerged
+```text
+READY_FOR_ARCHITECT_FRAME_PACK
+```
 
-## Review 08 disposition
+Architect Review 09 accepts C04 and closes the readiness/infrastructure correction loop. The tested implementation commit is `e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b`; publication reconciliation `e42f3cb0cbfa6478fefaddaeac92bf2bd9368149` changes only append-only `.agent/` records.
 
-C03 is accepted within its bounded diagnostic/intake/runtime scope. Retain:
+## Accepted C04 evidence
 
-- exact ALSA diagnostic capture before correction;
-- explicit Godot Dummy-audio qualification;
-- one canonical Godot runner and channel classifier;
-- separate stdout/stderr/engine/Xvfb logs and hashes;
-- cold/warm Godot qualification;
-- fail-closed application-error policy;
-- always-published diagnostic artifacts;
-- exact final-head Phase 02 workflow `34671402258`: SUCCESS;
-- artifact `10290394916`, digest `sha256:d396c2213bfa68da0927380b85ea1bee499fd0dac95a10eacc1f90049a1b68d3`.
+- Phase 01 run `34674883461` passed on the tested implementation commit.
+- Initial verify job `103502845478`: PASS.
+- Same-head rerun `103503853827`: PASS.
+- Same-head rerun `103504776796`: PASS.
+- Phase 02 run `34674883457`: PASS on the same implementation commit.
+- Phase 02 artifact `10292635102`, digest `sha256:6efff4d21517c1983ddabfa86f9eaaf516ee60be0557625890d3ca7944f68fb8`.
+- The corrected foundation readiness probe uses explicit health-state polling, a monotonic deadline, and two consecutive complete-ready observations; timeout and early-supervisor-exit cases fail closed.
 
-`READY_FOR_ARCHITECT_FRAME_PACK` is not yet accepted because the final exact task head triggered Phase 01 run `34671402263`, which failed in `foundation_runtime_check.py` before later foundation checks.
+## Active authority
 
-## Decisive blocker
+- Architect Review 09:
+  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_09.md`
+- Notion Review 09:
+  https://app.notion.com/p/3d9833cb27ff81f7a90ed91e209f34ee
+- Phase 02 directive:
+  https://app.notion.com/p/3d8833cb27ff810e858acd029ac0ea05
+- Phase 02 report:
+  https://app.notion.com/p/3d8833cb27ff817d9d01d754ec852c10
+- Pull request: `#9 — DRAFT / OPEN / UNMERGED`
+- GitHub issue: `#8 — OPEN`
+- Branch: `codex/p02-embodiment-001`
 
-The Phase 01 runtime probe waits for `supervisor.sock` and then samples health exactly once. The final failure observed the supervisor resident and all expected roles present, but `observed_ready=false` and `care_coverage=degraded`.
+## Codex state
 
-A control socket becoming available is not equivalent to all children completing startup. The health contract already exposes explicit readiness state. The qualification must wait for stable complete readiness rather than sample once immediately after socket creation.
+`HOLD FOR ARCHITECT ASSET INPUT`
 
-## Active objective
+No new Codex implementation directive is active. Codex must not generate production character pixels, request operator visual approval, expand the sprite library, merge PR #9, close Issue #8, or begin Phase 03 work.
 
-Codex executes only R04-C04:
+## Next actor and action
 
-1. preserve completed C02/C03 work;
-2. replace the one-shot readiness sample with bounded monotonic polling of explicit health state;
-3. require all expected roles healthy/ready and `care_coverage=synthetic`;
-4. require two consecutive complete-ready observations before success;
-5. retain a sanitized startup trace and fail closed on timeout or early supervisor exit;
-6. add delayed-ready, never-ready, and supervisor-exit synthetic tests;
-7. run complete Phase 01 verification;
-8. obtain one exact-head hosted Phase 01 success plus two same-head rerun successes;
-9. keep Phase 02 green on the same exact task head;
-10. return `READY_FOR_ARCHITECT_FRAME_PACK` only after that stability proof.
+The next work belongs to the AI Architect under the adopted visual-authorship boundary.
 
-No production character pixels or operator visual-review request are authorized in C04.
+The Architect must create the bounded authored source-frame pack required by `assets/source/p02/architect-frame-request-v1/ARCHITECT_FRAME_REQUEST_V1.md`, covering:
 
-## External evidence basis
+- neutral front construction;
+- neutral profile construction;
+- neutral front-left construction;
+- front-left idle/breathe;
+- front-left walk;
+- front → front-left orientation;
+- front-left → front orientation;
+- listen → acknowledge.
 
-Service readiness is distinct from process or socket existence. The authoritative Companion readiness values are the child `ready/state` fields and `care_coverage`, so the probe must wait on them rather than infer startup completion from endpoint creation.
+All supplied production art remains `candidate` until explicit operator approval. After the Architect supplies exact source bytes and sidecars, Codex may receive a new bounded intake/integration directive.
+
+## Accepted capability boundary
+
+Accepted now:
+
+- Phase 01 engineering foundation;
+- C02/C03 authored-frame intake/runtime engineering;
+- deterministic Phase 01 readiness qualification;
+- stable same-SHA hosted regression evidence;
+- `READY_FOR_ARCHITECT_FRAME_PACK` as a pre-art engineering gate.
+
+Not accepted:
+
+- production character art;
+- approved construction or motion language;
+- Phase 02 completion;
+- visual aliveness;
+- Openbox endurance;
+- organism, autobiographical memory, learning, development, perception, speech, dreaming, care efficacy, security certification, production reliability, SLA, or Phase 03+ capability.
 
 ## Protected work
 
-The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` modifications remain protected. Continue only in the clean local ext4/NVMe secondary worktree.
-
-## Capability boundary
-
-No Architect-authored production frame pack, accepted body construction, approved motion language, production embodiment, visual aliveness, or Phase 03+ capability exists. C03 establishes substantial bounded synthetic engineering evidence, but final pre-art readiness is blocked by inherited Phase 01 readiness-test nondeterminism.
+The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` modifications remain protected. Do not inspect them for evidence, commit, reset, stash, overwrite, copy, or reformat them.
