@@ -175,3 +175,20 @@ companion events with zero ordinary care rows.
 Evidence ceiling remains `E3_TARGET_TESTED` for the synthetic intake/runtime
 boundary. No production character pixels, accepted body, approved animation,
 visual aliveness, target-host endurance, or Phase 02 acceptance is claimed.
+
+## 2026-09-11 — R04-C01 authored-pack contract correction
+
+Review 05 rejected the prior `READY_FOR_ARCHITECT_FRAME_PACK` claim because
+orientation endpoints, occluded landmarks, request completeness, PNG profile,
+identity/reuse rules, atomic publication, and runtime integrity were not
+represented fail-closed. The correction adds separate source/ingested/receipt
+schemas, typed Rust records, a bounded request-profile validator, direct PNG
+IHDR/sRGB/alpha/safety checks, unique source identities, staged atomic intake,
+pack and relationship verification in Godot, and a render-commit acknowledgment.
+
+The synthetic fixture is intentionally geometric and is not candidate art. The
+valid intake, ten negative cases, actual ingested-pack Rust round trip (including
+nonzero missing-path failure), local export/restore, and Godot exact-track,
+ineligible, corrupt, and recovery checks are bounded `E3_TARGET_TESTED`
+evidence. No production frame pack, body, visual approval, or Phase 02
+acceptance is inferred. R02/R03 visual assets and claims remain superseded.

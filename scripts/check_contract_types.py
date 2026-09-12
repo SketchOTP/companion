@@ -21,6 +21,9 @@ mapping = {
     "mon-animation-track.schema.json": "MonAnimationTrack",
     "mon-temporal-track-v2.schema.json": "MonTemporalTrackV2",
     "mon-authored-frame-pack-v1.schema.json": "MonAuthoredFramePackV1",
+    "mon-authored-frame-source-pack-v1.schema.json": "MonAuthoredFrameSourcePackV1",
+    "mon-ingested-frame-pack-v1.schema.json": "MonIngestedFramePackV1",
+    "mon-frame-intake-receipt-v1.schema.json": "MonFrameIntakeReceiptV1",
 }
 text = (ROOT / "crates/foundation-core/src/contracts.rs").read_text(encoding="utf-8")
 errors = []

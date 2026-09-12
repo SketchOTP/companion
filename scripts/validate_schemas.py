@@ -66,8 +66,8 @@ for name in NAMES:
         if schema.get("type") != "object" or schema.get("additionalProperties") is not False:
             errors.append(f"{name}: unsafe object policy")
         valid = sample(schema)
-        if name in {"mon-animation-clip.schema.json", "mon-animation-track.schema.json", "mon-temporal-track-v2.schema.json", "mon-authored-frame-pack-v1.schema.json"}:
-            fixture_name = {"mon-animation-clip.schema.json": "mon-animation-clip-v1.json", "mon-animation-track.schema.json": "mon-animation-track-v1.json", "mon-temporal-track-v2.schema.json": "mon-temporal-track-v2.json", "mon-authored-frame-pack-v1.schema.json": "mon-authored-frame-pack-v1.json"}[name]
+        if name in {"mon-animation-clip.schema.json", "mon-animation-track.schema.json", "mon-temporal-track-v2.schema.json", "mon-authored-frame-pack-v1.schema.json", "mon-authored-frame-source-pack-v1.schema.json", "mon-ingested-frame-pack-v1.schema.json", "mon-frame-intake-receipt-v1.schema.json"}:
+            fixture_name = {"mon-animation-clip.schema.json": "mon-animation-clip-v1.json", "mon-animation-track.schema.json": "mon-animation-track-v1.json", "mon-temporal-track-v2.schema.json": "mon-temporal-track-v2.json", "mon-authored-frame-pack-v1.schema.json": "mon-authored-frame-pack-v1.json", "mon-authored-frame-source-pack-v1.schema.json": "mon-authored-frame-source-pack-v1.json", "mon-ingested-frame-pack-v1.schema.json": "mon-ingested-frame-pack-v1.json", "mon-frame-intake-receipt-v1.schema.json": "mon-authored-frame-intake-receipt-v1.json"}[name]
             fixture = ROOT / "contracts" / "fixtures" / fixture_name
             if fixture.exists():
                 valid = json.loads(fixture.read_text(encoding="utf-8"))

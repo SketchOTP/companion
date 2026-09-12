@@ -147,3 +147,14 @@ Phase 03+ capability is accepted.
 - Bounded result after complete publication: `READY_FOR_ARCHITECT_FRAME_PACK`
 No production frame pack, accepted construction, approved motion, production
 embodiment, continuous aliveness, or Phase 03+ capability is established.
+
+## R04-C01 active correction
+
+Review 05 is the current authority. The correction implements the immutable
+Architect source-pack, validated ingested-pack, and intake-receipt split with
+typed track/facing/landmark semantics, request-profile completeness, direct PNG
+profile validation, atomic staging/publication, and fail-closed Rust/Godot
+runtime checks. Synthetic geometry is test-only; R02/R03 visual paths remain
+negative evidence. Final bounded handoff status is
+`READY_FOR_ARCHITECT_FRAME_PACK`; Phase 02 is not accepted and no operator
+visual approval is requested.

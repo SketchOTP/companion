@@ -1,5 +1,5 @@
 {
-  "profile": "MON_AUTHORED_FRAME_PACK_V1",
+  "profile": "MON_AUTHORED_FRAME_SOURCE_PACK_V1",
   "schema_version": 1,
   "pack_id": "00000000-0000-4000-8000-000000000000",
   "pack_revision": "replace-me-v1",
@@ -17,6 +17,7 @@
     "rights_record": "durable rights and source record"
   },
   "timing": {"fps": 24, "tick_unit": "1/24_second"},
-  "tracks": [],
-  "source_runtime_relationships": []
+  "request_profile": "phase02_bounded_motion_proof_v1",
+  "source_assets": [],
+  "tracks": []
 }

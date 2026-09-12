@@ -80,3 +80,17 @@ operator visual review and the dedicated Openbox target gate.
 5. Exercise only an identity smoke import and obvious synthetic test pack.
 6. Run fail-closed negative, Rust, Godot, clean-clone, and hosted CI gates.
 7. Publish the bounded result and return for Architect-authored frames.
+
+## R04-C01 narrow correction plan
+
+1. Reconcile Review 05 and preserve the R02/R03 negative-art history.
+2. Keep source, ingested, and receipt documents separate and strongly typed.
+3. Validate the bounded frame request, PNG profile, landmarks, identities,
+   reuse, timing, contacts, and events without repairing input.
+4. Stage intake, generate byte-equal CAS/runtime copies, and atomically publish.
+5. Bind Rust and Godot checks to the actual generated ingested pack and exact
+   requested track; observe render commit before start.
+6. Exercise valid synthetic intake plus fail-closed negative cases, export/
+   restore, schema/Rust crosswalk, and Godot recovery.
+7. Run exact-head regression and publication checks, then stop at
+   `READY_FOR_ARCHITECT_FRAME_PACK` without requesting visual approval.

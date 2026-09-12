@@ -118,3 +118,35 @@ recomputes its hash, and produces a separate runtime derivative manifest. It
 records input and stored hashes plus byte equality. Generated import metadata,
 review sheets, atlases, and runtime resources remain derivatives; the source
 files are immutable and remain independently exportable/restorable by hash.
+
+## R04-C01 machine-checkable landing profile
+
+The source manifest is `MON_AUTHORED_FRAME_SOURCE_PACK_V1` and contains only
+Architect-authored facts. Runtime paths, content addresses, atlas locations,
+and generated hashes are never written into this source document. Codex emits a
+separate `MON_INGESTED_FRAME_PACK_V1` and a `MON_FRAME_INTAKE_RECEIPT_V1` after
+validation.
+
+The bounded proof request requires neutral front, right profile, and front-left
+masters (one frame each), `idle_breathe` (6–8), `walk` (8), both orientation
+directions (at least 4 each), and `listen_acknowledge` (6). Every track has
+typed `selection_facing`, `entry_facing`, and `exit_facing`; every frame has
+typed `facing`, `posture`, optional `action_phase`, integer `duration_ticks`,
+source-asset ID/hash, and a matching sidecar.
+
+Each frame supplies the complete canonical landmark map: `root`,
+`ground_contact_left`, `ground_contact_right`, `head_center`, `eye_midpoint`,
+`eye_left`, `eye_right`, `mouth_center`, `hand_left`, `hand_right`, `foot_left`,
+`foot_right`, `attachment_back`, `attachment_front`, `interaction_focus`,
+`action_anchor`, and `object_anchor`. A landmark is `{state, point}`; `point`
+is present only for `visible`, and is null for `occluded` or `not_applicable`.
+Orientation endpoints and required events (`facing_changed`,
+`attention_acquired`, `acknowledge`, `settled`) are checked before intake.
+
+Exact filenames are
+`<family>__<facing>__<posture>__v<NN>__f<NNN>.png` with a matching
+`.frame.json` sidecar. Holds use increased duration ticks and explicit
+`reuse_of`; accidental duplicate hashes, missing files, unsafe PNG profiles,
+ineligible approval states, invented landmarks, and source/runtime drift are
+rejected. Production accepts only `operator_approved`; candidate content is
+review-only and synthetic content is test-only.

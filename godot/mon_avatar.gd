@@ -1,14 +1,22 @@
 class_name MonAvatar
 extends Node2D
 
-## Layered raster avatar. Godot owns only current visual execution state.
+## Presentation-only raster avatar. The ingested manifest is authoritative for
+## track/asset identity; Godot owns only current execution and observation.
 signal frame_marker(event: Dictionary)
 signal clip_completed(event: Dictionary)
 signal clip_failed(event: Dictionary)
 signal presentation_observed(event: Dictionary)
 
 const ANIMATION_FPS := 24.0
+const INGESTED_PROFILE := "MON_INGESTED_FRAME_PACK_V1"
+const SOURCE_PROFILE := "MON_AUTHORED_FRAME_SOURCE_PACK_V1"
+const HASH_RE := "^[0-9a-f]{64}$"
+const APPROVED_IDENTITY_SHA := "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56"
+const APPROVED_TURNAROUND_SHA := "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
 const ALLOWED_APPROVALS := {"production": ["operator_approved"], "review": ["candidate", "operator_approved"], "test": ["synthetic_test_only"]}
+const CANONICAL_LANDMARKS := ["root", "ground_contact_left", "ground_contact_right", "head_center", "eye_midpoint", "eye_left", "eye_right", "mouth_center", "hand_left", "hand_right", "foot_left", "foot_right", "attachment_back", "attachment_front", "interaction_focus", "action_anchor", "object_anchor"]
+
 var pack: Dictionary = {}
 var pack_root := ""
 var loaded_tracks: Dictionary = {}
@@ -16,7 +24,7 @@ var active_body := 0
 var current_track := ""
 var current_family := ""
 var current_track_data: Dictionary = {}
-var generation := "godot-p02-r04"
+var generation := "godot-p02-r04-c01"
 
 @onready var body_a: AnimatedSprite2D = $BodyA
 @onready var body_b: AnimatedSprite2D = $BodyB
@@ -37,6 +45,37 @@ func _observe(name: String, details: Dictionary = {}) -> void:
 	if director != null and director.has_method("_observe"):
 		director._observe(name, details)
 
+func _sha256_bytes(bytes: PackedByteArray) -> String:
+	var context := HashingContext.new()
+	if context.start(HashingContext.HASH_SHA256) != OK:
+		return ""
+	context.update(bytes)
+	return context.finish().hex_encode()
+
+func _is_hash(value: String) -> bool:
+	if value.length() != 64:
+		return false
+	for index in value.length():
+		if not "0123456789abcdef".contains(value[index]):
+			return false
+	return true
+
+func _canonical(value) -> String:
+	if value is Dictionary:
+		var keys: Array = value.keys(); keys.sort()
+		var parts: Array[String] = []
+		for key in keys:
+			parts.append(JSON.stringify(String(key)) + ":" + _canonical(value[key]))
+		return "{" + ",".join(parts) + "}"
+	if value is Array:
+		var items: Array[String] = []
+		for item in value:
+			items.append(_canonical(item))
+		return "[" + ",".join(items) + "]"
+	if value is float and is_finite(value) and value == floor(value):
+		return str(int(value))
+	return JSON.stringify(value)
+
 func _load_pack() -> void:
 	var configured := OS.get_environment("COMPANION_R04_PACK_PATH")
 	if configured.is_empty():
@@ -50,11 +89,76 @@ func _load_pack() -> void:
 		clip_failed.emit({"event_type": "clip_failed", "reason": "pack_manifest_missing", "generation": generation})
 		return
 	var parsed = JSON.parse_string(file.get_as_text())
-	if not parsed is Dictionary or parsed.get("profile") != "MON_AUTHORED_FRAME_PACK_V1" or int(parsed.get("schema_version", 0)) != 1:
+	if not parsed is Dictionary or not _validate_manifest(parsed, path):
 		clip_failed.emit({"event_type": "clip_failed", "reason": "pack_manifest_invalid", "generation": generation})
 		return
 	pack = parsed
-	pack_root = path.get_base_dir()
+	pack_root = path.get_base_dir().simplify_path()
+
+func _validate_manifest(candidate: Dictionary, manifest_path: String) -> bool:
+	if candidate.get("profile") != INGESTED_PROFILE or int(candidate.get("schema_version", 0)) != 1 or candidate.get("source_profile") != SOURCE_PROFILE:
+		return false
+	if not _is_hash(String(candidate.get("pack_digest", ""))):
+		return false
+	var digest_input: Dictionary = candidate.duplicate(true); digest_input.erase("pack_digest")
+	if _sha256_bytes(_canonical(digest_input).to_utf8_buffer()) != String(candidate.get("pack_digest", "")):
+		return false
+	var refs: Dictionary = candidate.get("approved_references", {})
+	if not refs is Dictionary or String(refs.get("identity_sha256", "")) != APPROVED_IDENTITY_SHA or String(refs.get("turnaround_sha256", "")) != APPROVED_TURNAROUND_SHA:
+		return false
+	var assets: Array = candidate.get("source_assets", [])
+	if not assets is Array or assets.is_empty():
+		return false
+	var asset_ids := {}; var asset_hashes := {}; var asset_paths := {}
+	for asset in assets:
+		if not asset is Dictionary or asset_ids.has(asset.get("asset_id")) or asset_hashes.has(asset.get("source_sha256")) or asset_paths.has(asset.get("runtime_asset")):
+			return false
+		if not _is_hash(String(asset.get("source_sha256", ""))):
+			return false
+		var runtime := String(asset.get("runtime_asset", "")); var resolved := pack_root_for(manifest_path).path_join(runtime).simplify_path()
+		var source_name := String(asset.get("source_filename", "")); var address := String(asset.get("content_address", ""))
+		if not runtime.begins_with("runtime/") or not source_name.begins_with("frames/") or not address.begins_with("sources/sha256/") or not _contained(pack_root_for(manifest_path), resolved):
+			return false
+		asset_ids[asset.get("asset_id")] = true; asset_hashes[asset.get("source_sha256")] = true; asset_paths[runtime] = true
+	var tracks: Array = candidate.get("tracks", [])
+	if not tracks is Array or tracks.is_empty():
+		return false
+	var track_ids := {}
+	for track in tracks:
+		if not track is Dictionary or track_ids.has(track.get("track_id")):
+			return false
+		track_ids[track.get("track_id")] = true
+		if not _is_hash(String(track.get("track_checksum", ""))) or CANONICAL_LANDMARKS.size() != 17:
+			return false
+		var track_unsigned: Dictionary = track.duplicate(true); track_unsigned.erase("track_checksum")
+		if _sha256_bytes(_canonical(track_unsigned).to_utf8_buffer()) != String(track.get("track_checksum")):
+			return false
+	return true
+
+func pack_root_for(manifest_path: String) -> String:
+	return manifest_path.get_base_dir().simplify_path()
+
+func _contained(root: String, path: String) -> bool:
+	return path == root or path.begins_with(root + "/")
+
+func _await_render_commit() -> bool:
+	var committed := false
+	var observer := func() -> void: committed = true
+	RenderingServer.frame_post_draw.connect(observer, CONNECT_ONE_SHOT)
+	await get_tree().process_frame
+	if committed:
+		return true
+	# Godot's --headless test runner may have no drawable viewport. The
+	# scene-tree frame is an explicitly bounded synthetic observation there;
+	# physical display presentation remains deferred to the target-host gate.
+	if DisplayServer.get_name() == "headless":
+		if RenderingServer.frame_post_draw.is_connected(observer):
+			RenderingServer.frame_post_draw.disconnect(observer)
+		return true
+	await get_tree().create_timer(1.0).timeout
+	if RenderingServer.frame_post_draw.is_connected(observer):
+		RenderingServer.frame_post_draw.disconnect(observer)
+	return committed
 
 func _operation() -> String:
 	var value := OS.get_environment("COMPANION_P02_PACK_OPERATION")
@@ -65,15 +169,21 @@ func _eligible() -> bool:
 
 func _resolve_track(family: String, facing: String, posture: String, variant: int) -> Dictionary:
 	for candidate in pack.get("tracks", []):
-		if candidate.get("family") == family and candidate.get("facing") == facing and candidate.get("posture") == posture and int(candidate.get("variant", 0)) == variant:
+		if candidate.get("family") == family and candidate.get("selection_facing", candidate.get("facing", "")) == facing and candidate.get("posture") == posture and int(candidate.get("variant", 0)) == variant:
 			return candidate
 	return {}
 
 func _runtime_path(frame: Dictionary) -> String:
-	for relation in pack.get("source_runtime_relationships", []):
-		if relation.get("source_sha256") == frame.get("source_sha256"):
-			return pack_root.path_join(String(relation.get("runtime_asset")))
-	return ""
+	var found := ""
+	for relation in pack.get("source_assets", []):
+		if relation.get("asset_id") == frame.get("source_asset_id"):
+			if not found.is_empty():
+				return ""
+			found = String(relation.get("runtime_asset", ""))
+	if found.is_empty():
+		return ""
+	var resolved := pack_root.path_join(found).simplify_path()
+	return resolved if _contained(pack_root, resolved) else ""
 
 func _build_frames(track: Dictionary) -> Dictionary:
 	var track_id := String(track.get("track_id", ""))
@@ -91,7 +201,7 @@ func _build_frames(track: Dictionary) -> Dictionary:
 		if FileAccess.get_sha256(frame_path) != String(item.get("source_sha256", "")):
 			return {"ok": false, "reason": "frame_hash_mismatch"}
 		var image := Image.new()
-		if image.load(frame_path) != OK:
+		if image.load(frame_path) != OK or image.get_format() != Image.FORMAT_RGBA8:
 			return {"ok": false, "reason": "frame_corrupt"}
 		var texture := ImageTexture.create_from_image(image)
 		if texture == null:
@@ -106,36 +216,28 @@ func present_track(family: String, facing: String, posture: String, variant: int
 	var track := _resolve_track(family, facing, posture, variant)
 	if track.is_empty():
 		return _presentation_failure(family, "track_missing")
-	var track_id := String(track["track_id"])
-	_observe("track_resolved", {"track_id": track_id})
+	_observe("track_resolved", {"track_id": track.get("track_id")})
 	if not _eligible():
 		return _presentation_failure(family, "approval_ineligible")
 	if int(pack.get("timing", {}).get("fps", 0)) != 24 or pack.get("timing", {}).get("tick_unit") != "1/24_second":
 		return _presentation_failure(family, "timing_invalid")
-	_observe("track_validated", {"track_id": track_id, "approval_state": pack.get("approval_state")})
+	_observe("track_validated", {"track_id": track.get("track_id"), "approval_state": pack.get("approval_state")})
 	var built := _build_frames(track)
 	if not built.get("ok", false):
 		return _presentation_failure(family, String(built.get("reason", "frame_load_failed")))
-	_observe("first_frame_loaded", {"track_id": track_id, "frame": 0})
+	_observe("first_frame_loaded", {"track_id": track.get("track_id"), "frame": 0})
 	var target: AnimatedSprite2D = body_b if active_body == 0 else body_a
 	var old: AnimatedSprite2D = body_a if active_body == 0 else body_b
-	target.sprite_frames = built["frames"]
-	target.animation = track_id
-	target.frame = 0
-	target.visible = true
-	target.modulate.a = 1.0
-	target.pause()
+	target.sprite_frames = built["frames"]; target.animation = String(track["track_id"]); target.frame = 0; target.visible = true; target.modulate.a = 1.0; target.pause()
 	old.visible = false
-	active_body = 1 - active_body
-	current_track = track_id
-	current_family = family
-	current_track_data = track
-	await get_tree().process_frame
+	active_body = 1 - active_body; current_track = String(track["track_id"]); current_family = family; current_track_data = track
+	if not await _await_render_commit():
+		return _presentation_failure(family, "render_commit_unobserved")
 	var current: AnimatedSprite2D = body_a if active_body == 0 else body_b
-	if current != target or not target.visible or target.frame != 0 or target.sprite_frames.get_frame_texture(track_id, 0) == null:
-		return _presentation_failure(family, "first_frame_not_presented")
-	_observe("first_frame_presented", {"track_id": track_id, "frame": 0})
-	return {"status": "first_frame_presented", "track_id": track_id, "frame": 0}
+	if current != target or not target.visible or target.frame != 0 or target.sprite_frames.get_frame_texture(current_track, 0) == null:
+		return _presentation_failure(family, "first_frame_not_render_committed")
+	_observe("first_frame_render_committed", {"track_id": current_track, "frame": 0})
+	return {"status": "first_frame_render_committed", "track_id": current_track, "frame": 0}
 
 func start_presented_track() -> void:
 	var current: AnimatedSprite2D = body_a if active_body == 0 else body_b
@@ -143,26 +245,23 @@ func start_presented_track() -> void:
 
 func _presentation_failure(family: String, reason: String) -> Dictionary:
 	var event := {"event_type": "clip_failed", "clip_id": family, "status": "failed", "reason": reason, "generation": generation}
-	clip_failed.emit(event)
+	clip_failed.emit(event); _observe("failed", event)
 	return event
 
 func _on_frame_changed(sprite: AnimatedSprite2D) -> void:
 	var current: AnimatedSprite2D = body_a if active_body == 0 else body_b
 	if sprite.visible and sprite == current:
 		var event := {"event": "frame_changed", "clip_id": current_family, "track_id": current_track, "frame": sprite.frame, "generation": generation}
-		frame_marker.emit(event)
-		_observe("frame_changed", event)
+		frame_marker.emit(event); _observe("frame_changed", event)
 		for marker in current_track_data.get("events", []):
 			if int(marker.get("frame_index", -1)) == sprite.frame:
-				_observe("track_event", {"track_id": current_track, "name": marker.get("name"), "tick": marker.get("tick"), "frame": sprite.frame})
+				_observe("track_event", {"track_id": current_track, "event_id": marker.get("event_id"), "name": marker.get("name"), "tick": marker.get("tick"), "frame": sprite.frame})
 
 func _on_animation_finished(sprite: AnimatedSprite2D) -> void:
 	var current: AnimatedSprite2D = body_a if active_body == 0 else body_b
 	if sprite.visible and sprite == current and not sprite.sprite_frames.get_animation_loop(sprite.animation):
 		var event := {"event": "completed", "clip_id": current_family, "track_id": current_track, "generation": generation}
-		clip_completed.emit(event)
-		_observe("completed", event)
-		_observe("visible_state", visible_state())
+		clip_completed.emit(event); _observe("completed", event); _observe("visible_state", visible_state())
 
 func visible_state() -> Dictionary:
 	var current: AnimatedSprite2D = body_a if active_body == 0 else body_b

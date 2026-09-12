@@ -117,3 +117,17 @@ The Research Phase 01 Notion hierarchy contains the project's research evidence 
   then permits `started`. No external dependency or art tool was adopted.
 - Recheck: before changing Godot version, image import mode, timing semantics,
   or the presentation acknowledgment boundary.
+
+## COMPANION-P02-EMBODIMENT-001-R04-C01 — authored source contract (2026-09-11)
+
+- Sources: official [W3C PNG Third Edition](https://www.w3.org/TR/png-3/),
+  [Godot RenderingServer](https://docs.godotengine.org/en/4.7/classes/class_renderingserver.html),
+  [Godot SpriteFrames](https://docs.godotengine.org/en/4.7/classes/class_spriteframes.html),
+  and [Godot AnimatedSprite2D](https://docs.godotengine.org/en/4.7/classes/class_animatedsprite2d.html).
+- Disposition: `REFERENCE`; no new dependency or art-authoring tool adopted.
+- Material result: source PNGs are checked from their actual signature, IHDR,
+  bit depth, color type, sRGB signalling, alpha, perimeter, and safety region;
+  source bytes remain immutable while CAS/runtime copies are derived. Godot's
+  render-commit observation is separated from physical display presentation.
+- Recheck: before changing the `MON_AUTHORED_FRAME_SOURCE_PACK_V1` profile,
+  PNG acceptance policy, or Godot first-frame acknowledgment boundary.

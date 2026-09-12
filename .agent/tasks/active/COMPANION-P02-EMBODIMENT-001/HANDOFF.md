@@ -224,3 +224,18 @@ The inherited Phase 01 exact-head run must also complete successfully before
 external handoff. PR #9 remains draft/open/unmerged and Issue #8 remains open.
 No visual approval is requested. Subject to final exact-head validation and
 publication, the bounded status is `READY_FOR_ARCHITECT_FRAME_PACK`.
+
+## R04-C01 handoff
+
+Review 05 is addressed by the source/ingested/receipt contract split and the
+strongly typed authored-frame boundary documented in `R04_C01_CONTRACT.md`.
+The Architect landing request is machine-checkable, while the only generated
+pack is the synthetic `synthetic_r04_test_v1` calibration fixture. The intake
+proves source-to-CAS/runtime byte equality and atomic publication; Rust consumes
+the actual ingested `pack.json`; Godot validates the derived pack and observes
+`first_frame_render_committed` before the director emits `started`. Negative
+cases cover malformed source, hash, approval, landmark, contact, timing/event,
+duplicate-asset, and missing-sRGB inputs. The result is bounded engineering
+evidence only. After exact-head checks and publication, report exactly
+`READY_FOR_ARCHITECT_FRAME_PACK`, leave PR #9 draft/open/unmerged and Issue #8
+open, and stop for Architect review.

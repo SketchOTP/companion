@@ -144,3 +144,15 @@ complete, the bounded handoff status is `READY_FOR_ARCHITECT_FRAME_PACK`.
 No Architect-authored production frame pack, accepted body construction,
 approved motion language, production embodiment, visual aliveness, or Phase 03+
 capability exists. R04 establishes useful synthetic intake/runtime evidence only.
+
+## Current routing — R04-C01 (2026-09-11)
+
+Architect Review 05 requires a narrow authored-frame contract correction on
+`codex/p02-embodiment-001`, after normal merge of `origin/main` at
+`658fa98defa84409e88c5ea6323579dd6c574057` (merge commit
+`92d7ffe7f7038a5a591f2c6bf973e1e8bb54f322`). Source, ingested, and receipt
+documents are separate; facing, landmark, identity, PNG, timing, event,
+atomic-publication, Rust, and Godot gates are fail-closed. Only synthetic test
+geometry is generated. Protected primary/secondary Graft files remain
+untouched. Phase 01 remains accepted, Phase 02 remains active/unaccepted, and
+the bounded result is `READY_FOR_ARCHITECT_FRAME_PACK` without visual approval.

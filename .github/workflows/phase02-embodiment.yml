@@ -50,6 +50,8 @@ jobs:
           python3 scripts/check_contract_types.py
           python3 experiments/p02-embodiment/scripts/validate_r04_intake.py --out "$RUNNER_TEMP/intake-validation"
       - name: Rust regression and actual generated-pack round trip
+        env:
+          RUSTUP_TOOLCHAIN: 1.98.1
         run: |
           set -euo pipefail
           rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
@@ -74,6 +76,8 @@ jobs:
           grep -q '"status": "PASS"' "$RUNNER_TEMP/godot-r04.log"
           grep -q '"status": "PASS"' "$RUNNER_TEMP/godot-identity.log"
       - name: Generate and validate sanitized evidence
+        env:
+          RUSTUP_TOOLCHAIN: 1.98.1
         run: |
           set -euo pipefail
           python3 experiments/p02-embodiment/scripts/run_r04_evidence.py --out "$RUNNER_TEMP/r04-results" --godot "$GODOT_BIN"
@@ -86,7 +90,13 @@ jobs:
           ! rg -nI '(BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|api[_-]?key\s*[:=]\s*[A-Za-z0-9]{16,}|/home/[^ /]+|/srv/[^ /]+)' \
             assets/source/p02/architect-frame-request-v1 \
             contracts/fixtures/mon-authored-frame-pack-v1.json \
+            contracts/fixtures/mon-authored-frame-source-pack-v1.json \
+            contracts/fixtures/mon-ingested-frame-pack-v1.json \
+            contracts/fixtures/mon-authored-frame-intake-receipt-v1.json \
             contracts/schemas/mon-authored-frame-pack-v1.schema.json \
+            contracts/schemas/mon-authored-frame-source-pack-v1.schema.json \
+            contracts/schemas/mon-ingested-frame-pack-v1.schema.json \
+            contracts/schemas/mon-frame-intake-receipt-v1.schema.json \
             crates/foundation-core/src/contracts.rs \
             crates/foundation-core/src/bin/validate-authored-pack.rs \
             experiments/p02-embodiment/results/r04 \
@@ -105,6 +115,10 @@ jobs:
             ${{ runner.temp }}/godot-r04.log
             ${{ runner.temp }}/godot-identity.log
             assets/source/p02/architect-frame-request-v1
-            contracts/schemas/mon-authored-frame-pack-v1.schema.json
-            contracts/fixtures/mon-authored-frame-pack-v1.json
+            contracts/schemas/mon-authored-frame-source-pack-v1.schema.json
+            contracts/schemas/mon-ingested-frame-pack-v1.schema.json
+            contracts/schemas/mon-frame-intake-receipt-v1.schema.json
+            contracts/fixtures/mon-authored-frame-source-pack-v1.json
+            contracts/fixtures/mon-ingested-frame-pack-v1.json
+            contracts/fixtures/mon-authored-frame-intake-receipt-v1.json
           if-no-files-found: error

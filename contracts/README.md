@@ -21,3 +21,12 @@ drawings, landmarks, timing, transitions, and overlays, not organism state or
 care policy. `MonAnimationClip-v1` uses a fixed 24 Hz integer tick grid,
 forbids root motion, rejects unknown fields, and binds every pack to a SHA-256
 checksum.
+
+## R04-C01 source/derived split
+
+The earlier combined `MON_AUTHORED_FRAME_PACK_V1` schema and fixture remain
+historical compatibility evidence only; they are not an intake or runtime
+fallback. New authored material must use `MON_AUTHORED_FRAME_SOURCE_PACK_V1`.
+Intake emits `MON_INGESTED_FRAME_PACK_V1` and
+`MON_FRAME_INTAKE_RECEIPT_V1` separately, with runtime relationships and
+content addresses confined to the derived document/receipt.

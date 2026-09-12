@@ -452,3 +452,11 @@ gate fail-closed on every R04 source, result, workflow, and active-state file,
 remove new hard-coded private paths, and preserve older records rather than
 rewriting them to satisfy a new scope. Hosted run `34655914553` exposed this
 distinction; `34656090767` verified the corrected gate.
+
+## 2026-09-11 — Bind authored source before derivative runtime
+
+An authored-frame landing contract must not require runtime content addresses,
+must represent changing facing and occluded landmarks explicitly, and must
+reject ambiguous reuse. Keep source bytes immutable and derive CAS/runtime
+relationships only during staged intake. Synthetic geometry can test these
+boundaries, but cannot stand in for Architect-authored character pixels.

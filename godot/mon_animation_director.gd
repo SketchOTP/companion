@@ -7,7 +7,7 @@ signal intent_completed(result: Dictionary)
 signal intent_degraded(result: Dictionary)
 signal event_observed(event: Dictionary)
 
-const VERSION := "MonAnimationDirector-r04"
+const VERSION := "MonAnimationDirector-r04-c01"
 var deterministic_seed: int = 17
 var sequence: int = 0
 var avatar: Node
@@ -27,9 +27,9 @@ func request_intent(family: String, _priority: int = 0, _interruptible: bool = t
 	if avatar == null or not avatar.has_method("present_track"):
 		return _fail(family, "avatar_unavailable")
 	var result: Dictionary = await avatar.present_track(family, facing, posture, variant)
-	if result.get("status") != "first_frame_presented":
+	if result.get("status") != "first_frame_render_committed":
 		return _fail(family, String(result.get("reason", "presentation_failed")))
-	var started := _result("started", family, "first_frame_observed")
+	var started := _result("started", family, "first_frame_render_committed")
 	started["track_id"] = result["track_id"]
 	started["frame"] = 0
 	intent_started.emit(started)

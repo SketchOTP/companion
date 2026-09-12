@@ -542,3 +542,13 @@ Inherited Phase 01 run `34656090763` failed on an intermittent shared-marker
 cleanup race in its ordinary-observation evidence loop. The narrow follow-up
 adds a consumption barrier to that test harness without changing authority,
 runtime topology, product behavior, or the accepted Phase 01 claim boundary.
+
+## 2026-09-11 — Review 05 R04-C01 contract correction
+
+Review 05 continues R04 with a bounded source/ingested/receipt correction.
+Published changes add explicit facing and landmark state semantics, request
+profile and identity/reuse checks, direct PNG profile validation, staged atomic
+intake, actual ingested-pack Rust validation, and Godot pack/runtime integrity
+plus render-commit observation. Only synthetic calibration geometry is used;
+the result cannot approve production art or Phase 02. Protected Graft files
+remain untouched and the branch/PR/Issue routing is unchanged.

@@ -670,3 +670,12 @@ ordinary-observation handoff race. The evidence harness now waits for both the
 exact persisted event and removal of the shared marker before proceeding. The
 failure remains historical evidence and the final branch is not ready until a
 new exact-head Phase 01 run succeeds.
+
+## 2026-09-11 — Review 05 R04-C01 in progress
+
+The previous R04 result was superseded because the authored source contract did
+not truthfully encode orientation endpoints, occluded landmarks, request
+completeness, PNG profile, reuse, or atomic publication. The correction adds
+three explicit contracts and a synthetic-only fail-closed intake/runtime gate.
+No production art or Phase 02 acceptance is claimed; final bounded handoff is
+`READY_FOR_ARCHITECT_FRAME_PACK` after exact-head validation.

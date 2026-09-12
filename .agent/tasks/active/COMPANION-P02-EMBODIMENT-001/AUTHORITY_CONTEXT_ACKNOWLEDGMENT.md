@@ -103,3 +103,21 @@ staged, or committed. `origin/main` at
 `c06feea4966294dd741c740d2b8ccfd4443abcbd` merged normally as
 `928ba4b8e52b8cadb9c8861ad066d2d8a91366a4`. Retrieval confidence is
 `ADEQUATE`; R04 execution is authorized by this preflight: `YES`.
+
+## Architect Review 05 / R04-C01 delta acknowledgment — 2026-09-11
+
+Review 05 and its repository/Notion directive were reconciled before editing.
+The reviewed task head was `ee2e47595271777bfbb253a6639c6ebac7198a1b` and
+`origin/main` was `658fa98defa84409e88c5ea6323579dd6c574057`; the latter was
+merged normally into this worktree as `92d7ffe7f7038a5a591f2c6bf973e1e8bb54f322`.
+Live authority records 56 ADRs and 58 evidence records for this correction.
+The source/ingested/receipt split, typed facing and landmark semantics, atomic
+intake, and render-commit boundary are now the governing R04-C01 contract.
+
+Retrieval confidence remains `ADEQUATE`; the secondary worktree is local
+ext4/NVMe and protected Graft state (`.gitignore` and `.ignore`) remains
+untouched and un-staged. R02/R03 visual outputs remain rejected historical
+evidence. Codex creates no production character pixels and does not request
+operator visual approval. Architecture v1.0 remains adopted, Phase 01 remains
+accepted, Phase 02 remains active/unaccepted, and the bounded handoff status is
+`READY_FOR_ARCHITECT_FRAME_PACK` only after the fail-closed checks complete.

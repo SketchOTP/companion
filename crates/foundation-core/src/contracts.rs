@@ -15,6 +15,176 @@ pub struct EventEnvelope {
     pub payload: serde_json::Value,
 }
 
+/// R04-C01 source/ingested boundary types. These are deliberately separate:
+/// source manifests contain only Architect-supplied facts while ingested packs
+/// add content-addressed runtime relationships.
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum LandmarkState {
+    Visible,
+    Occluded,
+    NotApplicable,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct LandmarkObservation {
+    pub state: LandmarkState,
+    pub point: Option<LandmarkPoint>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct CanonicalLandmarks {
+    pub root: LandmarkObservation,
+    pub ground_contact_left: LandmarkObservation,
+    pub ground_contact_right: LandmarkObservation,
+    pub head_center: LandmarkObservation,
+    pub eye_midpoint: LandmarkObservation,
+    pub eye_left: LandmarkObservation,
+    pub eye_right: LandmarkObservation,
+    pub mouth_center: LandmarkObservation,
+    pub hand_left: LandmarkObservation,
+    pub hand_right: LandmarkObservation,
+    pub foot_left: LandmarkObservation,
+    pub foot_right: LandmarkObservation,
+    pub attachment_back: LandmarkObservation,
+    pub attachment_front: LandmarkObservation,
+    pub interaction_focus: LandmarkObservation,
+    pub action_anchor: LandmarkObservation,
+    pub object_anchor: LandmarkObservation,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct SourceAsset {
+    pub asset_id: String,
+    pub filename: String,
+    pub sha256: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct SourceFrame {
+    pub frame_id: String,
+    pub frame_index: u16,
+    pub filename: String,
+    pub sidecar_filename: String,
+    pub duration_ticks: u16,
+    pub source_asset_id: String,
+    pub source_sha256: String,
+    pub facing: Facing,
+    pub posture: Posture,
+    pub action_phase: Option<String>,
+    pub landmarks: CanonicalLandmarks,
+    pub provenance: FrameProvenance,
+    pub reuse_of: Option<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct SourceTrack {
+    pub track_id: String,
+    pub family: String,
+    pub selection_facing: Facing,
+    pub entry_facing: Facing,
+    pub exit_facing: Facing,
+    pub posture: Posture,
+    pub variant: u16,
+    pub entry_posture: Posture,
+    pub exit_posture: Posture,
+    pub completion: TrackCompletion,
+    pub frames: Vec<SourceFrame>,
+    pub contacts: Vec<ContactSpan>,
+    pub events: Vec<AnimationEvent>,
+    pub interruption_ranges: Vec<InterruptionRange>,
+    pub track_checksum: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct MonAuthoredFrameSourcePackV1 {
+    pub profile: String,
+    pub schema_version: u16,
+    pub pack_id: Uuid,
+    pub pack_revision: String,
+    pub body_revision: String,
+    pub developmental_stage: String,
+    pub approval_state: ApprovalState,
+    pub approved_references: ApprovedReferenceHashes,
+    pub provenance: PackProvenance,
+    pub timing: TimingProfile,
+    pub request_profile: String,
+    pub source_assets: Vec<SourceAsset>,
+    pub tracks: Vec<SourceTrack>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct IngestedAsset {
+    pub asset_id: String,
+    pub source_sha256: String,
+    pub source_filename: String,
+    pub content_address: String,
+    pub runtime_asset: String,
+    pub validation: serde_json::Value,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct MonIngestedFramePackV1 {
+    pub profile: String,
+    pub schema_version: u16,
+    pub source_profile: String,
+    pub source_pack_id: Uuid,
+    pub pack_revision: String,
+    pub body_revision: String,
+    pub developmental_stage: String,
+    pub approval_state: ApprovalState,
+    pub approved_references: ApprovedReferenceHashes,
+    pub provenance: PackProvenance,
+    pub timing: TimingProfile,
+    pub request_profile: String,
+    pub source_assets: Vec<IngestedAsset>,
+    pub tracks: Vec<SourceTrack>,
+    pub pack_digest: String,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct FrameIntakeObservation {
+    pub frame_id: String,
+    pub source_asset_id: String,
+    pub input_sha256: String,
+    pub stored_sha256: String,
+    pub runtime_sha256: String,
+    pub byte_identical: bool,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct IntakeValidation {
+    pub status: String,
+    pub errors: Vec<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct MonFrameIntakeReceiptV1 {
+    pub profile: String,
+    pub schema_version: u16,
+    pub operation: String,
+    pub validation_profile: String,
+    pub source_pack_sha256: String,
+    pub source_tree_sha256: String,
+    pub ingested_pack_sha256: String,
+    pub output_tree_sha256: String,
+    pub publication_state: String,
+    pub source_bytes_mutated: bool,
+    pub frames: Vec<FrameIntakeObservation>,
+    pub validation: IntakeValidation,
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Readiness {
     pub role: String,
@@ -261,6 +431,8 @@ pub struct ContactSpan {
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(deny_unknown_fields)]
 pub struct AnimationEvent {
+    #[serde(default)]
+    pub event_id: Option<String>,
     pub name: String,
     pub tick: u32,
     pub frame_index: u16,

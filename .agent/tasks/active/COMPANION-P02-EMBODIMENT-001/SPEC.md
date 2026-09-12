@@ -65,3 +65,16 @@ explicit Rust contract types, and fail-closed Godot presentation. Production
 packaging accepts only `operator_approved`; all R03 art is negative evidence.
 The required final status is `READY_FOR_ARCHITECT_FRAME_PACK` and does not
 accept Phase 02.
+
+## R04-C01 contract correction
+
+The source profile, ingested runtime profile, and intake receipt are separate
+records. Tracks distinguish selection, entry, and exit facing; frames carry
+typed facing/posture/action-phase values; and every canonical landmark has an
+explicit visible, occluded, or not-applicable state. The bounded request profile
+is enforced before intake, including family counts, endpoint facings, and event
+requirements. PNG structure/profile, IDs, source reuse, event ticks, contacts,
+and safety bounds are validated from source bytes. Intake is staged and
+atomically published into a fresh destination. Godot verifies the derived pack
+and observes a render commit before acknowledgment. Synthetic fixtures are test
+only; no production pixels are generated or approved by Codex.

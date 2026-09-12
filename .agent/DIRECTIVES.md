@@ -371,3 +371,13 @@ frame request, immutable content-addressed intake, explicit Rust types, and a
 Godot first-frame-before-started runtime gate. Only obvious synthetic graphics
 may be generated. Return `READY_FOR_ARCHITECT_FRAME_PACK`; do not request
 operator approval or accept Phase 02.
+
+## 2026-09-11 — Architect Review 05 / R04-C01
+
+Continue the same branch with a narrow authored-frame contract correction:
+separate source, ingested, and receipt records; represent entry/exit and
+per-frame facing plus occluded landmarks; enforce request completeness,
+identity/reuse, PNG profile, staged atomic intake, runtime integrity, and
+render-commit acknowledgment. Generate no production pixels. Preserve the
+R02/R03 failures and return `READY_FOR_ARCHITECT_FRAME_PACK` only after the
+fail-closed checks pass.

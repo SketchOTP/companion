@@ -49,6 +49,9 @@ def main():
             "mon-animation-track.schema.json": "mon-animation-track-v1.json",
             "mon-temporal-track-v2.schema.json": "mon-temporal-track-v2.json",
             "mon-authored-frame-pack-v1.schema.json": "mon-authored-frame-pack-v1.json",
+            "mon-authored-frame-source-pack-v1.schema.json": "mon-authored-frame-source-pack-v1.json",
+            "mon-ingested-frame-pack-v1.schema.json": "mon-ingested-frame-pack-v1.json",
+            "mon-frame-intake-receipt-v1.schema.json": "mon-authored-frame-intake-receipt-v1.json",
         }.get(path.name)
         if fixture_name:
             fixture_path = ROOT / "contracts/fixtures" / fixture_name

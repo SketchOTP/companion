@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://companion.local/schema/mon-frame-intake-receipt-v1.json",
+  "title": "MON_FRAME_INTAKE_RECEIPT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["profile", "schema_version", "operation", "validation_profile", "source_pack_sha256", "source_tree_sha256", "ingested_pack_sha256", "output_tree_sha256", "publication_state", "source_bytes_mutated", "frames", "validation"],
+  "properties": {
+    "profile": {"const": "MON_FRAME_INTAKE_RECEIPT_V1"}, "schema_version": {"const": 1}, "operation": {"enum": ["production", "review", "test"]}, "validation_profile": {"type": "string", "minLength": 1},
+    "source_pack_sha256": {"$ref": "#/$defs/sha256"}, "source_tree_sha256": {"$ref": "#/$defs/sha256"}, "ingested_pack_sha256": {"$ref": "#/$defs/sha256"}, "output_tree_sha256": {"$ref": "#/$defs/sha256"},
+    "publication_state": {"enum": ["staged", "published", "rejected"]}, "source_bytes_mutated": {"const": false},
+    "frames": {"type": "array", "items": {"$ref": "#/$defs/frame_receipt"}}, "validation": {"$ref": "#/$defs/validation"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "frame_receipt": {"type": "object", "additionalProperties": false, "required": ["frame_id", "source_asset_id", "input_sha256", "stored_sha256", "runtime_sha256", "byte_identical"], "properties": {"frame_id": {"type": "string"}, "source_asset_id": {"type": "string"}, "input_sha256": {"$ref": "#/$defs/sha256"}, "stored_sha256": {"$ref": "#/$defs/sha256"}, "runtime_sha256": {"$ref": "#/$defs/sha256"}, "byte_identical": {"const": true}}},
+    "validation": {"type": "object", "additionalProperties": false, "required": ["status", "errors"], "properties": {"status": {"enum": ["PASSED", "REJECTED"]}, "errors": {"type": "array", "items": {"type": "string"}}}}
+  }
+}

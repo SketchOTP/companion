@@ -2,22 +2,36 @@
   "frame_id": "walk_front_left_walking_01_000",
   "frame_index": 0,
   "filename": "walk__front_left__walking__v01__f000.png",
+  "sidecar_filename": "walk__front_left__walking__v01__f000.frame.json",
   "duration_ticks": 1,
+  "source_asset_id": "asset_walk_front_left_000",
   "source_sha256": "replace-with-exact-lowercase-sha256",
-  "root": {"x": 512, "y": 896},
+  "facing": "front_left",
+  "posture": "walking",
+  "action_phase": "left_contact",
   "landmarks": {
-    "root": {"x": 512, "y": 896},
-    "head": {"x": 512, "y": 256},
-    "eye_left": {"x": 448, "y": 320},
-    "eye_right": {"x": 576, "y": 320},
-    "hand_left": {"x": 320, "y": 560},
-    "hand_right": {"x": 704, "y": 560},
-    "foot_left": {"x": 448, "y": 896},
-    "foot_right": {"x": 576, "y": 896}
+    "root": {"state": "visible", "point": {"x": 512, "y": 896}},
+    "ground_contact_left": {"state": "visible", "point": {"x": 448, "y": 896}},
+    "ground_contact_right": {"state": "visible", "point": {"x": 576, "y": 896}},
+    "head_center": {"state": "visible", "point": {"x": 512, "y": 320}},
+    "eye_midpoint": {"state": "visible", "point": {"x": 512, "y": 410}},
+    "eye_left": {"state": "visible", "point": {"x": 468, "y": 410}},
+    "eye_right": {"state": "visible", "point": {"x": 556, "y": 410}},
+    "mouth_center": {"state": "visible", "point": {"x": 512, "y": 480}},
+    "hand_left": {"state": "visible", "point": {"x": 360, "y": 620}},
+    "hand_right": {"state": "visible", "point": {"x": 664, "y": 600}},
+    "foot_left": {"state": "visible", "point": {"x": 448, "y": 896}},
+    "foot_right": {"state": "visible", "point": {"x": 576, "y": 896}},
+    "attachment_back": {"state": "not_applicable", "point": null},
+    "attachment_front": {"state": "not_applicable", "point": null},
+    "interaction_focus": {"state": "visible", "point": {"x": 512, "y": 410}},
+    "action_anchor": {"state": "visible", "point": {"x": 512, "y": 620}},
+    "object_anchor": {"state": "not_applicable", "point": null}
   },
   "provenance": {
     "authored_by": "AI Architect",
     "method": "exact source-frame method",
     "source_revision": "replace-me-v1"
-  }
+  },
+  "reuse_of": null
 }

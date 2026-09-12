@@ -11,6 +11,7 @@ func _initialize() -> void:
 func _avatar(pack_path: String, operation: String) -> Dictionary:
 	OS.set_environment("COMPANION_R04_PACK_PATH", pack_path)
 	OS.set_environment("COMPANION_P02_PACK_OPERATION", operation)
+	var viewport := SubViewport.new(); viewport.name = "QualificationViewport"; viewport.size = Vector2i(64, 64); viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS; get_root().add_child(viewport)
 	var avatar := Node2D.new()
 	avatar.name = "MonAvatar"
 	avatar.set_script(AvatarScript)
@@ -50,16 +51,19 @@ func _run() -> void:
 	if result.get("status") != "started": errors.append("exact requested track did not start")
 	await create_timer(0.25).timeout
 	var names := observed.map(func(item): return item.get("event"))
-	var required_prefix := ["intent_received", "track_resolved", "track_validated", "first_frame_loaded", "first_frame_presented", "started"]
+	var required_prefix := ["intent_received", "track_resolved", "track_validated", "first_frame_loaded", "first_frame_render_committed", "started"]
 	if names.slice(0, required_prefix.size()) != required_prefix: errors.append("first-frame-before-started order mismatch: %s" % [names])
 	if not "frame_changed" in names: errors.append("frame_changed was not observed")
 	if not "track_event" in names: errors.append("track_event was not observed")
 	if not "completed" in names: errors.append("completion was not observed")
 	if not "visible_state" in names: errors.append("visible state was not observed")
 	var current: AnimatedSprite2D = avatar.get_node("BodyA") if avatar.active_body == 0 else avatar.get_node("BodyB")
-	if current.sprite_frames.get_animation_speed(result.get("track_id", "")) != 24.0: errors.append("animation FPS is not 24")
-	if current.sprite_frames.get_frame_duration(result.get("track_id", ""), 0) != 1.0: errors.append("tick weight 1 mismatch")
-	if current.sprite_frames.get_frame_duration(result.get("track_id", ""), 1) != 2.0: errors.append("tick weight 2 mismatch")
+	if result.get("status") == "started" and current.sprite_frames != null:
+		if current.sprite_frames.get_animation_speed(result.get("track_id", "")) != 24.0: errors.append("animation FPS is not 24")
+		if current.sprite_frames.get_frame_duration(result.get("track_id", ""), 0) != 1.0: errors.append("tick weight 1 mismatch")
+		if current.sprite_frames.get_frame_duration(result.get("track_id", ""), 1) != 2.0: errors.append("tick weight 2 mismatch")
+	else:
+		errors.append("requested track was not loaded before timing checks: %s" % [result])
 
 	var before_missing_started := names.count("started")
 	var missing: Dictionary = await director.request_intent("missing_track", 0, true, "front", "neutral", "neutral", "medium", 1)
