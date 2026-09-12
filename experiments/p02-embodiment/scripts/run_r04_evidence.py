@@ -12,6 +12,7 @@ import sys
 import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
+from PIL import Image
 
 sys_path = str(Path(__file__).resolve().parent)
 if sys_path not in sys.path:
@@ -37,6 +38,15 @@ def run(command: list[str], *, check: bool = False) -> subprocess.CompletedProce
 def parse_json(result: subprocess.CompletedProcess) -> dict:
     stream = result.stdout if result.returncode == 0 else result.stderr; return json.loads(stream.strip().splitlines()[-1])
 def tree(root: Path) -> dict[str, str]: return {p.relative_to(root).as_posix(): sha(p) for p in sorted(root.rglob("*")) if p.is_file()}
+
+
+def mutate_valid_png(path: Path) -> None:
+    """Change pixels while keeping a decodable PNG for hash-mismatch testing."""
+    with Image.open(path) as source:
+        image = source.convert("RGBA")
+        pixel = image.getpixel((0, 0))
+        image.putpixel((0, 0), (pixel[0] ^ 1, pixel[1], pixel[2], pixel[3]))
+        image.save(path, format="PNG", optimize=False)
 
 
 def main() -> int:
@@ -71,7 +81,7 @@ def main() -> int:
             corrupt = temp / "corrupt"
             shutil.copytree(intake_dir, corrupt)
             frame = corrupt / "runtime/frames/neutral_construction__front__neutral__v01__f000.png"
-            data = bytearray(frame.read_bytes()); data[100] ^= 1; frame.write_bytes(data)
+            mutate_valid_png(frame)
             # All Godot invocations use the same canonical runner.  The
             # import establishes the cold cache boundary; the two semantic
             # runs are consecutive cold/warm observations in one workspace.

@@ -70,7 +70,17 @@ jobs:
           set -euo pipefail
           cp -a "$RUNNER_TEMP/intake" "$RUNNER_TEMP/corrupt"
           FRAME="$RUNNER_TEMP/corrupt/runtime/frames/neutral_construction__front__neutral__v01__f000.png"
-          printf X | dd of="$FRAME" bs=1 seek=100 count=1 conv=notrunc status=none
+          python3 - "$FRAME" <<'PY'
+          from pathlib import Path
+          import sys
+          from PIL import Image
+          path = Path(sys.argv[1])
+          with Image.open(path) as source:
+              image = source.convert("RGBA")
+              pixel = image.getpixel((0, 0))
+              image.putpixel((0, 0), (pixel[0] ^ 1, pixel[1], pixel[2], pixel[3]))
+              image.save(path, format="PNG", optimize=False)
+          PY
           python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
             --godot "$GODOT_BIN" --out "$RUNNER_TEMP/godot-import" --mode import --label import
           python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
@@ -132,4 +142,4 @@ jobs:
             contracts/fixtures/mon-ingested-frame-pack-v1.json
             contracts/fixtures/mon-authored-frame-intake-receipt-v1.json
           if-no-files-found: warn
-          if: always()
+        if: always()
