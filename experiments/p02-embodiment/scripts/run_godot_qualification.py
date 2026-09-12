@@ -163,13 +163,20 @@ def run_qualification(
     cache = project / ".godot"
     cache_before = tree_digest(cache)
 
+    # Explicitly select Godot's documented Dummy audio driver for every
+    # qualification mode.  Import already implies Dummy under --headless,
+    # while semantic runs use Xvfb for rendering and would otherwise probe
+    # host ALSA devices and emit a genuine ERR_CANT_OPEN diagnostic before
+    # falling back.  This keeps the audio boundary deterministic without
+    # changing the host or suppressing an engine error.
+    audio_args = ["--audio-driver", "Dummy"]
     if mode == "import":
-        godot_args = ["--headless", "--path", str(project), "--editor", "--quit"]
+        godot_args = [*audio_args, "--headless", "--path", str(project), "--editor", "--quit"]
     else:
         selected_script = script or "r04_authored_pack_test.gd"
         if pack is None:
             raise ValueError("--pack is required for semantic mode")
-        godot_args = ["--path", str(project), "--script", f"res://{selected_script}"]
+        godot_args = [*audio_args, "--path", str(project), "--script", f"res://{selected_script}"]
         args = list(script_args or [])
         if not args:
             args = [f"--pack={pack}"]
