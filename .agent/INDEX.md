@@ -19,73 +19,86 @@
 
 - Active roadmap phase: `02 — Mon Body, Habitat, and Sprite Pipeline`
 - Phase acceptance: `NOT GRANTED`
-- Pre-art gate: `READY_FOR_ARCHITECT_FRAME_PACK — ACCEPTED`
-- Operator ruling: `CODEX CANDIDATE SPRITE AUTHORSHIP — ADOPTED`
-- Current directive: `COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-001`
-- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_10.md`
-- Notion Review 10: https://app.notion.com/p/3d9833cb27ff8179a60dc64d5ab6b5ac
-- Phase 02 directive: https://app.notion.com/p/3d8833cb27ff810e858acd029ac0ea05
-- Phase 02 report: https://app.notion.com/p/3d8833cb27ff817d9d01d754ec852c10
+- Current disposition: `R05-V1 REJECTED — PROFILE LOCOMOTION REPLAN ACTIVE`
+- Current directive: `COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-002`
+- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_11.md`
+- Notion Review 11: https://app.notion.com/p/3d9833cb27ff818c89ebe1aca70cf28b
+- Reviewed task head: `e529d8db3d76af6239c7c4856c49553fb4097979`
 - Pull request: `#9 — DRAFT / OPEN / UNMERGED`
 - GitHub issue: `#8 — OPEN`
 - Required branch: `codex/p02-embodiment-001`
 - Required worktree: clean local ext4/NVMe secondary worktree
 - Phase 03 and later: `CLOSED`
 
-## Completed gates
+## Accepted foundations
 
-- Canonical ingest: `.agent/tasks/completed/COMPANION-P00-INGEST-001/`
-- Linux environment evidence: `.agent/tasks/completed/COMPANION-P00-ENV-001/`
-- Architecture v1.0: `.agent/tasks/completed/COMPANION-P00-ARCH-001/`
-- Foundation qualification: `.agent/tasks/completed/COMPANION-P00-QUAL-001/`
-- Roadmap Phase 01 engineering foundation: `.agent/tasks/completed/COMPANION-P01-FOUNDATION-001/`
-- Phase 01 merge: `fc31717bba8c4833736d1792d7a5fe1c6cca4900`
-- Phase 02 pre-art engineering gate: Architect Review 09 / `READY_FOR_ARCHITECT_FRAME_PACK`
+- Roadmap Phase 00 governance/environment/architecture/qualification gates
+- Roadmap Phase 01 engineering foundation
+- Phase 02 pre-art intake/runtime/readiness engineering
+- Operator authorization for Codex candidate-art creation under Review 10
+- Review-timing and completion-aware preview correction
+- Photoroom RGBA cutout adapter as bounded offline authoring tooling
 
-## Current visual-authorship authority
+## Visual evidence status
 
-The operator expressly authorizes Codex and approved image-generation tooling to create candidate identity-critical Phase 02 sprite pixels, poses, in-betweens, overlays and animation frames from the exact approved references.
+Rejected:
 
-The operator remains final visual acceptance authority. The AI Architect remains strategic and phase-acceptance authority. Godot remains presentation-only.
+- complete R05-v1 candidate pack;
+- universal front-left idle/walk/listen presentation;
+- eight-drawing twitch gait;
+- head-shake turns;
+- rapid bob/flick acknowledgement;
+- green-edge-contaminated cutouts;
+- all replacement motion studies through task head `e529d8db...`.
 
-This supersedes the prior Review 04/09 restriction that Codex may not create production character pixels and supersedes the Review 09 Codex hold.
+No replacement pack is accepted.
 
-## Exact approved source authority
+## Adopted motion model
 
-- Identity:
-  `86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56`
-- Turnaround:
-  `3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4`
+- ordinary rest/social presence: `front`;
+- travel screen-left: full `left` profile;
+- travel screen-right: full `right` profile;
+- whole-body turns: explicit quarter/back progressions;
+- all eight neutral construction facings required;
+- unsupported facing/action combinations fail or route through authored connectors;
+- left/right production art reviewed independently; no blind mirror acceptance.
 
-## Historical R05-AUTHOR-001 package — rejected, current correction linked above
+## Locomotion grounding
 
-Generate and validate only the bounded review pack first:
+Source root remains `(512,896)` with no encoded screen translation. Stationary planted contacts use source-space drift. Translating locomotion uses composed world-space grounding:
 
-- neutral front;
-- neutral profile;
-- neutral front-left;
-- front-left idle/breathe, 6–8 frames;
-- front-left walk, 8 frames;
-- front → front-left orient, at least 4 frames;
-- front-left → front orient, at least 4 frames;
-- listen → acknowledge, 6 frames.
+```text
+world_contact = actor_root_world + scale * (source_contact - source_root)
+```
 
-Every source remains `candidate` until explicit operator approval.
+Declared planted world-contact drift is limited to 2 px. The new review harness must pair source tracks with a 24 Hz actor translation plan.
 
-Current bounded implementation: `assets/source/p02/r05/` and
-`experiments/p02-embodiment/results/r05/`. The selected package is 8 tracks / 33
-frame occurrences / 29 unique image hashes. Local engineering gates pass;
-hosted Phase 02 passed and published the candidate artifact. A duplicate
-inherited Phase 01 run exposed a supervisor control-read scheduling race; the
-bounded local correction is implemented, and corrected exact-head hosted
-workflow evidence is green twice for each workflow at
-`b5c9e9a5e88de5fa08ec462bc209e7f24c909f1e`. Visual acceptance remains
-pending.
+## Next bounded profile
 
-Codex may use image generation and reference-based image editing. It must still pass the exact selected frames through the accepted immutable source/ingested/receipt contracts, Rust validation, Godot playback and visual QA.
+`phase02_presence_lateral_motion_proof_v2`
 
-## Explicit boundaries
+Required proof:
 
-Do not infer Phase 02 completion, approved visual identity, approved motion language, visual aliveness, Openbox endurance, organism state, memory, perception, speech, learning, dreaming, care efficacy, production reliability, or Phase 03+ capability.
+- eight neutral construction facings;
+- 16–24 drawing front breathe, complete inhale/exhale;
+- 16–24 drawing front listen/acknowledge with hold and settle;
+- left profile: turn out, start, 16–24 drawing two-step walk loop, stop, return turn;
+- independently authored right profile equivalent;
+- normal and quarter-speed complete-action review;
+- gait-labeled strips, silhouette, edge-composite, source-contact and world-contact overlays;
+- actual source/ingested/receipt, Rust, Godot and CI validation.
 
-The primary SSHFS worktree's operator-owned `.gitignore` and `AGENTS.md` changes remain protected.
+Historical `phase02_bounded_motion_proof_v1` remains regression evidence and must not be weakened or relabeled.
+
+## Authority boundary
+
+- Operator: final visual acceptance authority.
+- AI Architect: strategic direction, evidence review and Phase 02 acceptance authority.
+- Codex/image-generation tooling: authorized to create candidate art, but may not self-approve it.
+- Godot: nonauthoritative presentation/runtime adapter.
+
+## Explicit boundary
+
+Phase 02 remains unaccepted. No production embodiment, visual aliveness, autonomous organism, autobiographical memory, perception, speech, learning, dreaming, caregiving efficacy, target endurance, reliability or Phase 03+ capability is established.
+
+The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` changes remain protected.

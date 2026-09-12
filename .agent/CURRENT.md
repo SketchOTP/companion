@@ -21,120 +21,92 @@ below are historical and do not override the operator's rejection.
 
 Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adopted. Roadmap Phase 01 remains accepted. Phase 03 and later remain closed.
 
-The bounded pre-art engineering gate remains accepted:
+R05-v1 and all replacement studies to date are **REJECTED** as visual evidence. The current motion model is governed by Architect Review 11.
 
-```text
-READY_FOR_ARCHITECT_FRAME_PACK
-```
+## Current authority
 
-Architect Review 10 records an explicit operator override authorizing Codex and approved image-generation tooling to create candidate Phase 02 production sprite pixels and animation frames from the exact approved references.
-
-## Active authority
-
-- Architect Review 10:
-  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_10.md`
-- Notion Review 10:
-  https://app.notion.com/p/3d9833cb27ff8179a60dc64d5ab6b5ac
-- Operator ruling in Architecture Decision Ledger: adopted
+- Architect Review 11:
+  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_11.md`
+- Notion Review 11:
+  https://app.notion.com/p/3d9833cb27ff818c89ebe1aca70cf28b
 - Current bounded Codex directive:
-  `COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-001`
-- Phase 02 directive:
-  https://app.notion.com/p/3d8833cb27ff810e858acd029ac0ea05
-- Phase 02 report:
-  https://app.notion.com/p/3d8833cb27ff817d9d01d754ec852c10
-- Pull request: `#9 — DRAFT / OPEN / UNMERGED`
-- GitHub issue: `#8 — OPEN`
+  `COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-002`
+- PR #9: `DRAFT / OPEN / UNMERGED`
+- Issue #8: `OPEN`
 - Branch: `codex/p02-embodiment-001`
 
-## Operator override
+## Operator-facing policy
 
-The prior `HOLD FOR ARCHITECT ASSET INPUT` is superseded.
+Ordinary rest, breathing, listening, acknowledgement and social presence default to `front`.
 
-Codex/image-generation tooling may now design and generate candidate sprite-sheet art, source poses, in-betweens, overlays and animation frames needed for Phase 02, provided they remain grounded in the exact approved references and are clearly marked `candidate` until operator approval.
+Screen-left locomotion uses true `left` profile. Screen-right locomotion uses true `right` profile. Quarter and back facings exist for deliberate whole-body turns/orientation and may not substitute for every action.
 
-Operator remains final visual authority. The AI Architect remains strategic/phase acceptance authority. Godot remains a nonauthoritative presentation adapter.
+All eight neutral construction facings are required: `front`, `front_right`, `right`, `back_right`, `back`, `back_left`, `left`, `front_left`.
+
+Left/right production art must be independently reviewed. Blind horizontal mirroring is not accepted.
+
+## Contact-coordinate policy
+
+`MON_FRAME_V1` source root remains fixed at `(512,896)` and source PNGs encode no world translation.
+
+For stationary clips, planted-contact drift is evaluated in source space. For translating locomotion, world grounding is evaluated after combining source landmarks with the 24 Hz actor/MonRoot translation plan:
+
+```text
+world_contact(t) = actor_root_world(t)
+                 + uniform_scale * (source_contact(t) - source_root)
+```
+
+During a declared planted span, composed world-contact drift must remain within 2 px. A support foot is not required to remain fixed relative to both source root and world. Contact spans may not be shortened to a single frame to make QA vacuous.
 
 ## Active objective
 
-Codex executes only `COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-001`:
+Codex executes `COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-002` only:
 
 1. merge current `origin/main` normally;
-2. use the exact approved identity and turnaround references;
-3. generate the bounded candidate review pack;
-4. preserve anatomy, silhouette, palette and rendering language;
-5. create real temporal idle, walk, orientation and listen/acknowledge motion;
-6. normalize selected source frames to `MON_FRAME_V1`;
-7. pass the exact candidate pack through source/ingested/receipt validation;
-8. run actual Rust and Godot consumption;
-9. publish directly accessible motion review artifacts;
-10. return for Architect and operator review before full-library scale.
+2. preserve R05-v1 and rejected-study evidence;
+3. create versioned request profile `phase02_presence_lateral_motion_proof_v2` without weakening v1;
+4. implement source-vs-world contact QA;
+5. produce eight-facing neutral construction candidates;
+6. gate generation on correct left/right gait key poses before in-betweens;
+7. produce front-facing breathe and listen/acknowledge;
+8. produce complete left and right front→quarter→profile turn/start/walk/stop→quarter→front actions;
+9. use transparent generation or approved Photoroom RGBA cutout tooling without green chroma production backgrounds;
+10. normalize promoted frames to `MON_FRAME_V1`;
+11. pass actual v2 source/ingested/receipt, Rust and Godot validation;
+12. publish complete-action normal/quarter-speed, strip, silhouette, edge, and contact review media;
+13. return for operator/Architect review before library scale.
 
-Do not expand to the complete 32-family/eight-direction library in this directive.
+## Motion requirements
 
-## Historical R05 candidate implementation state — superseded by rejection
+Profile walk keys must visibly include anatomical-left contact/down/passing/up and anatomical-right contact/down/passing/up before in-betweens. Swing feet clear the floor; support legs alternate; arms counter-swing; torso/head response stays bounded; hands keep exactly two fingers plus thumb; feet keep exactly three toes.
 
-The bounded candidate source pack now exists locally and is submitted for
-hosted validation and visual review. It contains eight requested tracks, 33
-frame occurrences, and 29 unique source hashes. The reciprocal orientation
-track deliberately reuses the same four authored poses in reverse order.
+Front breathing must show a complete inhale and exhale. Listen/acknowledge must show attention lead, a readable listening hold, acknowledgement and settle rather than a rapid repeated nod.
 
-All assets remain `candidate`; operator visual approval is `PENDING`. Local
-immutable intake, actual Rust 1.98.1 round-trip, exact Godot 4.7.2 cold/warm
-playback, rendered bound/contact checks, export/restore, and semantic tamper
-negatives pass. Hosted Phase 02 and artifact publication passed at candidate
-head `34e2a1ab48f4d9278caa50aded1c51fa12fce6b4`. One of two inherited Phase 01
-executions on that same head failed with a late control-socket `BrokenPipeError`
-while the other passed. The failure is retained; a bounded control-framing
-correction passes locally and requires new exact-head hosted evidence before
-handoff. Corrected candidate head
-`b5c9e9a5e88de5fa08ec462bc209e7f24c909f1e` subsequently passed both
-independent Phase 01 executions and both Phase 02 executions; the final
-publication reconciliation does not change executable behavior.
+## Retained engineering evidence
 
-## Exact source authority
+Retain:
 
-```text
-confident_purple_ghost_mascot.png
-SHA-256 86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56
+- accepted Phase 01 foundation;
+- C02/C03/C04 authored-frame intake/runtime/readiness engineering;
+- Review 10 Codex candidate-art authorization;
+- R05 review-timing correction;
+- completion-aware preview playback;
+- operator-authorized Photoroom cutout adapter and negative cutout evidence;
+- exact approved references and hashes;
+- all R05-v1/replacement negative results.
 
-purple_monster_turnaround_sheet.png
-SHA-256 3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4
-```
+No previous green CI result overrides the operator's visual rejection.
 
-## Historical bounded review pack — facing policy superseded above
+## Not accepted
 
-Required initial art:
-
-- neutral front construction;
-- neutral profile construction;
-- neutral front-left construction;
-- front-left idle/breathe: 6–8 frames;
-- front-left walk: 8 frames;
-- front → front-left orientation: at least 4 frames;
-- front-left → front orientation: at least 4 frames;
-- listen → acknowledge: 6 frames.
-
-All generated art remains candidate until explicit operator visual approval.
-
-## Accepted capability boundary
-
-Accepted now:
-
-- Phase 01 engineering foundation;
-- C02/C03 authored-frame intake/runtime engineering;
-- deterministic Phase 01 readiness qualification;
-- stable same-SHA hosted regression evidence;
-- `READY_FOR_ARCHITECT_FRAME_PACK` pre-art engineering gate;
-- operator authorization for Codex to create candidate Phase 02 sprite art.
-
-Not accepted:
-
-- operator-approved production character art;
-- approved construction or motion language;
-- Phase 02 completion;
+- operator-approved production art;
+- accepted construction or motion language;
 - visual aliveness;
+- complete 32-family/eight-direction library;
+- 10,000 live transition qualification;
 - Openbox endurance;
-- organism, autobiographical memory, learning, development, perception, speech, dreaming, care efficacy, security certification, production reliability, SLA, or Phase 03+ capability.
+- Phase 02 completion;
+- organism, autobiographical memory, perception, speech, learning, dreaming, care efficacy, production reliability or Phase 03+ capability.
 
 ## Protected work
 
