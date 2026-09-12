@@ -4,59 +4,56 @@
 
 Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adopted. Roadmap Phase 01 remains accepted. Phase 03 and later remain closed.
 
-PR #9 at reviewed head `1d7ea24295b505c6beb0f612a6b248a6f8d5edfb` is continued under:
+PR #9 at reviewed head `4263ae7cc085475e9b80f1c00615639ebbba679b` is continued under:
 
-- Directive: `COMPANION-P02-EMBODIMENT-001-R04-C03`
-- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_07.md`
-- Notion review: https://app.notion.com/p/3d9833cb27ff81109a7add09837f7b2b
+- Directive: `COMPANION-P02-EMBODIMENT-001-R04-C04`
+- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_08.md`
+- Notion review: https://app.notion.com/p/3d9833cb27ff81f5a5e6f29d53888e48
 - Issue #8: open
 - PR #9: draft, open, unmerged
 
-## Review 07 disposition
+## Review 08 disposition
 
-C02 semantics are retained as bounded local/hosted evidence:
+C03 is accepted within its bounded diagnostic/intake/runtime scope. Retain:
 
-- complete positive 8-track / 31-frame bounded synthetic pack;
-- request-profile alignment and exact event/endpoint semantics;
-- PNG V1 and sRGB validation;
-- reuse semantics;
-- fsync-backed staged publication and atomic rename;
-- actual generated-pack Rust validation;
-- local Godot render-boundary result;
-- local validator/tamper negatives;
-- Phase 01 hosted run `34667692938` success;
-- direct Phase 02 Godot gate success in hosted run `34667692926`.
+- exact ALSA diagnostic capture before correction;
+- explicit Godot Dummy-audio qualification;
+- one canonical Godot runner and channel classifier;
+- separate stdout/stderr/engine/Xvfb logs and hashes;
+- cold/warm Godot qualification;
+- fail-closed application-error policy;
+- always-published diagnostic artifacts;
+- exact final-head Phase 02 workflow `34671402258`: SUCCESS;
+- artifact `10290394916`, digest `sha256:d396c2213bfa68da0927380b85ea1bee499fd0dac95a10eacc1f90049a1b68d3`.
 
-`READY_FOR_ARCHITECT_FRAME_PACK` remains unaccepted because the same Phase 02 hosted run failed only in sanitized evidence validation with `unexpected Godot ERROR output`.
+`READY_FOR_ARCHITECT_FRAME_PACK` is not yet accepted because the final exact task head triggered Phase 01 run `34671402263`, which failed in `foundation_runtime_check.py` before later foundation checks.
 
 ## Decisive blocker
 
-The direct hosted Godot step and `run_r04_evidence.py` execute Godot separately with different diagnostic-capture semantics. The direct gate scans stdout-only files; the evidence runner captures stdout and stderr and found an `ERROR:`. The exact error line was not retained, and the failing workflow skipped artifact upload.
+The Phase 01 runtime probe waits for `supervisor.sock` and then samples health exactly once. The final failure observed the supervisor resident and all expected roles present, but `observed_ready=false` and `care_coverage=degraded`.
 
-The current evidence therefore cannot classify the line as wrapper noise or as a runtime defect. One narrow diagnostic-parity investigation is required.
+A control socket becoming available is not equivalent to all children completing startup. The health contract already exposes explicit readiness state. The qualification must wait for stable complete readiness rather than sample once immediately after socket creation.
 
 ## Active objective
 
-Codex executes only R04-C03:
+Codex executes only R04-C04:
 
-1. preserve C02 contract/intake semantics;
-2. create one canonical Godot evidence runner used by direct CI and evidence generation;
-3. separately capture Godot stdout, stderr, `--log-file`, Xvfb/xauth diagnostics, exit code, environment/render summary, and log hashes;
-4. retain exact Godot `ERROR:` lines;
-5. run identical cold and warm qualification invocations in one hosted workspace;
-6. diagnose the exact line before changing runtime code;
-7. publish diagnostics even when semantic validation fails;
-8. keep unknown Godot errors fail-closed;
-9. keep Phase 01 and Phase 02 CI green;
-10. rerun the green hosted result once before claiming readiness.
+1. preserve completed C02/C03 work;
+2. replace the one-shot readiness sample with bounded monotonic polling of explicit health state;
+3. require all expected roles healthy/ready and `care_coverage=synthetic`;
+4. require two consecutive complete-ready observations before success;
+5. retain a sanitized startup trace and fail closed on timeout or early supervisor exit;
+6. add delayed-ready, never-ready, and supervisor-exit synthetic tests;
+7. run complete Phase 01 verification;
+8. obtain one exact-head hosted Phase 01 success plus two same-head rerun successes;
+9. keep Phase 02 green on the same exact task head;
+10. return `READY_FOR_ARCHITECT_FRAME_PACK` only after that stability proof.
 
-No production character pixels or operator visual-review request are authorized in C03.
+No production character pixels or operator visual-review request are authorized in C04.
 
 ## External evidence basis
 
-- Godot supports `--log-file` for explicit output/error logging.
-- `xvfb-run -e` captures Xvfb/xauth diagnostics separately from the client process.
-- Unknown Godot `ERROR:` diagnostics remain failures until exact source evidence exists.
+Service readiness is distinct from process or socket existence. The authoritative Companion readiness values are the child `ready/state` fields and `care_coverage`, so the probe must wait on them rather than infer startup completion from endpoint creation.
 
 ## Protected work
 
@@ -64,4 +61,4 @@ The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` modific
 
 ## Capability boundary
 
-No Architect-authored production frame pack, accepted body construction, approved motion language, production embodiment, visual aliveness, or Phase 03+ capability exists. C02 establishes substantial bounded synthetic engineering evidence but not final frame-pack readiness.
+No Architect-authored production frame pack, accepted body construction, approved motion language, production embodiment, visual aliveness, or Phase 03+ capability exists. C03 establishes substantial bounded synthetic engineering evidence, but final pre-art readiness is blocked by inherited Phase 01 readiness-test nondeterminism.
