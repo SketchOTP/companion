@@ -509,3 +509,11 @@ health contract, monotonic bounded polling, and a stability requirement across
 separated samples. Synthetic delayed, never-ready, and early-exit cases should
 exercise the waiter itself so a one-shot race cannot be mistaken for a service
 regression.
+
+## 2026-09-12 — Same-head stability closes the readiness race
+
+A deterministic readiness predicate must survive repeated hosted execution on
+one immutable SHA. The initial run plus two same-head reruns all passed after
+the probe required two separated complete-health samples. The Phase 02 result
+was rechecked on that same SHA; this supports the handoff status only and does
+not promote any Phase 02 or production claim.

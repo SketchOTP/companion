@@ -343,3 +343,13 @@ Local exact Rust checks and the resident probe pass. The final handoff remains
 pending the required three same-head hosted Phase 01 passes and same-head Phase
 02 pass. No production art, operator visual approval, or Phase 02 acceptance is
 claimed.
+
+## R04-C04 handoff — complete
+
+Candidate SHA `e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b` passed hosted Phase 01
+initial run `34674883461` / job `103502845478`, rerun #1 job `103503853827`,
+and rerun #2 job `103504776796`. Phase 02 passed on the same SHA in run
+`34674883457` / job `103502845517`; artifact `10292635102` is published with
+digest `sha256:6efff4d21517c1983ddabfa86f9eaaf516ee60be0557625890d3ca7944f68fb8`.
+The exact bounded status is `READY_FOR_ARCHITECT_FRAME_PACK`. This does not
+accept Phase 02, approve visual identity, or authorize production art.

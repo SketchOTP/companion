@@ -73,3 +73,13 @@ samples separated by a nonzero interval, records a sanitized startup trace, and
 fails closed on timeout or supervisor exit. Deterministic delayed-ready,
 never-ready, and early-exit tests pass. Local Rust 1.98.1 checks and the actual
 resident probe pass; hosted same-head stability and publication remain required.
+
+## R04-C04 completion — 2026-09-12
+
+Candidate `e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b` passed hosted Phase 01
+run `34674883461` / job `103502845478`, same-head rerun #1 job `103503853827`,
+and same-head rerun #2 job `103504776796`. Phase 02 run `34674883457` / job
+`103502845517` passed on that exact SHA and published artifact `10292635102`
+(`sha256:6efff4d21517c1983ddabfa86f9eaaf516ee60be0557625890d3ca7944f68fb8`).
+The bounded handoff is `READY_FOR_ARCHITECT_FRAME_PACK`; Phase 02 remains
+active and unaccepted, with no production art or visual approval claimed.

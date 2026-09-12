@@ -196,3 +196,13 @@ from evidence. Retrieval confidence is `ADEQUATE`; C02/C03 semantics, Godot
 4.7.2, approved reference hashes, Architecture v1.0, and Phase 01 acceptance
 remain unchanged. No production art, host modification, dependency change,
 Phase 03 work, PR merge, or Issue #8 closure is authorized.
+
+## R04-C04 final authority acknowledgment
+
+The fixed readiness predicate was validated locally and on the hosted exact
+candidate SHA `e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b`. Phase 01 passed the
+initial run plus two same-head reruns; Phase 02 passed on the same SHA. The
+final bounded handoff is `READY_FOR_ARCHITECT_FRAME_PACK`. Architecture v1.0
+remains adopted, Phase 01 remains accepted, Phase 02 remains active and
+unaccepted, PR #9 remains draft/open/unmerged, Issue #8 remains open, and no
+production art or later-phase capability was created.

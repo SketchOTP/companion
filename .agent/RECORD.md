@@ -618,3 +618,15 @@ captures a bounded sanitized supervisor stderr tail. The positive delayed-ready
 test requires four scripted samples and passes only after the second complete
 sample. Never-ready and supervisor-exit cases return expected failures. No
 protected primary-worktree files were read or changed.
+
+## 2026-09-12 — R04-C04 final record
+
+Final candidate `e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b` passed the hosted
+Phase 01 workflow three times without changing the SHA: run `34674883461`
+(initial job `103502845478`, rerun #1 `103503853827`, rerun #2
+`103504776796`). Phase 02 run `34674883457` / job `103502845517` passed on
+the same SHA and published artifact `10292635102` with digest
+`sha256:6efff4d21517c1983ddabfa86f9eaaf516ee60be0557625890d3ca7944f68fb8`.
+The readiness correction is complete within scope. The handoff is
+`READY_FOR_ARCHITECT_FRAME_PACK`; Phase 02 remains active/unaccepted, PR #9
+remains draft/open/unmerged, and Issue #8 remains open.

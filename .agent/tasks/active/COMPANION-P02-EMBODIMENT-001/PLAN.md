@@ -149,3 +149,11 @@ unaccepted.
    hosted executions, then verify Phase 02 on that exact SHA.
 6. Publish the evidence and stop at `READY_FOR_ARCHITECT_FRAME_PACK`; do not
    generate production art or claim Phase 02 acceptance.
+
+## R04-C04 closeout
+
+Hosted Phase 01 initial plus two same-head reruns passed on
+`e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b`, and hosted Phase 02 passed on
+that exact SHA. The readiness race is closed within scope. Final status:
+`READY_FOR_ARCHITECT_FRAME_PACK`; stop for Architect review and do not generate
+production art.

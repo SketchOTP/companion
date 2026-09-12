@@ -169,3 +169,14 @@ are required, with sanitized startup timing and trace fields retained. The
 focused synthetic delayed-ready, never-ready, and supervisor-exit tests pass;
 the exact-head hosted Phase 01 triple-rerun and same-head Phase 02 result remain
 the publication gate. No production art or Phase 02 acceptance is claimed.
+
+## R04-C04 hosted closeout
+
+Candidate `e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b` passed Phase 01 three
+times on the same SHA: initial run `34674883461` / job `103502845478`, rerun
+#1 job `103503853827`, and rerun #2 job `103504776796`. Phase 02 run
+`34674883457` / job `103502845517` passed on that exact SHA and published
+artifact `10292635102` (`sha256:6efff4d21517c1983ddabfa86f9eaaf516ee60be0557625890d3ca7944f68fb8`).
+Readiness is `READY_FOR_ARCHITECT_FRAME_PACK` for bounded synthetic evidence
+only; Architecture v1.0 and Phase 01 remain adopted/accepted, while Phase 02,
+production art, and operator visual approval remain unaccepted.

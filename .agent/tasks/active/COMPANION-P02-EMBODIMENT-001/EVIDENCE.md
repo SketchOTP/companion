@@ -301,3 +301,17 @@ never-ready expected `FAIL` with `readiness_timeout`, and early supervisor exit
 expected `FAIL` with `supervisor_exited_before_stable_readiness`. The local Rust
 1.98.1 format, clippy, tests, and release build also pass. Full hosted exact-SHA
 stability evidence remains required before this handoff is accepted.
+
+## R04-C04 hosted exact-head evidence — 2026-09-12
+
+The fixed readiness gate passed the initial hosted Phase 01 run
+`34674883461` / job `103502845478`, same-head rerun #1 job `103503853827`,
+and same-head rerun #2 job `103504776796`, all on
+`e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b`. The exact same SHA passed Phase
+02 run `34674883457` / job `103502845517`; artifact `10292635102` was
+published with digest
+`sha256:6efff4d21517c1983ddabfa86f9eaaf516ee60be0557625890d3ca7944f68fb8`.
+Hosted evidence is E4 regression-protected for the readiness probe and E3
+target-tested for the bounded phase result. No Phase 02 acceptance, production
+art, operator visual approval, security certification, or reliability claim
+follows.

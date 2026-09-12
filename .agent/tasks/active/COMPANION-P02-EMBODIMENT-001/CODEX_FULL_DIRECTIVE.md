@@ -562,3 +562,12 @@ tests, run the complete inherited Phase 01 verification, and prove three
 same-SHA hosted Phase 01 passes plus a same-SHA Phase 02 pass. Do not alter
 C02/C03, generate production art, modify the protected primary worktree, merge
 PR #9, or close Issue #8.
+
+## C04 completion record — 2026-09-12
+
+The inherited readiness race was corrected with bounded monotonic health
+polling and two-sample stability. Hosted Phase 01 passed three times on the
+same SHA `e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b`; hosted Phase 02 also passed
+on that SHA. This record preserves the directive boundary: no production art,
+operator visual approval, Phase 02 acceptance, dependency adoption, or Phase
+03 work is claimed.

@@ -429,3 +429,13 @@ synthetic tests, run the complete inherited Phase 01 verification, and obtain
 three same-SHA hosted Phase 01 passes plus a same-SHA Phase 02 pass. Preserve
 C02/C03, do not generate production art, do not alter protected Graft files,
 and keep PR #9 draft/open/unmerged and Issue #8 open.
+
+## 2026-09-12 — C04 hosted closeout
+
+The readiness race correction passed the initial hosted Phase 01 run
+`34674883461` / job `103502845478`, same-head rerun #1 job `103503853827`,
+and same-head rerun #2 job `103504776796`, all on
+`e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b`. Phase 02 run `34674883457` /
+job `103502845517` passed on the same SHA. This closes the C04 readiness gate
+only and does not accept Phase 02 or authorize production art, visual approval,
+or later-phase work.

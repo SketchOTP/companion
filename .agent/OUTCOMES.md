@@ -745,3 +745,12 @@ startup trace. Delayed-ready, never-ready, and supervisor-exit synthetic tests
 pass. Local exact Rust checks and the actual resident probe pass; hosted
 same-head triple-rerun evidence remains the final gate. This is foundation
 evidence only.
+
+## 2026-09-12 — C04 exact-head stability
+
+The corrected readiness probe passed three consecutive hosted executions on
+the exact candidate SHA `e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b`: initial
+`34674883461` / job `103502845478`, rerun #1 job `103503853827`, and rerun #2
+job `103504776796`. The same SHA passed Phase 02 run `34674883457` / job
+`103502845517`. This is bounded qualification evidence; Phase 02 remains
+unaccepted and no production capability is claimed.
