@@ -14,10 +14,10 @@
 
 - Active roadmap phase: `02 — Mon Body, Habitat, and Sprite Pipeline`
 - Phase acceptance: `NOT GRANTED`
-- Active directive: `COMPANION-P02-EMBODIMENT-001-R04-C03`
-- Reviewed task head: `1d7ea24295b505c6beb0f612a6b248a6f8d5edfb`
-- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_07.md`
-- Notion review: https://app.notion.com/p/3d9833cb27ff81109a7add09837f7b2b
+- Active directive: `COMPANION-P02-EMBODIMENT-001-R04-C04`
+- Reviewed task head: `4263ae7cc085475e9b80f1c00615639ebbba679b`
+- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_08.md`
+- Notion review: https://app.notion.com/p/3d9833cb27ff81f5a5e6f29d53888e48
 - Phase 02 directive: https://app.notion.com/p/3d8833cb27ff810e858acd029ac0ea05
 - Phase 02 report: https://app.notion.com/p/3d8833cb27ff817d9d01d754ec852c10
 - Pull request: `#9 — DRAFT / OPEN / UNMERGED`
@@ -35,45 +35,44 @@
 - Roadmap Phase 01 foundation: `.agent/tasks/completed/COMPANION-P01-FOUNDATION-001/`
 - Phase 01 merge: `fc31717bba8c4833736d1792d7a5fe1c6cca4900`
 
-## Review 07 retained boundary
+## Review 08 retained boundary
 
 Retain as bounded engineering evidence:
 
-- exact references and hashes;
-- source/ingested/receipt contract split;
-- complete positive 8-track / 31-frame bounded synthetic pack;
-- request-profile, orientation, event, reuse, PNG and durable intake semantics;
-- actual generated-pack Rust consumption;
-- local Godot render-boundary result;
-- local result validator/tamper negatives;
-- hosted Phase 01 success;
-- direct hosted Phase 02 Godot step success.
+- complete C02 authored-frame synthetic pack and intake/runtime contract evidence;
+- canonical C03 Godot runner and log classifier;
+- exact historical ALSA diagnostic capture;
+- explicit Dummy-audio qualification;
+- cold/warm Godot qualification;
+- fail-closed application-error policy;
+- always-upload diagnostics;
+- exact final-head Phase 02 workflow `34671402258`: SUCCESS;
+- exact final-head Phase 02 artifact `10290394916`, digest `sha256:d396c2213bfa68da0927380b85ea1bee499fd0dac95a10eacc1f90049a1b68d3`.
 
-Do not accept:
+Do not accept yet:
 
-- `READY_FOR_ARCHITECT_FRAME_PACK`;
-- the hosted sanitized evidence result;
-- classification of the unknown Godot `ERROR:` line;
+- `READY_FOR_ARCHITECT_FRAME_PACK` on the final task head;
+- the inherited Phase 01 readiness regression gate as deterministic;
 - Phase 02.
 
 ## Decisive blocker
 
-Hosted Phase 02 run `34667692926` passed its direct Godot gate and failed only when the evidence runner re-ran Godot and captured an `ERROR:` from application stdout/stderr. The direct gate and evidence runner use different capture policies, and the exact error line was not retained. Artifact publication is skipped on validator failure.
+Final task head `4263ae7...` triggered Phase 01 run `34671402263`, which failed in `foundation_runtime_check.py` with the supervisor resident and all expected roles present but `observed_ready=false` and `care_coverage=degraded`.
 
-C03 therefore resolves diagnostic parity rather than reopening C02 semantics.
+The readiness probe waits for the control socket and then samples health once. Socket creation is not equivalent to completed child startup. The health API already exposes explicit readiness state; the check must wait for stable ready/healthy child state and synthetic care coverage.
 
-## R04-C03 required package
+## R04-C04 required package
 
-1. One canonical Godot runner and classification policy.
-2. Separate Godot stdout/stderr/engine log and Xvfb diagnostics.
-3. Exact retained Godot error lines and log hashes.
-4. Cold and warm identical hosted qualification runs.
-5. Evidence-based root-cause classification before runtime modification.
-6. Always-published sanitized diagnostics on failure.
-7. Classifier negatives proving Godot stderr errors fail and wrapper diagnostics stay separate.
-8. Green Phase 01 and Phase 02 hosted CI.
-9. One additional hosted rerun after green.
-10. Final status `READY_FOR_ARCHITECT_FRAME_PACK` only after all above pass.
+1. Replace one-shot startup sampling with monotonic readiness polling.
+2. Require all expected roles present, ready and healthy, plus `care_coverage=synthetic`.
+3. Require two consecutive complete-ready observations.
+4. Retain a bounded sanitized startup trace.
+5. Fail on timeout or supervisor early exit.
+6. Add delayed-ready, never-ready and early-exit synthetic tests.
+7. Run complete local Phase 01 verification.
+8. Obtain one exact-head hosted Phase 01 success plus two same-head rerun successes.
+9. Keep exact-head Phase 02 green.
+10. Return `READY_FOR_ARCHITECT_FRAME_PACK` only after all above pass.
 
 ## Authority boundary
 
