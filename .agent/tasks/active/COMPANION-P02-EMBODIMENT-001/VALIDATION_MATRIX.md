@@ -155,7 +155,9 @@ Openbox endurance, and Phase 02 acceptance remain `NOT RUN`.
 | Rendered bounds/contact QA | `PASSED` | zero safety/perimeter/drift failures |
 | Semantic tamper negatives | `PASSED` | 5/5 rejected |
 | Local export/fresh restore | `PASSED` | full restored hash equality |
-| Hosted Phase 01 | `NOT RUN` | pending exact-head publication |
-| Hosted Phase 02 / artifact | `NOT RUN` | pending exact-head publication |
+| Hosted Phase 01 | `FAILED` | run `34695095049` passed but duplicate run `34695094043` failed with late `BrokenPipeError`; mixed evidence supersedes a pass |
+| Hosted Phase 02 / artifact | `PASSED` | run `34695095027`; artifact `10298790129`, digest `sha256:b4c802a0fa20bb2f2e8652bc4d56cbf8887766929412c3abd1debac32c8e82f1` |
+| Delayed control-frame regression | `PASSED` | 150 ms delayed send exceeds superseded 50 ms window and completes under bounded framing |
+| Complete local Phase 01 after correction | `PASSED` | all 12 groups and exact 3,000-message closeout pass with exact Godot 4.7.2 configured |
 | Operator visual approval | `NOT RUN` | candidate package not self-approved |
 | Phase 02 acceptance | `NOT RUN` | requires Architect review and later gates |

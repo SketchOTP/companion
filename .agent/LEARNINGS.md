@@ -527,3 +527,12 @@ intake, generating a dedicated right-facing profile, and deriving contact spans
 from selected pixels avoided laundering art defects into metadata. Reciprocal
 orientation can truthfully reuse the same four poses in reverse, but occurrence
 and unique-source counts must remain separate.
+
+## 2026-09-12 — Accepting a control socket needs scheduling-safe framing
+
+A nonblocking listener followed by a short blocking read can accept a client
+before that client is scheduled to send. Ignoring the timeout converts the
+absence of bytes into the wrong command and closes the peer, producing an
+intermittent client-side broken pipe. Bound both frame size and wait time,
+require explicit framing, and treat empty, timed-out, oversized, or malformed
+requests as errors rather than health fallbacks.

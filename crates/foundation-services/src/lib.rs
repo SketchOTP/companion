@@ -9,7 +9,7 @@ use hmac::{Hmac, Mac};
 use serde_json::json;
 use sha2::Sha256;
 use std::env;
-use std::io::{Read, Write};
+use std::io::{self, Read, Write};
 use std::os::fd::{AsRawFd, FromRawFd, OwnedFd};
 use std::os::unix::process::CommandExt;
 use std::process::{Child, Command, Stdio};
@@ -21,6 +21,8 @@ use uuid::Uuid;
 static STOP: AtomicBool = AtomicBool::new(false);
 static SIGNALS: Once = Once::new();
 static DIRECT_GENERATION: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
+const CONTROL_REQUEST_LIMIT: usize = 64 * 1024;
+const CONTROL_READ_TIMEOUT: Duration = Duration::from_secs(2);
 
 pub fn run_role(role: &str) {
     install_signals();
@@ -1036,19 +1038,37 @@ fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
     let deadline = Instant::now() + Duration::from_secs(10);
     loop {
         if let Ok((mut stream, _)) = listener.accept() {
-            let mut request = Vec::new();
-            let _ = stream.set_read_timeout(Some(Duration::from_millis(50)));
-            let _ = stream.read_to_end(&mut request);
-            let command = serde_json::from_slice::<serde_json::Value>(&request).ok();
-            let response = handle_control(command.as_ref(), &mut children, Some(&producer_control));
+            let request = match read_control_request(&mut stream) {
+                Ok(request) => request,
+                Err(error) => {
+                    let response = json!({
+                        "command": "invalid",
+                        "accepted": false,
+                        "reason": "control_read_error",
+                        "error_class": format!("{:?}", error.kind()),
+                    });
+                    let encoded = serde_json::to_string(&response)?;
+                    let _ = stream.write_all(encoded.as_bytes());
+                    continue;
+                }
+            };
+            let command = match serde_json::from_slice::<serde_json::Value>(&request) {
+                Ok(command) => command,
+                Err(_) => {
+                    let encoded = serde_json::to_string(&json!({
+                        "command": "invalid",
+                        "accepted": false,
+                        "reason": "invalid_control_request",
+                    }))?;
+                    let _ = stream.write_all(encoded.as_bytes());
+                    continue;
+                }
+            };
+            let response = handle_control(Some(&command), &mut children, Some(&producer_control));
             if response.get("command").and_then(|v| v.as_str()) == Some("shutdown") {
                 STOP.store(true, Ordering::SeqCst);
             }
-            let encoded = if command.is_some() {
-                serde_json::to_string(&response)?
-            } else {
-                health_json(&mut children)
-            };
+            let encoded = serde_json::to_string(&response)?;
             let _ = stream.write_all(encoded.as_bytes());
         }
         for entry in &mut children {
@@ -1163,6 +1183,45 @@ fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
         Some("clean_shutdown"),
     );
     Ok(())
+}
+
+fn read_control_request(stream: &mut std::os::unix::net::UnixStream) -> io::Result<Vec<u8>> {
+    stream.set_read_timeout(Some(CONTROL_READ_TIMEOUT))?;
+    let mut request = Vec::new();
+    let mut buffer = [0_u8; 4096];
+    loop {
+        let count = stream.read(&mut buffer)?;
+        if count == 0 {
+            break;
+        }
+        request.extend_from_slice(&buffer[..count]);
+        if request.len() > CONTROL_REQUEST_LIMIT {
+            return Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                "control request exceeds bounded frame size",
+            ));
+        }
+        if let Some(newline) = request.iter().position(|byte| *byte == b'\n') {
+            if request[newline + 1..]
+                .iter()
+                .any(|byte| !byte.is_ascii_whitespace())
+            {
+                return Err(io::Error::new(
+                    io::ErrorKind::InvalidData,
+                    "multiple control frames are not allowed",
+                ));
+            }
+            request.truncate(newline + 1);
+            break;
+        }
+    }
+    if request.is_empty() {
+        return Err(io::Error::new(
+            io::ErrorKind::UnexpectedEof,
+            "empty control request",
+        ));
+    }
+    Ok(request)
 }
 
 fn wait_ready(path: &std::path::Path, timeout: Duration) -> bool {
@@ -1409,6 +1468,25 @@ fn spawn(
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn control_request_survives_a_delayed_client_write() {
+        let (mut server, mut client) = std::os::unix::net::UnixStream::pair().expect("socket pair");
+        let reader = std::thread::spawn(move || read_control_request(&mut server));
+
+        // This exceeds the superseded 50 ms one-shot read timeout and
+        // deterministically reproduces the scheduling window seen in hosted CI.
+        std::thread::sleep(Duration::from_millis(150));
+        client
+            .write_all(b"{\"command\":\"health\"}\n")
+            .expect("delayed request write");
+        client
+            .shutdown(std::net::Shutdown::Write)
+            .expect("request EOF");
+
+        let request = reader.join().expect("reader thread").expect("request");
+        assert_eq!(request, b"{\"command\":\"health\"}\n");
+    }
 
     #[test]
     fn hmac_round_trip_uses_domain_separator() {

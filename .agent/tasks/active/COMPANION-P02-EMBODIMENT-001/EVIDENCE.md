@@ -339,3 +339,23 @@ all declared planted-contact spans. The semantic validator passed and rejected
 five content-aware tamper mutations. Local export/fresh restore preserved all
 hashes. Evidence level is E3 target-tested engineering evidence; operator visual
 approval, hosted CI/artifact evidence, and Phase 02 acceptance remain open.
+
+## R05 first hosted campaign and inherited control-race correction — 2026-09-12
+
+Candidate head `34e2a1ab48f4d9278caa50aded1c51fa12fce6b4` passed Phase 02
+run `34695095027` and published R05 artifact `10298790129` with digest
+`sha256:b4c802a0fa20bb2f2e8652bc4d56cbf8887766929412c3abd1debac32c8e82f1`.
+Its inherited Phase 01 PR run `34695095049` passed, but the duplicate push run
+`34695094043` failed late in `phase01_closeout.py` with
+`BrokenPipeError: [Errno 32] Broken pipe`. The mixed exact-head result is
+`FAILED`, not a stable hosted pass.
+
+The supervisor accepted the stream and used a single 50 ms `read_to_end`,
+ignored its result, and closed after treating an empty/timed-out read as a
+health query. A client descheduled after connect could therefore resume after
+the server had already closed. The correction uses a bounded 64 KiB newline
+frame, a fixed two-second read timeout, explicit read/parse failures, and no
+implicit health fallback. A focused 150 ms delayed-write regression passes.
+The complete local `scripts/verify.sh` run with exact Godot 4.7.2 passed all
+workspace tests, all twelve foundation groups, exact 3,000-message accounting,
+and the resident health check. Corrected hosted evidence remains required.

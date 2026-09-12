@@ -70,7 +70,10 @@ Every source remains `candidate` until explicit operator approval.
 Current bounded implementation: `assets/source/p02/r05/` and
 `experiments/p02-embodiment/results/r05/`. The selected package is 8 tracks / 33
 frame occurrences / 29 unique image hashes. Local engineering gates pass;
-hosted workflow and visual acceptance remain pending.
+hosted Phase 02 passed and published the candidate artifact. A duplicate
+inherited Phase 01 run exposed a supervisor control-read scheduling race; the
+bounded local correction is implemented, and corrected exact-head hosted
+workflow evidence plus visual acceptance remain pending.
 
 Codex may use image generation and reference-based image editing. It must still pass the exact selected frames through the accepted immutable source/ingested/receipt contracts, Rust validation, Godot playback and visual QA.
 

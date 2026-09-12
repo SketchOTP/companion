@@ -764,3 +764,13 @@ intake byte equality, actual Rust typed round-trip, exact Godot import/cold/warm
 playback, rendered bounds/contact QA, export/restore, and semantic tamper
 negatives. The art remains candidate and operator visual approval is pending;
 hosted CI and artifact publication are not yet counted.
+
+## 2026-09-12 — R05 first hosted campaign exposed inherited control race
+
+Phase 02 passed and published the candidate review bundle, but the two inherited
+Phase 01 executions disagreed on the same candidate head. The failed run ended
+with a late `BrokenPipeError` during the 3,000-message closeout. The supervisor's
+50 ms one-shot read could close a newly accepted stream before a scheduled
+client wrote. A bounded newline-framed read and explicit fail-closed errors now
+pass the complete local Phase 01 suite. Hosted correction evidence is pending;
+the failed run remains part of the result.

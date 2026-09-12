@@ -643,3 +643,14 @@ passed 33-frame immutable review intake, Rust 1.98.1, Godot 4.7.2 cold/warm
 playback, rendered QA, export/restore, and five semantic tamper negatives.
 Operator approval, hosted exact-head CI/artifacts, PR merge, Phase 02 acceptance,
 and all later work remain open.
+
+## 2026-09-12 — R05 inherited control-protocol correction record
+
+At candidate head `34e2a1ab48f4d9278caa50aded1c51fa12fce6b4`, hosted Phase 02
+run `34695095027` and Phase 01 run `34695095049` passed, while duplicate Phase
+01 run `34695094043` failed with `BrokenPipeError` in the 3,000-message
+closeout. The mixed evidence is retained as a failure. The root correction
+replaces the supervisor's ignored 50 ms `read_to_end` result with bounded
+newline framing and fail-closed read/parse errors. The delayed-write regression
+and complete local verification pass; new hosted exact-head results remain
+required.

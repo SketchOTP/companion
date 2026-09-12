@@ -64,8 +64,12 @@ track deliberately reuses the same four authored poses in reverse order.
 All assets remain `candidate`; operator visual approval is `PENDING`. Local
 immutable intake, actual Rust 1.98.1 round-trip, exact Godot 4.7.2 cold/warm
 playback, rendered bound/contact checks, export/restore, and semantic tamper
-negatives pass. Hosted Phase 01/Phase 02 results and artifact publication remain
-required before handoff.
+negatives pass. Hosted Phase 02 and artifact publication passed at candidate
+head `34e2a1ab48f4d9278caa50aded1c51fa12fce6b4`. One of two inherited Phase 01
+executions on that same head failed with a late control-socket `BrokenPipeError`
+while the other passed. The failure is retained; a bounded control-framing
+correction passes locally and requires new exact-head hosted evidence before
+handoff.
 
 ## Exact source authority
 
