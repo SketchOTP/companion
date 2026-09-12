@@ -679,3 +679,12 @@ completeness, PNG profile, reuse, or atomic publication. The correction adds
 three explicit contracts and a synthetic-only fail-closed intake/runtime gate.
 No production art or Phase 02 acceptance is claimed; final bounded handoff is
 `READY_FOR_ARCHITECT_FRAME_PACK` after exact-head validation.
+
+## 2026-09-12 — R04-C01 submitted for Architect review
+
+The focused correction is published in `04570503c957e34e2ddcf2f1ab1cb1151a352b59`
+with the sanitized result bundle in `5d29b51e48073077abbdffad453226ce7e8cfddc`.
+Independent validation passes for hashes, fixture identity, ancestry, schema,
+synthetic intake negatives, Rust generated-pack validation, Godot render-commit
+ordering, and tamper negatives. Status is `READY_FOR_ARCHITECT_FRAME_PACK`;
+Phase 02 and visual approval remain unaccepted.

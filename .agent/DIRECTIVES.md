@@ -381,3 +381,9 @@ identity/reuse, PNG profile, staged atomic intake, runtime integrity, and
 render-commit acknowledgment. Generate no production pixels. Preserve the
 R02/R03 failures and return `READY_FOR_ARCHITECT_FRAME_PACK` only after the
 fail-closed checks pass.
+
+## 2026-09-12 — R04-C01 completion routing
+
+The correction is submitted for independent Architect review with final status
+`READY_FOR_ARCHITECT_FRAME_PACK`. Keep PR #9 draft/open/unmerged and Issue #8
+open; do not request visual approval or generate production pixels.

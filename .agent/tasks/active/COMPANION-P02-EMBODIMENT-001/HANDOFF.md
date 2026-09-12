@@ -239,3 +239,15 @@ duplicate-asset, and missing-sRGB inputs. The result is bounded engineering
 evidence only. After exact-head checks and publication, report exactly
 `READY_FOR_ARCHITECT_FRAME_PACK`, leave PR #9 draft/open/unmerged and Issue #8
 open, and stop for Architect review.
+
+## Final R04-C01 publication — 2026-09-12
+
+The focused implementation is `04570503c957e34e2ddcf2f1ab1cb1151a352b59` and
+the committed sanitized bundle is `5d29b51e48073077abbdffad453226ce7e8cfddc`.
+Local validation passed: schema/crosswalk, 20-case intake negatives, actual
+generated-pack Rust round trip plus missing-path failure, Godot exact-track
+playback and render-commit event order, export/restore, tamper negatives, and
+the inherited 3,000-cycle Phase 01 regression (seeds 17/23/41; 309.685 s).
+The final handoff is `READY_FOR_ARCHITECT_FRAME_PACK`. PR #9 remains
+draft/open/unmerged and Issue #8 remains open; Architect and operator visual
+approval are still required before any production frame pack is accepted.

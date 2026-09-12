@@ -158,3 +158,10 @@ runtime checks. Synthetic geometry is test-only; R02/R03 visual paths remain
 negative evidence. Final bounded handoff status is
 `READY_FOR_ARCHITECT_FRAME_PACK`; Phase 02 is not accepted and no operator
 visual approval is requested.
+
+## R04-C01 publication reconciliation — 2026-09-12
+
+Final task head: `5d29b51e48073077abbdffad453226ce7e8cfddc`; implementation:
+`04570503c957e34e2ddcf2f1ab1cb1151a352b59`. The result bundle is committed,
+hash-bound, and validator-checked. No production art or Phase 02 acceptance is
+claimed; Architect frame-pack input remains the next authority-owned step.

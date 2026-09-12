@@ -192,3 +192,17 @@ nonzero missing-path failure), local export/restore, and Godot exact-track,
 ineligible, corrupt, and recovery checks are bounded `E3_TARGET_TESTED`
 evidence. No production frame pack, body, visual approval, or Phase 02
 acceptance is inferred. R02/R03 visual assets and claims remain superseded.
+
+## R04-C01 final evidence binding — 2026-09-12
+
+Implementation commit: `04570503c957e34e2ddcf2f1ab1cb1151a352b59`; bundle
+commit: `5d29b51e48073077abbdffad453226ce7e8cfddc`. Result files are hash-bound
+in `experiments/p02-embodiment/results/r04/provenance.json` and the independent
+validator returns `PASSED`; its tamper-negative mutations all return rejected.
+Observed bundle timestamps are `2026-09-12T00:57:59.400413Z` through
+`2026-09-12T00:58:02.880248Z`. Source fixture SHA-256 is
+`2571a6c3069562900121902b074c374170c360d39ef9428a5d43c238383943d7` and
+ingested fixture SHA-256 is
+`01c88a1adadea41b5d9cbd7eb24c49208ad346475e58e6debda3d23ab9e49c2f`.
+Evidence ceiling remains synthetic `E3_TARGET_TESTED`; no production art,
+visual approval, or Phase 02 acceptance is inferred.

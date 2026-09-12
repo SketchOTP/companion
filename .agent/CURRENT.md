@@ -156,3 +156,11 @@ atomic-publication, Rust, and Godot gates are fail-closed. Only synthetic test
 geometry is generated. Protected primary/secondary Graft files remain
 untouched. Phase 01 remains accepted, Phase 02 remains active/unaccepted, and
 the bounded result is `READY_FOR_ARCHITECT_FRAME_PACK` without visual approval.
+
+## R04-C01 publication reconciliation — 2026-09-12
+
+Implementation `04570503c957e34e2ddcf2f1ab1cb1151a352b59` and evidence bundle
+`5d29b51e48073077abbdffad453226ce7e8cfddc` are pushed to
+`codex/p02-embodiment-001`. The committed validator passes independently and
+the protected primary/secondary Graft files remain untouched. PR #9 is
+draft/open/unmerged and Issue #8 is open. Phase 02 remains active/unaccepted.

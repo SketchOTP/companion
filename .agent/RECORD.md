@@ -552,3 +552,11 @@ intake, actual ingested-pack Rust validation, and Godot pack/runtime integrity
 plus render-commit observation. Only synthetic calibration geometry is used;
 the result cannot approve production art or Phase 02. Protected Graft files
 remain untouched and the branch/PR/Issue routing is unchanged.
+
+## 2026-09-12 — R04-C01 publication record
+
+The correction and evidence bundle are pushed at `04570503c957e34e2ddcf2f1ab1cb1151a352b59`
+and `5d29b51e48073077abbdffad453226ce7e8cfddc`. The exact source/ingested/
+receipt contracts, byte-preserving intake, Rust/Godot gates, and independent
+tamper-negative validator are committed. No production character pixels were
+generated or approved; PR #9 remains draft/open/unmerged and Issue #8 remains open.

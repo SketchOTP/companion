@@ -131,3 +131,9 @@ The Research Phase 01 Notion hierarchy contains the project's research evidence 
   render-commit observation is separated from physical display presentation.
 - Recheck: before changing the `MON_AUTHORED_FRAME_SOURCE_PACK_V1` profile,
   PNG acceptance policy, or Godot first-frame acknowledgment boundary.
+
+## 2026-09-12 — R04-C01 publication
+
+The implementation and sanitized evidence bundle were published without new
+external dependencies. Official Godot 4.7.2 behavior remains reference-only;
+the synthetic render-commit observation is not physical display evidence.

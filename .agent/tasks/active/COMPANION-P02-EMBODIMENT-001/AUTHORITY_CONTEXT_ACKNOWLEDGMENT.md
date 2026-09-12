@@ -121,3 +121,10 @@ evidence. Codex creates no production character pixels and does not request
 operator visual approval. Architecture v1.0 remains adopted, Phase 01 remains
 accepted, Phase 02 remains active/unaccepted, and the bounded handoff status is
 `READY_FOR_ARCHITECT_FRAME_PACK` only after the fail-closed checks complete.
+
+## Final pre-handoff state — 2026-09-12
+
+The fail-closed checks completed and the correction is published at
+`5d29b51e48073077abbdffad453226ce7e8cfddc`. Retrieval confidence is
+`ADEQUATE`; Architecture v1.0 is adopted, Phase 01 is accepted, Phase 02 is
+active/unaccepted, and no production art or dependency was self-approved.

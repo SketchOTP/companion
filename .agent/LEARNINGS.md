@@ -460,3 +460,10 @@ must represent changing facing and occluded landmarks explicitly, and must
 reject ambiguous reuse. Keep source bytes immutable and derive CAS/runtime
 relationships only during staged intake. Synthetic geometry can test these
 boundaries, but cannot stand in for Architect-authored character pixels.
+
+## 2026-09-12 — Evidence bundle must be published after implementation
+
+Bind provenance to the committed implementation ancestor, then regenerate and
+commit sanitized results separately. This keeps source/runtime checks
+reproducible while preserving the operator-owned Graft boundary and preventing
+generated validation output from becoming its own authority.
