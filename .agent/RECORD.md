@@ -607,3 +607,14 @@ artifacts `10290328716` and `10290383849`; Phase 01 rerun `34670472829` / job
 `e022d18c59a836272e1470ae4905e10641abfea2`. PR #9 stays draft/open/unmerged,
 Issue #8 stays open, and the bounded result is
 `READY_FOR_ARCHITECT_FRAME_PACK` without production or Phase 02 acceptance.
+
+## 2026-09-12 — R04-C04 readiness-race correction record
+
+Architect Review 08 was merged normally as
+`e9915015a4df69f1af895ae33cefc97a7440c218`. The modified
+`foundation_runtime_check.py` now records socket, role, readiness, and stable
+readiness timings; classifies query failures without private endpoint data; and
+captures a bounded sanitized supervisor stderr tail. The positive delayed-ready
+test requires four scripted samples and passes only after the second complete
+sample. Never-ready and supervisor-exit cases return expected failures. No
+protected primary-worktree files were read or changed.

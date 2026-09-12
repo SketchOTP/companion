@@ -183,3 +183,16 @@ configuration or error whitelist was introduced.
 Hosted Phase 02 run `34670472778` and its stability rerun both passed; Phase 01
 rerun `34670472829` passed. Artifacts `10290328716` (`sha256:4d8685f808a3b0dcc74ecbb1e837fb7726fe689663dbe7a5ba3a1afc8319a651`) and
 `10290383849` (`sha256:5970ba4a5745f0a11e5368c7ae585ec2bece1fa48bc888be086237e0d2cc2dbf`) were published. Retrieval confidence is `ADEQUATE`; Architecture v1.0 remains adopted, Phase 01 accepted, Phase 02 active/unaccepted, PR #9 draft/open/unmerged, and Issue #8 open. No production art or later-phase work was generated.
+
+## R04-C04 authority acknowledgment — 2026-09-12
+
+Architect Review 08 is the active authority and was merged normally from
+`origin/main` into the existing task branch as
+`e9915015a4df69f1af895ae33cefc97a7440c218`. Its scope is limited to the
+inherited Phase 01 readiness race: socket existence is not readiness; explicit
+health state must converge and remain complete across two separated samples.
+The protected primary SSHFS Graft changes remain untouched and are excluded
+from evidence. Retrieval confidence is `ADEQUATE`; C02/C03 semantics, Godot
+4.7.2, approved reference hashes, Architecture v1.0, and Phase 01 acceptance
+remain unchanged. No production art, host modification, dependency change,
+Phase 03 work, PR merge, or Issue #8 closure is authorized.

@@ -548,3 +548,17 @@ fail-closed, and publish diagnostics on failure. Capture the prior hosted error
 before any runtime change; do not generate production art, alter C02 contracts,
 change Godot 4.7.2, or request visual approval. Final readiness remains gated
 on two hosted passes and one stability rerun.
+
+## R04-C04 readiness-race correction
+
+Architect Review 08 supersedes only the inherited Phase 01 readiness probe.
+Merge the review normally, then replace socket-exists/one-health-sample logic
+with a fixed monotonic bounded poll of the explicit complete readiness
+predicate. Require all five expected roles to be ready and healthy with
+synthetic care coverage in two consecutive samples separated by a nonzero
+interval. Record a sanitized startup trace and fail closed on timeout or
+supervisor exit. Add deterministic delayed-ready, never-ready, and early-exit
+tests, run the complete inherited Phase 01 verification, and prove three
+same-SHA hosted Phase 01 passes plus a same-SHA Phase 02 pass. Do not alter
+C02/C03, generate production art, modify the protected primary worktree, merge
+PR #9, or close Issue #8.

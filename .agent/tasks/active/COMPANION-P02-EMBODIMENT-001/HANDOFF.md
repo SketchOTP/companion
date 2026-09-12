@@ -328,3 +328,18 @@ Local canonical evidence and tamper-negative validation pass. The bounded
 handoff is `READY_FOR_ARCHITECT_FRAME_PACK`; this is not Phase 02 acceptance,
 operator visual approval, or a production-art claim. PR #9 remains
 draft/open/unmerged and Issue #8 remains open.
+
+## R04-C04 readiness handoff update — 2026-09-12
+
+Review 08 was merged normally in `e9915015a4df69f1af895ae33cefc97a7440c218`.
+The only implementation change is the inherited Phase 01 readiness gate:
+socket creation is now merely observed, explicit health is polled on a fixed
+monotonic deadline, and stable readiness requires two complete samples separated
+by a nonzero interval. The result contains the required sanitized startup trace,
+timing fields, terminal reason, and bounded stderr tail. Focused synthetic tests
+cover delayed convergence, deadline failure, and supervisor exit.
+
+Local exact Rust checks and the resident probe pass. The final handoff remains
+pending the required three same-head hosted Phase 01 passes and same-head Phase
+02 pass. No production art, operator visual approval, or Phase 02 acceptance is
+claimed.

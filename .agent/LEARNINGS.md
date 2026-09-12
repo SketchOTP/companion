@@ -500,3 +500,12 @@ Godot later falls back successfully. Preserve the exact line and channel
 context first. For non-audio qualification, selecting the documented Dummy
 driver is an explicit environment boundary, not a whitelist; the application
 classifier must continue to fail on all remaining Godot error channels.
+
+## 2026-09-12 — Socket availability is not readiness
+
+A control endpoint can exist while child initialization and care coverage are
+still converging. A deterministic qualification gate must use the explicit
+health contract, monotonic bounded polling, and a stability requirement across
+separated samples. Synthetic delayed, never-ready, and early-exit cases should
+exercise the waiter itself so a one-shot race cannot be mistaken for a service
+regression.

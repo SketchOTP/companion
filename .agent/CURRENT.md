@@ -62,3 +62,14 @@ The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` modific
 ## Capability boundary
 
 No Architect-authored production frame pack, accepted body construction, approved motion language, production embodiment, visual aliveness, or Phase 03+ capability exists. C03 establishes substantial bounded synthetic engineering evidence, but final pre-art readiness is blocked by inherited Phase 01 readiness-test nondeterminism.
+
+## R04-C04 implementation status — 2026-09-12
+
+Architect Review 08 was merged normally from `origin/main` as merge commit
+`e9915015a4df69f1af895ae33cefc97a7440c218` after verifying the additional
+authority-only main commits. The inherited resident probe now uses monotonic,
+bounded polling of explicit health state, requires two consecutive complete-ready
+samples separated by a nonzero interval, records a sanitized startup trace, and
+fails closed on timeout or supervisor exit. Deterministic delayed-ready,
+never-ready, and early-exit tests pass. Local Rust 1.98.1 checks and the actual
+resident probe pass; hosted same-head stability and publication remain required.

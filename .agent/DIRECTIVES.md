@@ -417,3 +417,15 @@ warm and stability runs plus hosted Phase 01 rerun are green and diagnostics
 were uploaded on both attempts. The bounded handoff is
 `READY_FOR_ARCHITECT_FRAME_PACK`; no production art or Phase 02 acceptance is
 claimed.
+
+## 2026-09-12 — R04-C04 readiness-race correction
+
+Continue the existing Phase 02 branch after a normal merge of Architect Review
+08. Replace the inherited one-shot readiness sample with fixed bounded
+monotonic polling of explicit health state, require two consecutive complete
+ready observations, retain sanitized startup trace evidence, and fail closed on
+timeout or supervisor exit. Add delayed-ready, never-ready, and early-exit
+synthetic tests, run the complete inherited Phase 01 verification, and obtain
+three same-SHA hosted Phase 01 passes plus a same-SHA Phase 02 pass. Preserve
+C02/C03, do not generate production art, do not alter protected Graft files,
+and keep PR #9 draft/open/unmerged and Issue #8 open.

@@ -158,3 +158,14 @@ Phase 02 run `34670472778`, its stability rerun, and Phase 01 rerun
 `34670472829` are green. Artifacts `10290328716` and `10290383849` are
 published. Status is `READY_FOR_ARCHITECT_FRAME_PACK` for bounded synthetic
 evidence only; Phase 02 remains unaccepted.
+
+## R04-C04 readiness stabilization
+
+Review 08 is merged normally as `e9915015a4df69f1af895ae33cefc97a7440c218`.
+`scripts/foundation_runtime_check.py` now treats the control socket only as an
+endpoint observation and polls explicit child `ready/state` plus synthetic care
+coverage with a fixed monotonic timeout. Two consecutive complete-ready samples
+are required, with sanitized startup timing and trace fields retained. The
+focused synthetic delayed-ready, never-ready, and supervisor-exit tests pass;
+the exact-head hosted Phase 01 triple-rerun and same-head Phase 02 result remain
+the publication gate. No production art or Phase 02 acceptance is claimed.

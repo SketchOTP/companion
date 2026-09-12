@@ -135,3 +135,17 @@ suppressing Godot errors. Diagnostics remain separate and always uploaded.
 Hosted Phase 02 initial/stability attempts and the inherited Phase 01 rerun are
 green. This is synthetic evidence only; Phase 02 and production art remain
 unaccepted.
+
+## R04-C04 readiness correction plan
+
+1. Merge Review 08 normally and preserve the protected primary worktree.
+2. Replace socket-exists/one-health-sample logic with monotonic bounded polling
+   of the complete explicit readiness predicate.
+3. Require two consecutive complete-ready samples and retain sanitized trace
+   and timing fields.
+4. Exercise delayed-ready, never-ready, and supervisor-exit behavior with
+   deterministic unit-level fakes.
+5. Run local and hosted inherited Phase 01 checks, including three same-SHA
+   hosted executions, then verify Phase 02 on that exact SHA.
+6. Publish the evidence and stop at `READY_FOR_ARCHITECT_FRAME_PACK`; do not
+   generate production art or claim Phase 02 acceptance.

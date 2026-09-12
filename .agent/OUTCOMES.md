@@ -733,3 +733,15 @@ passed; Phase 01 rerun `34670472829` passed after the prior inherited race.
 Readiness is `READY_FOR_ARCHITECT_FRAME_PACK` for synthetic bounded evidence
 only. Architecture v1.0 and Phase 01 remain adopted/accepted; Phase 02,
 production art, and later capabilities remain unaccepted.
+
+## 2026-09-12 — R04-C04 readiness implementation
+
+After normal merge `e9915015a4df69f1af895ae33cefc97a7440c218`, the inherited
+resident readiness check was corrected without changing child startup timing.
+It now polls a fixed 5,000 ms monotonic window at 50 ms intervals, requires all
+five expected roles to report `ready=true`, `state=healthy`, and
+`care_coverage=synthetic` in two consecutive samples, and records a sanitized
+startup trace. Delayed-ready, never-ready, and supervisor-exit synthetic tests
+pass. Local exact Rust checks and the actual resident probe pass; hosted
+same-head triple-rerun evidence remains the final gate. This is foundation
+evidence only.

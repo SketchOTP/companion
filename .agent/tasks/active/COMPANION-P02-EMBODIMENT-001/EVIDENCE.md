@@ -283,3 +283,21 @@ and `10290383849`
 (`sha256:5970ba4a5745f0a11e5368c7ae585ec2bece1fa48bc888be086237e0d2cc2dbf`).
 Evidence remains bounded synthetic E3 target testing; no production art or
 Phase 02 acceptance claim follows.
+
+## R04-C04 readiness evidence — local
+
+The inherited probe's one-shot startup decision was replaced by
+`wait_for_stable_readiness()`. The predicate requires a live supervisor, all
+five expected roles, every role ready and healthy, and synthetic care coverage.
+The fixed timeout is 5,000 ms, the poll interval is 50 ms, and two consecutive
+complete-ready samples are required. A local resident run returned `PASS` with
+the socket observed at approximately 50 ms, all roles and readiness observed in
+that sample, and stable readiness after a nonzero interval. The sanitized trace
+contains only role names, booleans, care coverage, timing, and error classes;
+the stderr tail was empty.
+
+Focused synthetic tests returned delayed-ready `PASS` after four samples,
+never-ready expected `FAIL` with `readiness_timeout`, and early supervisor exit
+expected `FAIL` with `supervisor_exited_before_stable_readiness`. The local Rust
+1.98.1 format, clippy, tests, and release build also pass. Full hosted exact-SHA
+stability evidence remains required before this handoff is accepted.
