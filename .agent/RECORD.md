@@ -730,3 +730,10 @@ prior front. All23 diagnostic sequences loaded/played in explicit Godot review
 mode, not production intake. Motion gate failed; new in-betweens/turns remain
 unapproved, full drawing floors unfinished. Selected media, hashes and all
 prompts retained. Protected files unchanged; no Phase02/03 acceptance or scope.
+
+## 2026-09-12 — Completion retry reaches temporal-authoring decision point
+
+Seven new black-background trials and exact prompts retained. No completed
+animation promoted. User authoring permission is not in doubt; evidence fails
+controlled temporal progression. Review11 quality-first boundary stops further
+bulk generation pending a controllable authoring approach. PR9/Issue8 stay open.

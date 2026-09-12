@@ -12,6 +12,9 @@
 
 ## Current pointers
 
+- Latest targeted retry: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_BLACK_MOTION_RETRY_RESULT.md` —7 new trials, controlled temporal progression still fails;12 motion tracks remain incomplete.
+- Retry evidence: `assets/review/p02/author002/black-motion-retry/README.md` —prompts, hashes, pixel scan and ordered comparisons; no approval request.
+
 - Latest black-motion continuation: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_BLACK_MOTION_RESULT.md` —52 black-backed drawings /23 diagnostic sequences; conversion and bounded review playback observed, complete motion FAILED/incomplete.
 - Current review evidence: `assets/review/p02/author002/black-motion-studies/README.md`; exact hashes/prompts, selected strips/GIFs and Godot result. No new visual approval requested.
 

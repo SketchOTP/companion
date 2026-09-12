@@ -582,3 +582,12 @@ pixels are not automatically covered by approval of the original keys. A prompt
 using both neighboring keys can still yield a pose close to only one endpoint;
 compare the actual ordered strip before scaling that approach. Frame-order and
 timing tests can pass while gait progression visibly fails. Preserve both facts.
+
+## 2026-09-12 — Fractional pose prompts are not temporal constraints
+
+In four black-front inhale trials, requested fractions1/6 through4/6 produced
+torso widths276,277,277,273 between rest268 and peak277 at a fixed scanline.
+A read-only contour audit reproduces this narrow non-monotonic observation.
+Explicit near/far leg instructions also failed in one late gait frame; a
+localized edit improved overlap without proving a full cycle. Do not count
+distinct hashes or descriptive fractions as successful authored progression.

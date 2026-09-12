@@ -1,5 +1,15 @@
 # Current Project State
 
+## Black motion targeted retry — 2026-09-12
+
+Seven new imagegen trials do not complete the12 required action tracks. A late
+gait edit swaps the support leg; a localized repair improves one overlap only.
+Four inhale intermediates fail gradual contour progression (268,276,277,277,
+273,277px through endpoints). NEEDS_ARCHITECT_DECISION on a controllable temporal
+authoring route; no further defective bulk generation or visual approval request.
+See active R05_BLACK_MOTION_RETRY_RESULT.md and black-motion-retry review evidence.
+Black-background and original approval boundaries remain unchanged.
+
 ## Black motion continuation — 2026-09-12
 
 51 new imagegen outputs plus the prior black front image are preserved as 52

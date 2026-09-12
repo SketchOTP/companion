@@ -1,0 +1,155 @@
+{
+  "profile": "BLACK_BACKED_MOTION_REVIEW_V1",
+  "approval_state": "candidate",
+  "completion_status": "FAILED_CONTINUITY_PROBES",
+  "drawings": [
+    {
+      "id": "breathe_peak",
+      "file": "breathe_peak.png",
+      "sha256": "9a1ae10d426fbcc0020526619f3729eb36db1f1ea39da94dc3901ab74a8d26c1"
+    },
+    {
+      "id": "front",
+      "file": "front.png",
+      "sha256": "fa788e5f08dd3ae6b607cb127b3fd1437d5eb08b184e1024d5e0e861f236c316"
+    },
+    {
+      "id": "inhale_1",
+      "file": "inhale_1.png",
+      "sha256": "b4f7b76d9f6baf020a2c2340eae949b9a7fd5252492b23ae38edd889b5d9d89e"
+    },
+    {
+      "id": "inhale_2",
+      "file": "inhale_2.png",
+      "sha256": "c845e9085e27ac3d185a1ee3d78aced434b4bcd85a3b36836cec3de5c77085b7"
+    },
+    {
+      "id": "inhale_3",
+      "file": "inhale_3.png",
+      "sha256": "58dae9f414fe9b14760ded2fa61ae2463cafeb4f42795344bb1ed10ac206b47c"
+    },
+    {
+      "id": "inhale_4",
+      "file": "inhale_4.png",
+      "sha256": "b885359998e88064bb99a0712ca2a047731a5b60985444e69e7e98dae232fee2"
+    },
+    {
+      "id": "left_down_armfix",
+      "file": "left_down_armfix.png",
+      "sha256": "525ee1d81489864dd0342d74df0a774b0d8968d9b30f591a6ffc861083dc8bcf"
+    },
+    {
+      "id": "left_down_passing_late",
+      "file": "left_down_passing_late.png",
+      "sha256": "24190734b354548117f11b2b3d54612d7e0a020ca2afafaecbe20c3b65d69160"
+    },
+    {
+      "id": "left_down_passing_late_repair",
+      "file": "left_down_passing_late_repair.png",
+      "sha256": "b9276cea5724585c9d2a2e2f958b2cbc305c4d67335a3fd1c7fb8eb4ccc52e66"
+    },
+    {
+      "id": "left_down_passing_retry",
+      "file": "left_down_passing_retry.png",
+      "sha256": "e8c75434eefef0dc84c9517bfd048606d3d8d17e59344c3efaeb104d151c12ae"
+    },
+    {
+      "id": "left_passing_repair2",
+      "file": "left_passing_repair2.png",
+      "sha256": "81714c17af1d989d1227a2ef594c5a9f5474963c94284797d9d4d9d92f85cf0f"
+    }
+  ],
+  "tracks": [
+    {
+      "id": "inhale_progression_probe",
+      "completion": "once",
+      "quality": "NOT_APPROVED",
+      "frames": [
+        {
+          "drawing_id": "front",
+          "label": "front",
+          "duration_ticks": 6
+        },
+        {
+          "drawing_id": "inhale_1",
+          "label": "inhale_1",
+          "duration_ticks": 6
+        },
+        {
+          "drawing_id": "inhale_2",
+          "label": "inhale_2",
+          "duration_ticks": 6
+        },
+        {
+          "drawing_id": "inhale_3",
+          "label": "inhale_3",
+          "duration_ticks": 6
+        },
+        {
+          "drawing_id": "inhale_4",
+          "label": "inhale_4",
+          "duration_ticks": 6
+        },
+        {
+          "drawing_id": "breathe_peak",
+          "label": "breathe_peak",
+          "duration_ticks": 6
+        }
+      ]
+    },
+    {
+      "id": "gait_leg_swap_rejected",
+      "completion": "once",
+      "quality": "NOT_APPROVED",
+      "frames": [
+        {
+          "drawing_id": "left_down_armfix",
+          "label": "left_down_armfix",
+          "duration_ticks": 6
+        },
+        {
+          "drawing_id": "left_down_passing_retry",
+          "label": "left_down_passing_retry",
+          "duration_ticks": 6
+        },
+        {
+          "drawing_id": "left_down_passing_late",
+          "label": "left_down_passing_late",
+          "duration_ticks": 6
+        },
+        {
+          "drawing_id": "left_passing_repair2",
+          "label": "left_passing_repair2",
+          "duration_ticks": 6
+        }
+      ]
+    },
+    {
+      "id": "gait_localized_repair_study",
+      "completion": "once",
+      "quality": "NOT_APPROVED",
+      "frames": [
+        {
+          "drawing_id": "left_down_armfix",
+          "label": "left_down_armfix",
+          "duration_ticks": 6
+        },
+        {
+          "drawing_id": "left_down_passing_retry",
+          "label": "left_down_passing_retry",
+          "duration_ticks": 6
+        },
+        {
+          "drawing_id": "left_down_passing_late_repair",
+          "label": "left_down_passing_late_repair",
+          "duration_ticks": 6
+        },
+        {
+          "drawing_id": "left_passing_repair2",
+          "label": "left_passing_repair2",
+          "duration_ticks": 6
+        }
+      ]
+    }
+  ]
+}

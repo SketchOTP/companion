@@ -196,3 +196,13 @@ REUSE: builtin imagegen with exact prior reference/neighboring-key images;
 existing Pillow derivative exporter and exact cached Godot4.7.2. All51 prompts
 preserved. No new dependency/provider, Photoroom call or rights clearance claim.
 Image edits can change identity pixels; no automatic transfer of visual approval.
+
+## 2026-09-12 — Targeted motion retry, reference only
+
+Rechecked official Adobe walk-cycle guidance and Toon Boom walk analysis:
+https://www.adobe.com/creativecloud/animation/discover/animation-walk-cycle.html
+https://learn.toonboom.com/modules/walk-cycle-animation/topic/walk-analysis1
+REFERENCE: contact/down/passing/up, arm/body weight response and leg crossover.
+No external software or dependency adopted. These sources support the existing
+motion model, not the quality of the generated frames. Seven built-in imagegen
+trials remain candidate/rejected evidence; exact prompts and outputs retained.

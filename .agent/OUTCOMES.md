@@ -852,3 +852,13 @@ passed, zero final engine errors. Sparse front/start/stop/turn keys are not full
 motion. Left in-betweens do not consistently advance toward passing keys; turn
 angles also jump. Further interpolation stopped, no completed pack or approval
 request. R05_BLACK_MOTION_RESULT.md records the partial result and failed attempt.
+
+## 2026-09-12 — Targeted black motion retry, not complete
+
+Operator requested completion. Seven imagegen trials saved: four inhale
+intermediates and three gait/recovery attempts. One late gait attempt swaps
+the supporting leg; localized repair improves one overlap but not a full cycle.
+Torso scan at y880 reproduces non-monotonic requested inhale progression,
+exit1. Thirteen existing review regression tests pass. Eleven-source exact-copy
+export and three diagnostic previews preserved. No new runtime qualification.
+All12 required motion tracks remain incomplete. See R05_BLACK_MOTION_RETRY_RESULT.md.
