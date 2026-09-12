@@ -4,18 +4,18 @@
     "python3 experiments/p02-embodiment/scripts/validate_r04_results.py --results OUT --tamper-negative"
   ],
   "evidence_ceiling": "E3_TARGET_TESTED synthetic intake/runtime boundary only; no production art or Phase 02 acceptance",
-  "execution_end_utc": "2026-09-12T02:12:30.195787Z",
-  "execution_start_utc": "2026-09-12T02:12:20.067856Z",
+  "execution_end_utc": "2026-09-12T02:26:43.504468Z",
+  "execution_start_utc": "2026-09-12T02:26:33.680140Z",
   "fixture_sha256": {
     "contracts/fixtures/mon-authored-frame-source-pack-v1.json": "2571a6c3069562900121902b074c374170c360d39ef9428a5d43c238383943d7",
     "contracts/fixtures/mon-ingested-frame-pack-v1.json": "01c88a1adadea41b5d9cbd7eb24c49208ad346475e58e6debda3d23ab9e49c2f"
   },
-  "git_commit": "4f979fcf1381d93b9d6722d56723c50305c1ac63",
+  "git_commit": "96f3de8f6123306281072160dbc70f21b42b69e4",
   "profile": "COMPANION_P02_R04_C02_EVIDENCE_V1",
   "result_sha256": {
     "contract_validation.json": "bb3256b32729c768abd23d5d68683212e84e33a6d679a597eed2961222d848e2",
     "export_restore.json": "bc9d351db838f07716fbc8e2e3ff914f572926337ebc8fe9ada2b20f760e29e8",
-    "godot_runtime.json": "d00e7cfb798227803127273bd7a5cffc4af43d59f73a4a2ceeb0f89dffb510fb",
+    "godot_runtime.json": "fb970ecf0822235f9707b910fb4ac6a48c297729a78fecdf8cbf4afc9fd033cb",
     "intake_validation.json": "0cbf10f9d4b8687c111a758efa845b1bba980d3d4115f141123931e547194c48",
     "rust_contract.json": "b86b644d364ddb3c31190abac6e2941e9893634e1a6128cc047d29b462abf2c6",
     "source_intake.json": "0e38f2a2bca478a25b9b7483fade95267ccb098932cdb1df30813f34d84c1c52"

@@ -63,12 +63,18 @@ def main() -> int:
             godot_result = {"status": "NOT_RUN", "reason": "GODOT_BIN not supplied; exact 4.7.2 render boundary unavailable"}
         else:
             corrupt = temp / "corrupt"; shutil.copytree(intake_dir, corrupt); frame = corrupt / "runtime/frames/neutral_construction__front__neutral__v01__f000.png"; data = bytearray(frame.read_bytes()); data[100] ^= 1; frame.write_bytes(data)
-            godot_cmd = ["xvfb-run", "-a", args.godot] if shutil.which("xvfb-run") else [args.godot]
+            # Keep Xvfb diagnostics out of the Godot stderr channel.  The
+            # validator must classify actual Godot ERROR diagnostics, not
+            # wrapper/X server warnings emitted by xvfb-run.
+            xvfb_error = temp / "xvfb-error.log"
+            godot_cmd = ["xvfb-run", "-a", "-e", str(xvfb_error), args.godot] if shutil.which("xvfb-run") else [args.godot]
             godot_run = run(godot_cmd + ["--path", "godot", "--script", "res://r04_authored_pack_test.gd", "--", f"--pack={intake_dir / 'pack.json'}", f"--corrupt-pack={corrupt / 'pack.json'}"])
+            godot_errors = [line.strip() for line in (godot_run.stdout + "\n" + godot_run.stderr).splitlines() if "ERROR:" in line]
+            wrapper_errors = [line.strip() for line in xvfb_error.read_text(encoding="utf-8", errors="replace").splitlines() if "error" in line.lower()] if xvfb_error.is_file() else []
             if godot_run.returncode:
-                godot_result = {"status": "BLOCKED", "reason": "render_boundary_unobserved", "exact_returncode": godot_run.returncode, "output": (godot_run.stdout + godot_run.stderr)[-4000:], "unexpected_error_output": "ERROR:" in godot_run.stdout or "ERROR:" in godot_run.stderr}
+                godot_result = {"status": "BLOCKED", "reason": "render_boundary_unobserved", "exact_returncode": godot_run.returncode, "output": (godot_run.stdout + godot_run.stderr)[-4000:], "unexpected_error_output": bool(godot_errors), "godot_error_count": len(godot_errors), "wrapper_diagnostic_count": len(wrapper_errors)}
             else:
-                godot_result = {"status": "PASSED", "output": godot_run.stdout[-4000:], "unexpected_error_output": "ERROR:" in godot_run.stdout or "ERROR:" in godot_run.stderr, "render_observation": "RenderingServer.frame_post_draw"}
+                godot_result = {"status": "PASSED", "output": godot_run.stdout[-4000:], "unexpected_error_output": bool(godot_errors), "godot_error_count": len(godot_errors), "wrapper_diagnostic_count": len(wrapper_errors), "render_observation": "RenderingServer.frame_post_draw"}
         stable(output / "source_intake.json", {"status": "PASSED" if deterministic else "FAILED", "clean_process_byte_identical": deterministic, "profile": pack_a["request_profile"], "track_count": len(pack_a["tracks"]), "frame_count": sum(len(t["frames"]) for t in pack_a["tracks"]), "approved_reference_hashes": {"identity": sha(IDENTITY), "turnaround": sha(TURNAROUND)}, "identity_smoke": smoke, "intake": intake})
         stable(output / "intake_validation.json", negative); stable(output / "rust_contract.json", rust_result); stable(output / "godot_runtime.json", godot_result); stable(output / "export_restore.json", export_result)
         stable(output / "contract_validation.json", {"status": "PASSED", "draft_2020_12": schema.stdout.strip(), "rust_schema_crosswalk": crosswalk.stdout.strip(), "generated_pack_profile": pack_a["request_profile"], "actual_generated_pack_schema_validated_by_intake": True, "actual_generated_pack_path": "runtime evidence only"})
