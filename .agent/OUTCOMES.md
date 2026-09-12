@@ -814,3 +814,12 @@ hand-like-foot defect. Review11 stop condition reached. Zero frames promoted;
 full v2 intake/Rust/Godot/contact/action evidence NOT RUN. No approval request.
 Adapter 3 tests and timing 6 tests passed; those are not visual acceptance.
 See R05_AUTHOR_002_KEY_GATE_RESULT.md and R05_AUTHOR_002_STUDY_RESULTS.json.
+
+## 2026-09-12 — Operator approves AUTHOR-002 construction and latest keys
+
+Operator clarified approval of the construction sheet and latest corrected gait
+poses. Exact eight-facing/eleven-key selection and exclusions are recorded in
+R05_AUTHOR_002_OPERATOR_SELECTION.json; scope in R05_AUTHOR_002_OPERATOR_APPROVAL.md.
+This supersedes coder visual non-acceptance for selected artwork only. Historical
+failures and superseded variants remain preserved. Complete actions, edge/source
+eligibility and v2 runtime QA remain unfinished. No Phase02 acceptance or merge.

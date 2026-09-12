@@ -401,3 +401,12 @@ and R05_AUTHOR_002_STUDY_RESULTS.json before acting on any earlier completion
 claim. 25 generated studies, zero promoted frames. Eight facings are provisional;
 complete actions, v2 integration and contact QA NOT RUN. Do not request visual
 approval. PR9 remains draft/open/unmerged; Issue8 remains open.
+
+## 2026-09-12 — Operator approves AUTHOR-002 construction and latest keys
+
+Operator clarified approval of the construction sheet and latest corrected gait
+poses. Exact eight-facing/eleven-key selection and exclusions are recorded in
+R05_AUTHOR_002_OPERATOR_SELECTION.json; scope in R05_AUTHOR_002_OPERATOR_APPROVAL.md.
+This supersedes coder visual non-acceptance for selected artwork only. Historical
+failures and superseded variants remain preserved. Complete actions, edge/source
+eligibility and v2 runtime QA remain unfinished. No Phase02 acceptance or merge.

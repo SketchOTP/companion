@@ -1,0 +1,212 @@
+{
+  "record_type": "OPERATOR_VISUAL_SELECTION_V1",
+  "directive": "COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-002",
+  "approval_date": "2026-09-12",
+  "authority": "operator",
+  "operator_statements": [
+    "Approved. These are much better",
+    "the construction sheet and the latest corrected gait poses"
+  ],
+  "selection_basis_commit": "70201d87bca5a6cbfe5e39f171b06445ebc064c1",
+  "construction_sheet_sha256": "77f149296c571a30d3d1c8d9f857f44e95f2e6b9d9af252d6c46c6552faa2ca1",
+  "construction_count": 8,
+  "gait_key_count": 11,
+  "selected": [
+    {
+      "id": "front",
+      "file": "exec-e186b889-047f-49df-b7a9-f1994d917111.png",
+      "sha256": "fc55cd4e25bad16e20d914f46864cf8d8d948a06b3a948a2fce3ff19bcb8acf3",
+      "group": "construction",
+      "approval_state": "operator_approved",
+      "approval_scope": "construction appearance",
+      "facing": "front",
+      "reviewed_cutout_sha256": "5321f6e89846b81871531469a5015ad652629d9fcc5dc7ab036f671f268cc84e"
+    },
+    {
+      "id": "left_fix",
+      "file": "exec-4349dd4e-af32-4350-b211-0004e797ce33.png",
+      "sha256": "a6d554e515a54bee013d5f31c8a085c5144bb822d1639192306b5660ccc28f5a",
+      "group": "construction",
+      "approval_state": "operator_approved",
+      "approval_scope": "construction appearance",
+      "facing": "left",
+      "reviewed_cutout_sha256": "cff7ef390ff9c6f6e1b12314240d8a299f8caa27135606b0f61c0a92e8a32ffc"
+    },
+    {
+      "id": "right_fix",
+      "file": "exec-188bc285-c713-41fc-a9d9-43c5d930bdd1.png",
+      "sha256": "6c33fd3606c08dd5d3a5827b1e53ec311497329f8f0278634c5f22ba40fc959f",
+      "group": "construction",
+      "approval_state": "operator_approved",
+      "approval_scope": "construction appearance",
+      "facing": "right",
+      "reviewed_cutout_sha256": "c49b74c244b80f2e3f36060acb2f68455219ae49c82cc93c108eaf029f9dbfe1"
+    },
+    {
+      "id": "back",
+      "file": "exec-cfae944a-5114-492f-90ea-77c547c3ca72.png",
+      "sha256": "649c100fb63b108ff8920578f3a4ade80a16254f88c6d55543a2630d3aa292b3",
+      "group": "construction",
+      "approval_state": "operator_approved",
+      "approval_scope": "construction appearance",
+      "facing": "back",
+      "reviewed_cutout_sha256": "d37beee3f8d151433fbd8bc133ba8b829deb7a64e37096915148549bae2e4332"
+    },
+    {
+      "id": "front_left",
+      "file": "exec-744fe462-a11e-40d8-94c0-f8b5510a2dc4.png",
+      "sha256": "5efab37b753cccdf653514e5e9ecdbbc2804ab00186ec3649e5ba1d33c94740c",
+      "group": "construction",
+      "approval_state": "operator_approved",
+      "approval_scope": "construction appearance",
+      "facing": "front_left",
+      "reviewed_cutout_sha256": "15cc1db900014b936597ffcaf91242029469747909cae32d09c42db78a237a39"
+    },
+    {
+      "id": "front_right",
+      "file": "exec-0f9e8e1e-505e-43f8-ac3b-79ba6b874090.png",
+      "sha256": "b8a9c9d7b8fa119bee1247f82efb093301b48e4352b9b0301580809409380e04",
+      "group": "construction",
+      "approval_state": "operator_approved",
+      "approval_scope": "construction appearance",
+      "facing": "front_right",
+      "reviewed_cutout_sha256": "5827b4f00c861675558eae335fe9e360f28db9a4803ff284404ed65438364c12"
+    },
+    {
+      "id": "back_left",
+      "file": "exec-789f8f10-8122-4610-b639-3f904584e9df.png",
+      "sha256": "4f03e9edfb52900dfd3bb1a22963c6656b6e982f94113446a472bbb28b00b259",
+      "group": "construction",
+      "approval_state": "operator_approved",
+      "approval_scope": "construction appearance",
+      "facing": "back_left",
+      "reviewed_cutout_sha256": "ffc3fc45e8848117f766f13775f326e212df2ec6a86c011d1c125baf1534a60e"
+    },
+    {
+      "id": "back_right",
+      "file": "exec-5daf5925-e02f-4b8d-9cd2-5ca4adcd3c40.png",
+      "sha256": "ded3a38b716e77c319d5710fc08fcbb6677d5015da19aa185ae0aed4dec14497",
+      "group": "construction",
+      "approval_state": "operator_approved",
+      "approval_scope": "construction appearance",
+      "facing": "back_right",
+      "reviewed_cutout_sha256": "959465bc0af1de41646539f27fad33aa4137aff24f497b983e655f82ee85fd98"
+    },
+    {
+      "id": "left_contact_far",
+      "file": "exec-95863396-3477-43fe-8310-c800cf12ad2e.png",
+      "sha256": "340e99a4adc2f7ebbfaf1eba5f6498ecaeb70fff2d3d41ee29fed751d69c1128",
+      "group": "gait",
+      "approval_state": "operator_approved",
+      "approval_scope": "static gait key appearance"
+    },
+    {
+      "id": "left_contact_near_armfix",
+      "file": "exec-f21fc1fb-c3f0-4e2d-a299-075cb54fc4ec.png",
+      "sha256": "b2e48b5bdbb9dd6a557019f2016b9a96198a49f14976420dc341724ea70a7ea1",
+      "group": "gait",
+      "approval_state": "operator_approved",
+      "approval_scope": "static gait key appearance"
+    },
+    {
+      "id": "left_up_near",
+      "file": "exec-a5a38c1d-838a-4b78-9358-ef09c864b4bc.png",
+      "sha256": "b8875de76ca33b6e0d7c2b179015b61ecbf7ee0de7cc3d913b0f5b069b6fd8a8",
+      "group": "gait",
+      "approval_state": "operator_approved",
+      "approval_scope": "static gait key appearance"
+    },
+    {
+      "id": "left_passing_repair2",
+      "file": "exec-49f685e2-0470-4a21-bb05-9114d60db24a.png",
+      "sha256": "fa8a0ef7696203afadadbd1bfd6718ca36a221f2694b75b64aa7845f9d577be4",
+      "group": "gait",
+      "approval_state": "operator_approved",
+      "approval_scope": "static gait key appearance"
+    },
+    {
+      "id": "right_contact_near",
+      "file": "exec-c3d2d9e3-ec47-47a3-8ba2-9bb3f9970f01.png",
+      "sha256": "9c3c1464de5eca92743081e93989292729fb7b201321463575e63c435ae4b5a5",
+      "group": "gait",
+      "approval_state": "operator_approved",
+      "approval_scope": "static gait key appearance"
+    },
+    {
+      "id": "left_passing_far",
+      "file": "exec-6412ba59-795e-4188-afb7-97c9e56bff4c.png",
+      "sha256": "872d4ccd262a1ea453000816bac86c339c5a432837efbf757413369562101c68",
+      "group": "gait",
+      "approval_state": "operator_approved",
+      "approval_scope": "static gait key appearance"
+    },
+    {
+      "id": "left_down_armfix",
+      "file": "exec-c76e819f-2500-4514-b476-7e1fd5fc3f64.png",
+      "sha256": "8e11373fd774d5d11738ae36b8b604e851a08f31ad74fac7fd47295977b81d08",
+      "group": "gait",
+      "approval_state": "operator_approved",
+      "approval_scope": "static gait key appearance"
+    },
+    {
+      "id": "left_down_far",
+      "file": "exec-77a6db42-5bc3-4716-9a21-a8e5f9010380.png",
+      "sha256": "6b8f0de7fa405ac7704b391389e59b3ebd9b453d27e82332f42bd959ff0fb036",
+      "group": "gait",
+      "approval_state": "operator_approved",
+      "approval_scope": "static gait key appearance"
+    },
+    {
+      "id": "left_up_far",
+      "file": "exec-4df27118-b8c3-4013-bdaa-39db57739750.png",
+      "sha256": "4373d3b5836caa7c8da80ea85ff457bec07ac5c7850e4f48e2c534adb26c3d97",
+      "group": "gait",
+      "approval_state": "operator_approved",
+      "approval_scope": "static gait key appearance"
+    },
+    {
+      "id": "right_contact_far",
+      "file": "exec-9057a3ee-02c3-4cc2-94a0-a4a5b2622cfc.png",
+      "sha256": "42a39199c9d0fee003c43da798a6be900b0dc7388397b009b5e1ff17b716decd",
+      "group": "gait",
+      "approval_state": "operator_approved",
+      "approval_scope": "static gait key appearance"
+    },
+    {
+      "id": "right_passing_near",
+      "file": "exec-7e4aa74a-619b-46c2-beb8-007608f01830.png",
+      "sha256": "27cdfadfbaef13c03e5c194f23b721f23d08f5dcf2cff04e043c67d8525e6f05",
+      "group": "gait",
+      "approval_state": "operator_approved",
+      "approval_scope": "static gait key appearance"
+    }
+  ],
+  "excluded_superseded_studies": [
+    "left_initial",
+    "right_initial",
+    "left_contact_near",
+    "left_passing_near",
+    "left_down_near",
+    "left_passing_repair"
+  ],
+  "not_approved_by_this_record": [
+    "superseded repair attempts",
+    "R05-v1 animation",
+    "uncreated in-betweens or future derivatives",
+    "complete gait cycle continuity",
+    "MON_FRAME_V1 source eligibility",
+    "root and composed world-contact QA",
+    "v2 intake/runtime completion",
+    "full library scaling",
+    "Phase 02 acceptance"
+  ],
+  "technical_state": {
+    "canonical_source_frames_promoted": 0,
+    "edge_cleanup": "OPEN",
+    "normalization": "NOT_RUN",
+    "complete_action_playback": "NOT_RUN",
+    "source_world_contact_qa": "NOT_RUN",
+    "v2_intake_runtime": "NOT_RUN"
+  },
+  "history_policy": "This operator visual decision supersedes coder non-acceptance only for selected artwork. Earlier observations, raw bytes and failed results are retained without rewriting."
+}

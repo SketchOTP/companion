@@ -1,6 +1,17 @@
 # Current Project State
 
-## Latest execution — AUTHOR-002 key gate stopped, 2026-09-12
+## Latest operator visual approval — 2026-09-12
+
+The operator expressly approved **the construction sheet and the latest corrected
+gait poses**. Exact selection: eight construction facings and eleven latest gait
+keys in `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_OPERATOR_SELECTION.json`.
+See `R05_AUTHOR_002_OPERATOR_APPROVAL.md` for the quoted clarification and scope.
+This supersedes the coder's visual non-acceptance for those selected images.
+Superseded repairs remain excluded. Complete actions, edge cleanup, normalization,
+source/world contacts and v2 intake/runtime remain unfinished, not passed.
+No source pack, full motion library or Phase02 acceptance is implied.
+
+## Historical execution before operator approval — 2026-09-12
 
 Review11 was merged normally. 25 reference-based outputs (10 construction,
 15 gait/repair attempts) were generated and self-reviewed. The key set still
@@ -33,7 +44,9 @@ below are historical and do not override the operator's rejection.
 
 Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adopted. Roadmap Phase 01 remains accepted. Phase 03 and later remain closed.
 
-R05-v1 and all replacement studies to date are **REJECTED** as visual evidence. The current motion model is governed by Architect Review 11.
+R05-v1 and superseded repair attempts remain rejected. The selected AUTHOR-002
+construction/key artwork now has operator visual approval, not complete animation
+or source-pack qualification. Review11 still governs the motion model.
 
 ## Current authority
 

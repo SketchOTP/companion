@@ -692,3 +692,12 @@ unrelated secondary work. Added explicit Photoroom RGBA/full/no-crop fields,
 review-only composition/export tools, exact prompts/hashes and failed-key
 records. Generated 25 outputs, promoted none. Stopped under Review11 anatomical
 key-pose condition; no accepted runtime/schema or v1 fixture changed.
+
+## 2026-09-12 — Operator approves AUTHOR-002 construction and latest keys
+
+Operator clarified approval of the construction sheet and latest corrected gait
+poses. Exact eight-facing/eleven-key selection and exclusions are recorded in
+R05_AUTHOR_002_OPERATOR_SELECTION.json; scope in R05_AUTHOR_002_OPERATOR_APPROVAL.md.
+This supersedes coder visual non-acceptance for selected artwork only. Historical
+failures and superseded variants remain preserved. Complete actions, edge/source
+eligibility and v2 runtime QA remain unfinished. No Phase02 acceptance or merge.

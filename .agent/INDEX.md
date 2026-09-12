@@ -12,9 +12,12 @@
 
 ## Current pointers
 
-- Latest execution result: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_KEY_GATE_RESULT.md` — BLOCKED at Review11 anatomical key gate; 25 studies, zero promoted frames.
+- Latest operator decision: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_OPERATOR_APPROVAL.md` — construction sheet and latest corrected gait poses visually approved.
+- Exact approved selection: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_OPERATOR_SELECTION.json` — eight facings / eleven latest keys; superseded variants excluded.
+
+- Historical pre-approval execution result: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_KEY_GATE_RESULT.md` — coder stopped at Review11 anatomical key gate; 25 studies, zero promoted frames. Selected artwork's visual disposition is superseded by the operator decision above.
 - Exact study observations/hashes: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_STUDY_RESULTS.json`.
-- No operator approval request; complete v2 actions/intake/runtime remain NOT RUN.
+- Operator approval was supplied directly; complete v2 actions/intake/runtime remain NOT RUN.
 
 - Latest movement correction: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_FACING_AND_MOTION_CORRECTION.md` — front rest, profile travel, deliberate turns; planned, not implemented.
 - Latest visual disposition: **all R05-v1 previews operator-rejected**.
@@ -23,7 +26,7 @@
 
 - Active roadmap phase: `02 — Mon Body, Habitat, and Sprite Pipeline`
 - Phase acceptance: `NOT GRANTED`
-- Current disposition: `AUTHOR-002 EXECUTED — BLOCKED AT ANATOMICAL KEY GATE`
+- Current disposition: `OPERATOR VISUAL SELECTION APPROVED — COMPLETE MOTION AND TECHNICAL QA REMAIN`
 - Current directive: `COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-002`
 - Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_11.md`
 - Notion Review 11: https://app.notion.com/p/3d9833cb27ff818c89ebe1aca70cf28b
