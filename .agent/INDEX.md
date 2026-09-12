@@ -15,16 +15,15 @@
 - Active roadmap phase: `02 — Mon Body, Habitat, and Sprite Pipeline`
 - Phase acceptance: `NOT GRANTED`
 - Pre-art gate: `READY_FOR_ARCHITECT_FRAME_PACK — ACCEPTED`
-- Current disposition: `CODEX HOLD — ARCHITECT ASSET AUTHORING NEXT`
-- Tested implementation: `e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b`
-- Publication reconciliation: `e42f3cb0cbfa6478fefaddaeac92bf2bd9368149`
-- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_09.md`
-- Notion Review 09: https://app.notion.com/p/3d9833cb27ff81f7a90ed91e209f34ee
+- Operator ruling: `CODEX CANDIDATE SPRITE AUTHORSHIP — ADOPTED`
+- Current directive: `COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-001`
+- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_10.md`
+- Notion Review 10: https://app.notion.com/p/3d9833cb27ff8179a60dc64d5ab6b5ac
 - Phase 02 directive: https://app.notion.com/p/3d8833cb27ff810e858acd029ac0ea05
 - Phase 02 report: https://app.notion.com/p/3d8833cb27ff817d9d01d754ec852c10
 - Pull request: `#9 — DRAFT / OPEN / UNMERGED`
 - GitHub issue: `#8 — OPEN`
-- Required branch for later Codex continuation: `codex/p02-embodiment-001`
+- Required branch: `codex/p02-embodiment-001`
 - Required worktree: clean local ext4/NVMe secondary worktree
 - Phase 03 and later: `CLOSED`
 
@@ -38,46 +37,40 @@
 - Phase 01 merge: `fc31717bba8c4833736d1792d7a5fe1c6cca4900`
 - Phase 02 pre-art engineering gate: Architect Review 09 / `READY_FOR_ARCHITECT_FRAME_PACK`
 
-## Review 09 accepted evidence
+## Current visual-authorship authority
 
-- Phase 01 run `34674883461` passed on `e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b`.
-- Initial job `103502845478`: PASS.
-- Same-head rerun `103503853827`: PASS.
-- Same-head rerun `103504776796`: PASS.
-- Phase 02 run `34674883457`: PASS on the same implementation SHA.
-- Phase 02 artifact `10292635102`, digest `sha256:6efff4d21517c1983ddabfa86f9eaaf516ee60be0557625890d3ca7944f68fb8`.
-- C04 readiness qualification waits for explicit child readiness/health plus synthetic care coverage and requires two consecutive complete-ready observations.
+The operator expressly authorizes Codex and approved image-generation tooling to create candidate identity-critical Phase 02 sprite pixels, poses, in-betweens, overlays and animation frames from the exact approved references.
 
-## Current authority boundary
+The operator remains final visual acceptance authority. The AI Architect remains strategic and phase-acceptance authority. Godot remains presentation-only.
 
-Identity-critical sprite pixels and temporal key poses are authored by the AI Architect and approved by the operator. Codex owns immutable intake, contracts, deterministic derivatives, Godot integration, CI, and evidence. Godot remains a nonauthoritative presentation adapter.
+This supersedes the prior Review 04/09 restriction that Codex may not create production character pixels and supersedes the Review 09 Codex hold.
 
-## Current Codex state
+## Exact approved source authority
 
-No active Codex implementation directive. `HOLD FOR ARCHITECT ASSET INPUT`.
+- Identity:
+  `86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56`
+- Turnaround:
+  `3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4`
 
-Codex resumes only after the Architect supplies the bounded source-frame pack and issues an intake/integration directive.
+## R05-AUTHOR-001 package
 
-## Architect frame-pack requirement
-
-Source request:
-`assets/source/p02/architect-frame-request-v1/ARCHITECT_FRAME_REQUEST_V1.md`
-
-Required candidate art:
+Generate and validate only the bounded review pack first:
 
 - neutral front;
 - neutral profile;
 - neutral front-left;
-- front-left idle/breathe;
-- front-left walk;
-- front → front-left orient;
-- front-left → front orient;
-- listen → acknowledge.
+- front-left idle/breathe, 6–8 frames;
+- front-left walk, 8 frames;
+- front → front-left orient, at least 4 frames;
+- front-left → front orient, at least 4 frames;
+- listen → acknowledge, 6 frames.
 
-All production art remains candidate until explicit operator approval.
+Every source remains `candidate` until explicit operator approval.
+
+Codex may use image generation and reference-based image editing. It must still pass the exact selected frames through the accepted immutable source/ingested/receipt contracts, Rust validation, Godot playback and visual QA.
 
 ## Explicit boundaries
 
-`READY_FOR_ARCHITECT_FRAME_PACK` does not establish Phase 02 completion, accepted visual identity, approved motion language, visual aliveness, Openbox endurance, organism state, memory, perception, speech, learning, dreaming, care efficacy, production reliability, or Phase 03+ capability.
+Do not infer Phase 02 completion, approved visual identity, approved motion language, visual aliveness, Openbox endurance, organism state, memory, perception, speech, learning, dreaming, care efficacy, production reliability, or Phase 03+ capability.
 
 The primary SSHFS worktree's operator-owned `.gitignore` and `AGENTS.md` changes remain protected.
