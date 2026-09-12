@@ -2,112 +2,75 @@
 
 ## Current stage
 
-Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains
-adopted. Roadmap Phase 01 remains accepted. Phase 03 and later remain closed.
+Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adopted. Roadmap Phase 01 remains accepted. Phase 03 and later remain closed.
 
-PR #9 at reviewed head `ee2e47595271777bfbb253a6639c6ebac7198a1b`
-is continued under:
+PR #9 at reviewed head `925073601b039bc66e83de272b5378997cd8ec70` is continued under:
 
-- Directive: `COMPANION-P02-EMBODIMENT-001-R04-C01`
-- Repository review:
-  `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_05.md`
-- Notion review:
-  https://app.notion.com/p/3d8833cb27ff81588285f477678ad3d3
+- Directive: `COMPANION-P02-EMBODIMENT-001-R04-C02`
+- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_06.md`
+- Notion review: https://app.notion.com/p/3d9833cb27ff81089f25cd955f5efb23
 - Issue #8: open
 - PR #9: draft, open, unmerged
 
-## Review 05 disposition
-
-R04 is partially accepted at a bounded synthetic engineering boundary.
+## Review 06 disposition
 
 Retain:
 
-- exact approved reference hashes;
-- byte-preserving synthetic source intake;
-- content-addressed copies and export/restore evidence;
-- manifest approval-state enforcement;
-- non-skipping generated-pack Rust validation;
-- 24 Hz relative-duration configuration;
+- exact approved visual references and hashes;
+- source/ingested/receipt contract split;
+- per-frame facing and landmark-state model;
+- bounded synthetic byte-preserving intake;
+- approval-state enforcement;
+- required-path Rust validation;
+- 24 Hz timing direction;
 - synthetic missing/corrupt/restored-track behavior;
-- green Phase 01 and focused Phase 02 workflows.
+- green Phase 01 and Phase 02 hosted workflows.
 
 Do not accept:
 
 - `READY_FOR_ARCHITECT_FRAME_PACK`;
-- the combined source/runtime pack contract as final;
-- orientation-track representability;
-- occluded-landmark representability;
-- complete R10 landmark coverage;
-- atomic production intake;
-- complete PNG source-profile validation;
-- full runtime pack/track/reference integrity;
-- physical or target first-frame presentation;
-- exact measured event/tick behavior;
+- the current `phase02_bounded_motion_proof_v1` executable profile as matching the Architect request;
+- positive proof that a complete bounded pack can pass;
+- exact required event/endpoint enforcement;
+- exact source-reuse semantics;
+- exact sRGB/PNG-profile validation;
+- crash-durable intake publication;
+- headless fallback as render-commit evidence;
+- exact runtime event/timing evidence;
 - Phase 02 acceptance.
 
-## Main blocker
+## Decisive blocker
 
-The current Architect-input contract cannot truthfully represent the requested
-front-to-front-left orientation tracks because facing exists only at track level
-and filenames must match that one facing. It also requires concrete coordinates
-for landmarks that can be occluded in profile or turned poses.
+The machine validator does not match `ARCHITECT_FRAME_REQUEST_V1.md`. The published request uses family `neutral_construction` at `front`, `right`, and `front_left`, while the validator expects three different neutral family names and uses `left` for the profile. It also indexes tracks by family, so three correct neutral-construction tracks collapse to one.
 
-Supplying art now would force false metadata and an immediate breaking schema
-migration. The contract must be corrected before identity-critical frames are
-authored.
-
-## Adopted source/runtime authority split
-
-The Architecture Decision Ledger now requires:
-
-1. `MON_AUTHORED_FRAME_SOURCE_PACK_V1` — immutable Architect input;
-2. `MON_INGESTED_FRAME_PACK_V1` — validated derived runtime/build document;
-3. `MON_FRAME_INTAKE_RECEIPT_V1` — input/output digests, byte equality,
-   validation result, and atomic publication state.
-
-Source manifests do not contain runtime-derived paths or content addresses.
-Godot consumes only a validated ingested pack.
+Supplying production art against this contract would immediately fail or require false metadata. One final executable-profile correction is required before Architect frame authoring.
 
 ## Active objective
 
-Codex must execute only R04-C01:
+Codex executes only R04-C02:
 
-1. split source, ingested, and receipt schemas;
-2. add track entry/exit facing and per-frame facing/posture/action phase;
-3. represent visible, occluded, and not-applicable landmarks without invented
-   coordinates;
-4. include the complete canonical R10 landmark set and typed optional anchors;
-5. enforce the bounded frame-request families, counts, endpoints, and events;
-6. enforce unique identities and explicit source-asset reuse/hold semantics;
-7. validate PNG IHDR bit depth/color type, actual sRGB, nonempty alpha,
-   transparency, and safety region;
-8. stage and atomically publish intake into a fresh destination;
-9. bind pack, track, reference, relationship, and path integrity in Godot;
-10. observe the render boundary before a render-commit acknowledgment;
-11. prove exact event tick/frame consistency and the expanded tamper matrix;
-12. keep Phase 01 and Phase 02 CI green;
-13. return `READY_FOR_ARCHITECT_FRAME_PACK` only after the correction passes.
+1. make the human and executable bounded request identical;
+2. build one complete positive synthetic `phase02_bounded_motion_proof_v1` pack;
+3. enforce exact endpoints, event names/order, postures, completion, counts, and no ambiguous extra tracks;
+4. bind `reuse_of` to the actual same-track source occurrence;
+5. require exact PNG V1 structure with one valid `sRGB` chunk and no fake ICC substitute;
+6. add fsync-backed durable atomic publication and injected mid-intake failure evidence;
+7. emit render-commit only after actual `RenderingServer.frame_post_draw` observation;
+8. record monotonic runtime timestamps and assert the entire expected sequence/timing;
+9. keep Phase 01 and Phase 02 CI green;
+10. return `READY_FOR_ARCHITECT_FRAME_PACK` only when the complete bounded synthetic pack passes source→intake→Rust→Godot.
 
-Codex must not create production character pixels or request operator visual
-approval.
+No production character pixels or operator visual-review request are authorized in C02.
 
-## Authority records
+## Online evidence basis
 
-- Live ledger after Review 05: 56 ADRs — 34 adopted, 20 interim, 2 rejected.
-- Research evidence: 58 records.
-- New adopted ruling: Architect source packs and ingested runtime packs are
-  separate immutable contracts.
-- New official evidence: W3C PNG profile semantics and Godot render-observation
-  semantics.
+- Linux `rename(2)` provides an atomic same-filesystem namespace switch; cross-filesystem rename fails with `EXDEV`. Durable publication still requires the appropriate fsync discipline around files/directories.
+- W3C PNG defines color type 6 as RGBA with both 8- and 16-bit allowed sample depths; Phase 02 must independently enforce bit depth 8 and its explicit sRGB source policy.
 
 ## Protected work
 
-The primary SSHFS worktree contains operator-owned modified `.gitignore` and
-`AGENTS.md`. Do not inspect their modified contents for evidence or alter them.
-Continue only in the local ext4/NVMe secondary worktree.
+The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` modifications remain protected. Continue only in the clean local ext4/NVMe secondary worktree.
 
 ## Capability boundary
 
-No Architect-authored production frame pack, accepted body construction,
-approved motion language, production embodiment, visual aliveness, or Phase 03+
-capability exists. R04 establishes useful synthetic intake/runtime evidence only.
+No Architect-authored production frame pack, accepted body construction, approved motion language, production embodiment, visual aliveness, or Phase 03+ capability exists. C01 remains bounded synthetic engineering evidence only.
