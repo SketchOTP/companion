@@ -549,3 +549,11 @@ different hashes are not substitutes for coherent limb correspondence.
 A cloud cutout's RGBA alpha extrema and unchanged dimensions do not establish
 clean source boundaries or unchanged geometry. Inspect against contrasting
 backgrounds, test perimeter contamination, and preserve original/returned bytes.
+
+## 2026-09-12 — Correct motion requires coverage, not only more drawings
+
+The bounded front-left request encoded the wrong default for the operator's
+flat-screen habitat. Separate gaze, facing, travel, posture and anatomical gait
+phase. Plan starts/stops/turns and interruption connectors as well as loops.
+Source-root stability alone cannot establish a translating foot's world-space
+grounding. Counts and unique hashes cannot prove plausible leg exchange.

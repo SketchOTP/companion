@@ -154,3 +154,13 @@ the synthetic render-commit observation is not physical display evidence.
 - Rights: operator-authorized derivatives of project-approved original art;
   provider service use is not a new assertion of legal clearance or production
   visual approval. No real personal data was submitted.
+
+## 2026-09-12 — Walk-cycle staging reference
+
+- Source: https://www.adobe.com/creativecloud/animation/discover/animation-walk-cycle.html
+- Freshness: opened current official Adobe guide on 2026-09-12.
+- Disposition: REFERENCE only; contact/crossover phases and whole-body weight
+  response inform the corrected gait planning. No dependency or copied artwork.
+- Operator, not this source, defines front-default/profile-travel habitat policy.
+- Recheck trigger: implementing stride/contact semantics or changing the habitat
+  coordinate model. Motion quality still requires observed playback and review.

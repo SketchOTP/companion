@@ -674,3 +674,11 @@ art iteration. Review timing, cutout adapter, focused tests, rejected-v1 CI
 artifact labeling and the correction/attempt records were added. No production
 pack was approved or silently replaced; eight new generation studies remain
 unqualified. New source-pack/Rust/Godot acceptance was not run against them.
+
+## 2026-09-12 — Front-facing default and profile travel correction recorded
+
+Operator clarified the missing facing/locomotion model. A planning-only coverage
+and transition record now supersedes the old front-left-heavy visual target.
+No accepted synthetic fixture, source byte, runtime or architecture was changed.
+The bounded replacement requires actual full-body turns and both profile walks;
+full-library scale and Phase 02 acceptance are not inferred.

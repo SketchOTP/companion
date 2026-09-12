@@ -12,6 +12,7 @@
 
 ## Current pointers
 
+- Latest movement correction: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_FACING_AND_MOTION_CORRECTION.md` — front rest, profile travel, deliberate turns; planned, not implemented.
 - Latest visual disposition: **all R05-v1 previews operator-rejected**.
 - Current correction/evidence: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_OPERATOR_REJECTION_01.md`.
 - Replacement motion: **NOT READY**, no new visual approval request.
@@ -56,7 +57,7 @@ This supersedes the prior Review 04/09 restriction that Codex may not create pro
 - Turnaround:
   `3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4`
 
-## R05-AUTHOR-001 package
+## Historical R05-AUTHOR-001 package — rejected, current correction linked above
 
 Generate and validate only the bounded review pack first:
 

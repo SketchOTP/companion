@@ -2,6 +2,13 @@
 
 ## Latest operator disposition — 2026-09-12
 
+The operator additionally rejects universal front-left facing. Current visual
+planning is front-facing rest/interaction, full-profile left/right travel, and
+deliberate whole-body turns with quarter/back correspondence. See
+`tasks/active/COMPANION-P02-EMBODIMENT-001/R05_FACING_AND_MOTION_CORRECTION.md`.
+This correction is recorded, not implemented: old front-left request fixtures
+remain historical engineering coverage, not the replacement art specification.
+
 All R05-v1 previews are **REJECTED**, not awaiting approval. Cutout contamination,
 motion/hand defects and overly fast looping were reported by the operator.
 The current correction is recorded in
@@ -64,7 +71,7 @@ Codex executes only `COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-001`:
 
 Do not expand to the complete 32-family/eight-direction library in this directive.
 
-## R05 candidate implementation state
+## Historical R05 candidate implementation state — superseded by rejection
 
 The bounded candidate source pack now exists locally and is submitted for
 hosted validation and visual review. It contains eight requested tracks, 33
@@ -94,7 +101,7 @@ purple_monster_turnaround_sheet.png
 SHA-256 3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4
 ```
 
-## Candidate review pack
+## Historical bounded review pack — facing policy superseded above
 
 Required initial art:
 

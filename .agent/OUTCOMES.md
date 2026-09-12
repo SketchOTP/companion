@@ -793,3 +793,13 @@ iHero-backed cutout investigation obtained three Photoroom RGBA outputs; three
 adapter test methods pass, while remove.bg returned HTTP402. Eight fresh art
 attempts remain rejected/study-only, not a qualified replacement pack. Prior
 technical passes do not establish motion quality. See R05_OPERATOR_REJECTION_01.
+
+## 2026-09-12 — Operator corrects the facing and locomotion model
+
+Inspected the executable bounded request: idle, walk and listen are explicitly
+front-left, with only front/front-left turns. Recorded front-facing presence,
+profile travel, full turn correspondence, gait/start/stop/interrupt coverage and
+a bounded two-direction travel-and-return proof plan. No replacement pixels or
+runtime changes were produced. Old synthetic request tests remain untouched;
+new request version and contact-coordinate semantics need reconciliation before
+new pack integration. Evidence E1_OBSERVED, replacement quality NOT RUN.
