@@ -60,6 +60,23 @@ Include exact:
 Do not state that the art, three-quarter views, animation library, or phase is
 approved unless the operator and Architect explicitly approve it.
 
+## R05-AUTHOR-001 bounded candidate handoff — 2026-09-12
+
+The operator-authorized image-generation pass produced candidate pack
+`05a17a00-0000-4000-8000-000000000001`, revision
+`r05-author-001-bounded-v1`: 8 requested tracks, 33 frame occurrences, and 29
+unique normalized frame hashes. Normal/quarter-speed, strip, silhouette, and
+root/contact review media are committed and included in workflow artifact
+`10298349112` (`sha256:9462bdb227d38b2d6051d6727bf4246b1d41f9bd6042305a1b422cead1ca945a`).
+
+Local immutable intake, actual Rust 1.98.1 round-trip, exact Godot 4.7.2
+import/cold/warm playback, rendered QA, export/restore, and tamper negatives
+pass. After a first hosted run exposed an inherited 50 ms control-read race,
+the scheduling-safe correction passed Phase 01 twice and Phase 02 twice on
+exact head `b5c9e9a5e88de5fa08ec462bc209e7f24c909f1e`. The artwork remains
+`candidate`; operator visual approval and Architect Phase 02 disposition are
+required before scaling.
+
 ## R04 handoff contract
 
 Return `CODEX RESULT — COMPANION-P02-EMBODIMENT-001-R04` with the superseded

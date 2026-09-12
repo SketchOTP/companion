@@ -359,3 +359,20 @@ implicit health fallback. A focused 150 ms delayed-write regression passes.
 The complete local `scripts/verify.sh` run with exact Godot 4.7.2 passed all
 workspace tests, all twelve foundation groups, exact 3,000-message accounting,
 and the resident health check. Corrected hosted evidence remains required.
+
+## R05 corrected hosted campaign — 2026-09-12
+
+Exact corrected head `b5c9e9a5e88de5fa08ec462bc209e7f24c909f1e`
+passed both independent Phase 01 executions: push run `34696075240` / job
+`103559667455` and PR run `34696077231` / job `103559672893`. Both completed
+the resident 3,000-message closeout without the prior broken pipe.
+
+The same exact head passed Phase 02 push run `34696075224` / job
+`103559667351` and PR run `34696077241` / job `103559672899`. The directly
+head-named R05 artifact is `10298349112`, 49,267,551 bytes, digest
+`sha256:9462bdb227d38b2d6051d6727bf4246b1d41f9bd6042305a1b422cead1ca945a`.
+The PR-triggered equivalent is `10298651880`, 49,267,547 bytes, digest
+`sha256:fc0d471e3329c7cf8c317c9a3aa9dcac73ce41da03745bc9b97e7c88498cd464`;
+its artifact name uses GitHub's ephemeral PR merge SHA. These results close the
+observed control-read race for this bounded campaign. They do not establish a
+production reliability or SLA claim.

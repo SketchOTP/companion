@@ -69,7 +69,10 @@ head `34e2a1ab48f4d9278caa50aded1c51fa12fce6b4`. One of two inherited Phase 01
 executions on that same head failed with a late control-socket `BrokenPipeError`
 while the other passed. The failure is retained; a bounded control-framing
 correction passes locally and requires new exact-head hosted evidence before
-handoff.
+handoff. Corrected candidate head
+`b5c9e9a5e88de5fa08ec462bc209e7f24c909f1e` subsequently passed both
+independent Phase 01 executions and both Phase 02 executions; the final
+publication reconciliation does not change executable behavior.
 
 ## Exact source authority
 

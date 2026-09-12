@@ -774,3 +774,11 @@ with a late `BrokenPipeError` during the 3,000-message closeout. The supervisor'
 client wrote. A bounded newline-framed read and explicit fail-closed errors now
 pass the complete local Phase 01 suite. Hosted correction evidence is pending;
 the failed run remains part of the result.
+
+## 2026-09-12 — R05 corrected hosted campaign is stable
+
+On exact corrected head `b5c9e9a5e88de5fa08ec462bc209e7f24c909f1e`,
+both independent Phase 01 runs and both Phase 02 runs passed. Phase 02
+published the complete candidate source/review/intake/playback artifact. This
+supports the bounded technical review handoff only; the candidate artwork and
+motion are still awaiting operator visual judgment, and Phase 02 remains open.

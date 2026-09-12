@@ -654,3 +654,13 @@ replaces the supervisor's ignored 50 ms `read_to_end` result with bounded
 newline framing and fail-closed read/parse errors. The delayed-write regression
 and complete local verification pass; new hosted exact-head results remain
 required.
+
+## 2026-09-12 — R05 corrected exact-head publication record
+
+Exact corrected implementation `b5c9e9a5e88de5fa08ec462bc209e7f24c909f1e`
+passed Phase 01 runs `34696075240` and `34696077231` and Phase 02 runs
+`34696075224` and `34696077241`. R05 artifact `10298349112` has digest
+`sha256:9462bdb227d38b2d6051d6727bf4246b1d41f9bd6042305a1b422cead1ca945a`.
+The prior `34695094043` failure remains preserved. The next gate is operator
+and Architect review of the candidate package; no visual or Phase 02 approval
+is inferred.

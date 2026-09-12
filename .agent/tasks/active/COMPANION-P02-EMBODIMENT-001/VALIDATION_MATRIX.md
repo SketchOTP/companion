@@ -159,5 +159,8 @@ Openbox endurance, and Phase 02 acceptance remain `NOT RUN`.
 | Hosted Phase 02 / artifact | `PASSED` | run `34695095027`; artifact `10298790129`, digest `sha256:b4c802a0fa20bb2f2e8652bc4d56cbf8887766929412c3abd1debac32c8e82f1` |
 | Delayed control-frame regression | `PASSED` | 150 ms delayed send exceeds superseded 50 ms window and completes under bounded framing |
 | Complete local Phase 01 after correction | `PASSED` | all 12 groups and exact 3,000-message closeout pass with exact Godot 4.7.2 configured |
+| Corrected hosted Phase 01 stability | `PASSED` | exact `b5c9e9a5…`: push `34696075240`, PR `34696077231` |
+| Corrected hosted Phase 02 stability | `PASSED` | exact `b5c9e9a5…`: push `34696075224`, PR `34696077241` |
+| Corrected R05 workflow artifact | `PASSED` | `10298349112`, 49,267,551 bytes, `sha256:9462bdb227d38b2d6051d6727bf4246b1d41f9bd6042305a1b422cead1ca945a` |
 | Operator visual approval | `NOT RUN` | candidate package not self-approved |
 | Phase 02 acceptance | `NOT RUN` | requires Architect review and later gates |

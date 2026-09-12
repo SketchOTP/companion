@@ -73,7 +73,9 @@ frame occurrences / 29 unique image hashes. Local engineering gates pass;
 hosted Phase 02 passed and published the candidate artifact. A duplicate
 inherited Phase 01 run exposed a supervisor control-read scheduling race; the
 bounded local correction is implemented, and corrected exact-head hosted
-workflow evidence plus visual acceptance remain pending.
+workflow evidence is green twice for each workflow at
+`b5c9e9a5e88de5fa08ec462bc209e7f24c909f1e`. Visual acceptance remains
+pending.
 
 Codex may use image generation and reference-based image editing. It must still pass the exact selected frames through the accepted immutable source/ingested/receipt contracts, Rust validation, Godot playback and visual QA.
 
