@@ -240,3 +240,18 @@ cases, export/restore, and the 19-case intake negative matrix. The result
 bundle was regenerated and `validate_r04_results.py --tamper-negative` returned
 `PASSED`; all five mutations were rejected. Evidence remains synthetic and
 bounded; hosted CI, remote publication, and Architect review are still needed.
+
+## R04-C03 diagnostic-parity evidence — 2026-09-12
+
+Review 07 was merged normally at `11e1139de780b44e37c6fa94f07e0ab8090ce7c1`.
+The superseded hosted run did not retain its exact `ERROR:` line, so the line
+cannot be reconstructed and no runtime change was made from speculation. The
+new canonical runner is `scripts/run_godot_qualification.py`; each run writes
+separate stdout, stderr, Godot `--log-file`, Xvfb wrapper, and structured
+`result.json` outputs, with SHA-256 hashes and exact application error/warning
+arrays. Local import/cold/warm runs used Godot
+`4.7.2.stable.official.ed1daf0bf` under Xvfb/Mesa llvmpipe and recorded zero
+Godot application `ERROR:` lines. The wrapper contained only xkbcomp warnings,
+which remain separate diagnostics. Classifier tests passed for all seven cases,
+including a synthetic stderr-only failure. Hosted cold/warm execution and its
+always-published diagnostic artifact remain required evidence.

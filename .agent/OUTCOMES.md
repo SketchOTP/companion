@@ -708,3 +708,14 @@ exact Godot 4.7.2 frame-post-draw playback, event/timing/recovery checks,
 export/restore, and 19 fail-closed negatives. The independent validator passed
 with all five tamper mutations rejected. This remains synthetic E3 evidence;
 hosted CI and Architect review are still required.
+
+## 2026-09-12 — R04-C03 local diagnostic-parity implementation
+
+Review 07 was merged normally. A single `run_godot_qualification.py` now drives
+controlled import and consecutive cold/warm semantic runs, records exact Godot
+version, exit code, renderer/display summary, channel hashes, exact error and
+warning lines, cache digests, and semantic JSON. Xvfb diagnostics remain in a
+separate wrapper log. Seven classifier cases pass locally, including the
+stdout-only regression. Local Rust-backed C02 evidence validation passes with
+zero Godot application errors. Hosted runs and stability rerun remain open;
+no readiness or Phase 02 acceptance is claimed.

@@ -8,9 +8,15 @@ import json
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
+
+sys_path = str(Path(__file__).resolve().parent)
+if sys_path not in sys.path:
+    sys.path.insert(0, sys_path)
+from run_godot_qualification import run_qualification
 
 ROOT = Path(__file__).resolve().parents[3]
 BUILD = ROOT / "experiments/p02-embodiment/scripts/build_r04_synthetic_pack.py"
@@ -62,26 +68,38 @@ def main() -> int:
         if not args.godot:
             godot_result = {"status": "NOT_RUN", "reason": "GODOT_BIN not supplied; exact 4.7.2 render boundary unavailable"}
         else:
-            corrupt = temp / "corrupt"; shutil.copytree(intake_dir, corrupt); frame = corrupt / "runtime/frames/neutral_construction__front__neutral__v01__f000.png"; data = bytearray(frame.read_bytes()); data[100] ^= 1; frame.write_bytes(data)
-            # Keep Xvfb diagnostics out of the Godot stderr channel.  The
-            # validator must classify actual Godot ERROR diagnostics, not
-            # wrapper/X server warnings emitted by xvfb-run.
-            xvfb_error = temp / "xvfb-error.log"
-            godot_cmd = ["xvfb-run", "-a", "-e", str(xvfb_error), args.godot] if shutil.which("xvfb-run") else [args.godot]
-            godot_run = run(godot_cmd + ["--path", "godot", "--script", "res://r04_authored_pack_test.gd", "--", f"--pack={intake_dir / 'pack.json'}", f"--corrupt-pack={corrupt / 'pack.json'}"])
-            godot_errors = [line.strip() for line in (godot_run.stdout + "\n" + godot_run.stderr).splitlines() if "ERROR:" in line]
-            wrapper_errors = [line.strip() for line in xvfb_error.read_text(encoding="utf-8", errors="replace").splitlines() if "error" in line.lower()] if xvfb_error.is_file() else []
-            if godot_run.returncode:
-                godot_result = {"status": "BLOCKED", "reason": "render_boundary_unobserved", "exact_returncode": godot_run.returncode, "output": (godot_run.stdout + godot_run.stderr)[-4000:], "unexpected_error_output": bool(godot_errors), "godot_error_count": len(godot_errors), "wrapper_diagnostic_count": len(wrapper_errors)}
-            else:
-                godot_result = {"status": "PASSED", "output": godot_run.stdout[-4000:], "unexpected_error_output": bool(godot_errors), "godot_error_count": len(godot_errors), "wrapper_diagnostic_count": len(wrapper_errors), "render_observation": "RenderingServer.frame_post_draw"}
+            corrupt = temp / "corrupt"
+            shutil.copytree(intake_dir, corrupt)
+            frame = corrupt / "runtime/frames/neutral_construction__front__neutral__v01__f000.png"
+            data = bytearray(frame.read_bytes()); data[100] ^= 1; frame.write_bytes(data)
+            # All Godot invocations use the same canonical runner.  The
+            # import establishes the cold cache boundary; the two semantic
+            # runs are consecutive cold/warm observations in one workspace.
+            import_dir = temp / "godot-import"
+            cold_dir = temp / "godot-cold"
+            warm_dir = temp / "godot-warm"
+            import_result = run_qualification(godot=Path(args.godot), out=import_dir, mode="import", label="import")
+            cold_result = run_qualification(godot=Path(args.godot), out=cold_dir, mode="semantic", pack=intake_dir / "pack.json", corrupt_pack=corrupt / "pack.json", label="cold")
+            warm_result = run_qualification(godot=Path(args.godot), out=warm_dir, mode="semantic", pack=intake_dir / "pack.json", corrupt_pack=corrupt / "pack.json", label="warm")
+            godot_result = {
+                "status": "PASSED" if all(item.get("status") == "PASSED" for item in (import_result, cold_result, warm_result)) else "FAILED",
+                "runner_version": cold_result.get("runner_version"),
+                "import": import_result,
+                "cold": cold_result,
+                "warm": warm_result,
+                "runs": [import_result, cold_result, warm_result],
+                "unexpected_error_output": any(item.get("godot_error_count", 0) for item in (import_result, cold_result, warm_result)),
+                "godot_error_count": sum(item.get("godot_error_count", 0) for item in (import_result, cold_result, warm_result)),
+                "wrapper_diagnostic_count": sum(len(item.get("wrapper_diagnostics", [])) for item in (import_result, cold_result, warm_result)),
+                "render_observation": "RenderingServer.frame_post_draw",
+            }
         stable(output / "source_intake.json", {"status": "PASSED" if deterministic else "FAILED", "clean_process_byte_identical": deterministic, "profile": pack_a["request_profile"], "track_count": len(pack_a["tracks"]), "frame_count": sum(len(t["frames"]) for t in pack_a["tracks"]), "approved_reference_hashes": {"identity": sha(IDENTITY), "turnaround": sha(TURNAROUND)}, "identity_smoke": smoke, "intake": intake})
         stable(output / "intake_validation.json", negative); stable(output / "rust_contract.json", rust_result); stable(output / "godot_runtime.json", godot_result); stable(output / "export_restore.json", export_result)
         stable(output / "contract_validation.json", {"status": "PASSED", "draft_2020_12": schema.stdout.strip(), "rust_schema_crosswalk": crosswalk.stdout.strip(), "generated_pack_profile": pack_a["request_profile"], "actual_generated_pack_schema_validated_by_intake": True, "actual_generated_pack_path": "runtime evidence only"})
     result_names = ["source_intake.json", "intake_validation.json", "rust_contract.json", "godot_runtime.json", "export_restore.json", "contract_validation.json"]
     ended = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"); git_commit = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True, capture_output=True, check=True).stdout.strip()
     stable(output / "provenance.json", {"profile": "COMPANION_P02_R04_C02_EVIDENCE_V1", "execution_start_utc": started, "execution_end_utc": ended, "git_commit": git_commit, "commands": ["python3 experiments/p02-embodiment/scripts/run_r04_evidence.py --out OUT --cargo CARGO --godot GODOT", "python3 experiments/p02-embodiment/scripts/validate_r04_results.py --results OUT --tamper-negative"], "runtimes": {"python": "qualification interpreter", "rust": "1.98.1", "godot": "4.7.2.stable.official.ed1daf0bf"}, "source_identities": {"identity_sha256": sha(IDENTITY), "turnaround_sha256": sha(TURNAROUND)}, "fixture_sha256": {"contracts/fixtures/mon-authored-frame-source-pack-v1.json": sha(ROOT / "contracts/fixtures/mon-authored-frame-source-pack-v1.json"), "contracts/fixtures/mon-ingested-frame-pack-v1.json": sha(ROOT / "contracts/fixtures/mon-ingested-frame-pack-v1.json")}, "evidence_ceiling": "E3_TARGET_TESTED synthetic intake/runtime boundary only; no production art or Phase 02 acceptance", "result_sha256": {name: sha(output / name) for name in result_names}})
-    (output / "README.md").write_text("""# R04-C02 sanitized evidence\n\nThis bundle is synthetic calibration evidence only; no production character pixels are generated.\n\n## Regeneration\n\n1. Use the pinned qualification Python with Pillow/jsonschema, Rust 1.98.1, and the exact Godot 4.7.2 binary when available. Set `CARGO` and `GODOT_BIN` to private cache paths; keep tools, temporary packs, exports, and raw host output outside Git.\n2. Run `python3 experiments/p02-embodiment/scripts/run_r04_evidence.py --out OUT --cargo \"$CARGO\" --godot \"$GODOT_BIN\"`. It builds the complete `phase02_bounded_motion_proof_v1` pack twice, performs intake and negative tests, validates schemas, round-trips the actual generated pack through Rust, runs local export/restore, and records Godot status.\n3. Run `python3 experiments/p02-embodiment/scripts/validate_r04_results.py --results OUT --tamper-negative`. The validator independently checks profile/count/hash equations and tamper mutations; it must exit zero only for a complete valid result set.\n4. Generated PNGs, CAS copies, caches, binaries, archives, restored trees, and raw logs remain outside Git. Commit only sanitized JSON, hashes, and this procedure.\n""", encoding="utf-8")
+    (output / "README.md").write_text("""# R04-C03 sanitized evidence\n\nThis bundle is synthetic calibration evidence only; no production character pixels are generated.\n\n## Regeneration\n\n1. Use the pinned qualification Python with Pillow/jsonschema, Rust 1.98.1, and the exact Godot 4.7.2 binary when available. Set `CARGO` and `GODOT_BIN` to private cache paths; keep tools, temporary packs, exports, and raw host output outside Git.\n2. Run `python3 experiments/p02-embodiment/scripts/run_r04_evidence.py --out OUT --cargo \"$CARGO\" --godot \"$GODOT_BIN\"`. It builds the complete `phase02_bounded_motion_proof_v1` pack twice, performs intake and negative tests, validates schemas, round-trips the actual generated pack through Rust, runs local export/restore, and invokes the canonical Godot runner for import, cold, and warm runs.\n3. The canonical runner writes separate `godot.stdout.log`, `godot.stderr.log`, `godot.engine.log`, `xvfb-wrapper.log`, and `result.json` files in its private run directories. Application `ERROR:` lines fail the gate; wrapper diagnostics remain separate.\n4. Run `python3 experiments/p02-embodiment/scripts/validate_r04_results.py --results OUT --tamper-negative`. The validator independently checks profile/count/hash equations, canonical Godot run fields, and tamper mutations; it must exit zero only for a complete valid result set.\n5. Generated PNGs, CAS copies, caches, binaries, archives, restored trees, and raw logs remain outside Git. Hosted workflow diagnostics are uploaded with `if: always()`. Commit only sanitized JSON, hashes, and this procedure.\n""", encoding="utf-8")
     print(json.dumps({"status": "PASSED", "results": result_names, "godot": json.loads((output / "godot_runtime.json").read_text()).get("status"), "profile": "phase02_bounded_motion_proof_v1"}, sort_keys=True)); return 0
 
 

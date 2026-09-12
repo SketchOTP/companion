@@ -579,3 +579,14 @@ The local private toolchain/artifact rerun produced exact Rust 1.98.1 and Godot
 result bundle and validator now pass, including five tamper-negative mutations.
 This updates execution evidence only; no production art, dependency adoption,
 visual approval, or Phase 02 acceptance is inferred.
+
+## 2026-09-12 — R04-C03 diagnostic-parity record
+
+Normal merge `8523692` incorporates Review 07. The branch adds the canonical
+Godot qualification runner, classifier regression tests, workflow reuse for
+import/cold/warm runs, and always-published diagnostics. The superseded hosted
+run's exact error was not recoverable, so no speculative runtime change was
+made. Local canonical import/cold/warm and validator checks pass with zero
+application `ERROR:` lines; hosted qualification, artifact inspection, and a
+stability rerun remain required. Protected Graft files remain untouched, PR #9
+is draft/open/unmerged, Issue #8 is open, and Phase 02 remains unaccepted.

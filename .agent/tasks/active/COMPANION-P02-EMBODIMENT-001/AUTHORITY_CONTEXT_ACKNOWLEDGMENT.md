@@ -149,3 +149,23 @@ this preflight: `YES`. Architecture v1.0 remains adopted, Phase 01 remains
 accepted, Phase 02 remains active/unaccepted, and the final readiness status is
 `READY_FOR_ARCHITECT_FRAME_PACK` only after the actual Rust and exact-Godot
 hosted gates pass.
+
+## Architect Review 07 / R04-C03 delta acknowledgment — 2026-09-12
+
+Review 07 and the current Phase 02 directive were reconciled after normal merge
+of `origin/main` at `11e1139de780b44e37c6fa94f07e0ab8090ce7c1`; the merge commit
+in this worktree is `8523692`. C02 contract, intake, PNG, Rust, and local Godot
+semantics are retained. The only active correction is diagnostic parity: one
+canonical runner must define Godot pass/fail for direct CI, evidence generation,
+and local reproduction, with separate stdout, stderr, engine-log, and Xvfb
+channels, exact error lines, cold/warm cache observations, and always-published
+diagnostics. No runtime change is authorized before the hosted diagnostic is
+captured and classified.
+
+Retrieval confidence remains `ADEQUATE`; the local ext4/NVMe secondary and the
+protected primary SSHFS worktree remain untouched except for the normal merge
+of authority files. The secondary operator-owned `.gitignore` and `.ignore`
+remain untracked/modified and excluded from all evidence. Architecture v1.0
+remains adopted, Phase 01 accepted, Phase 02 active/unaccepted, PR #9 draft /
+open / unmerged, and Issue #8 open. No production art, dependency adoption,
+host/display change, or Phase 03 work is authorized.

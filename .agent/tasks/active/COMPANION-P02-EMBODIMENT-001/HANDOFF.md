@@ -283,3 +283,20 @@ round-trip, missing-path failure, frame-post-draw observation, exact event and
 export/restore, and 19 intake negatives. The independent validator passes with
 all five tamper-negative mutations rejected. Hosted CI and remote publication
 remain pending; no production or Phase 02 acceptance claim is made.
+
+## R04-C03 diagnostic-parity handoff
+
+The active correction uses one canonical runner for workflow and evidence
+generation: `experiments/p02-embodiment/scripts/run_godot_qualification.py`.
+It runs controlled import followed by consecutive cold/warm invocations and
+retains `godot.stdout.log`, `godot.stderr.log`, `godot.engine.log`,
+`xvfb-wrapper.log`, and `result.json` with exact version, exit code, display /
+renderer summary, sanitized command, pack digest, channel hashes, exact error
+and warning lines, wrapper diagnostics, cache digests, and semantic JSON.
+Application `ERROR:` lines fail the single classifier; Xvfb warnings never enter
+that channel. The local classifier matrix and Rust-backed C02 result validator
+pass. The prior hosted exact line was lost by the superseded workflow, so the
+first C03 hosted run must capture and publish it even on failure. Readiness is
+not claimed until hosted cold/warm and one stability rerun are green. PR #9 and
+Issue #8 remain open; Phase 02 remains unaccepted and no production art was
+generated.

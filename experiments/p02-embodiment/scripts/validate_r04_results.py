@@ -57,7 +57,17 @@ def validate(results: Path) -> list[str]:
         if restored.get("status") != "PASSED" or restored.get("restored_hashes_equal") is not True: errors.append("export/restore mismatch")
         godot = load(results / "godot_runtime.json")
         if godot.get("status") == "PASSED" and godot.get("unexpected_error_output") is True: errors.append("unexpected Godot ERROR output")
-        if godot.get("status") not in {"PASSED", "BLOCKED", "NOT_RUN"}: errors.append("Godot result status invalid")
+        if godot.get("status") not in {"PASSED", "BLOCKED", "NOT_RUN", "FAILED"}: errors.append("Godot result status invalid")
+        runs = godot.get("runs", [])
+        if runs:
+            if len(runs) != 3 or [item.get("label") for item in runs] != ["import", "cold", "warm"]: errors.append("Godot import/cold/warm run set incomplete")
+            for item in runs:
+                if item.get("status") != "PASSED" or item.get("process_exit_code") != 0: errors.append(f"Godot run failed: {item.get('label')}")
+                if item.get("godot_error_lines") or item.get("godot_error_count") != 0: errors.append(f"Godot ERROR diagnostic: {item.get('label')}")
+                if set(item.get("godot_error_lines_by_channel", {})) != {"stdout", "stderr", "engine"}: errors.append(f"Godot error-channel evidence missing: {item.get('label')}")
+                if set(item.get("godot_warning_lines_by_channel", {})) != {"stdout", "stderr", "engine"}: errors.append(f"Godot warning-channel evidence missing: {item.get('label')}")
+                for field in ("stdout_sha256", "stderr_sha256", "engine_log_sha256", "xvfb_log_sha256", "godot_version"):
+                    if not item.get(field): errors.append(f"Godot evidence field missing: {field}/{item.get('label')}")
         if godot.get("status") != "PASSED": errors.append("render-boundary Godot evidence unavailable")
     except (OSError, json.JSONDecodeError, KeyError) as exc: errors.append(f"validator exception: {exc}")
     return errors

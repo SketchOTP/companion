@@ -21,6 +21,8 @@ jobs:
           set -euo pipefail
           test "$(sha256sum assets/source/p02/references/identity-approved.png | awk '{print $1}')" = 86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56
           test "$(sha256sum assets/source/p02/references/turnaround-approved.png | awk '{print $1}')" = 3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4
+      - name: Verify canonical Godot log classifier
+        run: python3 experiments/p02-embodiment/scripts/test_godot_runner.py
       - name: Fetch exact Phase 01 artifacts
         run: |
           set -euo pipefail
@@ -63,18 +65,24 @@ jobs:
             echo 'missing required generated pack path was accepted' >&2
             exit 1
           fi
-      - name: Godot exact-track, first-frame, degradation, and recovery gate
+      - name: Canonical Godot import, cold, and warm qualification gate
         run: |
           set -euo pipefail
           cp -a "$RUNNER_TEMP/intake" "$RUNNER_TEMP/corrupt"
           FRAME="$RUNNER_TEMP/corrupt/runtime/frames/neutral_construction__front__neutral__v01__f000.png"
           printf X | dd of="$FRAME" bs=1 seek=100 count=1 conv=notrunc status=none
-          xvfb-run -a "$GODOT_BIN" --headless --path godot --editor --quit > "$RUNNER_TEMP/godot-import.log"
-          xvfb-run -a "$GODOT_BIN" --path godot --script res://r04_authored_pack_test.gd -- --pack="$MON_AUTHORED_PACK_PATH" --corrupt-pack="$RUNNER_TEMP/corrupt/pack.json" > "$RUNNER_TEMP/godot-r04.log"
-          xvfb-run -a "$GODOT_BIN" --path godot --script res://r04_identity_smoke_test.gd -- --image="$RUNNER_TEMP/intake/smoke/identity-approved.png" > "$RUNNER_TEMP/godot-identity.log"
-          ! grep -q 'ERROR:' "$RUNNER_TEMP/godot-import.log" "$RUNNER_TEMP/godot-r04.log" "$RUNNER_TEMP/godot-identity.log"
-          grep -q '"status": "PASS"' "$RUNNER_TEMP/godot-r04.log"
-          grep -q '"status": "PASS"' "$RUNNER_TEMP/godot-identity.log"
+          python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+            --godot "$GODOT_BIN" --out "$RUNNER_TEMP/godot-import" --mode import --label import
+          python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+            --godot "$GODOT_BIN" --out "$RUNNER_TEMP/godot-cold" --mode semantic \
+            --pack "$MON_AUTHORED_PACK_PATH" --corrupt-pack "$RUNNER_TEMP/corrupt/pack.json" --label cold
+          python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+            --godot "$GODOT_BIN" --out "$RUNNER_TEMP/godot-warm" --mode semantic \
+            --pack "$MON_AUTHORED_PACK_PATH" --corrupt-pack "$RUNNER_TEMP/corrupt/pack.json" --label warm
+          python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+            --godot "$GODOT_BIN" --out "$RUNNER_TEMP/godot-identity" --mode semantic \
+            --pack "$MON_AUTHORED_PACK_PATH" --script r04_identity_smoke_test.gd \
+            --script-arg="--image=$RUNNER_TEMP/intake/smoke/identity-approved.png" --label identity
       - name: Generate and validate sanitized evidence
         env:
           RUSTUP_TOOLCHAIN: 1.98.1
@@ -105,15 +113,17 @@ jobs:
             experiments/p02-embodiment/scripts/export_restore_authored_pack.py \
             godot/mon_animation_director.gd godot/mon_avatar.gd godot/r04_*.gd
           git diff --exit-code
-      - name: Upload R04 authored-frame boundary evidence
+      - name: Upload R04 authored-frame boundary evidence and diagnostics
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         with:
           name: phase02-embodiment-r04-${{ github.sha }}
           path: |
             ${{ runner.temp }}/r04-results
             ${{ runner.temp }}/intake-validation
-            ${{ runner.temp }}/godot-r04.log
-            ${{ runner.temp }}/godot-identity.log
+            ${{ runner.temp }}/godot-import
+            ${{ runner.temp }}/godot-cold
+            ${{ runner.temp }}/godot-warm
+            ${{ runner.temp }}/godot-identity
             assets/source/p02/architect-frame-request-v1
             contracts/schemas/mon-authored-frame-source-pack-v1.schema.json
             contracts/schemas/mon-ingested-frame-pack-v1.schema.json
@@ -121,4 +131,5 @@ jobs:
             contracts/fixtures/mon-authored-frame-source-pack-v1.json
             contracts/fixtures/mon-ingested-frame-pack-v1.json
             contracts/fixtures/mon-authored-frame-intake-receipt-v1.json
-          if-no-files-found: error
+          if-no-files-found: warn
+          if: always()

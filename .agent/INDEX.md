@@ -136,3 +136,15 @@ Godot frame-post-draw render observation, exact event/timing sequence,
 corruption/degradation/recovery, and the 19-case intake matrix pass. The
 committed bundle is regenerated and independently validated; hosted CI and
 publication remain the final checks before the bounded readiness handoff.
+
+## R04-C03 diagnostic-parity investigation
+
+Review 07 is merged normally into the task branch. One canonical Godot runner
+(`experiments/p02-embodiment/scripts/run_godot_qualification.py`) is used by
+the direct workflow gate, `run_r04_evidence.py`, and local reproduction. It
+captures Godot stdout/stderr/`--log-file` plus separate `xvfb-run -e` output,
+hashes each channel, retains exact `ERROR:` lines, records import/cold/warm
+cache digests, and fails closed on any application error. Classifier negatives
+pass locally and the C02 semantic validator passes against canonical local
+results. The superseded hosted run did not retain its exact error; hosted
+cold/warm and stability rerun remain required before readiness.

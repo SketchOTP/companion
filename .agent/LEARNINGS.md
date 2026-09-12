@@ -483,3 +483,12 @@ cache paths without modifying the host. Godot must run under a real X display
 `RenderingServer.frame_post_draw`; headless process-frame completion is not a
 render-commit observation. The complete pack and result hashes must be
 regenerated after semantic fixture changes.
+
+## 2026-09-12 — Godot evidence must have one pass definition
+
+Separate Godot invocations with different stdout/stderr policies can disagree
+without identifying the cause. A canonical runner must retain application
+stdout, stderr, `--log-file`, and Xvfb wrapper diagnostics independently, hash
+each channel, preserve exact `ERROR:` lines, and be the only classifier used by
+workflow and evidence generation. Wrapper warnings are diagnostic context, not
+Godot errors; unknown Godot errors remain failures.

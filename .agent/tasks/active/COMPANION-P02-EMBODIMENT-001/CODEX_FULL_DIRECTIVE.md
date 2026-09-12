@@ -536,3 +536,15 @@ rights; deferrals/deviations; Notion/GitHub publication; commits/equality;
 operator approvals; and Architect recommendation.
 
 Do not report visual approval unless the operator explicitly provides it.
+
+## R04-C03 superseding correction
+
+Architect Review 07 retains all C02 contract/intake semantics and narrows the
+remaining work to Godot diagnostic parity. Use one canonical runner for
+controlled import, cold, warm, local, workflow, and evidence invocations. It
+must retain Godot stdout/stderr/`--log-file` and separate Xvfb diagnostics,
+record exact error lines and hashes, classify all application `ERROR:` output
+fail-closed, and publish diagnostics on failure. Capture the prior hosted error
+before any runtime change; do not generate production art, alter C02 contracts,
+change Godot 4.7.2, or request visual approval. Final readiness remains gated
+on two hosted passes and one stability rerun.

@@ -150,3 +150,22 @@ validator and five tamper-negative mutations pass. Hosted exact-head CI and
 publication remain required; no production art or Phase 02 acceptance is
 claimed.
 No Architect-authored production frame pack, accepted body construction, approved motion language, production embodiment, visual aliveness, or Phase 03+ capability exists. C02 establishes substantial bounded synthetic engineering evidence but not final frame-pack readiness.
+
+## R04-C03 diagnostic-parity investigation — 2026-09-12
+
+Review 07 was merged normally as `8523692` from `origin/main` at
+`11e1139de780b44e37c6fa94f07e0ab8090ce7c1`. The canonical runner
+`experiments/p02-embodiment/scripts/run_godot_qualification.py` now owns Godot
+import/semantic capture for local, workflow, and evidence paths. It retains
+separate stdout, stderr, `--log-file` engine output, and Xvfb wrapper logs,
+hashes each channel, retains exact error/warning lines, records import/cold/warm
+cache digests, and fails closed on application `ERROR:` diagnostics. Synthetic
+classifier tests cover stdout/stderr/engine failures, wrapper-only warnings,
+ordinary warnings, clean output, and the former stdout-only regression.
+
+The prior hosted exact error was not retained by the superseded run, so no
+runtime fix was made speculatively. Local canonical import/cold/warm runs and
+the existing C02 semantic validator pass with zero Godot error lines. Hosted
+qualification and its always-published diagnostic artifact remain required;
+Phase 02 is active/unaccepted and `READY_FOR_ARCHITECT_FRAME_PACK` is not yet
+claimed.

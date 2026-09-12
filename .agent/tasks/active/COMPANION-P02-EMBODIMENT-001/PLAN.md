@@ -81,6 +81,19 @@ operator visual review and the dedicated Openbox target gate.
 6. Run fail-closed negative, Rust, Godot, clean-clone, and hosted CI gates.
 7. Publish the bounded result and return for Architect-authored frames.
 
+## R04-C03 diagnostic-parity investigation
+
+1. Merge Review 07 normally and preserve the C02 contract/intake evidence.
+2. Reproduce the prior hosted discrepancy without changing Godot runtime code;
+   retain the exact application and wrapper channels.
+3. Use one canonical runner for import, cold, warm, local, workflow, and
+   evidence-generation invocations, with `--log-file` and `xvfb-run -e`.
+4. Fail closed on any Godot `ERROR:` in stdout, stderr, or engine log; keep
+   wrapper warnings separate and test the classifier with synthetic channels.
+5. Publish diagnostics with `if: always()`, then run hosted cold/warm and one
+   stability rerun before returning `READY_FOR_ARCHITECT_FRAME_PACK`.
+6. Do not generate production art or reopen accepted C02 semantics.
+
 ## R04-C01 narrow correction plan
 
 1. Reconcile Review 05 and preserve the R02/R03 negative-art history.

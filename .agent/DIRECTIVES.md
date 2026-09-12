@@ -396,3 +396,13 @@ make the human and executable request identical; build and intake the complete
 same-track reuse, exact PNG structure, fsync-backed atomic publication, and
 truthful render-boundary naming. No production pixels or visual approval are
 authorized. Missing exact Rust/Godot executables remain explicit blockers.
+
+## 2026-09-12 — R04-C03 diagnostic parity
+
+Review 07 continues C02 without reopening its contract or intake semantics.
+Use one canonical Godot runner for local, direct-workflow, and evidence paths;
+capture stdout, stderr, `--log-file`, and Xvfb diagnostics separately; retain
+exact application error lines; run identical import/cold/warm invocations; and
+publish diagnostics even when validation fails. Unknown Godot `ERROR:` output
+remains fail-closed. No production art, host changes, or Phase 03 work is
+authorized.

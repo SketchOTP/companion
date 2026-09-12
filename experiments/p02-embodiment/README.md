@@ -64,3 +64,15 @@ contact, or motion-quality evidence.
 
 Godot's old `r03_temporal_playback_test.gd` is likewise historical negative
 evidence. R04 has no code path from these files to `MonAvatar`.
+# Phase 02 qualification infrastructure
+
+The R04-C03 Godot diagnostic boundary is implemented by
+`scripts/run_godot_qualification.py`. It is the sole Godot qualification
+runner for local reproduction, direct workflow gates, and
+`run_r04_evidence.py`. Each invocation retains separate `godot.stdout.log`,
+`godot.stderr.log`, `godot.engine.log`, `xvfb-wrapper.log`, and `result.json`
+files. Godot application `ERROR:` lines fail the gate; Xvfb wrapper warnings
+remain separate diagnostics.
+
+This remains synthetic bounded evidence only. It does not generate production
+character art, approve visual identity, or establish Phase 02 acceptance.
