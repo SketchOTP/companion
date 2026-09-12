@@ -590,3 +590,20 @@ made. Local canonical import/cold/warm and validator checks pass with zero
 application `ERROR:` lines; hosted qualification, artifact inspection, and a
 stability rerun remain required. Protected Graft files remain untouched, PR #9
 is draft/open/unmerged, Issue #8 is open, and Phase 02 remains unaccepted.
+
+## 2026-09-12 — R04-C03 final publication record
+
+Normal authority merge `8523692` was followed by correction commits
+`1a1dab092fc2b3051aba7eb39a251fbb4dea242b`,
+`5e7edb105a2a1ac5e390018ee514c136543edbf6`, and
+`e022d18c59a836272e1470ae4905e10641abfea2`. The initial hosted failure
+`34670268217` published artifact `10289903730`
+(`sha256:2ae8b5a0b738147523e55ee6a8e7d952a97e93061d7d194d90effe1fbc9860e7`)
+and exposed the exact ALSA `ERR_CANT_OPEN` diagnostic. Explicit Dummy audio
+selection resolved the backend probe without weakening error policy. Hosted
+Phase 02 run `34670472778` and its stability job `103491224017` passed with
+artifacts `10290328716` and `10290383849`; Phase 01 rerun `34670472829` / job
+`103491215434` passed. Final task head and verified remote branch are
+`e022d18c59a836272e1470ae4905e10641abfea2`. PR #9 stays draft/open/unmerged,
+Issue #8 stays open, and the bounded result is
+`READY_FOR_ARCHITECT_FRAME_PACK` without production or Phase 02 acceptance.

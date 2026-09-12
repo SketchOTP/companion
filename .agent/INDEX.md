@@ -148,3 +148,14 @@ cache digests, and fails closed on any application error. Classifier negatives
 pass locally and the C02 semantic validator passes against canonical local
 results. The superseded hosted run did not retain its exact error; hosted
 cold/warm and stability rerun remain required before readiness.
+
+## R04-C03 completion
+
+One canonical Godot runner now defines local, evidence, and direct-CI
+diagnostics. It records separate stdout/stderr/engine/Xvfb logs, exact error
+lines, hashes, cache state, and semantic output, and explicitly selects
+`--audio-driver Dummy` to avoid the hosted ALSA fallback diagnostic. Hosted
+Phase 02 run `34670472778`, its stability rerun, and Phase 01 rerun
+`34670472829` are green. Artifacts `10290328716` and `10290383849` are
+published. Status is `READY_FOR_ARCHITECT_FRAME_PACK` for bounded synthetic
+evidence only; Phase 02 remains unaccepted.

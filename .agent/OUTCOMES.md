@@ -719,3 +719,17 @@ separate wrapper log. Seven classifier cases pass locally, including the
 stdout-only regression. Local Rust-backed C02 evidence validation passes with
 zero Godot application errors. Hosted runs and stability rerun remain open;
 no readiness or Phase 02 acceptance is claimed.
+
+## 2026-09-12 — R04-C03 completed bounded diagnostic parity
+
+The superseded hosted attempt captured and published the exact line
+`ERROR: Condition "status < 0" is true. Returning: ERR_CANT_OPEN` from
+`init_output_device (drivers/alsa/audio_driver_alsa.cpp:97)`. It was emitted by
+Godot's ALSA probe before its documented dummy fallback, not by the corrupted
+PNG fixture; Xvfb warnings stayed in their own channel. Explicit
+`--audio-driver Dummy` is now part of the one canonical runner, so no engine
+error is ignored. Phase 02 hosted run `34670472778` and its stability rerun
+passed; Phase 01 rerun `34670472829` passed after the prior inherited race.
+Readiness is `READY_FOR_ARCHITECT_FRAME_PACK` for synthetic bounded evidence
+only. Architecture v1.0 and Phase 01 remain adopted/accepted; Phase 02,
+production art, and later capabilities remain unaccepted.

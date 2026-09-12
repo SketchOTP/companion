@@ -169,3 +169,23 @@ the existing C02 semantic validator pass with zero Godot error lines. Hosted
 qualification and its always-published diagnostic artifact remain required;
 Phase 02 is active/unaccepted and `READY_FOR_ARCHITECT_FRAME_PACK` is not yet
 claimed.
+
+## R04-C03 completion — 2026-09-12
+
+The first hosted run retained the exact ALSA diagnostic before any change:
+`ERROR: Condition "status < 0" is true. Returning: ERR_CANT_OPEN` at
+`drivers/alsa/audio_driver_alsa.cpp:97`, duplicated in stdout and the Godot
+engine log, with empty stderr and separate Xvfb xkbcomp warnings. It was a
+host audio-backend initialization issue. The canonical runner now passes
+Godot's documented `--audio-driver Dummy` explicitly; no genuine Godot error
+is whitelisted or hidden.
+
+At task head `e022d18c59a836272e1470ae4905e10641abfea2`, Phase 02 hosted run
+`34670472778` and its stability rerun both pass import/cold/warm, semantic
+validation, and always-upload diagnostics; Phase 01 rerun `34670472829` also
+passes. Published artifacts are `10290328716`
+(`sha256:4d8685f808a3b0dcc74ecbb1e837fb7726fe689663dbe7a5ba3a1afc8319a651`)
+and `10290383849`
+(`sha256:5970ba4a5745f0a11e5368c7ae585ec2bece1fa48bc888be086237e0d2cc2dbf`).
+Bounded handoff is `READY_FOR_ARCHITECT_FRAME_PACK`; Phase 02 remains
+active/unaccepted and no production art or later-phase capability is claimed.

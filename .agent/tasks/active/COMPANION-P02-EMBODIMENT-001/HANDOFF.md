@@ -300,3 +300,31 @@ first C03 hosted run must capture and publish it even on failure. Readiness is
 not claimed until hosted cold/warm and one stability rerun are green. PR #9 and
 Issue #8 remain open; Phase 02 remains unaccepted and no production art was
 generated.
+
+## R04-C03 final handoff — 2026-09-12
+
+Normal authority merge is `8523692` from `origin/main`
+`11e1139de780b44e37c6fa94f07e0ab8090ce7c1`. Correction commits are
+`1a1dab092fc2b3051aba7eb39a251fbb4dea242b`,
+`5e7edb105a2a1ac5e390018ee514c136543edbf6`, and
+`e022d18c59a836272e1470ae4905e10641abfea2`; final local and remote task head
+is `e022d18c59a836272e1470ae4905e10641abfea2`.
+
+The superseded hosted run `34670268217` captured
+`ERROR: Condition "status < 0" is true. Returning: ERR_CANT_OPEN` at
+`drivers/alsa/audio_driver_alsa.cpp:97`; it was an ALSA initialization
+diagnostic duplicated in stdout and the engine log, with empty stderr and
+separate Xvfb warnings. The canonical runner now explicitly selects
+`--audio-driver Dummy` and retains strict application-error classification.
+
+Hosted Phase 02 run `34670472778` passed canonical import/cold/warm,
+validation, and policy checks; stability job `103491224017` passed again.
+Hosted Phase 01 rerun `34670472829` / job `103491215434` passed all checks.
+Diagnostic artifacts: `10290328716`
+(`sha256:4d8685f808a3b0dcc74ecbb1e837fb7726fe689663dbe7a5ba3a1afc8319a651`)
+and `10290383849`
+(`sha256:5970ba4a5745f0a11e5368c7ae585ec2bece1fa48bc888be086237e0d2cc2dbf`).
+Local canonical evidence and tamper-negative validation pass. The bounded
+handoff is `READY_FOR_ARCHITECT_FRAME_PACK`; this is not Phase 02 acceptance,
+operator visual approval, or a production-art claim. PR #9 remains
+draft/open/unmerged and Issue #8 remains open.

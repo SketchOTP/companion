@@ -406,3 +406,14 @@ exact application error lines; run identical import/cold/warm invocations; and
 publish diagnostics even when validation fails. Unknown Godot `ERROR:` output
 remains fail-closed. No production art, host changes, or Phase 03 work is
 authorized.
+
+## 2026-09-12 — R04-C03 completion reconciliation
+
+The hosted discrepancy was captured as an ALSA initialization diagnostic before
+the minimal correction. The canonical runner now explicitly selects Godot's
+Dummy audio driver for every mode, while retaining strict application-error
+classification and separate Xvfb wrapper output. Hosted Phase 02 import/cold/
+warm and stability runs plus hosted Phase 01 rerun are green and diagnostics
+were uploaded on both attempts. The bounded handoff is
+`READY_FOR_ARCHITECT_FRAME_PACK`; no production art or Phase 02 acceptance is
+claimed.

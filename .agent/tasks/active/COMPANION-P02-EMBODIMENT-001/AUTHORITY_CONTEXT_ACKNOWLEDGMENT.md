@@ -169,3 +169,17 @@ remain untracked/modified and excluded from all evidence. Architecture v1.0
 remains adopted, Phase 01 accepted, Phase 02 active/unaccepted, PR #9 draft /
 open / unmerged, and Issue #8 open. No production art, dependency adoption,
 host/display change, or Phase 03 work is authorized.
+
+## R04-C03 completion acknowledgment — 2026-09-12
+
+The hosted discrepancy was captured before changing the runner. In failed run
+`34670268217`, Godot emitted `ERROR: Condition "status < 0" is true. Returning:
+ERR_CANT_OPEN` at `drivers/alsa/audio_driver_alsa.cpp:97` during ALSA
+initialization, followed by the documented dummy-driver fallback. It was not an
+image or fixture load failure. The canonical runner now passes
+`--audio-driver Dummy` explicitly for import and Xvfb semantic runs; no host
+configuration or error whitelist was introduced.
+
+Hosted Phase 02 run `34670472778` and its stability rerun both passed; Phase 01
+rerun `34670472829` passed. Artifacts `10290328716` (`sha256:4d8685f808a3b0dcc74ecbb1e837fb7726fe689663dbe7a5ba3a1afc8319a651`) and
+`10290383849` (`sha256:5970ba4a5745f0a11e5368c7ae585ec2bece1fa48bc888be086237e0d2cc2dbf`) were published. Retrieval confidence is `ADEQUATE`; Architecture v1.0 remains adopted, Phase 01 accepted, Phase 02 active/unaccepted, PR #9 draft/open/unmerged, and Issue #8 open. No production art or later-phase work was generated.

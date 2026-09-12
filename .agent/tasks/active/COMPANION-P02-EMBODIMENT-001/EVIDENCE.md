@@ -255,3 +255,31 @@ Godot application `ERROR:` lines. The wrapper contained only xkbcomp warnings,
 which remain separate diagnostics. Classifier tests passed for all seven cases,
 including a synthetic stderr-only failure. Hosted cold/warm execution and its
 always-published diagnostic artifact remain required evidence.
+
+## R04-C03 final hosted evidence — 2026-09-12
+
+The first C03 hosted run `34670268217` retained the exact diagnostic after the
+upload-condition fix: `ERROR: Condition "status < 0" is true. Returning:
+ERR_CANT_OPEN` at `drivers/alsa/audio_driver_alsa.cpp:97`, duplicated in
+stdout and the Godot engine log, with empty stderr and separate Xvfb xkbcomp
+warnings. This is a host audio-backend initialization diagnostic, not an image
+fixture error. The canonical runner was then corrected to select Godot's
+explicit `Dummy` audio driver while preserving fail-closed error classification.
+
+At exact head `e022d18c59a836272e1470ae4905e10641abfea2`, Phase 02 run
+`34670472778` passed import/cold/warm, semantic validation, policy checks, and
+always-upload diagnostics; stability job `103491224017` passed again. Phase 01
+rerun `34670472829` / job `103491215434` passed all inherited checks, including
+the 3,000-cycle closeout. Cold/warm used Godot
+`4.7.2.stable.official.ed1daf0bf`, exit `0`, zero application errors, and
+`RenderingServer.frame_post_draw`. Cold hashes: stdout
+`4951db8a7a462c908040e3c693ee2f25ad62b5f9eb34f12985d06565d21c5f70`, stderr
+`e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`, engine
+`c540f86b2ae357057d13f35c647a211c72bfba004829b3b44536bb3e95e6eb9a`, Xvfb
+`b987a262609a3720f450ab6815ed90b2069dd47b7b012959ca19c325aebf5d55`.
+Published artifacts are `10290328716`
+(`sha256:4d8685f808a3b0dcc74ecbb1e837fb7726fe689663dbe7a5ba3a1afc8319a651`)
+and `10290383849`
+(`sha256:5970ba4a5745f0a11e5368c7ae585ec2bece1fa48bc888be086237e0d2cc2dbf`).
+Evidence remains bounded synthetic E3 target testing; no production art or
+Phase 02 acceptance claim follows.

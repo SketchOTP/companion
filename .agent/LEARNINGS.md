@@ -492,3 +492,11 @@ stdout, stderr, `--log-file`, and Xvfb wrapper diagnostics independently, hash
 each channel, preserve exact `ERROR:` lines, and be the only classifier used by
 workflow and evidence generation. Wrapper warnings are diagnostic context, not
 Godot errors; unknown Godot errors remain failures.
+
+## 2026-09-12 — C03 hosted ALSA parity
+
+A hosted Godot `ERROR:` can be a real backend initialization attempt even when
+Godot later falls back successfully. Preserve the exact line and channel
+context first. For non-audio qualification, selecting the documented Dummy
+driver is an explicit environment boundary, not a whitelist; the application
+classifier must continue to fail on all remaining Godot error channels.
