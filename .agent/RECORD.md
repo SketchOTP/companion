@@ -560,3 +560,22 @@ and `5d29b51e48073077abbdffad453226ce7e8cfddc`. The exact source/ingested/
 receipt contracts, byte-preserving intake, Rust/Godot gates, and independent
 tamper-negative validator are committed. No production character pixels were
 generated or approved; PR #9 remains draft/open/unmerged and Issue #8 remains open.
+
+## 2026-09-12 — R04-C02 request/profile correction
+
+Normal merge `4f979fcf1381d93b9d6722d56723c50305c1ac63` incorporates Review 06.
+The correction builds the complete tuple-keyed synthetic request, enforces
+exact profile/event/reuse/PNG semantics, and adds fsync-backed atomic intake
+with injected failure evidence. Local Python schema/intake/negative and
+export/restore checks pass. Rust 1.98.1 and exact Godot 4.7.2 are unavailable
+here, so required typed-round-trip and render-boundary gates remain explicitly
+blocked; no readiness or Phase 02 acceptance is claimed. Protected Graft files
+remain untouched; PR #9 and Issue #8 stay open.
+
+## 2026-09-12 — R04-C02 exact-tool evidence update
+
+The local private toolchain/artifact rerun produced exact Rust 1.98.1 and Godot
+4.7.2 observations for the complete 8-track/31-frame synthetic profile. The
+result bundle and validator now pass, including five tamper-negative mutations.
+This updates execution evidence only; no production art, dependency adoption,
+visual approval, or Phase 02 acceptance is inferred.

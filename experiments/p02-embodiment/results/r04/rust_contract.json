@@ -1,7 +1,10 @@
 {
-  "actual_pack_message": "authored_pack_rust_round_trip_ok pack_id=00000000-0000-4000-8000-000000000405 tracks=1",
+  "actual_pack_message": "authored_pack_rust_round_trip_ok pack_id=00000000-0000-4000-8000-00000000c002 tracks=8",
   "actual_pack_returncode": 0,
+  "frame_count": 31,
   "missing_pack_path_rejected": true,
   "missing_pack_path_returncode": 1,
-  "status": "PASSED"
+  "pack_profile": "phase02_bounded_motion_proof_v1",
+  "status": "PASSED",
+  "track_count": 8
 }

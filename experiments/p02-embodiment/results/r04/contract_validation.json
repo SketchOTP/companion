@@ -1,7 +1,8 @@
 {
   "actual_generated_pack_path": "runtime evidence only",
+  "actual_generated_pack_schema_validated_by_intake": true,
   "draft_2020_12": "schemas_semantic_ok count=16 positive_and_negative=all",
-  "generated_pack_schema_validated_by_intake": true,
+  "generated_pack_profile": "phase02_bounded_motion_proof_v1",
   "rust_schema_crosswalk": "contract_semantic_crosswalk_ok count=15 required_fields_and_types=checked",
   "status": "PASSED"
 }

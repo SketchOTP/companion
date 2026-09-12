@@ -251,3 +251,35 @@ the inherited 3,000-cycle Phase 01 regression (seeds 17/23/41; 309.685 s).
 The final handoff is `READY_FOR_ARCHITECT_FRAME_PACK`. PR #9 remains
 draft/open/unmerged and Issue #8 remains open; Architect and operator visual
 approval are still required before any production frame pack is accepted.
+
+## R04-C02 handoff — 2026-09-12
+
+The C02 correction aligns the human and executable request and produces one
+complete synthetic bounded profile (`phase02_bounded_motion_proof_v1`, 8
+tracks, 31 frames). No production character pixels were generated. The
+positive source pack passes Python schema/semantic validation, immutable
+content-addressed intake, byte equality, local export/restore, and the full
+19-case negative matrix. PNG checks now require one IHDR, RGBA8, zero
+compression/filter/interlace flags, one explicit sRGB chunk, one terminal
+IEND, and no trailing bytes. Intake fsyncs files/directories and uses a
+same-filesystem atomic rename; the injected mid-intake failure leaves no
+publishable destination.
+
+The available local environment has neither Rust 1.98.1 nor the exact Godot
+4.7.2 binary, so actual Rust round-trip and pinned Godot render-boundary gates
+are `NOT RUN`/`BLOCKED`. A Godot 4.6 Xvfb smoke was not promoted to evidence.
+The bounded status therefore remains `BLOCKED` pending hosted exact-tool
+execution; `READY_FOR_ARCHITECT_FRAME_PACK` is not claimed. Phase 01 remains
+accepted, Phase 02 remains active/unaccepted, PR #9 remains draft/open/unmerged,
+and Issue #8 remains open.
+
+## R04-C02 exact-tool rerun — 2026-09-12
+
+The private Rust 1.98.1 toolchain and transient official Godot 4.7.2 artifact
+were executed without system modification. The regenerated complete synthetic
+profile passes exact Rust and Godot gates locally: 8 tracks/31 frames, typed
+round-trip, missing-path failure, frame-post-draw observation, exact event and
+24 Hz timing checks, corruption/ineligible/missing-track rejection, recovery,
+export/restore, and 19 intake negatives. The independent validator passes with
+all five tamper-negative mutations rejected. Hosted CI and remote publication
+remain pending; no production or Phase 02 acceptance claim is made.

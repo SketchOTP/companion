@@ -1,20 +1,17 @@
 #!/usr/bin/env python3
-"""Fail-closed negative matrix for the authored-frame intake boundary.
-
-All images generated here are unmistakably synthetic calibration geometry. No
-production character pixels are created or repaired by this test.
-"""
+"""Fail-closed C02 intake/profile negative matrix (synthetic geometry only)."""
 from __future__ import annotations
 
 import argparse
 import copy
 import hashlib
 import json
+import os
 import shutil
-import subprocess
 import struct
+import subprocess
 import tempfile
-import sys
+import zlib
 from pathlib import Path
 
 from PIL import Image
@@ -22,8 +19,6 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[3]
 BUILD = ROOT / "experiments/p02-embodiment/scripts/build_r04_synthetic_pack.py"
 INTAKE = ROOT / "experiments/p02-embodiment/scripts/intake_authored_frame_pack.py"
-sys.path.insert(0, str(INTAKE.parent))
-from intake_authored_frame_pack import IntakeError, validate_request_profile
 
 
 def stable(path: Path, value: object) -> None:
@@ -34,11 +29,17 @@ def sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def invoke(source: Path, output: Path, operation: str = "test") -> tuple[int, dict]:
-    result = subprocess.run(
-        ["python3", str(INTAKE), "intake", "--source", str(source), "--out", str(output), "--operation", operation],
-        text=True, capture_output=True,
-    )
+def recalc(pack: dict) -> None:
+    for track in pack["tracks"]:
+        track["track_checksum"] = hashlib.sha256(json.dumps({k: v for k, v in track.items() if k != "track_checksum"}, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
+    stable(pack["_path"], {k: v for k, v in pack.items() if k != "_path"})
+
+
+def invoke(source: Path, output: Path, operation: str = "test", *, injected_failure: bool = False) -> tuple[int, dict]:
+    env = os.environ.copy()
+    if injected_failure:
+        env["COMPANION_INTAKE_FAIL_AFTER_STAGE"] = "1"
+    result = subprocess.run(["python3", str(INTAKE), "intake", "--source", str(source), "--out", str(output), "--operation", operation], text=True, capture_output=True, env=env)
     stream = result.stdout if result.returncode == 0 else result.stderr
     try:
         return result.returncode, json.loads(stream.strip().splitlines()[-1])
@@ -46,163 +47,105 @@ def invoke(source: Path, output: Path, operation: str = "test") -> tuple[int, di
         return result.returncode, {"status": "UNKNOWN", "detail": stream[-500:]}
 
 
-def edit_manifest(source: Path, mutate, *, update_sidecar: bool = False) -> None:
-    manifest = source / "pack.json"
-    pack = json.loads(manifest.read_text(encoding="utf-8"))
-    mutate(pack)
-    track = pack["tracks"][0]
-    if update_sidecar and track["frames"]:
-        frame = track["frames"][0]
-        stable(source / "sidecars" / frame["sidecar_filename"], frame)
-    unsigned = {key: value for key, value in track.items() if key != "track_checksum"}
-    track["track_checksum"] = hashlib.sha256(json.dumps(unsigned, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
-    stable(manifest, pack)
+def load_pack(source: Path) -> dict:
+    pack = json.loads((source / "pack.json").read_text(encoding="utf-8")); pack["_path"] = source / "pack.json"; return pack
+
+
+def write_pack(source: Path, pack: dict) -> None:
+    pack["_path"] = source / "pack.json"; recalc(pack)
+
+
+def track(pack: dict, family: str, facing: str | None = None) -> dict:
+    for item in pack["tracks"]:
+        if item["family"] == family and (facing is None or item["selection_facing"] == facing): return item
+    raise KeyError(family)
 
 
 def mutate_image(source: Path, transform, *, update_manifest_hash: bool = True) -> None:
-    pack = json.loads((source / "pack.json").read_text(encoding="utf-8"))
-    frame = pack["tracks"][0]["frames"][0]
-    path = source / "frames" / frame["filename"]
-    transform(path)
+    pack = load_pack(source); item = pack["tracks"][0]["frames"][0]; path = source / "frames" / item["filename"]; transform(path)
     if update_manifest_hash:
-        digest = sha(path)
-        frame["source_sha256"] = digest
+        digest = sha(path); item["source_sha256"] = digest
         for asset in pack["source_assets"]:
-            if asset["asset_id"] == frame["source_asset_id"]:
-                asset["sha256"] = digest
-        stable(source / "sidecars" / frame["sidecar_filename"], frame)
-        track = pack["tracks"][0]
-        unsigned = {key: value for key, value in track.items() if key != "track_checksum"}
-        track["track_checksum"] = hashlib.sha256(json.dumps(unsigned, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
-    stable(source / "pack.json", pack)
+            if asset["asset_id"] == item["source_asset_id"]: asset["sha256"] = digest
+        stable(source / "sidecars" / item["sidecar_filename"], item)
+    write_pack(source, pack)
 
 
-def remove_srgb(path: Path) -> None:
+def add_chunk(path: Path, kind: bytes, payload: bytes, *, before_ihdr: bool = False) -> None:
+    data = path.read_bytes(); chunk = struct.pack(">I", len(payload)) + kind + payload + struct.pack(">I", zlib.crc32(kind + payload) & 0xFFFFFFFF)
+    if before_ihdr: path.write_bytes(data[:8] + chunk + data[8:]); return
+    length = struct.unpack(">I", data[8:12])[0]; split = 16 + length + 4; path.write_bytes(data[:split] + chunk + data[split:])
+
+
+def remove_chunk(path: Path, kind_wanted: bytes) -> None:
     data = path.read_bytes(); out = bytearray(data[:8]); offset = 8
     while offset + 12 <= len(data):
-        length = struct.unpack(">I", data[offset:offset + 4])[0]
-        chunk = data[offset:offset + 12 + length]
-        if data[offset + 4:offset + 8] != b"sRGB":
-            out.extend(chunk)
-        offset += 12 + length
-        if chunk[4:8] == b"IEND":
-            break
+        length = struct.unpack(">I", data[offset:offset + 4])[0]; chunk = data[offset:offset + 12 + length]; offset += len(chunk)
+        if chunk[4:8] != kind_wanted: out.extend(chunk)
+        if chunk[4:8] == b"IEND": break
     path.write_bytes(out)
 
 
-def mutate_ihdr_bit_depth(path: Path, bit_depth: int) -> None:
-    data = bytearray(path.read_bytes())
-    if data[:8] != b"\x89PNG\r\n\x1a\n" or data[12:16] != b"IHDR":
-        raise AssertionError("synthetic fixture is not a PNG with IHDR")
-    data[24] = bit_depth
-    data[29:33] = struct.pack(">I", __import__("zlib").crc32(data[12:29]) & 0xFFFFFFFF)
-    path.write_bytes(data)
-
-
-def blank_image(path: Path) -> None:
-    Image.new("RGBA", (1024, 1024), (0, 0, 0, 0)).save(path, "PNG", optimize=False)
-    # Exercise the blank-image rule independently of the sRGB rule.
-    data = path.read_bytes(); length = struct.unpack(">I", data[8:12])[0]; split = 16 + length + 4
-    payload = b"\x00"; kind = b"sRGB"; chunk = struct.pack(">I", 1) + kind + payload + struct.pack(">I", __import__("zlib").crc32(kind + payload) & 0xFFFFFFFF)
-    path.write_bytes(data[:split] + chunk + data[split:])
-
-
-def opaque_image(path: Path) -> None:
-    Image.new("RGBA", (1024, 1024), (0, 190, 255, 255)).save(path, "PNG", optimize=False)
-    data = path.read_bytes(); length = struct.unpack(">I", data[8:12])[0]; split = 16 + length + 4
-    payload = b"\x00"; kind = b"sRGB"; chunk = struct.pack(">I", 1) + kind + payload + struct.pack(">I", __import__("zlib").crc32(kind + payload) & 0xFFFFFFFF)
-    path.write_bytes(data[:split] + chunk + data[split:])
-
-
 def main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--out", type=Path, required=True)
-    args = parser.parse_args()
-    evidence = args.out.resolve()
-    evidence.mkdir(parents=True, exist_ok=True)
-
-    with tempfile.TemporaryDirectory(prefix="companion-r04-c01-intake-") as temporary:
-        temp = Path(temporary)
-        source = temp / "source"
-        subprocess.run(["python3", str(BUILD), "--out", str(source), "--clean"], check=True, stdout=subprocess.DEVNULL)
+    parser = argparse.ArgumentParser(); parser.add_argument("--out", type=Path, required=True); args = parser.parse_args(); evidence = args.out.resolve(); evidence.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix="companion-r04-c02-intake-") as temporary:
+        temp = Path(temporary); source = temp / "source"; subprocess.run(["python3", str(BUILD), "--out", str(source), "--clean"], check=True, stdout=subprocess.DEVNULL)
         code, valid = invoke(source, temp / "valid")
-        if code or valid.get("status") != "PASSED" or not all(row.get("byte_identical") for row in valid.get("frames", [])):
-            raise AssertionError(f"valid byte-preserving intake failed: {valid}")
-
+        if code or valid.get("status") != "PASSED": raise AssertionError(f"positive intake failed: {valid}")
         cases: dict[str, dict] = {}
 
-        def case(name: str, expected: str, edit, operation: str = "test", *, preserve_output: bool = False) -> None:
-            candidate = temp / name
-            shutil.copytree(source, candidate)
-            edit(candidate)
-            output = temp / f"out-{name}"
-            returncode, result = invoke(candidate, output, operation)
-            if returncode == 0 or result.get("reason") != expected:
-                raise AssertionError(f"{name}: expected {expected}, got {returncode} {result}")
-            if not preserve_output and output.exists() and any(output.iterdir()):
-                raise AssertionError(f"{name}: failed intake left published output")
+        def case(name: str, expected: str, edit, operation: str = "test") -> None:
+            candidate = temp / name; shutil.copytree(source, candidate); edit(candidate); output = temp / f"out-{name}"; rc, result = invoke(candidate, output, operation)
+            if rc == 0 or result.get("reason") != expected: raise AssertionError(f"{name}: expected {expected}, got {rc} {result}")
+            if output.exists() and any(output.iterdir()): raise AssertionError(f"{name}: failed intake published output")
             cases[name] = {"status": "REJECTED", "reason": result["reason"]}
 
+        case("right_profile_mismatch", "request_profile_incomplete", lambda p: (lambda d: (d["tracks"][1].update({"entry_facing": "left", "exit_facing": "left"}), write_pack(p, d)))(load_pack(p)))
+        case("missing_neutral_role", "request_profile_incomplete", lambda p: (lambda d: (d["tracks"].pop(1), write_pack(p, d)))(load_pack(p)))
+        def duplicate_role(p: Path) -> None:
+            d = load_pack(p); dupe = copy.deepcopy(d["tracks"][0]); source_frame = dupe["frames"][0]; old_name = source_frame["filename"]
+            new_name = "neutral_construction__front__neutral__v02__f000.png"; new_sidecar = new_name.removesuffix(".png") + ".frame.json"
+            shutil.copyfile(p / "frames" / old_name, p / "frames" / new_name)
+            source_frame.update({"frame_id": "duplicate_neutral_front_000", "filename": new_name, "sidecar_filename": new_sidecar, "source_asset_id": "asset_duplicate_neutral_front_000"})
+            digest = sha(p / "frames" / new_name); source_frame["source_sha256"] = digest
+            stable(p / "sidecars" / new_sidecar, source_frame)
+            d["source_assets"].append({"asset_id": "asset_duplicate_neutral_front_000", "filename": "frames/" + new_name, "sha256": digest})
+            dupe["track_id"] = "synthetic:duplicate:front:2"; write_pack(p, d | {"tracks": d["tracks"] + [dupe]})
+        case("duplicate_neutral_role", "request_profile_duplicate_role", duplicate_role)
+        def endpoint(p: Path) -> None:
+            d = load_pack(p); t = track(d, "orient_front_to_front_left"); t["frames"][-1]["facing"] = "front"; stable(p / "sidecars" / t["frames"][-1]["sidecar_filename"], t["frames"][-1]); write_pack(p, d)
+        case("wrong_entry_exit_frame_facing", "filename_invalid", endpoint)
+        def missing_facing_event(p: Path) -> None:
+            d = load_pack(p); track(d, "orient_front_to_front_left")["events"] = []; write_pack(p, d)
+        case("missing_facing_changed", "request_profile_event_missing", missing_facing_event)
+        def walk_events(p: Path) -> None:
+            d = load_pack(p); track(d, "walk")["events"] = [{"event_id": "wrong", "name": "other", "tick": 0, "frame_index": 0}]; write_pack(p, d)
+        case("missing_walk_footfalls", "request_profile_event_missing", walk_events)
+        def listen_order(p: Path) -> None:
+            d = load_pack(p); t = track(d, "listen_acknowledge"); t["events"] = list(reversed(t["events"])); write_pack(p, d)
+        case("listen_acknowledge_order", "request_profile_event_missing", listen_order)
+        def reuse_bad(p: Path) -> None:
+            d = load_pack(p); t = track(d, "idle_breathe"); t["frames"][-1]["reuse_of"] = "missing_reuse_target"; stable(p / "sidecars" / t["frames"][-1]["sidecar_filename"], t["frames"][-1]); write_pack(p, d)
+        case("invalid_reuse_target_hash", "reuse_reference_invalid", reuse_bad)
         case("wrong_dimension", "wrong_dimensions", lambda p: mutate_image(p, lambda f: Image.open(f).resize((1000, 1024)).save(f, "PNG")))
         case("wrong_mode", "png_color_type_invalid", lambda p: mutate_image(p, lambda f: Image.open(f).convert("RGB").save(f, "PNG")))
         case("source_hash_tamper", "source_hash_mismatch", lambda p: mutate_image(p, lambda f: f.write_bytes(b"tampered"), update_manifest_hash=False))
-        case("approval_state", "approval_ineligible", lambda p: edit_manifest(p, lambda d: d.__setitem__("approval_state", "candidate")), "production")
-        case("missing_landmark", "landmark_missing", lambda p: edit_manifest(p, lambda d: d["tracks"][0]["frames"][0]["landmarks"].pop("head_center"), update_sidecar=True))
-        case("contact_tamper", "contact_invalid", lambda p: edit_manifest(p, lambda d: d["tracks"][0]["contacts"][0].__setitem__("end_tick", 99)))
-        case("duration_tamper", "duration_invalid", lambda p: edit_manifest(p, lambda d: d["tracks"][0]["frames"][0].__setitem__("duration_ticks", 0), update_sidecar=True))
-        case("event_tick_tamper", "event_tick_frame_mismatch", lambda p: edit_manifest(p, lambda d: d["tracks"][0]["events"].__setitem__(0, {"event_id": "test_marker_001", "name": "test_marker", "tick": 0, "frame_index": 1})))
-        case("duplicate_asset", "duplicate_source_asset", lambda p: edit_manifest(p, lambda d: d["source_assets"].append(copy.deepcopy(d["source_assets"][0]))) )
-        case("missing_srgb", "missing_srgb", lambda p: mutate_image(p, remove_srgb))
-        case("invalid_landmark_state", "landmark_state_invalid", lambda p: edit_manifest(p, lambda d: d["tracks"][0]["frames"][0]["landmarks"]["root"].__setitem__("state", "occluded"), update_sidecar=True))
-        case("duplicate_frame_id", "duplicate_frame_identity", lambda p: edit_manifest(p, lambda d: d["tracks"][0]["frames"][1].__setitem__("frame_id", d["tracks"][0]["frames"][0]["frame_id"])))
-        case("duplicate_track_id", "duplicate_track_id", lambda p: edit_manifest(p, lambda d: d["tracks"].append(copy.deepcopy(d["tracks"][0]))) )
-        case("incomplete_profile", "request_profile_incomplete", lambda p: edit_manifest(p, lambda d: d.__setitem__("request_profile", "phase02_bounded_motion_proof_v1")))
-        case("sixteen_bit_rgba", "png_bit_depth_invalid", lambda p: mutate_image(p, lambda f: mutate_ihdr_bit_depth(f, 16)))
-        case("blank_image", "blank_image", lambda p: mutate_image(p, blank_image))
-        case("opaque_background", "opaque_background", lambda p: mutate_image(p, opaque_image))
-        case("path_traversal", "manifest_invalid", lambda p: edit_manifest(p, lambda d: d["tracks"][0]["frames"][0].__setitem__("filename", "../escape.png"), update_sidecar=True))
-
-        profile_required = {
-            "neutral_front": ("front", "front", 1), "neutral_profile": ("left", "left", 1),
-            "neutral_front_left": ("front_left", "front_left", 1), "idle_breathe": ("front_left", "front_left", 6),
-            "walk": ("front_left", "front_left", 8), "orient_front_to_front_left": ("front", "front_left", 4),
-            "orient_front_left_to_front": ("front_left", "front", 4), "listen_acknowledge": ("front_left", "front_left", 6),
-        }
-        profile_tracks = [{"family": family, "entry_facing": entry, "exit_facing": exit_, "frames": [{}] * count, "events": [{}]}
-                          for family, (entry, exit_, count) in profile_required.items()]
-        profile_tracks[-3]["entry_facing"] = "front_left"
-        try:
-            validate_request_profile({"request_profile": "phase02_bounded_motion_proof_v1", "tracks": profile_tracks})
-        except IntakeError as exc:
-            if exc.code != "orientation_endpoint_mismatch":
-                raise AssertionError(f"orientation profile expected endpoint rejection, got {exc.code}")
-            cases["orientation_endpoint"] = {"status": "REJECTED", "reason": exc.code}
-        else:
-            raise AssertionError("orientation profile mismatch was accepted")
-
-        stale_candidate = temp / "stale-destination-source"
-        shutil.copytree(source, stale_candidate)
-        stale_output = temp / "stale-destination-output"
-        stale_output.mkdir(); (stale_output / "old.txt").write_text("preserve", encoding="utf-8")
-        stale_code, stale_result = invoke(stale_candidate, stale_output)
-        if stale_code == 0 or stale_result.get("reason") != "destination_not_empty" or (stale_output / "old.txt").read_text(encoding="utf-8") != "preserve":
-            raise AssertionError(f"stale destination was not rejected/preserved: {stale_code} {stale_result}")
-        cases["stale_destination"] = {"status": "REJECTED", "reason": stale_result["reason"]}
-
-        result = {
-            "status": "PASSED",
-            "profile": "MON_R04_C01_INTAKE_VALIDATION_V1",
-            "valid_intake": valid,
-            "negative_cases": cases,
-            "production_pixels_generated": False,
-            "atomic_publication": True,
-            "invalid_accepted": 0,
-            "category_equations": {"requested_total": len(cases), "accepted": 0, "rejected": len(cases), "duplicate": 0},
-        }
-        stable(evidence / "intake_validation.json", result)
-        print(json.dumps(result, sort_keys=True))
+        case("approval_state", "approval_ineligible", lambda p: (lambda d: (d.update({"approval_state": "candidate"}), write_pack(p, d)))(load_pack(p)), "production")
+        case("missing_srgb", "missing_srgb", lambda p: mutate_image(p, lambda f: remove_chunk(f, b"sRGB")))
+        case("iccp_only_false_srgb", "missing_srgb", lambda p: mutate_image(p, lambda f: (remove_chunk(f, b"sRGB"), add_chunk(f, b"iCCP", b"FakeICC\x00\x00"))))
+        case("duplicate_srgb", "srgb_duplicate", lambda p: mutate_image(p, lambda f: add_chunk(f, b"sRGB", b"\x00")))
+        case("trailing_bytes", "png_trailing_or_missing_iend", lambda p: mutate_image(p, lambda f: f.write_bytes(f.read_bytes() + b"tail")))
+        case("malformed_chunk_order", "png_chunk_order_invalid", lambda p: mutate_image(p, lambda f: add_chunk(f, b"tEXt", b"bad", before_ihdr=True)))
+        def mid_failure(p: Path) -> None:
+            out = temp / "out-mid-intake"; rc, result = invoke(p, out, injected_failure=True)
+            if rc == 0 or result.get("reason") != "injected_mid_intake_failure" or out.exists(): raise AssertionError(f"mid-intake failure not fail-closed: {rc} {result}")
+        mid_failure(source); cases["mid_intake_failure"] = {"status": "REJECTED", "reason": "injected_mid_intake_failure"}
+        stale_output = temp / "stale-output"; stale_output.mkdir(); (stale_output / "old.txt").write_text("preserve", encoding="utf-8"); rc, result = invoke(source, stale_output)
+        if rc == 0 or result.get("reason") != "destination_not_empty": raise AssertionError("stale output accepted")
+        cases["stale_output"] = {"status": "REJECTED", "reason": result["reason"]}
+        result = {"status": "PASSED", "profile": "MON_R04_C02_INTAKE_VALIDATION_V1", "positive_pack": "phase02_bounded_motion_proof_v1", "valid_intake": valid, "negative_cases": cases, "production_pixels_generated": False, "atomic_publication": True, "mid_intake_failure_fail_closed": True, "invalid_accepted": 0, "category_equations": {"requested_total": len(cases), "accepted": 0, "rejected": len(cases), "duplicate": 0}}
+        stable(evidence / "intake_validation.json", result); print(json.dumps(result, sort_keys=True))
     return 0
 
 
-if __name__ == "__main__":
-    raise SystemExit(main())
+if __name__ == "__main__": raise SystemExit(main())

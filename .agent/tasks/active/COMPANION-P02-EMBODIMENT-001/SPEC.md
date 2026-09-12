@@ -78,3 +78,15 @@ and safety bounds are validated from source bytes. Intake is staged and
 atomically published into a fresh destination. Godot verifies the derived pack
 and observes a render commit before acknowledgment. Synthetic fixtures are test
 only; no production pixels are generated or approved by Codex.
+
+## R04-C02 focused correction
+
+The executable profile is the exact tuple-keyed request in
+`ARCHITECT_FRAME_REQUEST_V1.md`: eight roles and 31 synthetic calibration
+frames. It requires the neutral-construction facing set, orientation endpoints
+and events, walk footfalls, listen/acknowledge ordering, completion modes, and
+same-track `reuse_of` semantics. PNG validation is structural (IHDR, RGBA8,
+encoding flags, one explicit sRGB, terminal IEND, and no trailing bytes).
+Intake uses same-filesystem staging, fsync of authority files/directories,
+atomic rename, and an injected mid-intake failure. Exact Rust and Godot 4.7.2
+gates remain required; unavailable local executables are `NOT RUN`/`BLOCKED`.

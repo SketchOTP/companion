@@ -148,5 +148,33 @@ Exact filenames are
 `.frame.json` sidecar. Holds use increased duration ticks and explicit
 `reuse_of`; accidental duplicate hashes, missing files, unsafe PNG profiles,
 ineligible approval states, invented landmarks, and source/runtime drift are
-rejected. Production accepts only `operator_approved`; candidate content is
+rejected. Referenced same-track holds are allowed only through `reuse_of` with
+the same source hash and a longer duration; unreferenced duplicate hashes,
+missing files, unsafe PNG profiles, ineligible approval states, invented
+landmarks, and source/runtime drift are rejected. Production accepts only
+`operator_approved`; candidate content is
 review-only and synthetic content is test-only.
+
+## R04-C02 executable profile (supersedes the earlier prose profile)
+
+The machine identity of this request is the following set of unique roles;
+requirements are keyed by the complete tuple, never by family alone:
+
+```text
+neutral_construction/front       entry=front       exit=front       frames=1
+neutral_construction/right       entry=right       exit=right       frames=1
+neutral_construction/front_left  entry=front_left  exit=front_left  frames=1
+idle_breathe/front_left          entry=front_left  exit=front_left  frames=6..8
+walk/front_left                  entry=front_left  exit=front_left  frames=8
+orient_front_to_front_left       entry=front       exit=front_left   frames=4
+orient_front_left_to_front       entry=front_left  exit=front       frames=4
+listen_acknowledge/front_left    entry=front_left  exit=front_left  frames=6
+```
+
+The first and last frame of each track must equal its declared entry and exit
+facing. Completion is `once` for neutral, orientation, and listen tracks, and
+`loop` for idle and walk. The walk event sequence is exactly
+`footfall_left`, `footfall_right`; each orientation track has exactly one
+`facing_changed` event on its final drawing; listen/acknowledge has exactly
+`attention_acquired`, `acknowledge`, `settled` in that order. This exact role
+table is the `phase02_bounded_motion_proof_v1` profile used by intake and CI.

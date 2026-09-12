@@ -7,7 +7,7 @@ signal intent_completed(result: Dictionary)
 signal intent_degraded(result: Dictionary)
 signal event_observed(event: Dictionary)
 
-const VERSION := "MonAnimationDirector-r04-c01"
+const VERSION := "MonAnimationDirector-r04-c02"
 var deterministic_seed: int = 17
 var sequence: int = 0
 var avatar: Node
@@ -17,7 +17,7 @@ func configure(target: Node, seed: int = 17) -> void:
 	deterministic_seed = seed
 
 func _observe(name: String, details: Dictionary = {}) -> void:
-	var event := {"event": name, "sequence": sequence}
+	var event := {"event": name, "sequence": sequence, "monotonic_usec": Time.get_ticks_usec()}
 	event.merge(details)
 	event_observed.emit(event)
 
@@ -44,4 +44,4 @@ func _fail(family: String, reason: String) -> Dictionary:
 	return result
 
 func _result(status: String, family: String, reason: String) -> Dictionary:
-	return {"schema_major": 1, "event_type": "clip_started" if status == "started" else "clip_failed", "sequence": sequence, "intent_id": "%032x" % (deterministic_seed * 100000 + sequence), "clip_id": family, "status": status, "reason": reason, "generation": "godot-p02-r04", "version": VERSION}
+	return {"schema_major": 1, "event_type": "clip_started" if status == "started" else "clip_failed", "sequence": sequence, "intent_id": "%032x" % (deterministic_seed * 100000 + sequence), "clip_id": family, "status": status, "reason": reason, "generation": "godot-p02-r04-c02", "version": VERSION}

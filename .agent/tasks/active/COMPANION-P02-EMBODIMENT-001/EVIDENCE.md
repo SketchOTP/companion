@@ -206,3 +206,37 @@ ingested fixture SHA-256 is
 `01c88a1adadea41b5d9cbd7eb24c49208ad346475e58e6debda3d23ab9e49c2f`.
 Evidence ceiling remains synthetic `E3_TARGET_TESTED`; no production art,
 visual approval, or Phase 02 acceptance is inferred.
+
+## R04-C02 request/profile correction — 2026-09-12
+
+The executable request is now keyed by complete role tuples and matches the
+published request: three `neutral_construction` roles (`front`, `right`, and
+`front_left`), `idle_breathe/front_left`, `walk/front_left`, both orientation
+connectors, and `listen_acknowledge/front_left`. The positive synthetic
+`phase02_bounded_motion_proof_v1` pack contains 8 tracks and 31 calibration
+frames. It exercises one valid same-track held drawing (`reuse_of` with the
+same source hash and two ticks), an occluded profile eye landmark, and a
+not-applicable object landmark. Intake is byte-preserving and fsync-backed;
+an injected pre-rename failure leaves no output directory.
+
+The C02 negative matrix rejects right/left profile mismatch, missing and
+duplicate neutral roles, endpoint/facing and required-event errors, invalid
+reuse, wrong dimensions/mode/hash, iCCP-only and duplicate-sRGB claims,
+malformed chunk order, trailing PNG data, stale output, and injected
+mid-intake failure. Schema and Python semantic validation pass. Rust and the
+exact Godot 4.7.2 render-boundary run are `NOT RUN` in this checkout because
+those executables are unavailable; no readiness or production claim is made.
+The available Godot 4.6/Xvfb run was used only as a local syntax/behavior
+smoke and is not evidence for the pinned 4.7.2 artifact.
+
+## R04-C02 exact-tool evidence rerun — 2026-09-12
+
+The private existing Rust 1.98.1 toolchain and transient official Godot 4.7.2
+artifact were used without host modification. The full synthetic profile passed
+locally through exact Rust typed round-trip and missing-path rejection, exact
+Godot 4.7.2 playback with `RenderingServer.frame_post_draw`, first-frame event
+order, 24 Hz weights, walk/listen markers, missing/ineligible/corrupt/recovery
+cases, export/restore, and the 19-case intake negative matrix. The result
+bundle was regenerated and `validate_r04_results.py --tamper-negative` returned
+`PASSED`; all five mutations were rejected. Evidence remains synthetic and
+bounded; hosted CI, remote publication, and Architect review are still needed.

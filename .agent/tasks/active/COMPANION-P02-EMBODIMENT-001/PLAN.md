@@ -94,3 +94,21 @@ operator visual review and the dedicated Openbox target gate.
    restore, schema/Rust crosswalk, and Godot recovery.
 7. Run exact-head regression and publication checks, then stop at
    `READY_FOR_ARCHITECT_FRAME_PACK` without requesting visual approval.
+
+## R04-C02 focused correction plan
+
+1. Reconcile the human request with an executable role table keyed by family,
+   facing, and entry/exit endpoints rather than family alone.
+2. Build one complete `phase02_bounded_motion_proof_v1` synthetic calibration
+   pack (8 tracks, 31 frames) with truthful endpoints, events, contacts,
+   landmark states, and same-track held-drawing reuse.
+3. Enforce exact PNG signature/IHDR/sRGB/chunk/trailing-byte rules and durable
+   same-filesystem staging, file/directory fsync, atomic rename, and an
+   injected mid-intake failure that leaves no publishable destination.
+4. Bind the positive pack through source, ingested, and receipt contracts,
+   Rust path validation, Godot exact-track playback, and event/timing
+   observations; reject missing or ineligible content.
+5. Expand negative evidence for role/profile, endpoint/event, reuse, PNG
+   structure, stale output, and publication failures.
+6. Preserve unavailable exact Rust/Godot or render-boundary checks as
+   `NOT RUN`/`BLOCKED`, never as passes.

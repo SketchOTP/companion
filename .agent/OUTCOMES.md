@@ -688,3 +688,23 @@ Independent validation passes for hashes, fixture identity, ancestry, schema,
 synthetic intake negatives, Rust generated-pack validation, Godot render-commit
 ordering, and tamper negatives. Status is `READY_FOR_ARCHITECT_FRAME_PACK`;
 Phase 02 and visual approval remain unaccepted.
+
+## 2026-09-12 — R04-C02 request/profile correction
+
+The complete synthetic `phase02_bounded_motion_proof_v1` pack now contains
+8 tuple-keyed tracks and 31 frames and passes Python schema/semantic intake,
+byte-preserving CAS/runtime copy, local export/restore, and 19 fail-closed
+negative cases. PNG structure, same-track reuse, exact endpoints/events,
+fsync-backed atomic staging, and injected mid-intake failure are exercised.
+Rust 1.98.1 and exact Godot 4.7.2 were unavailable in the current checkout;
+their required gates are `NOT RUN`/`BLOCKED`, so readiness is not claimed.
+
+## 2026-09-12 — R04-C02 exact-tool evidence rerun
+
+Using the existing private Rust 1.98.1 toolchain and a transient official
+Godot 4.7.2 artifact, the complete synthetic `phase02_bounded_motion_proof_v1`
+pack passed locally through intake, Rust typed round-trip (8 tracks/31 frames),
+exact Godot 4.7.2 frame-post-draw playback, event/timing/recovery checks,
+export/restore, and 19 fail-closed negatives. The independent validator passed
+with all five tamper mutations rejected. This remains synthetic E3 evidence;
+hosted CI and Architect review are still required.

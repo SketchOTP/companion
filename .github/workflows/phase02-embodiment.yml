@@ -67,11 +67,11 @@ jobs:
         run: |
           set -euo pipefail
           cp -a "$RUNNER_TEMP/intake" "$RUNNER_TEMP/corrupt"
-          FRAME="$(find "$RUNNER_TEMP/corrupt/runtime/frames" -type f -name '*.png' | sort | head -n 1)"
+          FRAME="$RUNNER_TEMP/corrupt/runtime/frames/neutral_construction__front__neutral__v01__f000.png"
           printf X | dd of="$FRAME" bs=1 seek=100 count=1 conv=notrunc status=none
-          "$GODOT_BIN" --headless --path godot --editor --quit > "$RUNNER_TEMP/godot-import.log"
-          "$GODOT_BIN" --headless --path godot --script res://r04_authored_pack_test.gd -- --pack="$MON_AUTHORED_PACK_PATH" --corrupt-pack="$RUNNER_TEMP/corrupt/pack.json" > "$RUNNER_TEMP/godot-r04.log"
-          "$GODOT_BIN" --headless --path godot --script res://r04_identity_smoke_test.gd -- --image="$RUNNER_TEMP/intake/smoke/identity-approved.png" > "$RUNNER_TEMP/godot-identity.log"
+          xvfb-run -a "$GODOT_BIN" --headless --path godot --editor --quit > "$RUNNER_TEMP/godot-import.log"
+          xvfb-run -a "$GODOT_BIN" --path godot --script res://r04_authored_pack_test.gd -- --pack="$MON_AUTHORED_PACK_PATH" --corrupt-pack="$RUNNER_TEMP/corrupt/pack.json" > "$RUNNER_TEMP/godot-r04.log"
+          xvfb-run -a "$GODOT_BIN" --path godot --script res://r04_identity_smoke_test.gd -- --image="$RUNNER_TEMP/intake/smoke/identity-approved.png" > "$RUNNER_TEMP/godot-identity.log"
           ! grep -q 'ERROR:' "$RUNNER_TEMP/godot-import.log" "$RUNNER_TEMP/godot-r04.log" "$RUNNER_TEMP/godot-identity.log"
           grep -q '"status": "PASS"' "$RUNNER_TEMP/godot-r04.log"
           grep -q '"status": "PASS"' "$RUNNER_TEMP/godot-identity.log"

@@ -1,28 +1,10 @@
-# R04-C01 sanitized evidence
+# R04-C02 sanitized evidence
 
-This bundle contains only synthetic calibration evidence; it is not production character art.
+This bundle is synthetic calibration evidence only; no production character pixels are generated.
 
 ## Regeneration
 
-1. Use the pinned qualification Python with `Pillow` and `jsonschema`, the
-   Rust 1.98.1 toolchain, and the exact Godot 4.7.2 binary. No system package
-   or global toolchain change is required.
-2. Set `CARGO` and `GODOT_BIN` to those exact local/CI tool paths. Keep any
-   private XDG qualification cache (toolchains, temporary pack trees, and
-   exports) outside the checkout; no secret or capability environment variable
-   is used by this boundary.
-3. Run `python3 experiments/p02-embodiment/scripts/run_r04_evidence.py --out
-   OUT --cargo "$CARGO" --godot "$GODOT_BIN"`. The command builds the
-   synthetic source twice, runs intake and its negative matrix, performs the
-   schema/Rust crosswalk, validates the actual generated pack, and executes the
-   Godot test before writing sanitized JSON, provenance, and this README.
-4. Run `python3 experiments/p02-embodiment/scripts/validate_r04_results.py
-   --results OUT --tamper-negative`; it independently checks all hashes and
-   expected outcomes, then must report `status: PASSED` and five rejected
-   tamper mutations.
-5. Keep generated PNGs, content-addressed copies, caches, binaries, export
-   archives, restored trees, corruption copies, and any raw host output outside
-   Git. Only the sanitized JSON bundle, hashes, and regeneration procedure are
-   committed.
-
-`provenance.json` records observed timestamps, checked-out Git commit, fixture/reference hashes, result hashes, runtimes, commands, and the E3 evidence ceiling.
+1. Use the pinned qualification Python with Pillow/jsonschema, Rust 1.98.1, and the exact Godot 4.7.2 binary when available. Set `CARGO` and `GODOT_BIN` to private cache paths; keep tools, temporary packs, exports, and raw host output outside Git.
+2. Run `python3 experiments/p02-embodiment/scripts/run_r04_evidence.py --out OUT --cargo "$CARGO" --godot "$GODOT_BIN"`. It builds the complete `phase02_bounded_motion_proof_v1` pack twice, performs intake and negative tests, validates schemas, round-trips the actual generated pack through Rust, runs local export/restore, and records Godot status.
+3. Run `python3 experiments/p02-embodiment/scripts/validate_r04_results.py --results OUT --tamper-negative`. The validator independently checks profile/count/hash equations and tamper mutations; it must exit zero only for a complete valid result set.
+4. Generated PNGs, CAS copies, caches, binaries, archives, restored trees, and raw logs remain outside Git. Commit only sanitized JSON, hashes, and this procedure.

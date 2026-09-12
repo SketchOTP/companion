@@ -387,3 +387,12 @@ fail-closed checks pass.
 The correction is submitted for independent Architect review with final status
 `READY_FOR_ARCHITECT_FRAME_PACK`. Keep PR #9 draft/open/unmerged and Issue #8
 open; do not request visual approval or generate production pixels.
+
+## 2026-09-12 — R04-C02 evidence-semantics correction
+
+Continue the existing Phase 02 branch with one synthetic-only correction:
+make the human and executable request identical; build and intake the complete
+`phase02_bounded_motion_proof_v1` pack; enforce endpoints, event order,
+same-track reuse, exact PNG structure, fsync-backed atomic publication, and
+truthful render-boundary naming. No production pixels or visual approval are
+authorized. Missing exact Rust/Godot executables remain explicit blockers.

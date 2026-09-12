@@ -128,3 +128,24 @@ The fail-closed checks completed and the correction is published at
 `5d29b51e48073077abbdffad453226ce7e8cfddc`. Retrieval confidence is
 `ADEQUATE`; Architecture v1.0 is adopted, Phase 01 is accepted, Phase 02 is
 active/unaccepted, and no production art or dependency was self-approved.
+
+## Architect Review 06 / R04-C02 delta acknowledgment — 2026-09-12
+
+Review 06 and the C02 repository/Notion directive were reconciled before
+implementation. The reviewed task head was `925073601b039bc66e83de272b5378997cd8ec70`,
+and `origin/main` was `21aa29fe5b4739e0c8af72fb96b3f17fecb58a50`; that review was
+merged normally into this secondary worktree as `4f979fcf1381d93b9d6722d56723c50305c1ac63`.
+The correction is limited to the exact tuple-keyed bounded synthetic request
+profile, one complete 8-track/31-frame calibration pack, fail-closed PNG and
+atomic intake checks, explicit render-boundary evidence, and retained Rust/Godot
+integration gates. No production character pixels, operator approval, new
+dependency, Phase 03 work, or protected-file change is authorized.
+
+The secondary worktree remains local ext4/NVMe. Its pre-existing operator-owned
+Graft state (`.gitignore` modified and `.ignore` untracked) was not read,
+altered, staged, or committed. The protected primary SSHFS worktree remains
+untouched. Retrieval confidence is `ADEQUATE`; C02 execution is authorized by
+this preflight: `YES`. Architecture v1.0 remains adopted, Phase 01 remains
+accepted, Phase 02 remains active/unaccepted, and the final readiness status is
+`READY_FOR_ARCHITECT_FRAME_PACK` only after the actual Rust and exact-Godot
+hosted gates pass.

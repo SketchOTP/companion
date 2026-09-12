@@ -467,3 +467,19 @@ Bind provenance to the committed implementation ancestor, then regenerate and
 commit sanitized results separately. This keeps source/runtime checks
 reproducible while preserving the operator-owned Graft boundary and preventing
 generated validation output from becoming its own authority.
+
+## 2026-09-12 — Executable request must be tuple-keyed
+
+When one family legitimately has several facing roles, family-only dictionaries
+silently collapse requirements. Keep the human request and executable profile
+as one tuple-keyed table, and make positive calibration packs cover every role,
+endpoint, event, and reuse rule before any Architect-authored pixels land.
+
+## 2026-09-12 — R04-C02 exact-tool rerun
+
+The pinned Rust and Godot gates can be executed from private existing/tool
+cache paths without modifying the host. Godot must run under a real X display
+(Xvfb is sufficient for this synthetic boundary) for
+`RenderingServer.frame_post_draw`; headless process-frame completion is not a
+render-commit observation. The complete pack and result hashes must be
+regenerated after semantic fixture changes.

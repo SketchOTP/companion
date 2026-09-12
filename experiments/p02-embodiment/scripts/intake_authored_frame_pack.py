@@ -18,6 +18,7 @@ import shutil
 import struct
 import sys
 import tempfile
+import zlib
 from pathlib import Path
 
 from PIL import Image
@@ -57,6 +58,19 @@ def tree_digest(root: Path, exclude: set[str] | None = None) -> str:
     return digest.hexdigest()
 
 
+def _fsync_file(path: Path) -> None:
+    with path.open("rb") as handle:
+        os.fsync(handle.fileno())
+
+
+def _fsync_tree(root: Path) -> None:
+    for path in sorted(p for p in root.rglob("*") if p.is_file()):
+        _fsync_file(path)
+    for path in sorted((p for p in root.rglob("*") if p.is_dir()), key=lambda p: len(p.parts), reverse=True):
+        fd = os.open(path, os.O_RDONLY | getattr(os, "O_DIRECTORY", 0)); os.fsync(fd); os.close(fd)
+    fd = os.open(root, os.O_RDONLY | getattr(os, "O_DIRECTORY", 0)); os.fsync(fd); os.close(fd)
+
+
 def validate_schema(pack: dict, schema_path: Path, label: str) -> None:
     try:
         import jsonschema
@@ -87,6 +101,7 @@ def _png_chunks(data: bytes):
         raise IntakeError("png_signature_invalid", "PNG signature missing")
     offset = 8
     chunks = []
+    seen_iend = False
     while offset + 12 <= len(data):
         length = struct.unpack(">I", data[offset:offset + 4])[0]
         kind = data[offset + 4:offset + 8]
@@ -95,12 +110,21 @@ def _png_chunks(data: bytes):
             raise IntakeError("png_truncated", "PNG chunk exceeds file")
         payload = data[offset + 8:offset + 8 + length]
         crc = struct.unpack(">I", data[offset + 8 + length:end])[0]
-        if (zlib_crc := __import__("zlib").crc32(kind + payload) & 0xFFFFFFFF) != crc:
+        if zlib.crc32(kind + payload) & 0xFFFFFFFF != crc:
             raise IntakeError("png_crc_invalid", kind.decode("latin1"))
         chunks.append((kind, payload))
         offset = end
         if kind == b"IEND":
+            seen_iend = True
             break
+    if not seen_iend or offset != len(data):
+        raise IntakeError("png_trailing_or_missing_iend", "PNG must end immediately after one IEND")
+    kinds = [kind for kind, _ in chunks]
+    if kinds.count(b"IHDR") != 1 or kinds[0] != b"IHDR" or kinds.count(b"IEND") != 1 or kinds[-1] != b"IEND":
+        raise IntakeError("png_chunk_order_invalid", "exactly one IHDR first and one IEND last required")
+    ihdr = chunks[0][1]
+    if len(ihdr) != 13 or ihdr[10:] != b"\x00\x00\x00":
+        raise IntakeError("png_encoding_invalid", "compression, filter, and interlace must all be zero")
     return chunks
 
 
@@ -123,10 +147,14 @@ def validate_image(path: Path, expected_hash: str) -> dict:
         raise IntakeError("png_color_type_invalid", path.name)
     srgb = [payload for kind, payload in chunks if kind == b"sRGB"]
     icc = [payload for kind, payload in chunks if kind == b"iCCP"]
-    if not srgb and not any(b"srgb" in payload.lower() for payload in icc):
+    if not srgb:
         raise IntakeError("missing_srgb", path.name)
-    if srgb and (len(srgb[0]) != 1 or srgb[0][0] not in range(4)):
+    if len(srgb) != 1:
+        raise IntakeError("srgb_duplicate", path.name)
+    if len(srgb[0]) != 1 or srgb[0][0] not in range(4):
         raise IntakeError("srgb_invalid", path.name)
+    if icc:
+        raise IntakeError("png_profile_conflict", path.name)
     try:
         with Image.open(path) as image:
             image.load()
@@ -164,23 +192,41 @@ def validate_request_profile(pack: dict) -> None:
     if pack.get("request_profile") != "phase02_bounded_motion_proof_v1":
         return
     required = {
-        "neutral_front": ("front", "front", 1, 1), "neutral_profile": ("left", "left", 1, 1), "neutral_front_left": ("front_left", "front_left", 1, 1),
-        "idle_breathe": ("front_left", "front_left", 6, 8), "walk": ("front_left", "front_left", 8, 8),
-        "orient_front_to_front_left": ("front", "front_left", 4, 240), "orient_front_left_to_front": ("front_left", "front", 4, 240), "listen_acknowledge": ("front_left", "front_left", 6, 240),
+        ("neutral_construction", "front", "front", "front"): (1, 1, "neutral", "neutral", "once"),
+        ("neutral_construction", "right", "right", "right"): (1, 1, "neutral", "neutral", "once"),
+        ("neutral_construction", "front_left", "front_left", "front_left"): (1, 1, "neutral", "neutral", "once"),
+        ("idle_breathe", "front_left", "front_left", "front_left"): (6, 8, "neutral", "neutral", "loop"),
+        ("walk", "front_left", "front_left", "front_left"): (8, 8, "walking", "walking", "loop"),
+        ("orient_front_to_front_left", "front", "front", "front_left"): (4, 4, "neutral", "neutral", "once"),
+        ("orient_front_left_to_front", "front_left", "front_left", "front"): (4, 4, "neutral", "neutral", "once"),
+        ("listen_acknowledge", "front_left", "front_left", "front_left"): (6, 6, "listening", "acknowledging", "once"),
     }
-    seen = {track["family"]: track for track in pack["tracks"]}
+    key = lambda track: (track.get("family"), track.get("selection_facing"), track.get("entry_facing"), track.get("exit_facing"))
+    roles = [key(track) for track in pack["tracks"]]
+    if len(roles) != len(set(roles)):
+        raise IntakeError("request_profile_duplicate_role", "duplicate request role")
+    seen = {key(track): track for track in pack["tracks"]}
     missing = sorted(set(required) - set(seen))
     if missing:
-        raise IntakeError("request_profile_incomplete", ",".join(missing))
-    for family, (entry, exit_, low, high) in required.items():
-        track = seen[family]
-        if (track["entry_facing"], track["exit_facing"]) != (entry, exit_):
-            raise IntakeError("orientation_endpoint_mismatch", family)
-        if not low <= len(track["frames"]) <= high:
-            raise IntakeError("request_profile_count_invalid", family)
-    for family in ("orient_front_to_front_left", "orient_front_left_to_front", "listen_acknowledge"):
-        if not seen[family]["events"]:
-            raise IntakeError("request_profile_event_missing", family)
+        raise IntakeError("request_profile_incomplete", ";".join("/".join(item) for item in missing))
+    if len(seen) != len(required):
+        raise IntakeError("request_profile_extra_track", str(len(seen) - len(required)))
+    for role, (low, high, entry_posture, exit_posture, completion) in required.items():
+        track = seen[role]
+        if not low <= len(track.get("frames", [])) <= high:
+            raise IntakeError("request_profile_count_invalid", role[0])
+        if track.get("entry_posture") != entry_posture or track.get("exit_posture") != exit_posture or track.get("completion") != completion:
+            raise IntakeError("request_profile_semantics_invalid", role[0])
+        frames = track.get("frames", [])
+        if frames and (frames[0].get("facing") != role[2] or frames[-1].get("facing") != role[3]):
+            raise IntakeError("orientation_endpoint_mismatch", role[0])
+        names = [event.get("name") for event in track.get("events", [])]
+        if role[0].startswith("orient_") and names != ["facing_changed"]:
+            raise IntakeError("request_profile_event_missing", role[0])
+        if role[0] == "walk" and names != ["footfall_left", "footfall_right"]:
+            raise IntakeError("request_profile_event_missing", role[0])
+        if role[0] == "listen_acknowledge" and names != ["attention_acquired", "acknowledge", "settled"]:
+            raise IntakeError("request_profile_event_missing", role[0])
 
 
 def validate_semantics(pack: dict, source: Path | None = None) -> None:
@@ -188,7 +234,7 @@ def validate_semantics(pack: dict, source: Path | None = None) -> None:
         raise IntakeError("approved_reference_mismatch", "approved reference hashes differ from authority")
     assets = pack["source_assets"]
     ids = [asset["asset_id"] for asset in assets]; hashes = [asset["sha256"] for asset in assets]; names = [asset["filename"] for asset in assets]
-    if len(ids) != len(set(ids)) or len(hashes) != len(set(hashes)) or len(names) != len(set(names)):
+    if len(ids) != len(set(ids)) or len(names) != len(set(names)):
         raise IntakeError("duplicate_source_asset", "asset IDs, hashes, and filenames must be unique")
     track_ids: set[str] = set(); frame_ids: set[str] = set(); filenames: set[str] = set(); sidecars: set[str] = set()
     asset_by_id = {asset["asset_id"]: asset for asset in assets}
@@ -234,8 +280,10 @@ def validate_semantics(pack: dict, source: Path | None = None) -> None:
                 raise IntakeError("root_mismatch", frame["frame_id"])
             if frame["source_sha256"] in hashes_in_track and not frame.get("reuse_of"):
                 raise IntakeError("duplicate_source_hash", frame["frame_id"])
-            if frame.get("reuse_of") and frame["reuse_of"] not in frame_ids:
-                raise IntakeError("reuse_reference_invalid", frame["frame_id"])
+            if frame.get("reuse_of"):
+                prior = next((candidate for candidate in track["frames"] if candidate["frame_id"] == frame["reuse_of"]), None)
+                if prior is None or prior["frame_index"] >= frame["frame_index"] or prior["source_sha256"] != frame["source_sha256"]:
+                    raise IntakeError("reuse_reference_invalid", frame["frame_id"])
             hashes_in_track.add(frame["source_sha256"])
         for event in track["events"]:
             if event["tick"] >= total_ticks:
@@ -295,6 +343,8 @@ def intake(source: Path, output: Path, operation: str) -> dict:
     if not eligible(pack["approval_state"], operation):
         raise IntakeError("approval_ineligible", f"{pack['approval_state']} is ineligible for {operation}")
     output.parent.mkdir(parents=True, exist_ok=True)
+    if os.stat(source).st_dev != os.stat(output.parent).st_dev:
+        raise IntakeError("cross_filesystem_destination", "staging and final output must share a filesystem")
     stage = Path(tempfile.mkdtemp(prefix=f".{output.name}.stage-", dir=output.parent))
     try:
         source_copy = stage / "source"; shutil.copytree(source, source_copy)
@@ -305,11 +355,15 @@ def intake(source: Path, output: Path, operation: str) -> dict:
         stable(stage / "receipt.json", {"profile": "MON_FRAME_INTAKE_RECEIPT_V1", "schema_version": 1, "operation": operation, "validation_profile": pack["request_profile"], "source_pack_sha256": source_meta["source_pack_sha256"], "source_tree_sha256": source_meta["source_tree_sha256"], "ingested_pack_sha256": ingested_hash, "output_tree_sha256": "0" * 64, "publication_state": "staged", "source_bytes_mutated": False, "frames": observations, "validation": {"status": "PASSED", "errors": []}})
         receipt = json.loads((stage / "receipt.json").read_text(encoding="utf-8")); receipt["output_tree_sha256"] = tree_digest(stage, {"receipt.json"}); receipt["publication_state"] = "published"; stable(stage / "receipt.json", receipt)
         validate_schema(receipt, ROOT / "contracts/schemas/mon-frame-intake-receipt-v1.schema.json", "intake receipt")
+        if os.environ.get("COMPANION_INTAKE_FAIL_AFTER_STAGE") == "1":
+            raise IntakeError("injected_mid_intake_failure", "test-only failure before publish")
+        _fsync_tree(stage)
         if output.exists() and any(output.iterdir()):
             raise IntakeError("destination_not_empty", str(output))
         if output.exists():
             output.rmdir()
         os.replace(stage, output)
+        fd = os.open(output.parent, os.O_RDONLY | getattr(os, "O_DIRECTORY", 0)); os.fsync(fd); os.close(fd)
         return {"status": "PASSED", "profile": "MON_FRAME_INTAKE_RECEIPT_V1", "operation": operation, "approval_state": pack["approval_state"], "ingested_pack": "pack.json", "receipt": "receipt.json", "source_bytes_mutated": False, "frames": observations, "source_tree_sha256": source_meta["source_tree_sha256"], "ingested_pack_sha256": ingested_hash, "output_tree_sha256": receipt["output_tree_sha256"]}
     except Exception:
         shutil.rmtree(stage, ignore_errors=True)

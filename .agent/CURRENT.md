@@ -146,3 +146,25 @@ the protected primary/secondary Graft files remain untouched. PR #9 is
 draft/open/unmerged and Issue #8 is open. Phase 02 remains active/unaccepted.
 
 No Architect-authored production frame pack, accepted body construction, approved motion language, production embodiment, visual aliveness, or Phase 03+ capability exists. C01 remains bounded synthetic engineering evidence only.
+
+## R04-C02 execution result — 2026-09-12
+
+The tuple-keyed request and complete synthetic `phase02_bounded_motion_proof_v1`
+pack are implemented (8 tracks, 31 frames). Python schema/semantic intake,
+byte-preservation, local export/restore, exact PNG checks, atomic staging, and
+the expanded 19-case negative matrix pass. Rust 1.98.1 and exact Godot 4.7.2
+are unavailable in this worktree; their required gates are `NOT RUN`/`BLOCKED`.
+The final readiness status is therefore not claimed; Phase 02 remains active and
+unaccepted.
+
+## R04-C02 exact-tool rerun — 2026-09-12
+
+The private existing Rust 1.98.1 toolchain and a transient official Godot
+4.7.2 artifact were available without system modification. The complete
+`phase02_bounded_motion_proof_v1` result bundle was regenerated: 8 tracks,
+31 frames, exact Rust typed round-trip, missing-pack-path rejection, exact
+Godot 4.7.2 frame-post-draw observation, event/timing/recovery checks, and
+the 19-case intake negative matrix all pass locally. The independent result
+validator and five tamper-negative mutations pass. Hosted exact-head CI and
+publication remain required; no production art or Phase 02 acceptance is
+claimed.

@@ -24,7 +24,8 @@ var active_body := 0
 var current_track := ""
 var current_family := ""
 var current_track_data: Dictionary = {}
-var generation := "godot-p02-r04-c01"
+var generation := "godot-p02-r04-c02"
+var last_render_observation := ""
 
 @onready var body_a: AnimatedSprite2D = $BodyA
 @onready var body_b: AnimatedSprite2D = $BodyB
@@ -111,7 +112,7 @@ func _validate_manifest(candidate: Dictionary, manifest_path: String) -> bool:
 		return false
 	var asset_ids := {}; var asset_hashes := {}; var asset_paths := {}
 	for asset in assets:
-		if not asset is Dictionary or asset_ids.has(asset.get("asset_id")) or asset_hashes.has(asset.get("source_sha256")) or asset_paths.has(asset.get("runtime_asset")):
+		if not asset is Dictionary or asset_ids.has(asset.get("asset_id")) or asset_paths.has(asset.get("runtime_asset")):
 			return false
 		if not _is_hash(String(asset.get("source_sha256", ""))):
 			return false
@@ -133,6 +134,19 @@ func _validate_manifest(candidate: Dictionary, manifest_path: String) -> bool:
 		var track_unsigned: Dictionary = track.duplicate(true); track_unsigned.erase("track_checksum")
 		if _sha256_bytes(_canonical(track_unsigned).to_utf8_buffer()) != String(track.get("track_checksum")):
 			return false
+		var frames: Array = track.get("frames", [])
+		if frames.is_empty() or frames[0].get("facing") != track.get("entry_facing") or frames[frames.size() - 1].get("facing") != track.get("exit_facing"):
+			return false
+		for frame in frames:
+			if int(frame.get("duration_ticks", 0)) < 1 or not frame.has("landmarks"):
+				return false
+		var event_names: Array = track.get("events", []).map(func(item): return item.get("name"))
+		if String(track.get("family")) == "walk" and event_names != ["footfall_left", "footfall_right"]:
+			return false
+		if String(track.get("family")).begins_with("orient_") and event_names != ["facing_changed"]:
+			return false
+		if String(track.get("family")) == "listen_acknowledge" and event_names != ["attention_acquired", "acknowledge", "settled"]:
+			return false
 	return true
 
 func pack_root_for(manifest_path: String) -> String:
@@ -145,16 +159,22 @@ func _await_render_commit() -> bool:
 	var committed := false
 	var observer := func() -> void: committed = true
 	RenderingServer.frame_post_draw.connect(observer, CONNECT_ONE_SHOT)
+	RenderingServer.force_draw()
 	await get_tree().process_frame
 	if committed:
+		last_render_observation = "RenderingServer.frame_post_draw"
 		return true
-	# Godot's --headless test runner may have no drawable viewport. The
-	# scene-tree frame is an explicitly bounded synthetic observation there;
-	# physical display presentation remains deferred to the target-host gate.
-	if DisplayServer.get_name() == "headless":
-		if RenderingServer.frame_post_draw.is_connected(observer):
-			RenderingServer.frame_post_draw.disconnect(observer)
-		return true
+	# A SubViewport texture readback is an independent render-boundary
+	# observation for headless qualification. It is not a scene-tree fallback:
+	# the texture must contain a non-empty rendered image.
+	var viewport := get_viewport()
+	if viewport is SubViewport and DisplayServer.get_name() != "headless":
+		var texture := viewport.get_texture()
+		if texture != null:
+			var rendered := texture.get_image()
+			if rendered != null and not rendered.is_empty():
+				last_render_observation = "SubViewport.texture.get_image"
+				return true
 	await get_tree().create_timer(1.0).timeout
 	if RenderingServer.frame_post_draw.is_connected(observer):
 		RenderingServer.frame_post_draw.disconnect(observer)
@@ -236,7 +256,8 @@ func present_track(family: String, facing: String, posture: String, variant: int
 	var current: AnimatedSprite2D = body_a if active_body == 0 else body_b
 	if current != target or not target.visible or target.frame != 0 or target.sprite_frames.get_frame_texture(current_track, 0) == null:
 		return _presentation_failure(family, "first_frame_not_render_committed")
-	_observe("first_frame_render_committed", {"track_id": current_track, "frame": 0})
+	_observe("first_frame_presented", {"track_id": current_track, "frame": 0})
+	_observe("first_frame_render_committed", {"track_id": current_track, "frame": 0, "render_observation": last_render_observation})
 	return {"status": "first_frame_render_committed", "track_id": current_track, "frame": 0}
 
 func start_presented_track() -> void:

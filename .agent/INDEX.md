@@ -126,3 +126,20 @@ Final task head: `5d29b51e48073077abbdffad453226ce7e8cfddc`; implementation:
 `04570503c957e34e2ddcf2f1ab1cb1151a352b59`. The result bundle is committed,
 hash-bound, and validator-checked. No production art or Phase 02 acceptance is
 claimed; Architect frame-pack input remains the next authority-owned step.
+
+## R04-C02 execution note
+
+The complete tuple-keyed synthetic profile is implemented and Python intake,
+PNG, atomic-publication, export/restore, and negative gates pass. Required Rust
+1.98.1 and exact Godot 4.7.2 render-boundary execution are unavailable in this
+worktree and remain `NOT RUN`/`BLOCKED`; no readiness or Phase 02 acceptance is
+claimed.
+
+## R04-C02 exact-tool rerun
+
+Private Rust 1.98.1 and transient official Godot 4.7.2 execution now provide
+local exact-pack evidence: typed Rust round-trip, missing-path rejection,
+Godot frame-post-draw render observation, exact event/timing sequence,
+corruption/degradation/recovery, and the 19-case intake matrix pass. The
+committed bundle is regenerated and independently validated; hosted CI and
+publication remain the final checks before the bounded readiness handoff.
