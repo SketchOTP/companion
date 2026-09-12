@@ -803,3 +803,14 @@ a bounded two-direction travel-and-return proof plan. No replacement pixels or
 runtime changes were produced. Old synthetic request tests remain untouched;
 new request version and contact-coordinate semantics need reconciliation before
 new pack integration. Evidence E1_OBSERVED, replacement quality NOT RUN.
+
+## 2026-09-12 — AUTHOR-002 executed; anatomical key gate failed
+
+Generated 25 reference-based studies (10 construction, 15 gait/repair), not a
+complete animation pack. Localized digit/counter-swing corrections improved
+individual outputs, but stable hand/foot shapes and limb phase correspondence
+failed across keys. Independent right passing repeated the left backward-knee,
+hand-like-foot defect. Review11 stop condition reached. Zero frames promoted;
+full v2 intake/Rust/Godot/contact/action evidence NOT RUN. No approval request.
+Adapter 3 tests and timing 6 tests passed; those are not visual acceptance.
+See R05_AUTHOR_002_KEY_GATE_RESULT.md and R05_AUTHOR_002_STUDY_RESULTS.json.

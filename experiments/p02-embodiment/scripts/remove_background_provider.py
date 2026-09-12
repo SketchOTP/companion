@@ -46,6 +46,9 @@ def main():
     fields = {"format": "png"}
     if args.provider == "removebg":
         fields.update(size="full", crop="false", type="graphic")
+    else:
+        # Review 11: explicit cutout-subject RGBA, no provider crop/resize.
+        fields.update(channels="rgba", size="full", crop="false")
     body = bytearray()
     for key, value in fields.items():
         body.extend(f'--{boundary}\r\nContent-Disposition: form-data; name="{key}"\r\n\r\n{value}\r\n'.encode())
@@ -71,7 +74,8 @@ def main():
     evidence = {"status": "PASSED", "provider": args.provider, "http_status": status,
                 "input_sha256": hashlib.sha256(source).hexdigest(), "output_sha256": hashlib.sha256(output).hexdigest(),
                 "dimensions": list(image.size), "mode": image.mode, "alpha_range": [0, 255],
-                "dimensions_preserved": True, "role": "source_authoring_cutout_not_immutable_intake"}
+                "dimensions_preserved": True, "request_fields": fields,
+                "role": "source_authoring_cutout_not_immutable_intake"}
     args.out.with_suffix(".provenance.json").write_text(json.dumps(evidence, indent=2) + "\n")
     print(json.dumps(evidence))
     return 0

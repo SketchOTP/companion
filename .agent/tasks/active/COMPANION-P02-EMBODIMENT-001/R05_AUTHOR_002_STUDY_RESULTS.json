@@ -1,0 +1,433 @@
+{
+  "directive": "COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-002",
+  "status": "BLOCKED_AT_VISUAL_KEY_GATE",
+  "evidence_level": "E1_OBSERVED",
+  "observed_at_utc": "2026-09-12T19:38:23.090164+00:00",
+  "construction_output_count": 10,
+  "gait_output_count": 15,
+  "promoted_frame_count": 0,
+  "downstream": {
+    "complete_action_playback": "NOT_RUN",
+    "godot_v2": "NOT_RUN",
+    "normalization": "NOT_RUN",
+    "rust_v2": "NOT_RUN",
+    "v2_intake": "NOT_RUN",
+    "world_contact_qa": "NOT_RUN"
+  },
+  "studies": [
+    {
+      "artifact_path": "construction/front.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-e186b889-047f-49df-b7a9-f1994d917111.png",
+      "group": "construction",
+      "id": "front",
+      "mode": "RGB",
+      "observation": "Provisional frontal study, not promoted",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "fc55cd4e25bad16e20d914f46864cf8d8d948a06b3a948a2fce3ff19bcb8acf3",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "construction/left_initial.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-1e173b45-9a29-4c30-a881-97ea2a14c8f0.png",
+      "group": "construction",
+      "id": "left_initial",
+      "mode": "RGB",
+      "observation": "Rejected: extra finger",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "b9b2cdf2ced1491506698d030ecbc69f52ad4b6f5167ea38d75aaf56d3040c39",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "construction/right_initial.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-31b39194-5c0f-4c8c-a6f1-2b054e9eff3c.png",
+      "group": "construction",
+      "id": "right_initial",
+      "mode": "RGB",
+      "observation": "Rejected: extra finger",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "e9415151705a9e181ef35f22e79c1c75682810361f8bbc6097d61e51f300ebf2",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "construction/left_fix.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-4349dd4e-af32-4350-b211-0004e797ce33.png",
+      "group": "construction",
+      "id": "left_fix",
+      "mode": "RGB",
+      "observation": "Targeted digit edit; provisional, not promoted",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "a6d554e515a54bee013d5f31c8a085c5144bb822d1639192306b5660ccc28f5a",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "construction/right_fix.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-188bc285-c713-41fc-a9d9-43c5d930bdd1.png",
+      "group": "construction",
+      "id": "right_fix",
+      "mode": "RGB",
+      "observation": "Targeted digit edit; independent right, not mirrored; not promoted",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "6c33fd3606c08dd5d3a5827b1e53ec311497329f8f0278634c5f22ba40fc959f",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "construction/back.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-cfae944a-5114-492f-90ea-77c547c3ca72.png",
+      "group": "construction",
+      "id": "back",
+      "mode": "RGB",
+      "observation": "Provisional rear study, not promoted",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "649c100fb63b108ff8920578f3a4ade80a16254f88c6d55543a2630d3aa292b3",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "construction/front_left.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-744fe462-a11e-40d8-94c0-f8b5510a2dc4.png",
+      "group": "construction",
+      "id": "front_left",
+      "mode": "RGB",
+      "observation": "Provisional quarter study, not promoted",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "5efab37b753cccdf653514e5e9ecdbbc2804ab00186ec3649e5ba1d33c94740c",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "construction/front_right.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-0f9e8e1e-505e-43f8-ac3b-79ba6b874090.png",
+      "group": "construction",
+      "id": "front_right",
+      "mode": "RGB",
+      "observation": "Far hand needs further review; not promoted",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "b8a9c9d7b8fa119bee1247f82efb093301b48e4352b9b0301580809409380e04",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "construction/back_left.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-789f8f10-8122-4610-b639-3f904584e9df.png",
+      "group": "construction",
+      "id": "back_left",
+      "mode": "RGB",
+      "observation": "Far hand needs further review; not promoted",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "4f03e9edfb52900dfd3bb1a22963c6656b6e982f94113446a472bbb28b00b259",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "construction/back_right.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-5daf5925-e02f-4b8d-9cd2-5ca4adcd3c40.png",
+      "group": "construction",
+      "id": "back_right",
+      "mode": "RGB",
+      "observation": "Provisional quarter study, not promoted",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "ded3a38b716e77c319d5710fc08fcbb6677d5015da19aa185ae0aed4dec14497",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/left_contact_near.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-0bf2b58d-6484-43ef-a873-b4b3bf1e1c1a.png",
+      "group": "gait",
+      "id": "left_contact_near",
+      "mode": "RGB",
+      "observation": "Rejected: near arm advances with near leg",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "5f4930bcd63e13c2fa04f90d2a798a359dae0b6880c4ce3666153466a1d35fef",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/left_contact_far.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-95863396-3477-43fe-8310-c800cf12ad2e.png",
+      "group": "gait",
+      "id": "left_contact_far",
+      "mode": "RGB",
+      "observation": "Opposite leading leg observed; not a qualified key set",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "340e99a4adc2f7ebbfaf1eba5f6498ecaeb70fff2d3d41ee29fed751d69c1128",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/left_contact_near_armfix.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-f21fc1fb-c3f0-4e2d-a299-075cb54fc4ec.png",
+      "group": "gait",
+      "id": "left_contact_near_armfix",
+      "mode": "RGB",
+      "observation": "Counter-swing improved; hand shape continuity unresolved",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "b2e48b5bdbb9dd6a557019f2016b9a96198a49f14976420dc341724ea70a7ea1",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/left_passing_near.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-fc732319-ab9e-4351-8395-38bfe6a1d9b3.png",
+      "group": "gait",
+      "id": "left_passing_near",
+      "mode": "RGB",
+      "observation": "Rejected: knee behind body, downward hand-like swing foot",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "aac6ed38bd31fa16ce9ada2ce6cc3e94a095ee2b745006ec75ab01d8d7f8d742",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/left_up_near.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-a5a38c1d-838a-4b78-9358-ef09c864b4bc.png",
+      "group": "gait",
+      "id": "left_up_near",
+      "mode": "RGB",
+      "observation": "Clear lifted foot but kick-like spacing; not promoted",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "b8875de76ca33b6e0d7c2b179015b61ecbf7ee0de7cc3d913b0f5b069b6fd8a8",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/left_down_near.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-71db525e-b1f7-4667-9d25-8f0de0196ee5.png",
+      "group": "gait",
+      "id": "left_down_near",
+      "mode": "RGB",
+      "observation": "Rejected: counter-swing reverted to same-side arm and leg",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "be450309bf78293c39028d07fbd65f1f3ceb9ec82c305e7726593a80dbe965a6",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/left_passing_repair.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-9c46add8-fe5e-4f6f-8b71-c9be57e694a9.png",
+      "group": "gait",
+      "id": "left_passing_repair",
+      "mode": "RGB",
+      "observation": "Foot improved but knee remains behind body",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "9d09673025435aa77d13373ca42468e452689bf70c8475dabb02bd603b68e639",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/left_passing_repair2.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-49f685e2-0470-4a21-bb05-9114d60db24a.png",
+      "group": "gait",
+      "id": "left_passing_repair2",
+      "mode": "RGB",
+      "observation": "Foot moved forward; far leg heavily occluded; not qualified as consistent gait",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "fa8a0ef7696203afadadbd1bfd6718ca36a221f2694b75b64aa7845f9d577be4",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/right_contact_near.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-c3d2d9e3-ec47-47a3-8ba2-9bb3f9970f01.png",
+      "group": "gait",
+      "id": "right_contact_near",
+      "mode": "RGBA",
+      "observation": "Independent right contact; counter-swing observed; not promoted",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "9c3c1464de5eca92743081e93989292729fb7b201321463575e63c435ae4b5a5",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/left_passing_far.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-6412ba59-795e-4188-afb7-97c9e56bff4c.png",
+      "group": "gait",
+      "id": "left_passing_far",
+      "mode": "RGB",
+      "observation": "Opposite support and occlusion observed, but exaggerated high knee and inconsistent limb shape",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "872d4ccd262a1ea453000816bac86c339c5a432837efbf757413369562101c68",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/left_down_armfix.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-c76e819f-2500-4514-b476-7e1fd5fc3f64.png",
+      "group": "gait",
+      "id": "left_down_armfix",
+      "mode": "RGB",
+      "observation": "Counter-swing restored locally, not stable across generated keys",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "8e11373fd774d5d11738ae36b8b604e851a08f31ad74fac7fd47295977b81d08",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/left_down_far.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-77a6db42-5bc3-4716-9a21-a8e5f9010380.png",
+      "group": "gait",
+      "id": "left_down_far",
+      "mode": "RGB",
+      "observation": "Down pose candidate; hand/foot shape continuity remains unqualified",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "6b8f0de7fa405ac7704b391389e59b3ebd9b453d27e82332f42bd959ff0fb036",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/left_up_far.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-4df27118-b8c3-4013-bdaa-39db57739750.png",
+      "group": "gait",
+      "id": "left_up_far",
+      "mode": "RGB",
+      "observation": "Forward foot clearance observed; not coherent gait spacing",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "4373d3b5836caa7c8da80ea85ff457bec07ac5c7850e4f48e2c534adb26c3d97",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/right_contact_far.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-9057a3ee-02c3-4cc2-94a0-a4a5b2622cfc.png",
+      "group": "gait",
+      "id": "right_contact_far",
+      "mode": "RGB",
+      "observation": "Opposite right-travel contact; not promoted",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "42a39199c9d0fee003c43da798a6be900b0dc7388397b009b5e1ff17b716decd",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "artifact_path": "gait/right_passing_near.png",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL",
+      "byte_preservation": "PASSED",
+      "file": "exec-7e4aa74a-619b-46c2-beb8-007608f01830.png",
+      "group": "gait",
+      "id": "right_passing_near",
+      "mode": "RGBA",
+      "observation": "Rejected: same backward-knee and hand-like swing-foot defect recurs independently on right",
+      "promotion": "NOT_PROMOTED",
+      "sha256": "27cdfadfbaef13c03e5c194f23b721f23d08f5dcf2cff04e043c67d8525e6f05",
+      "size": [
+        1254,
+        1254
+      ]
+    }
+  ],
+  "artifact_archives": {
+    "construction": {
+      "sha256": "9bb653d9183026629ab1971757ac64ba0f1386ca9e2ffa038f96b97f905f7431",
+      "bytes": 15160648
+    },
+    "gait": {
+      "sha256": "65b20c7fe8bba74a8876df98f095b172dd94e7062aab004836d5f450a7dde4e0",
+      "bytes": 19627169
+    },
+    "review": {
+      "sha256": "3aa1689ee5b5c69d07830a31ffa85c2d5905a5d20f6539bf9659f5c9098cc19f",
+      "bytes": 11175694
+    }
+  }
+}

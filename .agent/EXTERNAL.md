@@ -164,3 +164,14 @@ the synthetic render-commit observation is not physical display evidence.
 - Operator, not this source, defines front-default/profile-travel habitat policy.
 - Recheck trigger: implementing stride/contact semantics or changing the habitat
   coordinate model. Motion quality still requires observed playback and review.
+
+## 2026-09-12 — Review11 cutout configuration recheck
+
+Official Photoroom basic API documentation rechecked:
+https://docs.photoroom.com/remove-background-api-basic-plan/quickstart-guide .
+Used the already-authorized provider with explicit format=png, channels=rgba,
+size=full and crop=false; eight bounded responses were HTTP200 RGBA. No new
+system/art dependency. No credential or personal payload recorded. Successful
+transport is not visual/source eligibility. Toon Boom retrieval returned HTTP403
+and was not used as read evidence. Notion ZIP upload failures (MIME mismatch,
+then 5 MiB workspace limit) were retained; selected PNG attachments succeeded.

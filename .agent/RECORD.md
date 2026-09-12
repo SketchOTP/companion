@@ -682,3 +682,13 @@ and transition record now supersedes the old front-left-heavy visual target.
 No accepted synthetic fixture, source byte, runtime or architecture was changed.
 The bounded replacement requires actual full-body turns and both profile walks;
 full-library scale and Phase 02 acceptance are not inferred.
+
+## 2026-09-12 — Review11 execution and stopped key study
+
+Started e529d8db3d76af6239c7c4856c49553fb4097979; merged Architect main
+d07620c4ab2c874e65db85ff9866197a5784563c normally as
+e889ad2ea59a37a25b8c1324f3e038ddc21dd591. Preserved protected primary and
+unrelated secondary work. Added explicit Photoroom RGBA/full/no-crop fields,
+review-only composition/export tools, exact prompts/hashes and failed-key
+records. Generated 25 outputs, promoted none. Stopped under Review11 anatomical
+key-pose condition; no accepted runtime/schema or v1 fixture changed.

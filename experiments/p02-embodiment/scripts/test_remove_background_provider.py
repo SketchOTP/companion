@@ -36,6 +36,9 @@ class ProviderTests(unittest.TestCase):
         data = io.BytesIO(); image.save(data, format="PNG")
         raw = data.getvalue()
         def call(request, timeout):
+            for key, value in (("format", "png"), ("channels", "rgba"), ("size", "full"), ("crop", "false")):
+                if f'name="{key}"\r\n\r\n{value}\r\n'.encode() not in request.data:
+                    raise AssertionError("missing explicit Photoroom cutout field: " + key)
             stream = io.BytesIO(raw); stream.status = 200
             return stream
         return call, raw
@@ -50,6 +53,7 @@ class ProviderTests(unittest.TestCase):
             evidence = json.loads(output)
             self.assertTrue(evidence["dimensions_preserved"])
             self.assertNotIn("geometry_unchanged", evidence)
+            self.assertEqual(evidence["request_fields"], {"format": "png", "channels": "rgba", "size": "full", "crop": "false"})
 
     def test_provider_http_failure_no_output_no_secret(self):
         with tempfile.TemporaryDirectory() as folder:

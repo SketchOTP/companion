@@ -1,5 +1,17 @@
 # Current Project State
 
+## Latest execution — AUTHOR-002 key gate stopped, 2026-09-12
+
+Review11 was merged normally. 25 reference-based outputs (10 construction,
+15 gait/repair attempts) were generated and self-reviewed. The key set still
+fails stable limb/hand/foot correspondence, including independently repeated
+left/right passing-foot defects. Review11's anatomical key-pose stop condition
+is reached. **BLOCKED; zero promoted frames; no visual approval request.**
+See `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_KEY_GATE_RESULT.md`
+and `R05_AUTHOR_002_STUDY_RESULTS.json`. Eight-facing studies are provisional,
+not locked. Full actions, v2 intake/runtime and world-contact QA are NOT RUN.
+Previous planning-only and rejected-art records below remain historical.
+
 ## Latest operator disposition — 2026-09-12
 
 The operator additionally rejects universal front-left facing. Current visual

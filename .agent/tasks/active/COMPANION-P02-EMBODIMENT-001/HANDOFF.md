@@ -393,3 +393,11 @@ rendered QA, export/restore, and five tamper negatives pass. All art remains
 gait/motion quality, facing transition, and listen/acknowledge readability.
 Hosted exact-head CI and artifact publication remain required before the final
 R05 return.
+
+## 2026-09-12 — AUTHOR-002 superseding handoff
+
+BLOCKED at Review11 anatomical key gate. Read R05_AUTHOR_002_KEY_GATE_RESULT.md
+and R05_AUTHOR_002_STUDY_RESULTS.json before acting on any earlier completion
+claim. 25 generated studies, zero promoted frames. Eight facings are provisional;
+complete actions, v2 integration and contact QA NOT RUN. Do not request visual
+approval. PR9 remains draft/open/unmerged; Issue8 remains open.

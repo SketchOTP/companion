@@ -384,3 +384,12 @@ The PR-triggered equivalent is `10298651880`, 49,267,547 bytes, digest
 its artifact name uses GitHub's ephemeral PR merge SHA. These results close the
 observed control-read race for this bounded campaign. They do not establish a
 production reliability or SLA claim.
+
+## 2026-09-12 — AUTHOR-002 observed negative evidence
+
+R05_AUTHOR_002_STUDY_RESULTS.json binds all 25 source outputs to SHA-256, prompt
+identity and visual observations. Two selected sheets are under
+assets/review/p02/author002. Key QA FAILED at E1_OBSERVED; adapter 3 tests and
+retained timing 6 tests PASSED. No v2 runtime, contact or full-action evidence.
+Full raw ZIP exports remain local after Notion's 5 MiB upload limit; selected
+sheets are attached separately. See the result for exact archive hashes.

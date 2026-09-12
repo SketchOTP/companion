@@ -232,3 +232,13 @@ Graft artifacts, which remain uninspected and unstaged.
 Retrieval confidence: `ADEQUATE`. R05 candidate-art execution authorized by
 this preflight: `YES`. Architecture v1.0 remains adopted, Phase 01 remains
 accepted, Phase 02 remains active/unaccepted, and Phase 03 remains closed.
+
+## 2026-09-12 — AUTHOR-002 context acknowledgment
+
+ADEQUATE: read Review11 repository/Notion authority, CURRENT/INDEX, governing
+skills, exact reference hashes, live directive/report and PR9/Issue8 routing.
+Acknowledged front presence, profile travel, independent sides, key-before-
+inbetween gating and composed-world contacts. Protected primary edits were
+status-only; unrelated secondary edits excluded. Normal merge recorded in the
+AUTHOR-002 result. Execution subsequently stopped at the explicit anatomical
+key-pose condition; this acknowledgment does not attest successful visual QA.

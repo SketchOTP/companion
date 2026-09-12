@@ -557,3 +557,12 @@ flat-screen habitat. Separate gaze, facing, travel, posture and anatomical gait
 phase. Plan starts/stops/turns and interruption connectors as well as loops.
 Source-root stability alone cannot establish a translating foot's world-space
 grounding. Counts and unique hashes cannot prove plausible leg exchange.
+
+## 2026-09-12 — AUTHOR-002 local pose repairs do not establish a gait
+
+A model can fix one visible counter-swing yet revert it in an adjacent down key;
+independently generated rightward art can repeat the same swing-foot anatomy
+defect. Evaluate the whole anatomically corresponding key set before adding
+in-betweens. A named passing pose, distinct hash or single support exchange is
+not evidence of a believable cycle. Eight HTTP200 RGBA cutouts still retained
+alpha=1 perimeter residue. Record that failed eligibility, not a clean-edge pass.
