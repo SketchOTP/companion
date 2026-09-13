@@ -1,5 +1,17 @@
 # Current Project State
 
+## Connected Listen → Acknowledge candidate — 2026-09-12
+
+Operator requested new drawings and connection of the missing Listen/Ack action.
+Built-in image generation produced 18 reference-edited outputs: 13 selected,
+five rejected for eye/neck artifacts. With three prior poses, the new front-facing
+sequence has 16 distinct drawings / 17 slots / 116 ticks at 24 Hz (4.833 seconds).
+It is connected into individual playback, front presence, and the full reel.
+Left/right action manifests are unchanged; old Listen/Ack remains diagnostic history.
+Normal/quarter browser completion observed. Candidate review only: no production
+intake, measured contact, Godot, CI, or Phase 02 acceptance claimed for these frames.
+See `R05_LISTEN_ACK_CONNECTED_RESULT.md` in the active packet.
+
 ## Full review compiled — 2026-09-12
 
 Operator requested assembly for review, not another generation attempt.

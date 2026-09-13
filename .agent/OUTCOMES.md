@@ -879,3 +879,15 @@ including all 12 actions, eight facings, complete left/right orderings and
 separate failed diagnostics. Five focused tests pass; all 30 tracks load in
 the browser; full reel reaches its final frame. No new art, interpolation,
 production intake or motion-quality pass. See R05_COMPILED_REVIEW_RESULT.md.
+
+## 2026-09-12 — focused Listen/Ack drawings and connection
+
+Operator requested the missing Listen/Ack drawings and connected action.
+Eighteen built-in imagegen outputs preserved: thirteen selected, five rejected
+for eye/neck artifacts. Three prior poses plus thirteen new drawings form a
+16-drawing/17-slot/116-tick front-facing candidate. Individual, front-presence
+and full-reel playback use it; previous Listen remains diagnostic history.
+Left/right sequence manifests unchanged. Eleven focused tests pass; normal and
+quarter browser playback reach final rest without captured console errors.
+No production intake, contact metrics, Godot/CI or visual-quality pass claimed.
+See R05_LISTEN_ACK_CONNECTED_RESULT.md. Phase 02 remains unaccepted.

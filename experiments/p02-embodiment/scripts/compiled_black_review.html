@@ -22,7 +22,7 @@ summary{cursor:pointer;padding:15px 0}a{color:#cfa8ff}
 @media(max-width:850px){.layout{grid-template-columns:1fr}header,main{padding:16px}}
 </style></head><body>
 <header><h1>Mon · Full animation review</h1><p>Black-background compilation of every available action study.</p>
-<small class="badge">REVIEW ASSEMBLY ONLY — missing in-betweens and known motion defects remain. No new artwork or approval implied.</small></header>
+<small class="badge">CANDIDATE MOTION REVIEW — new Listen → Ack drawings are labeled; earlier action studies remain unchanged. No production approval implied.</small></header>
 <main><div class="layout"><section><canvas id="stage" width="900" height="900" aria-label="Animation frame preview"></canvas>
 <div class="controls"><button id="restart">Restart</button><button id="prev" aria-label="Previous frame">← Frame</button>
 <button id="play">Play</button><button id="next" aria-label="Next frame">Frame →</button>
@@ -51,7 +51,7 @@ const groups=new Map();
 for(const t of DATA.tracks){if(!groups.has(t.group)){const g=document.createElement("optgroup");g.label=t.group;$("track").append(g);groups.set(t.group,g)}
 const o=document.createElement("option");o.value=t.id;o.textContent=t.title;groups.get(t.group).append(o)}
 for(const r of DATA.coverage){const tr=document.createElement("tr");const td=document.createElement("td");td.textContent=r.action.replaceAll("_"," ");
-const n=document.createElement("td");n.textContent=r.available_unique_drawings+" / "+r.required_min+" · incomplete";tr.append(td,n);$("coverage").append(tr)}
+const n=document.createElement("td");n.textContent=r.available_unique_drawings+" / "+r.required_min+" · "+(r.status==="INCOMPLETE"?"incomplete":"candidate — review required");tr.append(td,n);$("coverage").append(tr)}
 async function imageFor(key){if(!cache.has(key)){cache.set(key,new Promise((resolve,reject)=>{const i=new Image();
 i.onload=()=>resolve(i);i.onerror=()=>reject(new Error("Image failed to load: "+key));i.src=DATA.assets[key].path}))}return cache.get(key)}
 function paint(c,image,frame){const x=c.getContext("2d");x.fillStyle="#000";x.fillRect(0,0,c.width,c.height);
@@ -88,5 +88,6 @@ $("prev").onclick=()=>step(-1);$("next").onclick=()=>step(1);
 $("seek").oninput=()=>{if(!ready)return;stop();index=Number($("seek").value);time=starts[index];render()};
 $("speed").onchange=()=>{last=null};
 document.addEventListener("visibilitychange",()=>{if(document.hidden)stop()});
-select("full_reel",false);requestAnimationFrame(animate);
+const initial=DATA.tracks.some(t=>t.id===location.hash.slice(1))?location.hash.slice(1):"full_reel";
+$("track").value=initial;select(initial,false);requestAnimationFrame(animate);
 </script></body></html>

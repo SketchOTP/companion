@@ -12,6 +12,9 @@
 
 ## Current pointers
 
+- Latest focused candidate: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_LISTEN_ACK_CONNECTED_RESULT.md` — 13 new selected drawings connected with three prior poses into Listen → Ack; normal/quarter playback observed, visual approval pending.
+- Source prompts, selection, hashes and assembly result: `assets/review/p02/author002/listen-ack-connected/`.
+
 - Compiled review: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_COMPILED_REVIEW_RESULT.md` — all available actions assembled for inspection; not finished motion.
 
 - Latest joint-sheet diagnostic: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_BLACK_SEQUENCE_SHEET_RESULT.md` — two failed outputs; no completed animation.

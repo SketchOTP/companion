@@ -62,7 +62,10 @@ def validate(data, root):
             assert frame["asset"] in data["assets"]
             assert type(frame["ticks"]) is int and frame["ticks"] > 0
     assert len(data["coverage"]) == 12
-    assert all(row["available_unique_drawings"] < row["required_min"] for row in data["coverage"])
+    for row in data["coverage"]:
+        item = next(t for t in data["tracks"] if t["id"] == row["track_id"])
+        assert row["available_unique_drawings"] == len({f["asset"] for f in item["frames"]})
+        assert row["status"] in ("INCOMPLETE", "CANDIDATE_DRAWINGS_REVIEW_REQUIRED")
     return True
 
 def build(args):
@@ -73,6 +76,19 @@ def build(args):
     extra, retry = load_bundle(args.retry, "retry", out)
     assets.update(extra)
     by = {t["id"].removeprefix("base_"): t for t in base}
+    listen_history = []
+    if getattr(args, "listen", None):
+        added, connected = load_bundle(args.listen, "listen", out)
+        shutil.copytree(args.listen, out / "authoring")
+        if len(connected) != 1 or connected[0]["id"] != "listen_listen_acknowledge_connected":
+            raise ValueError("unexpected_listen_track")
+        assets.update(added)
+        old = dict(by["front_listen_acknowledge_key_study"])
+        old["title"] = "Historical Listen → Ack — three-pose blocking"
+        listen_history.append(old)
+        track = connected[0]
+        track["note"] = "New reference-edited candidate drawings: attention → listen hold → one acknowledgment → follow-through → rest. No source warping or runtime interpolation. Visual approval and measured contacts remain open."
+        by["front_listen_acknowledge_key_study"] = track
     coverage = []
     individual = []
     mappings = [("idle_breathe_front", "front_breathe_key_study", 16),
@@ -90,7 +106,7 @@ def build(args):
         unique = len({f["asset"] for f in item["frames"]})
         coverage.append({"action": name, "available_slots": len(item["frames"]),
                          "available_unique_drawings": unique, "required_min": floor,
-                         "status": "INCOMPLETE", "track_id": item["id"]})
+                         "status": "CANDIDATE_DRAWINGS_REVIEW_REQUIRED" if unique >= floor else "INCOMPLETE", "track_id": item["id"]})
         individual.append(item)
     full = []
     for side in ("left", "right"):
@@ -106,7 +122,7 @@ def build(args):
     for item in base:
         if item["id"].startswith("base_construction"):
             item["group"] = "Eight facings"
-    diagnostics = [t for t in base if "inbetween_diagnostic" in t["id"]] + retry
+    diagnostics = [t for t in base if "inbetween_diagnostic" in t["id"]] + retry + listen_history
     for diagnostic in diagnostics:
         diagnostic["group"] = "Diagnostics"
     sheet_prov = json.loads((args.sheets / "provenance.json").read_text())
@@ -138,18 +154,26 @@ def build(args):
             "tracks": [reel] + full + individual +
                       [t for t in base if t["group"] == "Eight facings"] + diagnostics,
             "source_pixels_modified": False, "new_drawings_created": 0,
+            "additional_authored_bundle": bool(getattr(args, "listen", None)),
             "world_contacts": "NOT_RUN", "operator_motion_approval": "NOT_RUN"}
+    if getattr(args, "listen", None):
+        authored = json.loads((args.listen / "prompts.json").read_text())["new_outputs"]
+        authored_ids = {row["id"] for row in authored}
+        data["authoring_campaign_outputs"] = len(authored_ids)
+        data["included_newly_authored_drawings"] = sum(
+            key.removeprefix("listen_") in authored_ids for key in assets if key.startswith("listen_"))
     validate(data, out)
     text = json.dumps(data, indent=2, sort_keys=True)
     (out / "manifest.json").write_text(text + "\n")
     template = Path(__file__).with_name("compiled_black_review.html").read_text()
     (out / "index.html").write_text(template.replace("/*__MANIFEST__*/", text.replace("</", "<\\/")))
     (out / "README.txt").write_text("Open index.html in a browser. No install/server required.\n"
-        "This compiles available drawings, NOT finished animation. Use 1x/0.25x, frame stepping and timeline.\n"
+        "This compiles candidate drawings, NOT production-approved animation. Use 1x/0.25x, frame stepping and timeline.\n"
         "Full reel and complete action orderings are provided. Diagnostics remain separate.\n"
         "Source PNGs are byte-identical copies; sheet crops occur only while drawing the review canvas.\n")
     result = {"status": "PASSED_REVIEW_ASSEMBLY", "assets": len(assets), "tracks": len(data["tracks"]),
               "required_actions": 12, "new_drawings": 0, "completed_production_tracks": 0,
+              "included_newly_authored_drawings": data.get("included_newly_authored_drawings", 0),
               "manifest_sha256": sha(out / "manifest.json"), "html_sha256": sha(out / "index.html"),
               "files": {p.relative_to(out).as_posix(): sha(p) for p in sorted(out.rglob("*")) if p.is_file()}}
     (out / "result.json").write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
@@ -160,4 +184,5 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser(description=__doc__)
     for name in ("studies", "retry", "sheets", "out"):
         ap.add_argument("--" + name, type=Path, required=True)
+    ap.add_argument("--listen", type=Path, help="Optional separately authored Listen/Ack review bundle")
     build(ap.parse_args())
