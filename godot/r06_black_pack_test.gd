@@ -105,19 +105,14 @@ func _play_track(track: Dictionary) -> void:
 	container.queue_free(); await process_frame
 
 func _await_frame_post_draw() -> bool:
-	var observed: bool = false
-	var callback := func() -> void: observed = true
-	RenderingServer.frame_post_draw.connect(callback, CONNECT_ONE_SHOT)
+	# Await the engine's render boundary directly.  Connecting a one-shot
+	# callback after a frame has already been queued can miss the signal on
+	# headless/Xvfb backends; the direct await preserves the strict meaning of
+	# render commitment while matching Godot's documented capture sequence.
 	await process_frame
-	RenderingServer.force_draw()
-	for _i in range(120):
-		if observed:
-			render_observation = "RenderingServer.frame_post_draw"
-			return true
-		await process_frame
-	if RenderingServer.frame_post_draw.is_connected(callback):
-		RenderingServer.frame_post_draw.disconnect(callback)
-	return observed
+	await RenderingServer.frame_post_draw
+	render_observation = "RenderingServer.frame_post_draw"
+	return true
 
 func image_path_for_frame(track: Dictionary, index: int, parent: String) -> String:
 	var frames: Array = track.get("frames", [])
