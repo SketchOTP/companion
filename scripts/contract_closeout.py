@@ -52,9 +52,10 @@ def main():
             "mon-authored-frame-source-pack-v1.schema.json": "mon-authored-frame-source-pack-v1.json",
             "mon-ingested-frame-pack-v1.schema.json": "mon-ingested-frame-pack-v1.json",
             "mon-frame-intake-receipt-v1.schema.json": "mon-authored-frame-intake-receipt-v1.json",
+            "mon-opaque-black-frame-source-pack-v1.schema.json": "assets/source/p02/r06/approved/pack.json",
         }.get(path.name)
         if fixture_name:
-            fixture_path = ROOT / "contracts/fixtures" / fixture_name
+            fixture_path = ROOT / fixture_name if fixture_name.startswith("assets/") else ROOT / "contracts/fixtures" / fixture_name
             if fixture_path.exists(): valid = json.loads(fixture_path.read_text())
         cases={"valid":True}
         try: check(valid,schema)
