@@ -17,7 +17,10 @@ fn run() -> Result<(), String> {
     if pack.timing.fps != 24 || pack.timing.tick_unit != "1/24_second" {
         return Err("opaque pack is not on the 24 Hz timing grid".into());
     }
-    let runtime = pack.runtime_profile.as_ref().ok_or("runtime profile missing")?;
+    let runtime = pack
+        .runtime_profile
+        .as_ref()
+        .ok_or("runtime profile missing")?;
     if runtime.get("display_background").and_then(|v| v.as_str()) != Some("black") {
         return Err("black habitat runtime profile missing".into());
     }
@@ -27,10 +30,10 @@ fn run() -> Result<(), String> {
     {
         return Err("opaque pack has no playable typed tracks".into());
     }
-    let encoded = serde_json::to_vec(&pack)
-        .map_err(|e| format!("opaque reserialization failed: {e}"))?;
-    let round: MonAuthoredFrameSourcePackV1 = serde_json::from_slice(&encoded)
-        .map_err(|e| format!("opaque round-trip failed: {e}"))?;
+    let encoded =
+        serde_json::to_vec(&pack).map_err(|e| format!("opaque reserialization failed: {e}"))?;
+    let round: MonAuthoredFrameSourcePackV1 =
+        serde_json::from_slice(&encoded).map_err(|e| format!("opaque round-trip failed: {e}"))?;
     if round != pack {
         return Err("opaque typed round-trip changed data".into());
     }
