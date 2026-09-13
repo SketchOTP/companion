@@ -133,80 +133,96 @@
       "c03_two_loop_net_px": 255.0,
       "c04_touchdown_anchors": [
         {
+          "frame_id": "r06_t08_f000",
           "source_contact": {
             "x": 445,
             "y": 1192
           },
+          "source_sha256": "225f6b76bb9fce45e537a2174b6a8c0cfac7b901d3cde1e329e0ed41da789134",
           "stable_leg": "near",
           "tick": 0,
           "world_x": 229.0,
           "world_y": 602.5
         },
         {
+          "frame_id": "r06_t08_f003",
           "source_contact": {
             "x": 834,
             "y": 1207
           },
+          "source_sha256": "189fb15353ee79a2011d426cc526d97725ce43800b8f5ba09b0a473210471b51",
           "stable_leg": "far",
           "tick": 12,
           "world_x": 369.0,
           "world_y": 603.0
         },
         {
+          "frame_id": "r06_t08_f005",
           "source_contact": {
             "x": 434,
             "y": 1187
           },
+          "source_sha256": "44c610f71e071d8d7c083a58c5f090b96c978d97801ba50a838e411f8324d982",
           "stable_leg": "near",
           "tick": 20,
           "world_x": 194.5,
           "world_y": 597.0
         },
         {
+          "frame_id": "r06_t08_f007",
           "source_contact": {
             "x": 764,
             "y": 1197
           },
+          "source_sha256": "738cffb262bd10494cc6300f7a228d4d88973e58c5bd56b3a90185b2f1e7e347",
           "stable_leg": "far",
           "tick": 28,
           "world_x": 279.5,
           "world_y": 590.0
         },
         {
+          "frame_id": "r06_t08_f000",
           "source_contact": {
             "x": 445,
             "y": 1192
           },
+          "source_sha256": "225f6b76bb9fce45e537a2174b6a8c0cfac7b901d3cde1e329e0ed41da789134",
           "stable_leg": "near",
           "tick": 32,
           "world_x": 120.0,
           "world_y": 587.5
         },
         {
+          "frame_id": "r06_t08_f003",
           "source_contact": {
             "x": 834,
             "y": 1207
           },
+          "source_sha256": "189fb15353ee79a2011d426cc526d97725ce43800b8f5ba09b0a473210471b51",
           "stable_leg": "far",
           "tick": 44,
           "world_x": 260.0,
           "world_y": 588.0
         },
         {
+          "frame_id": "r06_t08_f005",
           "source_contact": {
             "x": 434,
             "y": 1187
           },
+          "source_sha256": "44c610f71e071d8d7c083a58c5f090b96c978d97801ba50a838e411f8324d982",
           "stable_leg": "near",
           "tick": 52,
           "world_x": 85.5,
           "world_y": 582.0
         },
         {
+          "frame_id": "r06_t08_f007",
           "source_contact": {
             "x": 764,
             "y": 1197
           },
+          "source_sha256": "738cffb262bd10494cc6300f7a228d4d88973e58c5bd56b3a90185b2f1e7e347",
           "stable_leg": "far",
           "tick": 60,
           "world_x": 170.5,
@@ -316,80 +332,96 @@
       "c03_two_loop_net_px": -336.0,
       "c04_touchdown_anchors": [
         {
+          "frame_id": "r06_t13_f000",
           "source_contact": {
             "x": 826,
             "y": 1177
           },
+          "source_sha256": "3b6c4ea6d36492af68e02b8f78cf0a7c06d4d7ae0ddb707ab74d57ce7aae1d35",
           "stable_leg": "near",
           "tick": 0,
           "world_x": 419.5,
           "world_y": 595.0
         },
         {
+          "frame_id": "r06_t13_f003",
           "source_contact": {
             "x": 562,
             "y": 1197
           },
+          "source_sha256": "2d1dee0c3daf697716e276f4b46e8d1592fe3751837aee1f9a1a1452771edf75",
           "stable_leg": "far",
           "tick": 12,
           "world_x": 304.5,
           "world_y": 601.5
         },
         {
+          "frame_id": "r06_t13_f005",
           "source_contact": {
             "x": 831,
             "y": 1165
           },
+          "source_sha256": "7a1248e769bc35da3440293c66b28762eb8af32f209c05467dec95fda6f3cee9",
           "stable_leg": "near",
           "tick": 20,
           "world_x": 489.0,
           "world_y": 587.0
         },
         {
+          "frame_id": "r06_t13_f007",
           "source_contact": {
             "x": 490,
             "y": 1182
           },
+          "source_sha256": "2083d0030d81291f34ce157b1345a375ef5cad8075f2ccee5cbeeeaac4e44440",
           "stable_leg": "far",
           "tick": 28,
           "world_x": 346.0,
           "world_y": 584.5
         },
         {
+          "frame_id": "r06_t13_f000",
           "source_contact": {
             "x": 826,
             "y": 1177
           },
+          "source_sha256": "3b6c4ea6d36492af68e02b8f78cf0a7c06d4d7ae0ddb707ab74d57ce7aae1d35",
           "stable_leg": "near",
           "tick": 32,
           "world_x": 514.0,
           "world_y": 582.0
         },
         {
+          "frame_id": "r06_t13_f003",
           "source_contact": {
             "x": 562,
             "y": 1197
           },
+          "source_sha256": "2d1dee0c3daf697716e276f4b46e8d1592fe3751837aee1f9a1a1452771edf75",
           "stable_leg": "far",
           "tick": 44,
           "world_x": 399.0,
           "world_y": 588.5
         },
         {
+          "frame_id": "r06_t13_f005",
           "source_contact": {
             "x": 831,
             "y": 1165
           },
+          "source_sha256": "7a1248e769bc35da3440293c66b28762eb8af32f209c05467dec95fda6f3cee9",
           "stable_leg": "near",
           "tick": 52,
           "world_x": 583.5,
           "world_y": 574.0
         },
         {
+          "frame_id": "r06_t13_f007",
           "source_contact": {
             "x": 490,
             "y": 1182
           },
+          "source_sha256": "2083d0030d81291f34ce157b1345a375ef5cad8075f2ccee5cbeeeaac4e44440",
           "stable_leg": "far",
           "tick": 60,
           "world_x": 440.5,
@@ -2451,80 +2483,96 @@
   "left_repeated_loop_plan": {
     "anchors": [
       {
+        "frame_id": "r06_t08_f000",
         "source_contact": {
           "x": 445,
           "y": 1192
         },
+        "source_sha256": "225f6b76bb9fce45e537a2174b6a8c0cfac7b901d3cde1e329e0ed41da789134",
         "stable_leg": "near",
         "tick": 0,
         "world_x": 229.0,
         "world_y": 602.5
       },
       {
+        "frame_id": "r06_t08_f003",
         "source_contact": {
           "x": 834,
           "y": 1207
         },
+        "source_sha256": "189fb15353ee79a2011d426cc526d97725ce43800b8f5ba09b0a473210471b51",
         "stable_leg": "far",
         "tick": 12,
         "world_x": 369.0,
         "world_y": 603.0
       },
       {
+        "frame_id": "r06_t08_f005",
         "source_contact": {
           "x": 434,
           "y": 1187
         },
+        "source_sha256": "44c610f71e071d8d7c083a58c5f090b96c978d97801ba50a838e411f8324d982",
         "stable_leg": "near",
         "tick": 20,
         "world_x": 194.5,
         "world_y": 597.0
       },
       {
+        "frame_id": "r06_t08_f007",
         "source_contact": {
           "x": 764,
           "y": 1197
         },
+        "source_sha256": "738cffb262bd10494cc6300f7a228d4d88973e58c5bd56b3a90185b2f1e7e347",
         "stable_leg": "far",
         "tick": 28,
         "world_x": 279.5,
         "world_y": 590.0
       },
       {
+        "frame_id": "r06_t08_f000",
         "source_contact": {
           "x": 445,
           "y": 1192
         },
+        "source_sha256": "225f6b76bb9fce45e537a2174b6a8c0cfac7b901d3cde1e329e0ed41da789134",
         "stable_leg": "near",
         "tick": 32,
         "world_x": 120.0,
         "world_y": 587.5
       },
       {
+        "frame_id": "r06_t08_f003",
         "source_contact": {
           "x": 834,
           "y": 1207
         },
+        "source_sha256": "189fb15353ee79a2011d426cc526d97725ce43800b8f5ba09b0a473210471b51",
         "stable_leg": "far",
         "tick": 44,
         "world_x": 260.0,
         "world_y": 588.0
       },
       {
+        "frame_id": "r06_t08_f005",
         "source_contact": {
           "x": 434,
           "y": 1187
         },
+        "source_sha256": "44c610f71e071d8d7c083a58c5f090b96c978d97801ba50a838e411f8324d982",
         "stable_leg": "near",
         "tick": 52,
         "world_x": 85.5,
         "world_y": 582.0
       },
       {
+        "frame_id": "r06_t08_f007",
         "source_contact": {
           "x": 764,
           "y": 1197
         },
+        "source_sha256": "738cffb262bd10494cc6300f7a228d4d88973e58c5bd56b3a90185b2f1e7e347",
         "stable_leg": "far",
         "tick": 60,
         "world_x": 170.5,
@@ -3343,100 +3391,120 @@
   "left_root_translation_plan": {
     "anchors": [
       {
+        "frame_id": "r06_t07_f000",
         "source_contact": {
           "x": 615,
           "y": 1185
         },
+        "source_sha256": "554323809b03401ff46be8d4e52a3e3fde0012d38b2ed8d43a8ee7ecdf7f4a75",
         "stable_leg": "near",
         "tick": 0,
         "world_x": 314.0,
         "world_y": 599.0
       },
       {
+        "frame_id": "r06_t08_f003",
         "source_contact": {
           "x": 834,
           "y": 1207
         },
+        "source_sha256": "189fb15353ee79a2011d426cc526d97725ce43800b8f5ba09b0a473210471b51",
         "stable_leg": "far",
         "tick": 36,
         "world_x": 454.0,
         "world_y": 599.5
       },
       {
+        "frame_id": "r06_t08_f005",
         "source_contact": {
           "x": 434,
           "y": 1187
         },
+        "source_sha256": "44c610f71e071d8d7c083a58c5f090b96c978d97801ba50a838e411f8324d982",
         "stable_leg": "near",
         "tick": 44,
         "world_x": 279.5,
         "world_y": 593.5
       },
       {
+        "frame_id": "r06_t08_f007",
         "source_contact": {
           "x": 764,
           "y": 1197
         },
+        "source_sha256": "738cffb262bd10494cc6300f7a228d4d88973e58c5bd56b3a90185b2f1e7e347",
         "stable_leg": "far",
         "tick": 52,
         "world_x": 364.5,
         "world_y": 586.5
       },
       {
+        "frame_id": "r06_t08_f000",
         "source_contact": {
           "x": 445,
           "y": 1192
         },
+        "source_sha256": "225f6b76bb9fce45e537a2174b6a8c0cfac7b901d3cde1e329e0ed41da789134",
         "stable_leg": "near",
         "tick": 56,
         "world_x": 205.0,
         "world_y": 584.0
       },
       {
+        "frame_id": "r06_t08_f003",
         "source_contact": {
           "x": 834,
           "y": 1207
         },
+        "source_sha256": "189fb15353ee79a2011d426cc526d97725ce43800b8f5ba09b0a473210471b51",
         "stable_leg": "far",
         "tick": 68,
         "world_x": 345.0,
         "world_y": 584.5
       },
       {
+        "frame_id": "r06_t08_f005",
         "source_contact": {
           "x": 434,
           "y": 1187
         },
+        "source_sha256": "44c610f71e071d8d7c083a58c5f090b96c978d97801ba50a838e411f8324d982",
         "stable_leg": "near",
         "tick": 76,
         "world_x": 170.5,
         "world_y": 578.5
       },
       {
+        "frame_id": "r06_t08_f007",
         "source_contact": {
           "x": 764,
           "y": 1197
         },
+        "source_sha256": "738cffb262bd10494cc6300f7a228d4d88973e58c5bd56b3a90185b2f1e7e347",
         "stable_leg": "far",
         "tick": 84,
         "world_x": 255.5,
         "world_y": 571.5
       },
       {
+        "frame_id": "r06_t09_f000",
         "source_contact": {
           "x": 445,
           "y": 1192
         },
+        "source_sha256": "225f6b76bb9fce45e537a2174b6a8c0cfac7b901d3cde1e329e0ed41da789134",
         "stable_leg": "near",
         "tick": 88,
         "world_x": 96.0,
         "world_y": 569.0
       },
       {
+        "frame_id": "r06_t09_f002",
         "source_contact": {
           "x": 615,
           "y": 1185
         },
+        "source_sha256": "0b0dd0d20eda559e00c1e25617fb093544d2efbd545372c4cc4395950c813669",
         "stable_leg": "far",
         "tick": 100,
         "world_x": 164.5,
@@ -4641,100 +4709,120 @@
   "left_two_loop_plan": {
     "anchors": [
       {
+        "frame_id": "r06_t07_f000",
         "source_contact": {
           "x": 615,
           "y": 1185
         },
+        "source_sha256": "554323809b03401ff46be8d4e52a3e3fde0012d38b2ed8d43a8ee7ecdf7f4a75",
         "stable_leg": "near",
         "tick": 0,
         "world_x": 314.0,
         "world_y": 599.0
       },
       {
+        "frame_id": "r06_t08_f003",
         "source_contact": {
           "x": 834,
           "y": 1207
         },
+        "source_sha256": "189fb15353ee79a2011d426cc526d97725ce43800b8f5ba09b0a473210471b51",
         "stable_leg": "far",
         "tick": 36,
         "world_x": 454.0,
         "world_y": 599.5
       },
       {
+        "frame_id": "r06_t08_f005",
         "source_contact": {
           "x": 434,
           "y": 1187
         },
+        "source_sha256": "44c610f71e071d8d7c083a58c5f090b96c978d97801ba50a838e411f8324d982",
         "stable_leg": "near",
         "tick": 44,
         "world_x": 279.5,
         "world_y": 593.5
       },
       {
+        "frame_id": "r06_t08_f007",
         "source_contact": {
           "x": 764,
           "y": 1197
         },
+        "source_sha256": "738cffb262bd10494cc6300f7a228d4d88973e58c5bd56b3a90185b2f1e7e347",
         "stable_leg": "far",
         "tick": 52,
         "world_x": 364.5,
         "world_y": 586.5
       },
       {
+        "frame_id": "r06_t08_f000",
         "source_contact": {
           "x": 445,
           "y": 1192
         },
+        "source_sha256": "225f6b76bb9fce45e537a2174b6a8c0cfac7b901d3cde1e329e0ed41da789134",
         "stable_leg": "near",
         "tick": 56,
         "world_x": 205.0,
         "world_y": 584.0
       },
       {
+        "frame_id": "r06_t08_f003",
         "source_contact": {
           "x": 834,
           "y": 1207
         },
+        "source_sha256": "189fb15353ee79a2011d426cc526d97725ce43800b8f5ba09b0a473210471b51",
         "stable_leg": "far",
         "tick": 68,
         "world_x": 345.0,
         "world_y": 584.5
       },
       {
+        "frame_id": "r06_t08_f005",
         "source_contact": {
           "x": 434,
           "y": 1187
         },
+        "source_sha256": "44c610f71e071d8d7c083a58c5f090b96c978d97801ba50a838e411f8324d982",
         "stable_leg": "near",
         "tick": 76,
         "world_x": 170.5,
         "world_y": 578.5
       },
       {
+        "frame_id": "r06_t08_f007",
         "source_contact": {
           "x": 764,
           "y": 1197
         },
+        "source_sha256": "738cffb262bd10494cc6300f7a228d4d88973e58c5bd56b3a90185b2f1e7e347",
         "stable_leg": "far",
         "tick": 84,
         "world_x": 255.5,
         "world_y": 571.5
       },
       {
+        "frame_id": "r06_t09_f000",
         "source_contact": {
           "x": 445,
           "y": 1192
         },
+        "source_sha256": "225f6b76bb9fce45e537a2174b6a8c0cfac7b901d3cde1e329e0ed41da789134",
         "stable_leg": "near",
         "tick": 88,
         "world_x": 96.0,
         "world_y": 569.0
       },
       {
+        "frame_id": "r06_t09_f002",
         "source_contact": {
           "x": 615,
           "y": 1185
         },
+        "source_sha256": "0b0dd0d20eda559e00c1e25617fb093544d2efbd545372c4cc4395950c813669",
         "stable_leg": "far",
         "tick": 100,
         "world_x": 164.5,
@@ -8104,80 +8192,96 @@
   "right_repeated_loop_plan": {
     "anchors": [
       {
+        "frame_id": "r06_t13_f000",
         "source_contact": {
           "x": 826,
           "y": 1177
         },
+        "source_sha256": "3b6c4ea6d36492af68e02b8f78cf0a7c06d4d7ae0ddb707ab74d57ce7aae1d35",
         "stable_leg": "near",
         "tick": 0,
         "world_x": 419.5,
         "world_y": 595.0
       },
       {
+        "frame_id": "r06_t13_f003",
         "source_contact": {
           "x": 562,
           "y": 1197
         },
+        "source_sha256": "2d1dee0c3daf697716e276f4b46e8d1592fe3751837aee1f9a1a1452771edf75",
         "stable_leg": "far",
         "tick": 12,
         "world_x": 304.5,
         "world_y": 601.5
       },
       {
+        "frame_id": "r06_t13_f005",
         "source_contact": {
           "x": 831,
           "y": 1165
         },
+        "source_sha256": "7a1248e769bc35da3440293c66b28762eb8af32f209c05467dec95fda6f3cee9",
         "stable_leg": "near",
         "tick": 20,
         "world_x": 489.0,
         "world_y": 587.0
       },
       {
+        "frame_id": "r06_t13_f007",
         "source_contact": {
           "x": 490,
           "y": 1182
         },
+        "source_sha256": "2083d0030d81291f34ce157b1345a375ef5cad8075f2ccee5cbeeeaac4e44440",
         "stable_leg": "far",
         "tick": 28,
         "world_x": 346.0,
         "world_y": 584.5
       },
       {
+        "frame_id": "r06_t13_f000",
         "source_contact": {
           "x": 826,
           "y": 1177
         },
+        "source_sha256": "3b6c4ea6d36492af68e02b8f78cf0a7c06d4d7ae0ddb707ab74d57ce7aae1d35",
         "stable_leg": "near",
         "tick": 32,
         "world_x": 514.0,
         "world_y": 582.0
       },
       {
+        "frame_id": "r06_t13_f003",
         "source_contact": {
           "x": 562,
           "y": 1197
         },
+        "source_sha256": "2d1dee0c3daf697716e276f4b46e8d1592fe3751837aee1f9a1a1452771edf75",
         "stable_leg": "far",
         "tick": 44,
         "world_x": 399.0,
         "world_y": 588.5
       },
       {
+        "frame_id": "r06_t13_f005",
         "source_contact": {
           "x": 831,
           "y": 1165
         },
+        "source_sha256": "7a1248e769bc35da3440293c66b28762eb8af32f209c05467dec95fda6f3cee9",
         "stable_leg": "near",
         "tick": 52,
         "world_x": 583.5,
         "world_y": 574.0
       },
       {
+        "frame_id": "r06_t13_f007",
         "source_contact": {
           "x": 490,
           "y": 1182
         },
+        "source_sha256": "2083d0030d81291f34ce157b1345a375ef5cad8075f2ccee5cbeeeaac4e44440",
         "stable_leg": "far",
         "tick": 60,
         "world_x": 440.5,
@@ -8996,90 +9100,108 @@
   "right_root_translation_plan": {
     "anchors": [
       {
+        "frame_id": "r06_t12_f000",
         "source_contact": {
           "x": 666,
           "y": 1185
         },
+        "source_sha256": "cfe741a2a013a2833a9138baa4fa8b1ec0fd2e5e5bd1f99a7c8963b0297c9bc0",
         "stable_leg": "near",
         "tick": 0,
         "world_x": 339.5,
         "world_y": 599.0
       },
       {
+        "frame_id": "r06_t13_f003",
         "source_contact": {
           "x": 562,
           "y": 1197
         },
+        "source_sha256": "2d1dee0c3daf697716e276f4b46e8d1592fe3751837aee1f9a1a1452771edf75",
         "stable_leg": "far",
         "tick": 36,
         "world_x": 224.5,
         "world_y": 605.5
       },
       {
+        "frame_id": "r06_t13_f005",
         "source_contact": {
           "x": 831,
           "y": 1165
         },
+        "source_sha256": "7a1248e769bc35da3440293c66b28762eb8af32f209c05467dec95fda6f3cee9",
         "stable_leg": "near",
         "tick": 44,
         "world_x": 409.0,
         "world_y": 591.0
       },
       {
+        "frame_id": "r06_t13_f007",
         "source_contact": {
           "x": 490,
           "y": 1182
         },
+        "source_sha256": "2083d0030d81291f34ce157b1345a375ef5cad8075f2ccee5cbeeeaac4e44440",
         "stable_leg": "far",
         "tick": 52,
         "world_x": 266.0,
         "world_y": 588.5
       },
       {
+        "frame_id": "r06_t13_f000",
         "source_contact": {
           "x": 826,
           "y": 1177
         },
+        "source_sha256": "3b6c4ea6d36492af68e02b8f78cf0a7c06d4d7ae0ddb707ab74d57ce7aae1d35",
         "stable_leg": "near",
         "tick": 56,
         "world_x": 434.0,
         "world_y": 586.0
       },
       {
+        "frame_id": "r06_t13_f003",
         "source_contact": {
           "x": 562,
           "y": 1197
         },
+        "source_sha256": "2d1dee0c3daf697716e276f4b46e8d1592fe3751837aee1f9a1a1452771edf75",
         "stable_leg": "far",
         "tick": 68,
         "world_x": 319.0,
         "world_y": 592.5
       },
       {
+        "frame_id": "r06_t13_f005",
         "source_contact": {
           "x": 831,
           "y": 1165
         },
+        "source_sha256": "7a1248e769bc35da3440293c66b28762eb8af32f209c05467dec95fda6f3cee9",
         "stable_leg": "near",
         "tick": 76,
         "world_x": 503.5,
         "world_y": 578.0
       },
       {
+        "frame_id": "r06_t13_f007",
         "source_contact": {
           "x": 490,
           "y": 1182
         },
+        "source_sha256": "2083d0030d81291f34ce157b1345a375ef5cad8075f2ccee5cbeeeaac4e44440",
         "stable_leg": "far",
         "tick": 84,
         "world_x": 360.5,
         "world_y": 575.5
       },
       {
+        "frame_id": "r06_t14_f000",
         "source_contact": {
           "x": 826,
           "y": 1177
         },
+        "source_sha256": "3b6c4ea6d36492af68e02b8f78cf0a7c06d4d7ae0ddb707ab74d57ce7aae1d35",
         "stable_leg": "near",
         "tick": 88,
         "world_x": 528.5,
@@ -10283,90 +10405,108 @@
   "right_two_loop_plan": {
     "anchors": [
       {
+        "frame_id": "r06_t12_f000",
         "source_contact": {
           "x": 666,
           "y": 1185
         },
+        "source_sha256": "cfe741a2a013a2833a9138baa4fa8b1ec0fd2e5e5bd1f99a7c8963b0297c9bc0",
         "stable_leg": "near",
         "tick": 0,
         "world_x": 339.5,
         "world_y": 599.0
       },
       {
+        "frame_id": "r06_t13_f003",
         "source_contact": {
           "x": 562,
           "y": 1197
         },
+        "source_sha256": "2d1dee0c3daf697716e276f4b46e8d1592fe3751837aee1f9a1a1452771edf75",
         "stable_leg": "far",
         "tick": 36,
         "world_x": 224.5,
         "world_y": 605.5
       },
       {
+        "frame_id": "r06_t13_f005",
         "source_contact": {
           "x": 831,
           "y": 1165
         },
+        "source_sha256": "7a1248e769bc35da3440293c66b28762eb8af32f209c05467dec95fda6f3cee9",
         "stable_leg": "near",
         "tick": 44,
         "world_x": 409.0,
         "world_y": 591.0
       },
       {
+        "frame_id": "r06_t13_f007",
         "source_contact": {
           "x": 490,
           "y": 1182
         },
+        "source_sha256": "2083d0030d81291f34ce157b1345a375ef5cad8075f2ccee5cbeeeaac4e44440",
         "stable_leg": "far",
         "tick": 52,
         "world_x": 266.0,
         "world_y": 588.5
       },
       {
+        "frame_id": "r06_t13_f000",
         "source_contact": {
           "x": 826,
           "y": 1177
         },
+        "source_sha256": "3b6c4ea6d36492af68e02b8f78cf0a7c06d4d7ae0ddb707ab74d57ce7aae1d35",
         "stable_leg": "near",
         "tick": 56,
         "world_x": 434.0,
         "world_y": 586.0
       },
       {
+        "frame_id": "r06_t13_f003",
         "source_contact": {
           "x": 562,
           "y": 1197
         },
+        "source_sha256": "2d1dee0c3daf697716e276f4b46e8d1592fe3751837aee1f9a1a1452771edf75",
         "stable_leg": "far",
         "tick": 68,
         "world_x": 319.0,
         "world_y": 592.5
       },
       {
+        "frame_id": "r06_t13_f005",
         "source_contact": {
           "x": 831,
           "y": 1165
         },
+        "source_sha256": "7a1248e769bc35da3440293c66b28762eb8af32f209c05467dec95fda6f3cee9",
         "stable_leg": "near",
         "tick": 76,
         "world_x": 503.5,
         "world_y": 578.0
       },
       {
+        "frame_id": "r06_t13_f007",
         "source_contact": {
           "x": 490,
           "y": 1182
         },
+        "source_sha256": "2083d0030d81291f34ce157b1345a375ef5cad8075f2ccee5cbeeeaac4e44440",
         "stable_leg": "far",
         "tick": 84,
         "world_x": 360.5,
         "world_y": 575.5
       },
       {
+        "frame_id": "r06_t14_f000",
         "source_contact": {
           "x": 826,
           "y": 1177
         },
+        "source_sha256": "3b6c4ea6d36492af68e02b8f78cf0a7c06d4d7ae0ddb707ab74d57ce7aae1d35",
         "stable_leg": "near",
         "tick": 88,
         "world_x": 528.5,

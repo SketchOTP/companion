@@ -210,7 +210,7 @@ def root_plan(rows: list[dict[str, Any]], direction: str) -> dict[str, Any]:
             if contacts.get(role) is None:
                 continue
             world = local_to_world(locals_[role], actor)
-            anchors.append({"tick": row["sequence_start_tick"], "stable_leg": role, "source_contact": contacts[role], "world_x": round(world["x"], 4), "world_y": round(world["y"], 4)})
+            anchors.append({"tick": row["sequence_start_tick"], "frame_id": row["frame_id"], "source_sha256": row["source_sha256"], "stable_leg": role, "source_contact": contacts[role], "world_x": round(world["x"], 4), "world_y": round(world["y"], 4)})
         # Preserve actor continuity at handoff.  Pin one continuing/entering
         # support; any second support is retained and measured independently.
         pin_role = next((r for r in ("near", "far") if r in support), None)
