@@ -11,6 +11,7 @@ R06 correctly stopped without modifying accepted art. Architect Review 13 correc
 Current authority:
 
 - Architect Review 13: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_13.md`
+- Architect Review 13 publication: `a6089b33ef2350f3cb71d028a7a7d29a06b7e3bd`
 - Notion Review 13: https://app.notion.com/p/3da833cb27ff813e83b9f5535711b09c
 - Current Codex directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C01`
 - Frozen visual task head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
@@ -22,7 +23,7 @@ Current authority:
 
 Independent GitHub inspection showed:
 
-- `main` at Review-13 start: `45bcaad97acf87dbc91736835df16d28abc7cf94`
+- `main` at Review-13 publication: `a6089b33ef2350f3cb71d028a7a7d29a06b7e3bd`
 - live task branch: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
 
 The R06 handoff's `remote task branch = 6bef092...` statement is stale. The next Codex run must fetch and reconcile against the live branch before implementation.
