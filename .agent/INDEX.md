@@ -14,7 +14,7 @@
 - Current disposition: `R05 VISUAL ACCEPTED — R06 SOURCE-ROLE CORRECTION ACTIVE`
 - Current directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C01`
 - Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_13.md`
-- Review 13 publication: `8330a35564dd8c190811e9d9563cc9fc59d2cdfa`
+- Review 13 publication: `d9034dd7a6bf07ca6d79909abc74d0dcc00af835`
 - Notion Review 13: https://app.notion.com/p/3da833cb27ff813e83b9f5535711b09c
 - Frozen visual head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
 - PR #9: draft/open/unmerged
@@ -81,3 +81,10 @@ Required:
   playback tracks, and 283 frame slots. The prior 68/26/303 derivation is
   preserved as superseded historical evidence because two included manifest
   tracks were explicitly labelled `Diagnostics`.
+
+Hosted R06-C01 run `34761173688` on head
+`a2826a546c700897bb049b1ce4defc354374f76a` passed the typed Rust and canonical
+Godot gates. Godot used Xvfb/Mesa llvmpipe with Dummy audio, observed a
+SubViewport texture render boundary, and recorded zero Godot ERROR lines. The
+sanitized result and hashes are committed under
+`experiments/p02-embodiment/results/r06-c01/hosted-run-34761173688.json`.

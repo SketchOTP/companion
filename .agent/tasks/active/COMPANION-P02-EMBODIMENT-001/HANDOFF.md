@@ -443,3 +443,14 @@ black viewport corners. Missing image and headless no-render fail as expected.
 No cutout API, billing change, new dependency, original-art mutation or intake
 waiver. Opaque still review works; full action conversion remains unfinished.
 See active R05_BLACK_BACKDROP_RESULT.md. No Phase02 acceptance or Phase03 work.
+## R06-C01 hosted handoff update (2026-09-13)
+
+The canonical R06 workflow now routes Godot playback through
+`run_godot_qualification.py` with Xvfb, separate engine/wrapper logs, and a
+null-safe SubViewport fallback. Run `34761173688` on commit
+`a2826a546c700897bb049b1ce4defc354374f76a` passed Rust and Godot candidate
+integration for the 58-asset, 24-track, 283-slot pack. It recorded zero Godot
+ERROR lines, one retained V-Sync warning, and the render observation
+`SubViewport.texture.get_image`. The previous headless `Parameter "t" is null`
+diagnostic remains historical evidence. Phase 02 is still unaccepted; no
+transition or Openbox endurance gate was run.

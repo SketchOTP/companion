@@ -19,8 +19,10 @@ Reproduction:
 3. Run `python3 experiments/p02-embodiment/scripts/intake_r06_pack.py --source assets/source/p02/r06/approved --out <local-export>/intake`.
 4. Run `python3 experiments/p02-embodiment/scripts/record_r06_c01_evidence.py --out experiments/p02-embodiment/results/r06-c01 --intake <local-export>/intake`.
 5. In a hosted environment with the pinned Rust and Godot artifacts, run the
-   Rust typed round-trip and `godot/r06_black_pack_test.gd` against the exact
-   source pack; upload their logs and hashes as workflow artifacts.
+   canonical runner through `.github/workflows/phase02-embodiment-r06.yml`.
+   Run `34761173688` is the retained passing execution; its sanitized logs and
+   hashes are committed in `hosted-run-34761173688.json` and the full bundle is
+   published as the workflow artifact.
 
 No image generation, conversion, cutout, resampling, recolor, or repainting is
 performed. Missing hosted toolchains are recorded as `NOT RUN`, never as pass.

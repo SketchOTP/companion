@@ -602,3 +602,11 @@ The first enumeration used numeric indices and accidentally included two tracks
 whose manifest group was explicitly `Diagnostics`. Runtime selection must filter
 the frozen manifest by its diagnostic classification, not by assumed index
 ranges; the corrected inventory is 58 assets, 24 tracks, and 283 frame slots.
+## 2026-09-13 — Keep one Godot qualification boundary
+
+Headless Dummy rendering can expose a null SubViewport texture; calling
+`get_image()` on it emits a genuine engine error rather than a harmless empty
+readback. Guard unavailable textures and use the established canonical runner
+with Xvfb plus Godot `--log-file` for render-boundary qualification. Keep
+stdout, stderr, engine, and wrapper diagnostics separate, classify all Godot
+channels together, and retain warnings without treating them as errors.

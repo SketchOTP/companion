@@ -11,7 +11,7 @@ R06 correctly stopped without modifying accepted art. Architect Review 13 correc
 Current authority:
 
 - Architect Review 13: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_13.md`
-- Review 13 main head: `bbcfa2a2796c9c815ecb8e6d510c4a3b9a837dd1`
+- Review 13 main head: `d9034dd7a6bf07ca6d79909abc74d0dcc00af835`
 - Notion Review 13: https://app.notion.com/p/3da833cb27ff813e83b9f5535711b09c
 - Current Codex directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C01`
 - Frozen visual task head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
@@ -93,3 +93,10 @@ slots. The earlier 68/26/303 inventory is superseded historical evidence after
 two explicitly diagnostic tracks were excluded. Local schema and fsync-backed
 intake pass. Cargo and Godot are unavailable locally, so typed Rust and Godot
 playback remain hosted checks. No new art or source mutation occurred.
+
+R06-C01 hosted run `34761173688` passed on head
+`a2826a546c700897bb049b1ce4defc354374f76a`: Rust typed round-trip and the
+canonical Xvfb Godot runner completed with 24 tracks/283 frame slots, zero
+Godot ERROR lines, and a `SubViewport.texture.get_image` render observation.
+The prior headless null-texture diagnostic is preserved as superseded evidence.
+Phase 02 remains unaccepted; transition and target endurance gates are not run.

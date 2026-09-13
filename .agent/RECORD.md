@@ -775,3 +775,16 @@ Runtime-pack SHA-256: `f7ecc6e13a82bf162d68aa4da703842ad349ae307e7eb5b6ce72b2f7b
 Receipt SHA-256: `7912a2035f09d30029840f4f200a17b3268e28511e3e812d00f61e04439a9b0e`.
 The selection remains candidate integration; local Cargo and Godot are
 unavailable, so typed runtime and hosted regression checks remain pending.
+## 2026-09-13 — R06-C01 hosted qualification
+
+Canonical hosted run `34761173688` on commit
+`a2826a546c700897bb049b1ce4defc354374f76a` passed Rust and Godot candidate
+integration. Source/runtime/receipt hashes are
+`1b3ee70ea8dd4d6633b4d9e0d14c1213613094987e56b0308c56b9b7f6b83cbf`,
+`f7ecc6e13a82bf162d68aa4da703842ad349ae307e7eb5b6ce72b2f7b819eb8e`, and
+`7912a2035f09d30029840f4f200a17b3268e28511e3e812d00f61e04439a9b0e`.
+The runner observed `SubViewport.texture.get_image`, 144 events, zero Godot
+ERROR lines, and one V-Sync warning. The full sanitized diagnostic hashes and
+artifact identity are in the committed hosted summary. The preceding headless
+null-texture error is preserved as historical evidence; no error was hidden or
+whitelisted.

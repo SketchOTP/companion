@@ -913,3 +913,15 @@ byte-preserving 1254x1254 RGB black-field assets, 26 tracks/303 slots,
 sidecars, source pack, provenance, and runtime-role separation. Local schema,
 source-byte, intake, atomic-failure, and tamper checks pass. Rust/Godot remain
 hosted-only; no Phase 02 acceptance or transition/endurance claim made.
+## 2026-09-13 — R06-C01 hosted diagnostic resolution
+
+The first hosted R06 invocation on `dfb41885559e279178a96f26594304c5a7f215b3`
+captured the real Godot error `ERROR: Parameter "t" is null.` when a headless
+fallback dereferenced an unavailable SubViewport texture. The correction added
+a null guard and routed R06 through the canonical Xvfb/`--log-file` runner.
+Hosted run `34761173688` on `a2826a546c700897bb049b1ce4defc354374f76a` passed
+the 24-track/283-slot candidate pack, Rust typed round-trip, and Godot playback
+with `SubViewport.texture.get_image`, zero Godot errors, and one retained V-Sync
+warning. Full sanitized evidence is published in the workflow artifact and the
+committed hosted summary. Phase 02 remains unaccepted; transition/endurance were
+not run.

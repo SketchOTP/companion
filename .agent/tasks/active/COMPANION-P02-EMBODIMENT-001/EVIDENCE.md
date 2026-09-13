@@ -8,7 +8,26 @@ contains only accepted final-playback sources from manifest groups not labelled
 and black-field presentation profile. Native source bytes were preserved
 exactly. The earlier 68/26/303 derivation is retained as superseded evidence
 after two diagnostic tracks were excluded. Local schema/intake/atomic-failure/
-tamper checks passed. Rust/Godot/hosted and world-contact checks remain pending.
+tamper checks passed. Hosted Rust/Godot execution is recorded below; world-contact
+measurement remains pending because the current integration gate does not derive
+world-space actor motion.
+
+## R06-C01 hosted diagnostic resolution (2026-09-13)
+
+Run `34761173688` on head `a2826a546c700897bb049b1ce4defc354374f76a` passed
+the Rust typed source-pack check and canonical Godot playback. The runner used
+Xvfb, Mesa llvmpipe, Godot `4.7.2.stable.official.ed1daf0bf`, and the Dummy
+audio driver. It observed `SubViewport.texture.get_image`, emitted zero Godot
+`ERROR:` lines, and retained one V-Sync warning. Separate stdout, stderr,
+engine, and Xvfb logs plus their hashes are recorded in
+`experiments/p02-embodiment/results/r06-c01/hosted-run-34761173688.json`; the
+full sanitized bundle is the published workflow artifact.
+
+The superseded head `dfb41885559e279178a96f26594304c5a7f215b3` preserved the
+exact hosted diagnostic `ERROR: Parameter "t" is null.` from a null
+`SubViewport` texture in the headless fallback. The R06 workflow now consumes
+the canonical Xvfb runner and the test guards null textures, so that prior
+engine error is neither hidden nor reclassified.
 
 ## Latest evidence ceiling — 2026-09-12
 
