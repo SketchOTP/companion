@@ -5,7 +5,7 @@ modified.
 
 Implementation merge head before C04 edits: `c26dcefa8fb455662f3f0b1b749b02be5eb0c9d4`.
 Current source pack SHA: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`.
-Result SHA: `57155563762502f9fa42c089f31cd622b1cbd7df971c56f0bb448b254b457d6f`.
+Result SHA: `4a549a4d9cbe989f61df0a7ec77b52945b94835ceb4028ba93391b7ce6f07577`.
 
 The actual runtime transform is native 1254x1254, centered anchor `(627,627)`,
 offset `(0,0)`, scale `0.5`, and MonRoot `(320,320)`: `world = MonRoot +
