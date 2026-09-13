@@ -46,7 +46,10 @@ func _play_track(track: Dictionary) -> void:
 	events.append({"event":"track_resolved","track_id":name,"monotonic_usec":Time.get_ticks_usec()})
 	events.append({"event":"track_validated","track_id":name,"monotonic_usec":Time.get_ticks_usec()})
 	sprite.animation = name; sprite.frame = 0; sprite.play(name)
-	await RenderingServer.frame_post_draw
+	if not await _await_frame_post_draw():
+		errors.append("render boundary not observed")
+		container.queue_free()
+		return
 	var rendered := viewport.get_texture().get_image()
 	if rendered == null or rendered.is_empty():
 		errors.append("viewport readback unavailable")
@@ -63,6 +66,18 @@ func _play_track(track: Dictionary) -> void:
 	await create_timer(float(total_ticks) / 24.0 + 0.02).timeout
 	events.append({"event":"completed","track_id":name,"monotonic_usec":Time.get_ticks_usec()})
 	container.queue_free(); await process_frame
+
+func _await_frame_post_draw() -> bool:
+	var observed: bool = false
+	var callback := func() -> void: observed = true
+	RenderingServer.frame_post_draw.connect(callback, CONNECT_ONE_SHOT)
+	for _i in range(120):
+		if observed:
+			return true
+		await process_frame
+	if RenderingServer.frame_post_draw.is_connected(callback):
+		RenderingServer.frame_post_draw.disconnect(callback)
+	return observed
 
 func _finish(reason: String) -> void:
 	print(JSON.stringify({"status":"PASS" if errors.is_empty() else "FAIL","reason":reason,"errors":errors,"events":events,"godot_version":Engine.get_version_info().get("string","unknown"),"render_observation":"RenderingServer.frame_post_draw","fps":24}, "  "))
