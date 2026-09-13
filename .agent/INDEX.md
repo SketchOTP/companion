@@ -11,12 +11,12 @@
 
 - Active phase: `02 — Mon Body, Habitat, and Sprite Pipeline`
 - Phase 02 acceptance: `NOT GRANTED`
-- Current disposition: `R06-C02 PARTIAL ACCEPTED — CONTINUOUS STANCE / REAL TRAVEL ACTIVE`
-- Current directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C03`
-- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_15.md`
-- Notion Review 15: https://app.notion.com/p/3da833cb27ff810384e9cddc94c4839b
-- Reviewed implementation head: `94b59cf76fc046abe28d6dd1b67359a803af8544`
-- Reviewed publication head: `70afeddeddbcb56fa0580b336c82e494f0f02f3b`
+- Current disposition: `C03 STOP ACCEPTED — ART CONTRADICTION NOT YET PROVEN`
+- Current directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C04`
+- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_16.md`
+- Notion Review 16: https://app.notion.com/p/3da833cb27ff8190bc08fcb33cb5a3bf
+- Reviewed C03 publication head: `955a540e0e076d06821efa4318bcd99c80b4bfd9`
+- C03 implementation/evidence head: `143439a8f3d4b9b4c579921254f2310bc4ed4863`
 - Frozen visual head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
 - PR #9: draft/open/unmerged
 - Issue #8: open
@@ -37,7 +37,7 @@ zero Godot ERROR lines. Phase 02 remains unaccepted pending Architect review.
 - Manifest SHA-256: `d8a0277272f0ccd6f948a24153b7f954aff138111ab840f22e09204aa359e595`
 - HTML SHA-256: `7bd9e0cd5c64b89259dc2780825457a16144cebe02d259fd73a644591aa38cd2`
 
-R05 sprite generation is visually accepted/frozen. No new art is authorized.
+R05 sprite generation remains visually accepted/frozen. No new art is authorized.
 
 ## Retained C02 boundary
 
@@ -49,30 +49,38 @@ R05 sprite generation is visually accepted/frozen. No new art is authorized.
 - strict observed `RenderingServer.frame_post_draw` for render commitment;
 - separately named viewport readback evidence;
 - transformed in-source black-field compositor sampling;
-- measured lowest-contour sole candidates with overlays/provenance;
+- measured sole candidates with overlays/provenance;
 - failure/recovery and export/restore;
-- R06 + Phase 01 + inherited Phase 02 exact-head hosted success on `94b59cf...`.
+- exact-head R06 + Phase 01 + inherited Phase 02 hosted success retained from C02.
 
-## C02 locomotion correction
+## C03 evidence retained
 
-C02 does not yet establish truthful full-stance or cumulative lateral travel. Current support spans are derived from `contact`/`down` labels only, so passing/up frames may visibly retain grounded support while the evidence records none. Zero planted slip is expected because actor root is solved from each declared contact, and zero stitched boundary jump is expected because later plans are offset to match previous endpoints. These are useful mechanics but not independent proof of meaningful travel.
+C03 is retained as a blocked interpretation, not discarded:
 
-## R06-C03 gate
+- all accepted source PNGs remained unchanged;
+- support/contour investigation was performed;
+- the implemented model yielded left positive-X and right negative-X cumulative travel;
+- no transition or Openbox qualification followed.
+
+The conclusion that the art itself is contradictory is not accepted because the qualifier uses a per-frame torso/ground-derived root instead of the transform actually executed by Godot, assigns `ground_contact_left/right` from screen-X order for simultaneously visible soles, and evaluates negative mutations against a payload already failing the positive predicate.
+
+## R06-C04 gate
 
 Required:
 
-- preserve accepted C02 source/render/compositor/intake/Rust/Godot work;
-- classify every locomotion frame by visible support/swing evidence, not labels alone;
-- include full visible stance through release/toe-off, including passing/up where grounded;
-- derive actor-root travel from actual support handoffs without inventing stride length;
-- prove successive touchdown ordering progresses screen-left for left travel and screen-right for right travel;
-- qualify start → loop → loop → stop so the second loop accumulates travel rather than recentering;
-- retain <=2 px planted world slip and no hidden root reset/teleport;
-- fail omitted support, reversed touchdown ordering, zero-net loop travel, recenter/reset, excess slip, and hidden teleport;
-- publish normal/quarter composed translation playback;
-- pass R06 + Phase 01 + inherited Phase 02 on one implementation SHA.
+- preserve all C02 accepted engineering work and C03 negative evidence;
+- document the exact Godot source-pixel → sprite-local → world transform for opaque frames;
+- keep body registration separate from runtime root/contact coordinates;
+- establish persistent near/far or A/B leg identity through crossing rather than screen-X identity;
+- preserve ambiguity rather than forcing anatomical correspondence;
+- recompute full-stance `start → loop → loop → stop` travel under the actual runtime transform;
+- use no invented stride, hidden recenter, support-dependent offset or pixel mutation;
+- compare old C03 and corrected C04 touchdown/travel results side by side;
+- rebuild each negative test from a passing baseline so each predicate is independently demonstrated;
+- if real-art qualification passes, publish normal/quarter composed playback and exact-head R06 + Phase 01 + Phase 02 hosted results;
+- if it still fails, return exact stable leg identities, runtime-local contacts, applied offsets and touchdown world coordinates.
 
-If the frozen drawings cannot support a truthful alternating stance model and cumulative travel, stop and return the exact contradictory frame/coordinate evidence. Do not edit pixels.
+If corrected C04 still proves opposite-direction travel, that result becomes the accepted real visual-source contradiction and returns to Architect/operator decision. Do not automatically edit or regenerate art.
 
 ## Remaining after R06
 
