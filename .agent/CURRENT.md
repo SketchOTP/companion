@@ -6,15 +6,15 @@ Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adop
 
 ## Latest Architect disposition
 
-Architect Review 15 partially accepts R06-C02. Retain the frozen R05 production selection, immutable intake/Rust/Godot plumbing, strict `RenderingServer.frame_post_draw` render commitment, transformed-source compositor QA, and measured sole-candidate geometry. World-grounded locomotion is not yet accepted.
+Architect Review 16 accepts the C03 stop but does **not** accept its conclusion that the frozen operator-approved gait pixels are inherently incompatible with intended-direction travel. C03 used a per-frame torso/ground-derived analysis root that is not the transform actually used by current Godot playback, assigned `ground_contact_left/right` from screen-X order when two soles were visible, and reported negative passes from a payload that already failed its positive predicate. Those confounds must be removed before an art contradiction is accepted.
 
 Current authority:
 
-- Architect Review 15: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_15.md`
-- Notion Review 15: https://app.notion.com/p/3da833cb27ff810384e9cddc94c4839b
-- Current Codex directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C03`
-- Reviewed implementation head: `94b59cf76fc046abe28d6dd1b67359a803af8544`
-- Reviewed publication head: `70afeddeddbcb56fa0580b336c82e494f0f02f3b`
+- Architect Review 16: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_16.md`
+- Notion Review 16: https://app.notion.com/p/3da833cb27ff8190bc08fcb33cb5a3bf
+- Current Codex directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C04`
+- Reviewed C03 publication head: `955a540e0e076d06821efa4318bcd99c80b4bfd9`
+- C03 implementation/evidence head: `143439a8f3d4b9b4c579921254f2310bc4ed4863`
 - Frozen visual task head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
 - PR #9: draft/open/unmerged
 - Issue #8: open
@@ -45,33 +45,47 @@ Retain:
 - black-field compositor sampling inside the transformed source rectangle;
 - measured sole candidates and overlay provenance.
 
-## Remaining R06 defect
+## C03 negative evidence retained
 
-Current support spans are label-driven and include only `contact`/`down` frames. Passing/up drawings can still show a grounded sole while the evidence declares no support. The validator checks only declared spans, so the `0.0 px` planted-slip result does not test omitted stance. `root_plan()` mathematically pins the chosen contact, and `stitched_sequence()` offsets each next track to force zero boundary jump; those values therefore do not independently establish meaningful lateral travel. Current stitched plans show only very small net displacement.
+C03 must remain preserved as a failed interpretation:
+
+- every accepted PNG remained byte-identical;
+- its contour investigation and support tables remain evidence;
+- its implemented model reports left travel positive-X and right travel negative-X;
+- it stopped before transition/endurance work;
+- it did not mutate art.
+
+Do not erase or relabel this failure.
+
+## Why C03 does not yet prove an art contradiction
+
+- The qualifier computes a new per-frame `source_root` from torso-median X and a foot-derived ground baseline Y. Current Godot playback instead renders the native texture through the actual AnimatedSprite2D/Node2D centered/scale/offset transform. The analysis root is therefore not automatically the runtime root.
+- When two grounded soles are visible, C03 names the leftmost screen-X candidate `ground_contact_left` and the rightmost `ground_contact_right`. Review 11 forbids using screen position as anatomical/support identity through leg crossing.
+- C03's negative matrix mutates an already failing real payload, so `not positive_predicate(mutated)` can be true because of the pre-existing direction failure rather than the injected defect. The omitted-support mutation also removes the observation itself instead of only the support declaration.
 
 ## Active objective
 
-Codex executes `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C03` only:
+Codex executes `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C04` only:
 
-1. merge current main normally into the existing task branch;
-2. preserve all accepted C02 source/render/compositor/intake/Rust/Godot work;
-3. classify support/swing state for every locomotion frame from visible evidence, not labels alone;
-4. include full evidence-supported stance from touchdown/contact through release/toe-off, including passing/up when a sole remains grounded;
-5. derive left/right actor-root travel from real support handoffs without an invented stride distance;
-6. prove successive touchdown ordering progresses in the intended screen direction;
-7. qualify start → loop → loop → stop and prove the second loop accumulates travel rather than recentering;
-8. retain <=2 px composed planted-contact slip and no hidden root reset/teleport;
-9. add negatives for omitted support, reversed touchdown ordering, zero-net loop travel, loop recenter/reset, excess slip, and hidden teleport;
-10. publish normal/quarter composed translation playback and exact-head R06 + Phase 01 + inherited Phase 02 CI;
-11. return to Architect before transition/endurance work.
+1. fetch and normally merge current main into the existing Phase 02 branch;
+2. preserve all C02 accepted engineering work and all C03 negative evidence;
+3. document the exact Godot source-pixel -> sprite-local -> world transform actually executed for opaque frames, including native dimensions, centered state, scale, node position and offsets;
+4. keep torso/body registration evidence separately named from runtime root/contact coordinates;
+5. establish stable near/far or A/B leg correspondence through each profile gait instead of deriving leg identity from screen-X order;
+6. reclassify support/swing/double-support while preserving ambiguity;
+7. recompute `start -> loop -> loop -> stop` travel under the actual runtime transform with no invented stride, hidden recenter, support-dependent offset or pixel mutation;
+8. publish old-C03 and corrected-C04 results side by side;
+9. rebuild negative tests from a passing baseline so each predicate is isolated; omitted-support must keep the observed grounded sole while removing only its support declaration;
+10. if the real-art path passes, publish normal/quarter composed playback and exact-head R06 + Phase 01 + Phase 02 CI;
+11. if it still fails, stop with stable leg identities, runtime-local contacts, applied offsets, touchdown world coordinates and exact contradiction.
 
-If the frozen accepted drawings cannot support a truthful alternating support model and cumulative directional travel, stop and return the exact contradictory frame/coordinate evidence. Do not change pixels or weaken evidence.
+If corrected C04 still proves opposite-direction travel, that result will be treated as a real visual-source contradiction and routed to explicit Architect/operator decision. Do not automatically generate or edit art.
 
 ## Remaining Phase 02 gates
 
 Not yet accepted:
 
-- complete world-grounded locomotion semantics;
+- runtime-transform-correct world-grounded locomotion;
 - real legal-transition campaign;
 - dedicated 1366x768 Openbox two-hour endurance;
 - Phase 02 completion;
