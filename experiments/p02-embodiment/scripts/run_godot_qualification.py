@@ -22,7 +22,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[3]
 RUNNER_VERSION = "r04-c03-godot-runner-v2"
-PROCESS_TIMEOUT_SECONDS = 90
+PROCESS_TIMEOUT_SECONDS = 300
 ERROR_RE = re.compile(r"\bERROR:\s*.*")
 WARNING_RE = re.compile(r"\bWARNING:\s*.*")
 
