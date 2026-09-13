@@ -23,6 +23,14 @@
 - Branch: `codex/p02-embodiment-001`
 - Phase 03+: closed
 
+## R06-C02 hosted closeout
+
+Implementation head `94b59cf76fc046abe28d6dd1b67359a803af8544` passed R06
+workflow `34767677664`, inherited Phase 02 workflow `34767677668`, and Phase 01
+workflow `34767677707` on the same exact SHA. Strict Godot evidence recorded
+`RenderingServer.frame_post_draw`, 624 compositor samples, and 168 events with
+zero Godot ERROR lines. Phase 02 remains unaccepted pending Architect review.
+
 ## Frozen visual package
 
 - ZIP SHA-256: `45fd9749179419339046af2ab40605c47d825ca4f0ad47c87a8c6fb9ca1b799b`

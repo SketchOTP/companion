@@ -619,3 +619,11 @@ the accepted pixels, record visible/occluded/not-applicable states and source
 hashes, and publish inspectable overlays. World contact must be evaluated after
 the actor root translation is applied; per-track zero slip is insufficient
 without stitched start/loop/stop continuity evidence.
+
+## 2026-09-13 — Strict render observation completion
+
+The hosted Xvfb/llvmpipe run initially exposed a non-observation and a possible
+hang. Explicit script-level callback state, fail-fast handling, and a bounded
+runner timeout made the result inspectable. The final exact head observed
+`RenderingServer.frame_post_draw`; viewport readback remains a separate
+observation and is never substituted for render commitment.

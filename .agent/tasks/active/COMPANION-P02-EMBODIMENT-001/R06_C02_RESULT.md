@@ -41,3 +41,18 @@ fallback.
 These are E3 target-tested candidate observations only. The visual package is
 not re-approved, Phase 02 is not accepted, and transition/Openbox endurance
 work remains deferred to the Architect's next gate.
+
+## Hosted exact-head result — 2026-09-13
+
+Implementation head `94b59cf76fc046abe28d6dd1b67359a803af8544` passed the
+canonical R06 workflow `34767677664`, inherited Phase 02 workflow
+`34767677668`, and Phase 01 workflow `34767677707` on that exact SHA. R06
+artifact `10320777649` is published. Runtime-pack SHA is
+`6d20431d72d182a547409df310e2ec69db53639aafacb2878476f8420510474f`.
+Godot 4.7.2 on Xvfb/llvmpipe observed `RenderingServer.frame_post_draw`,
+168 semantic events, 624 compositor samples, zero Godot ERROR lines, and one
+retained V-Sync warning. The runner bounds missing-signal execution with a
+300-second timeout and the script fails fast on the first unobserved boundary;
+no fallback is relabeled as render commitment. This remains bounded candidate
+evidence; transition, Openbox qualification, and Phase 02 acceptance were not
+run.

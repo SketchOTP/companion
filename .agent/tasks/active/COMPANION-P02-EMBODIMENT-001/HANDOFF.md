@@ -472,3 +472,17 @@ samples the transformed source rectangle rather than viewport outer corners.
 Hosted Rust/Godot and exact-head regressions remain to be run; no Phase 02
 acceptance is claimed. Recommended next action is independent Architect review
 of this narrow semantic correction.
+
+## R06-C02 hosted completion handoff — 2026-09-13
+
+Final implementation head `94b59cf76fc046abe28d6dd1b67359a803af8544` passed
+R06 workflow `34767677664`, inherited Phase 02 workflow `34767677668`, and
+Phase 01 workflow `34767677707` on the same exact SHA. R06 artifact `10320777649`
+is published. Godot 4.7.2 recorded Xvfb/llvmpipe, zero Godot ERROR lines, one
+V-Sync warning, `RenderingServer.frame_post_draw`, 624 compositor samples,
+and 168 semantic events. Source, runtime, and receipt hashes are
+`1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`,
+`6d20431d72d182a547409df310e2ec69db53639aafacb2878476f8420510474f`, and
+`466dd02abb5cc5123767a8c91283f38621424b717f9fc1eb8056fa5d6afdb9d7`.
+No source PNG bytes changed. C02 is submitted for Architect review; Phase 02
+and transition/Openbox gates remain unaccepted and unrun.

@@ -800,3 +800,17 @@ discontinuity, and weak compositor/render evidence. The source-pack SHA is
 `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`. This is
 bounded candidate evidence only; hosted regressions and Architect review remain
 required.
+
+## 2026-09-13 — R06-C02 exact-head hosted evidence
+
+Head `94b59cf76fc046abe28d6dd1b67359a803af8544` passed R06 workflow
+`34767677664`, inherited Phase 02 workflow `34767677668`, and Phase 01
+workflow `34767677707`. Artifact `10320777649` is published. Godot 4.7.2
+reported `RenderingServer.frame_post_draw`, 624 compositor samples, 168
+semantic events, zero Godot ERROR lines, and one V-Sync warning. Source,
+runtime, and receipt hashes are
+`1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`,
+`6d20431d72d182a547409df310e2ec69db53639aafacb2878476f8420510474f`, and
+`466dd02abb5cc5123767a8c91283f38621424b717f9fc1eb8056fa5d6afdb9d7`.
+This is bounded candidate integration evidence; no Phase 02 acceptance or
+transition/Openbox gate is claimed.

@@ -83,3 +83,13 @@ Not yet accepted:
 ## Protected work
 
 The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` modifications remain protected. Do not inspect them for evidence, commit, reset, stash, overwrite, copy, or reformat them.
+
+## R06-C02 hosted closeout (2026-09-13)
+
+Implementation head `94b59cf76fc046abe28d6dd1b67359a803af8544` passed the R06
+workflow `34767677664`, inherited Phase 02 workflow `34767677668`, and Phase 01
+workflow `34767677707` on the same exact SHA. The strict Godot result observed
+`RenderingServer.frame_post_draw` with 624 transformed source-field samples,
+168 semantic events, zero Godot ERROR lines, and one retained V-Sync warning.
+R06-C02 is submitted for Architect review. Phase 02 remains active and
+unaccepted; transition and Openbox qualification remain unrun.
