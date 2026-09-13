@@ -29,7 +29,9 @@ func _run() -> void:
 	var parsed = JSON.parse_string(FileAccess.get_file_as_string(pack_path))
 	if not parsed is Dictionary: result.errors.append("invalid_pack"); return _finish(result)
 	pack = parsed
-	if pack.get("profile") != "MON_OPAQUE_BLACK_FRAME_SOURCE_PACK_V1": result.errors.append("ineligible_pack"); return _finish(result)
+	var pack_profile := String(pack.get("profile", ""))
+	if pack_profile not in ["MON_OPAQUE_BLACK_FRAME_SOURCE_PACK_V1", "MON_INGESTED_FRAME_PACK_V1"]:
+		result.errors.append("ineligible_pack"); return _finish(result)
 	var ids := {"left": ["r06_playback_track_07", "r06_playback_track_08", "r06_playback_track_09"], "right": ["r06_playback_track_12", "r06_playback_track_13", "r06_playback_track_14"]}
 	if not ids.has(side): result.errors.append("wrong_direction"); return _finish(result)
 	var by_id := {}
