@@ -870,3 +870,12 @@ walk and a lower-limb-only repair. Both keep the foreground leg forward through
 most of the sequence; required support exchange is absent. Two raw sheets,
 exact prompts and hashes retained. No normalized frames, animation-completion
 claim or operator approval request. See R05_BLACK_SEQUENCE_SHEET_RESULT.md.
+
+## 2026-09-12 — full available-motion review compilation
+
+Operator explicitly requested compiling animations for review. Built one local
+player and portable ZIP from 65 exact-copy source entries: 30 sequences,
+including all 12 actions, eight facings, complete left/right orderings and
+separate failed diagnostics. Five focused tests pass; all 30 tracks load in
+the browser; full reel reaches its final frame. No new art, interpolation,
+production intake or motion-quality pass. See R05_COMPILED_REVIEW_RESULT.md.

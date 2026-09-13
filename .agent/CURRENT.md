@@ -1,5 +1,13 @@
 # Current Project State
 
+## Full review compiled — 2026-09-12
+
+Operator requested assembly for review, not another generation attempt.
+All available action sources are now in one browser player: 30 sequences,
+65 source entries, 88-slot full reel, 12 individual actions, eight facings and
+separate diagnostics. No art changed or missing in-betweens invented.
+See R05_COMPILED_REVIEW_RESULT.md. Motion remains incomplete/unaccepted.
+
 ## Joint-sequence diagnostic — 2026-09-12
 
 The renewed finish request prompted a joint 16-cell left-walk generation and a

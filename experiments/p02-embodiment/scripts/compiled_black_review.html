@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; script-src 'unsafe-inline'; style-src 'unsafe-inline'">
+<title>Mon — full animation review</title><style>
+:root{color-scheme:dark;font-family:system-ui,sans-serif;color:#e9e5f2;background:#000}
+body{margin:0}header,main{max-width:1260px;margin:auto;padding:20px 28px}header{border-bottom:1px solid #29232f}
+h1{font-size:25px;margin:0 0 8px}p{line-height:1.5;color:#bbb4c7;margin:8px 0}.badge{color:#edca86}
+.layout{display:grid;grid-template-columns:minmax(320px,700px) minmax(240px,1fr);gap:28px}
+canvas{width:min(100%,60vh);aspect-ratio:1;background:#000;display:block;margin:auto}
+button,select{font:inherit;color:#eee;background:#221c2d;border:1px solid #51425f;border-radius:7px;padding:9px;cursor:pointer}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #cdaaef}
+button:hover{background:#37284a}button:disabled{opacity:.4;cursor:wait}
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}select#track{width:100%;margin:10px 0 16px}
+input[type=range]{width:100%;accent-color:#b58ae9;margin:18px 0}
+#status{font-variant-numeric:tabular-nums;color:#dfd0f2;min-height:2.5em}
+#note{color:#e5bf7a}#error{color:#ff8d98}small{display:block;color:#a39aae}
+#strip{display:flex;overflow:auto;gap:6px;margin-top:20px;padding-bottom:12px}
+.thumb{flex:0 0 94px;padding:3px;background:#070609}.thumb canvas{width:86px;height:86px}
+.thumb span{display:block;font-size:10px;overflow-wrap:anywhere}.thumb.active{border:2px solid #c79cf5}
+table{width:100%;border-collapse:collapse;font-size:13px}td,th{text-align:left;border-bottom:1px solid #302837;padding:9px}
+summary{cursor:pointer;padding:15px 0}a{color:#cfa8ff}
+@media(max-width:850px){.layout{grid-template-columns:1fr}header,main{padding:16px}}
+</style></head><body>
+<header><h1>Mon · Full animation review</h1><p>Black-background compilation of every available action study.</p>
+<small class="badge">REVIEW ASSEMBLY ONLY — missing in-betweens and known motion defects remain. No new artwork or approval implied.</small></header>
+<main><div class="layout"><section><canvas id="stage" width="900" height="900" aria-label="Animation frame preview"></canvas>
+<div class="controls"><button id="restart">Restart</button><button id="prev" aria-label="Previous frame">← Frame</button>
+<button id="play">Play</button><button id="next" aria-label="Next frame">Frame →</button>
+<label>Speed <select id="speed"><option value="1">Normal · 1×</option><option value=".25">Quarter · 0.25×</option><option value=".5">Half · 0.5×</option></select></label>
+<label><input id="loop" type="checkbox"> Repeat</label></div>
+<label for="seek">Frame timeline</label><input id="seek" type="range" min="0" value="0" max="0">
+<div id="status" role="status" aria-live="polite">Loading…</div><div id="strip" aria-label="Ordered frame strip"></div></section>
+<aside><label for="track">Choose action or complete sequence</label><select id="track"></select>
+<h2 id="title"></h2><p id="note"></p><p id="stats"></p><p id="error" role="alert"></p>
+<p>Start with <b>All actions</b> for the full reel, or choose the continuous left and right actions.
+The 12 individual actions and eight construction views are also available.</p>
+<p>Use <b>Quarter</b> and frame stepping to inspect feet, hands, turns and transitions.
+Rejected retries and both generated-sheet attempts are isolated under <b>Diagnostics</b>.</p>
+<p>Timing uses the stored integer ticks on a 24 Hz grid. This viewer is an inspection tool, not target-host or contact validation.</p>
+<details><summary>Missing-frame accounting</summary><table><thead><tr><th>Action</th><th>Drawings / minimum</th></tr></thead><tbody id="coverage"></tbody></table></details>
+<p><a href="manifest.json">Exact frame manifest</a> · <a href="result.json">Copy/hash evidence</a></p>
+</aside></div></main>
+<script>
+"use strict";
+const DATA = /*__MANIFEST__*/;
+const $=id=>document.getElementById(id), cache=new Map();
+const canvas=$("stage"), ctx=canvas.getContext("2d");
+let track=null,index=0,playing=false,time=0,last=null,token=0,ready=false,starts=[],total=0;
+const controls=["restart","prev","play","next","seek","speed","loop"];
+const groups=new Map();
+for(const t of DATA.tracks){if(!groups.has(t.group)){const g=document.createElement("optgroup");g.label=t.group;$("track").append(g);groups.set(t.group,g)}
+const o=document.createElement("option");o.value=t.id;o.textContent=t.title;groups.get(t.group).append(o)}
+for(const r of DATA.coverage){const tr=document.createElement("tr");const td=document.createElement("td");td.textContent=r.action.replaceAll("_"," ");
+const n=document.createElement("td");n.textContent=r.available_unique_drawings+" / "+r.required_min+" · incomplete";tr.append(td,n);$("coverage").append(tr)}
+async function imageFor(key){if(!cache.has(key)){cache.set(key,new Promise((resolve,reject)=>{const i=new Image();
+i.onload=()=>resolve(i);i.onerror=()=>reject(new Error("Image failed to load: "+key));i.src=DATA.assets[key].path}))}return cache.get(key)}
+function paint(c,image,frame){const x=c.getContext("2d");x.fillStyle="#000";x.fillRect(0,0,c.width,c.height);
+const box=frame.crop||[0,0,image.naturalWidth,image.naturalHeight];const scale=Math.min(c.width/box[2],c.height/box[3]);
+const w=box[2]*scale,h=box[3]*scale;x.drawImage(image,...box,(c.width-w)/2,(c.height-h)/2,w,h)}
+function render(){if(!ready)return;const f=track.frames[index];paint(canvas,f.image,f);
+$("seek").value=index;canvas.dataset.track=track.id;canvas.dataset.frame=String(index);
+$("status").textContent=(playing?"Playing":"Paused")+" · "+(index+1)+"/"+track.frames.length+" · "+f.ticks+" ticks · "+f.label+(f.stage?" · "+f.stage:"");
+$("play").textContent=playing?"Pause":"Play";
+for(const b of $("strip").children)b.classList.toggle("active",Number(b.dataset.frame)===index)}
+function stop(){playing=false;last=null;render()}
+function step(n){if(!ready)return;stop();index=Math.max(0,Math.min(track.frames.length-1,index+n));time=starts[index];render()}
+async function select(id,autoplay=false){const run=++token;ready=false;playing=false;last=null;
+controls.forEach(i=>$(i).disabled=true);$("error").textContent="";$("status").textContent="Loading exact source frames…";
+const source=DATA.tracks.find(t=>t.id===id);$("title").textContent=source.title;$("note").textContent=source.note;
+try{const frames=await Promise.all(source.frames.map(async f=>({...f,image:await imageFor(f.asset)})));
+if(run!==token)return;track={...source,frames};index=0;time=0;starts=[];total=0;
+for(const f of frames){starts.push(total);total+=f.ticks*1000/24}
+$("loop").checked=source.completion==="loop";$("seek").max=frames.length-1;
+$("stats").textContent=frames.length+" playback slots · "+new Set(frames.map(f=>f.asset+JSON.stringify(f.crop||[]))).size+" distinct source views · "+(total/1000).toFixed(2)+" seconds at 1×.";
+$("strip").replaceChildren();for(let i=0;i<frames.length;i++){const b=document.createElement("button");b.className="thumb";b.dataset.frame=i;b.title=frames[i].label;
+const c=document.createElement("canvas");c.width=c.height=100;paint(c,frames[i].image,frames[i]);const label=document.createElement("span");label.textContent=(i+1)+" · "+frames[i].label;
+b.append(c,label);b.onclick=()=>{stop();index=i;time=starts[i];render()};$("strip").append(b)}
+ready=true;controls.forEach(i=>$(i).disabled=false);playing=autoplay;render()}
+catch(e){if(run===token){$("error").textContent=e.message;$("status").textContent="FAILED TO LOAD — playback disabled";ctx.clearRect(0,0,900,900)}}}
+function animate(now){if(playing&&ready){if(last!==null){time+=(now-last)*Number($("speed").value);
+if(time>=total){if($("loop").checked)time%=total;else{time=total;index=track.frames.length-1;playing=false;render()}}
+if(playing){let next=0;while(next+1<starts.length&&starts[next+1]<=time)next++;if(next!==index){index=next;render()}}}last=now}else last=null;
+requestAnimationFrame(animate)}
+$("track").onchange=()=>select($("track").value,false);
+$("play").onclick=()=>{if(!ready)return;if(time>=total){time=0;index=0}playing=!playing;last=null;render()};
+$("restart").onclick=()=>{if(!ready)return;time=0;index=0;playing=true;last=null;render()};
+$("prev").onclick=()=>step(-1);$("next").onclick=()=>step(1);
+$("seek").oninput=()=>{if(!ready)return;stop();index=Number($("seek").value);time=starts[index];render()};
+$("speed").onchange=()=>{last=null};
+document.addEventListener("visibilitychange",()=>{if(document.hidden)stop()});
+select("full_reel",false);requestAnimationFrame(animate);
+</script></body></html>

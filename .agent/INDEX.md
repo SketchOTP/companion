@@ -12,6 +12,8 @@
 
 ## Current pointers
 
+- Compiled review: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_COMPILED_REVIEW_RESULT.md` — all available actions assembled for inspection; not finished motion.
+
 - Latest joint-sheet diagnostic: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_BLACK_SEQUENCE_SHEET_RESULT.md` — two failed outputs; no completed animation.
 - Exact negative source sheets/prompts: `assets/review/p02/author002/black-sequence-sheet/`.
 
