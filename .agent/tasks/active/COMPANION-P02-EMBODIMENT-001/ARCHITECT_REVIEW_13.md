@@ -4,8 +4,8 @@
 
 `INVESTIGATE / CONTINUE — R06 BLOCK ACCEPTED`
 
-- Live `main`: `45bcaad97acf87dbc91736835df16d28abc7cf94` at review start
-- Live task branch: `codex/p02-embodiment-001` at `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
+- Repository publication: `04225fb954b197acea86db5f871b4d9a4e3f82f9`
+- Live task branch at review: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
 - PR #9: draft/open/unmerged
 - Issue #8: open
 - Architecture v1.0: adopted/unchanged
@@ -23,10 +23,10 @@ Those are not the same authority surface.
 
 ## Live-state correction
 
-Independent GitHub inspection currently reports:
+Independent GitHub inspection reports:
 
 ```text
-origin/main equivalent: 45bcaad97acf87dbc91736835df16d28abc7cf94
+main at review publication: 04225fb954b197acea86db5f871b4d9a4e3f82f9
 codex/p02-embodiment-001: 5f538a0c86783b7c5d00b140dcc91c7f76c30450
 ```
 
