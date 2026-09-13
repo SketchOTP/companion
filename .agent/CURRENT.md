@@ -6,17 +6,22 @@ Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adop
 
 ## Latest Architect disposition
 
-R05-AUTHOR-002 sprite-generation and visual-review scope is accepted under Architect Review 12. The operator's final visual decision closes further unsolicited art generation for the delivered R05 set.
+R06 correctly stopped without modifying accepted art. Architect Review 13 corrects the integration model: the earlier R05 static construction/gait selection is provenance authority, while the exact final operator-approved review package and the source bytes used by its accepted non-diagnostic playback define the runtime-production selection candidate.
 
 Current authority:
 
-- Architect Review 12: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_12.md`
-- Notion Review 12: https://app.notion.com/p/3da833cb27ff81378114f3fbdb09d6a5
-- Current Codex directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001`
-- Reviewed visual task head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
+- Architect Review 13: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_13.md`
+- Review 13 main head: `bbcfa2a2796c9c815ecb8e6d510c4a3b9a837dd1`
+- Notion Review 13: https://app.notion.com/p/3da833cb27ff813e83b9f5535711b09c
+- Current Codex directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C01`
+- Frozen visual task head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
 - PR #9: draft/open/unmerged
 - Issue #8: open
 - Branch: `codex/p02-embodiment-001`
+
+## Live repository state at Review 13
+
+Independent GitHub inspection showed the live task branch at `5f538a0c86783b7c5d00b140dcc91c7f76c30450`. The R06 handoff's `remote task branch = 6bef092...` statement is stale. The next Codex run must fetch and reconcile against the live branch before implementation.
 
 ## Frozen visual authority
 
@@ -24,52 +29,52 @@ Current authority:
 - Manifest SHA-256: `d8a0277272f0ccd6f948a24153b7f954aff138111ab840f22e09204aa359e595`
 - Review HTML SHA-256: `7bd9e0cd5c64b89259dc2780825457a16144cebe02d259fd73a644591aa38cd2`
 
-Accepted visually for the delivered scope:
+R05 visual generation remains operator-accepted. Do not reopen art generation.
 
-- selected eight-facing construction;
-- delivered left/right movement review;
-- front presence;
-- connected Listen -> Acknowledge;
-- black-background presentation.
+## Asset authority roles
 
-Diagnostics and explicitly rejected studies remain historical evidence and are not production-eligible.
+- `visual_reference_master`: immutable approved visual/provenance source; not automatically runtime selectable.
+- `runtime_visual_master`: exact source bytes used by final accepted non-diagnostic playback; runtime eligible after technical qualification.
+- `diagnostic_only`: rejected/audit material; runtime ineligible.
 
-## Count policy
+The earlier `R05_AUTHOR_002_OPERATOR_SELECTION.json` approved construction/static-gait appearance only and explicitly did not establish complete gait continuity, MON_FRAME_V1 eligibility, world-contact QA, or runtime completion.
 
-Review 11 unique-drawing budgets are historical authoring targets, not mandatory acceptance floors for the frozen operator-approved set. Actual counts remain recorded and cannot be inflated by holds or repeated cycles.
+## Presentation profiles
 
-The old `32 families / 256 drawings` Phase-02 floor is superseded as a proxy acceptance criterion. Phase 02 may close on the accepted seed embodiment library once technical runtime, grounding, transition and endurance gates pass. Additional animation families become behavior-driven embodiment enrichment.
+R06 may use immutable per-asset profiles on the black habitat:
 
-## Source/runtime surface policy
+- `R05_BLACK_FIELD_RGB8_V1` — native 1254x1254 RGB black/near-black-field source;
+- `R05_TRANSPARENT_RGBA8_V1` — native 1254x1254 RGBA transparent source.
 
-The accepted visual masters are native 1254x1254 RGB black-backed files. They are immutable visual-source authority for the iteration-one black habitat.
+Light-background RGB sources remain reference-only unless their exact final accepted playback use is proven and the black-habitat render is field-free without pixel mutation.
 
-They are not `MON_FRAME_V1`. The transparent 1024x1024 RGBA contract remains intact. R06 must introduce a separately versioned opaque-black profile, preserve master bytes, and use metadata plus Godot transform/offset rather than destructive source editing.
+`MON_FRAME_V1` remains unchanged.
 
 ## Active objective
 
-Codex executes `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001` only:
+Codex executes `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C01` only:
 
-1. merge current main normally;
-2. verify and freeze the exact review hashes and source selection;
-3. durably publish the approved review artifact and production-selection manifest;
-4. exclude diagnostics/rejected sources from runtime;
-5. implement a typed opaque-black source/runtime profile while leaving MON_FRAME_V1 unchanged;
-6. annotate real accepted art with facing/posture/gait/root/landmarks/contacts/events/timing;
-7. provide actor-root translation and prove composed locomotion world-contact slip <=2 px;
-8. run actual real-art schema/Rust/Godot selection, timing, event, failure and recovery paths;
-9. validate black habitat presentation without mutating accepted source pixels;
-10. produce fresh local export/restore and durable hosted evidence;
-11. return to Architect before transition/endurance qualification.
+1. fetch and reconcile live main/task branch normally;
+2. verify frozen package hashes;
+3. derive `R05_PRODUCTION_VISUAL_SELECTION_V1` from exact source bytes referenced by accepted final-review sequences;
+4. classify every asset by source role and presentation profile;
+5. exclude reference-only and diagnostic assets from runtime;
+6. prove black-habitat playback is field-free without source mutation;
+7. continue typed/Rust/Godot integration on the exact real art;
+8. bind landmarks, contacts, events and 24 Hz timing;
+9. implement actor-root translation and prove composed planted-foot world slip <=2 px;
+10. prove missing/corrupt/ineligible failure and recovery;
+11. produce fresh export/restore and durable hosted evidence;
+12. return to Architect before transition/endurance qualification.
 
-No new character artwork is authorized in R06.
+No new character artwork is authorized.
 
 ## Remaining Phase 02 gates
 
 Not yet accepted:
 
-- production runtime integration of the approved visual masters;
-- real world-grounded contact qualification;
+- real-art production runtime integration;
+- world-grounded contact qualification;
 - real legal-transition campaign;
 - dedicated Openbox two-hour endurance;
 - Phase 02 completion;
