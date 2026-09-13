@@ -14,6 +14,7 @@
 - Current disposition: `R05 VISUAL ACCEPTED — R06 SOURCE-ROLE CORRECTION ACTIVE`
 - Current directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C01`
 - Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_13.md`
+- Review 13 publication: `8330a35564dd8c190811e9d9563cc9fc59d2cdfa`
 - Notion Review 13: https://app.notion.com/p/3da833cb27ff813e83b9f5535711b09c
 - Frozen visual head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
 - PR #9: draft/open/unmerged
