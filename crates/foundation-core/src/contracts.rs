@@ -615,8 +615,7 @@ pub struct DegradedState {
 mod tests {
     use super::{
         ApprovalState, LocomotionIntentV1, MonAnimationClip, MonAnimationTrack,
-        MonAnimationTrackFrame, MonAuthoredFramePackV1, MonTemporalTrackV2,
-        MonTemporalTracksV2,
+        MonAnimationTrackFrame, MonAuthoredFramePackV1, MonTemporalTrackV2, MonTemporalTracksV2,
     };
 
     #[test]
