@@ -17,8 +17,8 @@ func _run() -> void:
 	var parsed = JSON.parse_string(FileAccess.get_file_as_string(pack_path))
 	if not parsed is Dictionary: _finish("pack JSON invalid"); return
 	pack = parsed
-	var source_pack := pack.get("profile") == "MON_OPAQUE_BLACK_FRAME_SOURCE_PACK_V1"
-	var ingested_pack := pack.get("profile") == "MON_INGESTED_FRAME_PACK_V1" and pack.get("source_profile") == "MON_OPAQUE_BLACK_FRAME_SOURCE_PACK_V1"
+	var source_pack: bool = pack.get("profile") == "MON_OPAQUE_BLACK_FRAME_SOURCE_PACK_V1"
+	var ingested_pack: bool = pack.get("profile") == "MON_INGESTED_FRAME_PACK_V1" and pack.get("source_profile") == "MON_OPAQUE_BLACK_FRAME_SOURCE_PACK_V1"
 	if not source_pack and not ingested_pack: errors.append("wrong source profile")
 	if pack.get("timing", {}).get("fps") != 24: errors.append("timing fps is not 24")
 	var tracks: Array = pack.get("tracks", [])
