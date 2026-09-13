@@ -1,5 +1,13 @@
 # Current Project State
 
+## Joint-sequence diagnostic — 2026-09-12
+
+The renewed finish request prompted a joint 16-cell left-walk generation and a
+localized lower-limb repair. Both still fail support-leg exchange. No completed
+track is promoted; all 12 temporal tracks remain incomplete. See active
+R05_BLACK_SEQUENCE_SHEET_RESULT.md. Review 11's stop condition remains reached;
+the missing input is controllable temporal authoring, not candidate-art permission.
+
 ## Black motion targeted retry — 2026-09-12
 
 Seven new imagegen trials do not complete the12 required action tracks. A late

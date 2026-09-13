@@ -12,6 +12,9 @@
 
 ## Current pointers
 
+- Latest joint-sheet diagnostic: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_BLACK_SEQUENCE_SHEET_RESULT.md` — two failed outputs; no completed animation.
+- Exact negative source sheets/prompts: `assets/review/p02/author002/black-sequence-sheet/`.
+
 - Latest targeted retry: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_BLACK_MOTION_RETRY_RESULT.md` —7 new trials, controlled temporal progression still fails;12 motion tracks remain incomplete.
 - Retry evidence: `assets/review/p02/author002/black-motion-retry/README.md` —prompts, hashes, pixel scan and ordered comparisons; no approval request.
 

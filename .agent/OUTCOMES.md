@@ -862,3 +862,11 @@ Torso scan at y880 reproduces non-monotonic requested inhale progression,
 exit1. Thirteen existing review regression tests pass. Eleven-source exact-copy
 export and three diagnostic previews preserved. No new runtime qualification.
 All12 required motion tracks remain incomplete. See R05_BLACK_MOTION_RETRY_RESULT.md.
+
+## 2026-09-12 — joint sequence-sheet attempt, FAILED
+
+Renewed completion request tested joint authoring of a 16-cell left-profile
+walk and a lower-limb-only repair. Both keep the foreground leg forward through
+most of the sequence; required support exchange is absent. Two raw sheets,
+exact prompts and hashes retained. No normalized frames, animation-completion
+claim or operator approval request. See R05_BLACK_SEQUENCE_SHEET_RESULT.md.
