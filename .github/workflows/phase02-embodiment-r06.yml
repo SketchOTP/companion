@@ -54,6 +54,7 @@ jobs:
           unzip -q "$RUNNER_TEMP/sqlite/sqlite.zip" -d "$RUNNER_TEMP/sqlite"
           test "$(sha256sum "$RUNNER_TEMP/sqlite/sqlite-amalgamation-3530400/sqlite3.c" | awk '{print $1}')" = b1dd5d74ec7f29055a6684fa06fb3c2f6821c87dd38f9a458dfd2e8a1db28189
           echo "COMPANION_SQLITE_SOURCE=$RUNNER_TEMP/sqlite/sqlite-amalgamation-3530400/sqlite3.c" >> "$GITHUB_ENV"
+          export COMPANION_SQLITE_SOURCE="$RUNNER_TEMP/sqlite/sqlite-amalgamation-3530400/sqlite3.c"
           rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
           cargo fmt --all -- --check
           cargo test --workspace --locked
