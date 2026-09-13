@@ -1,0 +1,80 @@
+name: phase02-embodiment-r06
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  r06-real-art-integration:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - name: Install pinned validation tools
+        run: python3 -m pip install --disable-pip-version-check --no-input 'Pillow==11.3.0' 'jsonschema==4.25.1'
+      - name: Validate frozen production selection and source bytes
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_schemas.py
+          python3 scripts/check_contract_types.py
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          from PIL import Image
+          root=Path('assets/source/p02/r06/approved'); pack=json.loads((root/'pack.json').read_text())
+          assert pack['profile']=='MON_OPAQUE_BLACK_FRAME_SOURCE_PACK_V1'
+          assert len(pack['tracks'])==26 and sum(len(t['frames']) for t in pack['tracks'])==303
+          for asset in pack['source_assets']:
+              p=root/asset['filename']; assert hashlib.sha256(p.read_bytes()).hexdigest()==asset['sha256']
+              with Image.open(p) as im:
+                  assert im.size==(1254,1254) and im.mode=='RGB'
+                  assert max(max(im.getpixel(c)) for c in ((0,0),(1253,0),(0,1253),(1253,1253)))<=4
+          print('r06_source_selection_ok assets=%d tracks=%d frames=%d' % (len(pack['source_assets']),len(pack['tracks']),sum(len(t['frames']) for t in pack['tracks'])))
+          PY
+      - name: Immutable intake and atomic publication
+        run: |
+          set -euo pipefail
+          python3 experiments/p02-embodiment/scripts/intake_r06_pack.py --source assets/source/p02/r06/approved --out "$RUNNER_TEMP/r06-intake"
+          if python3 experiments/p02-embodiment/scripts/intake_r06_pack.py --source assets/source/p02/r06/approved --out "$RUNNER_TEMP/r06-injected" --inject-failure; then
+            echo 'injected intake unexpectedly succeeded' >&2; exit 1
+          fi
+          test ! -e "$RUNNER_TEMP/r06-injected"
+          python3 experiments/p02-embodiment/scripts/record_r06_c01_evidence.py --out "$RUNNER_TEMP/r06-results" --intake "$RUNNER_TEMP/r06-intake"
+      - name: Exact Rust typed source-pack round trip
+        env:
+          RUSTUP_TOOLCHAIN: 1.98.1
+        run: |
+          set -euo pipefail
+          rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
+          cargo fmt --all -- --check
+          cargo test --workspace --locked
+          cargo run -p foundation-core --bin validate-opaque-pack --locked -- assets/source/p02/r06/approved/pack.json
+      - name: Fetch exact Godot 4.7.2
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/godot"
+          curl --fail --location --retry 3 https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip -o "$RUNNER_TEMP/godot/godot.zip"
+          test "$(sha256sum "$RUNNER_TEMP/godot/godot.zip" | awk '{print $1}')" = cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4
+          unzip -q "$RUNNER_TEMP/godot/godot.zip" -d "$RUNNER_TEMP/godot"
+          chmod +x "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64"
+      - name: Exact-track Godot playback over black habitat
+        run: |
+          set -euo pipefail
+          "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" --headless --audio-driver Dummy --path godot --script r06_black_pack_test.gd -- --pack="$RUNNER_TEMP/r06-intake/runtime/pack.json" | tee "$RUNNER_TEMP/r06-results/godot-playback.json"
+      - name: Upload R06-C01 evidence (including failures)
+        if: always()
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+        with:
+          name: phase02-embodiment-r06-c01-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/r06-results
+            ${{ runner.temp }}/r06-intake
+            assets/source/p02/r06/approved/R05_PRODUCTION_VISUAL_SELECTION_V1.json
+            assets/source/p02/r06/approved/pack.json
+            godot/r06_black_pack_test.gd
+            contracts/schemas/mon-opaque-black-frame-source-pack-v1.schema.json
+          if-no-files-found: error

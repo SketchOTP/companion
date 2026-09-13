@@ -891,3 +891,25 @@ Left/right sequence manifests unchanged. Eleven focused tests pass; normal and
 quarter browser playback reach final rest without captured console errors.
 No production intake, contact metrics, Godot/CI or visual-quality pass claimed.
 See R05_LISTEN_ACK_CONNECTED_RESULT.md. Phase 02 remains unaccepted.
+
+## 2026-09-13 — R06-C01 runtime selection integration correction
+
+The first R06-C01 inventory (68 assets, 26 tracks, 303 slots) was superseded
+after a direct inspection of the frozen manifest found that tracks 24 and 28
+were explicitly in the `Diagnostics` group. The derivation now selects every
+non-diagnostic manifest group, yielding 58 immutable RGB assets, 24 playback
+tracks, and 283 frame slots. The source pack, sidecars, and evidence were
+regenerated without changing source bytes; local schema, byte-preservation,
+fsync-backed intake, injected-failure, tamper-negative, and export/restore
+checks remain passing. Hosted Rust/Godot and Phase 01/02 regression checks are
+still pending.
+
+## 2026-09-13 — R06-C01 runtime selection integration (superseded)
+
+Re-fetched live state and merged Review13 normally. Re-hashed the frozen R05
+ZIP, manifest, and review HTML, then derived runtime selection only from
+accepted final playback tracks, excluding retries and sheets. Created 68
+byte-preserving 1254x1254 RGB black-field assets, 26 tracks/303 slots,
+sidecars, source pack, provenance, and runtime-role separation. Local schema,
+source-byte, intake, atomic-failure, and tamper checks pass. Rust/Godot remain
+hosted-only; no Phase 02 acceptance or transition/endurance claim made.

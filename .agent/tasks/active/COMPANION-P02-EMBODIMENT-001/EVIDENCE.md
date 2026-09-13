@@ -1,5 +1,15 @@
 # EVIDENCE — COMPANION-P02-EMBODIMENT-001
 
+## R06-C01 runtime-selection correction (2026-09-13)
+
+Frozen review archive hashes matched. `R05_PRODUCTION_VISUAL_SELECTION_V1`
+contains only accepted final-playback sources from manifest groups not labelled
+`Diagnostics` (58 assets, 24 tracks, 283 frame slots), with explicit source role
+and black-field presentation profile. Native source bytes were preserved
+exactly. The earlier 68/26/303 derivation is retained as superseded evidence
+after two diagnostic tracks were excluded. Local schema/intake/atomic-failure/
+tamper checks passed. Rust/Godot/hosted and world-contact checks remain pending.
+
 ## Latest evidence ceiling — 2026-09-12
 
 The operator rejected all R05-v1 animation previews. Their CI and marker results

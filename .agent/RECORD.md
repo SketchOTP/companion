@@ -737,3 +737,41 @@ Seven new black-background trials and exact prompts retained. No completed
 animation promoted. User authoring permission is not in doubt; evidence fails
 controlled temporal progression. Review11 quality-first boundary stops further
 bulk generation pending a controllable authoring approach. PR9/Issue8 stay open.
+
+## 2026-09-13 — R06-C01 record
+
+Review13/R06-C01 authority was fetched and merged normally. Frozen archive hashes
+matched. Candidate runtime selection contains only accepted non-diagnostic
+playback assets; source role and presentation profile are explicit. Source pack
+hash `5a40706ecdeab6751ae2c72403cd09340f608aa58fe749d965305b8ae58079ed`.
+Local intake receipt hash `5e4d0857edce383b72cacd1e6978ff037147df6cc5248125f9995ae7d5dfa166`.
+
+## 2026-09-13 — R06-C01 diagnostic-group exclusion correction
+
+The initial R06-C01 runtime inventory was superseded after direct inspection of
+the frozen final-playback manifest identified two tracks explicitly labelled
+`Diagnostics`. The deterministic builder now selects all non-diagnostic groups
+and regenerated the candidate pack with 58 immutable RGB assets, 24 playback
+tracks, and 283 frame slots. Current source-pack SHA-256 is
+`ea28875e611b033d6c3f190f41f15a682fec39edc1d0ceb7f10111a72f376509`; runtime
+pack SHA-256 is
+`bc24625cd0552bc120f988b69e6b436147736dcd56f03c67c847fa2c25b75207`; receipt
+SHA-256 is
+`8a5d9d66eddcd70b8dd4427102a4dfea0ad6537fc9d6de67cf03bc8eee756010`. Native
+bytes remain unchanged. Local schema, byte-preservation, fsync-backed intake,
+injected-failure, tamper-negative, and export/restore checks pass; Rust/Godot
+and hosted regressions remain hosted-only and unrun locally.
+No production art was generated or mutated; hosted Rust/Godot and world-contact
+evidence remain required.
+
+## 2026-09-13 — R06-C01 final selection regeneration
+
+The builder was corrected to promote only manifest tracks whose group is not
+`Diagnostics` and to classify the connected Listen → Acknowledge playback as
+the `listen_acknowledge` family. The final candidate source pack contains 58
+immutable RGB assets, 24 playback tracks, and 283 frame slots. Source-pack
+SHA-256: `1b3ee70ea8dd4d6633b4d9e0d14c1213613094987e56b0308c56b9b7f6b83cbf`.
+Runtime-pack SHA-256: `f7ecc6e13a82bf162d68aa4da703842ad349ae307e7eb5b6ce72b2f7b819eb8e`.
+Receipt SHA-256: `7912a2035f09d30029840f4f200a17b3268e28511e3e812d00f61e04439a9b0e`.
+The selection remains candidate integration; local Cargo and Godot are
+unavailable, so typed runtime and hosted regression checks remain pending.

@@ -11,6 +11,7 @@ signal presentation_observed(event: Dictionary)
 const ANIMATION_FPS := 24.0
 const INGESTED_PROFILE := "MON_INGESTED_FRAME_PACK_V1"
 const SOURCE_PROFILE := "MON_AUTHORED_FRAME_SOURCE_PACK_V1"
+const OPAQUE_SOURCE_PROFILE := "MON_OPAQUE_BLACK_FRAME_SOURCE_PACK_V1"
 const HASH_RE := "^[0-9a-f]{64}$"
 const APPROVED_IDENTITY_SHA := "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56"
 const APPROVED_TURNAROUND_SHA := "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
@@ -97,7 +98,7 @@ func _load_pack() -> void:
 	pack_root = path.get_base_dir().simplify_path()
 
 func _validate_manifest(candidate: Dictionary, manifest_path: String) -> bool:
-	if candidate.get("profile") != INGESTED_PROFILE or int(candidate.get("schema_version", 0)) != 1 or candidate.get("source_profile") != SOURCE_PROFILE:
+	if candidate.get("profile") != INGESTED_PROFILE or int(candidate.get("schema_version", 0)) != 1 or not candidate.get("source_profile") in [SOURCE_PROFILE, OPAQUE_SOURCE_PROFILE]:
 		return false
 	if not _is_hash(String(candidate.get("pack_digest", ""))):
 		return false
@@ -221,7 +222,7 @@ func _build_frames(track: Dictionary) -> Dictionary:
 		if FileAccess.get_sha256(frame_path) != String(item.get("source_sha256", "")):
 			return {"ok": false, "reason": "frame_hash_mismatch"}
 		var image := Image.new()
-		if image.load(frame_path) != OK or image.get_format() != Image.FORMAT_RGBA8:
+		if image.load(frame_path) != OK or not image.get_format() in [Image.FORMAT_RGBA8, Image.FORMAT_RGB8]:
 			return {"ok": false, "reason": "frame_corrupt"}
 		var texture := ImageTexture.create_from_image(image)
 		if texture == null:

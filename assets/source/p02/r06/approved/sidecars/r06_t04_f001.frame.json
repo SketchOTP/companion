@@ -1,0 +1,153 @@
+{
+  "frame_id": "r06_t04_f001",
+  "landmarks": {
+    "action_anchor": {
+      "point": {
+        "x": 626,
+        "y": 615
+      },
+      "state": "visible"
+    },
+    "attachment_back": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "attachment_front": {
+      "point": {
+        "x": 626,
+        "y": 48
+      },
+      "state": "visible"
+    },
+    "eye_left": {
+      "point": {
+        "x": 581,
+        "y": 419
+      },
+      "state": "visible"
+    },
+    "eye_midpoint": {
+      "point": {
+        "x": 626,
+        "y": 419
+      },
+      "state": "visible"
+    },
+    "eye_right": {
+      "point": {
+        "x": 671,
+        "y": 419
+      },
+      "state": "visible"
+    },
+    "foot_left": {
+      "point": {
+        "x": 500,
+        "y": 1203
+      },
+      "state": "visible"
+    },
+    "foot_right": {
+      "point": {
+        "x": 752,
+        "y": 1203
+      },
+      "state": "visible"
+    },
+    "ground_contact_left": {
+      "point": {
+        "x": 500,
+        "y": 1203
+      },
+      "state": "visible"
+    },
+    "ground_contact_right": {
+      "point": {
+        "x": 752,
+        "y": 1203
+      },
+      "state": "visible"
+    },
+    "hand_left": {
+      "point": {
+        "x": 399,
+        "y": 733
+      },
+      "state": "visible"
+    },
+    "hand_right": {
+      "point": {
+        "x": 853,
+        "y": 733
+      },
+      "state": "visible"
+    },
+    "head_center": {
+      "point": {
+        "x": 626,
+        "y": 321
+      },
+      "state": "visible"
+    },
+    "interaction_focus": {
+      "point": {
+        "x": 626,
+        "y": 419
+      },
+      "state": "visible"
+    },
+    "mouth_center": {
+      "point": {
+        "x": 626,
+        "y": 498
+      },
+      "state": "visible"
+    },
+    "object_anchor": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "root": {
+      "point": {
+        "x": 626,
+        "y": 1203
+      },
+      "state": "visible"
+    }
+  },
+  "observations": {
+    "background": "near_black_field",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "perimeter": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  "presentation_profile": "R05_BLACK_FIELD_RGB8_V1",
+  "profile": "R05_RUNTIME_FRAME_SIDECAR_V1",
+  "source_asset_id": "r06_breathe_peak",
+  "source_path": "raw/base_breathe_peak.png",
+  "source_sha256": "9a1ae10d426fbcc0020526619f3729eb36db1f1ea39da94dc3901ab74a8d26c1"
+}

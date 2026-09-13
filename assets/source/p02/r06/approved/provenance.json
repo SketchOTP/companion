@@ -1,0 +1,13 @@
+{
+  "profile": "R05_RUNTIME_VISUAL_MASTER_PROVENANCE_V1",
+  "review_task_head": "5f538a0c86783b7c5d00b140dcc91c7f76c30450",
+  "zip_sha256": "45fd9749179419339046af2ab40605c47d825ca4f0ad47c87a8c6fb9ca1b799b",
+  "manifest_sha256": "d8a0277272f0ccd6f948a24153b7f954aff138111ab840f22e09204aa359e595",
+  "review_html_sha256": "7bd9e0cd5c64b89259dc2780825457a16144cebe02d259fd73a644591aa38cd2",
+  "selection_rule": "every final-manifest playback track whose group is not Diagnostics",
+  "source_role": "runtime_visual_master",
+  "presentation_profiles": ["R05_BLACK_FIELD_RGB8_V1", "R05_TRANSPARENT_RGBA8_V1"],
+  "pixel_policy": "byte-preserving native source; no mutation",
+  "approval_state": "candidate",
+  "evidence_ceiling": "E3_TARGET_TESTED after hosted Rust/Godot integration; no Phase 02 acceptance"
+}

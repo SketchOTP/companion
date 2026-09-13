@@ -83,3 +83,13 @@ Not yet accepted:
 ## Protected work
 
 The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` modifications remain protected. Do not inspect them for evidence, commit, reset, stash, overwrite, copy, or reformat them.
+
+## R06-C01 execution note
+
+The final accepted R05 playback manifest was re-hashed and used to derive
+`R05_PRODUCTION_VISUAL_SELECTION_V1` from non-diagnostic groups only: 58
+immutable RGB black-field source assets, 24 playback tracks, and 283 frame
+slots. The earlier 68/26/303 inventory is superseded historical evidence after
+two explicitly diagnostic tracks were excluded. Local schema and fsync-backed
+intake pass. Cargo and Godot are unavailable locally, so typed Rust and Godot
+playback remain hosted checks. No new art or source mutation occurred.

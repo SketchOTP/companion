@@ -115,6 +115,8 @@ pub struct MonAuthoredFrameSourcePackV1 {
     pub provenance: PackProvenance,
     pub timing: TimingProfile,
     pub request_profile: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub runtime_profile: Option<serde_json::Value>,
     pub source_assets: Vec<SourceAsset>,
     pub tracks: Vec<SourceTrack>,
 }
@@ -145,6 +147,8 @@ pub struct MonIngestedFramePackV1 {
     pub provenance: PackProvenance,
     pub timing: TimingProfile,
     pub request_profile: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub runtime_profile: Option<serde_json::Value>,
     pub source_assets: Vec<IngestedAsset>,
     pub tracks: Vec<SourceTrack>,
     pub pack_digest: String,

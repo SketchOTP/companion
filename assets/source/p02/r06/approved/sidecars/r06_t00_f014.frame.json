@@ -1,0 +1,156 @@
+{
+  "frame_id": "r06_t00_f014",
+  "landmarks": {
+    "action_anchor": {
+      "point": {
+        "x": 621,
+        "y": 634
+      },
+      "state": "visible"
+    },
+    "attachment_back": {
+      "point": {
+        "x": 621,
+        "y": 98
+      },
+      "state": "visible"
+    },
+    "attachment_front": {
+      "point": {
+        "x": 621,
+        "y": 98
+      },
+      "state": "visible"
+    },
+    "eye_left": {
+      "point": {
+        "x": 576,
+        "y": 448
+      },
+      "state": "visible"
+    },
+    "eye_midpoint": {
+      "point": {
+        "x": 621,
+        "y": 448
+      },
+      "state": "visible"
+    },
+    "eye_right": {
+      "point": {
+        "x": 666,
+        "y": 448
+      },
+      "state": "visible"
+    },
+    "foot_left": {
+      "point": {
+        "x": 505,
+        "y": 1190
+      },
+      "state": "visible"
+    },
+    "foot_right": {
+      "point": {
+        "x": 737,
+        "y": 1190
+      },
+      "state": "visible"
+    },
+    "ground_contact_left": {
+      "point": {
+        "x": 505,
+        "y": 1190
+      },
+      "state": "visible"
+    },
+    "ground_contact_right": {
+      "point": {
+        "x": 737,
+        "y": 1190
+      },
+      "state": "visible"
+    },
+    "hand_left": {
+      "point": {
+        "x": 412,
+        "y": 745
+      },
+      "state": "visible"
+    },
+    "hand_right": {
+      "point": {
+        "x": 830,
+        "y": 745
+      },
+      "state": "visible"
+    },
+    "head_center": {
+      "point": {
+        "x": 621,
+        "y": 356
+      },
+      "state": "visible"
+    },
+    "interaction_focus": {
+      "point": {
+        "x": 621,
+        "y": 448
+      },
+      "state": "visible"
+    },
+    "mouth_center": {
+      "point": {
+        "x": 621,
+        "y": 522
+      },
+      "state": "visible"
+    },
+    "object_anchor": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "root": {
+      "point": {
+        "x": 621,
+        "y": 1190
+      },
+      "state": "visible"
+    }
+  },
+  "observations": {
+    "background": "near_black_field",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "perimeter": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  "presentation_profile": "R05_BLACK_FIELD_RGB8_V1",
+  "profile": "R05_RUNTIME_FRAME_SIDECAR_V1",
+  "source_asset_id": "r06_left_down_far",
+  "source_path": "raw/base_left_down_far.png",
+  "source_sha256": "44c610f71e071d8d7c083a58c5f090b96c978d97801ba50a838e411f8324d982"
+}

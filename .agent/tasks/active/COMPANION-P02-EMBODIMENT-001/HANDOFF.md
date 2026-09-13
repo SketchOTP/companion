@@ -1,5 +1,18 @@
 # HANDOFF — COMPANION-P02-EMBODIMENT-001
 
+## R06-C01 current handoff (2026-09-13)
+
+The live R05 final playback package was re-hashed and runtime selection was
+derived from accepted non-diagnostic playback tracks only. The candidate source
+pack is `assets/source/p02/r06/approved/pack.json` with 58 immutable RGB
+black-field assets, 24 playback tracks, and 283 frame slots. Local schema, byte
+preservation, fsync/atomic intake, injected-failure, tamper-negative, and
+export/restore checks pass. The earlier 68/26/303 derivation is preserved as
+superseded historical evidence because two manifest tracks were explicitly
+labelled `Diagnostics`. Hosted Rust typed consumption, Godot exact-track
+playback, world-contact measurement, and Phase 01/02 regressions remain to run;
+they are not represented as local passes.
+
 ## Latest disposition — operator rejection, 2026-09-12
 
 R05-v1 visual review FAILED. All previews were rejected. Current work is PARTIAL:

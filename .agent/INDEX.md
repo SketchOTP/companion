@@ -69,3 +69,15 @@ Required:
 - legal transition campaign over the accepted real-art graph;
 - dedicated 1366x768 Openbox two-hour endurance;
 - final Phase 02 acceptance and merge decision.
+
+## R06-C01 evidence
+
+- Selection: `assets/source/p02/r06/approved/R05_PRODUCTION_VISUAL_SELECTION_V1.json`
+- Source pack: `assets/source/p02/r06/approved/pack.json`
+- Evidence: `experiments/p02-embodiment/results/r06-c01/validation.json`
+- Hosted workflow: `.github/workflows/phase02-embodiment-r06.yml`
+- Runtime profile: `R05_BLACK_FIELD_RGB8_V1` (transparent profile reserved)
+- Current selection inventory: 58 immutable RGB assets, 24 non-diagnostic
+  playback tracks, and 283 frame slots. The prior 68/26/303 derivation is
+  preserved as superseded historical evidence because two included manifest
+  tracks were explicitly labelled `Diagnostics`.

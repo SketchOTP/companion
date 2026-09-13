@@ -1,0 +1,153 @@
+{
+  "frame_id": "r06_t02_f002",
+  "landmarks": {
+    "action_anchor": {
+      "point": {
+        "x": 613,
+        "y": 626
+      },
+      "state": "visible"
+    },
+    "attachment_back": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "attachment_front": {
+      "point": {
+        "x": 613,
+        "y": 53
+      },
+      "state": "visible"
+    },
+    "eye_left": {
+      "point": {
+        "x": 568,
+        "y": 428
+      },
+      "state": "visible"
+    },
+    "eye_midpoint": {
+      "point": {
+        "x": 613,
+        "y": 428
+      },
+      "state": "visible"
+    },
+    "eye_right": {
+      "point": {
+        "x": 658,
+        "y": 428
+      },
+      "state": "visible"
+    },
+    "foot_left": {
+      "point": {
+        "x": 505,
+        "y": 1219
+      },
+      "state": "visible"
+    },
+    "foot_right": {
+      "point": {
+        "x": 721,
+        "y": 1219
+      },
+      "state": "visible"
+    },
+    "ground_contact_left": {
+      "point": {
+        "x": 505,
+        "y": 1219
+      },
+      "state": "visible"
+    },
+    "ground_contact_right": {
+      "point": {
+        "x": 721,
+        "y": 1219
+      },
+      "state": "visible"
+    },
+    "hand_left": {
+      "point": {
+        "x": 419,
+        "y": 744
+      },
+      "state": "visible"
+    },
+    "hand_right": {
+      "point": {
+        "x": 807,
+        "y": 744
+      },
+      "state": "visible"
+    },
+    "head_center": {
+      "point": {
+        "x": 613,
+        "y": 329
+      },
+      "state": "visible"
+    },
+    "interaction_focus": {
+      "point": {
+        "x": 613,
+        "y": 428
+      },
+      "state": "visible"
+    },
+    "mouth_center": {
+      "point": {
+        "x": 613,
+        "y": 507
+      },
+      "state": "visible"
+    },
+    "object_anchor": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "root": {
+      "point": {
+        "x": 613,
+        "y": 1219
+      },
+      "state": "visible"
+    }
+  },
+  "observations": {
+    "background": "near_black_field",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "perimeter": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  "presentation_profile": "R05_BLACK_FIELD_RGB8_V1",
+  "profile": "R05_RUNTIME_FRAME_SIDECAR_V1",
+  "source_asset_id": "r06_front_right",
+  "source_path": "raw/base_front_right.png",
+  "source_sha256": "11d52f9f92fae09f3b93dec39e786e1b4d745be8aa7da1ebc537d69010410e66"
+}

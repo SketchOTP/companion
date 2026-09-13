@@ -591,3 +591,14 @@ A read-only contour audit reproduces this narrow non-monotonic observation.
 Explicit near/far leg instructions also failed in one late gait frame; a
 localized edit improved overlap without proving a full cycle. Do not count
 distinct hashes or descriptive fractions as successful authored progression.
+
+## 2026-09-13 — Final playback package is runtime authority
+
+Static construction selections and final accepted playback sources are distinct
+asset roles. Runtime integration must enumerate the latter from the frozen
+manifest, preserve exact bytes, and classify presentation profiles per asset.
+
+The first enumeration used numeric indices and accidentally included two tracks
+whose manifest group was explicitly `Diagnostics`. Runtime selection must filter
+the frozen manifest by its diagnostic classification, not by assumed index
+ranges; the corrected inventory is 58 assets, 24 tracks, and 283 frame slots.

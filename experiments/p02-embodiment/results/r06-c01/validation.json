@@ -1,0 +1,29 @@
+{
+  "atomic_publication": "fsync_staged_same_filesystem_rename",
+  "black_habitat_perimeter_max": 2,
+  "byte_preservation": true,
+  "export_restore": true,
+  "frame_slots": 283,
+  "godot": "NOT_RUN_LOCAL_GODOT_UNAVAILABLE; hosted runner required",
+  "negative_tests": {
+    "mid_intake_failure_final_absent": true,
+    "mid_intake_failure_nonzero": true,
+    "tampered_request_profile_rejected": true
+  },
+  "presentation_profiles": [
+    "R05_BLACK_FIELD_RGB8_V1",
+    "R05_TRANSPARENT_RGBA8_V1"
+  ],
+  "profile": "COMPANION_P02_R06_C01_EVIDENCE_V1",
+  "receipt_sha256": "7912a2035f09d30029840f4f200a17b3268e28511e3e812d00f61e04439a9b0e",
+  "runtime_pack_sha256": "f7ecc6e13a82bf162d68aa4da703842ad349ae307e7eb5b6ce72b2f7b819eb8e",
+  "rust": "NOT_RUN_LOCAL_CARGO_UNAVAILABLE; hosted runner required",
+  "source_assets": 58,
+  "source_modes": [
+    "RGB"
+  ],
+  "source_pack_sha256": "1b3ee70ea8dd4d6633b4d9e0d14c1213613094987e56b0308c56b9b7f6b83cbf",
+  "status": "PASS",
+  "tracks": 24,
+  "world_contact": "NOT_RUN_UNTIL_RUNTIME_GODOT_ARTIFACT"
+}
