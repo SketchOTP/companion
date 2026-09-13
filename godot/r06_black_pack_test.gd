@@ -13,9 +13,11 @@ var measured_assets: Dictionary = {}
 var frame_post_draw_seen := false
 
 func _initialize() -> void:
+	print("C02_MARK initialize")
 	call_deferred("_run")
 
 func _run() -> void:
+	print("C02_MARK run_enter")
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--pack="): pack_path = arg.trim_prefix("--pack=")
 		if arg.begins_with("--track="): track_filter = arg.trim_prefix("--track=")
@@ -110,10 +112,13 @@ func _await_frame_post_draw() -> bool:
 	# connected before queuing the draw so a backend that emits the signal can
 	# be observed without allowing a missing signal to hang qualification.
 	frame_post_draw_seen = false
+	print("C02_MARK render_wait_enter")
 	if RenderingServer.frame_post_draw.is_connected(_on_frame_post_draw):
 		RenderingServer.frame_post_draw.disconnect(_on_frame_post_draw)
 	RenderingServer.frame_post_draw.connect(_on_frame_post_draw, CONNECT_ONE_SHOT)
+	print("C02_MARK render_signal_connected")
 	await process_frame
+	print("C02_MARK process_frame_resumed")
 	RenderingServer.force_draw()
 	for _i in range(30):
 		if frame_post_draw_seen:
