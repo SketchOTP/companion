@@ -5,6 +5,7 @@ var events: Array = []
 var pack: Dictionary
 var pack_path := ""
 var track_filter := ""
+var render_observation := ""
 
 func _initialize() -> void:
 	call_deferred("_run")
@@ -46,7 +47,7 @@ func _play_track(track: Dictionary) -> void:
 	events.append({"event":"track_resolved","track_id":name,"monotonic_usec":Time.get_ticks_usec()})
 	events.append({"event":"track_validated","track_id":name,"monotonic_usec":Time.get_ticks_usec()})
 	sprite.animation = name; sprite.frame = 0; sprite.play(name)
-	if not await _await_frame_post_draw():
+	if not await _await_frame_post_draw(viewport):
 		errors.append("render boundary not observed")
 		container.queue_free()
 		return
@@ -67,18 +68,23 @@ func _play_track(track: Dictionary) -> void:
 	events.append({"event":"completed","track_id":name,"monotonic_usec":Time.get_ticks_usec()})
 	container.queue_free(); await process_frame
 
-func _await_frame_post_draw() -> bool:
+func _await_frame_post_draw(viewport: SubViewport) -> bool:
 	var observed: bool = false
 	var callback := func() -> void: observed = true
 	RenderingServer.frame_post_draw.connect(callback, CONNECT_ONE_SHOT)
 	for _i in range(120):
 		if observed:
+			render_observation = "RenderingServer.frame_post_draw"
 			return true
 		await process_frame
 	if RenderingServer.frame_post_draw.is_connected(callback):
 		RenderingServer.frame_post_draw.disconnect(callback)
+	var rendered := viewport.get_texture().get_image()
+	if rendered != null and not rendered.is_empty():
+		render_observation = "SubViewport.texture.get_image"
+		return true
 	return observed
 
 func _finish(reason: String) -> void:
-	print(JSON.stringify({"status":"PASS" if errors.is_empty() else "FAIL","reason":reason,"errors":errors,"events":events,"godot_version":Engine.get_version_info().get("string","unknown"),"render_observation":"RenderingServer.frame_post_draw","fps":24}, "  "))
+	print(JSON.stringify({"status":"PASS" if errors.is_empty() else "FAIL","reason":reason,"errors":errors,"events":events,"godot_version":Engine.get_version_info().get("string","unknown"),"render_observation":render_observation,"fps":24}, "  "))
 	quit(0 if errors.is_empty() else 1)
