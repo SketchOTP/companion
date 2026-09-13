@@ -117,3 +117,16 @@ returns BLOCKED and all seven semantic negative tests pass. This is an exact
 geometric contradiction, not a weak or omitted test. Phase 02 remains active
 and unaccepted; no art was generated or modified and transition/Openbox gates
 remain unrun.
+
+## R06-C04 result (2026-09-13)
+
+Review 16 was merged normally at `c26dcefa8fb455662f3f0b1b749b02be5eb0c9d4`.
+The corrected qualifier uses the exact Godot transform (centered native 1254
+anchor `(627,627)`, offset `(0,0)`, scale `0.5`, MonRoot `(320,320)`) and
+persistent near/far temporal correspondence. Left repeated-loop touchdown
+deltas alternate `+140.0,-174.5,+85.0,-159.5`; right alternates
+`-115.0,+184.5,-143.0,+168.0`; first handoffs oppose requested travel and
+planted slips reach `27.0 px` left / `18.0 px` right. Actor-root nets are
+`-218.0 px` / `+189.0 px`, but complete support qualification fails. Nine
+negatives reject independently from a passing baseline. Source PNG bytes remain
+unchanged; C04 is BLOCKED and no transition or Openbox work followed.

@@ -826,3 +826,18 @@ left (`+135.5,+72.0` repeating) and negative for right (`-118.0,-134.5`
 repeating), opposite the intended directions. All seven executable negative
 tests pass. The result requires Architect direction before any transition or
 endurance work.
+
+## 2026-09-13 — R06-C04 exact runtime-transform result
+
+Evidence profile `COMPANION_P02_R06_C04_RUNTIME_TRANSFORM_LOCOMOTION_V1` is
+`BLOCKED`. Source pack SHA remains
+`1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`; source
+PNG mutation count is zero. Actual Godot transform is centered native 1254x1254,
+offset `(0,0)`, scale `0.5`, MonRoot `(320,320)`. Persistent near/far
+correspondence and full stance records produce alternating left loop deltas
+`+140.0,-174.5,+85.0,-159.5` and right `-115.0,+184.5,-143.0,+168.0`; first
+handoffs are opposite requested travel and planted slips reach `27.0 px`/`18.0 px`.
+Actor-root nets are `-218.0 px` left and `+189.0 px` right, but support
+qualification fails. Nine negative predicates independently reject from a
+passing baseline. This is the corrected geometric contradiction; no art,
+transition, or Openbox work was performed.
