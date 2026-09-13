@@ -11,13 +11,12 @@ var compositor_samples: Array = []
 var capture_written := false
 var measured_assets: Dictionary = {}
 var frame_post_draw_seen := false
+var track_render_observed := false
 
 func _initialize() -> void:
-	print("C02_MARK initialize")
 	call_deferred("_run")
 
 func _run() -> void:
-	print("C02_MARK run_enter")
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--pack="): pack_path = arg.trim_prefix("--pack=")
 		if arg.begins_with("--track="): track_filter = arg.trim_prefix("--track=")
@@ -38,7 +37,10 @@ func _run() -> void:
 	if not track_filter.is_empty(): tracks = tracks.filter(func(t): return t.get("track_id") == track_filter)
 	if tracks.is_empty(): errors.append("requested track missing"); _finish("track missing"); return
 	for track in tracks:
+		track_render_observed = false
 		await _play_track(track)
+		if not track_render_observed:
+			break
 	_finish("complete")
 
 func _play_track(track: Dictionary) -> void:
@@ -62,6 +64,7 @@ func _play_track(track: Dictionary) -> void:
 		errors.append("render boundary not observed")
 		container.queue_free()
 		return
+	track_render_observed = true
 	var rendered := get_root().get_texture().get_image()
 	if rendered == null or rendered.is_empty():
 		errors.append("viewport readback unavailable")
@@ -112,13 +115,10 @@ func _await_frame_post_draw() -> bool:
 	# connected before queuing the draw so a backend that emits the signal can
 	# be observed without allowing a missing signal to hang qualification.
 	frame_post_draw_seen = false
-	print("C02_MARK render_wait_enter")
 	if RenderingServer.frame_post_draw.is_connected(_on_frame_post_draw):
 		RenderingServer.frame_post_draw.disconnect(_on_frame_post_draw)
 	RenderingServer.frame_post_draw.connect(_on_frame_post_draw, CONNECT_ONE_SHOT)
-	print("C02_MARK render_signal_connected")
 	await process_frame
-	print("C02_MARK process_frame_resumed")
 	RenderingServer.force_draw()
 	for _i in range(30):
 		if frame_post_draw_seen:
