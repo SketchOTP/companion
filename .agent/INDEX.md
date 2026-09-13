@@ -14,6 +14,7 @@
 - Current disposition: `R06-C02 PARTIAL ACCEPTED — CONTINUOUS STANCE / REAL TRAVEL ACTIVE`
 - Current directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C03`
 - Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_15.md`
+- Review 15 publication: `4d844e2ef11d46d5280fa2c62086975a10f852d7`
 - Notion Review 15: https://app.notion.com/p/3da833cb27ff810384e9cddc94c4839b
 - Reviewed implementation head: `94b59cf76fc046abe28d6dd1b67359a803af8544`
 - Reviewed publication head: `70afeddeddbcb56fa0580b336c82e494f0f02f3b`
