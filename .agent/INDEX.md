@@ -11,12 +11,12 @@
 
 - Active phase: `02 — Mon Body, Habitat, and Sprite Pipeline`
 - Phase 02 acceptance: `NOT GRANTED`
-- Current disposition: `R06-C01 PARTIAL ACCEPTED — GROUNDED METADATA / WORLD CONTACT ACTIVE`
-- Current directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C02`
-- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_14.md`
-- Notion Review 14: https://app.notion.com/p/3da833cb27ff81d9b48bd3e2c64e018c
-- Reviewed task publication head: `b446e7214cd14e530556ab558dae565ceda05f07`
-- Tested executable head retained from C01: `3eb24eb25ee1e33f4c018688b739182b60521132`
+- Current disposition: `R06-C02 PARTIAL ACCEPTED — CONTINUOUS STANCE / REAL TRAVEL ACTIVE`
+- Current directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C03`
+- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_15.md`
+- Notion Review 15: https://app.notion.com/p/3da833cb27ff810384e9cddc94c4839b
+- Reviewed implementation head: `94b59cf76fc046abe28d6dd1b67359a803af8544`
+- Reviewed publication head: `70afeddeddbcb56fa0580b336c82e494f0f02f3b`
 - Frozen visual head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
 - PR #9: draft/open/unmerged
 - Issue #8: open
@@ -29,41 +29,42 @@
 - Manifest SHA-256: `d8a0277272f0ccd6f948a24153b7f954aff138111ab840f22e09204aa359e595`
 - HTML SHA-256: `7bd9e0cd5c64b89259dc2780825457a16144cebe02d259fd73a644591aa38cd2`
 
-R05 sprite generation remains visually accepted and frozen. No new art is authorized.
+R05 sprite generation is visually accepted/frozen. No new art is authorized.
 
-## Accepted C01 boundary
+## Retained C02 boundary
 
-- final-review-derived runtime selection: 58 immutable RGB runtime masters;
-- 24 non-diagnostic tracks / 283 frame slots;
+- 58 immutable RGB runtime masters;
+- 24 tracks / 283 frame slots;
 - exact byte preservation and source-role exclusion;
-- opaque-black schema and typed Rust consumption;
-- atomic staged intake and failure cleanup;
+- atomic staged intake and typed Rust consumption;
 - real-art Godot loading/playback and 24 Hz duration handling;
-- failure/recovery plumbing and export/restore.
+- strict observed `RenderingServer.frame_post_draw` for render commitment;
+- separately named viewport readback evidence;
+- transformed in-source black-field compositor sampling;
+- measured lowest-contour sole candidates with overlays/provenance;
+- failure/recovery and export/restore;
+- R06 + Phase 01 + inherited Phase 02 exact-head hosted success on `94b59cf...`.
 
-C01 does not establish truthful semantic landmarks, grounded contacts, world-space locomotion, or strict render commitment.
+## C02 locomotion correction
 
-## C01 evidence corrections
+C02 does not yet establish truthful full-stance or cumulative lateral travel. Current support spans are derived from `contact`/`down` labels only, so passing/up frames may visibly retain grounded support while the evidence records none. Zero planted slip is expected because actor root is solved from each declared contact, and zero stitched boundary jump is expected because later plans are offset to match previous endpoints. These are useful mechanics but not independent proof of meaningful travel.
 
-- Semantic landmark points were generated from generic non-black bounding-box fractions, not actual anatomical annotation.
-- Walk planted intervals and footfall events were synthesized as track halves, not derived from support-foot evidence.
-- Hosted render qualification used the `SubViewport.texture.get_image` fallback. Under the adopted render boundary, only observed `RenderingServer.frame_post_draw` may emit `first_frame_render_committed`.
-- Viewport outer-corner sampling is outside the scaled source rectangle and therefore does not establish black-field compositor blending.
-- `a2826a...` had a Phase 01 failure. `3eb24eb...` is the tested executable head where R06, Phase 01, and inherited Phase 02 PR workflows pass. `b446e721...` is documentation/evidence-only reconciliation.
-
-## R06-C02 gate
+## R06-C03 gate
 
 Required:
 
-- preserve all accepted image bytes and C01 runtime selection;
-- replace/demote heuristic semantic landmarks with grounded annotations and provenance;
-- derive actual gait phases, support identity, planted intervals, and footfall events;
-- create 24 Hz left/right `MonRoot` translation plans;
-- prove every planted interval has <=2 px composed world-contact slip with no root teleport at handoffs or loop seams;
-- restore strict `RenderingServer.frame_post_draw` render-commit semantics;
-- sample inside the transformed source rectangle for black-field compositor QA;
-- retain Rust/Godot/failure-recovery/export-restore behavior;
-- pass R06 + Phase 01 + inherited Phase 02 on one exact implementation SHA.
+- preserve accepted C02 source/render/compositor/intake/Rust/Godot work;
+- classify every locomotion frame by visible support/swing evidence, not labels alone;
+- include full visible stance through release/toe-off, including passing/up where grounded;
+- derive actor-root travel from actual support handoffs without inventing stride length;
+- prove successive touchdown ordering progresses screen-left for left travel and screen-right for right travel;
+- qualify start → loop → loop → stop so the second loop accumulates travel rather than recentering;
+- retain <=2 px planted world slip and no hidden root reset/teleport;
+- fail omitted support, reversed touchdown ordering, zero-net loop travel, recenter/reset, excess slip, and hidden teleport;
+- publish normal/quarter composed translation playback;
+- pass R06 + Phase 01 + inherited Phase 02 on one implementation SHA.
+
+If the frozen drawings cannot support a truthful alternating stance model and cumulative travel, stop and return the exact contradictory frame/coordinate evidence. Do not edit pixels.
 
 ## Remaining after R06
 
