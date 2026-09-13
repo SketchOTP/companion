@@ -637,3 +637,14 @@ anchors in the opposite requested direction. Zero planted slip can coexist with
 wrong-direction travel; pinning a contact is not proof of walking direction.
 Preserve the contradiction and escalate rather than relabeling feet, inventing
 a stride, or hiding a root reset.
+
+## 2026-09-13 — Runtime transform and leg identity must be independent evidence
+
+For opaque AnimatedSprite2D frames, source pixels map through the centered native
+anchor and fixed sprite offset/scale before MonRoot motion is evaluated. A
+torso/body registration measurement must remain separate from that transform.
+Persistent near/far correspondence through overlap exposes whether touchdown
+geometry really progresses; screen-X foot naming can manufacture an apparent
+stride. Repeated frozen loops here alternate touchdown anchors and exceed the
+2 px planted-slip bound during double support, so even directional actor-root
+travel is not sufficient locomotion evidence.

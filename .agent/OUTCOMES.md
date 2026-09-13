@@ -961,3 +961,17 @@ sequence nets are `+415.0 px` left and `-505.0 px` right. The validator returns
 BLOCKED while all seven semantic tamper negatives pass. This exact
 contradiction is retained; no art or source bytes were changed and no
 transition/endurance claim is made.
+
+## 2026-09-13 — R06-C04 corrected runtime-transform contradiction
+
+Against the actual Godot transform (centered 1254x1254 source, offset zero,
+scale 0.5, MonRoot 320,320), persistent near/far correspondence and complete
+start→loop→loop→stop sequences were recomputed without touching source pixels.
+Left repeated-loop touchdown deltas alternate `+140.0,-174.5,+85.0,-159.5`
+and right `-115.0,+184.5,-143.0,+168.0`; first handoffs are opposite requested
+travel and maximum planted slips are `27.0 px`/`18.0 px` (required ≤2 px).
+Actor-root nets are `-218.0 px` left and `+189.0 px` right, but complete support
+qualification fails. Every frame records stable leg, sole candidates, support
+state, source/local/world contacts and offsets. Nine independent negatives reject
+from a separately passing baseline. Result remains BLOCKED for Architect review;
+no transition or endurance work followed.

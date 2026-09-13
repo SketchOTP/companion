@@ -96,3 +96,12 @@ right `-118.0,-134.5` repeating). Per-frame support evidence and seven
 executable negatives are committed under `experiments/p02-embodiment/results/r06-c03/`.
 No image bytes changed. Await Architect decision; do not proceed to transition
 qualification or endurance.
+
+## R06-C04 runtime-transform result — 2026-09-13
+
+`COMPANION_P02_R06_C04_RUNTIME_TRANSFORM_LOCOMOTION_V1` is BLOCKED. Actual
+Godot centered-sprite transform and persistent near/far correspondence produce
+alternating opposite-direction touchdown anchors and zero two-loop net travel
+for both left and right. Full per-frame/world-contact evidence, side-by-side
+C03 comparison, and nine independent passing-baseline negatives are stored in
+`experiments/p02-embodiment/results/r06-c04/`. No source PNGs changed.

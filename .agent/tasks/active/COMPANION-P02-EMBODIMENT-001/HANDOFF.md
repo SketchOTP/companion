@@ -506,3 +506,23 @@ reversed ordering, zero travel, recentering, hidden reset, and >2 px slip.
 Result is BLOCKED with the exact contradiction retained in
 `experiments/p02-embodiment/results/r06-c03/support_investigation.json`.
 Do not generate or edit art; return this geometric contradiction to the Architect.
+
+## R06-C04 runtime-transform requalification — 2026-09-13
+
+Merged Architect Review 16 normally; merge head was `c26dcefa8fb455662f3f0b1b749b02be5eb0c9d4` and accepted source pack SHA remained
+`1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`.
+`qualify_r06_c04.py` documents the actual Godot transform (native 1254x1254,
+centered anchor `(627,627)`, offset `(0,0)`, scale `0.5`, MonRoot `(320,320)`)
+and records source-pixel, sprite-local, actor-root and world-contact coordinates
+for every frame in start→loop→loop→stop sequences. Persistent near/far identity
+is assigned by temporal correspondence; double support is retained and screen-X
+is never used for handoff.
+
+The corrected repeated-loop anchors still alternate opposite the requested
+travel: left `+194.5,-200.0,+165.0,-159.5` (two-loop net `0.0 px`) and right
+`-132.0,+134.5,-170.5,+168.0` (two-loop net `0.0 px`). Passing/up phase-hint
+conflicts are explicit. All accepted PNG hashes remain unchanged. The independent
+negative matrix starts from a passing fixture and each of nine mutations is
+rejected for its own reason; structural validator exits zero. C04 therefore
+returns BLOCKED with the exact geometric contradiction. No C04 hosted, transition,
+or Openbox run was attempted after the directive stop condition.
