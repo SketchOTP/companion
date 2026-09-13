@@ -1,110 +1,83 @@
 {
   "frame_id": "r06_t01_f030",
+  "grounding": {
+    "evidence": "overlays/grounding_representative_left.png",
+    "measured_contour_candidates": [
+      {
+        "x": 709,
+        "y": 1210
+      }
+    ],
+    "method": "foreground_silhouette_contour_v1",
+    "review_state": "machine_assisted_checked",
+    "source_sha256": "d951dd13ee107306a396a02ac39fad7edfa1718dc4912a3377b32c22d0d9053f"
+  },
   "landmarks": {
     "action_anchor": {
-      "point": {
-        "x": 668,
-        "y": 623
-      },
-      "state": "visible"
+      "point": null,
+      "state": "not_applicable"
     },
     "attachment_back": {
-      "point": {
-        "x": 668,
-        "y": 55
-      },
-      "state": "visible"
+      "point": null,
+      "state": "not_applicable"
     },
     "attachment_front": {
-      "point": {
-        "x": 668,
-        "y": 55
-      },
-      "state": "visible"
+      "point": null,
+      "state": "not_applicable"
     },
     "eye_left": {
-      "point": {
-        "x": 623,
-        "y": 427
-      },
-      "state": "visible"
+      "point": null,
+      "state": "not_applicable"
     },
     "eye_midpoint": {
-      "point": {
-        "x": 668,
-        "y": 427
-      },
-      "state": "visible"
+      "point": null,
+      "state": "not_applicable"
     },
     "eye_right": {
-      "point": {
-        "x": 713,
-        "y": 427
-      },
-      "state": "visible"
+      "point": null,
+      "state": "not_applicable"
     },
     "foot_left": {
       "point": {
-        "x": 562,
-        "y": 1211
+        "x": 709,
+        "y": 1210
       },
       "state": "visible"
     },
     "foot_right": {
-      "point": {
-        "x": 774,
-        "y": 1211
-      },
-      "state": "visible"
+      "point": null,
+      "state": "occluded"
     },
     "ground_contact_left": {
       "point": {
-        "x": 562,
-        "y": 1211
+        "x": 709,
+        "y": 1210
       },
       "state": "visible"
     },
     "ground_contact_right": {
-      "point": {
-        "x": 774,
-        "y": 1211
-      },
-      "state": "visible"
+      "point": null,
+      "state": "occluded"
     },
     "hand_left": {
-      "point": {
-        "x": 477,
-        "y": 740
-      },
-      "state": "visible"
+      "point": null,
+      "state": "not_applicable"
     },
     "hand_right": {
-      "point": {
-        "x": 859,
-        "y": 740
-      },
-      "state": "visible"
+      "point": null,
+      "state": "not_applicable"
     },
     "head_center": {
-      "point": {
-        "x": 668,
-        "y": 329
-      },
-      "state": "visible"
+      "point": null,
+      "state": "not_applicable"
     },
     "interaction_focus": {
-      "point": {
-        "x": 668,
-        "y": 427
-      },
-      "state": "visible"
+      "point": null,
+      "state": "not_applicable"
     },
     "mouth_center": {
-      "point": {
-        "x": 668,
-        "y": 505
-      },
-      "state": "visible"
+      "point": null,
+      "state": "not_applicable"
     },
     "object_anchor": {
       "point": null,
@@ -112,8 +85,8 @@
     },
     "root": {
       "point": {
-        "x": 668,
-        "y": 1211
+        "x": 709,
+        "y": 1210
       },
       "state": "visible"
     }

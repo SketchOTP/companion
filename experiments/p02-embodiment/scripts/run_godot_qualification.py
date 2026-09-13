@@ -200,6 +200,7 @@ def run_qualification(
             args = [f"--pack={pack}"]
             if corrupt_pack is not None:
                 args.append(f"--corrupt-pack={corrupt_pack}")
+            args.append(f"--capture={out / 'compositor-capture.png'}")
         godot_args += ["--", *args]
     command = [str(godot), "--log-file", str(engine_path), *godot_args]
     wrapped = ["xvfb-run", "-a", "-e", str(xvfb_path), *command] if use_xvfb and shutil.which("xvfb-run") else command

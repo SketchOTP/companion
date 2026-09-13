@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+use std::collections::BTreeMap;
 use uuid::Uuid;
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
@@ -31,6 +32,15 @@ pub enum LandmarkState {
 pub struct LandmarkObservation {
     pub state: LandmarkState,
     pub point: Option<LandmarkPoint>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct LandmarkProvenance {
+    pub method: String,
+    pub source_sha256: String,
+    pub review_state: String,
+    pub evidence: String,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
@@ -77,6 +87,8 @@ pub struct SourceFrame {
     pub posture: Posture,
     pub action_phase: Option<String>,
     pub landmarks: CanonicalLandmarks,
+    #[serde(default)]
+    pub landmark_provenance: Option<BTreeMap<String, LandmarkProvenance>>,
     pub provenance: FrameProvenance,
     pub reuse_of: Option<String>,
 }

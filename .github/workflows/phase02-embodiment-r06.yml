@@ -35,6 +35,14 @@ jobs:
                   assert max(max(im.getpixel(c)) for c in ((0,0),(1253,0),(0,1253),(1253,1253)))<=4
           print('r06_source_selection_ok assets=%d tracks=%d frames=%d' % (len(pack['source_assets']),len(pack['tracks']),sum(len(t['frames']) for t in pack['tracks'])))
           PY
+      - name: Ground semantic landmarks and world-contact plans
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/r06-c02"
+          python3 experiments/p02-embodiment/scripts/ground_r06_c02.py \
+            --source assets/source/p02/r06/approved --evidence "$RUNNER_TEMP/r06-c02"
+          python3 experiments/p02-embodiment/scripts/validate_r06_c02.py \
+            --source assets/source/p02/r06/approved --evidence "$RUNNER_TEMP/r06-c02"
       - name: Immutable intake and atomic publication
         run: |
           set -euo pipefail
@@ -43,7 +51,19 @@ jobs:
             echo 'injected intake unexpectedly succeeded' >&2; exit 1
           fi
           test ! -e "$RUNNER_TEMP/r06-injected"
-          python3 experiments/p02-embodiment/scripts/record_r06_c01_evidence.py --out "$RUNNER_TEMP/r06-results" --intake "$RUNNER_TEMP/r06-intake"
+          python3 experiments/p02-embodiment/scripts/record_r06_c02_evidence.py \
+            --source assets/source/p02/r06/approved \
+            --intake "$RUNNER_TEMP/r06-intake" \
+            --grounding "$RUNNER_TEMP/r06-c02" \
+            --out "$RUNNER_TEMP/r06-results"
+          R06_INGESTED="$RUNNER_TEMP/r06-intake/runtime/pack.json" python3 - <<'PY'
+          import json, os
+          from jsonschema import Draft202012Validator, FormatChecker
+          schema = json.load(open('contracts/schemas/mon-ingested-frame-pack-v1.schema.json'))
+          pack = json.load(open(os.environ['R06_INGESTED']))
+          Draft202012Validator(schema, format_checker=FormatChecker()).validate(pack)
+          print('r06_ingested_schema_ok tracks=%d' % len(pack['tracks']))
+          PY
       - name: Exact Rust typed source-pack round trip
         env:
           RUSTUP_TOOLCHAIN: 1.98.1
@@ -84,15 +104,22 @@ jobs:
           assert result["godot_error_count"] == 0, result
           semantic = result.get("semantic_test_result") or {}
           assert semantic.get("status") == "PASS", result
+          assert semantic.get("render_observation") == "RenderingServer.frame_post_draw", semantic
+          samples = semantic.get("compositor_samples") or []
+          assert samples, semantic
+          assert len({s.get("track_id") for s in samples}) >= 58, semantic
+          assert max(s.get("delta_from_black", 999) for s in samples) <= 4, semantic
           PY
-      - name: Upload R06-C01 evidence (including failures)
+      - name: Upload R06-C02 evidence (including failures)
         if: always()
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         with:
-          name: phase02-embodiment-r06-c01-${{ github.sha }}
+          name: phase02-embodiment-r06-c02-${{ github.sha }}
           path: |
             ${{ runner.temp }}/r06-results
+            ${{ runner.temp }}/r06-c02
             ${{ runner.temp }}/r06-intake
+            experiments/p02-embodiment/results/r06-c02
             assets/source/p02/r06/approved/R05_PRODUCTION_VISUAL_SELECTION_V1.json
             assets/source/p02/r06/approved/pack.json
             godot/r06_black_pack_test.gd

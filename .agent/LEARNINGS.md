@@ -610,3 +610,12 @@ readback. Guard unavailable textures and use the established canonical runner
 with Xvfb plus Godot `--log-file` for render-boundary qualification. Keep
 stdout, stderr, engine, and wrapper diagnostics separate, classify all Godot
 channels together, and retain warnings without treating them as errors.
+
+## 2026-09-13 — Ground semantic geometry at the consumed boundary
+
+A fixed bounding-box fraction can be useful provisional geometry but cannot be
+labelled an anatomical observation. For the bounded real-art runtime, measure
+the accepted pixels, record visible/occluded/not-applicable states and source
+hashes, and publish inspectable overlays. World contact must be evaluated after
+the actor root translation is applied; per-track zero slip is insufficient
+without stitched start/loop/stop continuity evidence.

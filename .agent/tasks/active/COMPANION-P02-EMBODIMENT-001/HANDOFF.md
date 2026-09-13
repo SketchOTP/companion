@@ -454,3 +454,21 @@ ERROR lines, one retained V-Sync warning, and the render observation
 `SubViewport.texture.get_image`. The previous headless `Parameter "t" is null`
 diagnostic remains historical evidence. Phase 02 is still unaccepted; no
 transition or Openbox endurance gate was run.
+
+## R06-C02 grounded integration handoff — 2026-09-13
+
+Review 14 was merged normally as `f09e6f1`. The frozen C01 selection is
+preserved byte-for-byte (58 RGB masters, 24 tracks, 283 slots). Grounded
+metadata derives sole/contact candidates from the actual lowest non-black
+contour and records provenance plus representative overlays. The source-pack
+SHA is `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`;
+no source pixel changed.
+
+Local C02 evidence passes schema, source hashes, grounded support geometry,
+stitched 24 Hz root plans, exact zero-slip observations, injected atomic-intake
+failure, and eight tamper negatives. The Godot test now emits
+`first_frame_render_committed` only after `RenderingServer.frame_post_draw` and
+samples the transformed source rectangle rather than viewport outer corners.
+Hosted Rust/Godot and exact-head regressions remain to be run; no Phase 02
+acceptance is claimed. Recommended next action is independent Architect review
+of this narrow semantic correction.

@@ -1,0 +1,35 @@
+{
+  "atomic_publication": "atomic_rename_complete",
+  "frame_slots": 283,
+  "grounding_validation": {
+    "frame_slots": 283,
+    "grounding_status": "PASS",
+    "negative_tests": {
+      "bbox_placeholder_rejected": true,
+      "missing_support_rejected": true,
+      "one_tick_contact_rejected": true,
+      "outer_corner_only_rejected": true,
+      "readback_without_frame_post_draw_rejected": true,
+      "root_discontinuity_rejected": true,
+      "sequence_boundary_discontinuity_rejected": true,
+      "slip_over_two_px_rejected": true
+    },
+    "profile": "COMPANION_P02_R06_C02_VALIDATION_V1",
+    "root_plans_continuous": true,
+    "sequence_plans_continuous": true,
+    "source_hashes_ok": true,
+    "source_pack_sha256": "1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40",
+    "status": "PASS",
+    "tracks": 24,
+    "world_contact_max_slip_px": 0.0
+  },
+  "ingested_schema_valid": true,
+  "profile": "COMPANION_P02_R06_C02_INTEGRATION_EVIDENCE_V1",
+  "receipt_sha256": "466dd02abb5cc5123767a8c91283f38621424b717f9fc1eb8056fa5d6afdb9d7",
+  "runtime_pack_sha256": "6d20431d72d182a547409df310e2ec69db53639aafacb2878476f8420510474f",
+  "source_assets": 58,
+  "source_bytes_mutated": false,
+  "source_pack_sha256": "1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40",
+  "status": "PASS",
+  "tracks": 24
+}

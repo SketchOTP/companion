@@ -1,0 +1,6563 @@
+{
+  "frame_slots": 283,
+  "negative_tests": {
+    "bbox_placeholder_rejected": true,
+    "missing_support_rejected": true,
+    "one_tick_contact_rejected": true,
+    "root_discontinuity_rejected": true,
+    "slip_over_two_px_rejected": true
+  },
+  "overlays": [
+    {
+      "path": "overlays/grounding_representative_front.png",
+      "sha256": "b08b6996fb99ee481818e364b7cbf6c27d11efaee730fa591e8a831c803f83af"
+    },
+    {
+      "path": "overlays/grounding_representative_left.png",
+      "sha256": "ddb7f2c1a7b93462c3774711b66f4c9ebcf3a8d36e57740c25221ddab5ed39a5"
+    },
+    {
+      "path": "overlays/grounding_representative_right.png",
+      "sha256": "275e00fd81d13ac8efb377918333e5a1e5310b3daa46687a6d7583510bef1018"
+    },
+    {
+      "path": "overlays/overlay_r06_t00_f000.png",
+      "sha256": "b08b6996fb99ee481818e364b7cbf6c27d11efaee730fa591e8a831c803f83af"
+    },
+    {
+      "path": "overlays/overlay_r06_t00_f001.png",
+      "sha256": "ddb7f2c1a7b93462c3774711b66f4c9ebcf3a8d36e57740c25221ddab5ed39a5"
+    }
+  ],
+  "profile": "COMPANION_P02_R06_C02_GROUNDING_V1",
+  "sequence_plans": {
+    "left": {
+      "boundaries": [
+        {
+          "boundary_jump_px": 0.0,
+          "from_track": "r06_playback_track_07",
+          "to_track": "r06_playback_track_08"
+        },
+        {
+          "boundary_jump_px": 0.0,
+          "from_track": "r06_playback_track_08",
+          "to_track": "r06_playback_track_09"
+        }
+      ],
+      "continuous": true,
+      "fps": 24,
+      "max_boundary_jump_px": 0.0,
+      "ticks": [
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 614,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 0,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 614,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 1,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 614,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 2,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 614,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 3,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 614,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 4,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 614,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 5,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_start_anticipation",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 620,
+            "y": 1187
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 6,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_start_anticipation",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 620,
+            "y": 1187
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 7,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_start_anticipation",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 620,
+            "y": 1187
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 8,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_start_anticipation",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 620,
+            "y": 1187
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 9,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_start_anticipation",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 620,
+            "y": 1187
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 10,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_start_anticipation",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 620,
+            "y": 1187
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 11,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_start_liftoff",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 695,
+            "y": 1184
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 12,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_start_liftoff",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 695,
+            "y": 1184
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 13,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_start_liftoff",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 695,
+            "y": 1184
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 14,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_start_liftoff",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 695,
+            "y": 1184
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 15,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_start_liftoff",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 695,
+            "y": 1184
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 16,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_start_liftoff",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 695,
+            "y": 1184
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 17,
+          "track_id": "r06_playback_track_07",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 18,
+          "support_foot": "ground_contact_left",
+          "tick": 18,
+          "track_id": "r06_playback_track_07",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 18,
+          "support_foot": "ground_contact_left",
+          "tick": 19,
+          "track_id": "r06_playback_track_07",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 18,
+          "support_foot": "ground_contact_left",
+          "tick": 20,
+          "track_id": "r06_playback_track_07",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 18,
+          "support_foot": "ground_contact_left",
+          "tick": 21,
+          "track_id": "r06_playback_track_07",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 18,
+          "support_foot": "ground_contact_left",
+          "tick": 22,
+          "track_id": "r06_playback_track_07",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 18,
+          "support_foot": "ground_contact_left",
+          "tick": 23,
+          "track_id": "r06_playback_track_07",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 0,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 1,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 2,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 3,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_down_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 444,
+            "y": 1192
+          },
+          "source_root": {
+            "x": 630,
+            "y": 1192
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 4,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_down_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 444,
+            "y": 1192
+          },
+          "source_root": {
+            "x": 630,
+            "y": 1192
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 5,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_down_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 444,
+            "y": 1192
+          },
+          "source_root": {
+            "x": 630,
+            "y": 1192
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 6,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_down_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 444,
+            "y": 1192
+          },
+          "source_root": {
+            "x": 630,
+            "y": 1192
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 7,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": -83.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_passing_repair2",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 554,
+            "y": 1205
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 8,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_passing_repair2",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 554,
+            "y": 1205
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 9,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_passing_repair2",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 554,
+            "y": 1205
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 10,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_passing_repair2",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 554,
+            "y": 1205
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 11,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_up_near",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 831,
+            "y": 1207
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 12,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_up_near",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 831,
+            "y": 1207
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 13,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_up_near",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 831,
+            "y": 1207
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 14,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_up_near",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 831,
+            "y": 1207
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 15,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 779,
+            "y": 1199
+          },
+          "source_root": {
+            "x": 606,
+            "y": 1199
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_right",
+          "tick": 16,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": 96.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 779,
+            "y": 1199
+          },
+          "source_root": {
+            "x": 606,
+            "y": 1199
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_right",
+          "tick": 17,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": 96.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 779,
+            "y": 1199
+          },
+          "source_root": {
+            "x": 606,
+            "y": 1199
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_right",
+          "tick": 18,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": 96.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 10.0,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 779,
+            "y": 1199
+          },
+          "source_root": {
+            "x": 606,
+            "y": 1199
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_right",
+          "tick": 19,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": 96.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_down_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 824,
+            "y": 1190
+          },
+          "source_root": {
+            "x": 630,
+            "y": 1190
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_right",
+          "tick": 20,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": 96.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_down_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 824,
+            "y": 1190
+          },
+          "source_root": {
+            "x": 630,
+            "y": 1190
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_right",
+          "tick": 21,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": 96.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_down_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 824,
+            "y": 1190
+          },
+          "source_root": {
+            "x": 630,
+            "y": 1190
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_right",
+          "tick": 22,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": 96.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_down_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 824,
+            "y": 1190
+          },
+          "source_root": {
+            "x": 630,
+            "y": 1190
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_right",
+          "tick": 23,
+          "track_id": "r06_playback_track_08",
+          "world_contact": {
+            "x": 96.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_passing_far",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 594,
+            "y": 1211
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 24,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_passing_far",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 594,
+            "y": 1211
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 25,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_passing_far",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 594,
+            "y": 1211
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 26,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_passing_far",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 594,
+            "y": 1211
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 27,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_up_far",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 761,
+            "y": 1196
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 28,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_up_far",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 761,
+            "y": 1196
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 29,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_up_far",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 761,
+            "y": 1196
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 30,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_up_far",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 761,
+            "y": 1196
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 31,
+          "track_id": "r06_playback_track_08",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 0,
+          "track_id": "r06_playback_track_09",
+          "world_contact": {
+            "x": -83.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 1,
+          "track_id": "r06_playback_track_09",
+          "world_contact": {
+            "x": -83.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 2,
+          "track_id": "r06_playback_track_09",
+          "world_contact": {
+            "x": -83.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 3,
+          "track_id": "r06_playback_track_09",
+          "world_contact": {
+            "x": -83.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 4,
+          "track_id": "r06_playback_track_09",
+          "world_contact": {
+            "x": -83.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_contact_near_armfix",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 454,
+            "y": 1191
+          },
+          "source_root": {
+            "x": 620,
+            "y": 1191
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_left",
+          "tick": 5,
+          "track_id": "r06_playback_track_09",
+          "world_contact": {
+            "x": -83.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_stop_collect",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 479,
+            "y": 1190
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 6,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_stop_collect",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 479,
+            "y": 1190
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 7,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_stop_collect",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 479,
+            "y": 1190
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 8,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_stop_collect",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 479,
+            "y": 1190
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 9,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_stop_collect",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 479,
+            "y": 1190
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 10,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_stop_collect",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 479,
+            "y": 1190
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 11,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_stop_settle",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 615,
+            "y": 1184
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 12,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_stop_settle",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 615,
+            "y": 1184
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 13,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_stop_settle",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 615,
+            "y": 1184
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 14,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_stop_settle",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 615,
+            "y": 1184
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 15,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_stop_settle",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 615,
+            "y": 1184
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 16,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_stop_settle",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 615,
+            "y": 1184
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 17,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 614,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 18,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 614,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 19,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 614,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 20,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 614,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 21,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 614,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 22,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": -0.5,
+            "y": 0.0
+          },
+          "gait_phase": "left_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 614,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 23,
+          "track_id": "r06_playback_track_09",
+          "world_contact": null
+        }
+      ],
+      "total_ticks": 80
+    },
+    "right": {
+      "boundaries": [
+        {
+          "boundary_jump_px": 0.0,
+          "from_track": "r06_playback_track_12",
+          "to_track": "r06_playback_track_13"
+        },
+        {
+          "boundary_jump_px": 0.0,
+          "from_track": "r06_playback_track_13",
+          "to_track": "r06_playback_track_14"
+        }
+      ],
+      "continuous": true,
+      "fps": 24,
+      "max_boundary_jump_px": 0.0,
+      "ticks": [
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 0,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 1,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 2,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 3,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 4,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 5,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_start_anticipation",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 689,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 6,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_start_anticipation",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 689,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 7,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_start_anticipation",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 689,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 8,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_start_anticipation",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 689,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 9,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_start_anticipation",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 689,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 10,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_start_anticipation",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 689,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 11,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_start_liftoff",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 582,
+            "y": 1181
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 12,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_start_liftoff",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 582,
+            "y": 1181
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 13,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_start_liftoff",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 582,
+            "y": 1181
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 14,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_start_liftoff",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 582,
+            "y": 1181
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 15,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_start_liftoff",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 582,
+            "y": 1181
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 16,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_start_liftoff",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 582,
+            "y": 1181
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 17,
+          "track_id": "r06_playback_track_12",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 18,
+          "support_foot": "ground_contact_right",
+          "tick": 18,
+          "track_id": "r06_playback_track_12",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 18,
+          "support_foot": "ground_contact_right",
+          "tick": 19,
+          "track_id": "r06_playback_track_12",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 18,
+          "support_foot": "ground_contact_right",
+          "tick": 20,
+          "track_id": "r06_playback_track_12",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 18,
+          "support_foot": "ground_contact_right",
+          "tick": 21,
+          "track_id": "r06_playback_track_12",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 18,
+          "support_foot": "ground_contact_right",
+          "tick": 22,
+          "track_id": "r06_playback_track_12",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 18,
+          "support_foot": "ground_contact_right",
+          "tick": 23,
+          "track_id": "r06_playback_track_12",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 0,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 1,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 2,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 3,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_down_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 816,
+            "y": 1171
+          },
+          "source_root": {
+            "x": 670,
+            "y": 1171
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 4,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_down_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 816,
+            "y": 1171
+          },
+          "source_root": {
+            "x": 670,
+            "y": 1171
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 5,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_down_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 816,
+            "y": 1171
+          },
+          "source_root": {
+            "x": 670,
+            "y": 1171
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 6,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_down_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 816,
+            "y": 1171
+          },
+          "source_root": {
+            "x": 670,
+            "y": 1171
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 7,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": 78.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_passing_near",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 787,
+            "y": 1182
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 8,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_passing_near",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 787,
+            "y": 1182
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 9,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_passing_near",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 787,
+            "y": 1182
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 10,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_passing_near",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 787,
+            "y": 1182
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 11,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_up_near",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 566,
+            "y": 1196
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 12,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_up_near",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 566,
+            "y": 1196
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 13,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_up_near",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 566,
+            "y": 1196
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 14,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_up_near",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 566,
+            "y": 1196
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 15,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 465,
+            "y": 1194
+          },
+          "source_root": {
+            "x": 648,
+            "y": 1194
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_left",
+          "tick": 16,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": -86.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 465,
+            "y": 1194
+          },
+          "source_root": {
+            "x": 648,
+            "y": 1194
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_left",
+          "tick": 17,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": -86.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 465,
+            "y": 1194
+          },
+          "source_root": {
+            "x": 648,
+            "y": 1194
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_left",
+          "tick": 18,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": -86.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 5.5,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 465,
+            "y": 1194
+          },
+          "source_root": {
+            "x": 648,
+            "y": 1194
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_left",
+          "tick": 19,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": -86.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_down_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 474,
+            "y": 1167
+          },
+          "source_root": {
+            "x": 652,
+            "y": 1167
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_left",
+          "tick": 20,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": -86.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_down_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 474,
+            "y": 1167
+          },
+          "source_root": {
+            "x": 652,
+            "y": 1167
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_left",
+          "tick": 21,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": -86.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_down_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 474,
+            "y": 1167
+          },
+          "source_root": {
+            "x": 652,
+            "y": 1167
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_left",
+          "tick": 22,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": -86.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_down_far",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 474,
+            "y": 1167
+          },
+          "source_root": {
+            "x": 652,
+            "y": 1167
+          },
+          "span_start_tick": 16,
+          "support_foot": "ground_contact_left",
+          "tick": 23,
+          "track_id": "r06_playback_track_13",
+          "world_contact": {
+            "x": -86.0,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_passing_far_repair",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 775,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 24,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_passing_far_repair",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 775,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 25,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_passing_far_repair",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 775,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 26,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_passing_far_repair",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 775,
+            "y": 1185
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 27,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_up_far",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 494,
+            "y": 1181
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 28,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_up_far",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 494,
+            "y": 1181
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 29,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_up_far",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 494,
+            "y": 1181
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 30,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_up_far",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 494,
+            "y": 1181
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 31,
+          "track_id": "r06_playback_track_13",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 0,
+          "track_id": "r06_playback_track_14",
+          "world_contact": {
+            "x": 81.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 1,
+          "track_id": "r06_playback_track_14",
+          "world_contact": {
+            "x": 81.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 2,
+          "track_id": "r06_playback_track_14",
+          "world_contact": {
+            "x": 81.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 3,
+          "track_id": "r06_playback_track_14",
+          "world_contact": {
+            "x": 81.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 4,
+          "track_id": "r06_playback_track_14",
+          "world_contact": {
+            "x": 81.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_contact_near",
+          "slip": 0.0,
+          "source_contact": {
+            "x": 819,
+            "y": 1177
+          },
+          "source_root": {
+            "x": 662,
+            "y": 1177
+          },
+          "span_start_tick": 0,
+          "support_foot": "ground_contact_right",
+          "tick": 5,
+          "track_id": "r06_playback_track_14",
+          "world_contact": {
+            "x": 81.5,
+            "y": 0.0
+          }
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_stop_collect",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 771,
+            "y": 1180
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 6,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_stop_collect",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 771,
+            "y": 1180
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 7,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_stop_collect",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 771,
+            "y": 1180
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 8,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_stop_collect",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 771,
+            "y": 1180
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 9,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_stop_collect",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 771,
+            "y": 1180
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 10,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_stop_collect",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 771,
+            "y": 1180
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 11,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_stop_settle",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 12,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_stop_settle",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 13,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_stop_settle",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 14,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_stop_settle",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 15,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_stop_settle",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 16,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_stop_settle",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 17,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 18,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 19,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 20,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 21,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 22,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        },
+        {
+          "actor_root": {
+            "x": 3.0,
+            "y": 0.0
+          },
+          "gait_phase": "right_fix",
+          "slip": null,
+          "source_contact": null,
+          "source_root": {
+            "x": 666,
+            "y": 1183
+          },
+          "span_start_tick": null,
+          "support_foot": null,
+          "tick": 23,
+          "track_id": "r06_playback_track_14",
+          "world_contact": null
+        }
+      ],
+      "total_ticks": 80
+    }
+  },
+  "source_pack_sha256": "1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40",
+  "source_pixels_mutated": false,
+  "status": "PASS",
+  "tracks": 24,
+  "walk_tracks": [
+    {
+      "contacts": [
+        {
+          "end_tick": 24,
+          "landmark": "ground_contact_left",
+          "start_tick": 18,
+          "state": "planted"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "r06_playback_track_07_ground_contact_left_footfall",
+          "frame_index": 3,
+          "name": "footfall_left",
+          "tick": 18
+        }
+      ],
+      "root_plan": {
+        "continuous": true,
+        "direction": "left",
+        "fps": 24,
+        "max_actor_step_px": 0.0,
+        "max_planted_slip_px": 0.0,
+        "scale": 0.5,
+        "ticks": [
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 614,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 0,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 614,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 1,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 614,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 2,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 614,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 3,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 614,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 4,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 614,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 5,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_start_anticipation",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 620,
+              "y": 1187
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 6,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_start_anticipation",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 620,
+              "y": 1187
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 7,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_start_anticipation",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 620,
+              "y": 1187
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 8,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_start_anticipation",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 620,
+              "y": 1187
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 9,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_start_anticipation",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 620,
+              "y": 1187
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 10,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_start_anticipation",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 620,
+              "y": 1187
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 11,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_start_liftoff",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 695,
+              "y": 1184
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 12,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_start_liftoff",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 695,
+              "y": 1184
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 13,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_start_liftoff",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 695,
+              "y": 1184
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 14,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_start_liftoff",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 695,
+              "y": 1184
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 15,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_start_liftoff",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 695,
+              "y": 1184
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 16,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_start_liftoff",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 695,
+              "y": 1184
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 17,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 18,
+            "support_foot": "ground_contact_left",
+            "tick": 18,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 18,
+            "support_foot": "ground_contact_left",
+            "tick": 19,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 18,
+            "support_foot": "ground_contact_left",
+            "tick": 20,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 18,
+            "support_foot": "ground_contact_left",
+            "tick": 21,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 18,
+            "support_foot": "ground_contact_left",
+            "tick": 22,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 18,
+            "support_foot": "ground_contact_left",
+            "tick": 23,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          }
+        ],
+        "total_ticks": 24,
+        "track_id": "r06_playback_track_07"
+      },
+      "track_id": "r06_playback_track_07"
+    },
+    {
+      "contacts": [
+        {
+          "end_tick": 8,
+          "landmark": "ground_contact_left",
+          "start_tick": 0,
+          "state": "planted"
+        },
+        {
+          "end_tick": 24,
+          "landmark": "ground_contact_right",
+          "start_tick": 16,
+          "state": "planted"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "r06_playback_track_08_ground_contact_left_footfall",
+          "frame_index": 0,
+          "name": "footfall_left",
+          "tick": 0
+        },
+        {
+          "event_id": "r06_playback_track_08_ground_contact_right_footfall",
+          "frame_index": 4,
+          "name": "footfall_right",
+          "tick": 16
+        }
+      ],
+      "root_plan": {
+        "continuous": true,
+        "direction": "left",
+        "fps": 24,
+        "max_actor_step_px": 10.5,
+        "max_planted_slip_px": 0.0,
+        "scale": 0.5,
+        "ticks": [
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 0,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 1,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 2,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 3,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_down_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 444,
+              "y": 1192
+            },
+            "source_root": {
+              "x": 630,
+              "y": 1192
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 4,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_down_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 444,
+              "y": 1192
+            },
+            "source_root": {
+              "x": 630,
+              "y": 1192
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 5,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_down_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 444,
+              "y": 1192
+            },
+            "source_root": {
+              "x": 630,
+              "y": 1192
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 6,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_down_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 444,
+              "y": 1192
+            },
+            "source_root": {
+              "x": 630,
+              "y": 1192
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 7,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_passing_repair2",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 554,
+              "y": 1205
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 8,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_passing_repair2",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 554,
+              "y": 1205
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 9,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_passing_repair2",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 554,
+              "y": 1205
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 10,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_passing_repair2",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 554,
+              "y": 1205
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 11,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_up_near",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 831,
+              "y": 1207
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 12,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_up_near",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 831,
+              "y": 1207
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 13,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_up_near",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 831,
+              "y": 1207
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 14,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_up_near",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 831,
+              "y": 1207
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 15,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 779,
+              "y": 1199
+            },
+            "source_root": {
+              "x": 606,
+              "y": 1199
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_right",
+            "tick": 16,
+            "world_contact": {
+              "x": 96.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 779,
+              "y": 1199
+            },
+            "source_root": {
+              "x": 606,
+              "y": 1199
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_right",
+            "tick": 17,
+            "world_contact": {
+              "x": 96.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 779,
+              "y": 1199
+            },
+            "source_root": {
+              "x": 606,
+              "y": 1199
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_right",
+            "tick": 18,
+            "world_contact": {
+              "x": 96.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 10.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 779,
+              "y": 1199
+            },
+            "source_root": {
+              "x": 606,
+              "y": 1199
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_right",
+            "tick": 19,
+            "world_contact": {
+              "x": 96.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": -0.5,
+              "y": 0.0
+            },
+            "gait_phase": "left_down_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 824,
+              "y": 1190
+            },
+            "source_root": {
+              "x": 630,
+              "y": 1190
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_right",
+            "tick": 20,
+            "world_contact": {
+              "x": 96.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": -0.5,
+              "y": 0.0
+            },
+            "gait_phase": "left_down_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 824,
+              "y": 1190
+            },
+            "source_root": {
+              "x": 630,
+              "y": 1190
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_right",
+            "tick": 21,
+            "world_contact": {
+              "x": 96.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": -0.5,
+              "y": 0.0
+            },
+            "gait_phase": "left_down_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 824,
+              "y": 1190
+            },
+            "source_root": {
+              "x": 630,
+              "y": 1190
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_right",
+            "tick": 22,
+            "world_contact": {
+              "x": 96.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": -0.5,
+              "y": 0.0
+            },
+            "gait_phase": "left_down_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 824,
+              "y": 1190
+            },
+            "source_root": {
+              "x": 630,
+              "y": 1190
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_right",
+            "tick": 23,
+            "world_contact": {
+              "x": 96.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": -0.5,
+              "y": 0.0
+            },
+            "gait_phase": "left_passing_far",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 594,
+              "y": 1211
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 24,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": -0.5,
+              "y": 0.0
+            },
+            "gait_phase": "left_passing_far",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 594,
+              "y": 1211
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 25,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": -0.5,
+              "y": 0.0
+            },
+            "gait_phase": "left_passing_far",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 594,
+              "y": 1211
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 26,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": -0.5,
+              "y": 0.0
+            },
+            "gait_phase": "left_passing_far",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 594,
+              "y": 1211
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 27,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": -0.5,
+              "y": 0.0
+            },
+            "gait_phase": "left_up_far",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 761,
+              "y": 1196
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 28,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": -0.5,
+              "y": 0.0
+            },
+            "gait_phase": "left_up_far",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 761,
+              "y": 1196
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 29,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": -0.5,
+              "y": 0.0
+            },
+            "gait_phase": "left_up_far",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 761,
+              "y": 1196
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 30,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": -0.5,
+              "y": 0.0
+            },
+            "gait_phase": "left_up_far",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 761,
+              "y": 1196
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 31,
+            "world_contact": null
+          }
+        ],
+        "total_ticks": 32,
+        "track_id": "r06_playback_track_08"
+      },
+      "track_id": "r06_playback_track_08"
+    },
+    {
+      "contacts": [
+        {
+          "end_tick": 6,
+          "landmark": "ground_contact_left",
+          "start_tick": 0,
+          "state": "planted"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "r06_playback_track_09_ground_contact_left_footfall",
+          "frame_index": 0,
+          "name": "footfall_left",
+          "tick": 0
+        }
+      ],
+      "root_plan": {
+        "continuous": true,
+        "direction": "left",
+        "fps": 24,
+        "max_actor_step_px": 0.0,
+        "max_planted_slip_px": 0.0,
+        "scale": 0.5,
+        "ticks": [
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 0,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 1,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 2,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 3,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 4,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_contact_near_armfix",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 454,
+              "y": 1191
+            },
+            "source_root": {
+              "x": 620,
+              "y": 1191
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_left",
+            "tick": 5,
+            "world_contact": {
+              "x": -83.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_stop_collect",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 479,
+              "y": 1190
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 6,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_stop_collect",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 479,
+              "y": 1190
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 7,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_stop_collect",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 479,
+              "y": 1190
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 8,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_stop_collect",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 479,
+              "y": 1190
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 9,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_stop_collect",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 479,
+              "y": 1190
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 10,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_stop_collect",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 479,
+              "y": 1190
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 11,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_stop_settle",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 615,
+              "y": 1184
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 12,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_stop_settle",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 615,
+              "y": 1184
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 13,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_stop_settle",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 615,
+              "y": 1184
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 14,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_stop_settle",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 615,
+              "y": 1184
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 15,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_stop_settle",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 615,
+              "y": 1184
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 16,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_stop_settle",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 615,
+              "y": 1184
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 17,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 614,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 18,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 614,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 19,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 614,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 20,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 614,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 21,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 614,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 22,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "left_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 614,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 23,
+            "world_contact": null
+          }
+        ],
+        "total_ticks": 24,
+        "track_id": "r06_playback_track_09"
+      },
+      "track_id": "r06_playback_track_09"
+    },
+    {
+      "contacts": [
+        {
+          "end_tick": 24,
+          "landmark": "ground_contact_right",
+          "start_tick": 18,
+          "state": "planted"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "r06_playback_track_12_ground_contact_right_footfall",
+          "frame_index": 3,
+          "name": "footfall_right",
+          "tick": 18
+        }
+      ],
+      "root_plan": {
+        "continuous": true,
+        "direction": "right",
+        "fps": 24,
+        "max_actor_step_px": 0.0,
+        "max_planted_slip_px": 0.0,
+        "scale": 0.5,
+        "ticks": [
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 0,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 1,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 2,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 3,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 4,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 5,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_start_anticipation",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 689,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 6,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_start_anticipation",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 689,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 7,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_start_anticipation",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 689,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 8,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_start_anticipation",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 689,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 9,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_start_anticipation",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 689,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 10,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_start_anticipation",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 689,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 11,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_start_liftoff",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 582,
+              "y": 1181
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 12,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_start_liftoff",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 582,
+              "y": 1181
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 13,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_start_liftoff",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 582,
+              "y": 1181
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 14,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_start_liftoff",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 582,
+              "y": 1181
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 15,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_start_liftoff",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 582,
+              "y": 1181
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 16,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_start_liftoff",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 582,
+              "y": 1181
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 17,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 18,
+            "support_foot": "ground_contact_right",
+            "tick": 18,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 18,
+            "support_foot": "ground_contact_right",
+            "tick": 19,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 18,
+            "support_foot": "ground_contact_right",
+            "tick": 20,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 18,
+            "support_foot": "ground_contact_right",
+            "tick": 21,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 18,
+            "support_foot": "ground_contact_right",
+            "tick": 22,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 18,
+            "support_foot": "ground_contact_right",
+            "tick": 23,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          }
+        ],
+        "total_ticks": 24,
+        "track_id": "r06_playback_track_12"
+      },
+      "track_id": "r06_playback_track_12"
+    },
+    {
+      "contacts": [
+        {
+          "end_tick": 8,
+          "landmark": "ground_contact_right",
+          "start_tick": 0,
+          "state": "planted"
+        },
+        {
+          "end_tick": 24,
+          "landmark": "ground_contact_left",
+          "start_tick": 16,
+          "state": "planted"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "r06_playback_track_13_ground_contact_right_footfall",
+          "frame_index": 0,
+          "name": "footfall_right",
+          "tick": 0
+        },
+        {
+          "event_id": "r06_playback_track_13_ground_contact_left_footfall",
+          "frame_index": 4,
+          "name": "footfall_left",
+          "tick": 16
+        }
+      ],
+      "root_plan": {
+        "continuous": true,
+        "direction": "right",
+        "fps": 24,
+        "max_actor_step_px": 5.5,
+        "max_planted_slip_px": 0.0,
+        "scale": 0.5,
+        "ticks": [
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 0,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 1,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 2,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 3,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_down_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 816,
+              "y": 1171
+            },
+            "source_root": {
+              "x": 670,
+              "y": 1171
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 4,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_down_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 816,
+              "y": 1171
+            },
+            "source_root": {
+              "x": 670,
+              "y": 1171
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 5,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_down_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 816,
+              "y": 1171
+            },
+            "source_root": {
+              "x": 670,
+              "y": 1171
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 6,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_down_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 816,
+              "y": 1171
+            },
+            "source_root": {
+              "x": 670,
+              "y": 1171
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 7,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_passing_near",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 787,
+              "y": 1182
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 8,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_passing_near",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 787,
+              "y": 1182
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 9,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_passing_near",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 787,
+              "y": 1182
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 10,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_passing_near",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 787,
+              "y": 1182
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 11,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_up_near",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 566,
+              "y": 1196
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 12,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_up_near",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 566,
+              "y": 1196
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 13,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_up_near",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 566,
+              "y": 1196
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 14,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_up_near",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 566,
+              "y": 1196
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 15,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 465,
+              "y": 1194
+            },
+            "source_root": {
+              "x": 648,
+              "y": 1194
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_left",
+            "tick": 16,
+            "world_contact": {
+              "x": -86.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 465,
+              "y": 1194
+            },
+            "source_root": {
+              "x": 648,
+              "y": 1194
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_left",
+            "tick": 17,
+            "world_contact": {
+              "x": -86.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 465,
+              "y": 1194
+            },
+            "source_root": {
+              "x": 648,
+              "y": 1194
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_left",
+            "tick": 18,
+            "world_contact": {
+              "x": -86.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 5.5,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 465,
+              "y": 1194
+            },
+            "source_root": {
+              "x": 648,
+              "y": 1194
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_left",
+            "tick": 19,
+            "world_contact": {
+              "x": -86.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 3.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_down_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 474,
+              "y": 1167
+            },
+            "source_root": {
+              "x": 652,
+              "y": 1167
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_left",
+            "tick": 20,
+            "world_contact": {
+              "x": -86.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 3.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_down_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 474,
+              "y": 1167
+            },
+            "source_root": {
+              "x": 652,
+              "y": 1167
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_left",
+            "tick": 21,
+            "world_contact": {
+              "x": -86.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 3.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_down_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 474,
+              "y": 1167
+            },
+            "source_root": {
+              "x": 652,
+              "y": 1167
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_left",
+            "tick": 22,
+            "world_contact": {
+              "x": -86.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 3.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_down_far",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 474,
+              "y": 1167
+            },
+            "source_root": {
+              "x": 652,
+              "y": 1167
+            },
+            "span_start_tick": 16,
+            "support_foot": "ground_contact_left",
+            "tick": 23,
+            "world_contact": {
+              "x": -86.0,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 3.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_passing_far_repair",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 775,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 24,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 3.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_passing_far_repair",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 775,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 25,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 3.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_passing_far_repair",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 775,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 26,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 3.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_passing_far_repair",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 775,
+              "y": 1185
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 27,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 3.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_up_far",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 494,
+              "y": 1181
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 28,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 3.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_up_far",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 494,
+              "y": 1181
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 29,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 3.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_up_far",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 494,
+              "y": 1181
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 30,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 3.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_up_far",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 494,
+              "y": 1181
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 31,
+            "world_contact": null
+          }
+        ],
+        "total_ticks": 32,
+        "track_id": "r06_playback_track_13"
+      },
+      "track_id": "r06_playback_track_13"
+    },
+    {
+      "contacts": [
+        {
+          "end_tick": 6,
+          "landmark": "ground_contact_right",
+          "start_tick": 0,
+          "state": "planted"
+        }
+      ],
+      "events": [
+        {
+          "event_id": "r06_playback_track_14_ground_contact_right_footfall",
+          "frame_index": 0,
+          "name": "footfall_right",
+          "tick": 0
+        }
+      ],
+      "root_plan": {
+        "continuous": true,
+        "direction": "right",
+        "fps": 24,
+        "max_actor_step_px": 0.0,
+        "max_planted_slip_px": 0.0,
+        "scale": 0.5,
+        "ticks": [
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 0,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 1,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 2,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 3,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 4,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_contact_near",
+            "slip": 0.0,
+            "source_contact": {
+              "x": 819,
+              "y": 1177
+            },
+            "source_root": {
+              "x": 662,
+              "y": 1177
+            },
+            "span_start_tick": 0,
+            "support_foot": "ground_contact_right",
+            "tick": 5,
+            "world_contact": {
+              "x": 78.5,
+              "y": 0.0
+            }
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_stop_collect",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 771,
+              "y": 1180
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 6,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_stop_collect",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 771,
+              "y": 1180
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 7,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_stop_collect",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 771,
+              "y": 1180
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 8,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_stop_collect",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 771,
+              "y": 1180
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 9,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_stop_collect",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 771,
+              "y": 1180
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 10,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_stop_collect",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 771,
+              "y": 1180
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 11,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_stop_settle",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 12,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_stop_settle",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 13,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_stop_settle",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 14,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_stop_settle",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 15,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_stop_settle",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 16,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_stop_settle",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 17,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 18,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 19,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 20,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 21,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 22,
+            "world_contact": null
+          },
+          {
+            "actor_root": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "gait_phase": "right_fix",
+            "slip": null,
+            "source_contact": null,
+            "source_root": {
+              "x": 666,
+              "y": 1183
+            },
+            "span_start_tick": null,
+            "support_foot": null,
+            "tick": 23,
+            "world_contact": null
+          }
+        ],
+        "total_ticks": 24,
+        "track_id": "r06_playback_track_14"
+      },
+      "track_id": "r06_playback_track_14"
+    }
+  ]
+}

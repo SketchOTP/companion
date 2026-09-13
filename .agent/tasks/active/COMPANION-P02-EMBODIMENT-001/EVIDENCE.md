@@ -422,3 +422,29 @@ assets/review/p02/author002. Key QA FAILED at E1_OBSERVED; adapter 3 tests and
 retained timing 6 tests PASSED. No v2 runtime, contact or full-action evidence.
 Full raw ZIP exports remain local after Notion's 5 MiB upload limit; selected
 sheets are attached separately. See the result for exact archive hashes.
+
+## R06-C02 grounded integration — 2026-09-13
+
+Review 14 authority was merged normally in `f09e6f1`. The retained C01
+selection is 58 immutable native RGB masters, 24 tracks, and 283 frame slots.
+`ground_r06_c02.py` measures the lowest non-black contour of each accepted
+source image and records visible sole/contact landmarks with source SHA,
+method, review state, and representative overlay evidence; unused anatomy is
+explicitly `not_applicable` or `occluded`. Source pixels were not rewritten.
+The deterministic grounded source-pack SHA is
+`1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`.
+
+Left and right walk plans include actual gait labels, support identities,
+planted spans of at least two 24 Hz ticks, and stitched start→loop→stop root
+continuity. All six walk-track plans report maximum planted-contact slip
+`0.0 px`; sequence boundary jump is `0.0 px`. Local validation passes eight
+content-aware negative mutations, including heuristic landmark placeholders,
+missing support, one-tick contact, >2 px slip, root/sequence discontinuity,
+readback-only render commitment, and viewport-corner-only compositor evidence.
+
+Immutable intake, injected mid-intake failure, ingested-schema validation, and
+sanitized integration recording pass. Hosted Rust/Godot must consume the strict
+`RenderingServer.frame_post_draw` observation and source-rectangle compositor
+samples; exact-head Phase 01/02 regressions remain hosted gates. This remains
+E3 candidate engineering evidence; Phase 02, visual approval, transition
+qualification, and Openbox endurance remain unaccepted/deferred.

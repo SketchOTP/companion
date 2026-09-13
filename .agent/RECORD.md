@@ -788,3 +788,15 @@ ERROR lines, and one V-Sync warning. The full sanitized diagnostic hashes and
 artifact identity are in the committed hosted summary. The preceding headless
 null-texture error is preserved as historical evidence; no error was hidden or
 whitelisted.
+
+## 2026-09-13 — R06-C02 semantic grounding
+
+Review 14 C02 implementation follows the retained C01 source selection without
+pixel mutation. Grounding is measured from actual source contours, with
+provenance and representative overlays; locomotion plans bind support identity
+to 24 Hz actor-root translation and stitched sequence boundaries. Local
+validation rejects heuristic landmarks, fabricated contacts, world slip,
+discontinuity, and weak compositor/render evidence. The source-pack SHA is
+`1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`. This is
+bounded candidate evidence only; hosted regressions and Architect review remain
+required.

@@ -925,3 +925,15 @@ with `SubViewport.texture.get_image`, zero Godot errors, and one retained V-Sync
 warning. Full sanitized evidence is published in the workflow artifact and the
 committed hosted summary. Phase 02 remains unaccepted; transition/endurance were
 not run.
+
+## R06-C02 grounded integration correction — 2026-09-13
+
+Merged Architect Review 14 normally in `f09e6f1`. Preserved the 58-source,
+24-track, 283-slot C01 selection and changed only semantic evidence layers.
+Actual source contours now ground visible sole/contact landmarks with explicit
+provenance; stitched 24 Hz left/right start-loop-stop plans report continuous
+roots and `0.0 px` maximum planted-contact slip. Local source/ingested schema,
+atomic-intake failure, export evidence, and eight tamper negatives pass. Godot
+render commitment is strict `RenderingServer.frame_post_draw`; compositor QA
+targets transformed source-field samples. Hosted Rust/Godot and exact-head
+regressions remain pending. Phase 02 remains unaccepted.
