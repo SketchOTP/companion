@@ -486,3 +486,23 @@ and 168 semantic events. Source, runtime, and receipt hashes are
 `466dd02abb5cc5123767a8c91283f38621424b717f9fc1eb8056fa5d6afdb9d7`.
 No source PNG bytes changed. C02 is submitted for Architect review; Phase 02
 and transition/Openbox gates remain unaccepted and unrun.
+
+## R06-C03 continuous stance investigation — 2026-09-13
+
+Review 15 was merged normally. The frozen 58-source runtime pack remains
+byte-identical (`1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`).
+`qualify_r06_c03.py` measures lowest visible sole contours and a reproducible
+torso-centroid body anchor for every frame in all six left/right start, loop,
+and stop tracks. Passing/up frames are included when a sole remains grounded;
+double support is retained when two soles occupy the four-pixel ground band.
+
+The fail-closed reconstruction cannot qualify intended travel without changing
+pixels or inventing a stride. Left touchdown deltas are `+135.5,+72.0,+135.5,+72.0`
+with two-loop net `+255.0 px` (required screen-left); right deltas are
+`-118.0,-134.5,-118.0,-134.5` with two-loop net `-336.0 px` (required screen-right).
+Full start→loop→loop→stop nets are `+415.0 px` left and `-505.0 px` right.
+All seven executable negative tests reject omitted support, identity swap,
+reversed ordering, zero travel, recentering, hidden reset, and >2 px slip.
+Result is BLOCKED with the exact contradiction retained in
+`experiments/p02-embodiment/results/r06-c03/support_investigation.json`.
+Do not generate or edit art; return this geometric contradiction to the Architect.

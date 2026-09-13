@@ -627,3 +627,13 @@ hang. Explicit script-level callback state, fail-fast handling, and a bounded
 runner timeout made the result inspectable. The final exact head observed
 `RenderingServer.frame_post_draw`; viewport readback remains a separate
 observation and is never substituted for render commitment.
+
+## 2026-09-13 — Support labels cannot rescue contradictory touchdown geometry
+
+For locomotion, stance must be derived across the complete visible interval,
+not limited to contact/down labels. Once contour-grounded soles and a stable
+body anchor are used, the frozen left/right sequences yield repeated touchdown
+anchors in the opposite requested direction. Zero planted slip can coexist with
+wrong-direction travel; pinning a contact is not proof of walking direction.
+Preserve the contradiction and escalate rather than relabeling feet, inventing
+a stride, or hiding a root reset.

@@ -947,3 +947,17 @@ workflow `34767677707` on the same SHA. Godot 4.7.2 observed
 events were recorded with zero Godot ERROR lines and one retained V-Sync
 warning. No source bytes changed or production art was generated. Phase 02
 remains unaccepted; transition and Openbox gates were not run.
+
+## 2026-09-13 — R06-C03 support investigation BLOCKED
+
+Merged Review 15 normally and preserved the C02 source pack unchanged. The new
+fail-closed C03 probe classifies support for every frame in all six left/right
+start, loop, and stop tracks from measured sole contours, including passing/up
+support and double support. Continuous 24 Hz root plans derived from the frozen
+geometry produce left touchdown deltas `+135.5,+72.0,+135.5,+72.0` and two-loop
+net `+255.0 px`, and right deltas `-118.0,-134.5,-118.0,-134.5` and two-loop
+net `-336.0 px`. Both reverse the requested screen direction. Complete
+sequence nets are `+415.0 px` left and `-505.0 px` right. The validator returns
+BLOCKED while all seven semantic tamper negatives pass. This exact
+contradiction is retained; no art or source bytes were changed and no
+transition/endurance claim is made.

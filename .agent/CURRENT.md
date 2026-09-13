@@ -90,3 +90,16 @@ workflow `34767677707` on the same exact SHA. The strict Godot result observed
 168 semantic events, zero Godot ERROR lines, and one retained V-Sync warning.
 R06-C02 is submitted for Architect review. Phase 02 remains active and
 unaccepted; transition and Openbox qualification remain unrun.
+
+## R06-C03 result (2026-09-13)
+
+Review 15 was merged normally and C03 was investigated without source-pixel
+mutation. Every locomotion frame in the six left/right start, loop, and stop
+tracks has contour-derived support evidence. The evidence-supported 24 Hz
+plans show the frozen geometry advances opposite the requested direction:
+left two-loop net `+255.0 px` and right two-loop net `-336.0 px`; complete
+start→loop→loop→stop nets are `+415.0 px` and `-505.0 px`. The C03 validator
+returns BLOCKED and all seven semantic negative tests pass. This is an exact
+geometric contradiction, not a weak or omitted test. Phase 02 remains active
+and unaccepted; no art was generated or modified and transition/Openbox gates
+remain unrun.

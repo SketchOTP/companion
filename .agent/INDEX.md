@@ -79,3 +79,12 @@ If the frozen drawings cannot support a truthful alternating stance model and cu
 - legal transition campaign over the accepted grounded real-art graph;
 - dedicated 1366x768 Openbox two-hour endurance;
 - final Phase 02 acceptance and PR merge decision.
+
+## R06-C03 disposition
+
+C03 support investigation is BLOCKED on the frozen drawings: contour-derived
+touchdown anchors reverse the requested travel (left `+135.5,+72.0` repeating;
+right `-118.0,-134.5` repeating). Per-frame support evidence and seven
+executable negatives are committed under `experiments/p02-embodiment/results/r06-c03/`.
+No image bytes changed. Await Architect decision; do not proceed to transition
+qualification or endurance.

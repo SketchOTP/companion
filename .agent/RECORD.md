@@ -814,3 +814,15 @@ runtime, and receipt hashes are
 `466dd02abb5cc5123767a8c91283f38621424b717f9fc1eb8056fa5d6afdb9d7`.
 This is bounded candidate integration evidence; no Phase 02 acceptance or
 transition/Openbox gate is claimed.
+
+## 2026-09-13 — R06-C03 exact contradiction
+
+Evidence profile `COMPANION_P02_R06_C03_SUPPORT_INVESTIGATION_V1` is BLOCKED.
+Source pack SHA remains
+`1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`; source
+PNG mutation count is zero. Contour-derived per-frame support states are
+complete for six locomotion tracks. Two-loop touchdown deltas are positive for
+left (`+135.5,+72.0` repeating) and negative for right (`-118.0,-134.5`
+repeating), opposite the intended directions. All seven executable negative
+tests pass. The result requires Architect direction before any transition or
+endurance work.
