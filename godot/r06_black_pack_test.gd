@@ -23,6 +23,10 @@ func _run() -> void:
 	var parsed = JSON.parse_string(FileAccess.get_file_as_string(pack_path))
 	if not parsed is Dictionary: _finish("pack JSON invalid"); return
 	pack = parsed
+	root.size = Vector2i(640, 640)
+	root.content_scale_size = Vector2i(640, 640)
+	root.transparent_bg = false
+	RenderingServer.set_default_clear_color(Color.BLACK)
 	var source_pack: bool = pack.get("profile") == "MON_OPAQUE_BLACK_FRAME_SOURCE_PACK_V1"
 	var ingested_pack: bool = pack.get("profile") == "MON_INGESTED_FRAME_PACK_V1" and pack.get("source_profile") == "MON_OPAQUE_BLACK_FRAME_SOURCE_PACK_V1"
 	if not source_pack and not ingested_pack: errors.append("wrong source profile")
@@ -35,9 +39,8 @@ func _run() -> void:
 	_finish("complete")
 
 func _play_track(track: Dictionary) -> void:
-	var container := SubViewportContainer.new(); container.size = Vector2(640, 640); get_root().add_child(container)
-	var viewport := SubViewport.new(); viewport.size = Vector2i(640, 640); viewport.render_target_update_mode = SubViewport.UPDATE_ALWAYS; viewport.transparent_bg = false; container.add_child(viewport)
-	var sprite := AnimatedSprite2D.new(); sprite.position = Vector2(320, 320); sprite.scale = Vector2(0.5, 0.5); sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST; viewport.add_child(sprite)
+	var container := Node2D.new(); get_root().add_child(container)
+	var sprite := AnimatedSprite2D.new(); sprite.position = Vector2(320, 320); sprite.scale = Vector2(0.5, 0.5); sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST; container.add_child(sprite)
 	var frames := SpriteFrames.new(); frames.remove_animation("default"); var name := String(track.get("track_id")); frames.add_animation(name); frames.set_animation_speed(name, 24.0)
 	var parent := pack_path.get_base_dir()
 	for frame in track.get("frames", []):
@@ -52,11 +55,11 @@ func _play_track(track: Dictionary) -> void:
 	events.append({"event":"track_resolved","track_id":name,"monotonic_usec":Time.get_ticks_usec()})
 	events.append({"event":"track_validated","track_id":name,"monotonic_usec":Time.get_ticks_usec()})
 	sprite.animation = name; sprite.frame = 0; sprite.play(name)
-	if not await _await_frame_post_draw(viewport):
+	if not await _await_frame_post_draw():
 		errors.append("render boundary not observed")
 		container.queue_free()
 		return
-	var rendered := viewport.get_texture().get_image()
+	var rendered := get_root().get_texture().get_image()
 	if rendered == null or rendered.is_empty():
 		errors.append("viewport readback unavailable")
 		container.queue_free()
@@ -82,12 +85,12 @@ func _play_track(track: Dictionary) -> void:
 		if measured_assets.has(asset_id):
 			continue
 		sprite.stop(); sprite.frame = frame_index
-		if not await _await_frame_post_draw(viewport):
+		if not await _await_frame_post_draw():
 			errors.append("render boundary not observed for compositor source")
 			continue
 		var source_path := image_path_for_frame(track, frame_index, parent)
 		var unique_source := Image.load_from_file(source_path)
-		var unique_rendered := viewport.get_texture().get_image()
+		var unique_rendered := get_root().get_texture().get_image()
 		if unique_source == null or unique_source.is_empty() or unique_rendered == null or unique_rendered.is_empty():
 			errors.append("compositor source readback unavailable")
 		else:
@@ -101,10 +104,11 @@ func _play_track(track: Dictionary) -> void:
 	events.append({"event":"completed","track_id":name,"monotonic_usec":Time.get_ticks_usec()})
 	container.queue_free(); await process_frame
 
-func _await_frame_post_draw(viewport: SubViewport) -> bool:
+func _await_frame_post_draw() -> bool:
 	var observed: bool = false
 	var callback := func() -> void: observed = true
 	RenderingServer.frame_post_draw.connect(callback, CONNECT_ONE_SHOT)
+	await process_frame
 	RenderingServer.force_draw()
 	for _i in range(120):
 		if observed:
