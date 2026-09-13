@@ -72,6 +72,7 @@ func _await_frame_post_draw(viewport: SubViewport) -> bool:
 	var observed: bool = false
 	var callback := func() -> void: observed = true
 	RenderingServer.frame_post_draw.connect(callback, CONNECT_ONE_SHOT)
+	RenderingServer.force_draw()
 	for _i in range(120):
 		if observed:
 			render_observation = "RenderingServer.frame_post_draw"
@@ -79,10 +80,12 @@ func _await_frame_post_draw(viewport: SubViewport) -> bool:
 		await process_frame
 	if RenderingServer.frame_post_draw.is_connected(callback):
 		RenderingServer.frame_post_draw.disconnect(callback)
-	var rendered := viewport.get_texture().get_image()
-	if rendered != null and not rendered.is_empty():
-		render_observation = "SubViewport.texture.get_image"
-		return true
+	var texture := viewport.get_texture()
+	if texture != null:
+		var rendered := texture.get_image()
+		if rendered != null and not rendered.is_empty():
+			render_observation = "SubViewport.texture.get_image"
+			return true
 	return observed
 
 func _finish(reason: String) -> void:

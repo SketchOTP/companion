@@ -70,7 +70,21 @@ jobs:
       - name: Exact-track Godot playback over black habitat
         run: |
           set -euo pipefail
-          "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" --headless --audio-driver Dummy --path godot --script r06_black_pack_test.gd -- --pack="$RUNNER_TEMP/r06-intake/runtime/pack.json" | tee "$RUNNER_TEMP/r06-results/godot-playback.json"
+          python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+            --godot "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" \
+            --out "$RUNNER_TEMP/r06-results" --mode semantic \
+            --pack "$RUNNER_TEMP/r06-intake/runtime/pack.json" \
+            --script r06_black_pack_test.gd --label r06-black-pack
+          RESULT_PATH="$RUNNER_TEMP/r06-results/result.json" python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          result = json.loads(Path(os.environ["RESULT_PATH"]).read_text())
+          assert result["status"] == "PASSED", result
+          assert result["godot_error_count"] == 0, result
+          semantic = result.get("semantic_test_result") or {}
+          assert semantic.get("status") == "PASS", result
+          PY
       - name: Upload R06-C01 evidence (including failures)
         if: always()
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
