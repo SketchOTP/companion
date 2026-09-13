@@ -21,7 +21,8 @@ from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[3]
-RUNNER_VERSION = "r04-c03-godot-runner-v1"
+RUNNER_VERSION = "r04-c03-godot-runner-v2"
+PROCESS_TIMEOUT_SECONDS = 90
 ERROR_RE = re.compile(r"\bERROR:\s*.*")
 WARNING_RE = re.compile(r"\bWARNING:\s*.*")
 
@@ -205,7 +206,27 @@ def run_qualification(
     command = [str(godot), "--log-file", str(engine_path), *godot_args]
     wrapped = ["xvfb-run", "-a", "-e", str(xvfb_path), *command] if use_xvfb and shutil.which("xvfb-run") else command
     started = time.monotonic_ns()
-    process = subprocess.run(wrapped, cwd=ROOT, text=True, capture_output=True, check=False)
+    timed_out = False
+    try:
+        process = subprocess.run(
+            wrapped,
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+            timeout=PROCESS_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired as exc:
+        # A missing render boundary must become a bounded, inspectable
+        # qualification failure rather than hanging the hosted job forever.
+        timed_out = True
+        stdout = exc.stdout or ""
+        stderr = exc.stderr or ""
+        if isinstance(stdout, bytes):
+            stdout = stdout.decode("utf-8", errors="replace")
+        if isinstance(stderr, bytes):
+            stderr = stderr.decode("utf-8", errors="replace")
+        process = subprocess.CompletedProcess(wrapped, returncode=124, stdout=stdout, stderr=stderr)
     elapsed_ns = time.monotonic_ns() - started
     stdout_path.write_text(process.stdout, encoding="utf-8")
     stderr_path.write_text(process.stderr, encoding="utf-8")
@@ -224,6 +245,8 @@ def run_qualification(
         "mode": mode,
         "godot_version": _version(godot),
         "process_exit_code": process.returncode,
+        "process_timed_out": timed_out,
+        "process_timeout_seconds": PROCESS_TIMEOUT_SECONDS,
         "display_server": os.environ.get("DISPLAY", "unavailable"),
         "renderer_driver": _renderer_summary(all_lines),
         "command": _sanitized_command(wrapped, out.parent),
