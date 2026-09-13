@@ -93,7 +93,9 @@ func _play_track(track: Dictionary) -> void:
 		sprite.stop(); sprite.frame = frame_index
 		if not await _await_frame_post_draw():
 			errors.append("render boundary not observed for compositor source")
-			continue
+			track_render_observed = false
+			container.queue_free()
+			return
 		var source_path := image_path_for_frame(track, frame_index, parent)
 		var unique_source := Image.load_from_file(source_path)
 		var unique_rendered := get_root().get_texture().get_image()
