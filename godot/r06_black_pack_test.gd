@@ -115,7 +115,7 @@ func _await_frame_post_draw() -> bool:
 	RenderingServer.frame_post_draw.connect(_on_frame_post_draw, CONNECT_ONE_SHOT)
 	await process_frame
 	RenderingServer.force_draw()
-	for _i in range(120):
+	for _i in range(30):
 		if frame_post_draw_seen:
 			render_observation = "RenderingServer.frame_post_draw"
 			return true
