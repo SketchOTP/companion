@@ -320,3 +320,142 @@ wire evidence; prove Godot client state/topology recovery; run a focused
 900-second resident regression; and enforce all equations with a fail-closed
 semantic validator. Preserve earlier false results as superseded history. Do
 not open later phases, adopt mechanisms, or claim product capability.
+
+## COMPANION-P02-EMBODIMENT-001 — execution record (2026-09-11)
+
+Execute the complete Phase 02 embodiment package: reference/construction
+model, deterministic MON_FRAME_V1 raster pipeline, clip contracts and library,
+layered Godot avatar/director, bridge, bounded habitat, packs, QA, review
+materials, 10,000-case transition evidence, and target playback. New art is a
+candidate pending operator review; no organism, memory, speech, perception,
+care, or later-phase capability is authorized.
+
+The final candidate reconciliation pins ZIP metadata for byte-identical
+clean-room rebuilds in `6c81838899c943ea8d195230f9849140f0b54f5f`.
+
+The candidate review sheet was then corrected to render all four diagonal
+views in `26571cbab782e5fc0ea712f577b8112767f05782`.
+
+## COMPANION-P02-EMBODIMENT-001 — Architect Review 02 R02 continuation (2026-09-11)
+
+Replan the active work to the exact-reference, production-canon, and minimal
+motion-proof gate. Preserve prior generated work as rejected history, remove
+bulk generated metadata/output from the final tree, and compare layered vector
+and raster authoring candidates without adopting either. Produce only one
+front-left idle proof, walk proof, orient connector pair, and listen/
+acknowledge proof. Stop for operator selection before eight-direction or
+full-family expansion. The dedicated workflow is `phase02-canon-motion-proof`.
+# 2026-09-11 — Architect Review 01 continuation
+
+`COMPANION-P02-EMBODIMENT-001` continues on `codex/p02-embodiment-001` after
+exact native reference transfer. The correction is limited to reference-
+grounded construction, temporal core tracks, Godot timing/track loading, real
+atlas packaging/QA, artifact publication, and dedicated Phase 02 CI. Operator
+visual approval and the dedicated Openbox target run remain required; no later
+phase or product capability is authorized.
+
+## 2026-09-11 — Architect Review 03 R03 correction
+
+Continue the existing Phase 02 branch with a narrow source-and-motion proof:
+`MON_BODY_SOURCE_V2`, five explicitly articulated temporal tracks, aligned v2
+schema/Rust/Godot contracts, 24-FPS raster playback, rendered root/contact QA,
+tamper negatives, and accessible review derivatives. Do not scale the library,
+run Openbox endurance, or request operator approval until this candidate proof
+is complete. Preserve all R02 proxy-motion evidence as superseded history.
+
+## 2026-09-11 — Architect Review 04 authored-frame boundary
+
+Supersede R03 visual invention and preserve it only as negative evidence.
+Codex must implement `MON_AUTHORED_FRAME_PACK_V1`, an unambiguous Architect
+frame request, immutable content-addressed intake, explicit Rust types, and a
+Godot first-frame-before-started runtime gate. Only obvious synthetic graphics
+may be generated. Return `READY_FOR_ARCHITECT_FRAME_PACK`; do not request
+operator approval or accept Phase 02.
+
+## 2026-09-11 — Architect Review 05 / R04-C01
+
+Continue the same branch with a narrow authored-frame contract correction:
+separate source, ingested, and receipt records; represent entry/exit and
+per-frame facing plus occluded landmarks; enforce request completeness,
+identity/reuse, PNG profile, staged atomic intake, runtime integrity, and
+render-commit acknowledgment. Generate no production pixels. Preserve the
+R02/R03 failures and return `READY_FOR_ARCHITECT_FRAME_PACK` only after the
+fail-closed checks pass.
+
+## 2026-09-12 — R04-C01 completion routing
+
+The correction is submitted for independent Architect review with final status
+`READY_FOR_ARCHITECT_FRAME_PACK`. Keep PR #9 draft/open/unmerged and Issue #8
+open; do not request visual approval or generate production pixels.
+
+## 2026-09-12 — R04-C02 evidence-semantics correction
+
+Continue the existing Phase 02 branch with one synthetic-only correction:
+make the human and executable request identical; build and intake the complete
+`phase02_bounded_motion_proof_v1` pack; enforce endpoints, event order,
+same-track reuse, exact PNG structure, fsync-backed atomic publication, and
+truthful render-boundary naming. No production pixels or visual approval are
+authorized. Missing exact Rust/Godot executables remain explicit blockers.
+
+## 2026-09-12 — R04-C03 diagnostic parity
+
+Review 07 continues C02 without reopening its contract or intake semantics.
+Use one canonical Godot runner for local, direct-workflow, and evidence paths;
+capture stdout, stderr, `--log-file`, and Xvfb diagnostics separately; retain
+exact application error lines; run identical import/cold/warm invocations; and
+publish diagnostics even when validation fails. Unknown Godot `ERROR:` output
+remains fail-closed. No production art, host changes, or Phase 03 work is
+authorized.
+
+## 2026-09-12 — R04-C03 completion reconciliation
+
+The hosted discrepancy was captured as an ALSA initialization diagnostic before
+the minimal correction. The canonical runner now explicitly selects Godot's
+Dummy audio driver for every mode, while retaining strict application-error
+classification and separate Xvfb wrapper output. Hosted Phase 02 import/cold/
+warm and stability runs plus hosted Phase 01 rerun are green and diagnostics
+were uploaded on both attempts. The bounded handoff is
+`READY_FOR_ARCHITECT_FRAME_PACK`; no production art or Phase 02 acceptance is
+claimed.
+
+## 2026-09-12 — R04-C04 readiness-race correction
+
+Continue the existing Phase 02 branch after a normal merge of Architect Review
+08. Replace the inherited one-shot readiness sample with fixed bounded
+monotonic polling of explicit health state, require two consecutive complete
+ready observations, retain sanitized startup trace evidence, and fail closed on
+timeout or supervisor exit. Add delayed-ready, never-ready, and early-exit
+synthetic tests, run the complete inherited Phase 01 verification, and obtain
+three same-SHA hosted Phase 01 passes plus a same-SHA Phase 02 pass. Preserve
+C02/C03, do not generate production art, do not alter protected Graft files,
+and keep PR #9 draft/open/unmerged and Issue #8 open.
+
+## 2026-09-12 — C04 hosted closeout
+
+The readiness race correction passed the initial hosted Phase 01 run
+`34674883461` / job `103502845478`, same-head rerun #1 job `103503853827`,
+and same-head rerun #2 job `103504776796`, all on
+`e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b`. Phase 02 run `34674883457` /
+job `103502845517` passed on the same SHA. This closes the C04 readiness gate
+only and does not accept Phase 02 or authorize production art, visual approval,
+or later-phase work.
+
+## 2026-09-12 — R05 operator-authorized candidate sprite pack
+
+Architect Review 10 and adopted ADR-57 supersede the prior Codex art-authorship
+hold. Continue PR #9 on `codex/p02-embodiment-001` and use the exact approved
+identity/turnaround references plus approved image generation to create only
+the bounded 8-track candidate review pack. Normalize to MON_FRAME_V1, run the
+actual pack through immutable intake, Rust, Godot, QA, CI, and artifact
+publication, then stop for Architect/operator review. Do not scale the library,
+merge the PR, close Issue #8, run Openbox endurance, or begin Phase 03.
+
+## 2026-09-12 — Operator black-backdrop workaround
+
+Operator explicitly requested black-backed art plus black Godot background.
+Changed clear color and foundation backdrop, generated one separate front
+candidate via built-in imagegen, and verified actual Xvfb frame_post_draw plus
+black viewport corners. Missing image and headless no-render fail as expected.
+No cutout API, billing change, new dependency, original-art mutation or intake
+waiver. Opaque still review works; full action conversion remains unfinished.
+See active R05_BLACK_BACKDROP_RESULT.md. No Phase02 acceptance or Phase03 work.

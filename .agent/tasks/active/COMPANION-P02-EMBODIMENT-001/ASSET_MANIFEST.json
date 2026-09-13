@@ -1,29 +1,88 @@
 {
-  "schema": "companion-mon-asset-manifest-v1",
-  "status": "PENDING_CODEX_EXECUTION",
+  "approved_references": {
+    "identity_inspected_derivative_sha256": "a242d3f493db7c70e766ce64259850c3961e4e1cdbbfae015fc85611324af6f9",
+    "identity_native_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+    "turnaround_sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
+  },
+  "body_frame_sources": 28,
+  "body_revision": "mon-body-v2-r03",
   "canonical_frame_profile": "MON_FRAME_V1",
-  "approved_references": [],
-  "body_revision": null,
-  "palette": [],
-  "directions": [
-    "front",
-    "front_left",
-    "left",
-    "back_left",
-    "back",
-    "back_right",
-    "right",
-    "front_right"
+  "clip_families": [
+    "idle_breathe",
+    "walk",
+    "orient_front_to_front_left",
+    "orient_front_left_to_front",
+    "listen_acknowledge"
   ],
-  "clip_families": [],
-  "body_frame_sources": [],
+  "directions": ["front", "front_right", "front_left"],
   "overlays": {
-    "eye_gaze_blink": [],
-    "mouth_shapes": []
+    "eye_gaze_blink": "DEFERRED_UNTIL_OPERATOR_CANON_APPROVAL",
+    "mouth_shapes": "DEFERRED_UNTIL_OPERATOR_CANON_APPROVAL"
   },
   "packs": [],
-  "review_artifacts": [],
+  "palette_roles": [
+    "outline",
+    "body",
+    "light",
+    "shadow",
+    "eye",
+    "pupil",
+    "mouth"
+  ],
+  "review_artifacts": [
+    "assets/source/p02/review/r02/construction_front_profile_frontleft.png",
+    "assets/source/p02/review/r02/root_contact_overlay.png",
+    "assets/source/p02/review/r02/authoring_comparison.png",
+    "assets/source/p02/review/r02/idle_breathe_front_left.png",
+    "assets/source/p02/review/r02/walk_front_left.png",
+    "assets/source/p02/review/r02/connectors_reactions.png",
+    "assets/source/p02/r03/review/idle_breathe_normal.gif",
+    "assets/source/p02/r03/review/walk_normal.gif",
+    "assets/source/p02/r03/review/orient_front_to_front_left_normal.gif",
+    "assets/source/p02/r03/review/orient_front_left_to_front_normal.gif",
+    "assets/source/p02/r03/review/listen_acknowledge_normal.gif"
+  ],
+  "schema": "companion-mon-asset-manifest-v1",
+  "status": "CODEX_GENERATED_CANDIDATE_PENDING_OPERATOR_APPROVAL",
+  "unique_body_frame_sha256": 25,
   "validation": {
-    "status": "NOT_RUN"
+    "candidate_approval": "PENDING_OPERATOR_VISUAL_REVIEW",
+    "status": "R03_CANDIDATE_PROOF_PASSED",
+    "validator": "experiments/p02-embodiment/scripts/validate_r03_motion.py"
+  },
+  "superseding_correction": {
+    "native_identity_directly_verified": true,
+    "native_turnaround_directly_verified": true,
+    "current_core_manifest": "assets/source/p02/proof-motion/manifest.json",
+    "current_temporal_tracks": "assets/source/p02/proof-motion/temporal_tracks.json",
+    "current_core_frame_count": 26,
+    "current_core_track_count": 6,
+    "current_core_unique_frame_count": 26,
+    "current_gate": "R02_MINIMAL_MOTION_PROOF",
+    "candidate_status": "CANDIDATE_PENDING_OPERATOR_VISUAL_APPROVAL",
+    "superseded_claims": [
+      "old 32-family directional catalog as temporal animation",
+      "old eight-direction single-sequence playback",
+      "old flush atlas gutter/extrusion claim",
+      "old 10000-transition result as temporal evidence"
+    ],
+    "generated_corpus_policy": "workflow_artifact_and_private_local_export_only",
+    "historical_scale_counts": {"families": 32, "directions": 8, "frames": 256, "core_tracks": 66, "core_drawings": 334}
+  },
+  "r03_correction": {
+    "body_source": "assets/source/p02/r03/mon_body_source_v2.json",
+    "godot_source": "godot/mon_body_source_v2.tscn",
+    "track_manifest": "experiments/p02-embodiment/results/r03/temporal_tracks_v2.json",
+    "track_contract": "contracts/schemas/mon-temporal-track-v2.schema.json",
+    "track_count": 5,
+    "frame_count": 28,
+    "unique_rendered_frame_hashes": 25,
+    "families": ["idle_breathe", "walk", "orient_front_to_front_left", "orient_front_left_to_front", "listen_acknowledge"],
+    "review_directory": "assets/source/p02/r03/review",
+    "validation": "experiments/p02-embodiment/results/r03/validation.json",
+    "godot_playback": "experiments/p02-embodiment/results/r03/godot_playback.json",
+    "status": "CANDIDATE_PENDING_OPERATOR_VISUAL_APPROVAL",
+    "evidence_level": "E3_TARGET_TESTED",
+    "supersedes": ["R02 flattened-image proof", "R02 direction-as-time catalog", "R02 declared-only contact proof"]
   }
 }

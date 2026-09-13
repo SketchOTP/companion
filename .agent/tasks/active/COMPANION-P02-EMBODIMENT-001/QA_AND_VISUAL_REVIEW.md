@@ -30,3 +30,49 @@ pending. Preserve rejected frames and reasons.
 Codex cannot self-approve identity or animation quality. List exact operator
 questions and the minimum review artifact needed for each. Do not conflate
 technical validation with visual approval.
+
+## Executed result
+
+Automated asset QA passed: 256/256 decodable RGBA frames, 256 unique hashes,
+32 families, eight directions, 24 eye overlays, eight mouth overlays, safety
+region and zero-root-drift metadata, valid pack and atlas dimensions. Contract
+QA passed for all ten schemas with valid, missing-required, and unknown-field
+cases. Review derivatives include construction diagonal candidates, palette /
+anatomy, eight-direction, family, transition, eye, and mouth sheets. They are
+new candidates pending operator review; automated QA is not visual approval.
+# Architect Review 01 correction — review package (2026-09-11)
+
+The committed review set now includes native six-view correspondence, diagonal
+candidates, proportion/root grid, anatomy/palette, pose/shadow limits, and the
+temporal core/idle-variant sheets.  `validate_core_motion.py` checks rendered
+canvas, alpha, safety bounds, root landmarks, hashes, track floors, atlas
+placement, and overlap.  All new construction, diagonal, motion, and identity
+decisions remain pending operator visual approval.
+# R03 review gate
+
+The R03 validator checks rendered pixels and source hierarchy rather than
+declared metadata alone: 1024x1024 RGBA canvas, safety bounds, fixed root,
+planted idle contacts, walk swing displacement, facing endpoint differences,
+anatomy coverage, frame/track hashes, schema, and 24-FPS timing. Five
+tamper-negative mutations fail closed. Review derivatives for all five tracks
+are committed under `assets/source/p02/r03/review/`; operator approval is still
+pending and no full-library review may be requested.
+# R04 review boundary
+
+No visual approval package is produced or requested. The approved identity is
+used only as a one-frame import smoke fixture. The geometric animation pack is
+`synthetic_test_only`. Operator review begins only after the AI Architect lands
+the bounded pack described by `ARCHITECT_FRAME_REQUEST_V1.md`.
+
+## R05 candidate review package
+
+Normal-speed, quarter-speed, ordered-strip, silhouette-only, and root/contact
+derivatives for all eight tracks are committed under
+`assets/source/p02/r05/review/` and regenerated into the full workflow artifact.
+Automated QA observes exact root metadata, transparent perimeter, source safety
+bounds, and declared planted-contact drift from rendered landmark positions.
+
+The selected candidate is recognizably grounded in the approved purple mon and
+shows temporal body/limb changes. Automated checks cannot decide silhouette,
+anatomy, expression, gait appeal, or motion quality. Those decisions remain
+explicitly `PENDING` for operator visual review.

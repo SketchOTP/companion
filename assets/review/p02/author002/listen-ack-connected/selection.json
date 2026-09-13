@@ -1,0 +1,100 @@
+{
+  "profile": "BLACK_LISTEN_ACK_REVIEW_V1",
+  "approval_state": "candidate",
+  "source_format": "RAW_BLACK_REVIEW_NOT_MON_FRAME_V1",
+  "sequence": [
+    {
+      "drawing_id": "front",
+      "duration_ticks": 12,
+      "label": "front rest"
+    },
+    {
+      "drawing_id": "attention_lead",
+      "duration_ticks": 3,
+      "label": "attention leads through eyes"
+    },
+    {
+      "drawing_id": "listen_entry",
+      "duration_ticks": 4,
+      "label": "enter listening"
+    },
+    {
+      "drawing_id": "listen_hold",
+      "duration_ticks": 32,
+      "label": "listening hold"
+    },
+    {
+      "drawing_id": "attention_02",
+      "duration_ticks": 3,
+      "label": "release listening hold"
+    },
+    {
+      "drawing_id": "attention_01",
+      "duration_ticks": 3,
+      "label": "acknowledgment anticipation"
+    },
+    {
+      "drawing_id": "acknowledge_down",
+      "duration_ticks": 3,
+      "label": "nod downward"
+    },
+    {
+      "drawing_id": "nod_01",
+      "duration_ticks": 3,
+      "label": "continue nod"
+    },
+    {
+      "drawing_id": "nod_02",
+      "duration_ticks": 6,
+      "label": "acknowledgment low point"
+    },
+    {
+      "drawing_id": "recover_01",
+      "duration_ticks": 3,
+      "label": "recover from nod"
+    },
+    {
+      "drawing_id": "recover_02",
+      "duration_ticks": 3,
+      "label": "upward follow-through"
+    },
+    {
+      "drawing_id": "recover_03",
+      "duration_ticks": 4,
+      "label": "follow-through apex"
+    },
+    {
+      "drawing_id": "settle_01",
+      "duration_ticks": 3,
+      "label": "begin settling"
+    },
+    {
+      "drawing_id": "settle_02",
+      "duration_ticks": 3,
+      "label": "settle chest"
+    },
+    {
+      "drawing_id": "settle_03",
+      "duration_ticks": 3,
+      "label": "relax posture"
+    },
+    {
+      "drawing_id": "rest_approach_03",
+      "duration_ticks": 4,
+      "label": "approach front rest"
+    },
+    {
+      "drawing_id": "front",
+      "duration_ticks": 24,
+      "label": "front settled"
+    }
+  ],
+  "rejected": {
+    "nod_entry": "Extra doubled upper-eyelid contour",
+    "nod_middle": "Purple band contaminates white pupils",
+    "nod_late": "Eye-field shape drifts from chosen endpoints",
+    "rest_approach_01": "Unwanted exposed rectangular neck",
+    "rest_approach_02": "Unwanted exposed rectangular neck"
+  },
+  "scope": "New listen/ack candidate only; previous actions unchanged; no production approval."
+}

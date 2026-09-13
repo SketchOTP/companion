@@ -1,0 +1,14 @@
+{
+  "profile": "MON_RASTER_KEY_POSE_SOURCE_V1",
+  "status": "CANDIDATE_PENDING_OPERATOR_APPROVAL",
+  "reference": "assets/source/p02/references/identity-approved.png",
+  "reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+  "layers": [
+    {"name": "shadow", "source_region": "identity_master_reviewed_shadow", "transform": "bounded_about_root"},
+    {"name": "body", "source_region": "identity_master_reviewed_body", "transform": "bounded_about_root"},
+    {"name": "face", "source_region": "identity_master_reviewed_face", "transform": "none_or_reviewed_key_pose"},
+    {"name": "hands_feet", "source_region": "turnaround_anatomy_correspondence", "transform": "discrete_authored_swap"}
+  ],
+  "export": {"profile": "MON_FRAME_V1", "pinned_tool": "Pillow 11.3.0 qualification candidate", "crop": "prohibited", "translation": "prohibited"},
+  "comparison_dimensions": ["silhouette", "face", "palette", "edge_shadow", "hands", "feet", "root", "contacts"]
+}

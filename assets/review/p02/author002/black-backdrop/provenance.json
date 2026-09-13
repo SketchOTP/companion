@@ -1,0 +1,49 @@
+{
+  "purpose": "operator_requested_black_backdrop_candidate_still",
+  "source_approval_unchanged": true,
+  "input": {
+    "file": "exec-e186b889-047f-49df-b7a9-f1994d917111.png",
+    "sha256": "fc55cd4e25bad16e20d914f46864cf8d8d948a06b3a948a2fce3ff19bcb8acf3"
+  },
+  "output": {
+    "file": "front-candidate.png",
+    "sha256": "fa788e5f08dd3ae6b607cb127b3fd1437d5eb08b184e1024d5e0e861f236c316",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "approval_state": "candidate",
+    "perimeter_rgb_channel_max": 1,
+    "exact_zero_perimeter": false
+  },
+  "engine_background_rgb": [
+    0,
+    0,
+    0
+  ],
+  "tool": "built-in image_gen, reference-based background edit",
+  "prompt": "Use case: precise-object-edit. EDIT TARGET: the supplied approved straight-front purple mon construction. Change ONLY every background pixel, including the checkerboard gaps between arms/torso, fingers, legs and around the head spikes, to perfectly uniform solid opaque BLACK #000000. No transparency requested. Preserve the character's exact pose, camera, framing, silhouette, curved flame spikes, purple colors and cel shading, black eye fields with white pupils, tiny mouth, two fingers and one thumb per hand, and three toes per foot. Do not redesign, relight, move, crop, stretch, repaint, add outlines or add glow. No checkerboard, no gray/white fringe, no floor shadow, no gradient, no text. One full-body front pose, same generous framing on a square black canvas. This is background-only candidate editing.",
+  "limitations": [
+    "Image generation redrew shading; not a byte-preserving character cutout.",
+    "One front still only; not a converted gait pack.",
+    "Opaque full-frame images cannot compose like transparent overlays.",
+    "MON_FRAME_V1 and production intake unchanged."
+  ],
+  "tests": {
+    "import": "PASSED",
+    "xvfb_render": "PASSED",
+    "missing_image": {
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "reason": "review_image_missing"
+    },
+    "headless": {
+      "expected_exit": 1,
+      "actual_exit": 1,
+      "reason": "render_boundary_unavailable"
+    },
+    "animation": "NOT RUN",
+    "hosted_ci": "NOT RUN"
+  }
+}

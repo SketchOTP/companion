@@ -70,3 +70,139 @@ The Research Phase 01 Notion hierarchy contains the project's research evidence 
 - Disposition: Godot polling and explicit screen selection are implemented in
   the neutral shell; cargo-deny remains an environment-dependent policy gate
   and is not silently installed or adopted. No strategic direction changed.
+
+## COMPANION-P02-EMBODIMENT-001 discovery (2026-09-11)
+
+- Sources rechecked: official Godot 4.7 AnimatedSprite2D and Window API
+  documentation; approved Notion visual bible and sprite-production contract;
+  existing local Pillow runtime for disposable raster authoring.
+- Overlap: the visual bible/R10 remain canonical identity authority; Godot
+  documentation informs adapter API use, not product behavior.
+- Disposition: `REFERENCE` Godot APIs; `BUILD` deterministic local authoring,
+  validation, atlas, and review tooling; no production dependency was added.
+- Rationale: a full-canvas raster pipeline preserves MON_FRAME_V1 invariants,
+  supports reproducible packs, and keeps Godot presentation-only.
+- Recheck: before operator approval, target-host playback, dependency change,
+  or any future animation/runtime capability claim.
+
+## COMPANION-P02-EMBODIMENT-001 R02 authoring comparison (2026-09-11)
+
+- Sources: official [resvg repository](https://github.com/linebender/resvg)
+  (Apache-2.0 OR MIT static SVG renderer) and [Krita manual/license
+  references](https://docs.krita.org/en/KritaFAQ.html) (GPL application with
+  raster and vector authoring facilities).
+- Overlap: both can support authoring exploration; neither is part of the
+  approved runtime foundation.
+- Disposition: `BENCHMARK` resvg and Krita only if the operator requests a
+  future bounded comparison; current host has no resvg or Krita executable.
+- Rationale: the current raster proof is reproducible with existing Pillow;
+  installing or adopting an authoring tool before the canon decision would
+  expand scope and create an unreviewed dependency.
+- Recheck: after operator selects the construction/motion language or before
+  any authoring-tool dependency is proposed.
+
+## COMPANION-P02-EMBODIMENT-001-R04 — Godot intake and presentation APIs
+
+- Date: 2026-09-11 America/New_York.
+- Trigger: Review 04 requires source-byte preservation and an exact observable
+  presentation point before the runtime emits `started`.
+- Sources: official Godot 4.7 `SpriteFrames`, `AnimatedSprite2D`, image import,
+  `Image`, and `ImageTexture` documentation.
+- Disposition: `REFERENCE`. `SpriteFrames` relative weights at explicit 24 FPS
+  preserve 1/24-second ticks; `AnimatedSprite2D` exposes frame change and
+  completion observations; source PNGs may remain immutable while Godot uses
+  derived import/cache or in-memory texture data.
+- Material result: R04 loads validated external PNG bytes into derived
+  `ImageTexture` objects, waits one process frame, confirms visible frame zero,
+  then permits `started`. No external dependency or art tool was adopted.
+- Recheck: before changing Godot version, image import mode, timing semantics,
+  or the presentation acknowledgment boundary.
+
+## COMPANION-P02-EMBODIMENT-001-R04-C01 — authored source contract (2026-09-11)
+
+- Sources: official [W3C PNG Third Edition](https://www.w3.org/TR/png-3/),
+  [Godot RenderingServer](https://docs.godotengine.org/en/4.7/classes/class_renderingserver.html),
+  [Godot SpriteFrames](https://docs.godotengine.org/en/4.7/classes/class_spriteframes.html),
+  and [Godot AnimatedSprite2D](https://docs.godotengine.org/en/4.7/classes/class_animatedsprite2d.html).
+- Disposition: `REFERENCE`; no new dependency or art-authoring tool adopted.
+- Material result: source PNGs are checked from their actual signature, IHDR,
+  bit depth, color type, sRGB signalling, alpha, perimeter, and safety region;
+  source bytes remain immutable while CAS/runtime copies are derived. Godot's
+  render-commit observation is separated from physical display presentation.
+- Recheck: before changing the `MON_AUTHORED_FRAME_SOURCE_PACK_V1` profile,
+  PNG acceptance policy, or Godot first-frame acknowledgment boundary.
+
+## 2026-09-12 — R04-C01 publication
+
+The implementation and sanitized evidence bundle were published without new
+external dependencies. Official Godot 4.7.2 behavior remains reference-only;
+the synthetic render-commit observation is not physical display evidence.
+
+## 2026-09-12 — Operator-authorized source cutout providers
+
+- Scope: source-art background removal, following the operator's explicit iHero
+  suggestion; never runtime, CI network calls, or immutable intake.
+- Local prior art: iHero background-removal provider boundary inspected read-only.
+  Its order/notification jobs were not run; unrelated credentials were not used.
+- Official API sources: https://www.remove.bg/api and
+  https://docs.photoroom.com/remove-background-api-basic-plan/quickstart-guide .
+- Disposition: reuse HTTP provider boundary with stdlib multipart image upload;
+  no new package or art-authoring dependency. Secret value never recorded.
+- remove.bg observed HTTP402; Photoroom returned three same-dimension RGBA PNGs.
+  Response and input hashes retained separately; final source eligibility not
+  inferred from successful transport. See R05_OPERATOR_REJECTION_01.
+- Rights: operator-authorized derivatives of project-approved original art;
+  provider service use is not a new assertion of legal clearance or production
+  visual approval. No real personal data was submitted.
+
+## 2026-09-12 — Walk-cycle staging reference
+
+- Source: https://www.adobe.com/creativecloud/animation/discover/animation-walk-cycle.html
+- Freshness: opened current official Adobe guide on 2026-09-12.
+- Disposition: REFERENCE only; contact/crossover phases and whole-body weight
+  response inform the corrected gait planning. No dependency or copied artwork.
+- Operator, not this source, defines front-default/profile-travel habitat policy.
+- Recheck trigger: implementing stride/contact semantics or changing the habitat
+  coordinate model. Motion quality still requires observed playback and review.
+
+## 2026-09-12 — Review11 cutout configuration recheck
+
+Official Photoroom basic API documentation rechecked:
+https://docs.photoroom.com/remove-background-api-basic-plan/quickstart-guide .
+Used the already-authorized provider with explicit format=png, channels=rgba,
+size=full and crop=false; eight bounded responses were HTTP200 RGBA. No new
+system/art dependency. No credential or personal payload recorded. Successful
+transport is not visual/source eligibility. Toon Boom retrieval returned HTTP403
+and was not used as read evidence. Notion ZIP upload failures (MIME mismatch,
+then 5 MiB workspace limit) were retained; selected PNG attachments succeeded.
+
+## 2026-09-12 — Bounded authoring/cutout continuation recheck
+
+REFERENCE: https://www.adobe.com/creativecloud/animation/discover/animation-walk-cycle.html
+rechecked contact/passing/support exchange as supporting context, not visual
+approval or copied art. REUSE existing authorized Photoroom adapter:
+https://docs.photoroom.com/remove-background-api-basic-plan/quickstart-guide
+still documents segment endpoint and format/channels/size/crop parameters.
+Six live HTTP402 responses block this run. No new provider/dependency adopted.
+Recheck when authorized API access changes; do not infer specific balance.
+
+## 2026-09-12 — Black motion review, existing tooling only
+
+REFERENCE: official Godot4.7 SpriteFrames and AnimatedSprite2D documentation
+rechecked for relative duration weights,24FPS, frame_changed and completion:
+https://docs.godotengine.org/en/4.7/classes/class_spriteframes.html
+https://docs.godotengine.org/en/4.7/classes/class_animatedsprite2d.html
+REUSE: builtin imagegen with exact prior reference/neighboring-key images;
+existing Pillow derivative exporter and exact cached Godot4.7.2. All51 prompts
+preserved. No new dependency/provider, Photoroom call or rights clearance claim.
+Image edits can change identity pixels; no automatic transfer of visual approval.
+
+## 2026-09-12 — Targeted motion retry, reference only
+
+Rechecked official Adobe walk-cycle guidance and Toon Boom walk analysis:
+https://www.adobe.com/creativecloud/animation/discover/animation-walk-cycle.html
+https://learn.toonboom.com/modules/walk-cycle-animation/topic/walk-analysis1
+REFERENCE: contact/down/passing/up, arm/body weight response and leg crossover.
+No external software or dependency adopted. These sources support the existing
+motion model, not the quality of the generated frames. Seven built-in imagegen
+trials remain candidate/rejected evidence; exact prompts and outputs retained.

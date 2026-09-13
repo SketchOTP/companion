@@ -1,10 +1,122 @@
 # Current Project State
 
+## Connected Listen → Acknowledge candidate — 2026-09-12
+
+Operator requested new drawings and connection of the missing Listen/Ack action.
+Built-in image generation produced 18 reference-edited outputs: 13 selected,
+five rejected for eye/neck artifacts. With three prior poses, the new front-facing
+sequence has 16 distinct drawings / 17 slots / 116 ticks at 24 Hz (4.833 seconds).
+It is connected into individual playback, front presence, and the full reel.
+Left/right action manifests are unchanged; old Listen/Ack remains diagnostic history.
+Normal/quarter browser completion observed. Candidate review only: no production
+intake, measured contact, Godot, CI, or Phase 02 acceptance claimed for these frames.
+See `R05_LISTEN_ACK_CONNECTED_RESULT.md` in the active packet.
+
+## Full review compiled — 2026-09-12
+
+Operator requested assembly for review, not another generation attempt.
+All available action sources are now in one browser player: 30 sequences,
+65 source entries, 88-slot full reel, 12 individual actions, eight facings and
+separate diagnostics. No art changed or missing in-betweens invented.
+See R05_COMPILED_REVIEW_RESULT.md. Motion remains incomplete/unaccepted.
+
+## Joint-sequence diagnostic — 2026-09-12
+
+The renewed finish request prompted a joint 16-cell left-walk generation and a
+localized lower-limb repair. Both still fail support-leg exchange. No completed
+track is promoted; all 12 temporal tracks remain incomplete. See active
+R05_BLACK_SEQUENCE_SHEET_RESULT.md. Review 11's stop condition remains reached;
+the missing input is controllable temporal authoring, not candidate-art permission.
+
+## Black motion targeted retry — 2026-09-12
+
+Seven new imagegen trials do not complete the12 required action tracks. A late
+gait edit swaps the support leg; a localized repair improves one overlap only.
+Four inhale intermediates fail gradual contour progression (268,276,277,277,
+273,277px through endpoints). NEEDS_ARCHITECT_DECISION on a controllable temporal
+authoring route; no further defective bulk generation or visual approval request.
+See active R05_BLACK_MOTION_RETRY_RESULT.md and black-motion-retry review evidence.
+Black-background and original approval boundaries remain unchanged.
+
+## Black motion continuation — 2026-09-12
+
+51 new imagegen outputs plus the prior black front image are preserved as 52
+black-backed drawings. Key studies cover all eight facings, front presence and
+both lateral actions. **Complete animation remains INCOMPLETE / visual gate
+FAILED:** several in-betweens do not progress toward the next passing key, and
+turn angles jump. No automatic approval transfer from the unchanged original
+operator selection. Further bulk interpolation stopped; no finished pack claim.
+
+Review export and Godot playback of 23 diagnostic sequences pass bounded checks,
+not motion-quality or contacts. See active `R05_BLACK_MOTION_RESULT.md` and
+`assets/review/p02/author002/black-motion-studies/README.md`. Opaque review mode
+does not weaken MON_FRAME_V1 or the historical transparent intake contracts.
+
+## Operator black-background request — 2026-09-12
+
+Godot clear color and foundation backdrop now black. One separately generated
+black-backed front candidate passes an actual Xvfb still-render check. Original
+approved images unchanged. This removes cutout dependency for the still preview,
+not transparent-pack intake. See `R05_BLACK_BACKDROP_RESULT.md` in the active
+packet. Full gait conversion/actions remain unfinished; no Phase02 acceptance.
+
+## Latest continuation — clean-source preparation blocked, 2026-09-12
+
+After operator `proceed`, generated five missing right gait roles, one targeted
+passing-foot repair and one failed alpha extraction. Prior approved selection
+is unchanged. Six Photoroom calls returned HTTP402 without output; built-in
+fallback returned RGB/no alpha. No new frames promoted. See active packet
+`R05_AUTHOR_002_CONTINUATION_RESULT.md` and `R05_AUTHOR_002_CONTINUATION_RESULTS.json`.
+Raw key-study strips/GIFs are diagnostics only. Restore authorized cutout access
+before source preparation; do not weaken alpha/intake gates or change billing.
+
+## Latest operator visual approval — 2026-09-12
+
+The operator expressly approved **the construction sheet and the latest corrected
+gait poses**. Exact selection: eight construction facings and eleven latest gait
+keys in `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_OPERATOR_SELECTION.json`.
+See `R05_AUTHOR_002_OPERATOR_APPROVAL.md` for the quoted clarification and scope.
+This supersedes the coder's visual non-acceptance for those selected images.
+Superseded repairs remain excluded. Complete actions, edge cleanup, normalization,
+source/world contacts and v2 intake/runtime remain unfinished, not passed.
+No source pack, full motion library or Phase02 acceptance is implied.
+
+## Historical execution before operator approval — 2026-09-12
+
+Review11 was merged normally. 25 reference-based outputs (10 construction,
+15 gait/repair attempts) were generated and self-reviewed. The key set still
+fails stable limb/hand/foot correspondence, including independently repeated
+left/right passing-foot defects. Review11's anatomical key-pose stop condition
+is reached. **BLOCKED; zero promoted frames; no visual approval request.**
+See `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_KEY_GATE_RESULT.md`
+and `R05_AUTHOR_002_STUDY_RESULTS.json`. Eight-facing studies are provisional,
+not locked. Full actions, v2 intake/runtime and world-contact QA are NOT RUN.
+Previous planning-only and rejected-art records below remain historical.
+
+## Latest operator disposition — 2026-09-12
+
+The operator additionally rejects universal front-left facing. Current visual
+planning is front-facing rest/interaction, full-profile left/right travel, and
+deliberate whole-body turns with quarter/back correspondence. See
+`tasks/active/COMPANION-P02-EMBODIMENT-001/R05_FACING_AND_MOTION_CORRECTION.md`.
+This correction is recorded, not implemented: old front-left request fixtures
+remain historical engineering coverage, not the replacement art specification.
+
+All R05-v1 previews are **REJECTED**, not awaiting approval. Cutout contamination,
+motion/hand defects and overly fast looping were reported by the operator.
+The current correction is recorded in
+`tasks/active/COMPANION-P02-EMBODIMENT-001/R05_OPERATOR_REJECTION_01.md`.
+Codex candidate authorship remains authorized. Replacement motion is **NOT READY**;
+new generated studies are not counted as a completed pack. Prior technical passes
+below are historical and do not override the operator's rejection.
+
 ## Current stage
 
 Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adopted. Roadmap Phase 01 remains accepted. Phase 03 and later remain closed.
 
-R05-v1 and all replacement studies to date are **REJECTED** as visual evidence. The current motion model is governed by Architect Review 11.
+R05-v1 and superseded repair attempts remain rejected. The selected AUTHOR-002
+construction/key artwork now has operator visual approval, not complete animation
+or source-pack qualification. Review11 still governs the motion model.
 
 ## Current authority
 
@@ -82,8 +194,8 @@ No previous green CI result overrides the operator's visual rejection.
 
 ## Not accepted
 
-- operator-approved production art;
-- accepted construction or motion language;
+- normalized/operator-approved production source pack;
+- accepted complete motion language (selected construction/static keys are approved);
 - visual aliveness;
 - complete 32-family/eight-direction library;
 - 10,000 live transition qualification;
@@ -93,4 +205,4 @@ No previous green CI result overrides the operator's visual rejection.
 
 ## Protected work
 
-The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` changes remain protected. Do not inspect them for evidence, commit, reset, stash, overwrite, copy or reformat them.
+The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` modifications remain protected. Do not inspect them for evidence, commit, reset, stash, overwrite, copy, or reformat them.

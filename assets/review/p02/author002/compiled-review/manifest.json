@@ -1,0 +1,2667 @@
+{
+  "assets": {
+    "base_acknowledge_down": {
+      "path": "raw/base_acknowledge_down.png",
+      "sha256": "8f074ad93434ada9f31ab468a47cd552aa6337ef962fc53a9ada2ba25b8e6f21",
+      "source_bundle": "base",
+      "source_id": "acknowledge_down"
+    },
+    "base_back": {
+      "path": "raw/base_back.png",
+      "sha256": "1e0173f24dd43ea7aee4076130aad024894ff4de50f14db9379750c9fe7966f3",
+      "source_bundle": "base",
+      "source_id": "back"
+    },
+    "base_back_left": {
+      "path": "raw/base_back_left.png",
+      "sha256": "07171156d83148509908e157aa260cb357bb72b4d34f327cbaabd42c17fa9deb",
+      "source_bundle": "base",
+      "source_id": "back_left"
+    },
+    "base_back_right": {
+      "path": "raw/base_back_right.png",
+      "sha256": "72bbb0cd85b99f260e914581c16ddce377c606b583ff060d7ee162abbfe1750f",
+      "source_bundle": "base",
+      "source_id": "back_right"
+    },
+    "base_breathe_exhale": {
+      "path": "raw/base_breathe_exhale.png",
+      "sha256": "704e59fdc1c8ff7e73c72479f575e414c7b9c7a500d8e448706f09ff3fbf3422",
+      "source_bundle": "base",
+      "source_id": "breathe_exhale"
+    },
+    "base_breathe_peak": {
+      "path": "raw/base_breathe_peak.png",
+      "sha256": "9a1ae10d426fbcc0020526619f3729eb36db1f1ea39da94dc3901ab74a8d26c1",
+      "source_bundle": "base",
+      "source_id": "breathe_peak"
+    },
+    "base_front": {
+      "path": "raw/base_front.png",
+      "sha256": "fa788e5f08dd3ae6b607cb127b3fd1437d5eb08b184e1024d5e0e861f236c316",
+      "source_bundle": "base",
+      "source_id": "front"
+    },
+    "base_front_left": {
+      "path": "raw/base_front_left.png",
+      "sha256": "b439d0413c6efad8c05f3bd82029db78cc296df7ddc852829b851fdd64f6c0c8",
+      "source_bundle": "base",
+      "source_id": "front_left"
+    },
+    "base_front_right": {
+      "path": "raw/base_front_right.png",
+      "sha256": "11d52f9f92fae09f3b93dec39e786e1b4d745be8aa7da1ebc537d69010410e66",
+      "source_bundle": "base",
+      "source_id": "front_right"
+    },
+    "base_left_contact_far": {
+      "path": "raw/base_left_contact_far.png",
+      "sha256": "921d1bf6ed808edce7da227adc4554a96b29475532413f5b863f3e41b8814f43",
+      "source_bundle": "base",
+      "source_id": "left_contact_far"
+    },
+    "base_left_contact_near_armfix": {
+      "path": "raw/base_left_contact_near_armfix.png",
+      "sha256": "225f6b76bb9fce45e537a2174b6a8c0cfac7b901d3cde1e329e0ed41da789134",
+      "source_bundle": "base",
+      "source_id": "left_contact_near_armfix"
+    },
+    "base_left_down_armfix": {
+      "path": "raw/base_left_down_armfix.png",
+      "sha256": "525ee1d81489864dd0342d74df0a774b0d8968d9b30f591a6ffc861083dc8bcf",
+      "source_bundle": "base",
+      "source_id": "left_down_armfix"
+    },
+    "base_left_down_far": {
+      "path": "raw/base_left_down_far.png",
+      "sha256": "44c610f71e071d8d7c083a58c5f090b96c978d97801ba50a838e411f8324d982",
+      "source_bundle": "base",
+      "source_id": "left_down_far"
+    },
+    "base_left_fix": {
+      "path": "raw/base_left_fix.png",
+      "sha256": "554323809b03401ff46be8d4e52a3e3fde0012d38b2ed8d43a8ee7ecdf7f4a75",
+      "source_bundle": "base",
+      "source_id": "left_fix"
+    },
+    "base_left_passing_far": {
+      "path": "raw/base_left_passing_far.png",
+      "sha256": "7484a027fb7c44122da79c5842945424fb71988e6e8dbb04f15179fada37962d",
+      "source_bundle": "base",
+      "source_id": "left_passing_far"
+    },
+    "base_left_passing_repair2": {
+      "path": "raw/base_left_passing_repair2.png",
+      "sha256": "81714c17af1d989d1227a2ef594c5a9f5474963c94284797d9d4d9d92f85cf0f",
+      "source_bundle": "base",
+      "source_id": "left_passing_repair2"
+    },
+    "base_left_start_anticipation": {
+      "path": "raw/base_left_start_anticipation.png",
+      "sha256": "f0aafb81167955e59bf70a25b46836bde822cdbef1e2069248a9e6baa63ab427",
+      "source_bundle": "base",
+      "source_id": "left_start_anticipation"
+    },
+    "base_left_start_liftoff": {
+      "path": "raw/base_left_start_liftoff.png",
+      "sha256": "1b377fb4bad94c2371596de44a1fd1cee17bae383cbd827e0150d511e02c4102",
+      "source_bundle": "base",
+      "source_id": "left_start_liftoff"
+    },
+    "base_left_stop_collect": {
+      "path": "raw/base_left_stop_collect.png",
+      "sha256": "aa1dee0eb6a2856ac2d0f5a48b6f670e027bd8be86e8004355fa2bf111570c5c",
+      "source_bundle": "base",
+      "source_id": "left_stop_collect"
+    },
+    "base_left_stop_settle": {
+      "path": "raw/base_left_stop_settle.png",
+      "sha256": "0b0dd0d20eda559e00c1e25617fb093544d2efbd545372c4cc4395950c813669",
+      "source_bundle": "base",
+      "source_id": "left_stop_settle"
+    },
+    "base_left_up_far": {
+      "path": "raw/base_left_up_far.png",
+      "sha256": "738cffb262bd10494cc6300f7a228d4d88973e58c5bd56b3a90185b2f1e7e347",
+      "source_bundle": "base",
+      "source_id": "left_up_far"
+    },
+    "base_left_up_near": {
+      "path": "raw/base_left_up_near.png",
+      "sha256": "189fb15353ee79a2011d426cc526d97725ce43800b8f5ba09b0a473210471b51",
+      "source_bundle": "base",
+      "source_id": "left_up_near"
+    },
+    "base_left_walk_mid_0": {
+      "path": "raw/base_left_walk_mid_0.png",
+      "sha256": "dd5b8a2fcf3a7636f1b6cfc7f2c0fa7513a79d4db7e374c317917e9bf84a9567",
+      "source_bundle": "base",
+      "source_id": "left_walk_mid_0"
+    },
+    "base_left_walk_mid_1": {
+      "path": "raw/base_left_walk_mid_1.png",
+      "sha256": "1c197a3f95bc9dc3bbaf25f8875fc62f7c041fcd7083dea4ec031b60819bfa19",
+      "source_bundle": "base",
+      "source_id": "left_walk_mid_1"
+    },
+    "base_left_walk_mid_2": {
+      "path": "raw/base_left_walk_mid_2.png",
+      "sha256": "ce069e250a7f3e411c65e176eaa0f60fd7bb833b56cf3b44e8732fa93b51621e",
+      "source_bundle": "base",
+      "source_id": "left_walk_mid_2"
+    },
+    "base_left_walk_mid_3": {
+      "path": "raw/base_left_walk_mid_3.png",
+      "sha256": "e3d8e7d4e549f5a933a8786efd897f44eccd4cc0f409589b83b2b1701e908dc9",
+      "source_bundle": "base",
+      "source_id": "left_walk_mid_3"
+    },
+    "base_left_walk_mid_4": {
+      "path": "raw/base_left_walk_mid_4.png",
+      "sha256": "ee3cb0b8f9603dc72d9b75934cd4f5dfa10a671b47ca23b0d5248f6d8a477813",
+      "source_bundle": "base",
+      "source_id": "left_walk_mid_4"
+    },
+    "base_left_walk_mid_5": {
+      "path": "raw/base_left_walk_mid_5.png",
+      "sha256": "62e8b0f8717687625202bde3707b6e0e98452a5431cf9ed74f996d4e694bb98c",
+      "source_bundle": "base",
+      "source_id": "left_walk_mid_5"
+    },
+    "base_left_walk_mid_6": {
+      "path": "raw/base_left_walk_mid_6.png",
+      "sha256": "c56bda72b67e617e6c626221c88b6f1ed6fca8cd151dca57f0e909a5db5a39a3",
+      "source_bundle": "base",
+      "source_id": "left_walk_mid_6"
+    },
+    "base_left_walk_mid_7": {
+      "path": "raw/base_left_walk_mid_7.png",
+      "sha256": "efcc48b21f889d0605be4880a8f067b8af7503f224a5b9eb67aa1f1ad73945b8",
+      "source_bundle": "base",
+      "source_id": "left_walk_mid_7"
+    },
+    "base_listen_hold": {
+      "path": "raw/base_listen_hold.png",
+      "sha256": "3f17328e0be3e1476a85530a125f9f69ec50f96bdbfe78042ca7596bc194ee4f",
+      "source_bundle": "base",
+      "source_id": "listen_hold"
+    },
+    "base_right_contact_far": {
+      "path": "raw/base_right_contact_far.png",
+      "sha256": "f436073132ca534acdb8554ebd9b5988686c832c9bd2495c36aba89f704daf5e",
+      "source_bundle": "base",
+      "source_id": "right_contact_far"
+    },
+    "base_right_contact_near": {
+      "path": "raw/base_right_contact_near.png",
+      "sha256": "3b6c4ea6d36492af68e02b8f78cf0a7c06d4d7ae0ddb707ab74d57ce7aae1d35",
+      "source_bundle": "base",
+      "source_id": "right_contact_near"
+    },
+    "base_right_down_far": {
+      "path": "raw/base_right_down_far.png",
+      "sha256": "7a1248e769bc35da3440293c66b28762eb8af32f209c05467dec95fda6f3cee9",
+      "source_bundle": "base",
+      "source_id": "right_down_far"
+    },
+    "base_right_down_near": {
+      "path": "raw/base_right_down_near.png",
+      "sha256": "e3a259a0f0a033f069cb2c57c74d47892cc4598517d0555afcfe5314413c6926",
+      "source_bundle": "base",
+      "source_id": "right_down_near"
+    },
+    "base_right_fix": {
+      "path": "raw/base_right_fix.png",
+      "sha256": "cfe741a2a013a2833a9138baa4fa8b1ec0fd2e5e5bd1f99a7c8963b0297c9bc0",
+      "source_bundle": "base",
+      "source_id": "right_fix"
+    },
+    "base_right_passing_far_repair": {
+      "path": "raw/base_right_passing_far_repair.png",
+      "sha256": "31e3f586fa0352afd2c56a4372ec598e5e521e597c1310498062b36f9aa3bc3e",
+      "source_bundle": "base",
+      "source_id": "right_passing_far_repair"
+    },
+    "base_right_passing_near": {
+      "path": "raw/base_right_passing_near.png",
+      "sha256": "46e1b855a38c0b513d0b6652443eabbca1cd5dfcafca8867179b2c1745f1e936",
+      "source_bundle": "base",
+      "source_id": "right_passing_near"
+    },
+    "base_right_start_anticipation": {
+      "path": "raw/base_right_start_anticipation.png",
+      "sha256": "b0f09436ac84ffd9fed45f2ec1e963183d792c8dcd18b110bf4ae5c02855948d",
+      "source_bundle": "base",
+      "source_id": "right_start_anticipation"
+    },
+    "base_right_start_liftoff": {
+      "path": "raw/base_right_start_liftoff.png",
+      "sha256": "18a72d5c9d4aa16503b5d9d6a186baace785d73d6ef857f0c3e74cf0c67f7930",
+      "source_bundle": "base",
+      "source_id": "right_start_liftoff"
+    },
+    "base_right_stop_collect": {
+      "path": "raw/base_right_stop_collect.png",
+      "sha256": "96fc52d895669c02d7df5d2944b3f5a451511102ebf0c727df13b7305d2adf4d",
+      "source_bundle": "base",
+      "source_id": "right_stop_collect"
+    },
+    "base_right_stop_settle": {
+      "path": "raw/base_right_stop_settle.png",
+      "sha256": "b1b9a259adadbfb18f18a864bb900fc27aaeee862c8c80fab6082863882044dc",
+      "source_bundle": "base",
+      "source_id": "right_stop_settle"
+    },
+    "base_right_up_far": {
+      "path": "raw/base_right_up_far.png",
+      "sha256": "2083d0030d81291f34ce157b1345a375ef5cad8075f2ccee5cbeeeaac4e44440",
+      "source_bundle": "base",
+      "source_id": "right_up_far"
+    },
+    "base_right_up_near": {
+      "path": "raw/base_right_up_near.png",
+      "sha256": "2d1dee0c3daf697716e276f4b46e8d1592fe3751837aee1f9a1a1452771edf75",
+      "source_bundle": "base",
+      "source_id": "right_up_near"
+    },
+    "base_turn_left_out_22": {
+      "path": "raw/base_turn_left_out_22.png",
+      "sha256": "98c2a2200b2c1090c85f3f92192e9cbf35c1e23c3ee1c6255389b7d4ce4f3ad4",
+      "source_bundle": "base",
+      "source_id": "turn_left_out_22"
+    },
+    "base_turn_left_out_67": {
+      "path": "raw/base_turn_left_out_67.png",
+      "sha256": "09eaf00724a60aa666681e3d82dfcfb6992048ba0f39107782481d92db1319c3",
+      "source_bundle": "base",
+      "source_id": "turn_left_out_67"
+    },
+    "base_turn_left_return_22": {
+      "path": "raw/base_turn_left_return_22.png",
+      "sha256": "578ff69bf5969571239e1e6fa3921afd97e633c4ea69522afa2478504406e754",
+      "source_bundle": "base",
+      "source_id": "turn_left_return_22"
+    },
+    "base_turn_left_return_67": {
+      "path": "raw/base_turn_left_return_67.png",
+      "sha256": "d951dd13ee107306a396a02ac39fad7edfa1718dc4912a3377b32c22d0d9053f",
+      "source_bundle": "base",
+      "source_id": "turn_left_return_67"
+    },
+    "base_turn_right_out_22": {
+      "path": "raw/base_turn_right_out_22.png",
+      "sha256": "641db59ba58630798ea4379d760a7d895fed78ac8dc9f0708cea18d055c7b61b",
+      "source_bundle": "base",
+      "source_id": "turn_right_out_22"
+    },
+    "base_turn_right_out_67": {
+      "path": "raw/base_turn_right_out_67.png",
+      "sha256": "551559a02a3bb3ed1bf412fe648f1a3d7f4256a68cf5a4a3c0fb13963046f101",
+      "source_bundle": "base",
+      "source_id": "turn_right_out_67"
+    },
+    "base_turn_right_return_22": {
+      "path": "raw/base_turn_right_return_22.png",
+      "sha256": "f26f12e7ccfbf0752f6afe20550137dd9e4567f8a8974c1cf4ca7be06b3495ff",
+      "source_bundle": "base",
+      "source_id": "turn_right_return_22"
+    },
+    "base_turn_right_return_67": {
+      "path": "raw/base_turn_right_return_67.png",
+      "sha256": "a0d44f6bbf08b5854ad63fc68ab48fd48e299ccafdac28c3a31154e512108449",
+      "source_bundle": "base",
+      "source_id": "turn_right_return_67"
+    },
+    "retry_breathe_peak": {
+      "path": "raw/retry_breathe_peak.png",
+      "sha256": "9a1ae10d426fbcc0020526619f3729eb36db1f1ea39da94dc3901ab74a8d26c1",
+      "source_bundle": "retry",
+      "source_id": "breathe_peak"
+    },
+    "retry_front": {
+      "path": "raw/retry_front.png",
+      "sha256": "fa788e5f08dd3ae6b607cb127b3fd1437d5eb08b184e1024d5e0e861f236c316",
+      "source_bundle": "retry",
+      "source_id": "front"
+    },
+    "retry_inhale_1": {
+      "path": "raw/retry_inhale_1.png",
+      "sha256": "b4f7b76d9f6baf020a2c2340eae949b9a7fd5252492b23ae38edd889b5d9d89e",
+      "source_bundle": "retry",
+      "source_id": "inhale_1"
+    },
+    "retry_inhale_2": {
+      "path": "raw/retry_inhale_2.png",
+      "sha256": "c845e9085e27ac3d185a1ee3d78aced434b4bcd85a3b36836cec3de5c77085b7",
+      "source_bundle": "retry",
+      "source_id": "inhale_2"
+    },
+    "retry_inhale_3": {
+      "path": "raw/retry_inhale_3.png",
+      "sha256": "58dae9f414fe9b14760ded2fa61ae2463cafeb4f42795344bb1ed10ac206b47c",
+      "source_bundle": "retry",
+      "source_id": "inhale_3"
+    },
+    "retry_inhale_4": {
+      "path": "raw/retry_inhale_4.png",
+      "sha256": "b885359998e88064bb99a0712ca2a047731a5b60985444e69e7e98dae232fee2",
+      "source_bundle": "retry",
+      "source_id": "inhale_4"
+    },
+    "retry_left_down_armfix": {
+      "path": "raw/retry_left_down_armfix.png",
+      "sha256": "525ee1d81489864dd0342d74df0a774b0d8968d9b30f591a6ffc861083dc8bcf",
+      "source_bundle": "retry",
+      "source_id": "left_down_armfix"
+    },
+    "retry_left_down_passing_late": {
+      "path": "raw/retry_left_down_passing_late.png",
+      "sha256": "24190734b354548117f11b2b3d54612d7e0a020ca2afafaecbe20c3b65d69160",
+      "source_bundle": "retry",
+      "source_id": "left_down_passing_late"
+    },
+    "retry_left_down_passing_late_repair": {
+      "path": "raw/retry_left_down_passing_late_repair.png",
+      "sha256": "b9276cea5724585c9d2a2e2f958b2cbc305c4d67335a3fd1c7fb8eb4ccc52e66",
+      "source_bundle": "retry",
+      "source_id": "left_down_passing_late_repair"
+    },
+    "retry_left_down_passing_retry": {
+      "path": "raw/retry_left_down_passing_retry.png",
+      "sha256": "e8c75434eefef0dc84c9517bfd048606d3d8d17e59344c3efaeb104d151c12ae",
+      "source_bundle": "retry",
+      "source_id": "left_down_passing_retry"
+    },
+    "retry_left_passing_repair2": {
+      "path": "raw/retry_left_passing_repair2.png",
+      "sha256": "81714c17af1d989d1227a2ef594c5a9f5474963c94284797d9d4d9d92f85cf0f",
+      "source_bundle": "retry",
+      "source_id": "left_passing_repair2"
+    },
+    "sheet_0": {
+      "path": "raw/walk-left-sheet.png",
+      "sha256": "8d9bf8001e114029d7cd604c63c478309a2b92406480d1c72f2ece700017da1c",
+      "source_id": "walk-left-sheet.png"
+    },
+    "sheet_1": {
+      "path": "raw/walk-left-sheet-repair.png",
+      "sha256": "643e995c7c283cbaf3378222ea031854380acff8f045fff90e226a7bf2e2c2f9",
+      "source_id": "walk-left-sheet-repair.png"
+    }
+  },
+  "coverage": [
+    {
+      "action": "idle_breathe_front",
+      "available_slots": 4,
+      "available_unique_drawings": 3,
+      "required_min": 16,
+      "status": "INCOMPLETE",
+      "track_id": "base_front_breathe_key_study"
+    },
+    {
+      "action": "listen_acknowledge_front",
+      "available_slots": 4,
+      "available_unique_drawings": 3,
+      "required_min": 16,
+      "status": "INCOMPLETE",
+      "track_id": "base_front_listen_acknowledge_key_study"
+    },
+    {
+      "action": "turn_front_to_left",
+      "available_slots": 5,
+      "available_unique_drawings": 5,
+      "required_min": 8,
+      "status": "INCOMPLETE",
+      "track_id": "base_left_outward_turn_key_study"
+    },
+    {
+      "action": "walk_start_left",
+      "available_slots": 4,
+      "available_unique_drawings": 4,
+      "required_min": 6,
+      "status": "INCOMPLETE",
+      "track_id": "base_left_start_key_study"
+    },
+    {
+      "action": "walk_loop_left",
+      "available_slots": 8,
+      "available_unique_drawings": 8,
+      "required_min": 16,
+      "status": "INCOMPLETE",
+      "track_id": "base_left_gait_key_study"
+    },
+    {
+      "action": "walk_stop_left",
+      "available_slots": 4,
+      "available_unique_drawings": 4,
+      "required_min": 6,
+      "status": "INCOMPLETE",
+      "track_id": "base_left_stop_key_study"
+    },
+    {
+      "action": "turn_left_to_front",
+      "available_slots": 5,
+      "available_unique_drawings": 5,
+      "required_min": 8,
+      "status": "INCOMPLETE",
+      "track_id": "base_left_return_turn_key_study"
+    },
+    {
+      "action": "turn_front_to_right",
+      "available_slots": 5,
+      "available_unique_drawings": 5,
+      "required_min": 8,
+      "status": "INCOMPLETE",
+      "track_id": "base_right_outward_turn_key_study"
+    },
+    {
+      "action": "walk_start_right",
+      "available_slots": 4,
+      "available_unique_drawings": 4,
+      "required_min": 6,
+      "status": "INCOMPLETE",
+      "track_id": "base_right_start_key_study"
+    },
+    {
+      "action": "walk_loop_right",
+      "available_slots": 8,
+      "available_unique_drawings": 8,
+      "required_min": 16,
+      "status": "INCOMPLETE",
+      "track_id": "base_right_gait_key_study"
+    },
+    {
+      "action": "walk_stop_right",
+      "available_slots": 4,
+      "available_unique_drawings": 4,
+      "required_min": 6,
+      "status": "INCOMPLETE",
+      "track_id": "base_right_stop_key_study"
+    },
+    {
+      "action": "turn_right_to_front",
+      "available_slots": 5,
+      "available_unique_drawings": 5,
+      "required_min": 8,
+      "status": "INCOMPLETE",
+      "track_id": "base_right_return_turn_key_study"
+    }
+  ],
+  "fps": 24,
+  "new_drawings_created": 0,
+  "operator_motion_approval": "NOT_RUN",
+  "profile": "COMPILED_BLACK_REVIEW_V1",
+  "source_pixels_modified": false,
+  "status": "ASSEMBLED_EXISTING_FRAMES_NOT_FINISHED_ANIMATION",
+  "tracks": [
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "turn front to left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_left_out_22",
+          "label": "turn_left_out_22",
+          "stage": "turn front to left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front_left",
+          "label": "front_left",
+          "stage": "turn front to left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_left_out_67",
+          "label": "turn_left_out_67",
+          "stage": "turn front to left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_fix",
+          "label": "left_fix",
+          "stage": "turn front to left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_fix",
+          "label": "left_fix",
+          "stage": "walk start left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_start_anticipation",
+          "label": "left_start_anticipation",
+          "stage": "walk start left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_start_liftoff",
+          "label": "left_start_liftoff",
+          "stage": "walk start left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_contact_near_armfix",
+          "label": "left_contact_near_armfix",
+          "stage": "walk start left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_contact_near_armfix",
+          "label": "left_contact_near_armfix",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_down_armfix",
+          "label": "left_down_armfix",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_passing_repair2",
+          "label": "left_passing_repair2",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_up_near",
+          "label": "left_up_near",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_contact_far",
+          "label": "left_contact_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_down_far",
+          "label": "left_down_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_passing_far",
+          "label": "left_passing_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_up_far",
+          "label": "left_up_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_contact_near_armfix",
+          "label": "left_contact_near_armfix",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_down_armfix",
+          "label": "left_down_armfix",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_passing_repair2",
+          "label": "left_passing_repair2",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_up_near",
+          "label": "left_up_near",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_contact_far",
+          "label": "left_contact_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_down_far",
+          "label": "left_down_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_passing_far",
+          "label": "left_passing_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_up_far",
+          "label": "left_up_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_contact_near_armfix",
+          "label": "left_contact_near_armfix",
+          "stage": "walk stop left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_stop_collect",
+          "label": "left_stop_collect",
+          "stage": "walk stop left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_stop_settle",
+          "label": "left_stop_settle",
+          "stage": "walk stop left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_fix",
+          "label": "left_fix",
+          "stage": "walk stop left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_fix",
+          "label": "left_fix",
+          "stage": "turn left to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_left_return_67",
+          "label": "turn_left_return_67",
+          "stage": "turn left to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front_left",
+          "label": "front_left",
+          "stage": "turn left to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_left_return_22",
+          "label": "turn_left_return_22",
+          "stage": "turn left to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "turn left to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_breathe_peak",
+          "label": "breathe_peak",
+          "stage": "idle breathe front",
+          "ticks": 24
+        },
+        {
+          "asset": "base_breathe_exhale",
+          "label": "breathe_exhale",
+          "stage": "idle breathe front",
+          "ticks": 36
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "turn front to right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_right_out_22",
+          "label": "turn_right_out_22",
+          "stage": "turn front to right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front_right",
+          "label": "front_right",
+          "stage": "turn front to right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_right_out_67",
+          "label": "turn_right_out_67",
+          "stage": "turn front to right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_fix",
+          "label": "right_fix",
+          "stage": "turn front to right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_fix",
+          "label": "right_fix",
+          "stage": "walk start right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_start_anticipation",
+          "label": "right_start_anticipation",
+          "stage": "walk start right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_start_liftoff",
+          "label": "right_start_liftoff",
+          "stage": "walk start right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_contact_near",
+          "label": "right_contact_near",
+          "stage": "walk start right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_contact_near",
+          "label": "right_contact_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_down_near",
+          "label": "right_down_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_passing_near",
+          "label": "right_passing_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_up_near",
+          "label": "right_up_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_contact_far",
+          "label": "right_contact_far",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_down_far",
+          "label": "right_down_far",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_passing_far_repair",
+          "label": "right_passing_far_repair",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_up_far",
+          "label": "right_up_far",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_contact_near",
+          "label": "right_contact_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_down_near",
+          "label": "right_down_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_passing_near",
+          "label": "right_passing_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_up_near",
+          "label": "right_up_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_contact_far",
+          "label": "right_contact_far",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_down_far",
+          "label": "right_down_far",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_passing_far_repair",
+          "label": "right_passing_far_repair",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_up_far",
+          "label": "right_up_far",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_contact_near",
+          "label": "right_contact_near",
+          "stage": "walk stop right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_stop_collect",
+          "label": "right_stop_collect",
+          "stage": "walk stop right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_stop_settle",
+          "label": "right_stop_settle",
+          "stage": "walk stop right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_fix",
+          "label": "right_fix",
+          "stage": "walk stop right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_fix",
+          "label": "right_fix",
+          "stage": "turn right to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_right_return_67",
+          "label": "turn_right_return_67",
+          "stage": "turn right to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front_right",
+          "label": "front_right",
+          "stage": "turn right to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_right_return_22",
+          "label": "turn_right_return_22",
+          "stage": "turn right to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "turn right to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_breathe_peak",
+          "label": "breathe_peak",
+          "stage": "idle breathe front",
+          "ticks": 24
+        },
+        {
+          "asset": "base_breathe_exhale",
+          "label": "breathe_exhale",
+          "stage": "idle breathe front",
+          "ticks": 36
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_breathe_peak",
+          "label": "breathe_peak",
+          "stage": "idle breathe front",
+          "ticks": 24
+        },
+        {
+          "asset": "base_breathe_exhale",
+          "label": "breathe_exhale",
+          "stage": "idle breathe front",
+          "ticks": 36
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "listen acknowledge front",
+          "ticks": 12
+        },
+        {
+          "asset": "base_listen_hold",
+          "label": "listen_hold",
+          "stage": "listen acknowledge front",
+          "ticks": 30
+        },
+        {
+          "asset": "base_acknowledge_down",
+          "label": "acknowledge_down",
+          "stage": "listen acknowledge front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "listen acknowledge front",
+          "ticks": 24
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_breathe_peak",
+          "label": "breathe_peak",
+          "stage": "idle breathe front",
+          "ticks": 24
+        },
+        {
+          "asset": "base_breathe_exhale",
+          "label": "breathe_exhale",
+          "stage": "idle breathe front",
+          "ticks": 36
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        }
+      ],
+      "group": "Full review",
+      "id": "full_reel",
+      "note": "Full action ordering using available key drawings. Missing in-betweens remain visible.",
+      "title": "All actions \u2014 complete review reel"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "turn front to left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_left_out_22",
+          "label": "turn_left_out_22",
+          "stage": "turn front to left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front_left",
+          "label": "front_left",
+          "stage": "turn front to left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_left_out_67",
+          "label": "turn_left_out_67",
+          "stage": "turn front to left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_fix",
+          "label": "left_fix",
+          "stage": "turn front to left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_fix",
+          "label": "left_fix",
+          "stage": "walk start left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_start_anticipation",
+          "label": "left_start_anticipation",
+          "stage": "walk start left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_start_liftoff",
+          "label": "left_start_liftoff",
+          "stage": "walk start left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_contact_near_armfix",
+          "label": "left_contact_near_armfix",
+          "stage": "walk start left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_contact_near_armfix",
+          "label": "left_contact_near_armfix",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_down_armfix",
+          "label": "left_down_armfix",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_passing_repair2",
+          "label": "left_passing_repair2",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_up_near",
+          "label": "left_up_near",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_contact_far",
+          "label": "left_contact_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_down_far",
+          "label": "left_down_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_passing_far",
+          "label": "left_passing_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_up_far",
+          "label": "left_up_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_contact_near_armfix",
+          "label": "left_contact_near_armfix",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_down_armfix",
+          "label": "left_down_armfix",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_passing_repair2",
+          "label": "left_passing_repair2",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_up_near",
+          "label": "left_up_near",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_contact_far",
+          "label": "left_contact_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_down_far",
+          "label": "left_down_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_passing_far",
+          "label": "left_passing_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_up_far",
+          "label": "left_up_far",
+          "stage": "walk loop left",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_contact_near_armfix",
+          "label": "left_contact_near_armfix",
+          "stage": "walk stop left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_stop_collect",
+          "label": "left_stop_collect",
+          "stage": "walk stop left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_stop_settle",
+          "label": "left_stop_settle",
+          "stage": "walk stop left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_fix",
+          "label": "left_fix",
+          "stage": "walk stop left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_fix",
+          "label": "left_fix",
+          "stage": "turn left to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_left_return_67",
+          "label": "turn_left_return_67",
+          "stage": "turn left to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front_left",
+          "label": "front_left",
+          "stage": "turn left to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_left_return_22",
+          "label": "turn_left_return_22",
+          "stage": "turn left to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "turn left to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_breathe_peak",
+          "label": "breathe_peak",
+          "stage": "idle breathe front",
+          "ticks": 24
+        },
+        {
+          "asset": "base_breathe_exhale",
+          "label": "breathe_exhale",
+          "stage": "idle breathe front",
+          "ticks": 36
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        }
+      ],
+      "group": "Full review",
+      "id": "full_left",
+      "note": "Full action ordering using available key drawings. Missing in-betweens remain visible.",
+      "title": "Left \u2014 turn, start, two cycles, stop, return, breathe"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "turn front to right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_right_out_22",
+          "label": "turn_right_out_22",
+          "stage": "turn front to right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front_right",
+          "label": "front_right",
+          "stage": "turn front to right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_right_out_67",
+          "label": "turn_right_out_67",
+          "stage": "turn front to right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_fix",
+          "label": "right_fix",
+          "stage": "turn front to right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_fix",
+          "label": "right_fix",
+          "stage": "walk start right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_start_anticipation",
+          "label": "right_start_anticipation",
+          "stage": "walk start right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_start_liftoff",
+          "label": "right_start_liftoff",
+          "stage": "walk start right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_contact_near",
+          "label": "right_contact_near",
+          "stage": "walk start right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_contact_near",
+          "label": "right_contact_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_down_near",
+          "label": "right_down_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_passing_near",
+          "label": "right_passing_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_up_near",
+          "label": "right_up_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_contact_far",
+          "label": "right_contact_far",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_down_far",
+          "label": "right_down_far",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_passing_far_repair",
+          "label": "right_passing_far_repair",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_up_far",
+          "label": "right_up_far",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_contact_near",
+          "label": "right_contact_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_down_near",
+          "label": "right_down_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_passing_near",
+          "label": "right_passing_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_up_near",
+          "label": "right_up_near",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_contact_far",
+          "label": "right_contact_far",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_down_far",
+          "label": "right_down_far",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_passing_far_repair",
+          "label": "right_passing_far_repair",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_up_far",
+          "label": "right_up_far",
+          "stage": "walk loop right",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_contact_near",
+          "label": "right_contact_near",
+          "stage": "walk stop right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_stop_collect",
+          "label": "right_stop_collect",
+          "stage": "walk stop right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_stop_settle",
+          "label": "right_stop_settle",
+          "stage": "walk stop right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_fix",
+          "label": "right_fix",
+          "stage": "walk stop right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_fix",
+          "label": "right_fix",
+          "stage": "turn right to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_right_return_67",
+          "label": "turn_right_return_67",
+          "stage": "turn right to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front_right",
+          "label": "front_right",
+          "stage": "turn right to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_right_return_22",
+          "label": "turn_right_return_22",
+          "stage": "turn right to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "turn right to front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_breathe_peak",
+          "label": "breathe_peak",
+          "stage": "idle breathe front",
+          "ticks": 24
+        },
+        {
+          "asset": "base_breathe_exhale",
+          "label": "breathe_exhale",
+          "stage": "idle breathe front",
+          "ticks": 36
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        }
+      ],
+      "group": "Full review",
+      "id": "full_right",
+      "note": "Full action ordering using available key drawings. Missing in-betweens remain visible.",
+      "title": "Right \u2014 turn, start, two cycles, stop, return, breathe"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_breathe_peak",
+          "label": "breathe_peak",
+          "stage": "idle breathe front",
+          "ticks": 24
+        },
+        {
+          "asset": "base_breathe_exhale",
+          "label": "breathe_exhale",
+          "stage": "idle breathe front",
+          "ticks": 36
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "listen acknowledge front",
+          "ticks": 12
+        },
+        {
+          "asset": "base_listen_hold",
+          "label": "listen_hold",
+          "stage": "listen acknowledge front",
+          "ticks": 30
+        },
+        {
+          "asset": "base_acknowledge_down",
+          "label": "acknowledge_down",
+          "stage": "listen acknowledge front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "listen acknowledge front",
+          "ticks": 24
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_breathe_peak",
+          "label": "breathe_peak",
+          "stage": "idle breathe front",
+          "ticks": 24
+        },
+        {
+          "asset": "base_breathe_exhale",
+          "label": "breathe_exhale",
+          "stage": "idle breathe front",
+          "ticks": 36
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "stage": "idle breathe front",
+          "ticks": 18
+        }
+      ],
+      "group": "Full review",
+      "id": "full_presence",
+      "note": "Full action ordering using available key drawings. Missing in-betweens remain visible.",
+      "title": "Front \u2014 breathe, listen, acknowledge, settle, breathe"
+    },
+    {
+      "completion": "loop",
+      "frames": [
+        {
+          "asset": "base_front",
+          "label": "front",
+          "ticks": 18
+        },
+        {
+          "asset": "base_breathe_peak",
+          "label": "breathe_peak",
+          "ticks": 24
+        },
+        {
+          "asset": "base_breathe_exhale",
+          "label": "breathe_exhale",
+          "ticks": 36
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "ticks": 18
+        }
+      ],
+      "group": "12 required actions",
+      "id": "base_front_breathe_key_study",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "idle breathe front"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_front",
+          "label": "front",
+          "ticks": 12
+        },
+        {
+          "asset": "base_listen_hold",
+          "label": "listen_hold",
+          "ticks": 30
+        },
+        {
+          "asset": "base_acknowledge_down",
+          "label": "acknowledge_down",
+          "ticks": 18
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "ticks": 24
+        }
+      ],
+      "group": "12 required actions",
+      "id": "base_front_listen_acknowledge_key_study",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "listen acknowledge front"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_front",
+          "label": "front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_left_out_22",
+          "label": "turn_left_out_22",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front_left",
+          "label": "front_left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_left_out_67",
+          "label": "turn_left_out_67",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_fix",
+          "label": "left_fix",
+          "ticks": 6
+        }
+      ],
+      "group": "12 required actions",
+      "id": "base_left_outward_turn_key_study",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "turn front to left"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_left_fix",
+          "label": "left_fix",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_start_anticipation",
+          "label": "left_start_anticipation",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_start_liftoff",
+          "label": "left_start_liftoff",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_contact_near_armfix",
+          "label": "left_contact_near_armfix",
+          "ticks": 6
+        }
+      ],
+      "group": "12 required actions",
+      "id": "base_left_start_key_study",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "walk start left"
+    },
+    {
+      "completion": "loop",
+      "frames": [
+        {
+          "asset": "base_left_contact_near_armfix",
+          "label": "left_contact_near_armfix",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_down_armfix",
+          "label": "left_down_armfix",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_passing_repair2",
+          "label": "left_passing_repair2",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_up_near",
+          "label": "left_up_near",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_contact_far",
+          "label": "left_contact_far",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_down_far",
+          "label": "left_down_far",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_passing_far",
+          "label": "left_passing_far",
+          "ticks": 4
+        },
+        {
+          "asset": "base_left_up_far",
+          "label": "left_up_far",
+          "ticks": 4
+        }
+      ],
+      "group": "12 required actions",
+      "id": "base_left_gait_key_study",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "walk loop left"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_left_contact_near_armfix",
+          "label": "left_contact_near_armfix",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_stop_collect",
+          "label": "left_stop_collect",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_stop_settle",
+          "label": "left_stop_settle",
+          "ticks": 6
+        },
+        {
+          "asset": "base_left_fix",
+          "label": "left_fix",
+          "ticks": 6
+        }
+      ],
+      "group": "12 required actions",
+      "id": "base_left_stop_key_study",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "walk stop left"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_left_fix",
+          "label": "left_fix",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_left_return_67",
+          "label": "turn_left_return_67",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front_left",
+          "label": "front_left",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_left_return_22",
+          "label": "turn_left_return_22",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "ticks": 6
+        }
+      ],
+      "group": "12 required actions",
+      "id": "base_left_return_turn_key_study",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "turn left to front"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_front",
+          "label": "front",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_right_out_22",
+          "label": "turn_right_out_22",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front_right",
+          "label": "front_right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_right_out_67",
+          "label": "turn_right_out_67",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_fix",
+          "label": "right_fix",
+          "ticks": 6
+        }
+      ],
+      "group": "12 required actions",
+      "id": "base_right_outward_turn_key_study",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "turn front to right"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_right_fix",
+          "label": "right_fix",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_start_anticipation",
+          "label": "right_start_anticipation",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_start_liftoff",
+          "label": "right_start_liftoff",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_contact_near",
+          "label": "right_contact_near",
+          "ticks": 6
+        }
+      ],
+      "group": "12 required actions",
+      "id": "base_right_start_key_study",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "walk start right"
+    },
+    {
+      "completion": "loop",
+      "frames": [
+        {
+          "asset": "base_right_contact_near",
+          "label": "right_contact_near",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_down_near",
+          "label": "right_down_near",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_passing_near",
+          "label": "right_passing_near",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_up_near",
+          "label": "right_up_near",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_contact_far",
+          "label": "right_contact_far",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_down_far",
+          "label": "right_down_far",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_passing_far_repair",
+          "label": "right_passing_far_repair",
+          "ticks": 4
+        },
+        {
+          "asset": "base_right_up_far",
+          "label": "right_up_far",
+          "ticks": 4
+        }
+      ],
+      "group": "12 required actions",
+      "id": "base_right_gait_key_study",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "walk loop right"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_right_contact_near",
+          "label": "right_contact_near",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_stop_collect",
+          "label": "right_stop_collect",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_stop_settle",
+          "label": "right_stop_settle",
+          "ticks": 6
+        },
+        {
+          "asset": "base_right_fix",
+          "label": "right_fix",
+          "ticks": 6
+        }
+      ],
+      "group": "12 required actions",
+      "id": "base_right_stop_key_study",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "walk stop right"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_right_fix",
+          "label": "right_fix",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_right_return_67",
+          "label": "turn_right_return_67",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front_right",
+          "label": "front_right",
+          "ticks": 6
+        },
+        {
+          "asset": "base_turn_right_return_22",
+          "label": "turn_right_return_22",
+          "ticks": 6
+        },
+        {
+          "asset": "base_front",
+          "label": "front",
+          "ticks": 6
+        }
+      ],
+      "group": "12 required actions",
+      "id": "base_right_return_turn_key_study",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "turn right to front"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_front",
+          "label": "front",
+          "ticks": 6
+        }
+      ],
+      "group": "Eight facings",
+      "id": "base_construction_front",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "construction front"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_front_right",
+          "label": "front_right",
+          "ticks": 6
+        }
+      ],
+      "group": "Eight facings",
+      "id": "base_construction_front_right",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "construction front right"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_right_fix",
+          "label": "right_fix",
+          "ticks": 6
+        }
+      ],
+      "group": "Eight facings",
+      "id": "base_construction_right_fix",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "construction right fix"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_back_right",
+          "label": "back_right",
+          "ticks": 6
+        }
+      ],
+      "group": "Eight facings",
+      "id": "base_construction_back_right",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "construction back right"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_back",
+          "label": "back",
+          "ticks": 6
+        }
+      ],
+      "group": "Eight facings",
+      "id": "base_construction_back",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "construction back"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_back_left",
+          "label": "back_left",
+          "ticks": 6
+        }
+      ],
+      "group": "Eight facings",
+      "id": "base_construction_back_left",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "construction back left"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_left_fix",
+          "label": "left_fix",
+          "ticks": 6
+        }
+      ],
+      "group": "Eight facings",
+      "id": "base_construction_left_fix",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "construction left fix"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "base_front_left",
+          "label": "front_left",
+          "ticks": 6
+        }
+      ],
+      "group": "Eight facings",
+      "id": "base_construction_front_left",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "construction front left"
+    },
+    {
+      "completion": "loop",
+      "frames": [
+        {
+          "asset": "base_left_contact_near_armfix",
+          "label": "left_contact_near_armfix",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_walk_mid_0",
+          "label": "left_walk_mid_0",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_down_armfix",
+          "label": "left_down_armfix",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_walk_mid_1",
+          "label": "left_walk_mid_1",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_passing_repair2",
+          "label": "left_passing_repair2",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_walk_mid_2",
+          "label": "left_walk_mid_2",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_up_near",
+          "label": "left_up_near",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_walk_mid_3",
+          "label": "left_walk_mid_3",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_contact_far",
+          "label": "left_contact_far",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_walk_mid_4",
+          "label": "left_walk_mid_4",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_down_far",
+          "label": "left_down_far",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_walk_mid_5",
+          "label": "left_walk_mid_5",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_passing_far",
+          "label": "left_passing_far",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_walk_mid_6",
+          "label": "left_walk_mid_6",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_up_far",
+          "label": "left_up_far",
+          "ticks": 2
+        },
+        {
+          "asset": "base_left_walk_mid_7",
+          "label": "left_walk_mid_7",
+          "ticks": 2
+        }
+      ],
+      "group": "Diagnostics",
+      "id": "base_left_inbetween_diagnostic_not_approved",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "left inbetween diagnostic not approved"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "retry_front",
+          "label": "front",
+          "ticks": 6
+        },
+        {
+          "asset": "retry_inhale_1",
+          "label": "inhale_1",
+          "ticks": 6
+        },
+        {
+          "asset": "retry_inhale_2",
+          "label": "inhale_2",
+          "ticks": 6
+        },
+        {
+          "asset": "retry_inhale_3",
+          "label": "inhale_3",
+          "ticks": 6
+        },
+        {
+          "asset": "retry_inhale_4",
+          "label": "inhale_4",
+          "ticks": 6
+        },
+        {
+          "asset": "retry_breathe_peak",
+          "label": "breathe_peak",
+          "ticks": 6
+        }
+      ],
+      "group": "Diagnostics",
+      "id": "retry_inhale_progression_probe",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "inhale progression probe"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "retry_left_down_armfix",
+          "label": "left_down_armfix",
+          "ticks": 6
+        },
+        {
+          "asset": "retry_left_down_passing_retry",
+          "label": "left_down_passing_retry",
+          "ticks": 6
+        },
+        {
+          "asset": "retry_left_down_passing_late",
+          "label": "left_down_passing_late",
+          "ticks": 6
+        },
+        {
+          "asset": "retry_left_passing_repair2",
+          "label": "left_passing_repair2",
+          "ticks": 6
+        }
+      ],
+      "group": "Diagnostics",
+      "id": "retry_gait_leg_swap_rejected",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "gait leg swap rejected"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "asset": "retry_left_down_armfix",
+          "label": "left_down_armfix",
+          "ticks": 6
+        },
+        {
+          "asset": "retry_left_down_passing_retry",
+          "label": "left_down_passing_retry",
+          "ticks": 6
+        },
+        {
+          "asset": "retry_left_down_passing_late_repair",
+          "label": "left_down_passing_late_repair",
+          "ticks": 6
+        },
+        {
+          "asset": "retry_left_passing_repair2",
+          "label": "left_passing_repair2",
+          "ticks": 6
+        }
+      ],
+      "group": "Diagnostics",
+      "id": "retry_gait_localized_repair_study",
+      "note": "Existing drawings only. Known continuity defects; no interpolation or new frames.",
+      "title": "gait localized repair study"
+    },
+    {
+      "completion": "loop",
+      "frames": [
+        {
+          "asset": "sheet_0",
+          "crop": [
+            0,
+            0,
+            313,
+            313
+          ],
+          "label": "sheet cell 0",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            313,
+            0,
+            314,
+            313
+          ],
+          "label": "sheet cell 1",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            627,
+            0,
+            313,
+            313
+          ],
+          "label": "sheet cell 2",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            940,
+            0,
+            314,
+            313
+          ],
+          "label": "sheet cell 3",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            0,
+            313,
+            313,
+            314
+          ],
+          "label": "sheet cell 4",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            313,
+            313,
+            314,
+            314
+          ],
+          "label": "sheet cell 5",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            627,
+            313,
+            313,
+            314
+          ],
+          "label": "sheet cell 6",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            940,
+            313,
+            314,
+            314
+          ],
+          "label": "sheet cell 7",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            0,
+            627,
+            313,
+            313
+          ],
+          "label": "sheet cell 8",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            313,
+            627,
+            314,
+            313
+          ],
+          "label": "sheet cell 9",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            627,
+            627,
+            313,
+            313
+          ],
+          "label": "sheet cell 10",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            940,
+            627,
+            314,
+            313
+          ],
+          "label": "sheet cell 11",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            0,
+            940,
+            313,
+            314
+          ],
+          "label": "sheet cell 12",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            313,
+            940,
+            314,
+            314
+          ],
+          "label": "sheet cell 13",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            627,
+            940,
+            313,
+            314
+          ],
+          "label": "sheet cell 14",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_0",
+          "crop": [
+            940,
+            940,
+            314,
+            314
+          ],
+          "label": "sheet cell 15",
+          "ticks": 2
+        }
+      ],
+      "group": "Diagnostics",
+      "id": "sheet_0",
+      "note": "Foreground leg stays forward across most cells; opposite stride and consistent support exchange are absent. Equal-grid playback only; registration is not corrected.",
+      "title": "Rejected joint-sheet walk"
+    },
+    {
+      "completion": "loop",
+      "frames": [
+        {
+          "asset": "sheet_1",
+          "crop": [
+            0,
+            0,
+            313,
+            313
+          ],
+          "label": "sheet cell 0",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            313,
+            0,
+            314,
+            313
+          ],
+          "label": "sheet cell 1",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            627,
+            0,
+            313,
+            313
+          ],
+          "label": "sheet cell 2",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            940,
+            0,
+            314,
+            313
+          ],
+          "label": "sheet cell 3",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            0,
+            313,
+            313,
+            314
+          ],
+          "label": "sheet cell 4",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            313,
+            313,
+            314,
+            314
+          ],
+          "label": "sheet cell 5",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            627,
+            313,
+            313,
+            314
+          ],
+          "label": "sheet cell 6",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            940,
+            313,
+            314,
+            314
+          ],
+          "label": "sheet cell 7",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            0,
+            627,
+            313,
+            313
+          ],
+          "label": "sheet cell 8",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            313,
+            627,
+            314,
+            313
+          ],
+          "label": "sheet cell 9",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            627,
+            627,
+            313,
+            313
+          ],
+          "label": "sheet cell 10",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            940,
+            627,
+            314,
+            313
+          ],
+          "label": "sheet cell 11",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            0,
+            940,
+            313,
+            314
+          ],
+          "label": "sheet cell 12",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            313,
+            940,
+            314,
+            314
+          ],
+          "label": "sheet cell 13",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            627,
+            940,
+            313,
+            314
+          ],
+          "label": "sheet cell 14",
+          "ticks": 2
+        },
+        {
+          "asset": "sheet_1",
+          "crop": [
+            940,
+            940,
+            314,
+            314
+          ],
+          "label": "sheet cell 15",
+          "ticks": 2
+        }
+      ],
+      "group": "Diagnostics",
+      "id": "sheet_1",
+      "note": "Requested second-half opposite stride is not produced. Lower-limb motion remains unsuitable. Equal-grid playback only; registration is not corrected.",
+      "title": "Rejected joint-sheet walk \u2014 repair"
+    }
+  ],
+  "world_contacts": "NOT_RUN"
+}

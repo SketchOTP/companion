@@ -1,0 +1,16 @@
+{
+  "profile": "MON_CONSTRUCTION_V2",
+  "status": "CANDIDATE_PENDING_OPERATOR_APPROVAL",
+  "reference_inputs": {
+    "identity": {"path": "assets/source/p02/references/identity-approved.png", "sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56", "dimensions": [1254, 1254], "mode": "RGBA"},
+    "turnaround": {"path": "assets/source/p02/references/turnaround-approved.png", "sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4", "dimensions": [1448, 1086], "mode": "RGB"}
+  },
+  "frame_profile": {"name": "MON_FRAME_V1", "canvas": [1024, 1024], "root": [512, 896], "baseline_y": 896, "safety_region": [64, 32, 960, 960], "root_drift_px": 0, "planted_contact_drift_px": 2, "timing_grid_hz": 24},
+  "proportions": {"head_to_body_ratio": "1.18", "body_width_to_canvas": "0.50", "foot_span_to_canvas": "0.42", "landmark_units": "source_px"},
+  "palette_roles": {"outline": "#261444", "body": "#8b54d9", "light": "#b879f2", "shadow": "#5b3299", "eye": "#090711", "pupil": "#fff9ff", "mouth": "#2b1238"},
+  "anatomy": {"head_spikes": "edge-flame silhouette", "hands": {"fingers": 2, "thumbs": 1}, "feet": {"toes": 3}, "eyes": "black fields with white pupils", "mouth": "small simple", "clothing": false, "extra_limbs": false},
+  "pose_limits": {"squash_stretch_percent": 4, "tilt_degrees": 12, "uniform_runtime_scaling_only": true, "encoded_translation": false, "source_crop": false},
+  "landmarks": ["root", "head", "left_hand", "right_hand", "left_foot", "right_foot", "gaze_center", "mouth_center", "shadow_footprint"],
+  "diagonal_candidates": ["front_left", "front_right", "back_left", "back_right"],
+  "approval": "operator visual approval required; no candidate diagonal or motion is approved by Codex"
+}

@@ -12,9 +12,40 @@
 
 ## Current pointers
 
+- Latest focused candidate: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_LISTEN_ACK_CONNECTED_RESULT.md` — 13 new selected drawings connected with three prior poses into Listen → Ack; normal/quarter playback observed, visual approval pending.
+- Source prompts, selection, hashes and assembly result: `assets/review/p02/author002/listen-ack-connected/`.
+
+- Compiled review: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_COMPILED_REVIEW_RESULT.md` — all available actions assembled for inspection; not finished motion.
+
+- Latest joint-sheet diagnostic: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_BLACK_SEQUENCE_SHEET_RESULT.md` — two failed outputs; no completed animation.
+- Exact negative source sheets/prompts: `assets/review/p02/author002/black-sequence-sheet/`.
+
+- Latest targeted retry: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_BLACK_MOTION_RETRY_RESULT.md` —7 new trials, controlled temporal progression still fails;12 motion tracks remain incomplete.
+- Retry evidence: `assets/review/p02/author002/black-motion-retry/README.md` —prompts, hashes, pixel scan and ordered comparisons; no approval request.
+
+- Latest black-motion continuation: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_BLACK_MOTION_RESULT.md` —52 black-backed drawings /23 diagnostic sequences; conversion and bounded review playback observed, complete motion FAILED/incomplete.
+- Current review evidence: `assets/review/p02/author002/black-motion-studies/README.md`; exact hashes/prompts, selected strips/GIFs and Godot result. No new visual approval requested.
+
+- Latest operator workaround: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_BLACK_BACKDROP_RESULT.md` — Godot black backdrop and one front still preview; transparent contracts unchanged.
+
+- Latest continuation: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_CONTINUATION_RESULT.md` — new right-key studies preserved; clean-source stage blocked by Photoroom HTTP402 and RGB-only fallback.
+- Continuation hashes/results: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_CONTINUATION_RESULTS.json`.
+
+- Latest operator decision: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_OPERATOR_APPROVAL.md` — construction sheet and latest corrected gait poses visually approved.
+- Exact approved selection: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_OPERATOR_SELECTION.json` — eight facings / eleven latest keys; superseded variants excluded.
+
+- Historical pre-approval execution result: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_KEY_GATE_RESULT.md` — coder stopped at Review11 anatomical key gate; 25 studies, zero promoted frames. Selected artwork's visual disposition is superseded by the operator decision above.
+- Exact study observations/hashes: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_AUTHOR_002_STUDY_RESULTS.json`.
+- Operator approval was supplied directly; complete v2 actions/intake/runtime remain NOT RUN.
+
+- Latest movement correction: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_FACING_AND_MOTION_CORRECTION.md` — front rest, profile travel, deliberate turns; planned, not implemented.
+- Latest visual disposition: **all R05-v1 previews operator-rejected**.
+- Current correction/evidence: `tasks/active/COMPANION-P02-EMBODIMENT-001/R05_OPERATOR_REJECTION_01.md`.
+- Replacement motion: **NOT READY**, no new visual approval request.
+
 - Active roadmap phase: `02 — Mon Body, Habitat, and Sprite Pipeline`
 - Phase acceptance: `NOT GRANTED`
-- Current disposition: `R05-V1 REJECTED — PROFILE LOCOMOTION REPLAN ACTIVE`
+- Current disposition: `OPERATOR VISUAL SELECTION APPROVED — COMPLETE MOTION AND TECHNICAL QA REMAIN`
 - Current directive: `COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-002`
 - Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_11.md`
 - Notion Review 11: https://app.notion.com/p/3d9833cb27ff818c89ebe1aca70cf28b

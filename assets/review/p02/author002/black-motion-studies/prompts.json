@@ -1,0 +1,520 @@
+{
+  "generator": "builtin_imagegen",
+  "basis_commit": "6bef092cb402270b75cbc6703d4e8d5e9d4cc665",
+  "frames": [
+    {
+      "id": "acknowledge_down",
+      "prompt": "Use case identity-preserve. Edit the supplied black-backed FRONT mon into ONE new temporal animation KEY: A single modest ACKNOWLEDGING NOD down key. Whole body remains FRONT. Head pitches downward about 6 degrees with subtle eyelid softening, rounded torso follows by 2 degrees. Keep hands calmly down by sides, no hand wave or flick. Both feet and pelvis remain fixed. This is one held key of a slow single nod followed by settle, not an entire animation. Keep exact existing camera, full-canvas framing, overall scale, curved flame-spike topology, broad organic unclothed purple body, cel-shadow shapes, two fingers plus one thumb on each intact hand and three toes per intact foot. Fix every planted foot pixel and lower-leg placement. No global image stretch, translation, change of facing, redesign, new anatomy or decorations. Solid opaque #000000 background. Same character, one full-body drawing, no sheet, labels or glow.",
+      "references": [
+        "front-candidate.png"
+      ],
+      "file": "exec-316dbc86-8937-413a-aed9-3357d3d7de94.png",
+      "approval_state": "candidate",
+      "kind": "temporal_key"
+    },
+    {
+      "id": "back",
+      "source_id": "back",
+      "source_file": "exec-cfae944a-5114-492f-90ea-77c547c3ca72.png",
+      "source_sha256": "649c100fb63b108ff8920578f3a4ade80a16254f88c6d55543a2630d3aa292b3",
+      "prompt": "Background-only edit of the supplied approved back neutral purple mon construction. Replace the checkerboard with uniform opaque pure RGB black #000000 everywhere outside the body, including limb gaps. Preserve exact character pose, facing, silhouette, broad hands and feet, spike topology, purple cel-shadow shapes, framing, proportions and anatomy. Do not add a face to the rear views. No redesign, no glow, floor, text, extra digit or background shading. Full body at unchanged size on solid black.",
+      "file": "exec-f5e84411-251d-42fa-b049-beba203a25ea.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "back_left",
+      "source_id": "back_left",
+      "source_file": "exec-789f8f10-8122-4610-b639-3f904584e9df.png",
+      "source_sha256": "4f03e9edfb52900dfd3bb1a22963c6656b6e982f94113446a472bbb28b00b259",
+      "prompt": "Background-only edit of the supplied approved back_left neutral purple mon construction. Replace the checkerboard with uniform opaque pure RGB black #000000 everywhere outside the body, including limb gaps. Preserve exact character pose, facing, silhouette, broad hands and feet, spike topology, purple cel-shadow shapes, framing, proportions and anatomy. Do not add a face to the rear views. No redesign, no glow, floor, text, extra digit or background shading. Full body at unchanged size on solid black.",
+      "file": "exec-8b3ad9ea-2ac2-494c-b160-da05f037ad1e.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "back_right",
+      "source_id": "back_right",
+      "source_file": "exec-5daf5925-e02f-4b8d-9cd2-5ca4adcd3c40.png",
+      "source_sha256": "ded3a38b716e77c319d5710fc08fcbb6677d5015da19aa185ae0aed4dec14497",
+      "prompt": "Background-only edit of the supplied approved back_right neutral purple mon construction. Replace the checkerboard with uniform opaque pure RGB black #000000 everywhere outside the body, including limb gaps. Preserve exact character pose, facing, silhouette, broad hands and feet, spike topology, purple cel-shadow shapes, framing, proportions and anatomy. Do not add a face to the rear views. No redesign, no glow, floor, text, extra digit or background shading. Full body at unchanged size on solid black.",
+      "file": "exec-4ed7d6fc-345a-4602-a693-d82c587cb986.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "breathe_exhale",
+      "prompt": "Use case identity-preserve. Edit the supplied black-backed FRONT mon into ONE new temporal animation KEY: End of a gentle EXHALE. Rounded torso relaxed narrower by about 1 percent, shoulders sink 3px, arms hang relaxed with tiny delayed settling. Head stays front-facing with the same pupils and smile, no nod. Feet and pelvis exactly unchanged. Keep exact existing camera, full-canvas framing, overall scale, curved flame-spike topology, broad organic unclothed purple body, cel-shadow shapes, two fingers plus one thumb on each intact hand and three toes per intact foot. Fix every planted foot pixel and lower-leg placement. No global image stretch, translation, change of facing, redesign, new anatomy or decorations. Solid opaque #000000 background. Same character, one full-body drawing, no sheet, labels or glow.",
+      "references": [
+        "front-candidate.png"
+      ],
+      "file": "exec-98838906-f109-4cef-863c-f12804bd49a4.png",
+      "approval_state": "candidate",
+      "kind": "temporal_key"
+    },
+    {
+      "id": "breathe_peak",
+      "prompt": "Use case identity-preserve. Edit the supplied black-backed FRONT mon into ONE new temporal animation KEY: Peak of a gentle INHALE. Expand the rounded torso/chest width only about 3 percent, shoulders lift very slightly, elbows float outward 5px. Head follows upward by only 3px, no tilt or turning. Both feet and pelvis stay exactly in place. This will be the peak of a slow four-second inhale/exhale, not a jump. Keep exact existing camera, full-canvas framing, overall scale, curved flame-spike topology, broad organic unclothed purple body, cel-shadow shapes, two fingers plus one thumb on each intact hand and three toes per intact foot. Fix every planted foot pixel and lower-leg placement. No global image stretch, translation, change of facing, redesign, new anatomy or decorations. Solid opaque #000000 background. Same character, one full-body drawing, no sheet, labels or glow.",
+      "references": [
+        "front-candidate.png"
+      ],
+      "file": "exec-979bd1bc-ef2b-41c2-95b2-16ef348ac55d.png",
+      "approval_state": "candidate",
+      "kind": "temporal_key"
+    },
+    {
+      "id": "front_left",
+      "source_id": "front_left",
+      "source_file": "exec-744fe462-a11e-40d8-94c0-f8b5510a2dc4.png",
+      "source_sha256": "5efab37b753cccdf653514e5e9ecdbbc2804ab00186ec3649e5ba1d33c94740c",
+      "prompt": "Edit target: supplied approved front_left neutral construction of the purple mon. Change ONLY the checkered background to completely solid opaque RGB black (#000000), including all negative spaces between fingers, limbs, toes and spikes. Preserve the exact existing pose, facing, framing, scale, proportions, organic rounded anatomy, spike silhouette, purple cel shading, eye shape, digit count and foot contours. No new lighting, rim light, outline glow, shadow on floor, labels or checker remnants. One unchanged full-body character centered on solid black. This is a background-only candidate conversion, not a new character design.",
+      "file": "exec-17103879-fc36-4c8c-be2c-95dfe21e4084.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "front_right",
+      "source_id": "front_right",
+      "source_file": "exec-0f9e8e1e-505e-43f8-ac3b-79ba6b874090.png",
+      "source_sha256": "b8a9c9d7b8fa119bee1247f82efb093301b48e4352b9b0301580809409380e04",
+      "prompt": "Edit target: supplied approved front_right neutral construction of the purple mon. Change ONLY the checkered background to completely solid opaque RGB black (#000000), including all negative spaces between fingers, limbs, toes and spikes. Preserve the exact existing pose, facing, framing, scale, proportions, organic rounded anatomy, spike silhouette, purple cel shading, eye shape, digit count and foot contours. No new lighting, rim light, outline glow, shadow on floor, labels or checker remnants. One unchanged full-body character centered on solid black. This is a background-only candidate conversion, not a new character design.",
+      "file": "exec-c0b5b53e-9ba9-44c0-86ae-1a2e46119534.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "left_contact_far",
+      "source_id": "left_contact_far",
+      "source_file": "exec-95863396-3477-43fe-8310-c800cf12ad2e.png",
+      "source_sha256": "340e99a4adc2f7ebbfaf1eba5f6498ecaeb70fff2d3d41ee29fed751d69c1128",
+      "prompt": "Background-only edit of operator-selected left_contact_far gait key. Replace ONLY checkerboard with opaque pure black #000000. Keep all exact limb overlap, foreground and far-leg identity, raised versus planted foot position, arm swing, hand shapes, three toes, two fingers plus thumb, face, head-spikes, framing and purple cel shading unchanged. One full-body LEFT PROFILE mon exactly as reference. No re-pose, mirror, glow, floor, markings or added shadow.",
+      "file": "exec-4aadb121-2f84-4b26-9499-bfbd5031faa0.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "left_contact_near_armfix",
+      "source_id": "left_contact_near_armfix",
+      "source_file": "exec-f21fc1fb-c3f0-4e2d-a299-075cb54fc4ec.png",
+      "source_sha256": "b2e48b5bdbb9dd6a557019f2016b9a96198a49f14976420dc341724ea70a7ea1",
+      "prompt": "Edit target is an operator-selected LEFT PROFILE gait key of the purple mon. Replace ONLY all gray/white checker background with uniform opaque pure black #000000. Preserve the EXACT gait key and limb overlap: left_contact_near_armfix. Keep the full body in identical canvas framing and scale. Do not move, flip or re-pose arms, hands, legs, feet, head, pupil, mouth or spikes. Preserve two rounded fingers plus thumb on each hand, three rounded toes on each foot and existing cel-shaded purple shadows. No ground glow, outline halo, gradient backdrop, text or decorations. Full-body black-backed animation key, one character only.",
+      "file": "exec-e3399667-6dc6-4b8c-aaa4-08bddd0c7bc4.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "left_down_armfix",
+      "source_id": "left_down_armfix",
+      "source_file": "exec-c76e819f-2500-4514-b476-7e1fd5fc3f64.png",
+      "source_sha256": "8e11373fd774d5d11738ae36b8b604e851a08f31ad74fac7fd47295977b81d08",
+      "prompt": "Edit target is an operator-selected LEFT PROFILE gait key of the purple mon. Replace ONLY all gray/white checker background with uniform opaque pure black #000000. Preserve the EXACT gait key and limb overlap: left_down_armfix. Keep the full body in identical canvas framing and scale. Do not move, flip or re-pose arms, hands, legs, feet, head, pupil, mouth or spikes. Preserve two rounded fingers plus thumb on each hand, three rounded toes on each foot and existing cel-shaded purple shadows. No ground glow, outline halo, gradient backdrop, text or decorations. Full-body black-backed animation key, one character only.",
+      "file": "exec-6321a37b-8ab3-4460-a841-cf36031e4a02.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "left_down_far",
+      "source_id": "left_down_far",
+      "source_file": "exec-77a6db42-5bc3-4716-9a21-a8e5f9010380.png",
+      "source_sha256": "6b8f0de7fa405ac7704b391389e59b3ebd9b453d27e82332f42bd959ff0fb036",
+      "prompt": "Background-only edit of operator-selected left_down_far gait key. Replace ONLY checkerboard with opaque pure black #000000. Keep all exact limb overlap, foreground and far-leg identity, raised versus planted foot position, arm swing, hand shapes, three toes, two fingers plus thumb, face, head-spikes, framing and purple cel shading unchanged. One full-body LEFT PROFILE mon exactly as reference. No re-pose, mirror, glow, floor, markings or added shadow.",
+      "file": "exec-58a4abf8-3c16-490c-9c29-d9bcc3418ea2.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "left_fix",
+      "source_id": "left_fix",
+      "source_file": "exec-4349dd4e-af32-4350-b211-0004e797ce33.png",
+      "source_sha256": "a6d554e515a54bee013d5f31c8a085c5144bb822d1639192306b5660ccc28f5a",
+      "prompt": "Edit target: supplied approved left neutral construction of the purple mon. Change ONLY the checkered background to completely solid opaque RGB black (#000000), including all negative spaces between fingers, limbs, toes and spikes. Preserve the exact existing pose, facing, framing, scale, proportions, organic rounded anatomy, spike silhouette, purple cel shading, eye shape, digit count and foot contours. No new lighting, rim light, outline glow, shadow on floor, labels or checker remnants. One unchanged full-body character centered on solid black. This is a background-only candidate conversion, not a new character design.",
+      "file": "exec-b9745267-4129-4d0e-a25f-31959e920d5b.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "left_passing_far",
+      "source_id": "left_passing_far",
+      "source_file": "exec-6412ba59-795e-4188-afb7-97c9e56bff4c.png",
+      "source_sha256": "872d4ccd262a1ea453000816bac86c339c5a432837efbf757413369562101c68",
+      "prompt": "Background-only edit of operator-selected left_passing_far gait key. Replace ONLY checkerboard with opaque pure black #000000. Keep all exact limb overlap, foreground and far-leg identity, raised versus planted foot position, arm swing, hand shapes, three toes, two fingers plus thumb, face, head-spikes, framing and purple cel shading unchanged. One full-body LEFT PROFILE mon exactly as reference. No re-pose, mirror, glow, floor, markings or added shadow.",
+      "file": "exec-e11b836d-c881-4ae2-a92c-307aa561260d.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "left_passing_repair2",
+      "source_id": "left_passing_repair2",
+      "source_file": "exec-49f685e2-0470-4a21-bb05-9114d60db24a.png",
+      "source_sha256": "fa8a0ef7696203afadadbd1bfd6718ca36a221f2694b75b64aa7845f9d577be4",
+      "prompt": "Edit target is an operator-selected LEFT PROFILE gait key of the purple mon. Replace ONLY all gray/white checker background with uniform opaque pure black #000000. Preserve the EXACT gait key and limb overlap: left_passing_repair2. Keep the full body in identical canvas framing and scale. Do not move, flip or re-pose arms, hands, legs, feet, head, pupil, mouth or spikes. Preserve two rounded fingers plus thumb on each hand, three rounded toes on each foot and existing cel-shaded purple shadows. No ground glow, outline halo, gradient backdrop, text or decorations. Full-body black-backed animation key, one character only.",
+      "file": "exec-9d8bb5d5-2b58-4481-90ef-c08db98a937f.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "left_start_anticipation",
+      "prompt": "Make ONE full-body temporal KEY drawing derived from these exact black-backed mon anchors. Full LEFT profile. Small anticipation before first step: knees soften and weight shifts onto the far leg without changing foot locations; chest leans about 3 degrees toward screen-left. Near heel unweights slightly, toes still down. Arms stay relaxed. Keep head level, not a jump. Preserve same orthographic camera, exact full-square framing, character proportions, swept curved flame silhouette, pupil, organic broad limbs, cel-shaded purple palette, two rounded fingers and one thumb per hand, three integrated toes per broad foot. No mirroring, no glow, no floor line, labels or decorative marks. All pixels outside character solid opaque #000000. Do not translate the whole character; body motion is articulated around the same grounded source location.",
+      "references": [
+        "exec-b9745267-4129-4d0e-a25f-31959e920d5b.png"
+      ],
+      "file": "exec-d81f5722-fcb5-4ed9-8697-56772294fd18.png",
+      "approval_state": "candidate",
+      "kind": "start_stop_key"
+    },
+    {
+      "id": "left_start_liftoff",
+      "prompt": "Make ONE full-body temporal KEY drawing derived from these exact black-backed mon anchors. Full LEFT profile. First step leaving neutral rest toward reference2: far leg carries weight under pelvis; near leg bends gently lifting its broad foot 30px, moving halfway toward its contact position in image2. Near arm starts counter-swing behind, far arm ahead, only half their eventual amplitude. Keep the foot horizontal and all three toes pointed screen-left. No dangling hand-foot. Preserve same orthographic camera, exact full-square framing, character proportions, swept curved flame silhouette, pupil, organic broad limbs, cel-shaded purple palette, two rounded fingers and one thumb per hand, three integrated toes per broad foot. No mirroring, no glow, no floor line, labels or decorative marks. All pixels outside character solid opaque #000000. Do not translate the whole character; body motion is articulated around the same grounded source location.",
+      "references": [
+        "exec-b9745267-4129-4d0e-a25f-31959e920d5b.png",
+        "exec-e3399667-6dc6-4b8c-aaa4-08bddd0c7bc4.png"
+      ],
+      "file": "exec-184ca644-87b8-49cc-8112-7584fa28d8dd.png",
+      "approval_state": "candidate",
+      "kind": "start_stop_key"
+    },
+    {
+      "id": "left_stop_collect",
+      "prompt": "Make ONE full-body temporal KEY drawing derived from these exact black-backed mon anchors. Full LEFT profile. Deceleration after near-foot contact in image1: that near forward foot remains planted, knee softly flexed. Trailing far foot lifts just enough to collect toward the planted foot, halfway to rest in image2. Shortened stride; torso gently comes upright, arm counter-swing diminishes. This is walking to a STOP, not another exaggerated stride. Preserve same orthographic camera, exact full-square framing, character proportions, swept curved flame silhouette, pupil, organic broad limbs, cel-shaded purple palette, two rounded fingers and one thumb per hand, three integrated toes per broad foot. No mirroring, no glow, no floor line, labels or decorative marks. All pixels outside character solid opaque #000000. Do not translate the whole character; body motion is articulated around the same grounded source location.",
+      "references": [
+        "exec-e3399667-6dc6-4b8c-aaa4-08bddd0c7bc4.png",
+        "exec-b9745267-4129-4d0e-a25f-31959e920d5b.png"
+      ],
+      "file": "exec-178fddff-d899-49be-9cfd-fb73bbfb8b34.png",
+      "approval_state": "candidate",
+      "kind": "start_stop_key"
+    },
+    {
+      "id": "left_stop_settle",
+      "prompt": "Make ONE full-body temporal KEY drawing derived from these exact black-backed mon anchors. Full LEFT profile. Both feet have planted in the exact neutral foot positions in the reference; tiny 2 degree torso settling response and relaxed knees after stopping. Near hand is 5px forward of its neutral hanging position, far hand settles behind. Head is level, same shape and scale. Quiet whole-body settle, no turn yet. Preserve same orthographic camera, exact full-square framing, character proportions, swept curved flame silhouette, pupil, organic broad limbs, cel-shaded purple palette, two rounded fingers and one thumb per hand, three integrated toes per broad foot. No mirroring, no glow, no floor line, labels or decorative marks. All pixels outside character solid opaque #000000. Do not translate the whole character; body motion is articulated around the same grounded source location.",
+      "references": [
+        "exec-b9745267-4129-4d0e-a25f-31959e920d5b.png"
+      ],
+      "file": "exec-cf3d86b9-e178-485e-8580-27cf80da8793.png",
+      "approval_state": "candidate",
+      "kind": "start_stop_key"
+    },
+    {
+      "id": "left_up_far",
+      "source_id": "left_up_far",
+      "source_file": "exec-4df27118-b8c3-4013-bdaa-39db57739750.png",
+      "source_sha256": "4373d3b5836caa7c8da80ea85ff457bec07ac5c7850e4f48e2c534adb26c3d97",
+      "prompt": "Background-only edit of operator-selected left_up_far gait key. Replace ONLY checkerboard with opaque pure black #000000. Keep all exact limb overlap, foreground and far-leg identity, raised versus planted foot position, arm swing, hand shapes, three toes, two fingers plus thumb, face, head-spikes, framing and purple cel shading unchanged. One full-body LEFT PROFILE mon exactly as reference. No re-pose, mirror, glow, floor, markings or added shadow.",
+      "file": "exec-1536d6dc-8d6c-4c46-81d3-e70d1aaf58d9.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "left_up_near",
+      "source_id": "left_up_near",
+      "source_file": "exec-a5a38c1d-838a-4b78-9358-ef09c864b4bc.png",
+      "source_sha256": "b8875de76ca33b6e0d7c2b179015b61ecbf7ee0de7cc3d913b0f5b069b6fd8a8",
+      "prompt": "Edit target is an operator-selected LEFT PROFILE gait key of the purple mon. Replace ONLY all gray/white checker background with uniform opaque pure black #000000. Preserve the EXACT gait key and limb overlap: left_up_near. Keep the full body in identical canvas framing and scale. Do not move, flip or re-pose arms, hands, legs, feet, head, pupil, mouth or spikes. Preserve two rounded fingers plus thumb on each hand, three rounded toes on each foot and existing cel-shaded purple shadows. No ground glow, outline halo, gradient backdrop, text or decorations. Full-body black-backed animation key, one character only.",
+      "file": "exec-fee0fea6-f7b5-4d98-9f85-559779ee40bc.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "left_walk_mid_0",
+      "prompt": "Use case: identity-preserve. Make ONE full-canvas animation in-between drawing, exactly halfway in TIME between image 1 (previous gait key) and image 2 (next gait key). They are the SAME purple mon walking in full left profile. This is phase 0 of an eight-phase walk. Not a blend/dissolve: draw one solid anatomically coherent intermediate pose, no ghosts or duplicated limbs. Preserve exact camera, framing, body proportions, face, curved flame silhouette, palette and cel shading from both images. Same two fingers plus thumb on each hand, broad three-toed feet. Near and far leg identities must remain consistent as legs exchange support, swing foot smoothly clears ground, support foot remains down where both anchors show contact. Arms only interpolate the two given counter-swing positions, no hand gestures. Head orientation must remain full left profile. Keep character centered at the same scale and baseline, no global translation or zoom. Solid opaque pure #000000 background including gaps between limbs, no outline glow/green/gray halo, no shadow/floor/text/labels/grid. Single square 1024x1024 frame, full figure entirely visible. Change ONLY the pose to the halfway articulation; do not redesign or add detail.",
+      "references": [
+        "exec-e3399667-6dc6-4b8c-aaa4-08bddd0c7bc4.png",
+        "exec-6321a37b-8ab3-4460-a841-cf36031e4a02.png"
+      ],
+      "file": "exec-3b5348fc-7d3d-4cf2-a7c0-c0c598624496.png",
+      "approval_state": "candidate",
+      "kind": "constrained_gait_inbetween"
+    },
+    {
+      "id": "left_walk_mid_1",
+      "prompt": "Use case: identity-preserve. Make ONE full-canvas animation in-between drawing, exactly halfway in TIME between image 1 (previous gait key) and image 2 (next gait key). They are the SAME purple mon walking in full left profile. This is phase 1 of an eight-phase walk. Not a blend/dissolve: draw one solid anatomically coherent intermediate pose, no ghosts or duplicated limbs. Preserve exact camera, framing, body proportions, face, curved flame silhouette, palette and cel shading from both images. Same two fingers plus thumb on each hand, broad three-toed feet. Near and far leg identities must remain consistent as legs exchange support, swing foot smoothly clears ground, support foot remains down where both anchors show contact. Arms only interpolate the two given counter-swing positions, no hand gestures. Head orientation must remain full left profile. Keep character centered at the same scale and baseline, no global translation or zoom. Solid opaque pure #000000 background including gaps between limbs, no outline glow/green/gray halo, no shadow/floor/text/labels/grid. Single square 1024x1024 frame, full figure entirely visible. Change ONLY the pose to the halfway articulation; do not redesign or add detail.",
+      "references": [
+        "exec-6321a37b-8ab3-4460-a841-cf36031e4a02.png",
+        "exec-9d8bb5d5-2b58-4481-90ef-c08db98a937f.png"
+      ],
+      "file": "exec-15695eed-a878-49d6-af29-ce5257d4a48f.png",
+      "approval_state": "candidate",
+      "kind": "constrained_gait_inbetween"
+    },
+    {
+      "id": "left_walk_mid_2",
+      "prompt": "Use case: identity-preserve. Make ONE full-canvas animation in-between drawing, exactly halfway in TIME between image 1 (previous gait key) and image 2 (next gait key). They are the SAME purple mon walking in full left profile. This is phase 2 of an eight-phase walk. Not a blend/dissolve: draw one solid anatomically coherent intermediate pose, no ghosts or duplicated limbs. Preserve exact camera, framing, body proportions, face, curved flame silhouette, palette and cel shading from both images. Same two fingers plus thumb on each hand, broad three-toed feet. Near and far leg identities must remain consistent as legs exchange support, swing foot smoothly clears ground, support foot remains down where both anchors show contact. Arms only interpolate the two given counter-swing positions, no hand gestures. Head orientation must remain full left profile. Keep character centered at the same scale and baseline, no global translation or zoom. Solid opaque pure #000000 background including gaps between limbs, no outline glow/green/gray halo, no shadow/floor/text/labels/grid. Single square 1024x1024 frame, full figure entirely visible. Change ONLY the pose to the halfway articulation; do not redesign or add detail.",
+      "references": [
+        "exec-9d8bb5d5-2b58-4481-90ef-c08db98a937f.png",
+        "exec-fee0fea6-f7b5-4d98-9f85-559779ee40bc.png"
+      ],
+      "file": "exec-86527e6a-0f7e-4656-9fb9-35a8977cf35d.png",
+      "approval_state": "candidate",
+      "kind": "constrained_gait_inbetween"
+    },
+    {
+      "id": "left_walk_mid_3",
+      "prompt": "Use case: identity-preserve. Make ONE full-canvas animation in-between drawing, exactly halfway in TIME between image 1 (previous gait key) and image 2 (next gait key). They are the SAME purple mon walking in full left profile. This is phase 3 of an eight-phase walk. Not a blend/dissolve: draw one solid anatomically coherent intermediate pose, no ghosts or duplicated limbs. Preserve exact camera, framing, body proportions, face, curved flame silhouette, palette and cel shading from both images. Same two fingers plus thumb on each hand, broad three-toed feet. Near and far leg identities must remain consistent as legs exchange support, swing foot smoothly clears ground, support foot remains down where both anchors show contact. Arms only interpolate the two given counter-swing positions, no hand gestures. Head orientation must remain full left profile. Keep character centered at the same scale and baseline, no global translation or zoom. Solid opaque pure #000000 background including gaps between limbs, no outline glow/green/gray halo, no shadow/floor/text/labels/grid. Single square 1024x1024 frame, full figure entirely visible. Change ONLY the pose to the halfway articulation; do not redesign or add detail.",
+      "references": [
+        "exec-fee0fea6-f7b5-4d98-9f85-559779ee40bc.png",
+        "exec-4aadb121-2f84-4b26-9499-bfbd5031faa0.png"
+      ],
+      "file": "exec-937ca067-3885-48e1-9c75-028f6d44c420.png",
+      "approval_state": "candidate",
+      "kind": "constrained_gait_inbetween"
+    },
+    {
+      "id": "left_walk_mid_4",
+      "prompt": "Use case: identity-preserve. Make ONE full-canvas animation in-between drawing, exactly halfway in TIME between image 1 (previous gait key) and image 2 (next gait key). They are the SAME purple mon walking in full left profile. This is phase 4 of an eight-phase walk. Not a blend/dissolve: draw one solid anatomically coherent intermediate pose, no ghosts or duplicated limbs. Preserve exact camera, framing, body proportions, face, curved flame silhouette, palette and cel shading from both images. Same two fingers plus thumb on each hand, broad three-toed feet. Near and far leg identities must remain consistent as legs exchange support, swing foot smoothly clears ground, support foot remains down where both anchors show contact. Arms only interpolate the two given counter-swing positions, no hand gestures. Head orientation must remain full left profile. Keep character centered at the same scale and baseline, no global translation or zoom. Solid opaque pure #000000 background including gaps between limbs, no outline glow/green/gray halo, no shadow/floor/text/labels/grid. Single square 1024x1024 frame, full figure entirely visible. Change ONLY the pose to the halfway articulation; do not redesign or add detail.",
+      "references": [
+        "exec-4aadb121-2f84-4b26-9499-bfbd5031faa0.png",
+        "exec-58a4abf8-3c16-490c-9c29-d9bcc3418ea2.png"
+      ],
+      "file": "exec-9d8e387a-d113-4322-923e-8a7cb10e3121.png",
+      "approval_state": "candidate",
+      "kind": "constrained_gait_inbetween"
+    },
+    {
+      "id": "left_walk_mid_5",
+      "prompt": "Use case: identity-preserve. Make ONE full-canvas animation in-between drawing, exactly halfway in TIME between image 1 (previous gait key) and image 2 (next gait key). They are the SAME purple mon walking in full left profile. This is phase 5 of an eight-phase walk. Not a blend/dissolve: draw one solid anatomically coherent intermediate pose, no ghosts or duplicated limbs. Preserve exact camera, framing, body proportions, face, curved flame silhouette, palette and cel shading from both images. Same two fingers plus thumb on each hand, broad three-toed feet. Near and far leg identities must remain consistent as legs exchange support, swing foot smoothly clears ground, support foot remains down where both anchors show contact. Arms only interpolate the two given counter-swing positions, no hand gestures. Head orientation must remain full left profile. Keep character centered at the same scale and baseline, no global translation or zoom. Solid opaque pure #000000 background including gaps between limbs, no outline glow/green/gray halo, no shadow/floor/text/labels/grid. Single square 1024x1024 frame, full figure entirely visible. Change ONLY the pose to the halfway articulation; do not redesign or add detail.",
+      "references": [
+        "exec-58a4abf8-3c16-490c-9c29-d9bcc3418ea2.png",
+        "exec-e11b836d-c881-4ae2-a92c-307aa561260d.png"
+      ],
+      "file": "exec-45a08d58-80f2-42c3-aea0-a4daebaf96b1.png",
+      "approval_state": "candidate",
+      "kind": "constrained_gait_inbetween"
+    },
+    {
+      "id": "left_walk_mid_6",
+      "prompt": "Use case: identity-preserve. Make ONE full-canvas animation in-between drawing, exactly halfway in TIME between image 1 (previous gait key) and image 2 (next gait key). They are the SAME purple mon walking in full left profile. This is phase 6 of an eight-phase walk. Not a blend/dissolve: draw one solid anatomically coherent intermediate pose, no ghosts or duplicated limbs. Preserve exact camera, framing, body proportions, face, curved flame silhouette, palette and cel shading from both images. Same two fingers plus thumb on each hand, broad three-toed feet. Near and far leg identities must remain consistent as legs exchange support, swing foot smoothly clears ground, support foot remains down where both anchors show contact. Arms only interpolate the two given counter-swing positions, no hand gestures. Head orientation must remain full left profile. Keep character centered at the same scale and baseline, no global translation or zoom. Solid opaque pure #000000 background including gaps between limbs, no outline glow/green/gray halo, no shadow/floor/text/labels/grid. Single square 1024x1024 frame, full figure entirely visible. Change ONLY the pose to the halfway articulation; do not redesign or add detail.",
+      "references": [
+        "exec-e11b836d-c881-4ae2-a92c-307aa561260d.png",
+        "exec-1536d6dc-8d6c-4c46-81d3-e70d1aaf58d9.png"
+      ],
+      "file": "exec-a4913609-ca50-4fcf-b0c0-a40b76c67683.png",
+      "approval_state": "candidate",
+      "kind": "constrained_gait_inbetween"
+    },
+    {
+      "id": "left_walk_mid_7",
+      "prompt": "Use case: identity-preserve. Make ONE full-canvas animation in-between drawing, exactly halfway in TIME between image 1 (previous gait key) and image 2 (next gait key). They are the SAME purple mon walking in full left profile. This is phase 7 of an eight-phase walk. Not a blend/dissolve: draw one solid anatomically coherent intermediate pose, no ghosts or duplicated limbs. Preserve exact camera, framing, body proportions, face, curved flame silhouette, palette and cel shading from both images. Same two fingers plus thumb on each hand, broad three-toed feet. Near and far leg identities must remain consistent as legs exchange support, swing foot smoothly clears ground, support foot remains down where both anchors show contact. Arms only interpolate the two given counter-swing positions, no hand gestures. Head orientation must remain full left profile. Keep character centered at the same scale and baseline, no global translation or zoom. Solid opaque pure #000000 background including gaps between limbs, no outline glow/green/gray halo, no shadow/floor/text/labels/grid. Single square 1024x1024 frame, full figure entirely visible. Change ONLY the pose to the halfway articulation; do not redesign or add detail.",
+      "references": [
+        "exec-1536d6dc-8d6c-4c46-81d3-e70d1aaf58d9.png",
+        "exec-e3399667-6dc6-4b8c-aaa4-08bddd0c7bc4.png"
+      ],
+      "file": "exec-b2ae6eb0-d8ba-4b90-ad38-a04fb9bf1f8f.png",
+      "approval_state": "candidate",
+      "kind": "constrained_gait_inbetween"
+    },
+    {
+      "id": "listen_hold",
+      "prompt": "Use case identity-preserve. Edit the supplied black-backed FRONT mon into ONE new temporal animation KEY: An attentive LISTEN HOLD key. Whole body stays squarely FRONT. Pupils look slightly upward at viewer, eyelids open attentively without changing eye design. Head inclines forward just 3 degrees, torso leans forward subtly from planted hips, hands remain calmly down at sides unchanged. No hand gesture, no arc symbols. Anticipation is quiet and sustained. Keep exact existing camera, full-canvas framing, overall scale, curved flame-spike topology, broad organic unclothed purple body, cel-shadow shapes, two fingers plus one thumb on each intact hand and three toes per intact foot. Fix every planted foot pixel and lower-leg placement. No global image stretch, translation, change of facing, redesign, new anatomy or decorations. Solid opaque #000000 background. Same character, one full-body drawing, no sheet, labels or glow.",
+      "references": [
+        "front-candidate.png"
+      ],
+      "file": "exec-8d98aaa7-f822-4ef8-9463-23d0ca09fc44.png",
+      "approval_state": "candidate",
+      "kind": "temporal_key"
+    },
+    {
+      "id": "right_contact_far",
+      "source_file": "exec-9057a3ee-02c3-4cc2-94a0-a4a5b2622cfc.png",
+      "prompt": "Background-only conversion of RIGHT PROFILE mon gait key right_contact_far. Keep the character pose, near/far leg overlap, arm swing, head size, framing, exact foot position and curved anatomy identical to this reference. Replace the checkerboard/transparent outer background and all negative gaps with uniform opaque pure black #000000. Do not mirror, scale, move, re-pose, redraw anatomy, add digits, add shadow, glow, halo or text. Preserve original purple cel-shadow colors, two fingers plus thumb per hand and three toes on each foot. One full-body sprite, black everywhere outside it.",
+      "file": "exec-72ba808c-8bfd-472a-9f71-3feaff314ce6.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "right_contact_near",
+      "source_file": "exec-c3d2d9e3-ec47-47a3-8ba2-9bb3f9970f01.png",
+      "prompt": "Background-only conversion of RIGHT PROFILE mon gait key right_contact_near. Keep the character pose, near/far leg overlap, arm swing, head size, framing, exact foot position and curved anatomy identical to this reference. Replace the checkerboard/transparent outer background and all negative gaps with uniform opaque pure black #000000. Do not mirror, scale, move, re-pose, redraw anatomy, add digits, add shadow, glow, halo or text. Preserve original purple cel-shadow colors, two fingers plus thumb per hand and three toes on each foot. One full-body sprite, black everywhere outside it.",
+      "file": "exec-8e697751-1f85-45a5-9112-6eb422ac0605.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "right_down_far",
+      "source_file": "exec-8830d16a-ded6-4209-8281-b6a2dea806b5.png",
+      "prompt": "Background-only conversion of RIGHT PROFILE mon gait key right_down_far. Keep the character pose, near/far leg overlap, arm swing, head size, framing, exact foot position and curved anatomy identical to this reference. Replace the checkerboard/transparent outer background and all negative gaps with uniform opaque pure black #000000. Do not mirror, scale, move, re-pose, redraw anatomy, add digits, add shadow, glow, halo or text. Preserve original purple cel-shadow colors, two fingers plus thumb per hand and three toes on each foot. One full-body sprite, black everywhere outside it.",
+      "file": "exec-9671c5c9-6145-488c-ac9d-43f19dfb0620.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "right_down_near",
+      "source_file": "exec-9868b502-dd82-46f8-8a4a-53bea10f806b.png",
+      "prompt": "Background-only conversion of RIGHT PROFILE mon gait key right_down_near. Keep the character pose, near/far leg overlap, arm swing, head size, framing, exact foot position and curved anatomy identical to this reference. Replace the checkerboard/transparent outer background and all negative gaps with uniform opaque pure black #000000. Do not mirror, scale, move, re-pose, redraw anatomy, add digits, add shadow, glow, halo or text. Preserve original purple cel-shadow colors, two fingers plus thumb per hand and three toes on each foot. One full-body sprite, black everywhere outside it.",
+      "file": "exec-e20e66a4-948a-4355-9339-6c7e6acf1d84.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "right_fix",
+      "source_id": "right_fix",
+      "source_file": "exec-188bc285-c713-41fc-a9d9-43c5d930bdd1.png",
+      "source_sha256": "6c33fd3606c08dd5d3a5827b1e53ec311497329f8f0278634c5f22ba40fc959f",
+      "prompt": "Edit target: supplied approved right neutral construction of the purple mon. Change ONLY the checkered background to completely solid opaque RGB black (#000000), including all negative spaces between fingers, limbs, toes and spikes. Preserve the exact existing pose, facing, framing, scale, proportions, organic rounded anatomy, spike silhouette, purple cel shading, eye shape, digit count and foot contours. No new lighting, rim light, outline glow, shadow on floor, labels or checker remnants. One unchanged full-body character centered on solid black. This is a background-only candidate conversion, not a new character design.",
+      "file": "exec-7153dbf1-573b-428b-b639-d2af24dfdcbd.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "right_passing_far_repair",
+      "source_file": "exec-5a4fe831-fad1-4e15-b023-12f6735b20b9.png",
+      "prompt": "Background-only conversion of RIGHT PROFILE mon gait key right_passing_far_repair. Keep the character pose, near/far leg overlap, arm swing, head size, framing, exact foot position and curved anatomy identical to this reference. Replace the checkerboard/transparent outer background and all negative gaps with uniform opaque pure black #000000. Do not mirror, scale, move, re-pose, redraw anatomy, add digits, add shadow, glow, halo or text. Preserve original purple cel-shadow colors, two fingers plus thumb per hand and three toes on each foot. One full-body sprite, black everywhere outside it.",
+      "file": "exec-98eb316f-6513-404f-ba9a-9cd854604a0e.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "right_passing_near",
+      "source_file": "exec-7e4aa74a-619b-46c2-beb8-007608f01830.png",
+      "prompt": "Background-only conversion of RIGHT PROFILE mon gait key right_passing_near. Keep the character pose, near/far leg overlap, arm swing, head size, framing, exact foot position and curved anatomy identical to this reference. Replace the checkerboard/transparent outer background and all negative gaps with uniform opaque pure black #000000. Do not mirror, scale, move, re-pose, redraw anatomy, add digits, add shadow, glow, halo or text. Preserve original purple cel-shadow colors, two fingers plus thumb per hand and three toes on each foot. One full-body sprite, black everywhere outside it.",
+      "file": "exec-23f26f05-0606-4682-b3d9-436912d0bf3b.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "right_start_anticipation",
+      "prompt": "Make ONE full-body temporal KEY drawing derived from these exact black-backed mon anchors. Full RIGHT profile. Small anticipation before first step: knees soften and weight shifts onto the far leg without changing foot locations; chest leans about 3 degrees toward screen-right. Near heel unweights slightly, toes still down. Arms stay relaxed. Keep head level, not a jump. Preserve same orthographic camera, exact full-square framing, character proportions, swept curved flame silhouette, pupil, organic broad limbs, cel-shaded purple palette, two rounded fingers and one thumb per hand, three integrated toes per broad foot. No mirroring, no glow, no floor line, labels or decorative marks. All pixels outside character solid opaque #000000. Do not translate the whole character; body motion is articulated around the same grounded source location.",
+      "references": [
+        "exec-7153dbf1-573b-428b-b639-d2af24dfdcbd.png"
+      ],
+      "file": "exec-bfa21151-3944-4db8-a2b3-fef46f029ce6.png",
+      "approval_state": "candidate",
+      "kind": "start_stop_key"
+    },
+    {
+      "id": "right_start_liftoff",
+      "prompt": "Make ONE full-body temporal KEY drawing derived from these exact black-backed mon anchors. Full RIGHT profile. First step leaving neutral rest toward reference2: far leg carries weight under pelvis; near leg bends gently lifting its broad foot 30px, moving halfway toward its contact position in image2. Near arm starts counter-swing behind, far arm ahead, only half their eventual amplitude. Keep the foot horizontal and all three toes pointed screen-right. No dangling hand-foot. Preserve same orthographic camera, exact full-square framing, character proportions, swept curved flame silhouette, pupil, organic broad limbs, cel-shaded purple palette, two rounded fingers and one thumb per hand, three integrated toes per broad foot. No mirroring, no glow, no floor line, labels or decorative marks. All pixels outside character solid opaque #000000. Do not translate the whole character; body motion is articulated around the same grounded source location.",
+      "references": [
+        "exec-7153dbf1-573b-428b-b639-d2af24dfdcbd.png",
+        "exec-8e697751-1f85-45a5-9112-6eb422ac0605.png"
+      ],
+      "file": "exec-912016cd-f4c5-454c-aae1-3fb9751a14b2.png",
+      "approval_state": "candidate",
+      "kind": "start_stop_key"
+    },
+    {
+      "id": "right_stop_collect",
+      "prompt": "Make ONE full-body temporal KEY drawing derived from these exact black-backed mon anchors. Full RIGHT profile. Deceleration after near-foot contact in image1: that near forward foot remains planted, knee softly flexed. Trailing far foot lifts just enough to collect toward the planted foot, halfway to rest in image2. Shortened stride; torso gently comes upright, arm counter-swing diminishes. This is walking to a STOP, not another exaggerated stride. Preserve same orthographic camera, exact full-square framing, character proportions, swept curved flame silhouette, pupil, organic broad limbs, cel-shaded purple palette, two rounded fingers and one thumb per hand, three integrated toes per broad foot. No mirroring, no glow, no floor line, labels or decorative marks. All pixels outside character solid opaque #000000. Do not translate the whole character; body motion is articulated around the same grounded source location.",
+      "references": [
+        "exec-8e697751-1f85-45a5-9112-6eb422ac0605.png",
+        "exec-7153dbf1-573b-428b-b639-d2af24dfdcbd.png"
+      ],
+      "file": "exec-7d325084-f4a3-4476-8943-4cc145d9fd2b.png",
+      "approval_state": "candidate",
+      "kind": "start_stop_key"
+    },
+    {
+      "id": "right_stop_settle",
+      "prompt": "Make ONE full-body temporal KEY drawing derived from these exact black-backed mon anchors. Full RIGHT profile. Both feet have planted in the exact neutral foot positions in the reference; tiny 2 degree torso settling response and relaxed knees after stopping. Near hand is 5px forward of its neutral hanging position, far hand settles behind. Head is level, same shape and scale. Quiet whole-body settle, no turn yet. Preserve same orthographic camera, exact full-square framing, character proportions, swept curved flame silhouette, pupil, organic broad limbs, cel-shaded purple palette, two rounded fingers and one thumb per hand, three integrated toes per broad foot. No mirroring, no glow, no floor line, labels or decorative marks. All pixels outside character solid opaque #000000. Do not translate the whole character; body motion is articulated around the same grounded source location.",
+      "references": [
+        "exec-7153dbf1-573b-428b-b639-d2af24dfdcbd.png"
+      ],
+      "file": "exec-cd8df855-1411-42fb-8fd2-af8a0bdf7bff.png",
+      "approval_state": "candidate",
+      "kind": "start_stop_key"
+    },
+    {
+      "id": "right_up_far",
+      "source_file": "exec-addd4a32-aef1-4691-8881-3308a610de2a.png",
+      "prompt": "Background-only conversion of RIGHT PROFILE mon gait key right_up_far. Keep the character pose, near/far leg overlap, arm swing, head size, framing, exact foot position and curved anatomy identical to this reference. Replace the checkerboard/transparent outer background and all negative gaps with uniform opaque pure black #000000. Do not mirror, scale, move, re-pose, redraw anatomy, add digits, add shadow, glow, halo or text. Preserve original purple cel-shadow colors, two fingers plus thumb per hand and three toes on each foot. One full-body sprite, black everywhere outside it.",
+      "file": "exec-90bfc9b1-a6d9-4f29-9a8d-1c7070a50db7.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "right_up_near",
+      "source_file": "exec-213938c9-ecdf-48ec-8d83-91d0676de123.png",
+      "prompt": "Background-only conversion of RIGHT PROFILE mon gait key right_up_near. Keep the character pose, near/far leg overlap, arm swing, head size, framing, exact foot position and curved anatomy identical to this reference. Replace the checkerboard/transparent outer background and all negative gaps with uniform opaque pure black #000000. Do not mirror, scale, move, re-pose, redraw anatomy, add digits, add shadow, glow, halo or text. Preserve original purple cel-shadow colors, two fingers plus thumb per hand and three toes on each foot. One full-body sprite, black everywhere outside it.",
+      "file": "exec-70b2285d-f6e4-4c9b-88af-878e486af3df.png",
+      "approval_state": "candidate",
+      "kind": "background_conversion"
+    },
+    {
+      "id": "turn_left_out_22",
+      "prompt": "ONE temporal turn KEY of the exact purple mon in the references. Reference1 and reference2 are neighboring facing anchors. Draw the intermediate WHOLE-BODY facing 22.5 degrees from straight-front toward SCREEN LEFT. OUTBOUND turn: eyes lead toward travel, then head, chest, pelvis and feet all follow into the same new facing; shoulders remain relaxed. Preserve exact curved flame head topology through perspective, black eye fields with white pupils, small mouth, original purple cel-shading, broad organic unclothed torso and limbs, two fingers plus thumb and three toes per foot. Same square framing, grounded position and total scale. Both visible hands and feet readable. Do not blend/double-expose, globally stretch, mirror or rotate a flat image; draw true intermediate perspective for the whole body. Solid opaque black #000000 background, no grid, text, glow, floor shadow or extra character.",
+      "references": [
+        "front-candidate.png",
+        "exec-17103879-fc36-4c8c-be2c-95dfe21e4084.png"
+      ],
+      "file": "exec-57cd75a0-1469-4208-97c2-de030794bffc.png",
+      "approval_state": "candidate",
+      "kind": "turn_key"
+    },
+    {
+      "id": "turn_left_out_67",
+      "prompt": "ONE temporal turn KEY of the exact purple mon in the references. Reference1 and reference2 are neighboring facing anchors. Draw the intermediate WHOLE-BODY facing 67.5 degrees from straight-front toward SCREEN LEFT. OUTBOUND turn: whole body nearly profile, hips and foot headings follow the head; no twisted frontal torso below a profile head. Preserve exact curved flame head topology through perspective, black eye fields with white pupils, small mouth, original purple cel-shading, broad organic unclothed torso and limbs, two fingers plus thumb and three toes per foot. Same square framing, grounded position and total scale. Both visible hands and feet readable. Do not blend/double-expose, globally stretch, mirror or rotate a flat image; draw true intermediate perspective for the whole body. Solid opaque black #000000 background, no grid, text, glow, floor shadow or extra character.",
+      "references": [
+        "exec-17103879-fc36-4c8c-be2c-95dfe21e4084.png",
+        "exec-b9745267-4129-4d0e-a25f-31959e920d5b.png"
+      ],
+      "file": "exec-d37af188-7386-4ca7-bfed-0f5f5194a51b.png",
+      "approval_state": "candidate",
+      "kind": "turn_key"
+    },
+    {
+      "id": "turn_left_return_22",
+      "prompt": "ONE temporal turn KEY of the exact purple mon in the references. Reference1 and reference2 are neighboring facing anchors. Draw the intermediate WHOLE-BODY facing 22.5 degrees from straight-front toward SCREEN LEFT. RETURN after stopping: almost facing the viewer again, chest and pelvis follow gaze, broad feet pivot to front and arms settle close to neutral; not a head-only turn. Preserve exact curved flame head topology through perspective, black eye fields with white pupils, small mouth, original purple cel-shading, broad organic unclothed torso and limbs, two fingers plus thumb and three toes per foot. Same square framing, grounded position and total scale. Both visible hands and feet readable. Do not blend/double-expose, globally stretch, mirror or rotate a flat image; draw true intermediate perspective for the whole body. Solid opaque black #000000 background, no grid, text, glow, floor shadow or extra character.",
+      "references": [
+        "exec-17103879-fc36-4c8c-be2c-95dfe21e4084.png",
+        "front-candidate.png"
+      ],
+      "file": "exec-d15ab82c-9502-486b-b6f5-6b2eac6696e0.png",
+      "approval_state": "candidate",
+      "kind": "turn_key"
+    },
+    {
+      "id": "turn_left_return_67",
+      "prompt": "ONE temporal turn KEY of the exact purple mon in the references. Reference1 and reference2 are neighboring facing anchors. Draw the intermediate WHOLE-BODY facing 67.5 degrees from straight-front toward SCREEN LEFT. RETURN after stopping: eyes look back toward the viewer, torso and hips rotate back toward front, small relaxed knee flexion and arms lag slightly; not the outbound pose copied backwards. Preserve exact curved flame head topology through perspective, black eye fields with white pupils, small mouth, original purple cel-shading, broad organic unclothed torso and limbs, two fingers plus thumb and three toes per foot. Same square framing, grounded position and total scale. Both visible hands and feet readable. Do not blend/double-expose, globally stretch, mirror or rotate a flat image; draw true intermediate perspective for the whole body. Solid opaque black #000000 background, no grid, text, glow, floor shadow or extra character.",
+      "references": [
+        "exec-b9745267-4129-4d0e-a25f-31959e920d5b.png",
+        "exec-17103879-fc36-4c8c-be2c-95dfe21e4084.png"
+      ],
+      "file": "exec-a893b5a2-c85c-48f6-893c-10e3fd8fa681.png",
+      "approval_state": "candidate",
+      "kind": "turn_key"
+    },
+    {
+      "id": "turn_right_out_22",
+      "prompt": "ONE temporal turn KEY of the exact purple mon in the references. Reference1 and reference2 are neighboring facing anchors. Draw the intermediate WHOLE-BODY facing 22.5 degrees from straight-front toward SCREEN RIGHT. OUTBOUND turn: eyes lead toward travel, then head, chest, pelvis and feet all follow into the same new facing; shoulders remain relaxed. Preserve exact curved flame head topology through perspective, black eye fields with white pupils, small mouth, original purple cel-shading, broad organic unclothed torso and limbs, two fingers plus thumb and three toes per foot. Same square framing, grounded position and total scale. Both visible hands and feet readable. Do not blend/double-expose, globally stretch, mirror or rotate a flat image; draw true intermediate perspective for the whole body. Solid opaque black #000000 background, no grid, text, glow, floor shadow or extra character.",
+      "references": [
+        "front-candidate.png",
+        "exec-c0b5b53e-9ba9-44c0-86ae-1a2e46119534.png"
+      ],
+      "file": "exec-98ee21ad-1f1f-4a84-8b76-02806265ec6b.png",
+      "approval_state": "candidate",
+      "kind": "turn_key"
+    },
+    {
+      "id": "turn_right_out_67",
+      "prompt": "ONE temporal turn KEY of the exact purple mon in the references. Reference1 and reference2 are neighboring facing anchors. Draw the intermediate WHOLE-BODY facing 67.5 degrees from straight-front toward SCREEN RIGHT. OUTBOUND turn: whole body nearly profile, hips and foot headings follow the head; no twisted frontal torso below a profile head. Preserve exact curved flame head topology through perspective, black eye fields with white pupils, small mouth, original purple cel-shading, broad organic unclothed torso and limbs, two fingers plus thumb and three toes per foot. Same square framing, grounded position and total scale. Both visible hands and feet readable. Do not blend/double-expose, globally stretch, mirror or rotate a flat image; draw true intermediate perspective for the whole body. Solid opaque black #000000 background, no grid, text, glow, floor shadow or extra character.",
+      "references": [
+        "exec-c0b5b53e-9ba9-44c0-86ae-1a2e46119534.png",
+        "exec-7153dbf1-573b-428b-b639-d2af24dfdcbd.png"
+      ],
+      "file": "exec-0c2bf9f8-ef7d-4a5f-859a-2adee0cc1cd7.png",
+      "approval_state": "candidate",
+      "kind": "turn_key"
+    },
+    {
+      "id": "turn_right_return_22",
+      "prompt": "ONE temporal turn KEY of the exact purple mon in the references. Reference1 and reference2 are neighboring facing anchors. Draw the intermediate WHOLE-BODY facing 22.5 degrees from straight-front toward SCREEN RIGHT. RETURN after stopping: almost facing the viewer again, chest and pelvis follow gaze, broad feet pivot to front and arms settle close to neutral; not a head-only turn. Preserve exact curved flame head topology through perspective, black eye fields with white pupils, small mouth, original purple cel-shading, broad organic unclothed torso and limbs, two fingers plus thumb and three toes per foot. Same square framing, grounded position and total scale. Both visible hands and feet readable. Do not blend/double-expose, globally stretch, mirror or rotate a flat image; draw true intermediate perspective for the whole body. Solid opaque black #000000 background, no grid, text, glow, floor shadow or extra character.",
+      "references": [
+        "exec-c0b5b53e-9ba9-44c0-86ae-1a2e46119534.png",
+        "front-candidate.png"
+      ],
+      "file": "exec-ba2d57ad-88c3-43e9-8436-bed3e1dc8462.png",
+      "approval_state": "candidate",
+      "kind": "turn_key"
+    },
+    {
+      "id": "turn_right_return_67",
+      "prompt": "ONE temporal turn KEY of the exact purple mon in the references. Reference1 and reference2 are neighboring facing anchors. Draw the intermediate WHOLE-BODY facing 67.5 degrees from straight-front toward SCREEN RIGHT. RETURN after stopping: eyes look back toward the viewer, torso and hips rotate back toward front, small relaxed knee flexion and arms lag slightly; not the outbound pose copied backwards. Preserve exact curved flame head topology through perspective, black eye fields with white pupils, small mouth, original purple cel-shading, broad organic unclothed torso and limbs, two fingers plus thumb and three toes per foot. Same square framing, grounded position and total scale. Both visible hands and feet readable. Do not blend/double-expose, globally stretch, mirror or rotate a flat image; draw true intermediate perspective for the whole body. Solid opaque black #000000 background, no grid, text, glow, floor shadow or extra character.",
+      "references": [
+        "exec-7153dbf1-573b-428b-b639-d2af24dfdcbd.png",
+        "exec-c0b5b53e-9ba9-44c0-86ae-1a2e46119534.png"
+      ],
+      "file": "exec-6deab147-075f-439b-9ea4-b6798f2c4977.png",
+      "approval_state": "candidate",
+      "kind": "turn_key"
+    }
+  ]
+}

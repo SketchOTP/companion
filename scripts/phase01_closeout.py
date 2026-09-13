@@ -60,6 +60,13 @@ def wait_increase(fn, old, timeout=5):
         time.sleep(.02)
     return fn()
 
+def wait_absent(path, timeout=5):
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        if not path.exists(): return True
+        time.sleep(.02)
+    return not path.exists()
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--output", required=True, type=pathlib.Path); ap.add_argument("--cycles", type=int, default=3000); ap.add_argument("--seeds", default="17,23,41"); args = ap.parse_args()
     if args.cycles < 3000 or args.cycles % 3: raise SystemExit("cycles must be >=3000 and divisible by 3")
@@ -67,7 +74,7 @@ def main():
     categories = {k: dict(EXPECTATIONS[k], requested=0, applied=0, accepted=0, rejected=0, duplicate=0, reasons={}, care_attempt_delta=0, care_outcome_delta=0, companion_event_delta=0) for k in EXPECTATIONS}; lifecycle = {}
     with tempfile.TemporaryDirectory(prefix="companion-closeout-") as root:
         env = os.environ.copy(); env.update(COMPANION_XDG_ROOT=root, COMPANION_CYCLES="1", COMPANION_SEEDS=','.join(map(str, seeds))); proc = subprocess.Popen([binary], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        control = pathlib.Path(root) / "companion" / "supervisor.sock"; care_db = pathlib.Path(root) / "companion" / "care.sqlite3"; companion_db = pathlib.Path(root) / "companion" / "companion.sqlite3"
+        control = pathlib.Path(root) / "companion" / "supervisor.sock"; care_db = pathlib.Path(root) / "companion" / "care.sqlite3"; companion_db = pathlib.Path(root) / "companion" / "companion.sqlite3"; ordinary_marker = pathlib.Path(root) / "companion" / "ordinary-observation.json"
         try:
             snap = wait_for(control, lambda s: len(s.get("children", [])) == 5 and all(x.get("ready") for x in s.get("children", [])), 12); lifecycle["startup_ready"] = len(snap.get("children", [])) == 5 and all(x.get("ready") for x in snap.get("children", []))
             if not lifecycle["startup_ready"]: raise RuntimeError("roles not ready")
@@ -79,7 +86,7 @@ def main():
                 response = command(control, {"command":"inject", "kind":kind, "request_id":f"seed-{seed}-{i}"}); categories[kind]["applied"] += 1
                 if response.get("normalized_kind") != kind or response.get("accepted") is not True: raise RuntimeError(f"typed injection mismatch {kind}: {response}")
                 if kind == "valid_ordinary_observation":
-                    after_events = wait_increase(lambda: event_count(companion_db), before_events); after = db_counts(care_db); status, reason = ("accepted", "ordinary_observation") if after_events == before_events + 1 else ("rejected", "ordinary_observation"); categories[kind]["companion_event_delta"] += after_events - before_events
+                    after_events = wait_increase(lambda: event_count(companion_db), before_events); consumed = wait_absent(ordinary_marker); after = db_counts(care_db); status, reason = ("accepted", "ordinary_observation") if after_events == before_events + 1 and consumed else ("rejected", "ordinary_observation"); categories[kind]["companion_event_delta"] += after_events - before_events
                 else:
                     wait_increase(lambda: db_counts(care_db)["attempts"], before["attempts"]); after = db_counts(care_db); reason = next(iter(sqlite3.connect(care_db).execute("SELECT reason FROM safety_attempts ORDER BY id DESC LIMIT 1")), (None,))[0]; status = "duplicate" if reason == "duplicate" else ("accepted" if reason == "accepted" else "rejected"); categories[kind]["care_attempt_delta"] += after["attempts"] - before["attempts"]; categories[kind]["care_outcome_delta"] += after["receipts"] - before["receipts"]
                 categories[kind][status] += 1; categories[kind]["reasons"][reason] = categories[kind]["reasons"].get(reason, 0) + 1

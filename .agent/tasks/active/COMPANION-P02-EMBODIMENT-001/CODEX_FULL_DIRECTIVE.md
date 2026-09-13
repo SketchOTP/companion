@@ -536,3 +536,38 @@ rights; deferrals/deviations; Notion/GitHub publication; commits/equality;
 operator approvals; and Architect recommendation.
 
 Do not report visual approval unless the operator explicitly provides it.
+
+## R04-C03 superseding correction
+
+Architect Review 07 retains all C02 contract/intake semantics and narrows the
+remaining work to Godot diagnostic parity. Use one canonical runner for
+controlled import, cold, warm, local, workflow, and evidence invocations. It
+must retain Godot stdout/stderr/`--log-file` and separate Xvfb diagnostics,
+record exact error lines and hashes, classify all application `ERROR:` output
+fail-closed, and publish diagnostics on failure. Capture the prior hosted error
+before any runtime change; do not generate production art, alter C02 contracts,
+change Godot 4.7.2, or request visual approval. Final readiness remains gated
+on two hosted passes and one stability rerun.
+
+## R04-C04 readiness-race correction
+
+Architect Review 08 supersedes only the inherited Phase 01 readiness probe.
+Merge the review normally, then replace socket-exists/one-health-sample logic
+with a fixed monotonic bounded poll of the explicit complete readiness
+predicate. Require all five expected roles to be ready and healthy with
+synthetic care coverage in two consecutive samples separated by a nonzero
+interval. Record a sanitized startup trace and fail closed on timeout or
+supervisor exit. Add deterministic delayed-ready, never-ready, and early-exit
+tests, run the complete inherited Phase 01 verification, and prove three
+same-SHA hosted Phase 01 passes plus a same-SHA Phase 02 pass. Do not alter
+C02/C03, generate production art, modify the protected primary worktree, merge
+PR #9, or close Issue #8.
+
+## C04 completion record — 2026-09-12
+
+The inherited readiness race was corrected with bounded monotonic health
+polling and two-sample stability. Hosted Phase 01 passed three times on the
+same SHA `e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b`; hosted Phase 02 also passed
+on that SHA. This record preserves the directive boundary: no production art,
+operator visual approval, Phase 02 acceptance, dependency adoption, or Phase
+03 work is claimed.

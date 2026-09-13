@@ -1,0 +1,108 @@
+{
+  "approval_state": "candidate",
+  "clean_process_byte_identical": true,
+  "committed_manifest_byte_identical": true,
+  "expected_roles": [
+    {
+      "family": "neutral_construction",
+      "frame_count": 1,
+      "selection_facing": "front"
+    },
+    {
+      "family": "neutral_construction",
+      "frame_count": 1,
+      "selection_facing": "right"
+    },
+    {
+      "family": "neutral_construction",
+      "frame_count": 1,
+      "selection_facing": "front_left"
+    },
+    {
+      "family": "idle_breathe",
+      "frame_count": 8,
+      "selection_facing": "front_left"
+    },
+    {
+      "family": "walk",
+      "frame_count": 8,
+      "selection_facing": "front_left"
+    },
+    {
+      "family": "orient_front_to_front_left",
+      "frame_count": 4,
+      "selection_facing": "front"
+    },
+    {
+      "family": "orient_front_left_to_front",
+      "frame_count": 4,
+      "selection_facing": "front_left"
+    },
+    {
+      "family": "listen_acknowledge",
+      "frame_count": 6,
+      "selection_facing": "front_left"
+    }
+  ],
+  "frame_occurrences": 33,
+  "observed_roles": [
+    {
+      "family": "neutral_construction",
+      "frame_count": 1,
+      "selection_facing": "front"
+    },
+    {
+      "family": "neutral_construction",
+      "frame_count": 1,
+      "selection_facing": "right"
+    },
+    {
+      "family": "neutral_construction",
+      "frame_count": 1,
+      "selection_facing": "front_left"
+    },
+    {
+      "family": "idle_breathe",
+      "frame_count": 8,
+      "selection_facing": "front_left"
+    },
+    {
+      "family": "walk",
+      "frame_count": 8,
+      "selection_facing": "front_left"
+    },
+    {
+      "family": "orient_front_to_front_left",
+      "frame_count": 4,
+      "selection_facing": "front"
+    },
+    {
+      "family": "orient_front_left_to_front",
+      "frame_count": 4,
+      "selection_facing": "front_left"
+    },
+    {
+      "family": "listen_acknowledge",
+      "frame_count": 6,
+      "selection_facing": "front_left"
+    }
+  ],
+  "operator_visual_approval": "PENDING",
+  "pack_id": "05a17a00-0000-4000-8000-000000000001",
+  "pack_revision": "r05-author-001-bounded-v1",
+  "profile": "COMPANION_P02_R05_CANDIDATE_PACK_V1",
+  "request_profile": "phase02_bounded_motion_proof_v1",
+  "source_pack_sha256": "9711756c5f7f220827ba17528e9361f632e1bc39e0665df836de6426702c631d",
+  "source_sheet_sha256": {
+    "idle-breathe-sheet.png": "b201607ee9fcf170585a4d69f763cbe24b58fc93119054d086eae291f2ecffe7",
+    "listen-acknowledge-sheet.png": "2a0de17f14a9f7797ffad777f9ac46d2987cd19d508a51e5a58d34b5230a5855",
+    "neutral-construction-sheet.png": "aa6e2efd8cf7f9a2273bf22b9ebbbc6904fd364ba6749113087b4447617e2d39",
+    "neutral-right-profile.png": "7dd7bc596d27f10073ebbf4b4fbae15735992dc1569f9eaae59a3b6cbf485dd4",
+    "orient-front-to-front-left-sheet.png": "99ef17e22db3ac0514a082244a850ae7d8db427610ead01e62ce969587aed92d",
+    "walk-sheet.png": "01ba5c7a781fd6cd627632d3cd6ed4505498c990181b969c84e73dec5b4afe36"
+  },
+  "source_tree_sha256": "d3a14035441cecbbbe7d41c8cf1cd31696e58b4678f0b730e42327cba83049c4",
+  "status": "PASSED",
+  "track_count": 8,
+  "unique_source_hashes": 29
+}

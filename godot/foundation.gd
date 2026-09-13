@@ -112,7 +112,7 @@ func _restore_geometry() -> void:
 func _draw() -> void:
 	var font := ThemeDB.fallback_font
 	var size := get_viewport_rect().size
-	draw_rect(Rect2(Vector2.ZERO, size), Color("211447"))
+	draw_rect(Rect2(Vector2.ZERO, size), Color.BLACK)
 	draw_rect(Rect2(24, 24, max(size.x - 48, 10), max(size.y - 48, 10)), Color("3d2670"), false, 2.0)
 	draw_string(font, Vector2(48, 86), "COMPANION FOUNDATION", HORIZONTAL_ALIGNMENT_LEFT, -1, 26, Color("efe7ff"))
 	draw_string(font, Vector2(48, 126), status, HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color("efc26b"))

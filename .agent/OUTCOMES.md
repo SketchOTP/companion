@@ -579,3 +579,315 @@ headless client sequence and topology fallback probe passed, as did the
 900-second resident regression. The result bundle and semantic validator live
 under `experiments/p00-foundation-qual/results/phase01-review04/`; evidence is
 bounded E3 and Phase 01 remains pending Architect acceptance.
+
+## 2026-09-11 — Phase 02 embodiment candidate
+
+Created an original identity-faithful candidate package with 256 unique
+1024×1024 RGBA body frames across 32 semantic families and eight directions,
+24 eye overlays, eight mouth overlays, deterministic atlases/packs, and review
+sheets. Added MonAnimationClip schema/Rust type, layered Godot MonAvatar and
+semantic director, versioned bridge events, bounded habitat policy, contract
+and asset validators, and a 10,000-case deterministic transition result. The
+current host exposes a dual-4K X11/GNOME topology rather than the dedicated
+Openbox target, so target-host playback and operator visual approval remain
+pending; no Phase 03+ or product claims are made.
+
+## 2026-09-11 — Pack reproducibility reconciliation
+
+The generated pack writer now fixes ZIP timestamps and metadata. A clean-room
+rebuild produced byte-identical pack and manifest hashes; the fix is published
+at `6c81838899c943ea8d195230f9849140f0b54f5f`. This is still bounded asset
+evidence; target-host playback and visual approval remain pending.
+
+## 2026-09-11 — Four-view review-sheet correction
+
+The diagonal candidate sheet now renders all four source views. Asset QA
+remains green and the correction is published at
+`26571cbab782e5fc0ea712f577b8112767f05782`; visual approval remains pending.
+
+## 2026-09-11 — Architect Review 02 canon reset
+
+Merged Architect Review 02 normally and narrowed the active deliverable to the
+production-body canon plus minimal motion proof. Added exact-reference-bound
+layered vector and raster source candidates, a six-track front-left proof (26
+temporal drawings), review strips, root/contact overlay, and a focused immutable
+workflow. The prior 32-family/66-track scale is retained only as superseded
+negative evidence; operator approval and later scale remain open.
+# Superseding Phase 02 evidence — 2026-09-11
+
+Native identity (`86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56`)
+and turnaround (`3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4`)
+were directly verified. A clean private build produced 66 temporal tracks and
+334 MON_FRAME_V1 drawings; rendered/atlas validation returned zero errors. The
+prior directional catalog, 32-family completion, and 10,000-transition claims
+remain superseded. Candidate art is pending operator review, hosted CI, and
+Openbox target playback.
+
+## 2026-09-11 — R03 source and temporal proof
+
+Added an explicit editable Godot body hierarchy with complete bilateral limbs,
+digits, toes, pivots, replacement slots, and neutral masters. The deterministic
+R03 bake produced five tracks and 28 rendered frames (25 unique hashes); the
+fail-closed validator passed schema, hashes, safety, root/contact, temporal
+change, anatomy, and five tamper-negative mutations. Actual Godot headless
+`AnimatedSprite2D` playback observed frame-change signals for every track at
+24 FPS and rejected missing-track selection with no `ERROR:` output. Candidate
+art remains pending operator/Architect review; full library and Openbox remain
+deferred.
+
+## 2026-09-11 — R03 hosted-CI fixture correction
+
+Hosted workflows initially failed because the shared contract closeout used an
+empty synthetic fixture for `mon-temporal-track-v2`. The narrow mapping fix was
+published as `83909a894ad47e101bcf369b707f636624302a52`; focused Phase 02 run
+`34631901926` and inherited Phase 01 run `34631901998` then passed. No visual
+approval, Phase 02 acceptance, or later capability was inferred.
+
+## 2026-09-11 — R04 local authored-frame boundary
+
+The R03 procedural art path is disconnected and explicitly labeled rejected
+negative evidence. A synthetic-only two-frame pack passed byte-preserving
+intake, content-addressed copy, explicit Rust deserialization/reserialization,
+Godot exact-track selection, first-frame-before-started ordering, 24 Hz timing,
+missing/ineligible/hash-corrupt rejection, and restoration. Eight source/timing/
+contact/event tamper cases failed closed. Hosted CI and publication remain
+required before handoff; no production art or Phase 02 acceptance is claimed.
+
+## 2026-09-11 — R04 hosted authored-frame boundary
+
+The focused Phase 02 workflow passed at
+`7a79ddf9400a0d7cacd781d418fffdc625ec3c57` as run `34656090767`. It
+published artifact `10285600941` with GitHub digest
+`sha256:39c56c9d43968e870005065b6bebf19700791986c017496b1ea5a03e0e14ff1f`.
+The result proves only the synthetic byte-preserving intake/runtime boundary:
+required-path Rust round-trip, exact-track Godot selection, first-frame-before-
+started ordering, fail-closed corruption/ineligibility handling, and recovery.
+R03 visual assets remain rejected negative evidence. No production art,
+operator approval, Phase 02 acceptance, or later capability is inferred.
+
+Inherited Phase 01 run `34656090763` failed at the resident closeout after an
+ordinary-observation handoff race. The evidence harness now waits for both the
+exact persisted event and removal of the shared marker before proceeding. The
+failure remains historical evidence and the final branch is not ready until a
+new exact-head Phase 01 run succeeds.
+
+## 2026-09-11 — Review 05 R04-C01 in progress
+
+The previous R04 result was superseded because the authored source contract did
+not truthfully encode orientation endpoints, occluded landmarks, request
+completeness, PNG profile, reuse, or atomic publication. The correction adds
+three explicit contracts and a synthetic-only fail-closed intake/runtime gate.
+No production art or Phase 02 acceptance is claimed; final bounded handoff is
+`READY_FOR_ARCHITECT_FRAME_PACK` after exact-head validation.
+
+## 2026-09-12 — R04-C01 submitted for Architect review
+
+The focused correction is published in `04570503c957e34e2ddcf2f1ab1cb1151a352b59`
+with the sanitized result bundle in `5d29b51e48073077abbdffad453226ce7e8cfddc`.
+Independent validation passes for hashes, fixture identity, ancestry, schema,
+synthetic intake negatives, Rust generated-pack validation, Godot render-commit
+ordering, and tamper negatives. Status is `READY_FOR_ARCHITECT_FRAME_PACK`;
+Phase 02 and visual approval remain unaccepted.
+
+## 2026-09-12 — R04-C02 request/profile correction
+
+The complete synthetic `phase02_bounded_motion_proof_v1` pack now contains
+8 tuple-keyed tracks and 31 frames and passes Python schema/semantic intake,
+byte-preserving CAS/runtime copy, local export/restore, and 19 fail-closed
+negative cases. PNG structure, same-track reuse, exact endpoints/events,
+fsync-backed atomic staging, and injected mid-intake failure are exercised.
+Rust 1.98.1 and exact Godot 4.7.2 were unavailable in the current checkout;
+their required gates are `NOT RUN`/`BLOCKED`, so readiness is not claimed.
+
+## 2026-09-12 — R04-C02 exact-tool evidence rerun
+
+Using the existing private Rust 1.98.1 toolchain and a transient official
+Godot 4.7.2 artifact, the complete synthetic `phase02_bounded_motion_proof_v1`
+pack passed locally through intake, Rust typed round-trip (8 tracks/31 frames),
+exact Godot 4.7.2 frame-post-draw playback, event/timing/recovery checks,
+export/restore, and 19 fail-closed negatives. The independent validator passed
+with all five tamper mutations rejected. This remains synthetic E3 evidence;
+hosted CI and Architect review are still required.
+
+## 2026-09-12 — R04-C03 local diagnostic-parity implementation
+
+Review 07 was merged normally. A single `run_godot_qualification.py` now drives
+controlled import and consecutive cold/warm semantic runs, records exact Godot
+version, exit code, renderer/display summary, channel hashes, exact error and
+warning lines, cache digests, and semantic JSON. Xvfb diagnostics remain in a
+separate wrapper log. Seven classifier cases pass locally, including the
+stdout-only regression. Local Rust-backed C02 evidence validation passes with
+zero Godot application errors. Hosted runs and stability rerun remain open;
+no readiness or Phase 02 acceptance is claimed.
+
+## 2026-09-12 — R04-C03 completed bounded diagnostic parity
+
+The superseded hosted attempt captured and published the exact line
+`ERROR: Condition "status < 0" is true. Returning: ERR_CANT_OPEN` from
+`init_output_device (drivers/alsa/audio_driver_alsa.cpp:97)`. It was emitted by
+Godot's ALSA probe before its documented dummy fallback, not by the corrupted
+PNG fixture; Xvfb warnings stayed in their own channel. Explicit
+`--audio-driver Dummy` is now part of the one canonical runner, so no engine
+error is ignored. Phase 02 hosted run `34670472778` and its stability rerun
+passed; Phase 01 rerun `34670472829` passed after the prior inherited race.
+Readiness is `READY_FOR_ARCHITECT_FRAME_PACK` for synthetic bounded evidence
+only. Architecture v1.0 and Phase 01 remain adopted/accepted; Phase 02,
+production art, and later capabilities remain unaccepted.
+
+## 2026-09-12 — R04-C04 readiness implementation
+
+After normal merge `e9915015a4df69f1af895ae33cefc97a7440c218`, the inherited
+resident readiness check was corrected without changing child startup timing.
+It now polls a fixed 5,000 ms monotonic window at 50 ms intervals, requires all
+five expected roles to report `ready=true`, `state=healthy`, and
+`care_coverage=synthetic` in two consecutive samples, and records a sanitized
+startup trace. Delayed-ready, never-ready, and supervisor-exit synthetic tests
+pass. Local exact Rust checks and the actual resident probe pass; hosted
+same-head triple-rerun evidence remains the final gate. This is foundation
+evidence only.
+
+## 2026-09-12 — C04 exact-head stability
+
+The corrected readiness probe passed three consecutive hosted executions on
+the exact candidate SHA `e5f3bbb47f9f20d3e896956c9a1aabcd751cfd3b`: initial
+`34674883461` / job `103502845478`, rerun #1 job `103503853827`, and rerun #2
+job `103504776796`. The same SHA passed Phase 02 run `34674883457` / job
+`103502845517`. This is bounded qualification evidence; Phase 02 remains
+unaccepted and no production capability is claimed.
+
+## 2026-09-12 — R05 bounded candidate pack generated locally
+
+Reference-conditioned image generation produced six selected source images for
+the bounded review package. Deterministic normalization yielded 8 tracks, 33
+frame occurrences, and 29 unique source hashes. All 33 passed immutable review
+intake byte equality, actual Rust typed round-trip, exact Godot import/cold/warm
+playback, rendered bounds/contact QA, export/restore, and semantic tamper
+negatives. The art remains candidate and operator visual approval is pending;
+hosted CI and artifact publication are not yet counted.
+
+## 2026-09-12 — R05 first hosted campaign exposed inherited control race
+
+Phase 02 passed and published the candidate review bundle, but the two inherited
+Phase 01 executions disagreed on the same candidate head. The failed run ended
+with a late `BrokenPipeError` during the 3,000-message closeout. The supervisor's
+50 ms one-shot read could close a newly accepted stream before a scheduled
+client wrote. A bounded newline-framed read and explicit fail-closed errors now
+pass the complete local Phase 01 suite. Hosted correction evidence is pending;
+the failed run remains part of the result.
+
+## 2026-09-12 — R05 corrected hosted campaign is stable
+
+On exact corrected head `b5c9e9a5e88de5fa08ec462bc209e7f24c909f1e`,
+both independent Phase 01 runs and both Phase 02 runs passed. Phase 02
+published the complete candidate source/review/intake/playback artifact. This
+supports the bounded technical review handoff only; the candidate artwork and
+motion are still awaiting operator visual judgment, and Phase 02 remains open.
+
+## 2026-09-12 — Operator rejects all R05-v1 art; replacement is incomplete
+
+The operator's visual judgment is now REJECTED for every R05-v1 preview. Green
+outlines, incomplete/fast breathing, invalid walk leg exchange, unstable hands,
+head-shaking orientation and fast listen/acknowledge remain failed art evidence.
+The review timing/once-loop bug is corrected and six tests pass. The authorized
+iHero-backed cutout investigation obtained three Photoroom RGBA outputs; three
+adapter test methods pass, while remove.bg returned HTTP402. Eight fresh art
+attempts remain rejected/study-only, not a qualified replacement pack. Prior
+technical passes do not establish motion quality. See R05_OPERATOR_REJECTION_01.
+
+## 2026-09-12 — Operator corrects the facing and locomotion model
+
+Inspected the executable bounded request: idle, walk and listen are explicitly
+front-left, with only front/front-left turns. Recorded front-facing presence,
+profile travel, full turn correspondence, gait/start/stop/interrupt coverage and
+a bounded two-direction travel-and-return proof plan. No replacement pixels or
+runtime changes were produced. Old synthetic request tests remain untouched;
+new request version and contact-coordinate semantics need reconciliation before
+new pack integration. Evidence E1_OBSERVED, replacement quality NOT RUN.
+
+## 2026-09-12 — AUTHOR-002 executed; anatomical key gate failed
+
+Generated 25 reference-based studies (10 construction, 15 gait/repair), not a
+complete animation pack. Localized digit/counter-swing corrections improved
+individual outputs, but stable hand/foot shapes and limb phase correspondence
+failed across keys. Independent right passing repeated the left backward-knee,
+hand-like-foot defect. Review11 stop condition reached. Zero frames promoted;
+full v2 intake/Rust/Godot/contact/action evidence NOT RUN. No approval request.
+Adapter 3 tests and timing 6 tests passed; those are not visual acceptance.
+See R05_AUTHOR_002_KEY_GATE_RESULT.md and R05_AUTHOR_002_STUDY_RESULTS.json.
+
+## 2026-09-12 — Operator approves AUTHOR-002 construction and latest keys
+
+Operator clarified approval of the construction sheet and latest corrected gait
+poses. Exact eight-facing/eleven-key selection and exclusions are recorded in
+R05_AUTHOR_002_OPERATOR_SELECTION.json; scope in R05_AUTHOR_002_OPERATOR_APPROVAL.md.
+This supersedes coder visual non-acceptance for selected artwork only. Historical
+failures and superseded variants remain preserved. Complete actions, edge/source
+eligibility and v2 runtime QA remain unfinished. No Phase02 acceptance or merge.
+
+## 2026-09-12 — Post-approval authoring; cutout access blocked
+
+Approved eight construction/eleven static keys unchanged. Generated five missing
+right gait roles, one foot repair and one alpha-only fallback. Seven raw outputs
+preserved; six live Photoroom HTTP402 responses created no cutout. Built-in
+fallback RGB/no alpha rejected. Raw strip and normal/quarter key-study GIFs
+are diagnostics, not full action or motion acceptance. Nine retained helper tests
+pass; actual v2 intake/runtime NOT RUN. Restore cutout access; no billing change.
+See R05_AUTHOR_002_CONTINUATION_RESULT.md and exact continuation result JSON.
+
+## 2026-09-12 — Operator black-backdrop workaround
+
+Operator explicitly requested black-backed art plus black Godot background.
+Changed clear color and foundation backdrop, generated one separate front
+candidate via built-in imagegen, and verified actual Xvfb frame_post_draw plus
+black viewport corners. Missing image and headless no-render fail as expected.
+No cutout API, billing change, new dependency, original-art mutation or intake
+waiver. Opaque still review works; full action conversion remains unfinished.
+See active R05_BLACK_BACKDROP_RESULT.md. No Phase02 acceptance or Phase03 work.
+
+## 2026-09-12 — Black motion studies, quality gate failed
+
+51 new black-backed outputs plus prior front;52 exact raw copies and23 diagnostic
+sequences preserved.13 focused tests and Godot4.7.2 Xvfb frame/order/timing review
+passed, zero final engine errors. Sparse front/start/stop/turn keys are not full
+motion. Left in-betweens do not consistently advance toward passing keys; turn
+angles also jump. Further interpolation stopped, no completed pack or approval
+request. R05_BLACK_MOTION_RESULT.md records the partial result and failed attempt.
+
+## 2026-09-12 — Targeted black motion retry, not complete
+
+Operator requested completion. Seven imagegen trials saved: four inhale
+intermediates and three gait/recovery attempts. One late gait attempt swaps
+the supporting leg; localized repair improves one overlap but not a full cycle.
+Torso scan at y880 reproduces non-monotonic requested inhale progression,
+exit1. Thirteen existing review regression tests pass. Eleven-source exact-copy
+export and three diagnostic previews preserved. No new runtime qualification.
+All12 required motion tracks remain incomplete. See R05_BLACK_MOTION_RETRY_RESULT.md.
+
+## 2026-09-12 — joint sequence-sheet attempt, FAILED
+
+Renewed completion request tested joint authoring of a 16-cell left-profile
+walk and a lower-limb-only repair. Both keep the foreground leg forward through
+most of the sequence; required support exchange is absent. Two raw sheets,
+exact prompts and hashes retained. No normalized frames, animation-completion
+claim or operator approval request. See R05_BLACK_SEQUENCE_SHEET_RESULT.md.
+
+## 2026-09-12 — full available-motion review compilation
+
+Operator explicitly requested compiling animations for review. Built one local
+player and portable ZIP from 65 exact-copy source entries: 30 sequences,
+including all 12 actions, eight facings, complete left/right orderings and
+separate failed diagnostics. Five focused tests pass; all 30 tracks load in
+the browser; full reel reaches its final frame. No new art, interpolation,
+production intake or motion-quality pass. See R05_COMPILED_REVIEW_RESULT.md.
+
+## 2026-09-12 — focused Listen/Ack drawings and connection
+
+Operator requested the missing Listen/Ack drawings and connected action.
+Eighteen built-in imagegen outputs preserved: thirteen selected, five rejected
+for eye/neck artifacts. Three prior poses plus thirteen new drawings form a
+16-drawing/17-slot/116-tick front-facing candidate. Individual, front-presence
+and full-reel playback use it; previous Listen remains diagnostic history.
+Left/right sequence manifests unchanged. Eleven focused tests pass; normal and
+quarter browser playback reach final rest without captured console errors.
+No production intake, contact metrics, Godot/CI or visual-quality pass claimed.
+See R05_LISTEN_ACK_CONNECTED_RESULT.md. Phase 02 remains unaccepted.

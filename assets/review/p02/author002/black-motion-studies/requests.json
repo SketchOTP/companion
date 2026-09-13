@@ -1,0 +1,1161 @@
+{
+  "approval_state": "candidate",
+  "completion_status": "INCOMPLETE_KEY_STUDIES",
+  "drawings": [
+    {
+      "file": "acknowledge_down.png",
+      "id": "acknowledge_down",
+      "sha256": "8f074ad93434ada9f31ab468a47cd552aa6337ef962fc53a9ada2ba25b8e6f21"
+    },
+    {
+      "file": "back.png",
+      "id": "back",
+      "sha256": "1e0173f24dd43ea7aee4076130aad024894ff4de50f14db9379750c9fe7966f3"
+    },
+    {
+      "file": "back_left.png",
+      "id": "back_left",
+      "sha256": "07171156d83148509908e157aa260cb357bb72b4d34f327cbaabd42c17fa9deb"
+    },
+    {
+      "file": "back_right.png",
+      "id": "back_right",
+      "sha256": "72bbb0cd85b99f260e914581c16ddce377c606b583ff060d7ee162abbfe1750f"
+    },
+    {
+      "file": "breathe_exhale.png",
+      "id": "breathe_exhale",
+      "sha256": "704e59fdc1c8ff7e73c72479f575e414c7b9c7a500d8e448706f09ff3fbf3422"
+    },
+    {
+      "file": "breathe_peak.png",
+      "id": "breathe_peak",
+      "sha256": "9a1ae10d426fbcc0020526619f3729eb36db1f1ea39da94dc3901ab74a8d26c1"
+    },
+    {
+      "file": "front.png",
+      "id": "front",
+      "sha256": "fa788e5f08dd3ae6b607cb127b3fd1437d5eb08b184e1024d5e0e861f236c316"
+    },
+    {
+      "file": "front_left.png",
+      "id": "front_left",
+      "sha256": "b439d0413c6efad8c05f3bd82029db78cc296df7ddc852829b851fdd64f6c0c8"
+    },
+    {
+      "file": "front_right.png",
+      "id": "front_right",
+      "sha256": "11d52f9f92fae09f3b93dec39e786e1b4d745be8aa7da1ebc537d69010410e66"
+    },
+    {
+      "file": "left_contact_far.png",
+      "id": "left_contact_far",
+      "sha256": "921d1bf6ed808edce7da227adc4554a96b29475532413f5b863f3e41b8814f43"
+    },
+    {
+      "file": "left_contact_near_armfix.png",
+      "id": "left_contact_near_armfix",
+      "sha256": "225f6b76bb9fce45e537a2174b6a8c0cfac7b901d3cde1e329e0ed41da789134"
+    },
+    {
+      "file": "left_down_armfix.png",
+      "id": "left_down_armfix",
+      "sha256": "525ee1d81489864dd0342d74df0a774b0d8968d9b30f591a6ffc861083dc8bcf"
+    },
+    {
+      "file": "left_down_far.png",
+      "id": "left_down_far",
+      "sha256": "44c610f71e071d8d7c083a58c5f090b96c978d97801ba50a838e411f8324d982"
+    },
+    {
+      "file": "left_fix.png",
+      "id": "left_fix",
+      "sha256": "554323809b03401ff46be8d4e52a3e3fde0012d38b2ed8d43a8ee7ecdf7f4a75"
+    },
+    {
+      "file": "left_passing_far.png",
+      "id": "left_passing_far",
+      "sha256": "7484a027fb7c44122da79c5842945424fb71988e6e8dbb04f15179fada37962d"
+    },
+    {
+      "file": "left_passing_repair2.png",
+      "id": "left_passing_repair2",
+      "sha256": "81714c17af1d989d1227a2ef594c5a9f5474963c94284797d9d4d9d92f85cf0f"
+    },
+    {
+      "file": "left_start_anticipation.png",
+      "id": "left_start_anticipation",
+      "sha256": "f0aafb81167955e59bf70a25b46836bde822cdbef1e2069248a9e6baa63ab427"
+    },
+    {
+      "file": "left_start_liftoff.png",
+      "id": "left_start_liftoff",
+      "sha256": "1b377fb4bad94c2371596de44a1fd1cee17bae383cbd827e0150d511e02c4102"
+    },
+    {
+      "file": "left_stop_collect.png",
+      "id": "left_stop_collect",
+      "sha256": "aa1dee0eb6a2856ac2d0f5a48b6f670e027bd8be86e8004355fa2bf111570c5c"
+    },
+    {
+      "file": "left_stop_settle.png",
+      "id": "left_stop_settle",
+      "sha256": "0b0dd0d20eda559e00c1e25617fb093544d2efbd545372c4cc4395950c813669"
+    },
+    {
+      "file": "left_up_far.png",
+      "id": "left_up_far",
+      "sha256": "738cffb262bd10494cc6300f7a228d4d88973e58c5bd56b3a90185b2f1e7e347"
+    },
+    {
+      "file": "left_up_near.png",
+      "id": "left_up_near",
+      "sha256": "189fb15353ee79a2011d426cc526d97725ce43800b8f5ba09b0a473210471b51"
+    },
+    {
+      "file": "left_walk_mid_0.png",
+      "id": "left_walk_mid_0",
+      "sha256": "dd5b8a2fcf3a7636f1b6cfc7f2c0fa7513a79d4db7e374c317917e9bf84a9567"
+    },
+    {
+      "file": "left_walk_mid_1.png",
+      "id": "left_walk_mid_1",
+      "sha256": "1c197a3f95bc9dc3bbaf25f8875fc62f7c041fcd7083dea4ec031b60819bfa19"
+    },
+    {
+      "file": "left_walk_mid_2.png",
+      "id": "left_walk_mid_2",
+      "sha256": "ce069e250a7f3e411c65e176eaa0f60fd7bb833b56cf3b44e8732fa93b51621e"
+    },
+    {
+      "file": "left_walk_mid_3.png",
+      "id": "left_walk_mid_3",
+      "sha256": "e3d8e7d4e549f5a933a8786efd897f44eccd4cc0f409589b83b2b1701e908dc9"
+    },
+    {
+      "file": "left_walk_mid_4.png",
+      "id": "left_walk_mid_4",
+      "sha256": "ee3cb0b8f9603dc72d9b75934cd4f5dfa10a671b47ca23b0d5248f6d8a477813"
+    },
+    {
+      "file": "left_walk_mid_5.png",
+      "id": "left_walk_mid_5",
+      "sha256": "62e8b0f8717687625202bde3707b6e0e98452a5431cf9ed74f996d4e694bb98c"
+    },
+    {
+      "file": "left_walk_mid_6.png",
+      "id": "left_walk_mid_6",
+      "sha256": "c56bda72b67e617e6c626221c88b6f1ed6fca8cd151dca57f0e909a5db5a39a3"
+    },
+    {
+      "file": "left_walk_mid_7.png",
+      "id": "left_walk_mid_7",
+      "sha256": "efcc48b21f889d0605be4880a8f067b8af7503f224a5b9eb67aa1f1ad73945b8"
+    },
+    {
+      "file": "listen_hold.png",
+      "id": "listen_hold",
+      "sha256": "3f17328e0be3e1476a85530a125f9f69ec50f96bdbfe78042ca7596bc194ee4f"
+    },
+    {
+      "file": "right_contact_far.png",
+      "id": "right_contact_far",
+      "sha256": "f436073132ca534acdb8554ebd9b5988686c832c9bd2495c36aba89f704daf5e"
+    },
+    {
+      "file": "right_contact_near.png",
+      "id": "right_contact_near",
+      "sha256": "3b6c4ea6d36492af68e02b8f78cf0a7c06d4d7ae0ddb707ab74d57ce7aae1d35"
+    },
+    {
+      "file": "right_down_far.png",
+      "id": "right_down_far",
+      "sha256": "7a1248e769bc35da3440293c66b28762eb8af32f209c05467dec95fda6f3cee9"
+    },
+    {
+      "file": "right_down_near.png",
+      "id": "right_down_near",
+      "sha256": "e3a259a0f0a033f069cb2c57c74d47892cc4598517d0555afcfe5314413c6926"
+    },
+    {
+      "file": "right_fix.png",
+      "id": "right_fix",
+      "sha256": "cfe741a2a013a2833a9138baa4fa8b1ec0fd2e5e5bd1f99a7c8963b0297c9bc0"
+    },
+    {
+      "file": "right_passing_far_repair.png",
+      "id": "right_passing_far_repair",
+      "sha256": "31e3f586fa0352afd2c56a4372ec598e5e521e597c1310498062b36f9aa3bc3e"
+    },
+    {
+      "file": "right_passing_near.png",
+      "id": "right_passing_near",
+      "sha256": "46e1b855a38c0b513d0b6652443eabbca1cd5dfcafca8867179b2c1745f1e936"
+    },
+    {
+      "file": "right_start_anticipation.png",
+      "id": "right_start_anticipation",
+      "sha256": "b0f09436ac84ffd9fed45f2ec1e963183d792c8dcd18b110bf4ae5c02855948d"
+    },
+    {
+      "file": "right_start_liftoff.png",
+      "id": "right_start_liftoff",
+      "sha256": "18a72d5c9d4aa16503b5d9d6a186baace785d73d6ef857f0c3e74cf0c67f7930"
+    },
+    {
+      "file": "right_stop_collect.png",
+      "id": "right_stop_collect",
+      "sha256": "96fc52d895669c02d7df5d2944b3f5a451511102ebf0c727df13b7305d2adf4d"
+    },
+    {
+      "file": "right_stop_settle.png",
+      "id": "right_stop_settle",
+      "sha256": "b1b9a259adadbfb18f18a864bb900fc27aaeee862c8c80fab6082863882044dc"
+    },
+    {
+      "file": "right_up_far.png",
+      "id": "right_up_far",
+      "sha256": "2083d0030d81291f34ce157b1345a375ef5cad8075f2ccee5cbeeeaac4e44440"
+    },
+    {
+      "file": "right_up_near.png",
+      "id": "right_up_near",
+      "sha256": "2d1dee0c3daf697716e276f4b46e8d1592fe3751837aee1f9a1a1452771edf75"
+    },
+    {
+      "file": "turn_left_out_22.png",
+      "id": "turn_left_out_22",
+      "sha256": "98c2a2200b2c1090c85f3f92192e9cbf35c1e23c3ee1c6255389b7d4ce4f3ad4"
+    },
+    {
+      "file": "turn_left_out_67.png",
+      "id": "turn_left_out_67",
+      "sha256": "09eaf00724a60aa666681e3d82dfcfb6992048ba0f39107782481d92db1319c3"
+    },
+    {
+      "file": "turn_left_return_22.png",
+      "id": "turn_left_return_22",
+      "sha256": "578ff69bf5969571239e1e6fa3921afd97e633c4ea69522afa2478504406e754"
+    },
+    {
+      "file": "turn_left_return_67.png",
+      "id": "turn_left_return_67",
+      "sha256": "d951dd13ee107306a396a02ac39fad7edfa1718dc4912a3377b32c22d0d9053f"
+    },
+    {
+      "file": "turn_right_out_22.png",
+      "id": "turn_right_out_22",
+      "sha256": "641db59ba58630798ea4379d760a7d895fed78ac8dc9f0708cea18d055c7b61b"
+    },
+    {
+      "file": "turn_right_out_67.png",
+      "id": "turn_right_out_67",
+      "sha256": "551559a02a3bb3ed1bf412fe648f1a3d7f4256a68cf5a4a3c0fb13963046f101"
+    },
+    {
+      "file": "turn_right_return_22.png",
+      "id": "turn_right_return_22",
+      "sha256": "f26f12e7ccfbf0752f6afe20550137dd9e4567f8a8974c1cf4ca7be06b3495ff"
+    },
+    {
+      "file": "turn_right_return_67.png",
+      "id": "turn_right_return_67",
+      "sha256": "a0d44f6bbf08b5854ad63fc68ab48fd48e299ccafdac28c3a31154e512108449"
+    }
+  ],
+  "production_intake": "NOT_RUN",
+  "profile": "BLACK_BACKED_MOTION_REVIEW_V1",
+  "tracks": [
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "front",
+          "duration_ticks": 6,
+          "label": "front"
+        }
+      ],
+      "id": "construction_front",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "front_right",
+          "duration_ticks": 6,
+          "label": "front_right"
+        }
+      ],
+      "id": "construction_front_right",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "right_fix",
+          "duration_ticks": 6,
+          "label": "right_fix"
+        }
+      ],
+      "id": "construction_right_fix",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "back_right",
+          "duration_ticks": 6,
+          "label": "back_right"
+        }
+      ],
+      "id": "construction_back_right",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "back",
+          "duration_ticks": 6,
+          "label": "back"
+        }
+      ],
+      "id": "construction_back",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "back_left",
+          "duration_ticks": 6,
+          "label": "back_left"
+        }
+      ],
+      "id": "construction_back_left",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "left_fix",
+          "duration_ticks": 6,
+          "label": "left_fix"
+        }
+      ],
+      "id": "construction_left_fix",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "front_left",
+          "duration_ticks": 6,
+          "label": "front_left"
+        }
+      ],
+      "id": "construction_front_left",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "loop",
+      "frames": [
+        {
+          "drawing_id": "front",
+          "duration_ticks": 18,
+          "label": "front"
+        },
+        {
+          "drawing_id": "breathe_peak",
+          "duration_ticks": 24,
+          "label": "breathe_peak"
+        },
+        {
+          "drawing_id": "breathe_exhale",
+          "duration_ticks": 36,
+          "label": "breathe_exhale"
+        },
+        {
+          "drawing_id": "front",
+          "duration_ticks": 18,
+          "label": "front"
+        }
+      ],
+      "id": "front_breathe_key_study",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "front",
+          "duration_ticks": 12,
+          "label": "front"
+        },
+        {
+          "drawing_id": "listen_hold",
+          "duration_ticks": 30,
+          "label": "listen_hold"
+        },
+        {
+          "drawing_id": "acknowledge_down",
+          "duration_ticks": 18,
+          "label": "acknowledge_down"
+        },
+        {
+          "drawing_id": "front",
+          "duration_ticks": 24,
+          "label": "front"
+        }
+      ],
+      "id": "front_listen_acknowledge_key_study",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "loop",
+      "frames": [
+        {
+          "drawing_id": "left_contact_near_armfix",
+          "duration_ticks": 4,
+          "label": "left_contact_near_armfix"
+        },
+        {
+          "drawing_id": "left_down_armfix",
+          "duration_ticks": 4,
+          "label": "left_down_armfix"
+        },
+        {
+          "drawing_id": "left_passing_repair2",
+          "duration_ticks": 4,
+          "label": "left_passing_repair2"
+        },
+        {
+          "drawing_id": "left_up_near",
+          "duration_ticks": 4,
+          "label": "left_up_near"
+        },
+        {
+          "drawing_id": "left_contact_far",
+          "duration_ticks": 4,
+          "label": "left_contact_far"
+        },
+        {
+          "drawing_id": "left_down_far",
+          "duration_ticks": 4,
+          "label": "left_down_far"
+        },
+        {
+          "drawing_id": "left_passing_far",
+          "duration_ticks": 4,
+          "label": "left_passing_far"
+        },
+        {
+          "drawing_id": "left_up_far",
+          "duration_ticks": 4,
+          "label": "left_up_far"
+        }
+      ],
+      "id": "left_gait_key_study",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "front",
+          "duration_ticks": 6,
+          "label": "front"
+        },
+        {
+          "drawing_id": "turn_left_out_22",
+          "duration_ticks": 6,
+          "label": "turn_left_out_22"
+        },
+        {
+          "drawing_id": "front_left",
+          "duration_ticks": 6,
+          "label": "front_left"
+        },
+        {
+          "drawing_id": "turn_left_out_67",
+          "duration_ticks": 6,
+          "label": "turn_left_out_67"
+        },
+        {
+          "drawing_id": "left_fix",
+          "duration_ticks": 6,
+          "label": "left_fix"
+        }
+      ],
+      "id": "left_outward_turn_key_study",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "left_fix",
+          "duration_ticks": 6,
+          "label": "left_fix"
+        },
+        {
+          "drawing_id": "turn_left_return_67",
+          "duration_ticks": 6,
+          "label": "turn_left_return_67"
+        },
+        {
+          "drawing_id": "front_left",
+          "duration_ticks": 6,
+          "label": "front_left"
+        },
+        {
+          "drawing_id": "turn_left_return_22",
+          "duration_ticks": 6,
+          "label": "turn_left_return_22"
+        },
+        {
+          "drawing_id": "front",
+          "duration_ticks": 6,
+          "label": "front"
+        }
+      ],
+      "id": "left_return_turn_key_study",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "left_fix",
+          "duration_ticks": 6,
+          "label": "left_fix"
+        },
+        {
+          "drawing_id": "left_start_anticipation",
+          "duration_ticks": 6,
+          "label": "left_start_anticipation"
+        },
+        {
+          "drawing_id": "left_start_liftoff",
+          "duration_ticks": 6,
+          "label": "left_start_liftoff"
+        },
+        {
+          "drawing_id": "left_contact_near_armfix",
+          "duration_ticks": 6,
+          "label": "left_contact_near_armfix"
+        }
+      ],
+      "id": "left_start_key_study",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "left_contact_near_armfix",
+          "duration_ticks": 6,
+          "label": "left_contact_near_armfix"
+        },
+        {
+          "drawing_id": "left_stop_collect",
+          "duration_ticks": 6,
+          "label": "left_stop_collect"
+        },
+        {
+          "drawing_id": "left_stop_settle",
+          "duration_ticks": 6,
+          "label": "left_stop_settle"
+        },
+        {
+          "drawing_id": "left_fix",
+          "duration_ticks": 6,
+          "label": "left_fix"
+        }
+      ],
+      "id": "left_stop_key_study",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "front",
+          "duration_ticks": 5,
+          "label": "front"
+        },
+        {
+          "drawing_id": "turn_left_out_22",
+          "duration_ticks": 5,
+          "label": "turn_left_out_22"
+        },
+        {
+          "drawing_id": "front_left",
+          "duration_ticks": 5,
+          "label": "front_left"
+        },
+        {
+          "drawing_id": "turn_left_out_67",
+          "duration_ticks": 5,
+          "label": "turn_left_out_67"
+        },
+        {
+          "drawing_id": "left_fix",
+          "duration_ticks": 5,
+          "label": "left_fix"
+        },
+        {
+          "drawing_id": "left_start_anticipation",
+          "duration_ticks": 5,
+          "label": "left_start_anticipation"
+        },
+        {
+          "drawing_id": "left_start_liftoff",
+          "duration_ticks": 5,
+          "label": "left_start_liftoff"
+        },
+        {
+          "drawing_id": "left_contact_near_armfix",
+          "duration_ticks": 5,
+          "label": "left_contact_near_armfix"
+        },
+        {
+          "drawing_id": "left_down_armfix",
+          "duration_ticks": 5,
+          "label": "left_down_armfix"
+        },
+        {
+          "drawing_id": "left_passing_repair2",
+          "duration_ticks": 5,
+          "label": "left_passing_repair2"
+        },
+        {
+          "drawing_id": "left_up_near",
+          "duration_ticks": 5,
+          "label": "left_up_near"
+        },
+        {
+          "drawing_id": "left_contact_far",
+          "duration_ticks": 5,
+          "label": "left_contact_far"
+        },
+        {
+          "drawing_id": "left_down_far",
+          "duration_ticks": 5,
+          "label": "left_down_far"
+        },
+        {
+          "drawing_id": "left_passing_far",
+          "duration_ticks": 5,
+          "label": "left_passing_far"
+        },
+        {
+          "drawing_id": "left_up_far",
+          "duration_ticks": 5,
+          "label": "left_up_far"
+        },
+        {
+          "drawing_id": "left_contact_near_armfix",
+          "duration_ticks": 5,
+          "label": "left_contact_near_armfix"
+        },
+        {
+          "drawing_id": "left_down_armfix",
+          "duration_ticks": 5,
+          "label": "left_down_armfix"
+        },
+        {
+          "drawing_id": "left_passing_repair2",
+          "duration_ticks": 5,
+          "label": "left_passing_repair2"
+        },
+        {
+          "drawing_id": "left_up_near",
+          "duration_ticks": 5,
+          "label": "left_up_near"
+        },
+        {
+          "drawing_id": "left_contact_far",
+          "duration_ticks": 5,
+          "label": "left_contact_far"
+        },
+        {
+          "drawing_id": "left_down_far",
+          "duration_ticks": 5,
+          "label": "left_down_far"
+        },
+        {
+          "drawing_id": "left_passing_far",
+          "duration_ticks": 5,
+          "label": "left_passing_far"
+        },
+        {
+          "drawing_id": "left_up_far",
+          "duration_ticks": 5,
+          "label": "left_up_far"
+        },
+        {
+          "drawing_id": "left_contact_near_armfix",
+          "duration_ticks": 5,
+          "label": "left_contact_near_armfix"
+        },
+        {
+          "drawing_id": "left_stop_collect",
+          "duration_ticks": 5,
+          "label": "left_stop_collect"
+        },
+        {
+          "drawing_id": "left_stop_settle",
+          "duration_ticks": 5,
+          "label": "left_stop_settle"
+        },
+        {
+          "drawing_id": "left_fix",
+          "duration_ticks": 5,
+          "label": "left_fix"
+        },
+        {
+          "drawing_id": "turn_left_return_67",
+          "duration_ticks": 5,
+          "label": "turn_left_return_67"
+        },
+        {
+          "drawing_id": "front_left",
+          "duration_ticks": 5,
+          "label": "front_left"
+        },
+        {
+          "drawing_id": "turn_left_return_22",
+          "duration_ticks": 5,
+          "label": "turn_left_return_22"
+        },
+        {
+          "drawing_id": "front",
+          "duration_ticks": 5,
+          "label": "front"
+        }
+      ],
+      "id": "left_complete_action_key_blocking",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "loop",
+      "frames": [
+        {
+          "drawing_id": "right_contact_near",
+          "duration_ticks": 4,
+          "label": "right_contact_near"
+        },
+        {
+          "drawing_id": "right_down_near",
+          "duration_ticks": 4,
+          "label": "right_down_near"
+        },
+        {
+          "drawing_id": "right_passing_near",
+          "duration_ticks": 4,
+          "label": "right_passing_near"
+        },
+        {
+          "drawing_id": "right_up_near",
+          "duration_ticks": 4,
+          "label": "right_up_near"
+        },
+        {
+          "drawing_id": "right_contact_far",
+          "duration_ticks": 4,
+          "label": "right_contact_far"
+        },
+        {
+          "drawing_id": "right_down_far",
+          "duration_ticks": 4,
+          "label": "right_down_far"
+        },
+        {
+          "drawing_id": "right_passing_far_repair",
+          "duration_ticks": 4,
+          "label": "right_passing_far_repair"
+        },
+        {
+          "drawing_id": "right_up_far",
+          "duration_ticks": 4,
+          "label": "right_up_far"
+        }
+      ],
+      "id": "right_gait_key_study",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "front",
+          "duration_ticks": 6,
+          "label": "front"
+        },
+        {
+          "drawing_id": "turn_right_out_22",
+          "duration_ticks": 6,
+          "label": "turn_right_out_22"
+        },
+        {
+          "drawing_id": "front_right",
+          "duration_ticks": 6,
+          "label": "front_right"
+        },
+        {
+          "drawing_id": "turn_right_out_67",
+          "duration_ticks": 6,
+          "label": "turn_right_out_67"
+        },
+        {
+          "drawing_id": "right_fix",
+          "duration_ticks": 6,
+          "label": "right_fix"
+        }
+      ],
+      "id": "right_outward_turn_key_study",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "right_fix",
+          "duration_ticks": 6,
+          "label": "right_fix"
+        },
+        {
+          "drawing_id": "turn_right_return_67",
+          "duration_ticks": 6,
+          "label": "turn_right_return_67"
+        },
+        {
+          "drawing_id": "front_right",
+          "duration_ticks": 6,
+          "label": "front_right"
+        },
+        {
+          "drawing_id": "turn_right_return_22",
+          "duration_ticks": 6,
+          "label": "turn_right_return_22"
+        },
+        {
+          "drawing_id": "front",
+          "duration_ticks": 6,
+          "label": "front"
+        }
+      ],
+      "id": "right_return_turn_key_study",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "right_fix",
+          "duration_ticks": 6,
+          "label": "right_fix"
+        },
+        {
+          "drawing_id": "right_start_anticipation",
+          "duration_ticks": 6,
+          "label": "right_start_anticipation"
+        },
+        {
+          "drawing_id": "right_start_liftoff",
+          "duration_ticks": 6,
+          "label": "right_start_liftoff"
+        },
+        {
+          "drawing_id": "right_contact_near",
+          "duration_ticks": 6,
+          "label": "right_contact_near"
+        }
+      ],
+      "id": "right_start_key_study",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "right_contact_near",
+          "duration_ticks": 6,
+          "label": "right_contact_near"
+        },
+        {
+          "drawing_id": "right_stop_collect",
+          "duration_ticks": 6,
+          "label": "right_stop_collect"
+        },
+        {
+          "drawing_id": "right_stop_settle",
+          "duration_ticks": 6,
+          "label": "right_stop_settle"
+        },
+        {
+          "drawing_id": "right_fix",
+          "duration_ticks": 6,
+          "label": "right_fix"
+        }
+      ],
+      "id": "right_stop_key_study",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "once",
+      "frames": [
+        {
+          "drawing_id": "front",
+          "duration_ticks": 5,
+          "label": "front"
+        },
+        {
+          "drawing_id": "turn_right_out_22",
+          "duration_ticks": 5,
+          "label": "turn_right_out_22"
+        },
+        {
+          "drawing_id": "front_right",
+          "duration_ticks": 5,
+          "label": "front_right"
+        },
+        {
+          "drawing_id": "turn_right_out_67",
+          "duration_ticks": 5,
+          "label": "turn_right_out_67"
+        },
+        {
+          "drawing_id": "right_fix",
+          "duration_ticks": 5,
+          "label": "right_fix"
+        },
+        {
+          "drawing_id": "right_start_anticipation",
+          "duration_ticks": 5,
+          "label": "right_start_anticipation"
+        },
+        {
+          "drawing_id": "right_start_liftoff",
+          "duration_ticks": 5,
+          "label": "right_start_liftoff"
+        },
+        {
+          "drawing_id": "right_contact_near",
+          "duration_ticks": 5,
+          "label": "right_contact_near"
+        },
+        {
+          "drawing_id": "right_down_near",
+          "duration_ticks": 5,
+          "label": "right_down_near"
+        },
+        {
+          "drawing_id": "right_passing_near",
+          "duration_ticks": 5,
+          "label": "right_passing_near"
+        },
+        {
+          "drawing_id": "right_up_near",
+          "duration_ticks": 5,
+          "label": "right_up_near"
+        },
+        {
+          "drawing_id": "right_contact_far",
+          "duration_ticks": 5,
+          "label": "right_contact_far"
+        },
+        {
+          "drawing_id": "right_down_far",
+          "duration_ticks": 5,
+          "label": "right_down_far"
+        },
+        {
+          "drawing_id": "right_passing_far_repair",
+          "duration_ticks": 5,
+          "label": "right_passing_far_repair"
+        },
+        {
+          "drawing_id": "right_up_far",
+          "duration_ticks": 5,
+          "label": "right_up_far"
+        },
+        {
+          "drawing_id": "right_contact_near",
+          "duration_ticks": 5,
+          "label": "right_contact_near"
+        },
+        {
+          "drawing_id": "right_down_near",
+          "duration_ticks": 5,
+          "label": "right_down_near"
+        },
+        {
+          "drawing_id": "right_passing_near",
+          "duration_ticks": 5,
+          "label": "right_passing_near"
+        },
+        {
+          "drawing_id": "right_up_near",
+          "duration_ticks": 5,
+          "label": "right_up_near"
+        },
+        {
+          "drawing_id": "right_contact_far",
+          "duration_ticks": 5,
+          "label": "right_contact_far"
+        },
+        {
+          "drawing_id": "right_down_far",
+          "duration_ticks": 5,
+          "label": "right_down_far"
+        },
+        {
+          "drawing_id": "right_passing_far_repair",
+          "duration_ticks": 5,
+          "label": "right_passing_far_repair"
+        },
+        {
+          "drawing_id": "right_up_far",
+          "duration_ticks": 5,
+          "label": "right_up_far"
+        },
+        {
+          "drawing_id": "right_contact_near",
+          "duration_ticks": 5,
+          "label": "right_contact_near"
+        },
+        {
+          "drawing_id": "right_stop_collect",
+          "duration_ticks": 5,
+          "label": "right_stop_collect"
+        },
+        {
+          "drawing_id": "right_stop_settle",
+          "duration_ticks": 5,
+          "label": "right_stop_settle"
+        },
+        {
+          "drawing_id": "right_fix",
+          "duration_ticks": 5,
+          "label": "right_fix"
+        },
+        {
+          "drawing_id": "turn_right_return_67",
+          "duration_ticks": 5,
+          "label": "turn_right_return_67"
+        },
+        {
+          "drawing_id": "front_right",
+          "duration_ticks": 5,
+          "label": "front_right"
+        },
+        {
+          "drawing_id": "turn_right_return_22",
+          "duration_ticks": 5,
+          "label": "turn_right_return_22"
+        },
+        {
+          "drawing_id": "front",
+          "duration_ticks": 5,
+          "label": "front"
+        }
+      ],
+      "id": "right_complete_action_key_blocking",
+      "quality": "NOT_APPROVED"
+    },
+    {
+      "completion": "loop",
+      "frames": [
+        {
+          "drawing_id": "left_contact_near_armfix",
+          "duration_ticks": 2,
+          "label": "left_contact_near_armfix"
+        },
+        {
+          "drawing_id": "left_walk_mid_0",
+          "duration_ticks": 2,
+          "label": "left_walk_mid_0"
+        },
+        {
+          "drawing_id": "left_down_armfix",
+          "duration_ticks": 2,
+          "label": "left_down_armfix"
+        },
+        {
+          "drawing_id": "left_walk_mid_1",
+          "duration_ticks": 2,
+          "label": "left_walk_mid_1"
+        },
+        {
+          "drawing_id": "left_passing_repair2",
+          "duration_ticks": 2,
+          "label": "left_passing_repair2"
+        },
+        {
+          "drawing_id": "left_walk_mid_2",
+          "duration_ticks": 2,
+          "label": "left_walk_mid_2"
+        },
+        {
+          "drawing_id": "left_up_near",
+          "duration_ticks": 2,
+          "label": "left_up_near"
+        },
+        {
+          "drawing_id": "left_walk_mid_3",
+          "duration_ticks": 2,
+          "label": "left_walk_mid_3"
+        },
+        {
+          "drawing_id": "left_contact_far",
+          "duration_ticks": 2,
+          "label": "left_contact_far"
+        },
+        {
+          "drawing_id": "left_walk_mid_4",
+          "duration_ticks": 2,
+          "label": "left_walk_mid_4"
+        },
+        {
+          "drawing_id": "left_down_far",
+          "duration_ticks": 2,
+          "label": "left_down_far"
+        },
+        {
+          "drawing_id": "left_walk_mid_5",
+          "duration_ticks": 2,
+          "label": "left_walk_mid_5"
+        },
+        {
+          "drawing_id": "left_passing_far",
+          "duration_ticks": 2,
+          "label": "left_passing_far"
+        },
+        {
+          "drawing_id": "left_walk_mid_6",
+          "duration_ticks": 2,
+          "label": "left_walk_mid_6"
+        },
+        {
+          "drawing_id": "left_up_far",
+          "duration_ticks": 2,
+          "label": "left_up_far"
+        },
+        {
+          "drawing_id": "left_walk_mid_7",
+          "duration_ticks": 2,
+          "label": "left_walk_mid_7"
+        }
+      ],
+      "id": "left_inbetween_diagnostic_not_approved",
+      "quality": "NOT_APPROVED"
+    }
+  ]
+}

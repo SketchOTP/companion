@@ -1,0 +1,90 @@
+{
+  "profile": "MON_BODY_SOURCE_V1",
+  "status": "CANDIDATE_PENDING_OPERATOR_APPROVAL",
+  "source_precedence": [
+    "hard_anatomy_invariants",
+    "identity_master",
+    "turnaround",
+    "operator_approved_production_model"
+  ],
+  "references": {
+    "identity_master": {
+      "path": "assets/source/p02/references/identity-approved.png",
+      "sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+      "dimensions": [1254, 1254],
+      "mode": "RGBA",
+      "approval": "operator_approved_native_reference"
+    },
+    "turnaround": {
+      "path": "assets/source/p02/references/turnaround-approved.png",
+      "sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4",
+      "dimensions": [1448, 1086],
+      "mode": "RGB",
+      "approval": "operator_approved_native_reference"
+    }
+  },
+  "frame_profile": {
+    "canvas": [1024, 1024],
+    "root": [512, 896],
+    "ground_baseline_y": 896,
+    "drawable_safety_region": [64, 32, 960, 960],
+    "root_drift_px": 0,
+    "planted_contact_drift_px_max": 2,
+    "timing_grid_hz": 24,
+    "default_drawings_per_second": 12,
+    "source_cropping": "prohibited",
+    "encoded_translation": "prohibited",
+    "runtime_scaling": "uniform_only"
+  },
+  "palette_roles": {
+    "outline": "deep purple-black",
+    "body": "original purple",
+    "highlight": "controlled violet highlight",
+    "shadow": "controlled purple shadow",
+    "eye_field": "black",
+    "pupil": "white",
+    "mouth": "small dark simple mark"
+  },
+  "anatomy": {
+    "hands": {"fingers_per_hand": 2, "thumbs_per_hand": 1},
+    "feet": {"toes_per_foot": 3},
+    "head": "edge-spiked flame silhouette",
+    "face": "black eye fields with white pupils and small simple mouth",
+    "forbidden": ["clothing", "accessories", "muzzle", "nose", "teeth", "ears", "horns", "extra_limbs", "painterly", "3d", "pixel_art"]
+  },
+  "landmarks": {
+    "root": [512, 896],
+    "left_foot_contact": [397, 896],
+    "right_foot_contact": [627, 896],
+    "head_crown": [512, 182],
+    "left_eye_field": "review_against_identity_master",
+    "right_eye_field": "review_against_identity_master",
+    "hand_digit_groups": "review_against_turnaround",
+    "foot_toe_groups": "review_against_turnaround"
+  },
+  "pose_limits": {
+    "squash_stretch_percent": 4,
+    "tilt_degrees_max": 12,
+    "root_translation": "forbidden",
+    "contact_drift_px_max": 2,
+    "shadow_footprint": "under_planted_contacts",
+    "perspective": "correspond_to_six_approved_views"
+  },
+  "facings": {
+    "approved": ["front", "back", "left_profile", "right_profile", "top", "bottom"],
+    "candidate": ["front_left", "front_right", "back_left", "back_right"],
+    "runtime_normal_facings": ["front", "front_left", "front_right", "right_profile", "back_right", "back", "back_left", "left_profile"]
+  },
+  "authoring_candidates": {
+    "layered_vector_path": {
+      "source": "assets/source/p02/canon/mon_body_source_v1.svg",
+      "rasterizer": "resvg candidate; not adopted",
+      "status": "candidate_for_bounded_comparison"
+    },
+    "layered_raster_key_pose": {
+      "source": "assets/source/p02/canon/raster_key_pose_source_v1.json",
+      "exporter": "Pillow pinned in qualification environment",
+      "status": "candidate_for_bounded_comparison"
+    }
+  }
+}
