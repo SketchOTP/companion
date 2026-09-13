@@ -27,7 +27,7 @@ jobs:
           from PIL import Image
           root=Path('assets/source/p02/r06/approved'); pack=json.loads((root/'pack.json').read_text())
           assert pack['profile']=='MON_OPAQUE_BLACK_FRAME_SOURCE_PACK_V1'
-          assert len(pack['tracks'])==26 and sum(len(t['frames']) for t in pack['tracks'])==303
+          assert len(pack['tracks'])==24 and sum(len(t['frames']) for t in pack['tracks'])==283
           for asset in pack['source_assets']:
               p=root/asset['filename']; assert hashlib.sha256(p.read_bytes()).hexdigest()==asset['sha256']
               with Image.open(p) as im:
