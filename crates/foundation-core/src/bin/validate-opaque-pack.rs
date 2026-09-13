@@ -30,7 +30,12 @@ fn run() -> Result<(), String> {
     {
         return Err("opaque pack has no playable typed tracks".into());
     }
-    if pack.tracks.iter().flat_map(|t| t.frames.iter()).any(|f| f.landmark_provenance.is_none()) {
+    if pack
+        .tracks
+        .iter()
+        .flat_map(|t| t.frames.iter())
+        .any(|f| f.landmark_provenance.is_none())
+    {
         return Err("opaque pack is missing grounded landmark provenance".into());
     }
     let encoded =
