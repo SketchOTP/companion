@@ -110,6 +110,38 @@ jobs:
           assert len({s.get("track_id") for s in samples}) >= 58, semantic
           assert max(s.get("delta_from_black", 999) for s in samples) <= 4, semantic
           PY
+      - name: Controller-owned C05 locomotion qualification
+        run: |
+          set -euo pipefail
+          python3 experiments/p02-embodiment/scripts/qualify_r06_c05.py \
+            --pack assets/source/p02/r06/approved/pack.json \
+            --out "$RUNNER_TEMP/r06-c05"
+          python3 experiments/p02-embodiment/scripts/validate_r06_c05.py \
+            "$RUNNER_TEMP/r06-c05/controller_locomotion_qualification.json"
+          for side_velocity in left:-96 right:96; do
+            side="${side_velocity%%:*}"
+            velocity="${side_velocity##*:}"
+            godot_out="$RUNNER_TEMP/r06-c05-godot-$side"
+            python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+              --godot "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" \
+              --out "$godot_out" --mode semantic \
+              --pack "$RUNNER_TEMP/r06-intake/runtime/pack.json" \
+              --script r06_c05_locomotion_test.gd --label "r06-c05-$side" \
+              --script-arg="--pack=$RUNNER_TEMP/r06-intake/runtime/pack.json" \
+              --script-arg="--side=$side" --script-arg="--velocity=$velocity" \
+              --script-arg="--out=$godot_out/movement.json"
+            RESULT_PATH="$godot_out/result.json" python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          result=json.loads(Path(os.environ['RESULT_PATH']).read_text())
+          assert result['status']=='PASSED', result
+          assert result['godot_error_count']==0, result
+          semantic=result.get('semantic_test_result') or {}
+          assert semantic.get('status')=='PASS', semantic
+          assert semantic.get('canonical_owner')=='controller', semantic
+          assert semantic.get('presentation_owner')=='godot', semantic
+          PY
+          done
       - name: Upload R06-C02 evidence (including failures)
         if: always()
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
@@ -119,9 +151,16 @@ jobs:
             ${{ runner.temp }}/r06-results
             ${{ runner.temp }}/r06-c02
             ${{ runner.temp }}/r06-intake
+            ${{ runner.temp }}/r06-c05
+            ${{ runner.temp }}/r06-c05-godot-left
+            ${{ runner.temp }}/r06-c05-godot-right
             experiments/p02-embodiment/results/r06-c02
             assets/source/p02/r06/approved/R05_PRODUCTION_VISUAL_SELECTION_V1.json
             assets/source/p02/r06/approved/pack.json
             godot/r06_black_pack_test.gd
+            godot/r06_c05_locomotion_test.gd
+            godot/mon_locomotion_controller.gd
+            contracts/schemas/mon-locomotion-intent-v1.schema.json
+            contracts/fixtures/mon-locomotion-intent-v1.json
             contracts/schemas/mon-opaque-black-frame-source-pack-v1.schema.json
           if-no-files-found: error

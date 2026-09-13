@@ -648,3 +648,13 @@ geometry really progresses; screen-X foot naming can manufacture an apparent
 stride. Repeated frozen loops here alternate touchdown anchors and exceed the
 2 px planted-slip bound during double support, so even directional actor-root
 travel is not sufficient locomotion evidence.
+
+## 2026-09-13 — In-place raster movement belongs to the controller
+
+When accepted sprites have no authored root-motion channel, canonical actor
+translation must be driven by a typed movement/controller input and applied to
+`MonRoot`; sprite contacts can only diagnose presentation foot-skate. At 24 Hz,
+the controller advances by commanded velocity per tick while Godot selects the
+matching full-profile track. Repeated loop playback must preserve actor position
+and authored phase continuity, and negative tests must mutate a passing trace so
+each rejection is independently attributable.

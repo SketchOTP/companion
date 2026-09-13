@@ -526,3 +526,19 @@ negative matrix starts from a passing fixture and each of nine mutations is
 rejected for its own reason; structural validator exits zero. C04 therefore
 returns BLOCKED with the exact geometric contradiction. No C04 hosted, transition,
 or Openbox run was attempted after the directive stop condition.
+
+## R06-C05 controller-owned locomotion handoff — 2026-09-13
+
+Review 17/C05 was merged normally at `eb8a1f3fcaefb4f2e445b19c09481fab9b5792c0`.
+The typed `LocomotionIntentV1` contract and controller-owned 24 Hz `MonRoot`
+path qualify left/right start→loop→loop→stop at slow, nominal, and fast
+velocities, plus interruption traces. Left selects tracks 07/08/09 and right
+selects 12/13/14; six runs accumulate -176/-352/-528 px and +176/+352/+528 px
+with no actor or phase reset. Local Godot 4.7.2 selects the actual pack,
+observes `RenderingServer.frame_post_draw`, and completes start/loop/loop/stop
+for both sides. The 13-case negative matrix rejects mutations from a passing
+baseline. Full details are in `experiments/p02-embodiment/results/r06-c05/`.
+
+This is bounded synthetic presentation evidence only. Foot-skate remains
+diagnostic; Phase 02 acceptance, transition qualification, and Openbox
+endurance remain unrun. Hosted exact-head regressions are required.

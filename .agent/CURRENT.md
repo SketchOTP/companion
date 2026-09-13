@@ -124,3 +124,18 @@ planted slips reach `27.0 px` left / `18.0 px` right. Actor-root nets are
 `-218.0 px` / `+189.0 px`, but complete support qualification fails. Nine
 negatives reject independently from a passing baseline. Source PNG bytes remain
 unchanged; C04 is BLOCKED and no transition or Openbox work followed.
+
+## R06-C05 result (2026-09-13)
+
+Review 17/C05 was merged normally at `eb8a1f3fcaefb4f2e445b19c09481fab9b5792c0`.
+The typed synthetic locomotion intent contract and controller-owned 24 Hz
+presentation path qualify six complete left/right start→loop→loop→stop runs,
+three bounded velocities per side, interruption traces, explicit full-profile
+track selection, and a 13-case negative matrix from an independently passing
+baseline. Local Godot 4.7.2 left/right runs observe
+`RenderingServer.frame_post_draw` before completion and report -352/+352 px
+nominal travel with zero actor resets. Frozen source pack SHA remains
+`1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`; no source
+PNG changed. Hosted R06, Phase 01, and inherited Phase 02 runs are pending on
+the pushed implementation head. Phase 02 remains active/unaccepted; transition
+and Openbox gates remain unrun.

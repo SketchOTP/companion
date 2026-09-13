@@ -459,3 +459,13 @@ black viewport corners. Missing image and headless no-render fail as expected.
 No cutout API, billing change, new dependency, original-art mutation or intake
 waiver. Opaque still review works; full action conversion remains unfinished.
 See active R05_BLACK_BACKDROP_RESULT.md. No Phase02 acceptance or Phase03 work.
+
+## 2026-09-13 — R06-C05 controller-owned locomotion
+
+Architect Review 17 routes the existing branch to controller-driven movement
+over the frozen R05 in-place art. C05 adds the typed locomotion intent contract,
+24 Hz controller-owned `MonRoot` translation, explicit left/right profile track
+selection, cumulative start→loop→loop→stop qualification at slow/nominal/fast
+velocities, interruption traces, actual Godot playback, and independent
+negative cases. No source pixels change. Return to Architect after the bounded
+qualification; transition and Openbox gates remain closed.

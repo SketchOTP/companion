@@ -96,3 +96,15 @@ alternating opposite-direction touchdown anchors and zero two-loop net travel
 for both left and right. Full per-frame/world-contact evidence, side-by-side
 C03 comparison, and nine independent passing-baseline negatives are stored in
 `experiments/p02-embodiment/results/r06-c04/`. No source PNGs changed.
+
+## R06-C05 controller-driven locomotion — 2026-09-13
+
+The C05 controller-owned movement correction is implemented on
+`codex/p02-embodiment-001`. The exact frozen pack remains byte-identical
+(`1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`). Six
+left/right start→loop→loop→stop runs at -48/-96/-144 and +48/+96/+144 px/s
+pass with cumulative travel, no actor reset, and no phase reset. The typed
+intent contract, actual Godot test, and 13 independent negative cases are
+documented in `experiments/p02-embodiment/results/r06-c05/R06_C05_RESULT.md`.
+Local schema/contract and Godot checks pass; hosted exact-head regressions are
+required before Architect review. Phase 02 remains unaccepted.

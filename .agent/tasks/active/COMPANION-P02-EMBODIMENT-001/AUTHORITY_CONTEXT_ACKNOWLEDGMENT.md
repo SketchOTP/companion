@@ -253,3 +253,15 @@ re-fetched; the operator's selected-image approval is present in all bridges.
 Retrieval confidence ADEQUATE. This resumes bounded AUTHOR-002 work, not full
 library scale. Approved bytes stay unchanged; new keys/derivatives remain
 candidate. Primary status-only protection and unrelated secondary edits remain.
+
+## R06-C05 authority acknowledgment — 2026-09-13
+
+Architect Review 17 is authoritative for the controller-owned locomotion
+correction. I fetched and normally merged `origin/main` routing
+`b0bf3e3576cf27a35f29c224652ee4988e145eb4` into the existing branch as
+`eb8a1f3fcaefb4f2e445b19c09481fab9b5792c0`. The frozen R05 pack remains
+byte-identical. C05 treats typed synthetic intent as qualification input only:
+the controller owns canonical `MonRoot` translation at 24 Hz and Godot selects
+left/right profile presentation. Foot-skate is diagnostic, not authoritative
+grounding. Local schema, Python semantic, and Godot checks pass; hosted exact-
+head regression remains required. Retrieval confidence is `ADEQUATE`.

@@ -448,3 +448,16 @@ sanitized integration recording pass. Hosted Rust/Godot must consume the strict
 samples; exact-head Phase 01/02 regressions remain hosted gates. This remains
 E3 candidate engineering evidence; Phase 02, visual approval, transition
 qualification, and Openbox endurance remain unaccepted/deferred.
+
+## R06-C05 controller-owned locomotion — 2026-09-13
+
+- Result: `experiments/p02-embodiment/results/r06-c05/controller_locomotion_qualification.json`
+- Result SHA-256: `a0f18243b384c691294e4814dcb393af48854d3e82805bb6aaf1caf31c0d818b`
+- Frozen pack SHA-256: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`
+- Local status: `PASSED` bounded qualification; hosted status pending.
+- Contract: `LocomotionIntentV1`, JSON Schema Draft 2020-12, 24 Hz, controller-owned `MonRoot`.
+- Positive coverage: six complete side/velocity runs, interruption on both sides,
+  actual Godot left/right playback, and strict `RenderingServer.frame_post_draw`.
+- Negative coverage: 13 independent mutations from a passing baseline.
+- Limits: no physical-grounding claim, transition campaign, Openbox endurance,
+  Phase 02 acceptance, or product capability claim.

@@ -267,6 +267,34 @@ pub struct EmbodimentResult {
     pub status: String,
 }
 
+/// Controller-owned lateral movement input for bounded Phase 02 presentation
+/// qualification. This is synthetic qualification data only.
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum LocomotionDirection {
+    Left,
+    Right,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(rename_all = "snake_case")]
+pub enum LocomotionCommandState {
+    Start,
+    Cruise,
+    Stop,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct LocomotionIntentV1 {
+    pub schema_major: u16,
+    pub intent_id: Uuid,
+    pub requested_direction: LocomotionDirection,
+    pub requested_facing: String,
+    pub commanded_velocity_px_per_second: i32,
+    pub state: LocomotionCommandState,
+    pub cancellation_id: Option<Uuid>,
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct MonAnimationClip {
     pub clip_id: String,
@@ -586,8 +614,9 @@ pub struct DegradedState {
 #[cfg(test)]
 mod tests {
     use super::{
-        ApprovalState, MonAnimationClip, MonAnimationTrack, MonAnimationTrackFrame,
-        MonAuthoredFramePackV1, MonTemporalTrackV2, MonTemporalTracksV2,
+        ApprovalState, LocomotionIntentV1, MonAnimationClip, MonAnimationTrack,
+        MonAnimationTrackFrame, MonAuthoredFramePackV1, MonTemporalTrackV2,
+        MonTemporalTracksV2,
     };
 
     #[test]
@@ -673,6 +702,19 @@ mod tests {
         let decoded: MonTemporalTracksV2 =
             serde_json::from_slice(&serde_json::to_vec(&wrapper).unwrap()).unwrap();
         assert_eq!(wrapper, decoded);
+    }
+
+    #[test]
+    fn locomotion_intent_fixture_round_trips_with_typed_direction_and_state() {
+        let fixture = include_str!("../../../contracts/fixtures/mon-locomotion-intent-v1.json");
+        let intent: LocomotionIntentV1 =
+            serde_json::from_str(fixture).expect("locomotion fixture deserializes");
+        assert_eq!(intent.schema_major, 1);
+        assert_eq!(intent.commanded_velocity_px_per_second, -96);
+        let encoded = serde_json::to_vec(&intent).expect("locomotion fixture reserializes");
+        let decoded: LocomotionIntentV1 =
+            serde_json::from_slice(&encoded).expect("locomotion fixture round trips");
+        assert_eq!(intent, decoded);
     }
 
     #[test]

@@ -841,3 +841,19 @@ Actor-root nets are `-218.0 px` left and `+189.0 px` right, but support
 qualification fails. Nine negative predicates independently reject from a
 passing baseline. This is the corrected geometric contradiction; no art,
 transition, or Openbox work was performed.
+
+## R06-C05 implementation record — 2026-09-13
+
+- Directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C05`
+- Authority: Architect Review 17; routing `b0bf3e3576cf27a35f29c224652ee4988e145eb4`
+- Implementation merge base: `eb8a1f3fcaefb4f2e445b19c09481fab9b5792c0`
+- Frozen pack SHA-256: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`
+- Result SHA-256: `a0f18243b384c691294e4814dcb393af48854d3e82805bb6aaf1caf31c0d818b`
+- Result: local bounded qualification `PASS`; hosted R06/Phase 01/inherited Phase 02 pending.
+- Scope: typed locomotion intent, controller-owned 24 Hz translation, explicit
+  left/right profile selection, cumulative loops, interruption, Godot playback,
+  and independent negative matrix. No source PNG or accepted visual asset was
+  changed.
+- Evidence limits: foot-skate is diagnostic only; no physical grounding,
+  transition qualification, Openbox endurance, Phase 02 acceptance, or product
+  capability is claimed.

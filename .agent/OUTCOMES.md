@@ -975,3 +975,17 @@ qualification fails. Every frame records stable leg, sole candidates, support
 state, source/local/world contacts and offsets. Nine independent negatives reject
 from a separately passing baseline. Result remains BLOCKED for Architect review;
 no transition or endurance work followed.
+
+## 2026-09-13 — R06-C05 controller-owned locomotion qualification
+
+Merged Review 17 normally and preserved all C02/C03/C04 evidence and source
+bytes. Added a typed `LocomotionIntentV1` contract and controller-owned 24 Hz
+`MonRoot` integration. Six complete left/right start→loop→loop→stop runs at
+slow, nominal, and fast bounded velocities accumulate in the requested screen
+direction; interruption traces stop continuously; no actor or animation-phase
+reset is observed. Actual Godot 4.7.2 left/right runs select the true profile
+tracks and observe `RenderingServer.frame_post_draw`. A 13-case negative matrix
+rejects direction/sign/profile/recenter/discontinuity/tick/intent/track/pack
+mutations from an independently passing baseline. Local qualification passes;
+hosted exact-head regressions remain required. This is bounded presentation
+evidence only and does not claim physical grounding or Phase 02 acceptance.

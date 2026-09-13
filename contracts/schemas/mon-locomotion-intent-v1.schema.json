@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://companion.local/schema/mon-locomotion-intent-v1.json",
+  "title": "MON_LOCOMOTION_INTENT_V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_major", "intent_id", "requested_direction", "requested_facing", "commanded_velocity_px_per_second", "state", "cancellation_id"],
+  "properties": {
+    "schema_major": {"const": 1},
+    "intent_id": {"type": "string", "format": "uuid"},
+    "requested_direction": {"enum": ["left", "right"]},
+    "requested_facing": {"enum": ["left", "right"]},
+    "commanded_velocity_px_per_second": {"type": "integer", "minimum": -2000, "maximum": 2000},
+    "state": {"enum": ["start", "cruise", "stop"]},
+    "cancellation_id": {"anyOf": [{"type": "string", "format": "uuid"}, {"type": "null"}]}
+  },
+  "allOf": [
+    {"if": {"properties": {"requested_direction": {"const": "left"}}}, "then": {"properties": {"requested_facing": {"const": "left"}, "commanded_velocity_px_per_second": {"maximum": -1}}}},
+    {"if": {"properties": {"requested_direction": {"const": "right"}}}, "then": {"properties": {"requested_facing": {"const": "right"}, "commanded_velocity_px_per_second": {"minimum": 1}}}},
+    {"if": {"properties": {"state": {"const": "stop"}}}, "then": {"properties": {"commanded_velocity_px_per_second": {"const": 0}}}}
+  ]
+}
