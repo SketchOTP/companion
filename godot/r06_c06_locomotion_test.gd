@@ -115,7 +115,7 @@ func _cadence_probe() -> Dictionary:
 	for render_hz in [30, 60]:
 		var probe = load("res://mon_locomotion_controller.gd").new()
 		get_root().add_child(probe)
-		var accepted := probe.accept_serialized_intent(_intent_json(1, 650 + render_hz, "right", 96, "cruise", null))
+		var accepted = probe.accept_serialized_intent(_intent_json(1, 650 + render_hz, "right", 96, "cruise", null))
 		var ticks := 0
 		for _i in render_hz: ticks += probe.advance_render_delta(1.0 / float(render_hz)).size()
 		outputs[str(render_hz)] = {"render_hz": render_hz, "semantic_ticks": ticks, "final_x": probe.position_x, "accepted": accepted.get("status") == "accepted"}
