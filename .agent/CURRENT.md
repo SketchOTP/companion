@@ -6,54 +6,55 @@ Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adop
 
 ## Latest Architect disposition
 
-Architect Review 19 PARTIAL ACCEPTS R06-C06. Retain the frozen R05/R06 visual source identity, controller-owned `MonRoot`, V2 replay/freshness semantics, active-intent cancellation, fixed-step accumulator, immutable intake/Rust/Godot boundaries, strict render/compositor evidence, failure/recovery/export-restore, and exact-head hosted regression at `941c231d4562177c1db02cd61fc0f0c085e6dae4`.
+Architect Review 20 `CONTINUE — C06-C01 PARTIAL ACCEPTED`.
 
-C06 is not yet accepted as a complete locomotion primitive because independent review found three material defects: the hosted normal/quarter viewport captures are blank pre-playback images; the Godot test both plays AnimatedSprite2D and manually overwrites `sprite.frame`, bypassing the accepted `duration_ticks` and producing a 24-tick phase cycle instead of the accepted 32-tick walk loop; and the V2 wire schema/Rust `u64` range exceeds Godot's signed-64 integer range. The claimed 17 negative cases are also not all exercised through the Godot protected path.
+Retain the C06-C01 wire-range correction, one paused/manual presentation clock, authored-duration frame selection, real non-black translated Godot captures, replay/cancellation/fixed-step controller behavior, negative-evidence categorization, frozen source identity, and prior intake/Rust/render/compositor/failure/export boundaries.
+
+Do not authorize legal-transition qualification yet.
+
+Independent review of hosted artifact `10344096459` identified four remaining evidence defects:
+
+1. Review 19 required quarter review at 4x review wall-time, but CI was weakened to accept `>=3.0x`; the exact artifact measures only about `3.17–3.18x`.
+2. The submitted timing values do not match the exact hosted artifact even though the downloaded ZIP SHA-256 matches the submitted digest.
+3. The shared phase verifier validates controller `animation_phase` based on hard-coded `AUTHORED_PROFILE_LOOP_TICKS := 32.0`, not phase independently derived from the loaded track's `duration_ticks`.
+4. Capture records omit required source/timing identity fields, and the required actual-capture strip/GIF is absent.
 
 Current authority:
 
-- Architect Review 19: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_19.md`
-- Notion Review 19: https://app.notion.com/p/3db833cb27ff81a8a722ccf78da68de0
-- Current Codex directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06-C01`
-- Reviewed C06 implementation head: `941c231d4562177c1db02cd61fc0f0c085e6dae4`
-- Reviewed C06 publication head: `1adadc1206be4371b9baa42aa21153d6eeae74fd`
+- Architect Review 20: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_20.md`
+- Notion Review 20: https://app.notion.com/p/3db833cb27ff81b4a078f4ab04a54b90
+- Current Codex directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06-C02`
+- Reviewed C06-C01 implementation: `de9d7c041cad3c28ecb2779e5afc11f1f2a0f3a4`
+- Reviewed C06-C01 publication head: `84b1fcb12a89538a20f52efc1cc594173ab513e7`
+- Hosted C06-C01 artifact: `10344096459`, digest `sha256:961f32864633d5ab45f121430d294bae538dc626c1abcac97488f333403b438f`
 - Frozen visual task head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
+- Frozen R06 source-pack SHA-256: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`
 - PR #9: draft/open/unmerged
 - Issue #8: open
 - Branch: `codex/p02-embodiment-001`
 
-## Frozen authority
-
-- Review ZIP SHA-256: `45fd9749179419339046af2ab40605c47d825ca4f0ad47c87a8c6fb9ca1b799b`
-- Review manifest SHA-256: `d8a0277272f0ccd6f948a24153b7f954aff138111ab840f22e09204aa359e595`
-- Review HTML SHA-256: `7bd9e0cd5c64b89259dc2780825457a16144cebe02d259fd73a644591aa38cd2`
-- R06 source-pack SHA-256: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`
-
 No new character artwork is authorized.
-
-## Retained engineering boundary
-
-Retain 58 immutable native RGB runtime masters, 24 tracks / 283 frame slots, byte-preserving intake, typed Rust consumption, atomic publication/failure cleanup, real-art Godot loading, strict `RenderingServer.frame_post_draw`, transformed-source black-field compositor QA, missing/corrupt/ineligible failure and recovery, export/restore, controller-owned canonical lateral translation, true left/right profile selection, V2 UUID + monotonic sequence replay rejection, active cancellation targeting, and fixed-step accumulator evidence.
-
-All C03/C04 raster-root/contact failures remain preserved negative evidence. Raster foot/contact diagnostics do not own canonical world movement for this in-place seed.
 
 ## Active objective
 
-Execute `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06-C01` only:
+Execute `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06-C02` only:
 
-1. merge current `origin/main` normally and preserve all historical evidence;
-2. constrain V2 `intent_sequence` to a wire range exactly representable by Godot signed 64-bit integers and add max/max+1 schema/Rust/Godot tests;
-3. use one presentation clock only and preserve authored frame duration weights exactly;
-4. derive loop phase from the actual authored 32-tick profile loop, including modulo continuity across repeated loops;
-5. capture visible non-black mon frames during real translated start/cruise/second-loop/stop playback for both normal and quarter review;
-6. prove quarter review is the same semantic path at 4x review wall-time rather than a trace label;
-7. reconcile negative evidence so controller, loader/resolver, scheduler, and shared trace-verifier paths are exercised truthfully;
-8. keep R06 + Phase 01 + inherited Phase 02 green on one implementation SHA;
-9. return to Architect before transition or Openbox qualification.
+1. normally merge current `origin/main` and preserve all accepted work/history;
+2. restore real 4.0x review pacing using monotonic, deadline-based timing; hosted quarter/normal ratio must be `3.90..4.10` for left and right;
+3. derive presentation loop ticks and phase from the loaded selected track's actual `duration_ticks`, with independent pack-backed verification rather than a duplicated controller constant;
+4. bind every required capture to semantic tick, actor position, selected track/frame, authored tick, track-derived phase, monotonic review elapsed time, source pack/frame hashes, and capture hash;
+5. preserve exact semantic equality between normal and quarter review checkpoints;
+6. assemble strip/GIF only from actual Godot checkpoint PNGs;
+7. add regression proving a 3.33x timing ratio fails validation;
+8. reconcile the inaccurate C06-C01 reported timing values to the preserved hosted artifact;
+9. keep focused R06 + Phase 01 + inherited Phase 02 green on one implementation SHA;
+10. return to Architect before transition/Openbox qualification.
 
 ## Remaining Phase 02 gates
 
-After C06-C01 passes without a new material defect: real legal-transition campaign, then dedicated 1366x768 Openbox two-hour endurance, then final Phase 02 acceptance/PR merge decision. Organism, autobiographical memory, perception, speech, learning, development, dreaming, caregiving efficacy, production reliability, and Phase 03+ remain unaccepted.
+After C06-C02 passes without a new material defect: Architect decision on legal-transition campaign; then dedicated 1366x768 Openbox two-hour endurance; then final Phase 02 acceptance/PR merge decision.
+
+Organism state, autobiographical memory, perception, speech, learning, development, dreaming, caregiving efficacy, production reliability, and Phase 03+ remain unaccepted.
 
 ## Protected work
 
