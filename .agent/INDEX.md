@@ -11,12 +11,12 @@
 
 - Active phase: `02 — Mon Body, Habitat, and Sprite Pipeline`
 - Phase 02 acceptance: `NOT GRANTED`
-- Current disposition: `R06-C05 PARTIAL ACCEPTED — INTENT LIFECYCLE / FIXED-STEP / PHASE COUPLING ACTIVE`
-- Current directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06`
-- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_18.md`
-- Notion Review 18: https://app.notion.com/p/3db833cb27ff81748624fa3ed8132b8d
-- Reviewed implementation head: `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd`
-- Reviewed publication head: `3f8846c761ecc46e7cf2f5e3d94a2bbd5c6416e1`
+- Current disposition: `R06-C06 PARTIAL ACCEPTED — C06-C01 RENDER/TIMING/WIRE CLOSEOUT ACTIVE`
+- Current directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06-C01`
+- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_19.md`
+- Notion Review 19: https://app.notion.com/p/3db833cb27ff81a8a722ccf78da68de0
+- Reviewed implementation head: `941c231d4562177c1db02cd61fc0f0c085e6dae4`
+- Reviewed publication head: `1adadc1206be4371b9baa42aa21153d6eeae74fd`
 - Frozen visual head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
 - PR #9: draft/open/unmerged
 - Issue #8: open
@@ -31,61 +31,47 @@ workflow `34767677707` on the same exact SHA. Strict Godot evidence recorded
 `RenderingServer.frame_post_draw`, 624 compositor samples, and 168 events with
 zero Godot ERROR lines. Phase 02 remains unaccepted pending Architect review.
 
-## Frozen visual package
+## Frozen package
 
-- ZIP SHA-256: `45fd9749179419339046af2ab40605c47d825ca4f0ad47c87a8c6fb9ca1b799b`
-- Manifest SHA-256: `d8a0277272f0ccd6f948a24153b7f954aff138111ab840f22e09204aa359e595`
-- HTML SHA-256: `7bd9e0cd5c64b89259dc2780825457a16144cebe02d259fd73a644591aa38cd2`
+- Review ZIP SHA-256: `45fd9749179419339046af2ab40605c47d825ca4f0ad47c87a8c6fb9ca1b799b`
+- Review manifest SHA-256: `d8a0277272f0ccd6f948a24153b7f954aff138111ab840f22e09204aa359e595`
+- Review HTML SHA-256: `7bd9e0cd5c64b89259dc2780825457a16144cebe02d259fd73a644591aa38cd2`
 - R06 source-pack SHA-256: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`
 
-R05 sprite generation remains visually accepted/frozen. No new art is authorized.
+No new character artwork is authorized.
 
-## Retained R06 boundary
+## Retained accepted boundary
 
-- 58 immutable RGB runtime masters;
-- 24 tracks / 283 frame slots;
-- exact byte preservation and source-role exclusion;
-- atomic staged intake and typed Rust consumption;
-- real-art Godot loading/source timing;
-- strict observed `RenderingServer.frame_post_draw`;
-- transformed in-source black-field compositor sampling;
+- 58 immutable RGB runtime masters; 24 tracks / 283 frame slots;
+- exact byte preservation, atomic intake, typed Rust consumption;
+- strict `RenderingServer.frame_post_draw` and black-field compositor QA;
 - missing/corrupt/ineligible failure/recovery and export/restore;
-- C03/C04 raster root/contact failures retained as negative evidence;
-- controller-owned `MonRoot` translation and true left/right profile mapping;
-- bounded slow/nominal/fast displacement arithmetic;
-- nominal Godot translated playback on actual approved art;
-- exact-head hosted R06 + Phase 01 + inherited Phase 02 success on `24b4919a...`.
+- controller-owned `MonRoot` and true left/right profile mapping;
+- V2 UUID identity, monotonic replay rejection, active-intent cancellation;
+- fixed-step accumulator evidence and exact-head C06 hosted regression;
+- C03/C04 root/contact failures preserved as negative evidence.
 
-## C05 limitations requiring C06
+## Why C06-C01 is required
 
-C05 does not yet satisfy the accepted runtime-semantics boundary:
+Independent Architect review found:
 
-- no monotonic intent sequence/replay rejection is implemented in the Godot controller;
-- cancellation identity is not enforced;
-- Godot semantic tests use non-UUID IDs despite the schema/Rust UUID contract;
-- several claimed negative cases are static result records rather than protected-path executions;
-- gait frame cadence is the same at slow/nominal/fast movement speeds;
-- quarter-speed is only copied trace metadata, not actual rendered playback;
-- interruption can resume cruise after one zero-velocity tick;
-- controller ticks are invoked from `process_frame` rather than an explicit fixed 24 Hz simulation clock.
+- all four hosted C06 normal/quarter viewport captures are identical all-black images because capture occurs before sprite playback;
+- C06 both plays AnimatedSprite2D and manually overwrites `sprite.frame`, bypassing accepted `duration_ticks`; the accepted profile loop is 32 source ticks but submitted phase logic cycles in 24 ticks;
+- V2 schema/Rust accepts unsigned-64 sequence values that Godot signed-64 `int` cannot represent;
+- not all 17 claimed negative cases execute the Godot protected path.
 
-## R06-C06 gate
+## C06-C01 gate
 
 Required:
 
-- preserve all accepted source/runtime/render/intake evidence;
-- version the locomotion wire contract instead of rewriting historical V1;
-- use UUID intent identity plus an explicit monotonic sequence/freshness field;
-- reject duplicate, stale and replayed commands in the actual controller path;
-- define active-intent cancellation/stop semantics and reject mismatched/replayed cancellation;
-- consume schema-valid serialized intent fixtures in Godot;
-- run canonical movement on an explicit fixed 24 Hz clock independent of render cadence;
-- prove render-FPS variation does not lose or duplicate semantic movement ticks;
-- couple loop animation phase/rate to commanded velocity under a declared calibration;
-- terminate mid-loop stop/cancel into stop presentation without cruise resumption;
-- publish real rendered normal/quarter translated playback;
-- execute negative cases through the protected implementation path rather than summary booleans;
-- retain R06 + Phase 01 + inherited Phase 02 green on one implementation SHA.
+- common exactly representable sequence wire range with max/max+1 schema/Rust/Godot tests;
+- one presentation clock preserving accepted duration weights;
+- loop phase derived from actual authored loop duration and verified modulo-continuous across repeats;
+- visible non-black Godot captures during translated start/cruise/second-loop/stop for normal and quarter review;
+- quarter review proven as same semantic path at 4x review wall-time;
+- command negatives through controller, pack negatives through loader/resolver, scheduler/trace negatives through a shared positive-path verifier;
+- frozen source bytes unchanged;
+- R06 + Phase 01 + inherited Phase 02 green on one implementation SHA.
 
 ## Remaining after R06
 
