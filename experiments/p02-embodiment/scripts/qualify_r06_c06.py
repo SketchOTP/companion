@@ -11,6 +11,7 @@ import argparse
 import copy
 import hashlib
 import json
+import math
 import re
 from pathlib import Path
 from typing import Any
@@ -134,6 +135,13 @@ class Controller:
         self.position += velocity / HZ
         if velocity:
             self.phase = (self.phase + self.rate(velocity) / HZ) % 1.0
+        phase = self.phase % 1.0
+        # Avoid serializing a floating-point value that is mathematically the
+        # loop seam (1.0) as an out-of-range phase.  The controller remains
+        # modulo-continuous; this only makes the observed wire trace stable at
+        # the seam.
+        if math.isclose(phase, 1.0, abs_tol=1e-9):
+            phase = 0.0
         sample = {
             "semantic_tick": self.tick,
             "actor_root_x": round(self.position, 6),
@@ -144,7 +152,7 @@ class Controller:
             "state": self.intent["state"],
             "direction": self.intent["requested_direction"],
             "facing": self.intent["requested_facing"],
-            "animation_phase": round(self.phase, 9),
+            "animation_phase": round(phase, 9),
             "playback_rate": self.rate(velocity),
         }
         self.tick += 1
