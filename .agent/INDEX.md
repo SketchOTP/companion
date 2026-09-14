@@ -11,12 +11,12 @@
 
 - Active phase: `02 — Mon Body, Habitat, and Sprite Pipeline`
 - Phase 02 acceptance: `NOT GRANTED`
-- Current disposition: `R06-C06-C01 IMPLEMENTATION COMPLETE — ARCHITECT REVIEW PENDING`
-- Current directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06-C01`
-- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_19.md`
-- Notion Review 19: https://app.notion.com/p/3db833cb27ff81a8a722ccf78da68de0
+- Current disposition: `C06-C01 PARTIAL ACCEPTED — C06-C02 FINAL EVIDENCE CORRECTION ACTIVE`
+- Current directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06-C02`
+- Repository review: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_20.md`
+- Notion Review 20: https://app.notion.com/p/3db833cb27ff81b4a078f4ab04a54b90
 - Reviewed implementation head: `de9d7c041cad3c28ecb2779e5afc11f1f2a0f3a4`
-- Reviewed publication head: `1adadc1206be4371b9baa42aa21153d6eeae74fd`
+- Reviewed publication head: `84b1fcb12a89538a20f52efc1cc594173ab513e7`
 - Frozen visual head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
 - PR #9: draft/open/unmerged
 - Issue #8: open
@@ -48,28 +48,32 @@ No new character artwork is authorized.
 - missing/corrupt/ineligible failure/recovery and export/restore;
 - controller-owned `MonRoot` and true left/right profile mapping;
 - V2 UUID identity, monotonic replay rejection, active-intent cancellation;
-- fixed-step accumulator evidence and exact-head C06 hosted regression;
+- common signed-64 wire range `0..9223372036854775807`;
+- one paused/manual presentation clock preserving authored duration weights;
+- real non-black translated left/right Godot captures at matched normal/quarter semantic checkpoints;
+- fixed-step accumulator evidence and exact-head C06-C01 hosted regression;
 - C03/C04 root/contact failures preserved as negative evidence.
 
-## Why C06-C01 is required
+## Why C06-C02 is required
 
-Independent Architect review found:
+Independent Architect review of hosted artifact `10344096459` found:
 
-- all four hosted C06 normal/quarter viewport captures are identical all-black images because capture occurs before sprite playback;
-- C06 both plays AnimatedSprite2D and manually overwrites `sprite.frame`, bypassing accepted `duration_ticks`; the accepted profile loop is 32 source ticks but submitted phase logic cycles in 24 ticks;
-- V2 schema/Rust accepts unsigned-64 sequence values that Godot signed-64 `int` cannot represent;
-- not all 17 claimed negative cases execute the Godot protected path.
+- the workflow weakened the required 4x review wall-time gate to `>=3.0x`;
+- the exact artifact measures only about `3.17–3.18x` quarter/normal and its timing values differ from the submitted report despite matching artifact digest;
+- the shared phase verifier validates a controller `animation_phase` derived from hard-coded `AUTHORED_PROFILE_LOOP_TICKS := 32.0`, rather than deriving acceptance phase from the loaded track durations;
+- capture records omit source-pack/source-frame identity and monotonic wall-clock index;
+- the required capture-derived C06 strip/GIF is absent.
 
-## C06-C01 gate
+## C06-C02 gate
 
 Required:
 
-- common exactly representable sequence wire range with max/max+1 schema/Rust/Godot tests;
-- one presentation clock preserving accepted duration weights;
-- loop phase derived from actual authored loop duration and verified modulo-continuous across repeats;
-- visible non-black Godot captures during translated start/cruise/second-loop/stop for normal and quarter review;
-- quarter review proven as same semantic path at 4x review wall-time;
-- command negatives through controller, pack negatives through loader/resolver, scheduler/trace negatives through a shared positive-path verifier;
+- actual 4.0x deadline-based review pacing measured with monotonic time, accepted only at hosted ratio `3.90..4.10` for both directions;
+- presentation phase derived and independently verified from the selected track's actual `duration_ticks`;
+- capture records bound to source/capture hashes and monotonic elapsed time;
+- normal/quarter semantic checkpoint equality retained;
+- strip/GIF assembled only from actual Godot checkpoint PNGs;
+- regression proving 3.33x timing is rejected;
 - frozen source bytes unchanged;
 - R06 + Phase 01 + inherited Phase 02 green on one implementation SHA.
 
@@ -154,3 +158,4 @@ unaccepted pending Architect review.
 Implementation SHA `941c231d4562177c1db02cd61fc0f0c085e6dae4` records only the
 modulo-phase seam normalization. Exact-head R06 `34800729601`, Phase 01
 `34800729655`, and inherited Phase 02 `34800729662` passed.
+If C06-C02 passes without a new material defect: Architect may authorize the legal-transition campaign, followed by dedicated 1366x768 Openbox two-hour endurance, then final Phase 02 acceptance/PR merge decision.
