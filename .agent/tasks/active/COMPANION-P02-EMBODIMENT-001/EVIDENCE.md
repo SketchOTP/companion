@@ -470,3 +470,13 @@ SHA `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd`, hosted Phase 01
 `34790167116`, same-head rerun #1 `34790169089` / job `103813789392`, and
 same-head rerun #2 / job `103814757741` passed. Focused R06 `34790169083` and
 inherited Phase 02 `34790169074` also passed. No source PNG changed.
+
+### R06-C06 implementation — 2026-09-14
+
+Added `MON_LOCOMOTION_INTENT_V2` with UUID identity, monotonic sequence, and
+explicit cancellation. The controller now rejects duplicate/equal/lower
+sequences, wrong cancellation targets, and post-stop replay; canonical
+movement is driven by a fixed 24 Hz scheduler and presentation rate is
+calibrated at 0.5x/1.0x/1.5x for 48/96/144 px/s. Python semantic qualification
+and validator pass locally; Godot consumes serialized V2 intents and writes
+actual normal/quarter viewport captures. Hosted C06 regression remains pending.

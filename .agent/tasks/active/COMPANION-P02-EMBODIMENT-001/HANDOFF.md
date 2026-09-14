@@ -543,6 +543,14 @@ This is bounded synthetic presentation evidence only. Foot-skate remains
 diagnostic; Phase 02 acceptance, transition qualification, and Openbox
 endurance remain unrun. Hosted exact-head regressions are required.
 
+## C06 implementation handoff — 2026-09-14
+
+C06 preserves C05 ownership and art while adding the V2 replay-safe intent
+contract, fixed-step controller, velocity-linked phase, cancellation-to-stop
+transition, executable negatives, and Godot rendered normal/quarter runner.
+Local semantic/schema checks pass. Hosted exact-head regressions and final
+publication remain pending; Phase 02 is still unaccepted.
+
 ## C05 hosted regression reconciliation — 2026-09-14
 
 Implementation SHA `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd` passed initial

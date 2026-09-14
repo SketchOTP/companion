@@ -25,6 +25,7 @@ mapping = {
     "mon-ingested-frame-pack-v1.schema.json": "MonIngestedFramePackV1",
     "mon-frame-intake-receipt-v1.schema.json": "MonFrameIntakeReceiptV1",
     "mon-opaque-black-frame-source-pack-v1.schema.json": "MonAuthoredFrameSourcePackV1",
+    "mon-locomotion-intent-v2.schema.json": "LocomotionIntentV2",
 }
 text = (ROOT / "crates/foundation-core/src/contracts.rs").read_text(encoding="utf-8")
 errors = []

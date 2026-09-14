@@ -853,7 +853,14 @@ transition, or Openbox work was performed.
 - Scope: typed locomotion intent, controller-owned 24 Hz translation, explicit
   left/right profile selection, cumulative loops, interruption, Godot playback,
   and independent negative matrix. No source PNG or accepted visual asset was
-  changed.
+changed.
+
+## R06-C06 record — 2026-09-14
+
+Review 18 C06 work preserves C05 controller ownership and frozen source bytes.
+The new V2 wire contract, fixed 24 Hz semantic scheduler, velocity-linked
+presentation, cancellation-to-stop path, and rendered review runner are
+implemented. No transition, Openbox, or Phase 03 work was performed.
 - Evidence limits: foot-skate is diagnostic only; no physical grounding,
   transition qualification, Openbox endurance, Phase 02 acceptance, or product
   capability is claimed.

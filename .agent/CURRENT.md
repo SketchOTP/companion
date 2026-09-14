@@ -154,3 +154,12 @@ Phase 02 `34790169074`. The test-only persistence ordering correction seeds a
 known valid candidate before care restart; frozen pack SHA remains
 `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40` and no
 source PNG changed. Phase 02 remains active and unaccepted.
+
+## R06-C06 implementation in progress (2026-09-14)
+
+Review 18 requires replay-safe V2 intents, explicit fixed 24 Hz scheduling,
+velocity-linked presentation cadence, real stop/cancel semantics, and actual
+normal/quarter rendered playback. C06 adds `LocomotionIntentV2`, controller
+freshness/cancellation state, Godot C06 playback, semantic cadence probes, and
+executable negatives. No art bytes changed; hosted C06 regression remains
+pending.

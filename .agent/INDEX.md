@@ -134,3 +134,11 @@ passed hosted Phase 01 `34790167116`, same-head reruns `34790169089` (job
 `103813789392`) and `103814757741`, focused R06 `34790169083`, and inherited
 Phase 02 `34790169074`. C05 remains bounded controller-owned locomotion
 evidence; Phase 02 remains unaccepted.
+
+### C06 replay-safe fixed-step controller — 2026-09-14
+
+Review 18 C06 implementation is in progress. The V2 intent contract adds UUID
+identity plus monotonic sequence and cancellation targeting; the controller
+owns a fixed 24 Hz semantic clock and velocity-linked presentation rate. Godot
+consumes serialized V2 intents and captures normal/quarter rendered playback.
+No source art changed; hosted validation is pending.

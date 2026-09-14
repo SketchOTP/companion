@@ -664,3 +664,11 @@ Persistence checks that depend on a producer's last-packet state must establish
 the packet under test immediately before restart. A broad matrix can otherwise
 couple a duplicate opcode to incidental ordering and create a false failure
 even when production idempotency is intact.
+
+## C06 learning — 2026-09-14
+
+A UUID identifies a command but does not order it. Replay safety requires an
+explicit monotonic sequence retained by the controller, while cancellation
+must target the currently active command. Semantic movement ticks also need a
+clock independent of render cadence; otherwise a process-frame test can hide
+loss or duplication.

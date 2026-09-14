@@ -295,6 +295,21 @@ pub struct LocomotionIntentV1 {
     pub cancellation_id: Option<Uuid>,
 }
 
+/// Replay-safe controller command profile.  V1 remains historical evidence;
+/// V2 adds an explicit monotonic sequence so UUID identity is not mistaken
+/// for ordering or freshness.
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+pub struct LocomotionIntentV2 {
+    pub schema_major: u16,
+    pub intent_id: Uuid,
+    pub intent_sequence: u64,
+    pub requested_direction: LocomotionDirection,
+    pub requested_facing: String,
+    pub commanded_velocity_px_per_second: i32,
+    pub state: LocomotionCommandState,
+    pub cancellation_id: Option<Uuid>,
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct MonAnimationClip {
     pub clip_id: String,
@@ -614,7 +629,7 @@ pub struct DegradedState {
 #[cfg(test)]
 mod tests {
     use super::{
-        ApprovalState, LocomotionIntentV1, MonAnimationClip, MonAnimationTrack,
+        ApprovalState, LocomotionIntentV1, LocomotionIntentV2, MonAnimationClip, MonAnimationTrack,
         MonAnimationTrackFrame, MonAuthoredFramePackV1, MonTemporalTrackV2, MonTemporalTracksV2,
     };
 
@@ -713,6 +728,19 @@ mod tests {
         let encoded = serde_json::to_vec(&intent).expect("locomotion fixture reserializes");
         let decoded: LocomotionIntentV1 =
             serde_json::from_slice(&encoded).expect("locomotion fixture round trips");
+        assert_eq!(intent, decoded);
+    }
+
+    #[test]
+    fn replay_safe_locomotion_intent_v2_round_trips_with_sequence() {
+        let fixture = include_str!("../../../contracts/fixtures/mon-locomotion-intent-v2.json");
+        let intent: LocomotionIntentV2 =
+            serde_json::from_str(fixture).expect("V2 locomotion fixture deserializes");
+        assert_eq!(intent.schema_major, 2);
+        assert_eq!(intent.intent_sequence, 7);
+        let encoded = serde_json::to_vec(&intent).expect("V2 locomotion fixture reserializes");
+        let decoded: LocomotionIntentV2 =
+            serde_json::from_slice(&encoded).expect("V2 locomotion fixture round trips");
         assert_eq!(intent, decoded);
     }
 

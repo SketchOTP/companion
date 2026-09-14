@@ -998,3 +998,11 @@ Phase 01 `34790167116`, same-head reruns `34790169089` (jobs
 Phase 02 `34790169074`. The persistence test-ordering correction seeds the
 known candidate before care restart; no production behavior or frozen art
 changed.
+
+## R06-C06 implementation — 2026-09-14
+
+Implemented a versioned replay-safe locomotion intent profile, controller
+freshness/cancellation state, fixed-step cadence probes, velocity-to-gait-rate
+calibration, executable negative coverage, and actual Godot normal/quarter
+playback capture plumbing. This remains a candidate submission; hosted C06,
+Phase 01, and inherited Phase 02 runs are pending.

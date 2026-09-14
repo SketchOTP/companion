@@ -142,6 +142,43 @@ jobs:
           assert semantic.get('presentation_owner')=='godot', semantic
           PY
           done
+      - name: Replay-safe fixed-step C06 locomotion qualification
+        run: |
+          set -euo pipefail
+          python3 experiments/p02-embodiment/scripts/qualify_r06_c06.py \
+            --pack assets/source/p02/r06/approved/pack.json \
+            --out "$RUNNER_TEMP/r06-c06"
+          python3 experiments/p02-embodiment/scripts/validate_r06_c06.py \
+            "$RUNNER_TEMP/r06-c06/controller_locomotion_qualification.json"
+          for spec in left:-96:1.0 left:-96:0.25 right:96:1.0 right:96:0.25; do
+            side="${spec%%:*}"; rest="${spec#*:}"; velocity="${rest%%:*}"; rate="${rest##*:}"
+            godot_out="$RUNNER_TEMP/r06-c06-godot-${side}-${rate}"
+            python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+              --godot "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" \
+              --out "$godot_out" --mode semantic \
+              --pack "$RUNNER_TEMP/r06-intake/runtime/pack.json" \
+              --script r06_c06_locomotion_test.gd --label "r06-c06-${side}-${rate}" \
+              --script-arg="--pack=$RUNNER_TEMP/r06-intake/runtime/pack.json" \
+              --script-arg="--side=$side" --script-arg="--velocity=$velocity" \
+              --script-arg="--review-rate=$rate" \
+              --script-arg="--out=$godot_out/movement.json"
+            RESULT_PATH="$godot_out/result.json" python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          result=json.loads(Path(os.environ['RESULT_PATH']).read_text())
+          assert result['status']=='PASSED', result
+          assert result['godot_error_count']==0, result
+          semantic=result.get('semantic_test_result') or {}
+          assert semantic.get('status')=='PASS', semantic
+          assert semantic.get('schema_major')==2, semantic
+          assert semantic.get('render_observations', 0)>0, semantic
+          assert semantic.get('stop_terminal') is True, semantic
+          assert semantic.get('cadence_probe', {}).get('equivalent') is True, semantic
+          assert len(semantic.get('negative_matrix', {})) >= 8, semantic
+          assert all(v.get('independent') is True for v in semantic.get('negative_matrix', {}).values()), semantic
+          assert semantic.get('review_rate') in (1.0, 0.25), semantic
+          PY
+          done
       - name: Upload R06-C02 evidence (including failures)
         if: always()
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
@@ -154,13 +191,21 @@ jobs:
             ${{ runner.temp }}/r06-c05
             ${{ runner.temp }}/r06-c05-godot-left
             ${{ runner.temp }}/r06-c05-godot-right
+            ${{ runner.temp }}/r06-c06
+            ${{ runner.temp }}/r06-c06-godot-left-1.0
+            ${{ runner.temp }}/r06-c06-godot-left-0.25
+            ${{ runner.temp }}/r06-c06-godot-right-1.0
+            ${{ runner.temp }}/r06-c06-godot-right-0.25
             experiments/p02-embodiment/results/r06-c02
             assets/source/p02/r06/approved/R05_PRODUCTION_VISUAL_SELECTION_V1.json
             assets/source/p02/r06/approved/pack.json
             godot/r06_black_pack_test.gd
             godot/r06_c05_locomotion_test.gd
             godot/mon_locomotion_controller.gd
+            godot/r06_c06_locomotion_test.gd
             contracts/schemas/mon-locomotion-intent-v1.schema.json
+            contracts/schemas/mon-locomotion-intent-v2.schema.json
             contracts/fixtures/mon-locomotion-intent-v1.json
+            contracts/fixtures/mon-locomotion-intent-v2.json
             contracts/schemas/mon-opaque-black-frame-source-pack-v1.schema.json
           if-no-files-found: error

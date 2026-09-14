@@ -273,3 +273,11 @@ Implementation SHA `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd` passed Phase 01
 `103814757741`, focused R06 `34790169083`, and inherited Phase 02
 `34790169074`. The persistence probe correction seeds its known candidate
 before care restart; no production behavior or frozen source bytes changed.
+
+## Review 18 / C06 acknowledgment — 2026-09-14
+
+Review 18 partially accepts C05 and requires only runtime-semantic correction:
+V2 monotonic intent freshness, active cancellation, fixed 24 Hz scheduling
+independent of render cadence, velocity-linked gait rate, true stop
+termination, schema-valid Godot wire objects, and rendered quarter-speed
+evidence. Frozen R05 art and all C02-C05 boundaries remain unchanged.
