@@ -1006,7 +1006,7 @@
       ],
       "directional": true,
       "end_x": -240.0,
-      "loop_phase_continuous": false,
+      "loop_phase_continuous": true,
       "max_tick_step_px": 4.0,
       "net_displacement_px": -240.0,
       "phase_resets": 0,
@@ -1313,7 +1313,7 @@
         },
         {
           "actor_root_x": -96.0,
-          "animation_phase": 1.0,
+          "animation_phase": 0.0,
           "delta_x": -4.0,
           "direction": "left",
           "facing": "left",
@@ -1625,7 +1625,7 @@
         },
         {
           "actor_root_x": -192.0,
-          "animation_phase": 1.0,
+          "animation_phase": 0.0,
           "delta_x": -4.0,
           "direction": "left",
           "facing": "left",
@@ -3946,7 +3946,7 @@
       ],
       "directional": true,
       "end_x": 240.0,
-      "loop_phase_continuous": false,
+      "loop_phase_continuous": true,
       "max_tick_step_px": 4.0,
       "net_displacement_px": 240.0,
       "phase_resets": 0,
@@ -4253,7 +4253,7 @@
         },
         {
           "actor_root_x": 96.0,
-          "animation_phase": 1.0,
+          "animation_phase": 0.0,
           "delta_x": 4.0,
           "direction": "right",
           "facing": "right",
@@ -4565,7 +4565,7 @@
         },
         {
           "actor_root_x": 192.0,
-          "animation_phase": 1.0,
+          "animation_phase": 0.0,
           "delta_x": 4.0,
           "direction": "right",
           "facing": "right",
