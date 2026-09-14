@@ -199,6 +199,12 @@ func _prepare_track(track: Dictionary) -> Dictionary:
 	return {"track_id": track_id, "frames": frames, "durations": durations, "filenames": filenames, "source_hashes": source_hashes, "total_ticks": total_ticks}
 
 func _set_track_frame(prepared: Dictionary, frame_index: int) -> void:
+	# Preloaded tracks are intentionally prepared before the review epoch.  Each
+	# preparation owns its SpriteFrames resource, so bind that resource at the
+	# point of presentation before selecting its animation name.  Otherwise a
+	# later preload (for example, stop) would leave the sprite bound to a
+	# different resource and Godot would report the cruise animation as missing.
+	sprite.sprite_frames = prepared["frames"]
 	sprite.animation = prepared["track_id"]
 	sprite.stop()
 	sprite.frame = frame_index
@@ -228,6 +234,11 @@ func _await_frame_post_draw() -> bool:
 
 func _capture_checkpoint(label: String, sample: Dictionary) -> void:
 	var capture_started_usec := Time.get_ticks_usec()
+	# Let a newly selected SpriteFrames texture enter the scene before waiting
+	# for the render-boundary observation.  Without this scene update, the
+	# first-use cruise texture can be read back as an all-black viewport even
+	# though the source frame is valid and the sprite assignment succeeded.
+	await process_frame
 	if not await _await_frame_post_draw():
 		events.append({"event": "capture_failed", "label": label, "reason": "frame_post_draw_unobserved"})
 		return
