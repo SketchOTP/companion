@@ -11,6 +11,12 @@ def sample(schema):
     out={}
     for key in schema.get("required",[]):
         spec=schema.get("properties",{}).get(key,{})
+        # Nullable required fields (for example cancellation_id on a
+        # locomotion movement intent) must use the null branch of their
+        # anyOf rather than an arbitrary placeholder string.
+        if isinstance(spec.get("anyOf"), list) and any(branch.get("type") == "null" for branch in spec["anyOf"] if isinstance(branch, dict)):
+            out[key] = None
+            continue
         if "const" in spec: out[key]=spec["const"]
         elif "enum" in spec: out[key]=spec["enum"][0]
         elif spec.get("format")=="uuid": out[key]=str(uuid.UUID("00000000-0000-4000-8000-000000000001"))
@@ -74,7 +80,8 @@ def main():
             x=copy.deepcopy(valid); x[key]=[]
             try: check(x,schema); cases["wrong_type"]=False
             except Exception: cases["wrong_type"]=True
-        for name,bad in (("unsupported_major",2),("invalid_uuid","not-a-uuid"),("invalid_datetime","not a date")):
+        major_bad = props.get("schema_major", {}).get("const", 1) + 1
+        for name,bad in (("unsupported_major",major_bad),("invalid_uuid","not-a-uuid"),("invalid_datetime","not a date")):
             target="schema_major" if name=="unsupported_major" else next((k for k,v in props.items() if v.get("format")==("uuid" if name=="invalid_uuid" else "date-time")),None)
             if target and target in valid:
                 x=copy.deepcopy(valid); x[target]=bad

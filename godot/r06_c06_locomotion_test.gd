@@ -17,7 +17,7 @@ var samples: Array = []
 var render_seen_count := 0
 var actor := Node2D.new()
 var sprite := AnimatedSprite2D.new()
-var controller: MonLocomotionController
+var controller
 
 func _initialize() -> void:
 	call_deferred("_run")
@@ -113,7 +113,7 @@ func _play_track(track: Dictionary, phase: String, semantic_ticks: int, rate: fl
 func _cadence_probe() -> Dictionary:
 	var outputs := {}
 	for render_hz in [30, 60]:
-		var probe: MonLocomotionController = load("res://mon_locomotion_controller.gd").new()
+		var probe = load("res://mon_locomotion_controller.gd").new()
 		get_root().add_child(probe)
 		var accepted := probe.accept_serialized_intent(_intent_json(1, 650 + render_hz, "right", 96, "cruise", null))
 		var ticks := 0
@@ -125,17 +125,17 @@ func _cadence_probe() -> Dictionary:
 
 func _negative_probe() -> Dictionary:
 	var cases := {}
-	var c: MonLocomotionController = load("res://mon_locomotion_controller.gd").new()
+	var c = load("res://mon_locomotion_controller.gd").new()
 	get_root().add_child(c)
 	var base := _intent_json(1, 690, "left", -96, "cruise", null)
-	var accepted := c.accept_serialized_intent(base)
+	var accepted = c.accept_serialized_intent(base)
 	cases["duplicate_intent_id"] = _negative_result(c.accept_serialized_intent(base), "duplicate_intent_id")
 	cases["equal_sequence_replay"] = _negative_result(c.accept_serialized_intent(_intent_json(1, 691, "left", -96, "cruise", null)), "stale_replayed_intent")
 	cases["lower_stale_sequence"] = _negative_result(c.accept_serialized_intent(_intent_json(0, 692, "left", -96, "cruise", null)), "stale_replayed_intent")
 	cases["wrong_cancellation_target"] = _negative_result(c.accept_serialized_intent(_intent_json(2, 693, "left", 0, "stop", "00000000-0000-4000-8000-000000000999")), "cancellation_target_mismatch")
 	c.accept_serialized_intent(_intent_json(2, 694, "left", 0, "stop", String(accepted.get("intent_id", ""))))
 	cases["cancellation_replay_after_completion"] = _negative_result(c.accept_serialized_intent(_intent_json(3, 695, "left", 0, "stop", String(accepted.get("intent_id", "")))), "cancellation_target_mismatch")
-	var wrong_profile: MonLocomotionController = load("res://mon_locomotion_controller.gd").new()
+	var wrong_profile = load("res://mon_locomotion_controller.gd").new()
 	get_root().add_child(wrong_profile)
 	cases["direction_facing_mismatch"] = _negative_result(wrong_profile.accept_serialized_intent(_intent_json(1, 696, "left", -96, "cruise", null).replace("\"requested_facing\":\"left\"", "\"requested_facing\":\"front_left\"")), "wrong_profile")
 	cases["velocity_sign_mismatch"] = _negative_result(wrong_profile.accept_serialized_intent(_intent_json(1, 697, "left", 96, "cruise", null)), "velocity_sign_contradiction")
