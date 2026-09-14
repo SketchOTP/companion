@@ -159,3 +159,11 @@ Implementation SHA `941c231d4562177c1db02cd61fc0f0c085e6dae4` records only the
 modulo-phase seam normalization. Exact-head R06 `34800729601`, Phase 01
 `34800729655`, and inherited Phase 02 `34800729662` passed.
 If C06-C02 passes without a new material defect: Architect may authorize the legal-transition campaign, followed by dedicated 1366x768 Openbox two-hour endurance, then final Phase 02 acceptance/PR merge decision.
+
+## C06-C02 evidence correction — 2026-09-14
+
+Monotonic deadline pacing restores the authoritative 4x review gate; local
+left/right ratios are `3.95565x` and `3.95612x`. Pack-derived duration totals,
+phase/frame mapping, source/capture hashes, and capture-only strip/GIF output
+are now part of the qualification boundary. Previous C06-C01 timing remains
+historical and superseded; no source PNG changed.

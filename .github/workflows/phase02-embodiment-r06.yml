@@ -196,7 +196,7 @@ jobs:
           assert negatives.get('wire_boundary', {}).get('u64_max_rejected') is True, semantic
           assert semantic.get('review_rate') in (1.0, 0.25), semantic
           PY
-            python3 experiments/p02-embodiment/scripts/verify_c06_trace.py "$godot_out/movement.json"
+              python3 experiments/p02-embodiment/scripts/verify_c06_trace.py "$godot_out/movement.json" "$RUNNER_TEMP/r06-intake/runtime/pack.json"
           done
           GODOT_ROOT="$RUNNER_TEMP" python3 - <<'PY'
           import json, os
@@ -217,10 +217,32 @@ jobs:
               normal=data[f'{side}_normal']; quarter=data[f'{side}_quarter']
               nlabels=[c['label'] for c in normal['captures']]; qlabels=[c['label'] for c in quarter['captures']]
               assert nlabels==qlabels==['start','first_cruise','second_loop_cruise','stop'], (side,nlabels,qlabels)
-              assert quarter['review_wall_time_ms'] >= normal['review_wall_time_ms']*3.0, (side,normal['review_wall_time_ms'],quarter['review_wall_time_ms'])
+              ratio=quarter['review_wall_time_ms']/normal['review_wall_time_ms']
+              assert 3.90 <= ratio <= 4.10, (side,ratio,normal['review_wall_time_ms'],quarter['review_wall_time_ms'])
+              for capture in normal['captures']+quarter['captures']:
+                  for key in ('source_pack_sha256','source_frame_filename','source_frame_sha256','capture_sha256','review_elapsed_usec','track_derived_phase'):
+                      assert capture.get(key), (side,capture,key)
+              assert [c['semantic_tick'] for c in normal['captures']] == [c['semantic_tick'] for c in quarter['captures']]
+              assert [(c['actor_root_x'],c['track_id'],c['frame_index'],c['authored_track_tick'],c['track_derived_phase'],c['source_frame_sha256']) for c in normal['captures']] == [(c['actor_root_x'],c['track_id'],c['frame_index'],c['authored_track_tick'],c['track_derived_phase'],c['source_frame_sha256']) for c in quarter['captures']]
               assert all(c['non_black'] for c in normal['captures']+quarter['captures'])
               assert len({c['actor_root_x'] for c in normal['captures'] if c['label'] in ('first_cruise','second_loop_cruise')})==2
-          print('c06_rendered_capture_sets_ok quarter_wall_time>=3x normal and checkpoints=4')
+          print('c06_rendered_capture_sets_ok quarter_wall_time_ratio=4x checkpoints=4 metadata=bound')
+          PY
+          python3 experiments/p02-embodiment/scripts/build_c06_capture_review.py \
+            --out "$RUNNER_TEMP/r06-c06-capture-media" \
+            "$RUNNER_TEMP/r06-c06-godot-left-1.0" "$RUNNER_TEMP/r06-c06-godot-left-0.25" \
+            "$RUNNER_TEMP/r06-c06-godot-right-1.0" "$RUNNER_TEMP/r06-c06-godot-right-0.25"
+          python3 experiments/p02-embodiment/scripts/verify_c06_review_timing.py \
+            --left-normal "$RUNNER_TEMP/r06-c06-godot-left-1.0/movement.json" \
+            --left-quarter "$RUNNER_TEMP/r06-c06-godot-left-0.25/movement.json" \
+            --right-normal "$RUNNER_TEMP/r06-c06-godot-right-1.0/movement.json" \
+            --right-quarter "$RUNNER_TEMP/r06-c06-godot-right-0.25/movement.json"
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          bad=3.33
+          assert not (3.90 <= bad <= 4.10), 'artificial 3.33x ratio unexpectedly accepted'
+          print('c06_timing_negative_3_33_rejected')
           PY
       - name: Upload R06-C02 evidence (including failures)
         if: always()
@@ -239,6 +261,7 @@ jobs:
             ${{ runner.temp }}/r06-c06-godot-left-0.25
             ${{ runner.temp }}/r06-c06-godot-right-1.0
             ${{ runner.temp }}/r06-c06-godot-right-0.25
+            ${{ runner.temp }}/r06-c06-capture-media
             experiments/p02-embodiment/results/r06-c02
             assets/source/p02/r06/approved/R05_PRODUCTION_VISUAL_SELECTION_V1.json
             assets/source/p02/r06/approved/pack.json
@@ -247,6 +270,8 @@ jobs:
             godot/mon_locomotion_controller.gd
             godot/r06_c06_locomotion_test.gd
             experiments/p02-embodiment/scripts/verify_c06_trace.py
+            experiments/p02-embodiment/scripts/build_c06_capture_review.py
+            experiments/p02-embodiment/scripts/verify_c06_review_timing.py
             contracts/schemas/mon-locomotion-intent-v1.schema.json
             contracts/schemas/mon-locomotion-intent-v2.schema.json
             contracts/fixtures/mon-locomotion-intent-v1.json

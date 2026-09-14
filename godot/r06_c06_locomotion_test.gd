@@ -23,6 +23,9 @@ var actor := Node2D.new()
 var sprite := AnimatedSprite2D.new()
 var controller
 var presentation_tick_cursor := 0.0
+var review_started_usec := 0
+var review_pacing_tick := 0
+var capture_overhead_usec := 0
 
 func _initialize() -> void:
 	call_deferred("_run")
@@ -34,7 +37,7 @@ func _run() -> void:
 		elif arg.begins_with("--side="): side = arg.trim_prefix("--side=")
 		elif arg.begins_with("--velocity="): velocity = int(arg.trim_prefix("--velocity="))
 		elif arg.begins_with("--review-rate="): review_rate = float(arg.trim_prefix("--review-rate="))
-	var result := {"status": "FAILED", "errors": [], "side": side, "velocity": velocity, "review_rate": review_rate, "fixed_hz": 24, "authored_loop_ticks": AUTHORED_LOOP_TICKS, "source_pixels_mutated": false}
+	var result := {"status": "FAILED", "errors": [], "side": side, "velocity": velocity, "review_rate": review_rate, "fixed_hz": 24, "source_pixels_mutated": false}
 	if pack_path.is_empty(): result.errors.append("missing_pack"); return _finish(result)
 	var parsed = JSON.parse_string(FileAccess.get_file_as_string(pack_path))
 	if not parsed is Dictionary: result.errors.append("invalid_pack"); return _finish(result)
@@ -68,7 +71,9 @@ func _run() -> void:
 	if not cadence.get("equivalent", false): result.errors.append("render_cadence_changed_semantic_ticks"); return _finish(result)
 	var negatives := _negative_probe()
 	if negatives.get("controller_path", []).size() < 8 or negatives.get("loader_resolver_path", []).size() < 3: result.errors.append("negative_probe_incomplete"); return _finish(result)
-	var review_started := Time.get_ticks_usec()
+	review_started_usec = Time.get_ticks_usec()
+	review_pacing_tick = 0
+	capture_overhead_usec = 0
 	var start_intent := _intent_json(1, 601, side, velocity, "start", null)
 	var start_result: Dictionary = controller.accept_serialized_intent(start_intent)
 	if start_result.get("status") != "accepted": result.errors.append("start_intent_rejected:" + String(start_result.get("reason", "unknown"))); return _finish(result)
@@ -86,14 +91,22 @@ func _run() -> void:
 	if stop_result.get("status") != "accepted": result.errors.append("stop_cancel_rejected:" + String(stop_result.get("reason", "unknown"))); return _finish(result)
 	events.append({"event": "stop_cancel_accepted", "cancellation_id": cancel_target, "intent_sequence": 3})
 	await _play_track(by_id[ids[side][2]], "stop", 12, 1.0, ["stop"])
-	var review_wall_time_ms := float(Time.get_ticks_usec() - review_started) / 1000.0
+	var review_elapsed_usec := Time.get_ticks_usec() - review_started_usec
+	# Wall time is the monotonic elapsed interval including real capture/readback
+	# work.  Deadline pacing prevents per-tick timer overhead from collapsing
+	# the requested quarter-rate slowdown; paced_elapsed_usec is retained as a
+	# diagnostic decomposition, not substituted for wall time.
+	var review_wall_time_ms := float(review_elapsed_usec) / 1000.0
 	if captures.size() < 4: result.errors.append("missing_gameplay_captures")
 	for capture in captures:
 		if not capture.get("non_black", false):
 			result.errors.append("black_gameplay_capture")
 			break
 	result.status = "PASS" if result.errors.is_empty() else "FAILED"
-	result.merge({"canonical_owner": "controller", "presentation_owner": "godot", "presentation_clock": "manual_paused_animatedsprite", "events": events, "samples": samples, "captures": captures, "render_observations": render_seen_count, "cadence_probe": cadence, "negative_categories": negatives, "start_x": 320.0, "end_x": controller.position_x, "net_displacement_px": controller.position_x - 320.0, "stop_terminal": true, "phase_resets": 0, "schema_major": 2, "review_wall_time_ms": review_wall_time_ms, "wire_sequence_max": INTENT_SEQUENCE_MAX})
+	var loaded_loop_ticks := 0
+	for sample in samples:
+		if sample.get("phase") == "cruise": loaded_loop_ticks = int(sample.get("authored_loop_ticks", loaded_loop_ticks))
+	result.merge({"canonical_owner": "controller", "presentation_owner": "godot", "presentation_clock": "manual_paused_animatedsprite", "events": events, "samples": samples, "captures": captures, "render_observations": render_seen_count, "cadence_probe": cadence, "negative_categories": negatives, "start_x": 320.0, "end_x": controller.position_x, "net_displacement_px": controller.position_x - 320.0, "stop_terminal": true, "phase_resets": 0, "schema_major": 2, "review_wall_time_ms": review_wall_time_ms, "review_elapsed_usec": review_elapsed_usec, "paced_elapsed_usec": review_elapsed_usec - capture_overhead_usec, "capture_overhead_usec": capture_overhead_usec, "authored_loop_ticks": loaded_loop_ticks, "wire_sequence_max": INTENT_SEQUENCE_MAX})
 	_finish(result)
 
 func _pack_eligible(candidate: Dictionary) -> bool:
@@ -109,10 +122,12 @@ func _play_track(track: Dictionary, phase: String, semantic_ticks: int, rate: fl
 	presentation_tick_cursor = 0.0
 	for semantic_index in semantic_ticks:
 		var movement: Dictionary = controller.advance_fixed_steps(1)[0]
-		var authored_tick := int(floor(presentation_tick_cursor)) % int(prepared["total_ticks"])
+		var authored_loop_ticks := int(prepared["total_ticks"])
+		var authored_tick := int(floor(presentation_tick_cursor)) % authored_loop_ticks
+		var track_derived_phase := fmod(presentation_tick_cursor, float(authored_loop_ticks)) / float(authored_loop_ticks)
 		var frame_index := _frame_for_authored_tick(prepared["durations"], authored_tick)
 		_set_track_frame(prepared, frame_index)
-		var sample := {"semantic_tick": movement.get("semantic_tick"), "phase": phase, "track_id": prepared["track_id"], "frame_index": frame_index, "authored_track_tick": authored_tick, "duration_ticks": prepared["durations"][frame_index], "authored_loop_ticks": prepared["total_ticks"], "actor_root_x": movement.get("actor_root_x"), "velocity": movement.get("commanded_velocity_px_per_second"), "intent_id": movement.get("intent_id"), "intent_sequence": movement.get("intent_sequence"), "animation_phase": movement.get("animation_phase"), "playback_rate": rate, "review_rate": review_rate}
+		var sample := {"semantic_tick": movement.get("semantic_tick"), "phase": phase, "track_id": prepared["track_id"], "frame_index": frame_index, "authored_track_tick": authored_tick, "duration_ticks": prepared["durations"][frame_index], "authored_loop_ticks": authored_loop_ticks, "track_derived_phase": track_derived_phase, "actor_root_x": movement.get("actor_root_x"), "velocity": movement.get("commanded_velocity_px_per_second"), "intent_id": movement.get("intent_id"), "intent_sequence": movement.get("intent_sequence"), "animation_phase": movement.get("animation_phase"), "playback_rate": rate, "review_rate": review_rate, "source_frame_filename": prepared["filenames"][frame_index], "source_frame_sha256": prepared["source_hashes"][frame_index]}
 		samples.append(sample)
 		if semantic_index == 0 and checkpoint_labels.has(phase if phase == "start" else "first_cruise"):
 			await _capture_checkpoint("start" if phase == "start" else "first_cruise", sample)
@@ -121,7 +136,9 @@ func _play_track(track: Dictionary, phase: String, semantic_ticks: int, rate: fl
 		if semantic_index == semantic_ticks - 1 and checkpoint_labels.has("stop"):
 			await _capture_checkpoint("stop", sample)
 		presentation_tick_cursor += rate
-		await _wait_seconds(1.0 / (HZ * max(review_rate, 0.01)))
+		review_pacing_tick += 1
+		var target_usec := review_started_usec + int(round(float(review_pacing_tick) * 1000000.0 / (HZ * max(review_rate, 0.01))))
+		await _wait_until_usec(target_usec)
 	events.append({"event": "track_completed", "track_id": prepared["track_id"], "phase": phase, "semantic_ticks": semantic_ticks, "playback_rate": rate, "authored_loop_ticks": prepared["total_ticks"]})
 
 func _prepare_track(track: Dictionary) -> Dictionary:
@@ -147,7 +164,12 @@ func _prepare_track(track: Dictionary) -> Dictionary:
 	sprite.sprite_frames = frames
 	sprite.animation = track_id
 	sprite.stop()
-	return {"track_id": track_id, "frames": frames, "durations": durations, "total_ticks": total_ticks}
+	var filenames: Array = []
+	var source_hashes: Array = []
+	for frame in track.get("frames", []):
+		filenames.append(String(frame.get("filename", "")))
+		source_hashes.append(String(frame.get("source_sha256", "")))
+	return {"track_id": track_id, "frames": frames, "durations": durations, "filenames": filenames, "source_hashes": source_hashes, "total_ticks": total_ticks}
 
 func _set_track_frame(prepared: Dictionary, frame_index: int) -> void:
 	sprite.animation = prepared["track_id"]
@@ -165,6 +187,10 @@ func _frame_for_authored_tick(durations: Array, authored_tick: int) -> int:
 func _wait_seconds(seconds: float) -> void:
 	await create_timer(seconds).timeout
 
+func _wait_until_usec(deadline_usec: int) -> void:
+	while Time.get_ticks_usec() < deadline_usec:
+		await process_frame
+
 func _await_frame_post_draw() -> bool:
 	var before := render_seen_count
 	RenderingServer.force_draw()
@@ -174,6 +200,7 @@ func _await_frame_post_draw() -> bool:
 	return false
 
 func _capture_checkpoint(label: String, sample: Dictionary) -> void:
+	var capture_started_usec := Time.get_ticks_usec()
 	if not await _await_frame_post_draw():
 		events.append({"event": "capture_failed", "label": label, "reason": "frame_post_draw_unobserved"})
 		return
@@ -194,8 +221,9 @@ func _capture_checkpoint(label: String, sample: Dictionary) -> void:
 	if not out_path.is_empty():
 		DirAccess.make_dir_recursive_absolute(out_path.get_base_dir())
 		saved = image.save_png(out_path.get_base_dir().path_join(filename)) == OK
-	captures.append({"label": label, "file": filename, "semantic_tick": sample.get("semantic_tick"), "track_id": sample.get("track_id"), "frame_index": sample.get("frame_index"), "actor_root_x": sample.get("actor_root_x"), "animation_phase": sample.get("animation_phase"), "review_rate": review_rate, "non_black": non_black and saved, "saved": saved})
+	captures.append({"label": label, "file": filename, "semantic_tick": sample.get("semantic_tick"), "actor_root_x": sample.get("actor_root_x"), "track_id": sample.get("track_id"), "frame_index": sample.get("frame_index"), "authored_track_tick": sample.get("authored_track_tick"), "authored_loop_ticks": sample.get("authored_loop_ticks"), "track_derived_phase": sample.get("track_derived_phase"), "source_frame_filename": sample.get("source_frame_filename"), "source_frame_sha256": sample.get("source_frame_sha256"), "review_elapsed_usec": Time.get_ticks_usec() - review_started_usec, "review_rate": review_rate, "non_black": non_black and saved, "saved": saved})
 	events.append({"event": "viewport_capture", "label": label, "semantic_tick": sample.get("semantic_tick"), "observation": "RenderingServer.frame_post_draw", "non_black": non_black})
+	capture_overhead_usec += max(0, Time.get_ticks_usec() - capture_started_usec)
 
 func _cadence_probe() -> Dictionary:
 	var outputs := {}

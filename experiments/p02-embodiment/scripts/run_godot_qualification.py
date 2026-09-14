@@ -161,6 +161,26 @@ def _renderer_summary(lines: list[str]) -> dict[str, str]:
     return summary
 
 
+def _enrich_movement(path: Path, pack: Path | None) -> dict[str, Any] | None:
+    """Bind capture/source digests after Godot writes the real viewport files."""
+    if not path.is_file():
+        return None
+    try:
+        movement = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    pack_digest = sha256(pack) if pack else None
+    for capture in movement.get("captures", []):
+        capture_path = path.parent / str(capture.get("file", ""))
+        capture["capture_sha256"] = sha256(capture_path) if capture_path.is_file() else None
+        capture["source_pack_sha256"] = pack_digest
+    for sample in movement.get("samples", []):
+        sample["source_pack_sha256"] = pack_digest
+    movement["source_pack_sha256"] = pack_digest
+    path.write_text(json.dumps(movement, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    return movement
+
+
 def run_qualification(
     *,
     godot: Path,
@@ -237,6 +257,14 @@ def run_qualification(
     stderr_lines = _lines(stderr_path)
     classification = classify_logs(stdout_lines, stderr_lines, engine_lines)
     semantic = _extract_json(process.stdout + "\n" + process.stderr)
+    movement_path: Path | None = None
+    for argument in script_args or []:
+        if argument.startswith("--out="):
+            movement_path = Path(argument.split("=", 1)[1])
+            break
+    enriched = _enrich_movement(movement_path, pack) if movement_path else None
+    if enriched is not None:
+        semantic = enriched
     cache_after = tree_digest(cache)
     all_lines = stdout_lines + stderr_lines + engine_lines
     result: dict[str, Any] = {

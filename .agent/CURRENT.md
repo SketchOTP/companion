@@ -156,3 +156,12 @@ The only post-closeout executable change normalizes the floating-point modulo
 seam in the semantic observation so nominal gait phase remains continuous.
 SHA `941c231d4562177c1db02cd61fc0f0c085e6dae4` is green on R06
 `34800729601`, Phase 01 `34800729655`, and inherited Phase 02 `34800729662`.
+
+### C06-C02 evidence correction — 2026-09-14
+
+The active C06-C02 correction uses monotonic deadline pacing, pack-derived
+track timing/phase, source/capture hash enrichment, and capture-only review
+media. Local Godot 4.7.2 ratios are left `3.95565x` and right `3.95612x`;
+the prior C06-C01 timing values remain preserved as superseded history. No
+source PNG changed. Focused R06, Phase 01, and inherited Phase 02 hosted
+regressions remain required on the final implementation SHA.

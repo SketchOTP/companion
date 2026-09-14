@@ -546,3 +546,23 @@ normal/quarter run after `RenderingServer.frame_post_draw`; the 32-tick
 authored loop, wire signed-64 boundary, and categorized negative checks passed.
 The docs-only publication reconciliation is commit `657c11e`; it changes no
 executable behavior. Frozen source pack SHA remains unchanged.
+
+## R06-C06-C02 local evidence — 2026-09-14
+
+C06-C02 closes the four evidence defects without changing source pixels. The
+Godot test now schedules the single paused/manual presentation clock against
+monotonic absolute deadlines and reports actual elapsed wall time including
+capture/readback. Local Godot 4.7.2 runs produced left normal `3033.866 ms`,
+left quarter `12000.927 ms` (ratio `3.95565`), right normal `3033.310 ms`, and
+right quarter `12000.134 ms` (ratio `3.95612`), both within the authoritative
+`3.90..4.10` interval. Captures are enriched after the real PNGs are written
+with source-pack, source-frame, and capture SHA-256 values; a review strip/GIF
+is assembled only from those checkpoint PNGs.
+
+The shared verifier reads the selected pack and recomputes each track's
+duration total, frame mapping, and phase; its duration mutation fails with
+`pack_duration_binding`. The actual profile cruise track sums to 32 authored
+ticks. Normal/quarter checkpoint identity matches at all four semantic labels.
+The former C06-C01 reported timing values (`3.51–3.53 s` and `12.25 s`) are
+retained as historical and superseded by the artifact-grounded measurements
+above; artifact `10344096459` remains preserved unchanged.
