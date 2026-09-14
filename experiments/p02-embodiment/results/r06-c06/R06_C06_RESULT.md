@@ -20,3 +20,14 @@ digest `sha256:549b4af63f61dd5204d94d609365a70b584bda3f28f44ceb77818d4dfe889a3a`
 The final hosted run has zero Godot errors, strict render-boundary evidence,
 actual normal/quarter playback, 30/60 FPS semantic equivalence, six velocity
 cases, and 17 executable negative cases. The frozen pack SHA is unchanged.
+
+## Corrected implementation-head closeout — 2026-09-14
+
+The modulo phase observation now serializes a mathematically continuous loop
+seam as `0.0` instead of a rounded `1.0`; controller movement and frozen source
+bytes are unchanged. Implementation SHA
+`941c231d4562177c1db02cd61fc0f0c085e6dae4` passed R06 `34800729601`, Phase 01
+`34800729655`, and inherited Phase 02 `34800729662`; push-triggered R06
+`34800727016` and inherited Phase 02 `34800727017` also passed. The corrected
+local result SHA is
+`a5c2923040e9d1c6df6d26139c2fd3cce7b21c8b58ba2cd8feb6811616834ea0`.

@@ -680,3 +680,9 @@ strings can invalidate an otherwise valid wire fixture. Dynamically loaded
 Godot scripts should avoid inferred static class types when parser scope is not
 guaranteed. Preserve exact diagnostics, correct root causes, and rerun all
 workflows on one new SHA.
+
+## C06 seam observation learning — 2026-09-14
+
+Modulo-continuous animation phase can round to `1.0` at an exact loop seam.
+Normalize that observation to `0.0` at serialization; do not alter controller
+movement or treat the floating representation as a phase reset.

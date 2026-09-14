@@ -562,6 +562,15 @@ velocity rates 0.5/1.0/1.5, actual normal/quarter Godot playback, strict render
 observation, cadence equivalence, and 17 negatives. Submit C06 to Architect and
 stop; do not begin transition qualification or Openbox endurance.
 
+## C06 corrected implementation head — 2026-09-14
+
+`941c231d4562177c1db02cd61fc0f0c085e6dae4` is the final implementation head.
+It contains only the narrow modulo-phase observation correction: a floating
+seam that rounded to `1.0` is serialized as `0.0`, preserving continuous phase.
+R06 `34800729601`, Phase 01 `34800729655`, and inherited Phase 02
+`34800729662` passed on this exact SHA. The local corrected semantic result is
+`a5c2923040e9d1c6df6d26139c2fd3cce7b21c8b58ba2cd8feb6811616834ea0`.
+
 ## C05 hosted regression reconciliation — 2026-09-14
 
 Implementation SHA `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd` passed initial

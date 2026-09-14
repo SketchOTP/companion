@@ -1015,3 +1015,10 @@ The initial fixture/parser failures were corrected without suppression. Final
 hosted evidence includes strict Godot render observation, normal/quarter
 playback, cadence equivalence, six velocity cases, and 17 executable negatives.
 Phase 02, transition, and Openbox gates remain unaccepted/deferred.
+
+## R06-C06 corrected closeout — 2026-09-14
+
+SHA `941c231d4562177c1db02cd61fc0f0c085e6dae4` passes R06 `34800729601`,
+Phase 01 `34800729655`, and inherited Phase 02 `34800729662`. The correction
+only stabilizes modulo-seam phase serialization; frozen art and movement are
+unchanged. Phase 02 remains unaccepted.

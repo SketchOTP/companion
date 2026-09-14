@@ -883,3 +883,12 @@ green on initial Phase 01 `34790167116`, same-head reruns
 `34790169083`, and inherited Phase 02 `34790169074`. This closes the hosted
 regression requirement for C05; the project remains in Phase 02 and no art or
 transition gate changed.
+
+## R06-C06 corrected hosted record — 2026-09-14
+
+- Implementation SHA: `941c231d4562177c1db02cd61fc0f0c085e6dae4`
+- R06: `34800729601` (PASS)
+- Phase 01: `34800729655` (PASS)
+- Inherited Phase 02: `34800729662` (PASS)
+- Local corrected result SHA: `a5c2923040e9d1c6df6d26139c2fd3cce7b21c8b58ba2cd8feb6811616834ea0`
+- Frozen pack unchanged; no source art changed.

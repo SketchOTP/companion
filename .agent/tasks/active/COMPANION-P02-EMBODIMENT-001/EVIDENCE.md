@@ -492,3 +492,14 @@ The run reports zero Godot errors, strict render observation, actual
 normal/quarter playback, 30/60 FPS semantic equivalence, six velocity cases,
 and 17 executable negatives. Earlier fixture/parser failures remain preserved
 as superseded diagnostics; frozen art is unchanged.
+
+## C06 corrected implementation head — 2026-09-14
+
+The semantic harness now normalizes floating-point modulo seams so nominal
+48/96/144 cases all report continuous phase without changing controller
+semantics or frozen art. Corrected implementation SHA
+`941c231d4562177c1db02cd61fc0f0c085e6dae4` passed R06 `34800729601`, Phase 01
+`34800729655`, and inherited Phase 02 `34800729662`; push-triggered R06
+`34800727016` and inherited Phase 02 `34800727017` passed as well. Local
+qualifier/validator result SHA is
+`a5c2923040e9d1c6df6d26139c2fd3cce7b21c8b58ba2cd8feb6811616834ea0`.

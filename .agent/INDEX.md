@@ -152,3 +152,9 @@ pass. C06 covers replay-safe V2 intent freshness, explicit cancellation, fixed
 24 Hz movement, velocity-linked presentation, actual rendered normal/quarter
 playback, and 17 executable negatives. No source art changed; Phase 02 remains
 unaccepted pending Architect review.
+
+### C06 corrected implementation head — 2026-09-14
+
+Implementation SHA `941c231d4562177c1db02cd61fc0f0c085e6dae4` records only the
+modulo-phase seam normalization. Exact-head R06 `34800729601`, Phase 01
+`34800729655`, and inherited Phase 02 `34800729662` passed.

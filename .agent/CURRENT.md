@@ -173,3 +173,10 @@ focused R06 `34799648248`, Phase 01 `34799648246`, and inherited Phase 02
 render observation, normal/quarter playback, 30/60 FPS equivalence, six
 velocity cases, and 17 executable negatives. C06 is submitted for Architect
 review; transition and Openbox gates remain deferred.
+
+### C06 corrected implementation head — 2026-09-14
+
+The only post-closeout executable change normalizes the floating-point modulo
+seam in the semantic observation so nominal gait phase remains continuous.
+SHA `941c231d4562177c1db02cd61fc0f0c085e6dae4` is green on R06
+`34800729601`, Phase 01 `34800729655`, and inherited Phase 02 `34800729662`.
