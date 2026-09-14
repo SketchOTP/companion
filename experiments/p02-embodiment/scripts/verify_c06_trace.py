@@ -52,7 +52,7 @@ def _check_authored_progression(samples: list[dict], tracks: dict[str, dict]) ->
             errors.append("authored_progression")
             break
         if previous is not None:
-            prev_cursor, prev_rate, prev_total = previous
+            prev_cursor, prev_rate, prev_total, prev_phase = previous
             if prev_total != total or not math.isclose(float(rate), float(prev_rate), abs_tol=1e-9):
                 errors.append("authored_progression")
                 break
@@ -61,12 +61,15 @@ def _check_authored_progression(samples: list[dict], tracks: dict[str, dict]) ->
             if actual == 0.0 and float(prev_cursor) > 0.0 and not math.isclose(expected, 0.0, abs_tol=1e-6):
                 errors.append("authored_phase_reset")
                 break
-            if float(cursor) < float(prev_cursor):
+            # The cursor is intentionally allowed to be unbounded; the authored
+            # phase is the modulo view.  A legitimate loop seam is therefore
+            # observed as phase decreasing while the cursor continues forward.
+            if float(sample.get("track_derived_phase", 0.0)) < float(prev_phase) - 1e-6:
                 seam_count += 1
             if not math.isclose(actual, expected, abs_tol=1e-6):
                 errors.append("authored_progression")
                 break
-        previous = (float(cursor), float(rate), total)
+        previous = (float(cursor), float(rate), total, float(sample.get("track_derived_phase", 0.0)))
     if len(cruise) >= 33 and seam_count < 1:
         errors.append("authored_seam")
     return errors
