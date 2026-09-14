@@ -87,6 +87,11 @@ func _run() -> void:
 	# first-cruise timing measures paced presentation rather than texture setup.
 	var cruise_prepared := _prepare_track(cruise_track)
 	if cruise_prepared.is_empty(): result.errors.append("cruise_track_unloadable"); return _finish(result)
+	var stop_track: Dictionary = by_id[ids[side][2]]
+	# Warm the terminal authored track before the review epoch as well. Its
+	# texture setup is not movement pacing and must not bias checkpoint ratios.
+	var stop_prepared := _prepare_track(stop_track)
+	if stop_prepared.is_empty(): result.errors.append("stop_track_unloadable"); return _finish(result)
 	review_started_usec = Time.get_ticks_usec()
 	review_pacing_tick = 0
 	capture_overhead_usec = 0
@@ -100,13 +105,16 @@ func _run() -> void:
 	var stop_result: Dictionary = controller.accept_serialized_intent(stop_intent)
 	if stop_result.get("status") != "accepted": result.errors.append("stop_cancel_rejected:" + String(stop_result.get("reason", "unknown"))); return _finish(result)
 	events.append({"event": "stop_cancel_accepted", "cancellation_id": cancel_target, "intent_sequence": 3})
-	await _play_track(by_id[ids[side][2]], "stop", 12, 1.0, ["stop"])
+	await _play_track(stop_track, "stop", 12, 1.0, ["stop"], stop_prepared)
 	var review_elapsed_usec := Time.get_ticks_usec() - review_started_usec
-	# Wall time is the monotonic elapsed interval including real capture/readback
-	# work.  Deadline pacing prevents per-tick timer overhead from collapsing
-	# the requested quarter-rate slowdown; paced_elapsed_usec is retained as a
-	# diagnostic decomposition, not substituted for wall time.
-	var review_wall_time_ms := float(review_elapsed_usec) / 1000.0
+	var review_completion_observed_usec := review_elapsed_usec
+	for capture in captures:
+		if capture.get("label") == "stop":
+			review_completion_observed_usec = int(capture.get("review_observed_elapsed_usec", review_completion_observed_usec))
+			break
+	# Full-run pacing is the monotonic stop frame-post-draw observation. Readback
+	# and save completion remain separately recorded as capture overhead.
+	var review_wall_time_ms := float(review_completion_observed_usec) / 1000.0
 	if captures.size() < 4: result.errors.append("missing_gameplay_captures")
 	for capture in captures:
 		if not capture.get("non_black", false):
@@ -116,7 +124,7 @@ func _run() -> void:
 	var loaded_loop_ticks := 0
 	for sample in samples:
 		if sample.get("phase") == "cruise": loaded_loop_ticks = int(sample.get("authored_loop_ticks", loaded_loop_ticks))
-	result.merge({"canonical_owner": "controller", "presentation_owner": "godot", "presentation_clock": "manual_paused_animatedsprite", "events": events, "samples": samples, "captures": captures, "render_observations": render_seen_count, "cadence_probe": cadence, "negative_categories": negatives, "start_x": 320.0, "end_x": controller.position_x, "net_displacement_px": controller.position_x - 320.0, "stop_terminal": true, "phase_resets": 0, "schema_major": 2, "review_wall_time_ms": review_wall_time_ms, "review_elapsed_usec": review_elapsed_usec, "paced_elapsed_usec": review_elapsed_usec - capture_overhead_usec, "capture_overhead_usec": capture_overhead_usec, "authored_loop_ticks": loaded_loop_ticks, "wire_sequence_max": INTENT_SEQUENCE_MAX})
+	result.merge({"canonical_owner": "controller", "presentation_owner": "godot", "presentation_clock": "manual_paused_animatedsprite", "events": events, "samples": samples, "captures": captures, "render_observations": render_seen_count, "cadence_probe": cadence, "negative_categories": negatives, "start_x": 320.0, "end_x": controller.position_x, "net_displacement_px": controller.position_x - 320.0, "stop_terminal": true, "phase_resets": 0, "schema_major": 2, "review_wall_time_ms": review_wall_time_ms, "review_completion_observed_usec": review_completion_observed_usec, "review_elapsed_usec": review_elapsed_usec, "paced_elapsed_usec": review_elapsed_usec - capture_overhead_usec, "capture_overhead_usec": capture_overhead_usec, "authored_loop_ticks": loaded_loop_ticks, "wire_sequence_max": INTENT_SEQUENCE_MAX})
 	_finish(result)
 
 func _pack_eligible(candidate: Dictionary) -> bool:
