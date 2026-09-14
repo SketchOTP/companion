@@ -82,15 +82,19 @@ func _run() -> void:
 	# The review epoch begins at the first cruise intent.  This excludes the
 	# fixed startup/asset-load cost from every matched movement checkpoint while
 	# retaining one monotonic epoch shared by normal and quarter runs.
+	var cruise_track: Dictionary = by_id[ids[side][1]]
+	# Load the selected authored cruise track before starting the review epoch so
+	# first-cruise timing measures paced presentation rather than texture setup.
+	var cruise_prepared := _prepare_track(cruise_track)
+	if cruise_prepared.is_empty(): result.errors.append("cruise_track_unloadable"); return _finish(result)
 	review_started_usec = Time.get_ticks_usec()
 	review_pacing_tick = 0
 	capture_overhead_usec = 0
-	var cruise_track: Dictionary = by_id[ids[side][1]]
 	var cruise_intent := _intent_json(2, 602, side, velocity, "cruise", null)
 	var cruise_result: Dictionary = controller.accept_serialized_intent(cruise_intent)
 	if cruise_result.get("status") != "accepted": result.errors.append("cruise_intent_rejected:" + String(cruise_result.get("reason", "unknown"))); return _finish(result)
 	events.append({"event": "intent_accepted", "intent_sequence": 2, "track_id": ids[side][1], "playback_rate": abs(float(velocity)) / REFERENCE_VELOCITY})
-	await _play_track(cruise_track, "cruise", 48, abs(float(velocity)) / REFERENCE_VELOCITY, ["first_cruise", "second_loop_cruise"])
+	await _play_track(cruise_track, "cruise", 48, abs(float(velocity)) / REFERENCE_VELOCITY, ["first_cruise", "second_loop_cruise"], cruise_prepared)
 	var cancel_target := String(cruise_result.get("intent_id", ""))
 	var stop_intent := _intent_json(3, 603, side, 0, "stop", cancel_target)
 	var stop_result: Dictionary = controller.accept_serialized_intent(stop_intent)
@@ -122,8 +126,8 @@ func _intent_json(sequence: int, suffix: int, requested_side: String, commanded_
 	var id := "00000000-0000-4000-8000-%012d" % suffix
 	return JSON.stringify({"schema_major": 2, "intent_id": id, "intent_sequence": sequence, "requested_direction": requested_side, "requested_facing": requested_side, "commanded_velocity_px_per_second": commanded_velocity, "state": state, "cancellation_id": cancellation_id})
 
-func _play_track(track: Dictionary, phase: String, semantic_ticks: int, rate: float, checkpoint_labels: Array) -> void:
-	var prepared = _prepare_track(track)
+func _play_track(track: Dictionary, phase: String, semantic_ticks: int, rate: float, checkpoint_labels: Array, prepared_override: Dictionary = {}) -> void:
+	var prepared: Dictionary = prepared_override if not prepared_override.is_empty() else _prepare_track(track)
 	if prepared.is_empty(): return
 	presentation_tick_cursor = 0.0
 	for semantic_index in semantic_ticks:
