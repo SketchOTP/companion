@@ -6,90 +6,55 @@ Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adop
 
 ## Latest Architect disposition
 
-Architect Review 18 partially accepts R06-C05. Retain the frozen R05 production selection, controller-owned `MonRoot` authority, true left/right profile selection, immutable source identity, nominal Godot translated playback, and exact-head hosted regression. C05 is not accepted as a complete locomotion primitive because intent replay/cancellation is not implemented end to end, runtime 24 Hz scheduling is simulated by `process_frame`, animation phase/rate is not coupled to commanded velocity, quarter-speed is only trace metadata, and the mid-loop interruption case can resume cruise.
+Architect Review 19 PARTIAL ACCEPTS R06-C06. Retain the frozen R05/R06 visual source identity, controller-owned `MonRoot`, V2 replay/freshness semantics, active-intent cancellation, fixed-step accumulator, immutable intake/Rust/Godot boundaries, strict render/compositor evidence, failure/recovery/export-restore, and exact-head hosted regression at `941c231d4562177c1db02cd61fc0f0c085e6dae4`.
+
+C06 is not yet accepted as a complete locomotion primitive because independent review found three material defects: the hosted normal/quarter viewport captures are blank pre-playback images; the Godot test both plays AnimatedSprite2D and manually overwrites `sprite.frame`, bypassing the accepted `duration_ticks` and producing a 24-tick phase cycle instead of the accepted 32-tick walk loop; and the V2 wire schema/Rust `u64` range exceeds Godot's signed-64 integer range. The claimed 17 negative cases are also not all exercised through the Godot protected path.
 
 Current authority:
 
-- Architect Review 18: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_18.md`
-- Notion Review 18: https://app.notion.com/p/3db833cb27ff81748624fa3ed8132b8d
-- Current Codex directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06`
-- Reviewed C05 implementation head: `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd`
-- Reviewed C05 publication head: `3f8846c761ecc46e7cf2f5e3d94a2bbd5c6416e1`
+- Architect Review 19: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_19.md`
+- Notion Review 19: https://app.notion.com/p/3db833cb27ff81a8a722ccf78da68de0
+- Current Codex directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06-C01`
+- Reviewed C06 implementation head: `941c231d4562177c1db02cd61fc0f0c085e6dae4`
+- Reviewed C06 publication head: `1adadc1206be4371b9baa42aa21153d6eeae74fd`
 - Frozen visual task head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
 - PR #9: draft/open/unmerged
 - Issue #8: open
 - Branch: `codex/p02-embodiment-001`
 
-## Frozen visual authority
+## Frozen authority
 
 - Review ZIP SHA-256: `45fd9749179419339046af2ab40605c47d825ca4f0ad47c87a8c6fb9ca1b799b`
-- Manifest SHA-256: `d8a0277272f0ccd6f948a24153b7f954aff138111ab840f22e09204aa359e595`
+- Review manifest SHA-256: `d8a0277272f0ccd6f948a24153b7f954aff138111ab840f22e09204aa359e595`
 - Review HTML SHA-256: `7bd9e0cd5c64b89259dc2780825457a16144cebe02d259fd73a644591aa38cd2`
 - R06 source-pack SHA-256: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`
 
 No new character artwork is authorized.
 
-## Retained R06 engineering boundary
+## Retained engineering boundary
 
-Retain:
+Retain 58 immutable native RGB runtime masters, 24 tracks / 283 frame slots, byte-preserving intake, typed Rust consumption, atomic publication/failure cleanup, real-art Godot loading, strict `RenderingServer.frame_post_draw`, transformed-source black-field compositor QA, missing/corrupt/ineligible failure and recovery, export/restore, controller-owned canonical lateral translation, true left/right profile selection, V2 UUID + monotonic sequence replay rejection, active cancellation targeting, and fixed-step accumulator evidence.
 
-- 58 immutable native 1254x1254 RGB runtime masters;
-- 24 tracks / 283 frame slots;
-- source-role separation and byte-preserving intake;
-- schema/Rust typed consumption;
-- atomic publication/failure cleanup;
-- real-art Godot loading and source timing;
-- missing/corrupt/ineligible failure and recovery;
-- export/restore;
-- strict `RenderingServer.frame_post_draw` render commitment;
-- transformed-source black-field compositor sampling;
-- C03/C04 raster support/contact investigations as negative evidence;
-- controller-owned actor translation rather than raster-derived root motion;
-- true left/right profile track mapping;
-- bounded slow/nominal/fast displacement arithmetic and nominal left/right Godot translation;
-- implementation SHA `24b4919a...` hosted success for R06 + Phase 01 + inherited Phase 02.
-
-## C05 findings retained as limitations
-
-C05 does not yet prove a production-worthy locomotion command path:
-
-- `mon_locomotion_controller.gd` stores no monotonic intent sequence and does not reject replayed IDs;
-- `cancellation_id` is not enforced;
-- Godot tests submit non-UUID intent strings despite the schema/Rust UUID contract;
-- the Python negative matrix hard-codes stale replay, missing track, and corrupt/ineligible results instead of exercising all through the C05 protected path;
-- gait frame timing is identical at 48/96/144 px/s, so commanded velocity does not actually control presentation rate/phase;
-- `quarter_speed_trace` is a copied trace label, not rendered quarter-speed playback;
-- the interruption case injects one stop tick and can continue later cruise phases;
-- `tick_once()` is called once per render `process_frame`, so an explicit fixed 24 Hz simulation clock independent of render cadence is not demonstrated.
+All C03/C04 raster-root/contact failures remain preserved negative evidence. Raster foot/contact diagnostics do not own canonical world movement for this in-place seed.
 
 ## Active objective
 
-Codex executes `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06` only:
+Execute `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06-C01` only:
 
-1. fetch and normally merge current main into the existing Phase 02 branch;
-2. preserve all approved pixels and C02-C05 evidence;
-3. keep controller-owned `MonRoot` authority unchanged;
-4. create a separately versioned locomotion-intent wire profile with UUID `intent_id` plus explicit monotonic `intent_sequence` freshness semantics;
-5. reject duplicate/equal/lower replayed intents and implement active-intent cancellation semantics;
-6. drive the controller from schema-valid serialized intents rather than ad-hoc invalid IDs;
-7. schedule canonical movement on an explicit fixed 24 Hz clock independent of render cadence and prove render-FPS variation does not alter semantic tick count;
-8. couple loop animation phase/playback rate to commanded velocity under a declared calibration while preserving commanded world displacement;
-9. make mid-loop stop/cancel terminate cruise and enter the stop presentation without later cruise resumption;
-10. publish actual rendered normal and quarter-speed translated playback;
-11. exercise all C06 negatives through the protected implementation path rather than static result booleans;
-12. retain render/compositor/Rust/intake/failure/export regressions and pass R06 + Phase 01 + inherited Phase 02 on one implementation SHA;
-13. return to Architect before transition or Openbox qualification.
+1. merge current `origin/main` normally and preserve all historical evidence;
+2. constrain V2 `intent_sequence` to a wire range exactly representable by Godot signed 64-bit integers and add max/max+1 schema/Rust/Godot tests;
+3. use one presentation clock only and preserve authored frame duration weights exactly;
+4. derive loop phase from the actual authored 32-tick profile loop, including modulo continuity across repeated loops;
+5. capture visible non-black mon frames during real translated start/cruise/second-loop/stop playback for both normal and quarter review;
+6. prove quarter review is the same semantic path at 4x review wall-time rather than a trace label;
+7. reconcile negative evidence so controller, loader/resolver, scheduler, and shared trace-verifier paths are exercised truthfully;
+8. keep R06 + Phase 01 + inherited Phase 02 green on one implementation SHA;
+9. return to Architect before transition or Openbox qualification.
 
 ## Remaining Phase 02 gates
 
-Not yet accepted:
-
-- replay-safe fixed-step velocity-synchronized controller locomotion under C06;
-- real legal-transition campaign;
-- dedicated 1366x768 Openbox two-hour endurance;
-- Phase 02 completion;
-- organism, autobiographical memory, perception, speech, learning, dreaming, caregiving efficacy, production reliability, or Phase 03+ capability.
+After C06-C01 passes without a new material defect: real legal-transition campaign, then dedicated 1366x768 Openbox two-hour endurance, then final Phase 02 acceptance/PR merge decision. Organism, autobiographical memory, perception, speech, learning, development, dreaming, caregiving efficacy, production reliability, and Phase 03+ remain unaccepted.
 
 ## Protected work
 
-The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` modifications remain protected. Do not inspect them for evidence, commit, reset, stash, overwrite, copy, or reformat them.
+The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` modifications remain protected. Do not inspect, commit, reset, stash, overwrite, copy, or reformat them.
