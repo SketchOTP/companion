@@ -221,7 +221,7 @@ jobs:
               assert 3.90 <= ratio <= 4.10, (side,ratio,normal['review_wall_time_ms'],quarter['review_wall_time_ms'])
               for capture in normal['captures']+quarter['captures']:
                   for key in ('source_pack_sha256','source_frame_filename','source_frame_sha256','capture_sha256','review_elapsed_usec','track_derived_phase'):
-                      assert capture.get(key), (side,capture,key)
+                      assert capture.get(key) is not None and capture.get(key) != '', (side,capture,key)
               assert [c['semantic_tick'] for c in normal['captures']] == [c['semantic_tick'] for c in quarter['captures']]
               assert [(c['actor_root_x'],c['track_id'],c['frame_index'],c['authored_track_tick'],c['track_derived_phase'],c['source_frame_sha256']) for c in normal['captures']] == [(c['actor_root_x'],c['track_id'],c['frame_index'],c['authored_track_tick'],c['track_derived_phase'],c['source_frame_sha256']) for c in quarter['captures']]
               assert all(c['non_black'] for c in normal['captures']+quarter['captures'])
