@@ -167,3 +167,10 @@ left/right ratios are `3.95565x` and `3.95612x`. Pack-derived duration totals,
 phase/frame mapping, source/capture hashes, and capture-only strip/GIF output
 are now part of the qualification boundary. Previous C06-C01 timing remains
 historical and superseded; no source PNG changed.
+### C06-C02 hosted closeout — 2026-09-14
+
+Exact implementation `034690cab0f3b7a1bc297fed1bc0b1fa996d3511` is green on
+focused R06 `34843867410`, Phase 01 `34843867420`, and inherited Phase 02
+`34843867429`. Artifact `10346359655` records left/right ratios
+`3.94813665x` / `3.94699164x` and hash-bound actual Godot captures/media.
+Phase 02 remains active and unaccepted pending Architect review.

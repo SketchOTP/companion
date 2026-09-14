@@ -566,3 +566,15 @@ ticks. Normal/quarter checkpoint identity matches at all four semantic labels.
 The former C06-C01 reported timing values (`3.51–3.53 s` and `12.25 s`) are
 retained as historical and superseded by the artifact-grounded measurements
 above; artifact `10344096459` remains preserved unchanged.
+
+## R06-C06-C02 hosted exact-head closeout — 2026-09-14
+
+Exact SHA `034690cab0f3b7a1bc297fed1bc0b1fa996d3511` passed focused R06
+`34843867410`, Phase 01 `34843867420`, and inherited Phase 02 `34843867429`.
+Artifact `10346359655` ZIP digest is
+`sha256:e97561173a1bc48447fec13e498f21d0b4de49c5b3b5d34de3cba396f2ee6cfe`.
+Hosted left normal/quarter times are `3078.224/12153.249 ms`
+(`3.94813665x`); right is `3078.854/12152.211 ms` (`3.94699164x`). All
+required captures are non-black and source/frame/capture hash-bound; actual-
+capture strips/GIFs are in the artifact. Frozen pack SHA is unchanged and
+historical artifact `10344096459` remains preserved.
