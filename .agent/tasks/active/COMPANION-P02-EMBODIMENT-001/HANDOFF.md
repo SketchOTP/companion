@@ -551,6 +551,17 @@ transition, executable negatives, and Godot rendered normal/quarter runner.
 Local semantic/schema checks pass. Hosted exact-head regressions and final
 publication remain pending; Phase 02 is still unaccepted.
 
+## C06 hosted handoff — 2026-09-14
+
+Exact SHA `6ca691412b3da7efe9227191f5f34a9175883301` is green on R06
+`34799648248`, Phase 01 `34799648246`, and inherited Phase 02 `34799648257`.
+PR-triggered equivalents also pass. Artifact `10331331019` is published with
+digest `sha256:549b4af63f61dd5204d94d609365a70b584bda3f28f44ceb77818d4dfe889a3a`.
+The final run covers V2 freshness/cancellation, fixed 24 Hz scheduling,
+velocity rates 0.5/1.0/1.5, actual normal/quarter Godot playback, strict render
+observation, cadence equivalence, and 17 negatives. Submit C06 to Architect and
+stop; do not begin transition qualification or Openbox endurance.
+
 ## C05 hosted regression reconciliation — 2026-09-14
 
 Implementation SHA `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd` passed initial

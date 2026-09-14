@@ -480,3 +480,15 @@ movement is driven by a fixed 24 Hz scheduler and presentation rate is
 calibrated at 0.5x/1.0x/1.5x for 48/96/144 px/s. Python semantic qualification
 and validator pass locally; Godot consumes serialized V2 intents and writes
 actual normal/quarter viewport captures. Hosted C06 regression remains pending.
+
+### R06-C06 hosted exact-head closeout — 2026-09-14
+
+Implementation SHA `6ca691412b3da7efe9227191f5f34a9175883301` passed focused
+R06 `34799648248`, Phase 01 `34799648246`, and inherited Phase 02
+`34799648257`. PR-triggered equivalents `34799652134`, `34799652115`, and
+`34799652259` also passed. R06 artifact `10331331019` digest is
+`sha256:549b4af63f61dd5204d94d609365a70b584bda3f28f44ceb77818d4dfe889a3a`.
+The run reports zero Godot errors, strict render observation, actual
+normal/quarter playback, 30/60 FPS semantic equivalence, six velocity cases,
+and 17 executable negatives. Earlier fixture/parser failures remain preserved
+as superseded diagnostics; frozen art is unchanged.

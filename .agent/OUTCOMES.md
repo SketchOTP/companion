@@ -1006,3 +1006,12 @@ freshness/cancellation state, fixed-step cadence probes, velocity-to-gait-rate
 calibration, executable negative coverage, and actual Godot normal/quarter
 playback capture plumbing. This remains a candidate submission; hosted C06,
 Phase 01, and inherited Phase 02 runs are pending.
+
+## R06-C06 hosted closeout — 2026-09-14
+
+Implementation SHA `6ca691412b3da7efe9227191f5f34a9175883301` is green on R06
+`34799648248`, Phase 01 `34799648246`, and inherited Phase 02 `34799648257`.
+The initial fixture/parser failures were corrected without suppression. Final
+hosted evidence includes strict Godot render observation, normal/quarter
+playback, cadence equivalence, six velocity cases, and 17 executable negatives.
+Phase 02, transition, and Openbox gates remain unaccepted/deferred.

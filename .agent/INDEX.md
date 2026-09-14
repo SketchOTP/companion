@@ -142,3 +142,13 @@ identity plus monotonic sequence and cancellation targeting; the controller
 owns a fixed 24 Hz semantic clock and velocity-linked presentation rate. Godot
 consumes serialized V2 intents and captures normal/quarter rendered playback.
 No source art changed; hosted validation is pending.
+
+## R06-C06 hosted exact-head closeout — 2026-09-14
+
+Exact SHA `6ca691412b3da7efe9227191f5f34a9175883301` passes focused R06
+`34799648248`, Phase 01 `34799648246`, and inherited Phase 02 `34799648257`;
+PR-triggered equivalents `34799652134`, `34799652115`, and `34799652259` also
+pass. C06 covers replay-safe V2 intent freshness, explicit cancellation, fixed
+24 Hz movement, velocity-linked presentation, actual rendered normal/quarter
+playback, and 17 executable negatives. No source art changed; Phase 02 remains
+unaccepted pending Architect review.

@@ -163,3 +163,13 @@ normal/quarter rendered playback. C06 adds `LocomotionIntentV2`, controller
 freshness/cancellation state, Godot C06 playback, semantic cadence probes, and
 executable negatives. No art bytes changed; hosted C06 regression remains
 pending.
+
+### C06 hosted exact-head closeout — 2026-09-14
+
+Implementation SHA `6ca691412b3da7efe9227191f5f34a9175883301` is green on
+focused R06 `34799648248`, Phase 01 `34799648246`, and inherited Phase 02
+`34799648257`; matching PR runs `34799652134`, `34799652115`, and
+`34799652259` also pass. Final hosted Godot evidence has zero errors, strict
+render observation, normal/quarter playback, 30/60 FPS equivalence, six
+velocity cases, and 17 executable negatives. C06 is submitted for Architect
+review; transition and Openbox gates remain deferred.

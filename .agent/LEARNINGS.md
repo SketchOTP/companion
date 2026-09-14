@@ -672,3 +672,11 @@ explicit monotonic sequence retained by the controller, while cancellation
 must target the currently active command. Semantic movement ticks also need a
 clock independent of render cadence; otherwise a process-frame test can hide
 loss or duplication.
+
+## C06 hosted qualification learning — 2026-09-14
+
+Generic contract fixture generation must honor nullable branches; placeholder
+strings can invalidate an otherwise valid wire fixture. Dynamically loaded
+Godot scripts should avoid inferred static class types when parser scope is not
+guaranteed. Preserve exact diagnostics, correct root causes, and rerun all
+workflows on one new SHA.
