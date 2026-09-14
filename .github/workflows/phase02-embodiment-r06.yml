@@ -212,7 +212,7 @@ jobs:
           for key,d in data.items():
               assert d['status']=='PASS', (key,d)
               assert len(d['captures']) == 4, (key, d)
-              assert all((p.parent / c['file']).is_file() for c in d['captures']), (key, d)
+              assert all((paths[key].parent / c['file']).is_file() for c in d['captures']), (key, d)
           for side in ('left','right'):
               normal=data[f'{side}_normal']; quarter=data[f'{side}_quarter']
               nlabels=[c['label'] for c in normal['captures']]; qlabels=[c['label'] for c in quarter['captures']]
