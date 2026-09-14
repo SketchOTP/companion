@@ -31,3 +31,5 @@ bytes are unchanged. Implementation SHA
 `34800727016` and inherited Phase 02 `34800727017` also passed. The corrected
 local result SHA is
 `a5c2923040e9d1c6df6d26139c2fd3cce7b21c8b58ba2cd8feb6811616834ea0`.
+The corrected hosted artifact is `10330902923`, digest
+`sha256:3952de98c7f96aa8b9a7ddafbd9d5b848b8539862e85549386605f98f4375cf1`.

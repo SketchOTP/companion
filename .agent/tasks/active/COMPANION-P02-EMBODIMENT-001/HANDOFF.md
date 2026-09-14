@@ -570,6 +570,8 @@ seam that rounded to `1.0` is serialized as `0.0`, preserving continuous phase.
 R06 `34800729601`, Phase 01 `34800729655`, and inherited Phase 02
 `34800729662` passed on this exact SHA. The local corrected semantic result is
 `a5c2923040e9d1c6df6d26139c2fd3cce7b21c8b58ba2cd8feb6811616834ea0`.
+The corrected hosted artifact is `10330902923` with digest
+`sha256:3952de98c7f96aa8b9a7ddafbd9d5b848b8539862e85549386605f98f4375cf1`.
 
 ## C05 hosted regression reconciliation — 2026-09-14
 
