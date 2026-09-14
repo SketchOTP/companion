@@ -6,6 +6,13 @@ Roadmap Phase 02 remains active and not accepted. Architecture v1.0 remains adop
 
 ## Latest Architect disposition
 
+Architect Review 19 routes C06-C01. The implementation now has a narrow
+workflow-path correction after hosted run `34835193580` exposed an undefined
+capture-path assertion. Commit `de9d7c041cad3c28ecb2779e5afc11f1f2a0f3a4`
+fixes only that assertion; no source art or runtime semantics changed.
+Focused R06 and inherited Phase 02 are green on this exact SHA; Phase 01 is
+still awaiting completion of its exact-head run.
+
 Architect Review 19 PARTIAL ACCEPTS R06-C06. Retain the frozen R05/R06 visual source identity, controller-owned `MonRoot`, V2 replay/freshness semantics, active-intent cancellation, fixed-step accumulator, immutable intake/Rust/Godot boundaries, strict render/compositor evidence, failure/recovery/export-restore, and exact-head hosted regression at `941c231d4562177c1db02cd61fc0f0c085e6dae4`.
 
 C06 is not yet accepted as a complete locomotion primitive because independent review found three material defects: the hosted normal/quarter viewport captures are blank pre-playback images; the Godot test both plays AnimatedSprite2D and manually overwrites `sprite.frame`, bypassing the accepted `duration_ticks` and producing a 24-tick phase cycle instead of the accepted 32-tick walk loop; and the V2 wire schema/Rust `u64` range exceeds Godot's signed-64 integer range. The claimed 17 negative cases are also not all exercised through the Godot protected path.
@@ -15,7 +22,7 @@ Current authority:
 - Architect Review 19: `.agent/tasks/active/COMPANION-P02-EMBODIMENT-001/ARCHITECT_REVIEW_19.md`
 - Notion Review 19: https://app.notion.com/p/3db833cb27ff81a8a722ccf78da68de0
 - Current Codex directive: `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06-C01`
-- Reviewed C06 implementation head: `941c231d4562177c1db02cd61fc0f0c085e6dae4`
+- Reviewed C06 implementation head: `de9d7c041cad3c28ecb2779e5afc11f1f2a0f3a4`
 - Reviewed C06 publication head: `1adadc1206be4371b9baa42aa21153d6eeae74fd`
 - Frozen visual task head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`
 - PR #9: draft/open/unmerged
