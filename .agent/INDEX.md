@@ -173,3 +173,15 @@ focused R06 `34843867410`, Phase 01 `34843867420`, and inherited Phase 02
 `3.94813665x` / `3.94699164x` and hash-bound actual Godot captures/media.
 Phase 02 remains active and unaccepted pending Architect review.
 If C06-C03 passes without a new material defect: Architect may authorize the legal-transition campaign, followed by dedicated 1366x768 Openbox two-hour endurance, then final Phase 02 acceptance/PR merge decision.
+
+### C06-C03 final timing/phase closeout — 2026-09-14
+
+Exact implementation `49d9d65e08b9c9410d8013266ed5a5a5194ff8c5` is green on
+focused R06 `34853256541`, Phase 01 `34853256563`, and inherited Phase 02
+`34853256770`. Artifact `10352161425` records 16 non-black translated Godot
+captures and capture-derived strips/GIFs. Per-checkpoint and full-run quarter
+timing is within `[3.90,4.10]` for both directions; the pack-backed verifier
+proves adjacent authored progression, the legitimate 32-tick modulo seam, and
+second-loop continuity while rejecting sequential-jump and phase-reset
+mutations. No source PNG changed; Phase 02 remains active and unaccepted
+pending Architect review.

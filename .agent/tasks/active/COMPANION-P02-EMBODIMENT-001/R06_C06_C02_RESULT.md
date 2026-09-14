@@ -24,3 +24,15 @@ Hosted wall times are left `3078.224/12153.249 ms` (normal/quarter,
 capture media is sourced only from hosted Godot checkpoint PNGs. Frozen pack
 SHA remains unchanged; no source PNG changed. C06-C02 is ready for Architect
 review; transition and Openbox gates remain deferred.
+
+## C06-C03 correction — 2026-09-14
+
+Review 21 identified that the C06-C02 record did not prove matched-checkpoint
+4x pacing or an executed phase-reset mutation. Those claims are retained as
+historical/unproven, not silently rewritten. C06-C03 closes them on
+implementation `49d9d65e08b9c9410d8013266ed5a5a5194ff8c5`: each left/right
+first-cruise, second-loop, stop, and full-run ratio is independently within
+`[3.90,4.10]`, and the pack-backed verifier rejects both a pack-valid
+sequential jump and an unexpected phase reset while accepting the legitimate
+32-tick modulo seam. See `R06_C06_C03_RESULT.md` for complete artifact and
+hosted-run identity.

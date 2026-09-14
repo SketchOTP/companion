@@ -171,3 +171,16 @@ Artifact `10346359655` (ZIP SHA-256
 hash-bound non-black Godot captures and actual-capture review media. Left/right
 quarter-to-normal ratios are `3.94813665x` and `3.94699164x`. Await Architect
 review; transition qualification remains deferred.
+
+### C06-C03 final timing/phase closeout — 2026-09-14
+
+Implementation SHA `49d9d65e08b9c9410d8013266ed5a5a5194ff8c5` passes focused
+R06 `34853256541`, Phase 01 `34853256563`, and inherited Phase 02
+`34853256770`. Hosted artifact `10352161425` contains 16 non-black translated
+Godot captures with source/capture hashes. Left checkpoint ratios are
+`3.93891x`, `3.98219x`, `3.99139x`; right ratios are `3.95267x`, `3.97978x`,
+`3.99046x`; full-run ratios are `3.99139x` and `3.99046x`. Loaded 8-frame
+cruise tracks independently derive to 32 authored ticks; modulo seam and
+second-loop progression pass, while sequential-jump and phase-reset mutations
+fail. C06-C03 is submitted for Architect review; legal-transition and Openbox
+gates remain deferred.
