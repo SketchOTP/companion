@@ -219,8 +219,13 @@ jobs:
               assert nlabels==qlabels==['start','first_cruise','second_loop_cruise','stop'], (side,nlabels,qlabels)
               ratio=quarter['review_wall_time_ms']/normal['review_wall_time_ms']
               assert 3.90 <= ratio <= 4.10, (side,ratio,normal['review_wall_time_ms'],quarter['review_wall_time_ms'])
+              n_by_label={c['label']:c for c in normal['captures']}; q_by_label={c['label']:c for c in quarter['captures']}
+              for label in ('first_cruise','second_loop_cruise','stop'):
+                  nr=n_by_label[label]['review_observed_elapsed_usec']; qr=q_by_label[label]['review_observed_elapsed_usec']
+                  checkpoint_ratio=qr/nr
+                  assert 3.90 <= checkpoint_ratio <= 4.10, (side,label,checkpoint_ratio,nr,qr)
               for capture in normal['captures']+quarter['captures']:
-                  for key in ('source_pack_sha256','source_frame_filename','source_frame_sha256','capture_sha256','review_elapsed_usec','track_derived_phase'):
+                  for key in ('capture_index','source_pack_sha256','source_frame_filename','source_frame_sha256','capture_sha256','review_observed_elapsed_usec','review_elapsed_usec','authored_tick_cursor','authored_loop_ticks','track_derived_phase'):
                       assert capture.get(key) is not None and capture.get(key) != '', (side,capture,key)
               assert [c['semantic_tick'] for c in normal['captures']] == [c['semantic_tick'] for c in quarter['captures']]
               assert [(c['actor_root_x'],c['track_id'],c['frame_index'],c['authored_track_tick'],c['track_derived_phase'],c['source_frame_sha256']) for c in normal['captures']] == [(c['actor_root_x'],c['track_id'],c['frame_index'],c['authored_track_tick'],c['track_derived_phase'],c['source_frame_sha256']) for c in quarter['captures']]
@@ -244,11 +249,11 @@ jobs:
           assert not (3.90 <= bad <= 4.10), 'artificial 3.33x ratio unexpectedly accepted'
           print('c06_timing_negative_3_33_rejected')
           PY
-      - name: Upload R06-C02 evidence (including failures)
+      - name: Upload R06-C03 evidence (including failures)
         if: always()
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         with:
-          name: phase02-embodiment-r06-c06-c01-${{ github.sha }}
+          name: phase02-embodiment-r06-c06-c03-${{ github.sha }}
           path: |
             ${{ runner.temp }}/r06-results
             ${{ runner.temp }}/r06-c02

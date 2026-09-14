@@ -14,6 +14,63 @@ def _frame_for_tick(durations: list[int], tick: int) -> int:
         if tick < cursor: return index
     return max(0, len(durations) - 1)
 
+def _rebind_sample_from_cursor(sample: dict, track: dict, cursor: float) -> None:
+    """Keep a mutation individually valid against the pack, but not sequentially valid."""
+    frames = track.get("frames", [])
+    durations = [int(f.get("duration_ticks", 0)) for f in frames]
+    total = sum(durations)
+    cursor = cursor % total
+    authored_tick = int(math.floor(cursor)) % total
+    frame_index = _frame_for_tick(durations, authored_tick)
+    frame = frames[frame_index]
+    sample["authored_tick_cursor"] = cursor
+    sample["authored_track_tick"] = authored_tick
+    sample["frame_index"] = frame_index
+    sample["duration_ticks"] = durations[frame_index]
+    sample["authored_loop_ticks"] = total
+    sample["track_derived_phase"] = cursor / float(total)
+    sample["source_frame_filename"] = frame.get("filename")
+    sample["source_frame_sha256"] = frame.get("source_sha256")
+
+def _check_authored_progression(samples: list[dict], tracks: dict[str, dict]) -> list[str]:
+    """Verify adjacent cruise samples against the loaded track's duration clock."""
+    errors: list[str] = []
+    cruise = [s for s in samples if s.get("phase") == "cruise"]
+    if not cruise:
+        return ["cruise_samples_missing"]
+    previous = None
+    seam_count = 0
+    for sample in cruise:
+        track = tracks.get(str(sample.get("track_id")))
+        if track is None:
+            continue
+        durations = [int(f.get("duration_ticks", 0)) for f in track.get("frames", [])]
+        total = sum(durations)
+        cursor = sample.get("authored_tick_cursor")
+        rate = sample.get("playback_rate")
+        if total <= 0 or not isinstance(cursor, (int, float)) or not isinstance(rate, (int, float)):
+            errors.append("authored_progression")
+            break
+        if previous is not None:
+            prev_cursor, prev_rate, prev_total = previous
+            if prev_total != total or not math.isclose(float(rate), float(prev_rate), abs_tol=1e-9):
+                errors.append("authored_progression")
+                break
+            expected = (float(prev_cursor) + float(rate)) % float(total)
+            actual = float(cursor) % float(total)
+            if actual == 0.0 and float(prev_cursor) > 0.0 and not math.isclose(expected, 0.0, abs_tol=1e-6):
+                errors.append("authored_phase_reset")
+                break
+            if float(cursor) < float(prev_cursor):
+                seam_count += 1
+            if not math.isclose(actual, expected, abs_tol=1e-6):
+                errors.append("authored_progression")
+                break
+        previous = (float(cursor), float(rate), total)
+    if len(cruise) >= 33 and seam_count < 1:
+        errors.append("authored_seam")
+    return errors
+
 def verify_positive(trace: dict, pack: dict | None = None, trace_dir: Path | None = None) -> list[str]:
     errors: list[str] = []
     samples = trace.get("samples", [])
@@ -37,16 +94,20 @@ def verify_positive(trace: dict, pack: dict | None = None, trace_dir: Path | Non
         if sample.get("frame_index") != frame_index: errors.append("pack_frame_mapping")
         if sample.get("duration_ticks") != durations[frame_index]: errors.append("pack_duration_binding")
         if sample.get("authored_loop_ticks") != total: errors.append("pack_duration_total")
-        if not math.isclose(float(sample.get("track_derived_phase", -1)), float(authored_tick) / total, abs_tol=1e-6): errors.append("pack_phase_binding")
+        cursor = sample.get("authored_tick_cursor")
+        expected_phase = (float(cursor) % total) / float(total) if isinstance(cursor, (int, float)) else -1.0
+        if not math.isclose(float(sample.get("track_derived_phase", -1)), expected_phase, abs_tol=1e-6): errors.append("pack_phase_binding")
         if sample.get("source_frame_filename") != frame.get("filename"): errors.append("source_frame_filename")
         if sample.get("source_frame_sha256") != frame.get("source_sha256"): errors.append("source_frame_hash")
+    errors.extend(_check_authored_progression(samples, tracks))
     captures = trace.get("captures", []); required = {"start", "first_cruise", "second_loop_cruise", "stop"}
     if {c.get("label") for c in captures} != required: errors.append("checkpoint_set")
     if any(not c.get("non_black") for c in captures): errors.append("black_capture")
     moving = [c for c in captures if c.get("label") in {"first_cruise", "second_loop_cruise"}]
     if len({c.get("actor_root_x") for c in moving}) < 2: errors.append("checkpoint_position_static")
-    fields = {"semantic_tick", "actor_root_x", "track_id", "frame_index", "authored_track_tick", "track_derived_phase", "review_elapsed_usec", "source_pack_sha256", "source_frame_filename", "source_frame_sha256", "capture_sha256", "file", "non_black"}
+    fields = {"capture_index", "semantic_tick", "actor_root_x", "track_id", "frame_index", "authored_track_tick", "authored_tick_cursor", "authored_loop_ticks", "track_derived_phase", "review_observed_elapsed_usec", "review_elapsed_usec", "source_pack_sha256", "source_frame_filename", "source_frame_sha256", "capture_sha256", "file", "non_black"}
     if any(not fields.issubset(c) for c in captures): errors.append("capture_metadata")
+    if [c.get("capture_index") for c in captures] != list(range(len(captures))): errors.append("capture_index_sequence")
     if any(not c.get("capture_sha256") for c in captures): errors.append("capture_hash")
     return list(dict.fromkeys(errors))
 
@@ -74,6 +135,22 @@ def negatives(trace: dict, pack: dict) -> dict[str, dict[str, object]]:
     target_frame["duration_ticks"] = int(target_frame.get("duration_ticks", 1)) + 17
     observed = trace_guard(baseline, altered_pack)
     cases["pack_source_duration_mutation"] = {"status": "failed", "reason": observed, "expected_reason": "pack_duration_binding", "independent": observed == "pack_duration_binding"}
+    cruise_indices = [i for i, s in enumerate(baseline["samples"]) if s.get("phase") == "cruise"]
+    if len(cruise_indices) >= 9:
+        jump = copy.deepcopy(baseline)
+        jump_index = cruise_indices[8]
+        jump_track = next(t for t in pack.get("tracks", []) if t.get("track_id") == jump["samples"][jump_index].get("track_id"))
+        previous_cursor = float(jump["samples"][cruise_indices[7]].get("authored_tick_cursor", 0.0))
+        rate = float(jump["samples"][jump_index].get("playback_rate", 1.0))
+        _rebind_sample_from_cursor(jump["samples"][jump_index], jump_track, previous_cursor + rate + 2.0)
+        observed = trace_guard(jump, pack)
+        cases["pack_valid_sequential_jump"] = {"status": "failed", "reason": observed, "expected_reason": "authored_progression", "independent": observed == "authored_progression"}
+        reset = copy.deepcopy(baseline)
+        reset_index = cruise_indices[8]
+        reset_track = next(t for t in pack.get("tracks", []) if t.get("track_id") == reset["samples"][reset_index].get("track_id"))
+        _rebind_sample_from_cursor(reset["samples"][reset_index], reset_track, 0.0)
+        observed = trace_guard(reset, pack)
+        cases["unexpected_phase_reset"] = {"status": "failed", "reason": observed, "expected_reason": "authored_phase_reset", "independent": observed == "authored_phase_reset"}
     return cases
 
 def main() -> int:

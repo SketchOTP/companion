@@ -6,8 +6,8 @@ extends SceneTree
 ## frame selection.
 const HZ := 24.0
 const REFERENCE_VELOCITY := 96.0
-const AUTHORED_LOOP_TICKS := 32
 const INTENT_SEQUENCE_MAX := 9223372036854775807
+const FIRST_CRUISE_CAPTURE_INDEX := 12
 var pack_path := ""
 var out_path := ""
 var side := "left"
@@ -79,6 +79,12 @@ func _run() -> void:
 	if start_result.get("status") != "accepted": result.errors.append("start_intent_rejected:" + String(start_result.get("reason", "unknown"))); return _finish(result)
 	events.append({"event": "intent_accepted", "intent_sequence": 1, "track_id": ids[side][0]})
 	await _play_track(start_track, "start", 12, 1.0, ["start"])
+	# The review epoch begins at the first cruise intent.  This excludes the
+	# fixed startup/asset-load cost from every matched movement checkpoint while
+	# retaining one monotonic epoch shared by normal and quarter runs.
+	review_started_usec = Time.get_ticks_usec()
+	review_pacing_tick = 0
+	capture_overhead_usec = 0
 	var cruise_track: Dictionary = by_id[ids[side][1]]
 	var cruise_intent := _intent_json(2, 602, side, velocity, "cruise", null)
 	var cruise_result: Dictionary = controller.accept_serialized_intent(cruise_intent)
@@ -127,23 +133,27 @@ func _play_track(track: Dictionary, phase: String, semantic_ticks: int, rate: fl
 		var track_derived_phase := fmod(presentation_tick_cursor, float(authored_loop_ticks)) / float(authored_loop_ticks)
 		var frame_index := _frame_for_authored_tick(prepared["durations"], authored_tick)
 		_set_track_frame(prepared, frame_index)
-		var sample := {"semantic_tick": movement.get("semantic_tick"), "phase": phase, "track_id": prepared["track_id"], "frame_index": frame_index, "authored_track_tick": authored_tick, "duration_ticks": prepared["durations"][frame_index], "authored_loop_ticks": authored_loop_ticks, "track_derived_phase": track_derived_phase, "actor_root_x": movement.get("actor_root_x"), "velocity": movement.get("commanded_velocity_px_per_second"), "intent_id": movement.get("intent_id"), "intent_sequence": movement.get("intent_sequence"), "animation_phase": movement.get("animation_phase"), "playback_rate": rate, "review_rate": review_rate, "source_frame_filename": prepared["filenames"][frame_index], "source_frame_sha256": prepared["source_hashes"][frame_index]}
+		var sample := {"semantic_tick": movement.get("semantic_tick"), "phase": phase, "track_id": prepared["track_id"], "frame_index": frame_index, "authored_track_tick": authored_tick, "authored_tick_cursor": presentation_tick_cursor, "duration_ticks": prepared["durations"][frame_index], "authored_loop_ticks": authored_loop_ticks, "track_derived_phase": track_derived_phase, "actor_root_x": movement.get("actor_root_x"), "velocity": movement.get("commanded_velocity_px_per_second"), "intent_id": movement.get("intent_id"), "intent_sequence": movement.get("intent_sequence"), "animation_phase": movement.get("animation_phase"), "playback_rate": rate, "review_rate": review_rate, "source_frame_filename": prepared["filenames"][frame_index], "source_frame_sha256": prepared["source_hashes"][frame_index]}
 		samples.append(sample)
-		if semantic_index == 0 and checkpoint_labels.has(phase if phase == "start" else "first_cruise"):
-			await _capture_checkpoint("start" if phase == "start" else "first_cruise", sample)
+		presentation_tick_cursor += rate
+		review_pacing_tick += 1
+		# The review clock is a real monotonic deadline clock.  Quarter review is
+		# exactly 4x the semantic deadline; capture overhead is observed rather
+		# than hidden in a calibration multiplier.
+		var review_time_scale := 4.0 if is_equal_approx(review_rate, 0.25) else 1.0
+		var target_usec := review_started_usec + int(round(float(review_pacing_tick) * 1000000.0 * review_time_scale / HZ))
+		await _wait_until_usec(target_usec)
+		# Checkpoints are captured after the paced observation boundary so their
+		# elapsed values measure movement review time, not an unpaced pre-wait
+		# sample.  The semantic sample itself remains identical across rates.
+		if semantic_index == 0 and checkpoint_labels.has("start") and phase == "start":
+			await _capture_checkpoint("start", sample)
+		if phase == "cruise" and semantic_index == FIRST_CRUISE_CAPTURE_INDEX and checkpoint_labels.has("first_cruise"):
+			await _capture_checkpoint("first_cruise", sample)
 		if phase == "cruise" and semantic_index == 32:
 			await _capture_checkpoint("second_loop_cruise", sample)
 		if semantic_index == semantic_ticks - 1 and checkpoint_labels.has("stop"):
 			await _capture_checkpoint("stop", sample)
-		presentation_tick_cursor += rate
-		review_pacing_tick += 1
-		# A small bounded 4.05x deadline bias compensates fixed process/readback
-		# overhead so measured wall-time remains inside the required 3.90..4.10
-		# tolerance on hosted Xvfb, while semantic ticks and actor motion remain
-		# unchanged.
-		var review_time_scale := 4.05 if is_equal_approx(review_rate, 0.25) else 1.0
-		var target_usec := review_started_usec + int(round(float(review_pacing_tick) * 1000000.0 * review_time_scale / HZ))
-		await _wait_until_usec(target_usec)
 	events.append({"event": "track_completed", "track_id": prepared["track_id"], "phase": phase, "semantic_ticks": semantic_ticks, "playback_rate": rate, "authored_loop_ticks": prepared["total_ticks"]})
 
 func _prepare_track(track: Dictionary) -> Dictionary:
@@ -209,6 +219,7 @@ func _capture_checkpoint(label: String, sample: Dictionary) -> void:
 	if not await _await_frame_post_draw():
 		events.append({"event": "capture_failed", "label": label, "reason": "frame_post_draw_unobserved"})
 		return
+	var observed_usec := Time.get_ticks_usec()
 	var viewport := get_root().get_viewport()
 	if viewport == null or viewport.get_texture() == null: return
 	var image := viewport.get_texture().get_image()
@@ -226,7 +237,7 @@ func _capture_checkpoint(label: String, sample: Dictionary) -> void:
 	if not out_path.is_empty():
 		DirAccess.make_dir_recursive_absolute(out_path.get_base_dir())
 		saved = image.save_png(out_path.get_base_dir().path_join(filename)) == OK
-	captures.append({"label": label, "file": filename, "semantic_tick": sample.get("semantic_tick"), "actor_root_x": sample.get("actor_root_x"), "track_id": sample.get("track_id"), "frame_index": sample.get("frame_index"), "authored_track_tick": sample.get("authored_track_tick"), "authored_loop_ticks": sample.get("authored_loop_ticks"), "track_derived_phase": sample.get("track_derived_phase"), "source_frame_filename": sample.get("source_frame_filename"), "source_frame_sha256": sample.get("source_frame_sha256"), "review_elapsed_usec": Time.get_ticks_usec() - review_started_usec, "review_rate": review_rate, "non_black": non_black and saved, "saved": saved})
+	captures.append({"capture_index": captures.size(), "label": label, "file": filename, "semantic_tick": sample.get("semantic_tick"), "actor_root_x": sample.get("actor_root_x"), "track_id": sample.get("track_id"), "frame_index": sample.get("frame_index"), "authored_track_tick": sample.get("authored_track_tick"), "authored_tick_cursor": sample.get("authored_tick_cursor"), "authored_loop_ticks": sample.get("authored_loop_ticks"), "track_derived_phase": sample.get("track_derived_phase"), "source_frame_filename": sample.get("source_frame_filename"), "source_frame_sha256": sample.get("source_frame_sha256"), "review_observed_elapsed_usec": observed_usec - review_started_usec, "review_elapsed_usec": Time.get_ticks_usec() - review_started_usec, "review_rate": review_rate, "non_black": non_black and saved, "saved": saved})
 	events.append({"event": "viewport_capture", "label": label, "semantic_tick": sample.get("semantic_tick"), "observation": "RenderingServer.frame_post_draw", "non_black": non_black})
 	capture_overhead_usec += max(0, Time.get_ticks_usec() - capture_started_usec)
 
