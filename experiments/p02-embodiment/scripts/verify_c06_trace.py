@@ -68,8 +68,10 @@ def negatives(trace: dict, pack: dict) -> dict[str, dict[str, object]]:
         mutated = copy.deepcopy(baseline); mutate(mutated); observed = trace_guard(mutated, pack)
         cases[name] = {"status": "failed", "reason": observed, "expected_reason": reason, "independent": observed == reason}
     altered_pack = copy.deepcopy(pack)
-    target_track = next(t for t in altered_pack.get("tracks", []) if t.get("track_id") == "r06_playback_track_08")
-    target_track["frames"][0]["duration_ticks"] = int(target_track["frames"][0].get("duration_ticks", 1)) + 1
+    target_sample = next(s for s in baseline["samples"] if s.get("phase") == "cruise")
+    target_track = next(t for t in altered_pack.get("tracks", []) if t.get("track_id") == target_sample.get("track_id"))
+    target_frame = target_track["frames"][int(target_sample.get("frame_index", 0))]
+    target_frame["duration_ticks"] = int(target_frame.get("duration_ticks", 1)) + 17
     observed = trace_guard(baseline, altered_pack)
     cases["pack_source_duration_mutation"] = {"status": "failed", "reason": observed, "expected_reason": "pack_duration_binding", "independent": observed == "pack_duration_binding"}
     return cases
