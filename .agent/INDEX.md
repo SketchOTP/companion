@@ -108,3 +108,13 @@ intent contract, actual Godot test, and 13 independent negative cases are
 documented in `experiments/p02-embodiment/results/r06-c05/R06_C05_RESULT.md`.
 Local schema/contract and Godot checks pass; hosted exact-head regressions are
 required before Architect review. Phase 02 remains unaccepted.
+
+### C05 hosted exact-head closeout — 2026-09-14
+
+The inherited Phase 01 persistence probe now establishes a known valid candidate
+before care restart, removing a test-ordering race without changing production
+behavior. Implementation SHA `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd`
+passed hosted Phase 01 `34790167116`, same-head reruns `34790169089` (job
+`103813789392`) and `103814757741`, focused R06 `34790169083`, and inherited
+Phase 02 `34790169074`. C05 remains bounded controller-owned locomotion
+evidence; Phase 02 remains unaccepted.

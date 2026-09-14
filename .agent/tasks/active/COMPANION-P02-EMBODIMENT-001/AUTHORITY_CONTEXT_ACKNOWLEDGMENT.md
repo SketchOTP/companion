@@ -265,3 +265,11 @@ the controller owns canonical `MonRoot` translation at 24 Hz and Godot selects
 left/right profile presentation. Foot-skate is diagnostic, not authoritative
 grounding. Local schema, Python semantic, and Godot checks pass; hosted exact-
 head regression remains required. Retrieval confidence is `ADEQUATE`.
+
+## C05 hosted regression closeout — 2026-09-14
+
+Implementation SHA `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd` passed Phase 01
+`34790167116`, same-head reruns `34790169089` / jobs `103813789392` and
+`103814757741`, focused R06 `34790169083`, and inherited Phase 02
+`34790169074`. The persistence probe correction seeds its known candidate
+before care restart; no production behavior or frozen source bytes changed.

@@ -857,3 +857,11 @@ transition, or Openbox work was performed.
 - Evidence limits: foot-skate is diagnostic only; no physical grounding,
   transition qualification, Openbox endurance, Phase 02 acceptance, or product
   capability is claimed.
+## R06-C05 hosted regression record — 2026-09-14
+
+The exact implementation SHA `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd` is
+green on initial Phase 01 `34790167116`, same-head reruns
+`34790169089` / jobs `103813789392` and `103814757741`, focused R06
+`34790169083`, and inherited Phase 02 `34790169074`. This closes the hosted
+regression requirement for C05; the project remains in Phase 02 and no art or
+transition gate changed.

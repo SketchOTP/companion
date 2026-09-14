@@ -542,3 +542,13 @@ baseline. Full details are in `experiments/p02-embodiment/results/r06-c05/`.
 This is bounded synthetic presentation evidence only. Foot-skate remains
 diagnostic; Phase 02 acceptance, transition qualification, and Openbox
 endurance remain unrun. Hosted exact-head regressions are required.
+
+## C05 hosted regression reconciliation — 2026-09-14
+
+Implementation SHA `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd` passed initial
+Phase 01 `34790167116`, same-head rerun #1 `34790169089` (job
+`103813789392`), same-head rerun #2 (job `103814757741`), focused R06
+`34790169083`, and inherited Phase 02 `34790169074`. The only executable
+correction seeds the candidate used by the persisted-duplicate check before
+restart. Frozen pack and result hashes are unchanged. This remains a bounded
+C05 submission for Architect review, not Phase 02 acceptance.

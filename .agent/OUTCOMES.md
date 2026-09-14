@@ -989,3 +989,12 @@ rejects direction/sign/profile/recenter/discontinuity/tick/intent/track/pack
 mutations from an independently passing baseline. Local qualification passes;
 hosted exact-head regressions remain required. This is bounded presentation
 evidence only and does not claim physical grounding or Phase 02 acceptance.
+
+## R06-C05 hosted regression closeout — 2026-09-14
+
+Implementation SHA `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd` passed hosted
+Phase 01 `34790167116`, same-head reruns `34790169089` (jobs
+`103813789392` and `103814757741`), focused R06 `34790169083`, and inherited
+Phase 02 `34790169074`. The persistence test-ordering correction seeds the
+known candidate before care restart; no production behavior or frozen art
+changed.

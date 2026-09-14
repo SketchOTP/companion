@@ -64,3 +64,12 @@ C03/C04 raster-contact failures remain historical negative evidence. Foot-skate
 is a diagnostic presentation residual for this in-place seed, not canonical
 movement truth. Transition, Openbox, production-art, Phase 03, and merge work
 were not performed.
+
+## Hosted exact-head regression
+
+Implementation SHA `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd` passed focused R06
+`34790169083`, inherited Phase 02 `34790169074`, and Phase 01
+`34790167116` plus same-head reruns `34790169089` (job `103813789392`) and
+`103814757741`. The persistence check now seeds its known candidate before care
+restart; this is test ordering only. Frozen pack and result hashes are
+unchanged.

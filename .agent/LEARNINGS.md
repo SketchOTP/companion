@@ -658,3 +658,9 @@ the controller advances by commanded velocity per tick while Godot selects the
 matching full-profile track. Repeated loop playback must preserve actor position
 and authored phase continuity, and negative tests must mutate a passing trace so
 each rejection is independently attributable.
+## C05 learning — 2026-09-14
+
+Persistence checks that depend on a producer's last-packet state must establish
+the packet under test immediately before restart. A broad matrix can otherwise
+couple a duplicate opcode to incidental ordering and create a false failure
+even when production idempotency is intact.

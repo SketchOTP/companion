@@ -461,3 +461,12 @@ qualification, and Openbox endurance remain unaccepted/deferred.
 - Negative coverage: 13 independent mutations from a passing baseline.
 - Limits: no physical-grounding claim, transition campaign, Openbox endurance,
   Phase 02 acceptance, or product capability claim.
+
+### Hosted exact-head closeout — 2026-09-14
+
+The Phase 01 persistence probe was corrected to seed a valid candidate before
+care restart, retaining fail-closed duplicate verification. On implementation
+SHA `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd`, hosted Phase 01
+`34790167116`, same-head rerun #1 `34790169089` / job `103813789392`, and
+same-head rerun #2 / job `103814757741` passed. Focused R06 `34790169083` and
+inherited Phase 02 `34790169074` also passed. No source PNG changed.

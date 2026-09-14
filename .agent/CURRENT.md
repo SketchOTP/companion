@@ -139,3 +139,13 @@ nominal travel with zero actor resets. Frozen source pack SHA remains
 PNG changed. Hosted R06, Phase 01, and inherited Phase 02 runs are pending on
 the pushed implementation head. Phase 02 remains active/unaccepted; transition
 and Openbox gates remain unrun.
+
+## R06-C05 hosted closeout (2026-09-14)
+
+Implementation SHA `24b4919a48eeef49fbcbb9305b9f2ad66639b3bd` now passes hosted
+Phase 01 run `34790167116`, same-head reruns `34790169089` (job
+`103813789392`) and `103814757741`, focused R06 `34790169083`, and inherited
+Phase 02 `34790169074`. The test-only persistence ordering correction seeds a
+known valid candidate before care restart; frozen pack SHA remains
+`1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40` and no
+source PNG changed. Phase 02 remains active and unaccepted.
