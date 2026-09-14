@@ -310,6 +310,19 @@ pub struct LocomotionIntentV2 {
     pub cancellation_id: Option<Uuid>,
 }
 
+impl LocomotionIntentV2 {
+    /// Common wire bound shared by JSON Schema and Godot's signed int64.
+    pub const WIRE_SEQUENCE_MAX: u64 = i64::MAX as u64;
+
+    pub fn validate_wire_compatibility(&self) -> Result<(), &'static str> {
+        if self.intent_sequence > Self::WIRE_SEQUENCE_MAX {
+            Err("intent_sequence_exceeds_godot_int64")
+        } else {
+            Ok(())
+        }
+    }
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct MonAnimationClip {
     pub clip_id: String,
@@ -742,6 +755,26 @@ mod tests {
         let decoded: LocomotionIntentV2 =
             serde_json::from_slice(&encoded).expect("V2 locomotion fixture round trips");
         assert_eq!(intent, decoded);
+        assert!(intent.validate_wire_compatibility().is_ok());
+    }
+
+    #[test]
+    fn locomotion_intent_v2_common_wire_sequence_boundary_is_explicit() {
+        let fixture = include_str!("../../../contracts/fixtures/mon-locomotion-intent-v2.json");
+        let mut value: serde_json::Value = serde_json::from_str(fixture).unwrap();
+        for sequence in [0_u64, i64::MAX as u64] {
+            value["intent_sequence"] = serde_json::json!(sequence);
+            let intent: LocomotionIntentV2 = serde_json::from_value(value.clone()).unwrap();
+            assert!(intent.validate_wire_compatibility().is_ok());
+        }
+        for sequence in [(i64::MAX as u64) + 1, u64::MAX] {
+            value["intent_sequence"] = serde_json::json!(sequence);
+            let intent: LocomotionIntentV2 = serde_json::from_value(value.clone()).unwrap();
+            assert_eq!(
+                intent.validate_wire_compatibility(),
+                Err("intent_sequence_exceeds_godot_int64")
+            );
+        }
     }
 
     #[test]

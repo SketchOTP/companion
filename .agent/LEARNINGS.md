@@ -686,3 +686,13 @@ workflows on one new SHA.
 Modulo-continuous animation phase can round to `1.0` at an exact loop seam.
 Normalize that observation to `0.0` at serialization; do not alter controller
 movement or treat the floating representation as a phase reset.
+
+## C06-C01 learning — 2026-09-14
+
+A render-boundary signal is not playback evidence unless the source is assigned
+and visible at the captured boundary. When authored durations matter, choose one
+clock: a paused AnimatedSprite2D with explicit manual authored-tick mapping
+keeps fractional velocity calibration deterministic without resetting
+SpriteFrames progress. Wire contracts must use the intersection of consumer
+numeric domains; Godot signed int64 requires rejecting unsigned-64 overflow
+before semantic acceptance.

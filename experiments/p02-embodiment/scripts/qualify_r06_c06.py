@@ -17,6 +17,7 @@ from pathlib import Path
 from typing import Any
 
 HZ = 24
+AUTHORED_PROFILE_LOOP_TICKS = 32
 REFERENCE_VELOCITY = 96
 PROFILE = "COMPANION_P02_R06_C06_CONTROLLER_LOCOMOTION_V2"
 PACK_SHA = "1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40"
@@ -134,7 +135,7 @@ class Controller:
         before = self.position
         self.position += velocity / HZ
         if velocity:
-            self.phase = (self.phase + self.rate(velocity) / HZ) % 1.0
+            self.phase = (self.phase + self.rate(velocity) / AUTHORED_PROFILE_LOOP_TICKS) % 1.0
         phase = self.phase % 1.0
         # Avoid serializing a floating-point value that is mathematically the
         # loop seam (1.0) as an out-of-range phase.  The controller remains
@@ -193,10 +194,25 @@ def run_case(tracks: dict[str, dict[str, Any]], side: str, velocity: int, review
         "start_x": 0.0, "end_x": round(c.position, 6), "net_displacement_px": round(c.position, 6),
         "directional": c.position * sign > 0, "semantic_ticks": len(samples),
         "phase_resets": 0, "stop_terminal": samples[-1]["state"] == "stop" and all(s["state"] == "stop" for s in samples[-12:]),
+        "authored_loop_ticks": AUTHORED_PROFILE_LOOP_TICKS,
         "max_tick_step_px": max(abs(s["delta_x"]) for s in samples),
-        "loop_phase_continuous": all(0 <= s["animation_phase"] < 1 for s in moving),
+        "loop_phase_continuous": phase_trace_is_continuous(moving, c.rate(velocity), AUTHORED_PROFILE_LOOP_TICKS),
         "track_ids": [d.get("track_id") for d in decisions],
     }
+
+
+def phase_trace_is_continuous(samples: list[dict[str, Any]], rate: float, loop_ticks: int) -> bool:
+    if not samples:
+        return False
+    expected = rate / loop_ticks
+    for previous, current in zip(samples, samples[1:]):
+        delta = (current["animation_phase"] - previous["animation_phase"]) % 1.0
+        if not math.isclose(delta, expected, abs_tol=1e-7):
+            return False
+    return any(
+        previous["animation_phase"] > current["animation_phase"]
+        for previous, current in zip(samples, samples[1:])
+    ) or len(samples) < loop_ticks / max(rate, 1e-9)
 
 
 def cadence_probe(tracks: dict[str, dict[str, Any]]) -> dict[str, Any]:
@@ -285,7 +301,7 @@ def main() -> int:
     cases = [run_case(tracks, side, velocity) for side, velocities in (("left", (-48, -96, -144)), ("right", (48, 96, 144))) for velocity in velocities]
     result = {
         "profile": PROFILE, "pack_sha256": PACK_SHA, "pack_revision": pack.get("pack_revision"), "source_pixels_mutated": False,
-        "intent_contract": {"schema": "contracts/schemas/mon-locomotion-intent-v2.schema.json", "rust_type": "foundation_core::contracts::LocomotionIntentV2", "schema_major": 2, "fixed_hz": HZ, "canonical_owner": "controller", "presentation_owner": "godot", "gait_rate_calibration": {"48": 0.5, "96": 1.0, "144": 1.5}},
+        "intent_contract": {"schema": "contracts/schemas/mon-locomotion-intent-v2.schema.json", "rust_type": "foundation_core::contracts::LocomotionIntentV2", "schema_major": 2, "fixed_hz": HZ, "canonical_owner": "controller", "presentation_owner": "godot", "wire_sequence_max": 9223372036854775807, "authored_loop_ticks": AUTHORED_PROFILE_LOOP_TICKS, "gait_rate_calibration": {"48": 0.5, "96": 1.0, "144": 1.5}},
         "cases": cases, "render_cadence_probe": cadence_probe(tracks), "negative_matrix": negative_matrix(tracks),
         "normal_rendered_review": {"required": True, "review_rate": 1.0, "status": "delegated_to_godot"},
         "quarter_rendered_review": {"required": True, "review_rate": 0.25, "status": "delegated_to_godot"},

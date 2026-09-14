@@ -505,3 +505,28 @@ qualifier/validator result SHA is
 `a5c2923040e9d1c6df6d26139c2fd3cce7b21c8b58ba2cd8feb6811616834ea0`.
 Corrected hosted artifact `10330902923` has digest
 `sha256:3952de98c7f96aa8b9a7ddafbd9d5b848b8539862e85549386605f98f4375cf1`.
+
+## R06-C06-C01 local correction — 2026-09-14
+
+The frozen source pack remains byte-identical at SHA-256
+`1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`; no image
+generation, editing, resampling, or reselection occurred. The V2 wire schema
+now uses the common Godot/Rust bound `0..9223372036854775807`, with explicit
+positive/negative checks for 0, max, max+1, and u64 max. Rust workspace tests
+and schema validation pass.
+
+Godot C06-C01 now uses one paused/manual presentation clock. The accepted
+profile loop duration is preserved as eight source drawings × four authored
+ticks = 32 ticks; frame selection advances fractional authored ticks at the
+0.5/1.0/1.5 presentation rates. Captures occur only after observed
+`RenderingServer.frame_post_draw` and save four non-black gameplay checkpoints
+(start, first cruise, second-loop cruise, stop) per run. Local 4-run playback
+passes for left/right normal and quarter review; quarter wall times are about
+12.25 s versus 3.51–3.53 s nominal and all moving checkpoints have distinct
+actor positions.
+
+Negative evidence is explicitly categorized as controller-path (including wire
+boundaries), loader/resolver-path, and scheduler/trace-verifier. The shared
+trace verifier accepts the unmutated positive Godot trace and independently
+rejects tick loss/duplication, root discontinuity/recenter, phase reset, and
+black capture mutations. Hosted exact-head regression is pending.

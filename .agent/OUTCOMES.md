@@ -1022,3 +1022,13 @@ SHA `941c231d4562177c1db02cd61fc0f0c085e6dae4` passes R06 `34800729601`,
 Phase 01 `34800729655`, and inherited Phase 02 `34800729662`. The correction
 only stabilizes modulo-seam phase serialization; frozen art and movement are
 unchanged. Phase 02 remains unaccepted.
+
+## R06-C06-C01 implementation — 2026-09-14
+
+Implemented the narrow render/timing/wire correction: gameplay capture now
+occurs after a real `frame_post_draw`, source images are visibly non-black,
+manual paused presentation is the sole frame clock and preserves the accepted
+32-tick loop, and the V2 intent wire range matches Godot signed 64-bit. Added
+explicit schema/Rust/Godot boundary checks, categorized negative paths, and a
+shared positive-trace scheduler verifier. Local schema, Rust, Python, and four
+Godot runs pass; hosted exact-head checks are pending.

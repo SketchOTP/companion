@@ -150,6 +150,13 @@ jobs:
             --out "$RUNNER_TEMP/r06-c06"
           python3 experiments/p02-embodiment/scripts/validate_r06_c06.py \
             "$RUNNER_TEMP/r06-c06/controller_locomotion_qualification.json"
+          test "$(python3 - <<'PY'
+          import json
+          p=json.load(open('contracts/schemas/mon-locomotion-intent-v2.schema.json'))
+          print(p['properties']['intent_sequence']['maximum'])
+          PY
+          )" = "9223372036854775807"
+          godot_paths=()
           for spec in left:-96:1.0 left:-96:0.25 right:96:1.0 right:96:0.25; do
             side="${spec%%:*}"; rest="${spec#*:}"; velocity="${rest%%:*}"; rate="${rest##*:}"
             godot_out="$RUNNER_TEMP/r06-c06-godot-${side}-${rate}"
@@ -162,6 +169,7 @@ jobs:
               --script-arg="--side=$side" --script-arg="--velocity=$velocity" \
               --script-arg="--review-rate=$rate" \
               --script-arg="--out=$godot_out/movement.json"
+            godot_paths+=("$godot_out/movement.json")
             RESULT_PATH="$godot_out/result.json" python3 - <<'PY'
           import json, os
           from pathlib import Path
@@ -172,18 +180,53 @@ jobs:
           assert semantic.get('status')=='PASS', semantic
           assert semantic.get('schema_major')==2, semantic
           assert semantic.get('render_observations', 0)>0, semantic
+          assert semantic.get('authored_loop_ticks') == 32, semantic
+          captures=semantic.get('captures') or []
+          assert {c.get('label') for c in captures} == {'start','first_cruise','second_loop_cruise','stop'}, semantic
+          assert all(c.get('non_black') is True for c in captures), semantic
           assert semantic.get('stop_terminal') is True, semantic
           assert semantic.get('cadence_probe', {}).get('equivalent') is True, semantic
-          assert len(semantic.get('negative_matrix', {})) >= 8, semantic
-          assert all(v.get('independent') is True for v in semantic.get('negative_matrix', {}).values()), semantic
+          negatives=semantic.get('negative_categories', {})
+          assert len(negatives.get('controller_path', [])) >= 8, semantic
+          assert len(negatives.get('loader_resolver_path', [])) >= 3, semantic
+          assert all(v.get('independent') is True for v in negatives.get('controller_path', [])), semantic
+          assert all(v.get('independent') is True for v in negatives.get('loader_resolver_path', [])), semantic
+          assert negatives.get('wire_boundary', {}).get('max_accepted') is True, semantic
+          assert negatives.get('wire_boundary', {}).get('max_plus_one_rejected') is True, semantic
+          assert negatives.get('wire_boundary', {}).get('u64_max_rejected') is True, semantic
           assert semantic.get('review_rate') in (1.0, 0.25), semantic
           PY
+            python3 experiments/p02-embodiment/scripts/verify_c06_trace.py "$godot_out/movement.json"
           done
+          GODOT_ROOT="$RUNNER_TEMP/r06-c06-godot" python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          root=Path(os.environ['GODOT_ROOT'])
+          paths={
+            'left_normal': root/'left-1.0/movement.json',
+            'left_quarter': root/'left-0.25/movement.json',
+            'right_normal': root/'right-1.0/movement.json',
+            'right_quarter': root/'right-0.25/movement.json',
+          }
+          data={k:json.loads(p.read_text()) for k,p in paths.items()}
+          for key,d in data.items():
+              assert d['status']=='PASS', (key,d)
+              assert len(d['captures']) == 4, (key, d)
+              assert all((p.parent / c['file']).is_file() for c in d['captures']), (key, d)
+          for side in ('left','right'):
+              normal=data[f'{side}_normal']; quarter=data[f'{side}_quarter']
+              nlabels=[c['label'] for c in normal['captures']]; qlabels=[c['label'] for c in quarter['captures']]
+              assert nlabels==qlabels==['start','first_cruise','second_loop_cruise','stop'], (side,nlabels,qlabels)
+              assert quarter['review_wall_time_ms'] >= normal['review_wall_time_ms']*3.0, (side,normal['review_wall_time_ms'],quarter['review_wall_time_ms'])
+              assert all(c['non_black'] for c in normal['captures']+quarter['captures'])
+              assert len({c['actor_root_x'] for c in normal['captures'] if c['label'] in ('first_cruise','second_loop_cruise')})==2
+          print('c06_rendered_capture_sets_ok quarter_wall_time>=3x normal and checkpoints=4')
+          PY
       - name: Upload R06-C02 evidence (including failures)
         if: always()
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         with:
-          name: phase02-embodiment-r06-c02-${{ github.sha }}
+          name: phase02-embodiment-r06-c06-c01-${{ github.sha }}
           path: |
             ${{ runner.temp }}/r06-results
             ${{ runner.temp }}/r06-c02
@@ -203,6 +246,7 @@ jobs:
             godot/r06_c05_locomotion_test.gd
             godot/mon_locomotion_controller.gd
             godot/r06_c06_locomotion_test.gd
+            experiments/p02-embodiment/scripts/verify_c06_trace.py
             contracts/schemas/mon-locomotion-intent-v1.schema.json
             contracts/schemas/mon-locomotion-intent-v2.schema.json
             contracts/fixtures/mon-locomotion-intent-v1.json

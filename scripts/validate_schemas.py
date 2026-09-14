@@ -72,6 +72,17 @@ for name in NAMES:
             if fixture.exists():
                 valid = json.loads(fixture.read_text(encoding="utf-8"))
         validate(valid, schema)
+        if name == "mon-locomotion-intent-v2.schema.json":
+            for sequence, should_pass in ((0, True), (9223372036854775807, True), (9223372036854775808, False), (18446744073709551615, False)):
+                boundary = copy.deepcopy(valid)
+                boundary["intent_sequence"] = sequence
+                try:
+                    validate(boundary, schema)
+                    observed = True
+                except Exception:
+                    observed = False
+                if observed != should_pass:
+                    errors.append(f"{name}: sequence boundary {sequence} expected={should_pass} observed={observed}")
         for mutation in (
             lambda v: v.pop(next(iter(schema.get("required", []))), None),
             lambda v: v.__setitem__("__unknown", True),

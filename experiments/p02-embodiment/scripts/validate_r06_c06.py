@@ -25,6 +25,8 @@ def validate(result: dict) -> list[str]:
     if result.get("source_pixels_mutated") is not False: errors.append("source_pixels_mutated")
     contract = result.get("intent_contract", {})
     if contract.get("schema_major") != 2 or contract.get("fixed_hz") != 24: errors.append("contract_version_or_clock")
+    if contract.get("wire_sequence_max") != 9223372036854775807: errors.append("wire_sequence_range")
+    if contract.get("authored_loop_ticks") != 32: errors.append("authored_loop_ticks")
     if contract.get("canonical_owner") != "controller" or contract.get("presentation_owner") != "godot": errors.append("ownership")
     if contract.get("gait_rate_calibration") != {"48": 0.5, "96": 1.0, "144": 1.5}: errors.append("gait_calibration")
     cases = result.get("cases", [])
@@ -38,6 +40,7 @@ def validate(result: dict) -> list[str]:
         expected_rate = abs(velocity) / 96
         if any(s.get("playback_rate") != expected_rate for s in case.get("samples", []) if s.get("velocity")): errors.append(f"rate:{side}:{velocity}")
         if case.get("track_ids", [])[-1:] != ["r06_playback_track_09" if side == "left" else "r06_playback_track_14"]: errors.append(f"stop_track:{side}")
+        if not case.get("loop_phase_continuous") or case.get("authored_loop_ticks") != 32: errors.append(f"phase:{side}:{velocity}")
     cadence = result.get("render_cadence_probe", {})
     if set(cadence) != {"30fps", "60fps"}: errors.append("cadence_keys")
     if any(v.get("semantic_ticks") != 24 or v.get("final_x") != 96.0 or not v.get("accepted") for v in cadence.values()): errors.append("cadence_equivalence")

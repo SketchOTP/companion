@@ -893,3 +893,13 @@ transition gate changed.
 - Local corrected result SHA: `a5c2923040e9d1c6df6d26139c2fd3cce7b21c8b58ba2cd8feb6811616834ea0`
 - Corrected R06 artifact: `10330902923`, digest `sha256:3952de98c7f96aa8b9a7ddafbd9d5b848b8539862e85549386605f98f4375cf1`
 - Frozen pack unchanged; no source art changed.
+
+## R06-C06-C01 local record — 2026-09-14
+
+- Frozen pack SHA: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40` (unchanged).
+- Common V2 sequence wire max: `9223372036854775807`; schema/Rust/Godot boundary cases added.
+- Presentation: one paused/manual clock; profile loop `32` authored ticks; no `sprite.play()`.
+- Local Godot runs: left/right normal and quarter all `PASS`; four captures each, all non-black and frame-post-draw bounded.
+- Local review durations: left normal `3526.5 ms`, left quarter `12255.9 ms`, right normal `3508.7 ms`, right quarter `12245.5 ms`.
+- Local Rust workspace tests: `17 passed`; schema and contract checks passed.
+- Hosted R06, Phase 01, and inherited Phase 02 on the final SHA: `NOT RUN` pending publication.

@@ -582,3 +582,14 @@ Phase 01 `34790167116`, same-head rerun #1 `34790169089` (job
 correction seeds the candidate used by the persisted-duplicate check before
 restart. Frozen pack and result hashes are unchanged. This remains a bounded
 C05 submission for Architect review, not Phase 02 acceptance.
+
+## R06-C06-C01 implementation handoff — 2026-09-14
+
+C06-C01 closes the blank-capture, dual-clock, and wire-range defects without
+changing frozen art. V2 sequence validation is bounded to signed-64 Godot
+range and tested at both limits. Godot uses a single paused/manual clock that
+maps the real 32 authored loop ticks to 0.5x/1.0x/1.5x presentation rates.
+Each left/right normal/quarter run captures actual non-black viewport frames at
+four semantic checkpoints after `RenderingServer.frame_post_draw`; local runs
+and the shared trace verifier pass. Focused R06, Phase 01, and inherited Phase
+02 hosted runs remain required on the final implementation SHA.
