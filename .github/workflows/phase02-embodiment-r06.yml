@@ -198,15 +198,15 @@ jobs:
           PY
             python3 experiments/p02-embodiment/scripts/verify_c06_trace.py "$godot_out/movement.json"
           done
-          GODOT_ROOT="$RUNNER_TEMP/r06-c06-godot" python3 - <<'PY'
+          GODOT_ROOT="$RUNNER_TEMP" python3 - <<'PY'
           import json, os
           from pathlib import Path
           root=Path(os.environ['GODOT_ROOT'])
           paths={
-            'left_normal': root/'left-1.0/movement.json',
-            'left_quarter': root/'left-0.25/movement.json',
-            'right_normal': root/'right-1.0/movement.json',
-            'right_quarter': root/'right-0.25/movement.json',
+            'left_normal': root/'r06-c06-godot-left-1.0/movement.json',
+            'left_quarter': root/'r06-c06-godot-left-0.25/movement.json',
+            'right_normal': root/'r06-c06-godot-right-1.0/movement.json',
+            'right_quarter': root/'r06-c06-godot-right-0.25/movement.json',
           }
           data={k:json.loads(p.read_text()) for k,p in paths.items()}
           for key,d in data.items():
