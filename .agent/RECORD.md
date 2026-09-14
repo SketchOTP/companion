@@ -902,4 +902,18 @@ transition gate changed.
 - Local Godot runs: left/right normal and quarter all `PASS`; four captures each, all non-black and frame-post-draw bounded.
 - Local review durations: left normal `3526.5 ms`, left quarter `12255.9 ms`, right normal `3508.7 ms`, right quarter `12245.5 ms`.
 - Local Rust workspace tests: `17 passed`; schema and contract checks passed.
-- Hosted R06, Phase 01, and inherited Phase 02 on the final SHA: `NOT RUN` pending publication.
+- Hosted R06, Phase 01, and inherited Phase 02 on the implementation SHA were
+  subsequently run and passed; see the append-only hosted record below.
+
+## R06-C06-C01 hosted record — 2026-09-14
+
+- Implementation SHA: `de9d7c041cad3c28ecb2779e5afc11f1f2a0f3a4`.
+- Focused R06: `34835566609` (PASS); Phase 01: `34835566661` (PASS);
+  inherited Phase 02: `34835566591` (PASS).
+- PR-triggered equivalents: R06 `34835572145`, Phase 01 `34835572191`,
+  inherited Phase 02 `34835572178` (all PASS).
+- Artifact: `10344096459`, digest
+  `sha256:961f32864633d5ab45f121430d294bae538dc626c1abcac97488f333403b438f`.
+- First retry `34835193580` failed only on an undefined workflow capture-path
+  assertion; `de9d7c0` corrected that assertion. No source PNG changed.
+- Publication-only reconciliation: `657c11e`.

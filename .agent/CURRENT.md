@@ -62,6 +62,16 @@ Execute `COMPANION-P02-EMBODIMENT-001-R06-INTEGRATE-001-C06-C01` only:
 
 After C06-C01 passes without a new material defect: real legal-transition campaign, then dedicated 1366x768 Openbox two-hour endurance, then final Phase 02 acceptance/PR merge decision. Organism, autobiographical memory, perception, speech, learning, development, dreaming, caregiving efficacy, production reliability, and Phase 03+ remain unaccepted.
 
+## R06-C06-C01 hosted closeout — 2026-09-14
+
+Implementation SHA `de9d7c041cad3c28ecb2779e5afc11f1f2a0f3a4` passed focused
+R06 `34835566609`, Phase 01 `34835566661`, and inherited Phase 02
+`34835566591`; PR-triggered equivalents `34835572145`, `34835572191`, and
+`34835572178` also passed. Artifact `10344096459` digest is
+`sha256:961f32864633d5ab45f121430d294bae538dc626c1abcac97488f333403b438f`.
+The workflow-only capture-path defect from `34835193580` was fixed in
+`de9d7c0`; publication reconciliation `657c11e` is documentation-only.
+
 ## Protected work
 
 The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` modifications remain protected. Do not inspect them for evidence, commit, reset, stash, overwrite, copy, or reformat them.

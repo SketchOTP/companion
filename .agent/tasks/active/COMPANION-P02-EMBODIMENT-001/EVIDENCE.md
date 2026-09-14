@@ -530,3 +530,19 @@ boundaries), loader/resolver-path, and scheduler/trace-verifier. The shared
 trace verifier accepts the unmutated positive Godot trace and independently
 rejects tick loss/duplication, root discontinuity/recenter, phase reset, and
 black capture mutations. Hosted exact-head regression is pending.
+
+## R06-C06-C01 hosted closeout — 2026-09-14
+
+Implementation SHA `de9d7c041cad3c28ecb2779e5afc11f1f2a0f3a4` passed focused
+R06 run `34835566609`, Phase 01 run `34835566661`, and inherited Phase 02 run
+`34835566591`; PR-triggered exact-head equivalents `34835572145`,
+`34835572191`, and `34835572178` also passed. The first pushed R06 attempt
+`34835193580` reached Godot successfully but failed only on an undefined
+workflow capture-path assertion; commit `de9d7c0` corrected that assertion.
+Artifact `10344096459` is published with digest
+`sha256:961f32864633d5ab45f121430d294bae538dc626c1abcac97488f333403b438f`.
+Hosted Godot produced four non-black capture checkpoints per left/right
+normal/quarter run after `RenderingServer.frame_post_draw`; the 32-tick
+authored loop, wire signed-64 boundary, and categorized negative checks passed.
+The docs-only publication reconciliation is commit `657c11e`; it changes no
+executable behavior. Frozen source pack SHA remains unchanged.

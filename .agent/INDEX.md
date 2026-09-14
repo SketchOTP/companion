@@ -81,6 +81,16 @@ If C06 passes without a new material defect:
 - dedicated 1366x768 Openbox two-hour endurance;
 - final Phase 02 acceptance and PR merge decision.
 
+## R06-C06-C01 hosted closeout
+
+Implementation SHA `de9d7c041cad3c28ecb2779e5afc11f1f2a0f3a4` passed focused
+R06 `34835566609`, Phase 01 `34835566661`, and inherited Phase 02
+`34835566591`; PR-triggered equivalents also passed. Artifact
+`10344096459` digest: `sha256:961f32864633d5ab45f121430d294bae538dc626c1abcac97488f333403b438f`.
+The branch publication head is `657c11e46ff0d75796c1793e63eeb90d05252883`
+and contains only state/documentation reconciliation after the tested
+implementation. Phase 02 remains active and unaccepted.
+
 ## R06-C03 disposition
 
 C03 support investigation is BLOCKED on the frozen drawings: contour-derived

@@ -696,3 +696,10 @@ keeps fractional velocity calibration deterministic without resetting
 SpriteFrames progress. Wire contracts must use the intersection of consumer
 numeric domains; Godot signed int64 requires rejecting unsigned-64 overflow
 before semantic acceptance.
+
+## C06-C01 hosted workflow learning — 2026-09-14
+
+Per-run evidence assertions must resolve capture files relative to the matching
+run directory. The first retry exposed an undefined path variable even though
+Godot had produced valid non-black captures; correcting that assertion kept
+the runtime gate fail-closed while making artifact validation causal.

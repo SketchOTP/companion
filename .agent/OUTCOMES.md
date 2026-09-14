@@ -1032,3 +1032,16 @@ manual paused presentation is the sole frame clock and preserves the accepted
 explicit schema/Rust/Godot boundary checks, categorized negative paths, and a
 shared positive-trace scheduler verifier. Local schema, Rust, Python, and four
 Godot runs pass; hosted exact-head checks are pending.
+
+## R06-C06-C01 hosted closeout — 2026-09-14
+
+The capture-path assertion was corrected in `de9d7c0` after run `34835193580`
+reported a workflow-only undefined variable. Implementation SHA
+`de9d7c041cad3c28ecb2779e5afc11f1f2a0f3a4` passed focused R06 `34835566609`,
+Phase 01 `34835566661`, and inherited Phase 02 `34835566591`; PR-triggered
+equivalents `34835572145`, `34835572191`, and `34835572178` also passed.
+Artifact `10344096459` digest:
+`sha256:961f32864633d5ab45f121430d294bae538dc626c1abcac97488f333403b438f`.
+Hosted evidence includes non-black captures, strict `frame_post_draw`, the
+32-tick loop, signed-64 wire limits, and categorized negative checks. Docs-only
+publication reconciliation is `657c11e`.
