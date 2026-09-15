@@ -89,3 +89,12 @@ If Alpha50-002 fully passes independent Architect review, the intended evidence-
 - V2 schema/fixture and fail-closed scanner self-test are included in CI.
 - New work is candidate `E3_TARGET_TESTED`; no phase acceptance or completion
   percentage is assigned by Codex.
+
+## Alpha50-002 hosted candidate closeout
+
+- Exact head: `d83e5c396427ba8a193db2febdb359d7294a57e5`.
+- Hosted Alpha50/Phase 01/focused R06/inherited Phase 02 push and PR runs pass.
+- Artifact `10387258357`, SHA-256
+  `2d81281a09e1d8edd40667bce5e800d2ba7b06a7a893984479ea0efd15937f08`.
+- Candidate remains pending Architect review; unresolved integration and
+  hardware/product claims are explicitly bounded in the task record.

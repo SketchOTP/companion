@@ -55,3 +55,14 @@ fixture gates, and a fail-closed scanner self-test. New evidence remains
 bounded pending Architect review; live Godot causality, production transition
 qualification, multi-class failure independence, target sensors, and Openbox
 endurance are not claimed.
+
+## Alpha50-002 hosted candidate closeout — 2026-09-15
+
+Exact branch head `d83e5c396427ba8a193db2febdb359d7294a57e5` passed Alpha50,
+Phase 01, focused R06, and inherited Phase 02 workflows on both push and PR
+events. Artifact `10387258357` has ZIP SHA-256
+`2d81281a09e1d8edd40667bce5e800d2ba7b06a7a893984479ea0efd15937f08`.
+This remains bounded candidate evidence pending Architect review; the
+multi-class failure matrix, full resident Godot/result/learning loop, rich
+simulation, care process-loss independence, target devices, and Openbox remain
+unproven or unavailable.
