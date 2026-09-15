@@ -49,7 +49,9 @@ def db_counts(path):
 
 def event_count(path):
     try:
-        with sqlite3.connect(path, timeout=2) as c: return c.execute("SELECT count(*) FROM event_log WHERE event_type='ordinary_observation'").fetchone()[0]
+        # The live authenticated channel records ordinary_evidence_received;
+        # retain ordinary_observation for the inherited compatibility fixture.
+        with sqlite3.connect(path, timeout=2) as c: return c.execute("SELECT count(*) FROM event_log WHERE event_type IN ('ordinary_observation','ordinary_evidence_received')").fetchone()[0]
     except sqlite3.Error: return 0
 
 def wait_increase(fn, old, timeout=5):
