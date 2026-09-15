@@ -12,17 +12,17 @@
 - Accepted foundation: Roadmap Phase 01.
 - Accepted bounded embodiment/runtime closeout: R06-C06.
 - Phase 02 acceptance: `NOT GRANTED`.
-- Alpha50-001 disposition: `PARTIAL ACCEPTED`.
-- Alpha50-002 disposition: `PARTIAL ACCEPTED`.
-- Current disposition: `CONTINUE — ALPHA50-003 LIVE INTEGRATED ACCEPTANCE ACTIVE`.
-- Current directive: `COMPANION-ALPHA50-003-LIVE-001`.
-- Repository review: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001/ARCHITECT_REVIEW_25.md`.
-- Repository directive: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001/DIRECTIVE.md`.
-- Notion Review 25: https://app.notion.com/p/3dc833cb27ff8128a1f8cb920146a791
-- Reviewed Alpha50-002 executable head: `70b2a5ca51a7c8adb688a97e42243f88c36cc5fc`.
-- Reviewed Alpha50-002 publication head: `3d05123f9d1c04a9605f12fc6e42ed4c585ca88b`.
-- Reviewed Alpha artifact: `10387094480`, SHA-256 `d032bc5e436a470c40f43e337e6eaa49fc83e7e60d71c7babde18d6286f95395`.
-- Accepted C06 implementation: `49d9d65e08b9c9410d8013266ed5a5a5194ff8c5`.
+- Alpha50-001: `PARTIAL ACCEPTED`.
+- Alpha50-002: `PARTIAL ACCEPTED`.
+- Alpha50-003-LIVE-001: `PARTIAL ACCEPTED`.
+- Current disposition: `CONTINUE — ALPHA50-003-LIVE-001-C01 AUTH + REAL GODOT CORRECTION ACTIVE`.
+- Current directive: `COMPANION-ALPHA50-003-LIVE-001-C01`.
+- Repository Review 26: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C01/ARCHITECT_REVIEW_26.md`.
+- Repository directive: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C01/DIRECTIVE.md`.
+- Notion Review 26: https://app.notion.com/p/3dc833cb27ff811abaa5c0b57c6530fe
+- Reviewed Alpha50-003 executable: `d484c0370512ab3bb9fbcebaf99b9e44a718cdba`.
+- Reviewed Alpha50-003 publication: `299886beb2dac046e9ba5a25055f5f51c34eb9df`.
+- Alpha artifact: `10419532624`, ZIP SHA-256 `6694a8f2cdf022a59f5ca8598487ba7846867e25089e309f5d42118a6c644b2e`.
 - Frozen R06 pack: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`.
 - PR #9: draft/open/unmerged.
 - Issue #8: open.
@@ -30,117 +30,53 @@
 
 ## Accepted / retained boundary
 
-Accepted authority remains:
+Accepted authority remains Architecture v1.0, Roadmap Phase 01, and the bounded R06-C06 source/intake/controller/render/timing evidence.
 
-- Architecture v1.0 process and authority separation;
-- Roadmap Phase 01 reproducible local foundation;
-- bounded C06 source/intake/controller/render/timing evidence.
+Retained bounded Alpha candidate implementation now includes:
 
-Retained bounded Alpha50-002 implementation:
-
-- V2 fixed-point/milli-integer organism numerical state;
-- V2 preference and learned-outcome consumption in action scoring;
-- V2 result effects on confidence/stress/skill state;
-- resident V2 restore/step/snapshot and local preference-memory plumbing;
-- graceful V2 restart continuity;
-- corrected fail-closed scanner and exact implementation-head CI.
+- V2-only Alpha qualification and explicit V1 guard;
+- fixed-point V2 numerical state;
+- V2 preference/correction/commitment/outcome methods;
+- signed-64 sequence design;
+- separate typed ordinary UDS architecture;
+- same-UID peer-credential and digest-integrity prototype;
+- resident V2 ordinary→intent→Rust bridge-result→learning→snapshot plumbing;
+- graceful restart continuity and exact-head CI.
 
 Not accepted:
 
-- full organism autonomy;
-- complete V2 memory/learning/development lifecycle;
-- remembered-action production vertical slice;
-- Phase 02 legal transition qualification/endurance;
+- authorized ordinary producer authentication;
+- real Godot execution/result integration;
+- post-restart remembered behavior proof;
+- production legal transition graph/10k Godot campaign;
+- rich autonomous goals/development/consolidation;
+- multi-class failure qualification;
+- care process-loss independence;
+- resident clean-root restore;
 - semantic sensors/speech;
-- care process-loss qualification/efficacy;
-- product security/reliability/release.
+- Phase 02/Alpha/product reliability/release.
 
-## Why Alpha50-003 is required
+## Review 26 findings
 
-Independent Review 25 found:
+1. ordinary evidence currently authenticates only same UID; the digest is unkeyed and the hosted positive is Python declaring itself sensor-gateway;
+2. replay tracking is process-local and must become durable before state mutation;
+3. legacy `ordinary-observation.json` remains available alongside the live UDS and must be isolated from Alpha live mode;
+4. Rust `godot-bridge` currently manufactures an accepted result without starting Godot;
+5. transition qualification remains Python-owned;
+6. intent sequence exhaustion may re-emit the signed-64 maximum sequence;
+7. V2 30-day evidence remains shallow/degenerate and does not qualify goals/development/consolidation;
+8. 500 failures remain graceful restart repetitions and care remains smoke-only;
+9. clean-root restore does not start the resident service;
+10. target host exposes video/audio hardware, so bounded sensor acquisition should now be attempted.
 
-1. the artifact profile says organism/memory V2, but most long-horizon, backup/restore, memory and causal qualification still executes V1;
-2. V2 schema leaves goals, commitments, memories and last intent underconstrained and lacks explicit organism-intent signed-64 wire bounding;
-3. V1 lived-state discovery was limited to repository locations despite XDG local-host canonical store authority;
-4. resident ordinary input uses `ordinary-observation.json`, not the authenticated ordinary producer boundary;
-5. preference/outcome logic exists in V2, but correction/commitment and post-restart causal evidence are not V2 production traces;
-6. no companion → real Godot → typed result → learning loop exists;
-7. 10,000 transitions remain hard-coded Python proxy evidence;
-8. 30-day evidence remains mostly V1 shallow stepping;
-9. 500 failures remain graceful restart repetitions;
-10. care remains direct-care smoke rather than process-loss independence;
-11. `embodiment_habitat` remains overstated in the candidate capability matrix.
+## C01 gate
 
-## Alpha50-003 gate
+C01 must bind ordinary evidence to the real authorized sensor-gateway, execute intents/results through real Godot 4.7.2 using the frozen pack, run 10,000+ production Godot transitions, prove resident paired memory/learning causality across restart, exercise Godot loss, operative goals/development/consolidation, a non-degenerate V2 30-day campaign, 500+ multi-class failures, care process-loss independence, resident clean-root restore, model-worker independence and bounded host camera/microphone acquisition.
 
-The primary acceptance objective is one continuous V2 individual through the actual service graph:
-
-`authenticated ordinary evidence → companion V2 memory/state → body-neutral intent → real Godot → typed observed result → V2 outcome learning → durable state → restart → remembered behavior change`.
-
-The same final implementation must:
-
-- exclude V1 from Alpha acceptance execution;
-- fully type/bound V2 canonical state and signed intent sequencing;
-- implement the separate authenticated ordinary-evidence channel while preserving direct care;
-- prove V2 preference/correction/commitment/result causal comparisons through resident services;
-- demonstrate operative goals, development gate and provenance-bound consolidation;
-- execute 10,000+ legal-transition cases inside real production Godot with independent verification;
-- run rich isolated V2 30-day qualification;
-- run 500+ multi-class deterministic failure cases;
-- prove kill-companion/kill-care independence;
-- prove model-worker outage and resident Backup API clean-root restore;
-- preserve physical target blockers truthfully when hardware/Openbox is unavailable.
+Openbox may remain an explicit blocker if unavailable without prohibited host reconfiguration.
 
 ## Completion position
 
-Review 25 sets evidence-grounded overall completion to **35%**.
+Review 26 sets evidence-grounded overall completion to **39%**.
 
-If Alpha50-002 fully passes independent Architect review, the intended evidence-based range is approximately **50–55%** while semantic vision, STT/TTS, biometric identity, live escalation/notification, pilot and release remain incomplete.
-
-## Alpha50-003 candidate handoff — 2026-09-15
-
-The latest executable implementation is `d484c0370512ab3bb9fbcebaf99b9e44a718cdba`;
-hosted Alpha50/Phase 01/focused R06/inherited Phase 02 runs passed as
-`35026682276`, `35026685839`, `35026686022`, and `35026685797`. Publication-only
-state reconciliation follows in later documentation commits; the branch is
-remote-equal and the executable evidence remains bound to the SHA above.
-This remains candidate E3 engineering evidence: real production Godot legal
-transitions, multi-class failure/process-loss independence, resident restore,
-and Openbox remain unproven or blocked.
-
-## Alpha50-002 candidate implementation
-
-- Fixed-point canonical path: `crates/foundation-core/src/organism_v2.rs`.
-- Resident ordinary-observation to typed preference-memory intake is active in
-  Alpha life mode before body-neutral selection.
-- V2 schema/fixture and fail-closed scanner self-test are included in CI.
-- New work is candidate `E3_TARGET_TESTED`; no phase acceptance or completion
-  percentage is assigned by Codex.
-
-Final executable head `70b2a5ca51a7c8adb688a97e42243f88c36cc5fc` passed the
-Alpha50, Phase 01, focused R06, and inherited Phase 02 hosted push/PR runs;
-artifact `10387094480` SHA-256
-`d032bc5e436a470c40f43e337e6eaa49fc83e7e60d71c7babde18d6286f95395`.
-
-## Alpha50-002 hosted candidate closeout
-
-- Exact head: `d83e5c396427ba8a193db2febdb359d7294a57e5`.
-- Hosted Alpha50/Phase 01/focused R06/inherited Phase 02 push and PR runs pass.
-- Artifact `10387258357`, SHA-256
-  `2d81281a09e1d8edd40667bce5e800d2ba7b06a7a893984479ea0efd15937f08`.
-- Candidate remains pending Architect review; unresolved integration and
-  hardware/product claims are explicitly bounded in the task record.
-If Alpha50-003 closes the central software boundary and passes independent Architect review, the intended evidence-based range is approximately **50–55%** while semantic vision, STT/TTS, biometric identity, live notification, pilot and release remain incomplete.
-
-## Alpha50-003 live integration candidate
-
-- Alpha qualification is V2-only and guarded against historical V1 use.
-- V2 nested state is schema-constrained; signed intent sequencing is bounded to
-  the common Godot signed-64 range.
-- Ordinary evidence uses a separate peer-credential-authenticated Unix channel
-  and is durably recorded by companion-core; direct safety transport remains
-  independent.
-- Local resident evidence covers ordinary evidence → V2 intent → bridge result
-  → outcome learning → snapshot → restart identity continuity.
-- Candidate remains below Alpha acceptance: production Godot legal transitions,
-  multi-class failure/care-loss campaigns, and target hardware are not proven.
+A fully passing C01 may support approximately **50–53%** after independent review while semantic vision, STT/TTS, live escalation/notification, full vault/consent, security/reliability qualification, pilot and release remain incomplete.
