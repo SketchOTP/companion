@@ -1067,3 +1067,12 @@ consumption into typed preference memory before intent selection, schema/fixture
 coverage, and a fail-closed scanner self-test. Local workspace, V2 schema, and
 Alpha qualification pass; live Godot causality, multi-class failure, target
 hardware, and Openbox remain unproven or unavailable.
+
+## Alpha50-002 hosted harness corrections — 2026-09-15
+
+Hosted Alpha qualification exposed a single startup-signal race in the retained
+restart campaign and a scanner self-match/runner-availability issue. The campaign
+now waits for the sanitized readiness marker before each shutdown, including
+retries; the workflow uses a guaranteed Python scanner with explicit synthetic
+detection and clean-fixture checks. The first failed hosted run is preserved as
+historical evidence; a fresh exact-head run is required.

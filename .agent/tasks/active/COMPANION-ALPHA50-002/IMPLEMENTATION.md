@@ -21,3 +21,10 @@ Evidence ceiling remains `E3_TARGET_TESTED` for new behavior. A complete
 resident Godot result/learning loop, production Godot transition campaign,
 multi-class failure campaign, process-loss care independence, sensor hardware,
 and Openbox endurance remain bounded or unavailable and are not claimed.
+
+Follow-up correction: the retained restart campaign now waits for the
+production `companion-core.ready` marker before sending shutdown signals,
+including classified retry attempts, eliminating the startup signal race
+observed in hosted case 118.  The Alpha workflow uses a guaranteed Python
+regex scanner with synthetic fail/pass self-tests because hosted runners do
+not provide `rg`; scanner absence remains fail-closed at the executable step.
