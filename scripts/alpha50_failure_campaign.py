@@ -51,6 +51,21 @@ def main() -> int:
                     if identity is None and values: identity=values[0]
             first_out, first_err = first.communicate(timeout=1)
             second_out, second_err = second.communicate(timeout=1)
+            first_attempts = 1
+            if first.returncode != 0 and "database is locked" in first_err:
+                first_attempts = 2
+                time.sleep(0.08)
+                retry_first=subprocess.Popen([str(a.binary)],env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+                deadline=time.monotonic()+1.0
+                while time.monotonic() < deadline and snapshot_count(db) < 1:
+                    if retry_first.poll() is not None:
+                        break
+                    time.sleep(0.005)
+                if retry_first.poll() is None:
+                    retry_first.send_signal(signal.SIGTERM)
+                retry_first.wait(timeout=3)
+                retry_out, retry_err = retry_first.communicate(timeout=1)
+                first, first_out, first_err = retry_first, retry_out, retry_err
             # A just-closed WAL writer can transiently leave SQLite's lock
             # visible to the next opener. Retry only that classified startup
             # condition; any other error remains a hard campaign failure.
@@ -71,7 +86,7 @@ def main() -> int:
                 second, second_out, second_err = retry, retry_out, retry_err
             ok=first.returncode==0 and second.returncode==0 and same; passed += int(ok)
             if case < 20 or case == a.cases-1 or not ok:
-                rows.append({"case":case,"first_returncode":first.returncode,"second_returncode":second.returncode,"second_attempts":second_attempts,"snapshot_count":count,"identity_continuous":same,"first_stderr":first_err[-500:],"second_stderr":second_err[-500:]})
+                rows.append({"case":case,"first_returncode":first.returncode,"first_attempts":first_attempts,"second_returncode":second.returncode,"second_attempts":second_attempts,"snapshot_count":count,"identity_continuous":same,"first_stderr":first_err[-500:],"second_stderr":second_err[-500:]})
     result={"profile":"COMPANION_ALPHA50_FAILURE_CAMPAIGN_V1","status":"PASS" if passed==a.cases else "FAIL","cases":a.cases,"passed":passed,"identity":identity,"sample_cases":rows,"integrity":"checked_by_sqlite_reader","claim_boundary":"bounded restart/kill engineering evidence; no reliability or SLA claim","evidence_ceiling":"E3_TARGET_TESTED"}
     a.output.parent.mkdir(parents=True,exist_ok=True); a.output.write_text(json.dumps(result,indent=2,sort_keys=True)+"\n"); print(json.dumps(result,sort_keys=True)); return 0 if result["status"]=="PASS" else 1
 if __name__=="__main__": raise SystemExit(main())
