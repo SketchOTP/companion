@@ -1373,6 +1373,17 @@ fn spawn_direct_children(
     let (producer_cap_read, producer_cap_write) = pipe()?;
     let (care_cap_read, care_cap_write) = pipe()?;
     let (producer_control_read, producer_control_write) = pipe()?;
+    // The inherited closeout matrix deliberately sends a large burst of
+    // typed producer commands.  Keep that control channel from applying
+    // kernel-default pipe backpressure to the supervisor request socket;
+    // the producer still drains and executes each command in order.
+    let _ = unsafe {
+        libc::fcntl(
+            producer_control_write.as_raw_fd(),
+            libc::F_SETPIPE_SZ,
+            1_048_576,
+        )
+    };
     // Seed capability pipes before child exec so readiness cannot race a
     // blocking capability read during initialization.
     write_fd(&producer_cap_write, secret)?;
