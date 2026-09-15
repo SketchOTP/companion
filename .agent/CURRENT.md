@@ -46,3 +46,12 @@ Architect Review 24 supersedes the previous 9% estimate. Accepted/bounded progre
 ## Protected work
 
 The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` modifications remain protected. Do not inspect, commit, reset, stash, overwrite, copy, or reformat them.
+
+## Alpha50-002 implementation note
+
+Candidate work adds fixed-point `organism_v2`, resident ordinary-observation
+consumption into typed preference memory before intent selection, V2 schema and
+fixture gates, and a fail-closed scanner self-test. New evidence remains
+bounded pending Architect review; live Godot causality, production transition
+qualification, multi-class failure independence, target sensors, and Openbox
+endurance are not claimed.

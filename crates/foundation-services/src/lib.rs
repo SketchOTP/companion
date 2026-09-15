@@ -1,7 +1,7 @@
 //! Resident, nonauthoritative Phase 01 process foundation.
 use foundation_core::{
     canonical, ipc, logging,
-    organism::{self, OrganismState},
+    organism_v2::OrganismStateV2,
     paths::XdgPaths,
     persistence::{Store, runtime_compile_options, runtime_identity},
     version::FOUNDATION_VERSION,
@@ -163,8 +163,29 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
                 // workers; each step emits a body-neutral intent event.
                 if env::var_os("COMPANION_ALPHA_LIFE").is_some() {
                     let store = Store::open(&paths, "companion")?;
-                    let mut state = organism::restore_latest(&store)?
-                        .unwrap_or_else(|| OrganismState::deterministic(50));
+                    let mut state = foundation_core::organism_v2::restore_latest(&store)?
+                        .unwrap_or_else(|| OrganismStateV2::deterministic(50));
+                    let observation = paths.runtime.join("ordinary-observation.json");
+                    if let Ok(bytes) = std::fs::read(&observation) {
+                        if let Ok(value) = serde_json::from_slice::<serde_json::Value>(&bytes) {
+                            let subject = value
+                                .get("subject")
+                                .and_then(|v| v.as_str())
+                                .unwrap_or("ordinary");
+                            let action = value
+                                .get("preferred_action")
+                                .and_then(|v| v.as_str())
+                                .unwrap_or("listen");
+                            let memory_id = state.record_preference(subject, action);
+                            let _ = store.append_event(
+                                &memory_id.to_string(),
+                                "organism_memory_update",
+                                &serde_json::to_string(&value)?,
+                                &format!("boot:{}:memory", boot),
+                            );
+                        }
+                        let _ = std::fs::remove_file(&observation);
+                    }
                     let user_present = env::var_os("COMPANION_USER_PRESENT").is_some();
                     let step = state.step(user_present);
                     let payload = serde_json::to_string(&step.selected)?;
@@ -177,7 +198,9 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
                     let _ = state.snapshot_to(&store)?;
                 }
                 let observation = paths.runtime.join("ordinary-observation.json");
-                if let Ok(bytes) = std::fs::read(&observation) {
+                if env::var_os("COMPANION_ALPHA_LIFE").is_none()
+                    && let Ok(bytes) = std::fs::read(&observation)
+                {
                     if let Ok(value) = serde_json::from_slice::<serde_json::Value>(&bytes) {
                         let message_id = value
                             .get("message_id")

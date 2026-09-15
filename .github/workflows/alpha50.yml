@@ -41,6 +41,8 @@ jobs:
           assert p['status']=='PASS' and p['simulated_days']==30 and p['restart_cases']>=500
           assert all(p['causal'].values())
           PY
+      - name: Validate canonical organism V2 schema and fixture
+        run: python3 scripts/validate_schemas.py
       - name: Legal transition qualification over frozen pack
         run: |
           set -euo pipefail
@@ -59,7 +61,10 @@ jobs:
         run: |
           set -euo pipefail
           test "$(sha256sum assets/source/p02/r06/approved/pack.json | awk '{print $1}')" = 1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40
+          command -v rg
           ! rg -nI '(BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|api[_-]?key\s*[:=])' scripts/alpha50* crates/foundation-core/src/organism.rs
+      - name: Secret scanner fail-closed self-test
+        run: python3 scripts/alpha50_scanner_selftest.py
       - name: Hash Alpha50 evidence bundle
         if: always()
         run: |
@@ -76,4 +81,5 @@ jobs:
           path: |
             ${{ runner.temp }}/alpha50
             contracts/schemas/organism-state-v1.schema.json
+            contracts/schemas/organism-state-v2.schema.json
           if-no-files-found: warn

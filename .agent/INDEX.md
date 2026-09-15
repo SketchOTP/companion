@@ -80,3 +80,12 @@ Required:
 Review 24 sets current evidence-grounded project completion to **31%**. This replaces the earlier 9% estimate because the persistent organism/memory substrate is now real implementation rather than planning. It remains below 50% because the product-defining causal integration is not yet established.
 
 If Alpha50-002 fully passes independent Architect review, the intended evidence-based range is approximately **50–55%** while semantic vision, STT/TTS, biometric identity, live escalation/notification, pilot and release remain incomplete.
+
+## Alpha50-002 candidate implementation
+
+- Fixed-point canonical path: `crates/foundation-core/src/organism_v2.rs`.
+- Resident ordinary-observation to typed preference-memory intake is active in
+  Alpha life mode before body-neutral selection.
+- V2 schema/fixture and fail-closed scanner self-test are included in CI.
+- New work is candidate `E3_TARGET_TESTED`; no phase acceptance or completion
+  percentage is assigned by Codex.

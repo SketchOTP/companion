@@ -4,6 +4,7 @@
 //! companion-owned typed state and SQLite snapshot path without models,
 //! semantic sensors, or production claims.
 use foundation_core::organism::{self, Commitment, OrganismState};
+use foundation_core::organism_v2::{ORGANISM_V2_SCHEMA, OrganismStateV2};
 use foundation_core::{paths::XdgPaths, persistence::Store};
 use serde::Serialize;
 use serde_json::json;
@@ -29,6 +30,8 @@ struct Evidence {
     sqlite_snapshot: bool,
     backup_restore: bool,
     integrity: bool,
+    canonical_v2_schema: u16,
+    fixed_point_causal: bool,
     intents: Vec<serde_json::Value>,
     evidence_ceiling: &'static str,
     claim_boundary: &'static str,
@@ -131,6 +134,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
     }
     let integrity = store.integrity_check()?;
+    // Alpha50-002 canonical path: fixed-point values and outcome consumption.
+    let mut v2 = OrganismStateV2::deterministic(502);
+    v2.internal.curiosity_milli = 0;
+    v2.internal.social_need_milli = 0;
+    v2.internal.rest_pressure_milli = 0;
+    let v2_before = v2.step(false).selected.action;
+    v2.observe_action_result("acknowledge", true);
+    v2.observe_action_result("acknowledge", true);
+    v2.observe_action_result("acknowledge", true);
+    let v2_after = v2.step(false).selected.action;
+    let v2_roundtrip: OrganismStateV2 = serde_json::from_slice(&serde_json::to_vec(&v2)?)?;
+    let fixed_point_causal = v2.schema_version == ORGANISM_V2_SCHEMA
+        && v2_before != v2_after
+        && v2_after == "acknowledge"
+        && v2_roundtrip.internal.energy_milli == v2.internal.energy_milli;
     let mut causal = BTreeMap::new();
     causal.insert(
         "remembered_preference_changes_action",
@@ -161,7 +179,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let causal_ok = causal.values().all(|v| *v);
     let evidence = Evidence {
         profile: "COMPANION_ALPHA50_ORGANISM_MEMORY_V1",
-        status: if integrity && restart_continuity && restart_ok && causal_ok {
+        status: if integrity && restart_continuity && restart_ok && causal_ok && fixed_point_causal
+        {
             "PASS"
         } else {
             "FAIL"
@@ -187,6 +206,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         sqlite_snapshot: restart_continuity,
         backup_restore,
         integrity,
+        canonical_v2_schema: ORGANISM_V2_SCHEMA,
+        fixed_point_causal,
         intents,
         evidence_ceiling: "E3_TARGET_TESTED",
         claim_boundary: "deterministic local engineering evidence; no organism product, care efficacy, reliability, or autonomy claim",

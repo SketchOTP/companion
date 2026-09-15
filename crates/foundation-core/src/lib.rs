@@ -5,6 +5,7 @@ pub mod contracts;
 pub mod ipc;
 pub mod logging;
 pub mod organism;
+pub mod organism_v2;
 pub mod paths;
 pub mod persistence;
 pub mod version;

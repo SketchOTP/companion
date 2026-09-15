@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://companion.local/contracts/organism-state-v2.schema.json",
+  "title": "Persistent Companion organism state V2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "identity", "origin", "organism_epoch", "organism_tick", "lifecycle", "developmental_stage", "internal", "drives", "goals", "commitments", "memories", "skills", "learned_preferences", "learned_outcomes", "next_intent_sequence"],
+  "properties": {
+    "schema_version": {"const": 2},
+    "identity": {"type": "string", "format": "uuid"},
+    "origin": {"type": "string", "minLength": 1},
+    "organism_epoch": {"type": "integer", "minimum": 1},
+    "organism_tick": {"type": "integer", "minimum": 0},
+    "lifecycle": {"enum": ["alive", "degraded", "stopped"]},
+    "developmental_stage": {"type": "string", "minLength": 1},
+    "internal": {"$ref": "#/$defs/internal"},
+    "drives": {"type": "array", "items": {"$ref": "#/$defs/drive"}},
+    "goals": {"type": "array"},
+    "commitments": {"type": "array"},
+    "memories": {"type": "array"},
+    "skills": {"type": "array", "items": {"$ref": "#/$defs/skill"}},
+    "learned_preferences": {"type": "object", "additionalProperties": {"type": "string"}},
+    "learned_outcomes": {"type": "object", "additionalProperties": {"type": "integer"}},
+    "capability_gates": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "degradation": {"type": "array", "items": {"type": "string"}},
+    "next_intent_sequence": {"type": "integer", "minimum": 1},
+    "last_intent": {"anyOf": [{"type": "object"}, {"type": "null"}]}
+  },
+  "$defs": {
+    "internal": {"type": "object", "additionalProperties": false, "required": ["energy_milli", "rest_pressure_milli", "engagement_milli", "social_need_milli", "curiosity_milli", "confidence_milli", "stress_milli"], "properties": {
+      "energy_milli": {"type": "integer", "minimum": 0, "maximum": 1000},
+      "rest_pressure_milli": {"type": "integer", "minimum": 0, "maximum": 1000},
+      "engagement_milli": {"type": "integer", "minimum": 0, "maximum": 1000},
+      "social_need_milli": {"type": "integer", "minimum": 0, "maximum": 1000},
+      "curiosity_milli": {"type": "integer", "minimum": 0, "maximum": 1000},
+      "confidence_milli": {"type": "integer", "minimum": 0, "maximum": 1000},
+      "stress_milli": {"type": "integer", "minimum": 0, "maximum": 1000}
+    }},
+    "drive": {"type": "object", "additionalProperties": false, "required": ["name", "urgency_milli", "inhibition_milli", "cause"], "properties": {"name": {"type": "string"}, "urgency_milli": {"type": "integer", "minimum": 0, "maximum": 1000}, "inhibition_milli": {"type": "integer", "minimum": 0, "maximum": 1000}, "cause": {"type": "string"}}},
+    "skill": {"type": "object", "additionalProperties": false, "required": ["skill_id", "stage", "evidence_count", "stability_milli"], "properties": {"skill_id": {"type": "string"}, "stage": {"type": "string"}, "evidence_count": {"type": "integer", "minimum": 0}, "stability_milli": {"type": "integer", "minimum": 0, "maximum": 1000}}}
+  }
+}
