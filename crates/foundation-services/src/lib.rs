@@ -176,6 +176,29 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
             .unwrap_or_else(|| OrganismStateV2::deterministic(50));
         let mut seen_messages = std::collections::HashSet::new();
         while !STOP.load(Ordering::SeqCst) {
+            // Preserve the inherited Phase 01 synthetic injection fixture while
+            // keeping Alpha50 acceptance on the authenticated ordinary-evidence
+            // socket.  This compatibility path is intentionally disabled for
+            // live Alpha mode and is never used as its evidence boundary.
+            if env::var_os("COMPANION_ALPHA_LIFE").is_none() {
+                let legacy = paths.runtime.join("ordinary-observation.json");
+                if let Ok(bytes) = std::fs::read(&legacy) {
+                    if let Ok(value) = serde_json::from_slice::<serde_json::Value>(&bytes) {
+                        let message_id = value
+                            .get("message_id")
+                            .and_then(|v| v.as_str())
+                            .unwrap_or("ordinary");
+                        let payload = serde_json::to_string(&value)?;
+                        let _ = store.append_event(
+                            message_id,
+                            "ordinary_observation",
+                            &payload,
+                            &format!("legacy:{}:{}", boot, logging::monotonic_ns()),
+                        );
+                    }
+                    let _ = std::fs::remove_file(&legacy);
+                }
+            }
             if let Ok((mut stream, _)) = listener.accept() {
                 let uid = peer_uid(stream.as_raw_fd());
                 let mut request = Vec::new();
