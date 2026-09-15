@@ -102,7 +102,8 @@ If Alpha50-002 fully passes independent Architect review, the intended evidence-
 The latest executable implementation is `d484c0370512ab3bb9fbcebaf99b9e44a718cdba`;
 hosted Alpha50/Phase 01/focused R06/inherited Phase 02 runs passed as
 `35026682276`, `35026685839`, `35026686022`, and `35026685797`. Publication-only
-state reconciliation follows at branch head `f49e1328821e58ce145e71a18997bffee0355b79`.
+state reconciliation follows in later documentation commits; the branch is
+remote-equal and the executable evidence remains bound to the SHA above.
 This remains candidate E3 engineering evidence: real production Godot legal
 transitions, multi-class failure/process-loss independence, resident restore,
 and Openbox remain unproven or blocked.
