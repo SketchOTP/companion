@@ -97,6 +97,16 @@ Review 25 sets evidence-grounded overall completion to **35%**.
 
 If Alpha50-002 fully passes independent Architect review, the intended evidence-based range is approximately **50–55%** while semantic vision, STT/TTS, biometric identity, live escalation/notification, pilot and release remain incomplete.
 
+## Alpha50-003 candidate handoff — 2026-09-15
+
+The latest executable implementation is `d484c0370512ab3bb9fbcebaf99b9e44a718cdba`;
+hosted Alpha50/Phase 01/focused R06/inherited Phase 02 runs passed as
+`35026682276`, `35026685839`, `35026686022`, and `35026685797`. Publication-only
+state reconciliation follows at branch head `f49e1328821e58ce145e71a18997bffee0355b79`.
+This remains candidate E3 engineering evidence: real production Godot legal
+transitions, multi-class failure/process-loss independence, resident restore,
+and Openbox remain unproven or blocked.
+
 ## Alpha50-002 candidate implementation
 
 - Fixed-point canonical path: `crates/foundation-core/src/organism_v2.rs`.
