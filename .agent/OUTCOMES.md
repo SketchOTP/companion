@@ -1059,3 +1059,11 @@ sensor inventory with explicit degraded hardware status, a typed organism
 schema, a 30-day/500-restart Rust qualification binary, and unconditional Alpha
 artifact publication. Evidence is bounded engineering qualification only; no
 roadmap phase or product claim is accepted.
+
+## Alpha50-002 causal foundation pass — 2026-09-15
+
+Added a fixed-point integer organism V2 path, resident ordinary-observation
+consumption into typed preference memory before intent selection, schema/fixture
+coverage, and a fail-closed scanner self-test. Local workspace, V2 schema, and
+Alpha qualification pass; live Godot causality, multi-class failure, target
+hardware, and Openbox remain unproven or unavailable.
