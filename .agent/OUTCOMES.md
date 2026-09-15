@@ -1102,3 +1102,14 @@ passes locally across companion/bridge processes and restart with restored
 identity. This is E3 candidate evidence only; production Godot legal graph,
 multi-class failure/care-loss campaigns, and physical target qualification
 remain open.
+
+## Alpha50-003 hosted exact-head closeout — 2026-09-15
+
+Implementation SHA `d484c0370512ab3bb9fbcebaf99b9e44a718cdba` passed hosted
+Alpha50 `35026682276`, Phase 01 `35026685839`, focused R06 `35026686022`, and
+inherited Phase 02 `35026685797`. A small service correction preserved the
+pre-existing Phase 01 ordinary-fixture probe only when Alpha life mode is not
+enabled; the Alpha path remains the authenticated ordinary-evidence UDS. The
+hosted green state is retained as candidate engineering evidence and does not
+close the production Godot, multi-class failure, care process-loss, resident
+restore, sensor, or Openbox criteria.

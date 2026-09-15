@@ -99,3 +99,20 @@ restores the same identity after restart. Local trace evidence is retained at
 This remains candidate engineering evidence. Production Godot legal-graph
 10,000-case execution, multi-class failure qualification, care process-loss
 independence, target sensors, and Openbox endurance are not claimed.
+
+## Alpha50-003 hosted candidate closeout — 2026-09-15
+
+Implementation head `d484c0370512ab3bb9fbcebaf99b9e44a718cdba` passed hosted
+Alpha50 `35026682276`, Phase 01 `35026685839`, focused R06 `35026686022`, and
+inherited Phase 02 `35026685797` on the same SHA. The ordinary-evidence
+compatibility path is limited to the inherited Phase 01 synthetic fixture;
+Alpha acceptance uses the authenticated ordinary UDS and does not use
+`ordinary-observation.json`.
+
+These are hosted engineering regressions, not proof of the remaining central
+criteria. The resident bridge is a typed service boundary, not a production
+Godot process; the 10,000 transition run remains Python-owned, the 500-case
+campaign remains repeated graceful V2 restart rather than the required
+multi-class commit-point campaign, and care process-loss independence,
+resident clean-root restore, and target hardware/Openbox qualification remain
+unproven or unavailable.

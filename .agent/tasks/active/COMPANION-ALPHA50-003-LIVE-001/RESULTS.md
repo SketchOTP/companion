@@ -22,3 +22,12 @@ campaign, care process-loss independence, and physical webcam/microphone/
 Openbox qualification are not implemented or available. The result must remain
 candidate evidence until those independently executable gates are completed and
 hosted on one exact implementation SHA.
+
+## Hosted exact-head regression — 2026-09-15
+
+Implementation SHA `d484c0370512ab3bb9fbcebaf99b9e44a718cdba` passed hosted
+Alpha50 `35026682276`, Phase 01 `35026685839`, focused R06 `35026686022`, and
+inherited Phase 02 `35026685797` on the same SHA. The Alpha workflow's green
+result reflects the assertions currently encoded; it does not promote the
+Python transition proxy into production Godot or turn repeated graceful
+restart into the required multi-class failure campaign.

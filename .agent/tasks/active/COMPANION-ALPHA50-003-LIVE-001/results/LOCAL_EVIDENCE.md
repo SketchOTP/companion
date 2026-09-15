@@ -19,3 +19,17 @@ These are E3 candidate engineering observations. They do not claim production
 Godot legal-transition qualification, multi-class failure coverage, care
 process-loss independence, physical sensors, Openbox endurance, Alpha50
 acceptance, or Phase 02 acceptance.
+
+Additional exact-head checks after the inherited Phase 01 compatibility fix:
+
+- Workspace tests: `cargo test --workspace --locked` — `PASSED` (25
+  foundation-core and 6 foundation-services tests, plus binaries/docs).
+- Clippy: `cargo clippy --workspace --all-targets --all-features --locked
+  -- -D warnings` — `PASSED`.
+- Schema/crosswalk/closeout/V2 guard — `PASSED` (22 schemas; 18 typed
+  crosswalks; V2 acceptance guard).
+- Local Phase 01 closeout — `PASSED` at 3000 cycles / seeds 17,23,41 after
+  restoring the legacy fixture compatibility path outside Alpha live mode;
+  duration was 304.303 seconds.
+- Latest live-trace output SHA-256:
+  `29a4249d4299e3be2b4f84fa8c8ef7f3a3c8c9953b9be96c4da2c4e32d6f428d`.
