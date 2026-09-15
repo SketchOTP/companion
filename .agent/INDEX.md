@@ -10,74 +10,90 @@
 ## Current pointers
 
 - Accepted foundation: Roadmap Phase 01.
-- Accepted bounded embodiment runtime closeout: R06-C06.
+- Accepted bounded embodiment/runtime closeout: R06-C06.
 - Phase 02 acceptance: `NOT GRANTED`.
 - Alpha50-001 disposition: `PARTIAL ACCEPTED`.
-- Current disposition: `CONTINUE — ALPHA50-002 LIVE PRODUCTION CAUSALITY CLOSEOUT ACTIVE`.
-- Current directive: `COMPANION-ALPHA50-002`.
-- Repository authority: `.agent/tasks/active/COMPANION-ALPHA50-002/ARCHITECT_REVIEW_24.md`.
-- Notion Review 24: https://app.notion.com/p/3dc833cb27ff8100bedfe20475bc031c
-- Reviewed Alpha50-001 candidate: `1f37388bb50f9a96ea086676f80075f5e7a64b9f`.
-- Alpha50-001 artifact: `10374764939`, SHA-256 `bd2476c0049e140988809519ab664ce9f918345c7ac94dcc4e9beb5031bd8df2`.
+- Alpha50-002 disposition: `PARTIAL ACCEPTED`.
+- Current disposition: `CONTINUE — ALPHA50-003 LIVE INTEGRATED ACCEPTANCE ACTIVE`.
+- Current directive: `COMPANION-ALPHA50-003-LIVE-001`.
+- Repository review: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001/ARCHITECT_REVIEW_25.md`.
+- Repository directive: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001/DIRECTIVE.md`.
+- Notion Review 25: https://app.notion.com/p/3dc833cb27ff8128a1f8cb920146a791
+- Reviewed Alpha50-002 executable head: `70b2a5ca51a7c8adb688a97e42243f88c36cc5fc`.
+- Reviewed Alpha50-002 publication head: `3d05123f9d1c04a9605f12fc6e42ed4c585ca88b`.
+- Reviewed Alpha artifact: `10387094480`, SHA-256 `d032bc5e436a470c40f43e337e6eaa49fc83e7e60d71c7babde18d6286f95395`.
 - Accepted C06 implementation: `49d9d65e08b9c9410d8013266ed5a5a5194ff8c5`.
-- Frozen visual head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`.
 - Frozen R06 pack: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`.
 - PR #9: draft/open/unmerged.
 - Issue #8: open.
-- Branch: `codex/p02-embodiment-001`.
+- Task branch: `codex/p02-embodiment-001`.
 
-## Retained accepted / bounded capability
+## Accepted / retained boundary
 
-Accepted existing authority remains unchanged:
+Accepted authority remains:
 
-- Architecture v1.0 authority/process separation;
+- Architecture v1.0 process and authority separation;
 - Roadmap Phase 01 reproducible local foundation;
-- accepted C06 frozen-art intake/playback/controller/render/timing closeout.
+- bounded C06 source/intake/controller/render/timing evidence.
 
-Retain from Alpha50-001 only as bounded candidate implementation evidence:
+Retained bounded Alpha50-002 implementation:
 
-- Rust organism state/data structure and model-independent authority placement;
-- companion-owned organism snapshot persistence and clean-root SQLite Backup API restore path;
-- typed memory/provenance/supersession/retrieval/commitment structures;
-- opt-in resident companion restore → step → event → snapshot path;
-- graceful restart/identity continuity engineering evidence;
-- explicit hosted sensor degradation and retained direct-care regression.
+- V2 fixed-point/milli-integer organism numerical state;
+- V2 preference and learned-outcome consumption in action scoring;
+- V2 result effects on confidence/stress/skill state;
+- resident V2 restore/step/snapshot and local preference-memory plumbing;
+- graceful V2 restart continuity;
+- corrected fail-closed scanner and exact implementation-head CI.
 
-Do not treat the Alpha50-001 capability matrix's broad `accepted-by-existing-authority` labels as Architect acceptance of embodiment habitat, care product capability, vault product capability, or security/resilience product capability.
+Not accepted:
 
-## Why Alpha50-002 is required
+- full organism autonomy;
+- complete V2 memory/learning/development lifecycle;
+- remembered-action production vertical slice;
+- Phase 02 legal transition qualification/endurance;
+- semantic sensors/speech;
+- care process-loss qualification/efficacy;
+- product security/reliability/release.
 
-Independent Review 24 found:
+## Why Alpha50-003 is required
 
-1. canonical organism physiology/drives/skill stability persist `f32`/JSON numbers, conflicting with Architecture v1.0 canonical integer/fixed-point rule;
-2. correction and learned-outcome tests do not establish changed later behavior; learned outcome is not consumed by production selection and preference learning is hard-coded to `acknowledge`;
-3. goals, development gates and consolidation are mostly structural rather than causally operative;
-4. resident ordinary observations are appended to the event log but do not feed the organism/memory update path, while body-neutral intents are stored but not executed by Godot/result-fed back to companion-core;
-5. the 10,000-case transition qualification is a hard-coded Python graph rather than production Godot routing;
-6. 30 simulated days are simple state steps without the required long-horizon memory/commitment/learning/development dynamics;
-7. 500 failure cases are orderly SIGTERM restart repetitions, not a seeded multi-class pre/during/post-commit failure matrix;
-8. full companion-loss/care-loss independence was not exercised;
-9. PR workflows provide exact-tree rather than exact-commit evidence, and the secret scan passes when `rg` is absent because command-not-found is negated;
-10. the candidate capability matrix overstates several accepted domains.
+Independent Review 25 found:
 
-## Alpha50-002 gate
+1. the artifact profile says organism/memory V2, but most long-horizon, backup/restore, memory and causal qualification still executes V1;
+2. V2 schema leaves goals, commitments, memories and last intent underconstrained and lacks explicit organism-intent signed-64 wire bounding;
+3. V1 lived-state discovery was limited to repository locations despite XDG local-host canonical store authority;
+4. resident ordinary input uses `ordinary-observation.json`, not the authenticated ordinary producer boundary;
+5. preference/outcome logic exists in V2, but correction/commitment and post-restart causal evidence are not V2 production traces;
+6. no companion → real Godot → typed result → learning loop exists;
+7. 10,000 transitions remain hard-coded Python proxy evidence;
+8. 30-day evidence remains mostly V1 shallow stepping;
+9. 500 failures remain graceful restart repetitions;
+10. care remains direct-care smoke rather than process-loss independence;
+11. `embodiment_habitat` remains overstated in the candidate capability matrix.
 
-Required:
+## Alpha50-003 gate
 
-- fixed-point/integer canonical organism V2;
-- causal and paired-control preference/correction/commitment/outcome learning;
-- real goal arbitration, development gates, temporal retrieval and evidence-bound consolidation;
-- one resident ordinary-evidence → organism/memory → Godot → result → learning → restart → remembered-action production trace;
-- fail-closed legal transitions owned/executed by production Godot routing with 10,000+ live cases and independent trace verification;
-- rich isolated 30-day simulation and 500+ retained seeded multi-class failure cases;
-- kill-companion and kill-care direct-care independence campaign;
-- meaningful-state Backup API/clean-root restore and model-worker-outage evidence;
-- target webcam/mic/Openbox evidence when accessible without reconfiguration;
-- fail-closed scanner self-test, truthful exact-tree/exact-commit labeling and corrected capability matrix.
+The primary acceptance objective is one continuous V2 individual through the actual service graph:
+
+`authenticated ordinary evidence → companion V2 memory/state → body-neutral intent → real Godot → typed observed result → V2 outcome learning → durable state → restart → remembered behavior change`.
+
+The same final implementation must:
+
+- exclude V1 from Alpha acceptance execution;
+- fully type/bound V2 canonical state and signed intent sequencing;
+- implement the separate authenticated ordinary-evidence channel while preserving direct care;
+- prove V2 preference/correction/commitment/result causal comparisons through resident services;
+- demonstrate operative goals, development gate and provenance-bound consolidation;
+- execute 10,000+ legal-transition cases inside real production Godot with independent verification;
+- run rich isolated V2 30-day qualification;
+- run 500+ multi-class deterministic failure cases;
+- prove kill-companion/kill-care independence;
+- prove model-worker outage and resident Backup API clean-root restore;
+- preserve physical target blockers truthfully when hardware/Openbox is unavailable.
 
 ## Completion position
 
-Review 24 sets current evidence-grounded project completion to **31%**. This replaces the earlier 9% estimate because the persistent organism/memory substrate is now real implementation rather than planning. It remains below 50% because the product-defining causal integration is not yet established.
+Review 25 sets evidence-grounded overall completion to **35%**.
 
 If Alpha50-002 fully passes independent Architect review, the intended evidence-based range is approximately **50–55%** while semantic vision, STT/TTS, biometric identity, live escalation/notification, pilot and release remain incomplete.
 
@@ -103,3 +119,4 @@ artifact `10387094480` SHA-256
   `2d81281a09e1d8edd40667bce5e800d2ba7b06a7a893984479ea0efd15937f08`.
 - Candidate remains pending Architect review; unresolved integration and
   hardware/product claims are explicitly bounded in the task record.
+If Alpha50-003 closes the central software boundary and passes independent Architect review, the intended evidence-based range is approximately **50–55%** while semantic vision, STT/TTS, biometric identity, live notification, pilot and release remain incomplete.
