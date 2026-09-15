@@ -11,62 +11,72 @@
 
 - Accepted foundation: Roadmap Phase 01.
 - Accepted bounded embodiment runtime closeout: R06-C06.
-- Phase 02 acceptance: NOT GRANTED.
-- Current disposition: `REPLAN / ACCELERATE — ALPHA50 INTEGRATED MILESTONE ACTIVE`.
-- Current directive: `COMPANION-ALPHA50-001`.
-- Repository authority: `.agent/tasks/active/COMPANION-ALPHA50-001/ARCHITECT_REPLAN_23.md`.
-- Notion authority: https://app.notion.com/p/3db833cb27ff81519ea5ce0474d65a43
-- Superseded before Codex execution: `COMPANION-P02-EMBODIMENT-001-R07-TRANSITION-QUALIFY-001`.
-- Accepted C06 implementation head: `49d9d65e08b9c9410d8013266ed5a5a5194ff8c5`.
-- Reviewed C06 publication head: `ff8b6245c8cce9a189c4203302edb0cfd2904ffe`.
+- Phase 02 acceptance: `NOT GRANTED`.
+- Alpha50-001 disposition: `PARTIAL ACCEPTED`.
+- Current disposition: `CONTINUE — ALPHA50-002 LIVE PRODUCTION CAUSALITY CLOSEOUT ACTIVE`.
+- Current directive: `COMPANION-ALPHA50-002`.
+- Repository authority: `.agent/tasks/active/COMPANION-ALPHA50-002/ARCHITECT_REVIEW_24.md`.
+- Notion Review 24: https://app.notion.com/p/3dc833cb27ff8100bedfe20475bc031c
+- Reviewed Alpha50-001 candidate: `1f37388bb50f9a96ea086676f80075f5e7a64b9f`.
+- Alpha50-001 artifact: `10374764939`, SHA-256 `bd2476c0049e140988809519ab664ce9f918345c7ac94dcc4e9beb5031bd8df2`.
+- Accepted C06 implementation: `49d9d65e08b9c9410d8013266ed5a5a5194ff8c5`.
 - Frozen visual head: `5f538a0c86783b7c5d00b140dcc91c7f76c30450`.
+- Frozen R06 pack: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`.
 - PR #9: draft/open/unmerged.
 - Issue #8: open.
+- Branch: `codex/p02-embodiment-001`.
 
-## Frozen package
+## Retained accepted / bounded capability
 
-- Review ZIP SHA-256: `45fd9749179419339046af2ab40605c47d825ca4f0ad47c87a8c6fb9ca1b799b`.
-- Review manifest SHA-256: `d8a0277272f0ccd6f948a24153b7f954aff138111ab840f22e09204aa359e595`.
-- Review HTML SHA-256: `7bd9e0cd5c64b89259dc2780825457a16144cebe02d259fd73a644591aa38cd2`.
-- R06 source-pack SHA-256: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`.
-- C06-C03 artifact: `10352161425`, SHA-256 `87765dcfa5b06c1c5be16fcf85a5ba806be29dcfcb4dc224da95b84d59dc183a`.
+Accepted existing authority remains unchanged:
 
-No new character artwork is authorized.
+- Architecture v1.0 authority/process separation;
+- Roadmap Phase 01 reproducible local foundation;
+- accepted C06 frozen-art intake/playback/controller/render/timing closeout.
 
-## Retained accepted boundary
+Retain from Alpha50-001 only as bounded candidate implementation evidence:
 
-- reproducible Rust/Godot foundation and isolated local authority-store baseline;
-- 58 immutable RGB runtime masters, 24 tracks / 283 frame slots;
-- byte-preserving intake, typed Rust consumption, render/compositor QA, failure/recovery/export evidence;
-- controller-owned movement, replay/cancellation, fixed-step semantics and common signed-64 sequence range;
-- one manual loaded-pack-derived presentation clock with verified authored progression and loop continuity;
-- real non-black translated capture evidence and true 4x review pacing;
-- exact-head Phase 01, R06 and inherited Phase 02 regression success at the accepted C06 implementation.
+- Rust organism state/data structure and model-independent authority placement;
+- companion-owned organism snapshot persistence and clean-root SQLite Backup API restore path;
+- typed memory/provenance/supersession/retrieval/commitment structures;
+- opt-in resident companion restore → step → event → snapshot path;
+- graceful restart/identity continuity engineering evidence;
+- explicit hosted sensor degradation and retained direct-care regression.
 
-## Alpha50 milestone
+Do not treat the Alpha50-001 capability matrix's broad `accepted-by-existing-authority` labels as Architect acceptance of embodiment habitat, care product capability, vault product capability, or security/resilience product capability.
 
-One final Codex handoff must attempt, without separate Architect returns:
+## Why Alpha50-002 is required
 
-- fail-closed legal transition qualification over the frozen pack with 10,000+ real Godot cases;
-- dedicated two-hour Openbox endurance when the authorized target is accessible without reconfiguration;
-- durable authoritative organism identity/state with needs, drives, goals, commitments, and autonomous life loop;
-- typed event/episodic/semantic/procedural/relationship/preference/prospective memory with temporal supersession and controlled consolidation;
-- grounded non-weight-changing learning, skill progression, habits/preferences, evidence-based development gates, and causal memory-to-action tests;
-- organism-selected Godot embodiment while Godot remains presentation-only;
-- bounded real sensor-gateway webcam/microphone acquisition where available, without semantic perception/STT/TTS claims;
-- remembered interaction plus independent synthetic shadow-care path, with no live notification;
-- 30 simulated organism days, 500+ restart/failure cases, model-worker outage, integrity checks, consistent backup/export and clean-root restore;
-- machine-readable capability matrix for Architect completion assessment.
+Independent Review 24 found:
 
-## Completion target
+1. canonical organism physiology/drives/skill stability persist `f32`/JSON numbers, conflicting with Architecture v1.0 canonical integer/fixed-point rule;
+2. correction and learned-outcome tests do not establish changed later behavior; learned outcome is not consumed by production selection and preference learning is hard-coded to `acknowledge`;
+3. goals, development gates and consolidation are mostly structural rather than causally operative;
+4. resident ordinary observations are appended to the event log but do not feed the organism/memory update path, while body-neutral intents are stored but not executed by Godot/result-fed back to companion-core;
+5. the 10,000-case transition qualification is a hard-coded Python graph rather than production Godot routing;
+6. 30 simulated days are simple state steps without the required long-horizon memory/commitment/learning/development dynamics;
+7. 500 failure cases are orderly SIGTERM restart repetitions, not a seeded multi-class pre/during/post-commit failure matrix;
+8. full companion-loss/care-loss independence was not exercised;
+9. PR workflows provide exact-tree rather than exact-commit evidence, and the secret scan passes when `rg` is absent because command-not-found is negated;
+10. the candidate capability matrix overstates several accepted domains.
 
-Current completion remains below 10% until new capability is implemented and accepted. If the complete Alpha50 evidence boundary passes independent Architect review, the intended accepted project position is at least 50% overall completion, likely about 52–55%. Codex may not self-approve that percentage or any roadmap phase.
+## Alpha50-002 gate
 
-## Alpha50 implementation pointers
+Required:
 
-- Typed organism/life loop: `crates/foundation-core/src/organism.rs`.
-- Companion snapshot/backup extensions: `crates/foundation-core/src/persistence.rs`.
-- Deterministic qualification: `crates/foundation-core/src/bin/alpha50_qualification.rs`.
-- Transition, sensor, and restart campaigns: `scripts/alpha50_transition_qualification.py`, `scripts/alpha50_sensor_probe.py`, `scripts/alpha50_failure_campaign.py`.
-- Schema and capability matrix: `contracts/schemas/organism-state-v1.schema.json`, `.agent/tasks/active/COMPANION-ALPHA50-001/CAPABILITY_MATRIX.json`.
-- Workflow: `.github/workflows/alpha50.yml`.
+- fixed-point/integer canonical organism V2;
+- causal and paired-control preference/correction/commitment/outcome learning;
+- real goal arbitration, development gates, temporal retrieval and evidence-bound consolidation;
+- one resident ordinary-evidence → organism/memory → Godot → result → learning → restart → remembered-action production trace;
+- fail-closed legal transitions owned/executed by production Godot routing with 10,000+ live cases and independent trace verification;
+- rich isolated 30-day simulation and 500+ retained seeded multi-class failure cases;
+- kill-companion and kill-care direct-care independence campaign;
+- meaningful-state Backup API/clean-root restore and model-worker-outage evidence;
+- target webcam/mic/Openbox evidence when accessible without reconfiguration;
+- fail-closed scanner self-test, truthful exact-tree/exact-commit labeling and corrected capability matrix.
+
+## Completion position
+
+Review 24 sets current evidence-grounded project completion to **31%**. This replaces the earlier 9% estimate because the persistent organism/memory substrate is now real implementation rather than planning. It remains below 50% because the product-defining causal integration is not yet established.
+
+If Alpha50-002 fully passes independent Architect review, the intended evidence-based range is approximately **50–55%** while semantic vision, STT/TTS, biometric identity, live escalation/notification, pilot and release remain incomplete.
