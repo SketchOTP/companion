@@ -88,11 +88,16 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
                 Some("integrity_checked"),
             );
             seq += 1;
-            let socket = paths.runtime.join("ordinary-evidence.sock");
-            let _ = std::fs::remove_file(&socket);
-            let listener = std::os::unix::net::UnixListener::bind(&socket)?;
-            listener.set_nonblocking(true)?;
-            ordinary_listener = Some(listener);
+            // Isolated Alpha life qualification uses the resident loop
+            // directly and intentionally has no ordinary ingress. Production
+            // live mode binds the authenticated ordinary-evidence endpoint.
+            if env::var_os("COMPANION_ALPHA_LIFE").is_none() {
+                let socket = paths.runtime.join("ordinary-evidence.sock");
+                let _ = std::fs::remove_file(&socket);
+                let listener = std::os::unix::net::UnixListener::bind(&socket)?;
+                listener.set_nonblocking(true)?;
+                ordinary_listener = Some(listener);
+            }
             drop(store);
         }
         "identity-consent-vault" => ordinary_store("vault", &boot, &mut seq)?,
