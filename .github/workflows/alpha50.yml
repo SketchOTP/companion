@@ -57,6 +57,7 @@ jobs:
           COMPANION_SQLITE_SOURCE: ${{ runner.temp }}/sqlite/sqlite-amalgamation-3530400/sqlite3.c
         run: |
           set -euo pipefail
+          COMPANION_REAL_GODOT=1 \
           COMPANION_GODOT_PROJECT="$GITHUB_WORKSPACE/godot" \
           COMPANION_GODOT_PACK="$GITHUB_WORKSPACE/assets/source/p02/r06/approved/pack.json" \
           python3 scripts/alpha50_live_trace.py --output "$RUNNER_TEMP/alpha50/live-trace.json" --supervisor target/release/ops-supervisor

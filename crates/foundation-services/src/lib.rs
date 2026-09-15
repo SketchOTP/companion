@@ -582,6 +582,12 @@ fn send_body_intent(
 }
 
 fn execute_real_godot(value: &serde_json::Value) -> serde_json::Value {
+    if env::var_os("COMPANION_REAL_GODOT").is_none() {
+        return json!({
+            "accepted": false,
+            "reason": "godot_execution_not_enabled_in_compatibility_mode"
+        });
+    }
     let Some(godot) = env::var_os("GODOT_BIN") else {
         return json!({"accepted":false,"reason":"godot_binary_not_provisioned"});
     };
