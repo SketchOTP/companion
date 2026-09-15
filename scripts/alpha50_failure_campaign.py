@@ -15,7 +15,7 @@ def main() -> int:
     passed=0; rows=[]; identity=None
     for case in range(a.cases):
         with tempfile.TemporaryDirectory(prefix="companion-alpha50-failure-") as root:
-            rootp=Path(root); (rootp/"runtime").mkdir(); env={**os.environ,"COMPANION_XDG_ROOT":str(rootp),"XDG_RUNTIME_DIR":str(rootp/"runtime"),"COMPANION_ALPHA_LIFE":"1"}
+            rootp=Path(root); (rootp/"runtime").mkdir(); ready_dir=rootp/"ready"; env={**os.environ,"COMPANION_XDG_ROOT":str(rootp),"XDG_RUNTIME_DIR":str(rootp/"runtime"),"COMPANION_ALPHA_LIFE":"1","COMPANION_READY_DIR":str(ready_dir)}
             first=subprocess.Popen([str(a.binary)],env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
             def snapshot_count(path: Path) -> int:
                 if not path.exists():
@@ -26,6 +26,16 @@ def main() -> int:
                 except sqlite3.Error:
                     return 0
 
+            # Wait for the production readiness marker before sending a
+            # signal.  Socket/store visibility alone can precede installation
+            # of the process signal handler and would turn orderly shutdown
+            # into an unclassified startup race.
+            ready_deadline=time.monotonic()+1.0
+            marker=ready_dir/"companion-core.ready"
+            while time.monotonic() < ready_deadline and not marker.exists():
+                if first.poll() is not None:
+                    break
+                time.sleep(0.005)
             # Wait for durable evidence, not an arbitrary startup sleep. This
             # keeps the campaign deterministic while preserving production
             # startup timing and still bounds each case.
@@ -36,7 +46,16 @@ def main() -> int:
                     break
                 time.sleep(0.005)
             first.send_signal(signal.SIGTERM); first.wait(timeout=3)
+            try:
+                marker.unlink()
+            except FileNotFoundError:
+                pass
             second=subprocess.Popen([str(a.binary)],env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+            ready_deadline=time.monotonic()+1.0
+            while time.monotonic() < ready_deadline and not marker.exists():
+                if second.poll() is not None:
+                    break
+                time.sleep(0.005)
             deadline=time.monotonic()+1.0
             while time.monotonic() < deadline and snapshot_count(db) < 2:
                 if second.poll() is not None:
@@ -55,7 +74,16 @@ def main() -> int:
             if first.returncode != 0 and "database is locked" in first_err:
                 first_attempts = 2
                 time.sleep(0.08)
+                try:
+                    marker.unlink()
+                except FileNotFoundError:
+                    pass
                 retry_first=subprocess.Popen([str(a.binary)],env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+                ready_deadline=time.monotonic()+1.0
+                while time.monotonic() < ready_deadline and not marker.exists():
+                    if retry_first.poll() is not None:
+                        break
+                    time.sleep(0.005)
                 deadline=time.monotonic()+1.0
                 while time.monotonic() < deadline and snapshot_count(db) < 1:
                     if retry_first.poll() is not None:
@@ -73,7 +101,16 @@ def main() -> int:
             if second.returncode != 0 and "database is locked" in second_err:
                 second_attempts = 2
                 time.sleep(0.08)
+                try:
+                    marker.unlink()
+                except FileNotFoundError:
+                    pass
                 retry=subprocess.Popen([str(a.binary)],env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True)
+                ready_deadline=time.monotonic()+1.0
+                while time.monotonic() < ready_deadline and not marker.exists():
+                    if retry.poll() is not None:
+                        break
+                    time.sleep(0.005)
                 deadline=time.monotonic()+1.0
                 while time.monotonic() < deadline and snapshot_count(db) < 2:
                     if retry.poll() is not None:
