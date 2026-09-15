@@ -2,21 +2,23 @@
 
 ## Current stage
 
-Architecture v1.0 remains adopted. Roadmap Phase 01 remains accepted. R06-C06 embodiment runtime closeout remains accepted. Phase 02 remains unaccepted. Cross-phase Alpha50 implementation is active.
+Architecture v1.0 remains adopted. Roadmap Phase 01 remains accepted. R06-C06 remains accepted at its bounded embodiment/runtime boundary. Roadmap Phase 02 and the integrated Alpha remain unaccepted.
 
 ## Latest Architect disposition
 
-Architect Review 24: `CONTINUE — COMPANION-ALPHA50-001 PARTIAL ACCEPTED`.
+Architect Review 25: `CONTINUE — COMPANION-ALPHA50-002 PARTIAL ACCEPTED`.
 
-Alpha50-001 materially advances the project with a real Rust organism/memory substrate, companion-owned SQLite snapshot/backup path, bounded graceful restart evidence, sensor degradation evidence, and retained direct-care/C06 regressions. It does **not** close the integrated Alpha milestone because canonical organism state currently persists floats contrary to Architecture v1.0, learning/correction outcome tests do not all change later action, the resident ordinary-evidence → organism/memory → Godot → result path is incomplete, transition qualification remains Python-only, the 30-day simulation is shallow, and the 500-case campaign is graceful restart rather than multi-class failure injection.
+Alpha50-002 retains a real fixed-point V2 organism implementation and resident V2 restore/step/snapshot plumbing, but does not close the product-defining continuous-individual path. Most Alpha organism/memory qualification still executes V1, ordinary observation acceptance uses a runtime-file side channel, Godot does not yet execute/return organism intents, transition qualification remains Python-owned, and failure/care-independence campaigns remain below the directive.
 
 Current authority:
 
-- Architect Review 24: `.agent/tasks/active/COMPANION-ALPHA50-002/ARCHITECT_REVIEW_24.md`
-- Notion Review 24: https://app.notion.com/p/3dc833cb27ff8100bedfe20475bc031c
-- Current directive: `COMPANION-ALPHA50-002`
-- Reviewed Alpha50-001 candidate: `1f37388bb50f9a96ea086676f80075f5e7a64b9f`
-- Alpha50-001 artifact: `10374764939`, SHA-256 `bd2476c0049e140988809519ab664ce9f918345c7ac94dcc4e9beb5031bd8df2`
+- Architect Review 25: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001/ARCHITECT_REVIEW_25.md`
+- Notion Review 25: https://app.notion.com/p/3dc833cb27ff8128a1f8cb920146a791
+- Current directive: `COMPANION-ALPHA50-003-LIVE-001`
+- Directive: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001/DIRECTIVE.md`
+- Reviewed Alpha50-002 executable head: `70b2a5ca51a7c8adb688a97e42243f88c36cc5fc`
+- Reviewed Alpha50-002 publication head: `3d05123f9d1c04a9605f12fc6e42ed4c585ca88b`
+- Reviewed Alpha artifact: `10387094480`, SHA-256 `d032bc5e436a470c40f43e337e6eaa49fc83e7e60d71c7babde18d6286f95395`
 - Frozen R06 source-pack SHA-256: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`
 - PR #9: draft/open/unmerged
 - Issue #8: open
@@ -24,24 +26,33 @@ Current authority:
 
 No new character artwork is authorized.
 
+## Retained Alpha50-002 boundary
+
+Retain as bounded candidate implementation evidence:
+
+- milli-integer V2 physiology/drives/skills and deterministic arithmetic;
+- V2 action scoring which consumes preference and learned-outcome state;
+- V2 result effects on confidence/stress/skill state;
+- resident `companion-core` V2 restore/step/snapshot and local preference-memory plumbing;
+- graceful V2 restart continuity;
+- fail-closed scanner correction and exact executable-head CI;
+- all previously accepted Phase 01/C06 evidence.
+
+Do not treat the Alpha artifact's V2 profile label as proof that its V1-based memory, long-horizon, backup/restore and causal checks have migrated to V2.
+
 ## Active objective
 
-Execute `COMPANION-ALPHA50-002` only:
+Execute `COMPANION-ALPHA50-003-LIVE-001` only. The decisive proof is one real continuous V2 individual through actual authority/process boundaries:
 
-1. replace candidate float-based canonical organism state with bounded fixed-point/integer V2 truth;
-2. make preference, correction, commitment and learned-outcome evidence causally alter later production action through paired controls;
-3. implement real goal arbitration, satiation/recovery dynamics, development gates, temporal retrieval and evidence-bound consolidation;
-4. execute the resident ordinary-evidence → organism/memory → Godot → observed result → learning → snapshot chain and prove remembered action changes after restart;
-5. move legal transition authority into the production Godot path and run 10,000+ live resolver cases with raw traces;
-6. run a meaningful isolated 30-day autonomy simulation and 500+ retained seeded multi-class failure cases;
-7. prove care independence under companion/care process loss;
-8. preserve model-worker outage, Backup API clean-root restore, source identity and all accepted Phase 01/C06 regressions;
-9. gather target webcam/mic/Openbox evidence where available without host reconfiguration;
-10. fix workflow scanner fail-open behavior, exact-tree labeling and capability-matrix overclaims.
+`authenticated ordinary evidence → companion V2 memory/state → body intent → real Godot routing/execution → typed result → V2 outcome learning → persistence → restart → remembered behavior change`
+
+The same final tree must move the 10,000-case transition campaign into production Godot, run a genuine multi-class failure matrix, prove care independence under process loss, and remove V1 from Alpha acceptance evidence.
 
 ## Completion position
 
-Architect Review 24 supersedes the previous 9% estimate. Accepted/bounded progress now supports **31% overall completion**. If Alpha50-002 fully passes independent review, the intended evidence-based Architect range is approximately 50–55% while semantic vision, STT/TTS, live notification, pilot and release remain unclaimed.
+Architect Review 25 sets evidence-grounded overall completion to **35%**, superseding Review 24's 31%.
+
+If the central software boundary in Alpha50-003 fully passes independent review, the intended Architect assessment range is approximately **50–55%**, even if genuinely unavailable physical webcam/microphone/Openbox resources remain explicit blockers rather than fabricated PASS results.
 
 ## Protected work
 
