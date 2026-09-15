@@ -1,0 +1,284 @@
+{
+  "affect_compatibility": [
+    "neutral",
+    "calm",
+    "positive",
+    "uncertain"
+  ],
+  "behavior_tags": [
+    "idle_breathe_a"
+  ],
+  "body_revision": "mon-body-v1",
+  "checksum": "0644085e05aff48a073e09a3d2555b76ea8eb2bdb571e528fae2ed474aae1a26",
+  "clip_id": "idle_breathe_a",
+  "connectors": {
+    "entry": [
+      "neutral",
+      "turn"
+    ],
+    "exit": [
+      "neutral",
+      "turn"
+    ]
+  },
+  "contacts": [
+    {
+      "end_tick": 2,
+      "landmark": "left_foot",
+      "start_tick": 0
+    },
+    {
+      "end_tick": 4,
+      "landmark": "right_foot",
+      "start_tick": 2
+    }
+  ],
+  "direction_coverage": [
+    "N",
+    "NE",
+    "E",
+    "SE",
+    "S",
+    "SW",
+    "W",
+    "NW"
+  ],
+  "end_posture": "neutral",
+  "energy_compatibility": [
+    "low",
+    "medium",
+    "high"
+  ],
+  "events": [
+    {
+      "kind": "frame_marker",
+      "tick": 2
+    },
+    {
+      "kind": "contact",
+      "tick": 4
+    }
+  ],
+  "frames": [
+    {
+      "duration_ticks": 2,
+      "frame_id": "idle_breathe_a_N_000",
+      "landmarks": {
+        "head": [
+          512,
+          190
+        ],
+        "left_foot": [
+          396,
+          900
+        ],
+        "right_foot": [
+          628,
+          900
+        ],
+        "root": [
+          512,
+          896
+        ]
+      },
+      "path": "assets/generated/p02/frames/idle_breathe_a_N_000.png",
+      "source_id": "pose-000"
+    },
+    {
+      "duration_ticks": 2,
+      "frame_id": "idle_breathe_a_NE_001",
+      "landmarks": {
+        "head": [
+          512,
+          190
+        ],
+        "left_foot": [
+          396,
+          900
+        ],
+        "right_foot": [
+          628,
+          900
+        ],
+        "root": [
+          512,
+          896
+        ]
+      },
+      "path": "assets/generated/p02/frames/idle_breathe_a_NE_001.png",
+      "source_id": "pose-001"
+    },
+    {
+      "duration_ticks": 2,
+      "frame_id": "idle_breathe_a_E_002",
+      "landmarks": {
+        "head": [
+          512,
+          190
+        ],
+        "left_foot": [
+          396,
+          900
+        ],
+        "right_foot": [
+          628,
+          900
+        ],
+        "root": [
+          512,
+          896
+        ]
+      },
+      "path": "assets/generated/p02/frames/idle_breathe_a_E_002.png",
+      "source_id": "pose-002"
+    },
+    {
+      "duration_ticks": 2,
+      "frame_id": "idle_breathe_a_SE_003",
+      "landmarks": {
+        "head": [
+          512,
+          190
+        ],
+        "left_foot": [
+          396,
+          900
+        ],
+        "right_foot": [
+          628,
+          900
+        ],
+        "root": [
+          512,
+          896
+        ]
+      },
+      "path": "assets/generated/p02/frames/idle_breathe_a_SE_003.png",
+      "source_id": "pose-003"
+    },
+    {
+      "duration_ticks": 2,
+      "frame_id": "idle_breathe_a_S_004",
+      "landmarks": {
+        "head": [
+          512,
+          190
+        ],
+        "left_foot": [
+          396,
+          900
+        ],
+        "right_foot": [
+          628,
+          900
+        ],
+        "root": [
+          512,
+          896
+        ]
+      },
+      "path": "assets/generated/p02/frames/idle_breathe_a_S_004.png",
+      "source_id": "pose-004"
+    },
+    {
+      "duration_ticks": 2,
+      "frame_id": "idle_breathe_a_SW_005",
+      "landmarks": {
+        "head": [
+          512,
+          190
+        ],
+        "left_foot": [
+          396,
+          900
+        ],
+        "right_foot": [
+          628,
+          900
+        ],
+        "root": [
+          512,
+          896
+        ]
+      },
+      "path": "assets/generated/p02/frames/idle_breathe_a_SW_005.png",
+      "source_id": "pose-005"
+    },
+    {
+      "duration_ticks": 2,
+      "frame_id": "idle_breathe_a_W_006",
+      "landmarks": {
+        "head": [
+          512,
+          190
+        ],
+        "left_foot": [
+          396,
+          900
+        ],
+        "right_foot": [
+          628,
+          900
+        ],
+        "root": [
+          512,
+          896
+        ]
+      },
+      "path": "assets/generated/p02/frames/idle_breathe_a_W_006.png",
+      "source_id": "pose-006"
+    },
+    {
+      "duration_ticks": 2,
+      "frame_id": "idle_breathe_a_NW_007",
+      "landmarks": {
+        "head": [
+          512,
+          190
+        ],
+        "left_foot": [
+          396,
+          900
+        ],
+        "right_foot": [
+          628,
+          900
+        ],
+        "root": [
+          512,
+          896
+        ]
+      },
+      "path": "assets/generated/p02/frames/idle_breathe_a_NW_007.png",
+      "source_id": "pose-007"
+    }
+  ],
+  "interruptible_ranges": [
+    [
+      0,
+      16
+    ]
+  ],
+  "loop_mode": "loop",
+  "overlay_requirements": {
+    "eyes": true,
+    "mouth": false
+  },
+  "pack_revision": "p02-pack-v1",
+  "repeat_bounds": {
+    "cooldown_ticks": 4,
+    "max": 3,
+    "min": 1,
+    "rarity": 1,
+    "recent_use_suppression": 2
+  },
+  "root_motion_policy": "forbidden",
+  "seam": {
+    "first_frame": "idle_breathe_a_N_000",
+    "last_frame": "idle_breathe_a_NW_007",
+    "root_drift_px": 0
+  },
+  "stage": "candidate",
+  "start_posture": "neutral",
+  "version": 1
+}

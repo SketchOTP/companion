@@ -1,0 +1,254 @@
+{
+  "approved_source_hashes_rechecked": 19,
+  "basis_commit": "8106ad949939b76b322f5956fd07a411d7b1ec34",
+  "cutout_attempts": [
+    {
+      "exit_code": 1,
+      "http_status": 402,
+      "id": "right_down_near",
+      "output_created": false,
+      "provider": "photoroom"
+    },
+    {
+      "exit_code": 1,
+      "http_status": 402,
+      "id": "right_up_near",
+      "output_created": false,
+      "provider": "photoroom"
+    },
+    {
+      "exit_code": 1,
+      "http_status": 402,
+      "id": "right_down_far",
+      "output_created": false,
+      "provider": "photoroom"
+    },
+    {
+      "exit_code": 1,
+      "http_status": 402,
+      "id": "right_passing_far",
+      "output_created": false,
+      "provider": "photoroom"
+    },
+    {
+      "exit_code": 1,
+      "http_status": 402,
+      "id": "right_up_far",
+      "output_created": false,
+      "provider": "photoroom"
+    },
+    {
+      "exit_code": 1,
+      "http_status": 402,
+      "id": "right_passing_far_repair",
+      "output_created": false,
+      "provider": "photoroom"
+    }
+  ],
+  "cutout_observation_basis": "six live adapter tool results; no response body or credential retained",
+  "downstream": {
+    "full_actions": "NOT RUN",
+    "v2_godot": "NOT RUN",
+    "v2_intake": "NOT RUN",
+    "v2_rust": "NOT RUN",
+    "world_contacts": "NOT RUN"
+  },
+  "fallback": {
+    "id": "alpha_fallback",
+    "result": "FAILED_RGB_NO_ALPHA"
+  },
+  "files": {
+    "ordered-keys/00-right_contact_near.png": "9c3c1464de5eca92743081e93989292729fb7b201321463575e63c435ae4b5a5",
+    "ordered-keys/01-right_down_near.png": "a2a5500e9492880065ac60db071aed64c31844965ddef5b14bf590e1a6a391f6",
+    "ordered-keys/02-right_passing_near.png": "27cdfadfbaef13c03e5c194f23b721f23d08f5dcf2cff04e043c67d8525e6f05",
+    "ordered-keys/03-right_up_near.png": "b6c4c726f43fd801b040c52087bfcc56aa866baeffbf488b2047afc2716a6380",
+    "ordered-keys/04-right_contact_far.png": "42a39199c9d0fee003c43da798a6be900b0dc7388397b009b5e1ff17b716decd",
+    "ordered-keys/05-right_down_far.png": "9eb06bf18813e0e439d8837c01d8450104357f6c7ba9eb9147ed160094ec2631",
+    "ordered-keys/06-right_passing_far_repair.png": "1c580d89b31b52e29ef988fea2fee083731a7af282bf9d1c3ec4fb98092417e4",
+    "ordered-keys/07-right_up_far.png": "e0fbb425f53cb2c156e5d939ed818e2e960ced58cc9b4b3da45e5dbaf05034a0",
+    "raw/alpha_fallback.png": "2ab5ea25f31a6c333fbe519b16bc932fb43dc4aecb2f6abe8e2f35921750d43e",
+    "raw/right_down_far.png": "9eb06bf18813e0e439d8837c01d8450104357f6c7ba9eb9147ed160094ec2631",
+    "raw/right_down_near.png": "a2a5500e9492880065ac60db071aed64c31844965ddef5b14bf590e1a6a391f6",
+    "raw/right_passing_far.png": "47f9ec8c63e70d35ae42aed972364ada16f5c0fd1159faf9e79f2f0956c348ad",
+    "raw/right_passing_far_repair.png": "1c580d89b31b52e29ef988fea2fee083731a7af282bf9d1c3ec4fb98092417e4",
+    "raw/right_up_far.png": "e0fbb425f53cb2c156e5d939ed818e2e960ced58cc9b4b3da45e5dbaf05034a0",
+    "raw/right_up_near.png": "b6c4c726f43fd801b040c52087bfcc56aa866baeffbf488b2047afc2716a6380",
+    "right-key-strip.png": "1833d73e221d78a1bc2b8339c0a4c4751c4e619947c9288da123e0bc929757a6",
+    "right-key-study-normal.gif": "8aa2f9711a744500d57b17a50ee72fa46ae11ae8116831fad9ac8a38a6546561",
+    "right-key-study-quarter.gif": "33ca30c3ff286054599424d695801ee4e52b2f4119098883c526943abc99208a"
+  },
+  "generator": "built-in image_gen, reference edits",
+  "observed_at_utc": "2026-09-12T20:24:35.721296+00:00",
+  "ordered_key_ids": [
+    "right_contact_near",
+    "right_down_near",
+    "right_passing_near",
+    "right_up_near",
+    "right_contact_far",
+    "right_down_far",
+    "right_passing_far_repair",
+    "right_up_far"
+  ],
+  "promoted_frames": 0,
+  "review_ceiling": "raw key study; no cutout, normalization, contact measurement, full action, in-between or motion-quality pass",
+  "review_timing": {
+    "normal": {
+      "backdrop_rgb": [
+        238,
+        238,
+        242
+      ],
+      "completion": "once",
+      "gif_boundary_error_ms_max": 5,
+      "review_duration_ms": [
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250,
+        250
+      ],
+      "slow_factor": 1,
+      "source_fps": 24,
+      "source_pixels_mutated": false,
+      "source_ticks": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    },
+    "quarter": {
+      "backdrop_rgb": [
+        238,
+        238,
+        242
+      ],
+      "completion": "once",
+      "gif_boundary_error_ms_max": 5,
+      "review_duration_ms": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000
+      ],
+      "slow_factor": 4,
+      "source_fps": 24,
+      "source_pixels_mutated": false,
+      "source_ticks": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ]
+    }
+  },
+  "status": "BLOCKED_CUTOUT_PROVIDER_HTTP_402",
+  "studies": [
+    {
+      "approval_state": "candidate",
+      "exact_copy": true,
+      "file": "exec-9868b502-dd82-46f8-8a4a-53bea10f806b.png",
+      "has_alpha": false,
+      "id": "right_down_near",
+      "mode": "RGB",
+      "sha256": "a2a5500e9492880065ac60db071aed64c31844965ddef5b14bf590e1a6a391f6",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "approval_state": "candidate",
+      "exact_copy": true,
+      "file": "exec-213938c9-ecdf-48ec-8d83-91d0676de123.png",
+      "has_alpha": false,
+      "id": "right_up_near",
+      "mode": "RGB",
+      "sha256": "b6c4c726f43fd801b040c52087bfcc56aa866baeffbf488b2047afc2716a6380",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "approval_state": "candidate",
+      "exact_copy": true,
+      "file": "exec-8830d16a-ded6-4209-8281-b6a2dea806b5.png",
+      "has_alpha": false,
+      "id": "right_down_far",
+      "mode": "RGB",
+      "sha256": "9eb06bf18813e0e439d8837c01d8450104357f6c7ba9eb9147ed160094ec2631",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "approval_state": "candidate",
+      "exact_copy": true,
+      "file": "exec-e8f8e16c-0a8d-42b6-9dac-a6d8398a5c2d.png",
+      "has_alpha": false,
+      "id": "right_passing_far",
+      "mode": "RGB",
+      "sha256": "47f9ec8c63e70d35ae42aed972364ada16f5c0fd1159faf9e79f2f0956c348ad",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "approval_state": "candidate",
+      "exact_copy": true,
+      "file": "exec-addd4a32-aef1-4691-8881-3308a610de2a.png",
+      "has_alpha": false,
+      "id": "right_up_far",
+      "mode": "RGB",
+      "sha256": "e0fbb425f53cb2c156e5d939ed818e2e960ced58cc9b4b3da45e5dbaf05034a0",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "approval_state": "candidate",
+      "exact_copy": true,
+      "file": "exec-5a4fe831-fad1-4e15-b023-12f6735b20b9.png",
+      "has_alpha": false,
+      "id": "right_passing_far_repair",
+      "mode": "RGB",
+      "sha256": "1c580d89b31b52e29ef988fea2fee083731a7af282bf9d1c3ec4fb98092417e4",
+      "size": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "approval_state": "rejected",
+      "exact_copy": true,
+      "file": "exec-00126c35-1590-442f-ab69-1fd435b5960f.png",
+      "has_alpha": false,
+      "id": "alpha_fallback",
+      "mode": "RGB",
+      "sha256": "2ab5ea25f31a6c333fbe519b16bc932fb43dc4aecb2f6abe8e2f35921750d43e",
+      "size": [
+        1254,
+        1254
+      ]
+    }
+  ]
+}

@@ -32,8 +32,74 @@ Godot 4.7.2 and ready to receive later body-neutral organism intents.
 - Bulk generated binary packs are artifacts, not ordinary-Git history.
 - Operator visual approval is mandatory and cannot be self-issued.
 
+## Review 01 continuation boundary — 2026-09-11
+
+The exact native identity and turnaround references are now directly available
+and hash-verified. The immediate deliverable is the reference-grounded
+temporal core-motion approval package plus corrected Godot timing, atlas
+packaging, rendered QA, and dedicated Phase 02 CI. The historical directional
+catalog is rejected as temporal evidence. Remaining full-family production and
+the target Openbox endurance gate wait for operator visual approval and target
+access.
+
 ## Evidence ceiling
 
 Phase 02 may establish bounded engineering and visual candidate evidence only.
 It cannot establish aliveness, organism autonomy, perception, caregiving,
 security certification, product reliability, or release suitability.
+
+## Architect Review 02 scope correction
+
+The immediate scope is the exact-reference, production-canon, and minimal-motion
+proof gate only. It supersedes the prior pre-approval counts of 32 families,
+256 temporal drawings, eight-direction coverage, and 10,000 transitions. The
+current proof is six front-left tracks and 26 drawings. Operator selection of
+construction and motion language is required before scale expansion; neither
+the vector/path nor layered-raster candidate is adopted.
+# R04 superseding specification
+
+The active deliverable is no longer a Codex-authored body or motion proof. It
+is `MON_AUTHORED_FRAME_PACK_V1`, the exact
+`ARCHITECT_FRAME_REQUEST_V1.md`, byte-preserving content-addressed intake,
+explicit Rust contract types, and fail-closed Godot presentation. Production
+packaging accepts only `operator_approved`; all R03 art is negative evidence.
+The required final status is `READY_FOR_ARCHITECT_FRAME_PACK` and does not
+accept Phase 02.
+
+## R04-C01 contract correction
+
+The source profile, ingested runtime profile, and intake receipt are separate
+records. Tracks distinguish selection, entry, and exit facing; frames carry
+typed facing/posture/action-phase values; and every canonical landmark has an
+explicit visible, occluded, or not-applicable state. The bounded request profile
+is enforced before intake, including family counts, endpoint facings, and event
+requirements. PNG structure/profile, IDs, source reuse, event ticks, contacts,
+and safety bounds are validated from source bytes. Intake is staged and
+atomically published into a fresh destination. Godot verifies the derived pack
+and observes a render commit before acknowledgment. Synthetic fixtures are test
+only; no production pixels are generated or approved by Codex.
+
+## R04-C02 focused correction
+
+The executable profile is the exact tuple-keyed request in
+`ARCHITECT_FRAME_REQUEST_V1.md`: eight roles and 31 synthetic calibration
+frames. It requires the neutral-construction facing set, orientation endpoints
+and events, walk footfalls, listen/acknowledge ordering, completion modes, and
+same-track `reuse_of` semantics. PNG validation is structural (IHDR, RGBA8,
+encoding flags, one explicit sRGB, terminal IEND, and no trailing bytes).
+Intake uses same-filesystem staging, fsync of authority files/directories,
+atomic rename, and an injected mid-intake failure. Exact Rust and Godot 4.7.2
+gates remain required; unavailable local executables are `NOT RUN`/`BLOCKED`.
+
+## R05 bounded candidate-art specification
+
+Architect Review 10 and ADR-57 authorize reference-conditioned candidate
+sprite generation. The current bounded package is exactly eight tuple-keyed
+tracks: three neutral construction facings, eight-frame front-left idle,
+eight-frame front-left walk, two reciprocal four-frame facing connectors, and
+six-frame listen/acknowledge. All sources use `approval_state=candidate` and
+must pass the accepted source/ingested/receipt, Rust, and Godot boundaries.
+
+The reciprocal connector may reuse the exact four authored poses in reverse;
+therefore the accounting is 33 frame occurrences and 29 unique source hashes.
+This package is an operator-review candidate, not the complete Phase 02 library.

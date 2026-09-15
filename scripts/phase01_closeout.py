@@ -60,6 +60,13 @@ def wait_increase(fn, old, timeout=5):
         time.sleep(.02)
     return fn()
 
+def wait_absent(path, timeout=5):
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        if not path.exists(): return True
+        time.sleep(.02)
+    return not path.exists()
+
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--output", required=True, type=pathlib.Path); ap.add_argument("--cycles", type=int, default=3000); ap.add_argument("--seeds", default="17,23,41"); args = ap.parse_args()
     if args.cycles < 3000 or args.cycles % 3: raise SystemExit("cycles must be >=3000 and divisible by 3")
@@ -67,7 +74,7 @@ def main():
     categories = {k: dict(EXPECTATIONS[k], requested=0, applied=0, accepted=0, rejected=0, duplicate=0, reasons={}, care_attempt_delta=0, care_outcome_delta=0, companion_event_delta=0) for k in EXPECTATIONS}; lifecycle = {}
     with tempfile.TemporaryDirectory(prefix="companion-closeout-") as root:
         env = os.environ.copy(); env.update(COMPANION_XDG_ROOT=root, COMPANION_CYCLES="1", COMPANION_SEEDS=','.join(map(str, seeds))); proc = subprocess.Popen([binary], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        control = pathlib.Path(root) / "companion" / "supervisor.sock"; care_db = pathlib.Path(root) / "companion" / "care.sqlite3"; companion_db = pathlib.Path(root) / "companion" / "companion.sqlite3"
+        control = pathlib.Path(root) / "companion" / "supervisor.sock"; care_db = pathlib.Path(root) / "companion" / "care.sqlite3"; companion_db = pathlib.Path(root) / "companion" / "companion.sqlite3"; ordinary_marker = pathlib.Path(root) / "companion" / "ordinary-observation.json"
         try:
             snap = wait_for(control, lambda s: len(s.get("children", [])) == 5 and all(x.get("ready") for x in s.get("children", [])), 12); lifecycle["startup_ready"] = len(snap.get("children", [])) == 5 and all(x.get("ready") for x in snap.get("children", []))
             if not lifecycle["startup_ready"]: raise RuntimeError("roles not ready")
@@ -79,14 +86,15 @@ def main():
                 response = command(control, {"command":"inject", "kind":kind, "request_id":f"seed-{seed}-{i}"}); categories[kind]["applied"] += 1
                 if response.get("normalized_kind") != kind or response.get("accepted") is not True: raise RuntimeError(f"typed injection mismatch {kind}: {response}")
                 if kind == "valid_ordinary_observation":
-                    after_events = wait_increase(lambda: event_count(companion_db), before_events); after = db_counts(care_db); status, reason = ("accepted", "ordinary_observation") if after_events == before_events + 1 else ("rejected", "ordinary_observation"); categories[kind]["companion_event_delta"] += after_events - before_events
+                    after_events = wait_increase(lambda: event_count(companion_db), before_events); consumed = wait_absent(ordinary_marker); after = db_counts(care_db); status, reason = ("accepted", "ordinary_observation") if after_events == before_events + 1 and consumed else ("rejected", "ordinary_observation"); categories[kind]["companion_event_delta"] += after_events - before_events
                 else:
                     wait_increase(lambda: db_counts(care_db)["attempts"], before["attempts"]); after = db_counts(care_db); reason = next(iter(sqlite3.connect(care_db).execute("SELECT reason FROM safety_attempts ORDER BY id DESC LIMIT 1")), (None,))[0]; status = "duplicate" if reason == "duplicate" else ("accepted" if reason == "accepted" else "rejected"); categories[kind]["care_attempt_delta"] += after["attempts"] - before["attempts"]; categories[kind]["care_outcome_delta"] += after["receipts"] - before["receipts"]
                 categories[kind][status] += 1; categories[kind]["reasons"][reason] = categories[kind]["reasons"].get(reason, 0) + 1
                 if status != EXPECTATIONS[kind]["expected_status"] or reason != EXPECTATIONS[kind]["expected_reason"]: raise RuntimeError(f"outcome mismatch {kind}: {status}/{reason}")
             lifecycle["mixed_messages"] = sum(v["requested"] for v in categories.values()) == args.cycles; invalid = [k for k, v in EXPECTATIONS.items() if v["expected_status"] == "rejected"]; lifecycle["invalid_accepted_zero"] = sum(categories[k]["accepted"] for k in invalid) == 0; lifecycle["ordinary_separated"] = categories["valid_ordinary_observation"]["care_attempt_delta"] == 0 and categories["valid_ordinary_observation"]["care_outcome_delta"] == 0 and event_count(companion_db) > event_baseline; lifecycle["care_alive_after_hostile"] = bool(role(health(control), "care-core") and role(health(control), "care-core").get("ready"))
+            seed_before = db_counts(care_db); seed_response = command(control, {"command":"inject", "kind":"valid_safety_candidate", "request_id":"restart-persistent"}); seed_attempts = wait_increase(lambda: db_counts(care_db)["attempts"], seed_before["attempts"]); seeded_persistent_candidate = seed_response.get("accepted") is True and seed_attempts == seed_before["attempts"] + 1
             old_care = role(health(control), "care-core"); command(control, {"command":"fail", "role":"care-core"}); degraded = wait_for(control, lambda s: s.get("care_coverage") == "degraded", 5); recovered = wait_for(control, lambda s: role(s,"care-core") and role(s,"care-core").get("pid") != old_care["pid"] and s.get("care_coverage") == "synthetic", 12); lifecycle["care_degraded_recovered"] = degraded.get("care_coverage") == "degraded" and recovered.get("care_coverage") == "synthetic"
-            before = db_counts(care_db); command(control, {"command":"inject", "kind":"duplicate_safety_candidate", "request_id":"restart-duplicate"}); wait_increase(lambda: db_counts(care_db)["attempts"], before["attempts"]); lifecycle["persistent_idempotency"] = db_counts(care_db)["attempts"] == before["attempts"] + 1 and next(iter(sqlite3.connect(care_db).execute("SELECT reason FROM safety_attempts ORDER BY id DESC LIMIT 1")), (None,))[0] == "duplicate"
+            before = db_counts(care_db); duplicate_response = command(control, {"command":"inject", "kind":"duplicate_safety_candidate", "request_id":"restart-duplicate"}); wait_increase(lambda: db_counts(care_db)["attempts"], before["attempts"]); lifecycle["persistent_idempotency"] = seeded_persistent_candidate and duplicate_response.get("accepted") is True and db_counts(care_db)["attempts"] == before["attempts"] + 1 and next(iter(sqlite3.connect(care_db).execute("SELECT reason FROM safety_attempts ORDER BY id DESC LIMIT 1")), (None,))[0] == "duplicate"
             old_sensor = role(recovered, "sensor-gateway"); command(control, {"command":"rotate", "role":"sensor-gateway"}); rotated = wait_for(control, lambda s: role(s,"sensor-gateway") and role(s,"sensor-gateway").get("pid") != old_sensor["pid"] and role(s,"sensor-gateway").get("generation") != old_sensor["generation"], 12); lifecycle["producer_rotation"] = bool(role(rotated, "sensor-gateway"))
             fault = command(control, {"command":"set_test_store_fault", "authority":"care"}); lifecycle["care_store_fault_degraded"] = fault.get("accepted") is True and wait_for(control, lambda s: s.get("care_coverage") == "degraded", 5).get("care_coverage") == "degraded"; command(control, {"command":"clear_test_fault", "authority":"care"}); lifecycle["care_store_recovered"] = wait_for(control, lambda s: s.get("care_coverage") == "synthetic", 12).get("care_coverage") == "synthetic"; command(control, {"command":"shutdown"}); proc.wait(timeout=12); lifecycle["clean_shutdown"] = proc.returncode == 0
         finally:

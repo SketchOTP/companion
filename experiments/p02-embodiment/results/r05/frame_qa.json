@@ -1,0 +1,83 @@
+{
+  "evidence_ceiling": "Rendered bounds/contact observations; automated checks do not approve identity or motion quality.",
+  "frame_occurrences": 33,
+  "identity_quality": "OPERATOR_VISUAL_REVIEW_PENDING",
+  "planted_contact_observations": [
+    {
+      "landmark": "ground_contact_left",
+      "max_rendered_drift_px": 0,
+      "sample_count": 1,
+      "status": "PASSED",
+      "track_id": "candidate:neutral_construction:front:1"
+    },
+    {
+      "landmark": "ground_contact_right",
+      "max_rendered_drift_px": 0,
+      "sample_count": 1,
+      "status": "PASSED",
+      "track_id": "candidate:neutral_construction:front:1"
+    },
+    {
+      "landmark": "ground_contact_left",
+      "max_rendered_drift_px": 0,
+      "sample_count": 1,
+      "status": "PASSED",
+      "track_id": "candidate:neutral_construction:right:1"
+    },
+    {
+      "landmark": "ground_contact_right",
+      "max_rendered_drift_px": 0,
+      "sample_count": 1,
+      "status": "PASSED",
+      "track_id": "candidate:neutral_construction:right:1"
+    },
+    {
+      "landmark": "ground_contact_left",
+      "max_rendered_drift_px": 0,
+      "sample_count": 1,
+      "status": "PASSED",
+      "track_id": "candidate:neutral_construction:front_left:1"
+    },
+    {
+      "landmark": "ground_contact_right",
+      "max_rendered_drift_px": 0,
+      "sample_count": 1,
+      "status": "PASSED",
+      "track_id": "candidate:neutral_construction:front_left:1"
+    },
+    {
+      "landmark": "ground_contact_right",
+      "max_rendered_drift_px": 0,
+      "sample_count": 8,
+      "status": "PASSED",
+      "track_id": "candidate:idle_breathe:front_left:1"
+    },
+    {
+      "landmark": "ground_contact_left",
+      "max_rendered_drift_px": 0,
+      "sample_count": 1,
+      "status": "PASSED",
+      "track_id": "candidate:walk:front_left:1"
+    },
+    {
+      "landmark": "ground_contact_right",
+      "max_rendered_drift_px": 0,
+      "sample_count": 1,
+      "status": "PASSED",
+      "track_id": "candidate:walk:front_left:1"
+    },
+    {
+      "landmark": "ground_contact_right",
+      "max_rendered_drift_px": 0,
+      "sample_count": 6,
+      "status": "PASSED",
+      "track_id": "candidate:listen_acknowledge:front_left:1"
+    }
+  ],
+  "profile": "COMPANION_P02_R05_FRAME_QA_V1",
+  "root_metadata_exact": true,
+  "safety_region_violations": [],
+  "status": "PASSED",
+  "transparent_perimeter_violations": [],
+  "unique_source_hashes": 29
+}

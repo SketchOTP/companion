@@ -1,0 +1,126 @@
+{
+  "cache_after_digest": "70e384bc9ddfd85af2096512be6d054bab03b0c94eca039cf708c690526fd30e",
+  "cache_after_exists": true,
+  "cache_before_digest": "70e384bc9ddfd85af2096512be6d054bab03b0c94eca039cf708c690526fd30e",
+  "cache_before_exists": true,
+  "command": [
+    "xvfb-run",
+    "-a",
+    "-e",
+    "<qualification-temp>/hash-negative/xvfb-wrapper.log",
+    "<absolute>/Godot_v4.7.2-stable_linux.x86_64",
+    "--log-file",
+    "<qualification-temp>/hash-negative/godot.engine.log",
+    "--audio-driver",
+    "Dummy",
+    "--path",
+    "<absolute>/companion-black-motion-godot.DSmv2a",
+    "--script",
+    "res://black_motion_review.gd",
+    "--",
+    "--requests=<absolute>/hash-negative.json"
+  ],
+  "display_server": ":1",
+  "elapsed_ms": 1624.843,
+  "engine_log": "godot.engine.log",
+  "engine_log_sha256": "0aa95cadc6dee3e25ac377c621ecd93069506fd83b4faa4c6dd7954c51a4b535",
+  "godot_error_count": 0,
+  "godot_error_lines": [],
+  "godot_error_lines_by_channel": {
+    "engine": [],
+    "stderr": [],
+    "stdout": []
+  },
+  "godot_gate": "PASSED",
+  "godot_version": "4.7.2.stable.official.ed1daf0bf",
+  "godot_warning_count": 2,
+  "godot_warning_lines": [
+    "WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.",
+    "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+  ],
+  "godot_warning_lines_by_channel": {
+    "engine": [
+      "WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.",
+      "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+    ],
+    "stderr": [],
+    "stdout": [
+      "WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.",
+      "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+    ]
+  },
+  "label": "qualification",
+  "mode": "semantic",
+  "pack_sha256": "c2ae5e86460855501336261488bf15a929164a6689e8271db93bab0d38d38908",
+  "process_exit_code": 1,
+  "renderer_driver": {
+    "display_server": ":1",
+    "renderer": "OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)",
+    "rendering_method": "observed in Godot output or unavailable"
+  },
+  "runner_version": "r04-c03-godot-runner-v1",
+  "semantic_test_result": {
+    "background_rgb": [
+      0,
+      0,
+      0
+    ],
+    "errors": [
+      "source_hash_or_decode_failure:acknowledge_down"
+    ],
+    "mode": "black_candidate_motion_review",
+    "motion_quality": "NOT_APPROVED",
+    "source_bytes_unchanged": true,
+    "status": "FAILED",
+    "tracks": [],
+    "transparent_intake": "NOT_RUN",
+    "world_contacts": "NOT_RUN"
+  },
+  "status": "FAILED",
+  "stderr_log": "godot.stderr.log",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_log": "godot.stdout.log",
+  "stdout_sha256": "54f2533e1c445352eb11d918bc9fbab99c5294138c529ad5cda9ffc57753b793",
+  "wrapper_diagnostics": [
+    "The XKEYBOARD keymap compiler (xkbcomp) reports:",
+    "> Warning:          Could not resolve keysym XF86CameraAccessEnable",
+    "> Warning:          Could not resolve keysym XF86CameraAccessDisable",
+    "> Warning:          Could not resolve keysym XF86CameraAccessToggle",
+    "> Warning:          Could not resolve keysym XF86NextElement",
+    "> Warning:          Could not resolve keysym XF86PreviousElement",
+    "> Warning:          Could not resolve keysym XF86AutopilotEngageToggle",
+    "> Warning:          Could not resolve keysym XF86MarkWaypoint",
+    "> Warning:          Could not resolve keysym XF86Sos",
+    "> Warning:          Could not resolve keysym XF86NavChart",
+    "> Warning:          Could not resolve keysym XF86FishingChart",
+    "> Warning:          Could not resolve keysym XF86SingleRangeRadar",
+    "> Warning:          Could not resolve keysym XF86DualRangeRadar",
+    "> Warning:          Could not resolve keysym XF86RadarOverlay",
+    "> Warning:          Could not resolve keysym XF86TraditionalSonar",
+    "> Warning:          Could not resolve keysym XF86ClearvuSonar",
+    "> Warning:          Could not resolve keysym XF86SidevuSonar",
+    "> Warning:          Could not resolve keysym XF86NavInfo",
+    "Errors from xkbcomp are not fatal to the X server",
+    "The XKEYBOARD keymap compiler (xkbcomp) reports:",
+    "> Warning:          Could not resolve keysym XF86CameraAccessEnable",
+    "> Warning:          Could not resolve keysym XF86CameraAccessDisable",
+    "> Warning:          Could not resolve keysym XF86CameraAccessToggle",
+    "> Warning:          Could not resolve keysym XF86NextElement",
+    "> Warning:          Could not resolve keysym XF86PreviousElement",
+    "> Warning:          Could not resolve keysym XF86AutopilotEngageToggle",
+    "> Warning:          Could not resolve keysym XF86MarkWaypoint",
+    "> Warning:          Could not resolve keysym XF86Sos",
+    "> Warning:          Could not resolve keysym XF86NavChart",
+    "> Warning:          Could not resolve keysym XF86FishingChart",
+    "> Warning:          Could not resolve keysym XF86SingleRangeRadar",
+    "> Warning:          Could not resolve keysym XF86DualRangeRadar",
+    "> Warning:          Could not resolve keysym XF86RadarOverlay",
+    "> Warning:          Could not resolve keysym XF86TraditionalSonar",
+    "> Warning:          Could not resolve keysym XF86ClearvuSonar",
+    "> Warning:          Could not resolve keysym XF86SidevuSonar",
+    "> Warning:          Could not resolve keysym XF86NavInfo",
+    "Errors from xkbcomp are not fatal to the X server"
+  ],
+  "xvfb_log": "xvfb-wrapper.log",
+  "xvfb_log_sha256": "b987a262609a3720f450ab6815ed90b2069dd47b7b012959ca19c325aebf5d55"
+}

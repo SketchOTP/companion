@@ -1,0 +1,51 @@
+{
+  "files": [
+    {
+      "path": "assets/source/p02/references/identity-approved.png",
+      "sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+      "size_bytes": 774892
+    },
+    {
+      "path": "assets/source/p02/references/turnaround-approved.png",
+      "sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4",
+      "size_bytes": 1327122
+    },
+    {
+      "path": "anatomy_palette_sheet.png",
+      "sha256": "e95e1babfda86029e5a1310a2bf2d59e38ea658f3b1d228f14bbd0e8b116326f",
+      "size_bytes": 18066
+    },
+    {
+      "path": "core_motion_sheet.png",
+      "sha256": "aec6a1196bb8615ad77e47ea6584f33c01f628cac430581bf2943be2a6bea768",
+      "size_bytes": 231705
+    },
+    {
+      "path": "diagonal_candidates_sheet.png",
+      "sha256": "577b99776a2ac733a354d8e3360a3a9927d9ac99b8ac5b832cf3863332f35b58",
+      "size_bytes": 70452
+    },
+    {
+      "path": "idle_variants_sheet.png",
+      "sha256": "dcb619eda842612802b822adfada4c7b8aa5c5bb912d3a121401eaf54ba25379",
+      "size_bytes": 16494
+    },
+    {
+      "path": "pose_limits_shadow_sheet.png",
+      "sha256": "4065e730aa73f04c0228bb4c02c81a8c6c78183ba17a8fcaf50e733e5dcac465",
+      "size_bytes": 18539
+    },
+    {
+      "path": "proportion_silhouette_root_sheet.png",
+      "sha256": "4570acdbc37328cfd4f0fcaec926b69f3c6fe4e3a2adea806818cb32e335239c",
+      "size_bytes": 264217
+    },
+    {
+      "path": "six_view_correspondence_sheet.png",
+      "sha256": "da0aca7ddd95db0c2dd687afd918882a344bac06eb6a1610df796d7202f522d9",
+      "size_bytes": 653147
+    }
+  ],
+  "profile": "MON_REVIEW_MANIFEST_V1",
+  "status": "CANDIDATE_PENDING_OPERATOR_VISUAL_APPROVAL"
+}

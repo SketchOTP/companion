@@ -1,0 +1,808 @@
+{
+  "cache_after_digest": "70e384bc9ddfd85af2096512be6d054bab03b0c94eca039cf708c690526fd30e",
+  "cache_after_exists": true,
+  "cache_before_digest": "70e384bc9ddfd85af2096512be6d054bab03b0c94eca039cf708c690526fd30e",
+  "cache_before_exists": true,
+  "command": [
+    "xvfb-run",
+    "-a",
+    "-e",
+    "<qualification-temp>/playback-03/xvfb-wrapper.log",
+    "<absolute>/Godot_v4.7.2-stable_linux.x86_64",
+    "--log-file",
+    "<qualification-temp>/playback-03/godot.engine.log",
+    "--audio-driver",
+    "Dummy",
+    "--path",
+    "<absolute>/companion-black-motion-godot.DSmv2a",
+    "--script",
+    "res://black_motion_review.gd",
+    "--",
+    "--requests=<absolute>/requests.json"
+  ],
+  "display_server": ":1",
+  "elapsed_ms": 37182.415,
+  "engine_log": "godot.engine.log",
+  "engine_log_sha256": "dbf08e624e4efffd7528c1b316861b20fd389e17459ca836e7ae1e7a66e7bbb7",
+  "godot_error_count": 0,
+  "godot_error_lines": [],
+  "godot_error_lines_by_channel": {
+    "engine": [],
+    "stderr": [],
+    "stdout": []
+  },
+  "godot_gate": "PASSED",
+  "godot_version": "4.7.2.stable.official.ed1daf0bf",
+  "godot_warning_count": 2,
+  "godot_warning_lines": [
+    "WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.",
+    "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+  ],
+  "godot_warning_lines_by_channel": {
+    "engine": [
+      "WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.",
+      "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+    ],
+    "stderr": [],
+    "stdout": [
+      "WARNING: Failed to create wd.xic as the input method or its xim server may not have started yet.",
+      "WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver."
+    ]
+  },
+  "label": "qualification",
+  "mode": "semantic",
+  "pack_sha256": "0b1e72352c86d95e13c051c9c5a5a4e9abc5a72d012fd31a56e7898fa4ab99af",
+  "process_exit_code": 0,
+  "renderer_driver": {
+    "display_server": ":1",
+    "renderer": "OpenGL API 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.2 - Compatibility - Using Device: Mesa - llvmpipe (LLVM 20.1.2, 256 bits)",
+    "rendering_method": "observed in Godot output or unavailable"
+  },
+  "runner_version": "r04-c03-godot-runner-v1",
+  "semantic_test_result": {
+    "background_rgb": [
+      0,
+      0,
+      0
+    ],
+    "errors": [],
+    "mode": "black_candidate_motion_review",
+    "motion_quality": "NOT_APPROVED",
+    "source_bytes_unchanged": true,
+    "status": "PASSED",
+    "tracks": [
+      {
+        "completed": true,
+        "elapsed_seconds": 0.250271,
+        "expected_frame_order": [
+          0
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 6,
+        "timing_tolerance_seconds": 0.075,
+        "track": "construction_front",
+        "visible_pixel_samples": 1586,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 0.250097,
+        "expected_frame_order": [
+          0
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 6,
+        "timing_tolerance_seconds": 0.075,
+        "track": "construction_front_right",
+        "visible_pixel_samples": 1478,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 0.253519,
+        "expected_frame_order": [
+          0
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 6,
+        "timing_tolerance_seconds": 0.075,
+        "track": "construction_right_fix",
+        "visible_pixel_samples": 1105,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 0.248031,
+        "expected_frame_order": [
+          0
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 6,
+        "timing_tolerance_seconds": 0.075,
+        "track": "construction_back_right",
+        "visible_pixel_samples": 1464,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 0.249634,
+        "expected_frame_order": [
+          0
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 6,
+        "timing_tolerance_seconds": 0.075,
+        "track": "construction_back",
+        "visible_pixel_samples": 1404,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 0.247087,
+        "expected_frame_order": [
+          0
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 6,
+        "timing_tolerance_seconds": 0.075,
+        "track": "construction_back_left",
+        "visible_pixel_samples": 1419,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 0.250141,
+        "expected_frame_order": [
+          0
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 6,
+        "timing_tolerance_seconds": 0.075,
+        "track": "construction_left_fix",
+        "visible_pixel_samples": 1144,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 0.24777,
+        "expected_frame_order": [
+          0
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 6,
+        "timing_tolerance_seconds": 0.075,
+        "track": "construction_front_left",
+        "visible_pixel_samples": 1408,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 4.004982,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "review_traversals": 1,
+        "source_completion": "loop",
+        "source_ticks": 96,
+        "timing_tolerance_seconds": 0.075,
+        "track": "front_breathe_key_study",
+        "visible_pixel_samples": 1586,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 3.491177,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 84,
+        "timing_tolerance_seconds": 0.075,
+        "track": "front_listen_acknowledge_key_study",
+        "visible_pixel_samples": 1586,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 1.337224,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "review_traversals": 1,
+        "source_completion": "loop",
+        "source_ticks": 32,
+        "timing_tolerance_seconds": 0.075,
+        "track": "left_gait_key_study",
+        "visible_pixel_samples": 1360,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 1.248949,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 30,
+        "timing_tolerance_seconds": 0.075,
+        "track": "left_outward_turn_key_study",
+        "visible_pixel_samples": 1586,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 1.250236,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 30,
+        "timing_tolerance_seconds": 0.075,
+        "track": "left_return_turn_key_study",
+        "visible_pixel_samples": 1144,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 0.998189,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 24,
+        "timing_tolerance_seconds": 0.075,
+        "track": "left_start_key_study",
+        "visible_pixel_samples": 1144,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 0.998442,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 24,
+        "timing_tolerance_seconds": 0.075,
+        "track": "left_stop_key_study",
+        "visible_pixel_samples": 1360,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 6.458782,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 155,
+        "timing_tolerance_seconds": 0.075,
+        "track": "left_complete_action_key_blocking",
+        "visible_pixel_samples": 1586,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 1.330687,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "review_traversals": 1,
+        "source_completion": "loop",
+        "source_ticks": 32,
+        "timing_tolerance_seconds": 0.075,
+        "track": "right_gait_key_study",
+        "visible_pixel_samples": 1307,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 1.248925,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 30,
+        "timing_tolerance_seconds": 0.075,
+        "track": "right_outward_turn_key_study",
+        "visible_pixel_samples": 1586,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 1.251279,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 30,
+        "timing_tolerance_seconds": 0.075,
+        "track": "right_return_turn_key_study",
+        "visible_pixel_samples": 1105,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 0.995759,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 24,
+        "timing_tolerance_seconds": 0.075,
+        "track": "right_start_key_study",
+        "visible_pixel_samples": 1105,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 1.004995,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 24,
+        "timing_tolerance_seconds": 0.075,
+        "track": "right_stop_key_study",
+        "visible_pixel_samples": 1307,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 6.450817,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "review_traversals": 1,
+        "source_completion": "once",
+        "source_ticks": 155,
+        "timing_tolerance_seconds": 0.075,
+        "track": "right_complete_action_key_blocking",
+        "visible_pixel_samples": 1586,
+        "warmup_render_boundaries": 2
+      },
+      {
+        "completed": true,
+        "elapsed_seconds": 1.333091,
+        "expected_frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "first_frame_post_draw": true,
+        "fps": 24,
+        "frame_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "review_traversals": 1,
+        "source_completion": "loop",
+        "source_ticks": 32,
+        "timing_tolerance_seconds": 0.075,
+        "track": "left_inbetween_diagnostic_not_approved",
+        "visible_pixel_samples": 1360,
+        "warmup_render_boundaries": 2
+      }
+    ],
+    "transparent_intake": "NOT_RUN",
+    "world_contacts": "NOT_RUN"
+  },
+  "status": "PASSED",
+  "stderr_log": "godot.stderr.log",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_log": "godot.stdout.log",
+  "stdout_sha256": "2acb57e6364066c8c60f578793344ebbd908613cc16160b52b9d5daaf122251c",
+  "wrapper_diagnostics": [
+    "The XKEYBOARD keymap compiler (xkbcomp) reports:",
+    "> Warning:          Could not resolve keysym XF86CameraAccessEnable",
+    "> Warning:          Could not resolve keysym XF86CameraAccessDisable",
+    "> Warning:          Could not resolve keysym XF86CameraAccessToggle",
+    "> Warning:          Could not resolve keysym XF86NextElement",
+    "> Warning:          Could not resolve keysym XF86PreviousElement",
+    "> Warning:          Could not resolve keysym XF86AutopilotEngageToggle",
+    "> Warning:          Could not resolve keysym XF86MarkWaypoint",
+    "> Warning:          Could not resolve keysym XF86Sos",
+    "> Warning:          Could not resolve keysym XF86NavChart",
+    "> Warning:          Could not resolve keysym XF86FishingChart",
+    "> Warning:          Could not resolve keysym XF86SingleRangeRadar",
+    "> Warning:          Could not resolve keysym XF86DualRangeRadar",
+    "> Warning:          Could not resolve keysym XF86RadarOverlay",
+    "> Warning:          Could not resolve keysym XF86TraditionalSonar",
+    "> Warning:          Could not resolve keysym XF86ClearvuSonar",
+    "> Warning:          Could not resolve keysym XF86SidevuSonar",
+    "> Warning:          Could not resolve keysym XF86NavInfo",
+    "Errors from xkbcomp are not fatal to the X server",
+    "The XKEYBOARD keymap compiler (xkbcomp) reports:",
+    "> Warning:          Could not resolve keysym XF86CameraAccessEnable",
+    "> Warning:          Could not resolve keysym XF86CameraAccessDisable",
+    "> Warning:          Could not resolve keysym XF86CameraAccessToggle",
+    "> Warning:          Could not resolve keysym XF86NextElement",
+    "> Warning:          Could not resolve keysym XF86PreviousElement",
+    "> Warning:          Could not resolve keysym XF86AutopilotEngageToggle",
+    "> Warning:          Could not resolve keysym XF86MarkWaypoint",
+    "> Warning:          Could not resolve keysym XF86Sos",
+    "> Warning:          Could not resolve keysym XF86NavChart",
+    "> Warning:          Could not resolve keysym XF86FishingChart",
+    "> Warning:          Could not resolve keysym XF86SingleRangeRadar",
+    "> Warning:          Could not resolve keysym XF86DualRangeRadar",
+    "> Warning:          Could not resolve keysym XF86RadarOverlay",
+    "> Warning:          Could not resolve keysym XF86TraditionalSonar",
+    "> Warning:          Could not resolve keysym XF86ClearvuSonar",
+    "> Warning:          Could not resolve keysym XF86SidevuSonar",
+    "> Warning:          Could not resolve keysym XF86NavInfo",
+    "Errors from xkbcomp are not fatal to the X server"
+  ],
+  "xvfb_log": "xvfb-wrapper.log",
+  "xvfb_log_sha256": "b987a262609a3720f450ab6815ed90b2069dd47b7b012959ca19c325aebf5d55"
+}

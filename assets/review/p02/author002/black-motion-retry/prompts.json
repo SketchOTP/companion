@@ -1,0 +1,72 @@
+[
+  {
+    "id": "inhale_1",
+    "refs": [
+      "front.png",
+      "breathe_peak.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Single full-canvas animation sprite of this exact purple mon, pure black background. Image1 BEFORE key, image2 AFTER key. Produce one intermediate drawing in that exact transition; never make a sheet. Preserve exact feet/toes placements, pelvis, head flame topology, outlines, palette, face identity, two fingers+thumb each hand, three toes perfoot. Full FRONT facing, no yaw, no limb lifting, no camera shift, no ground texture, no text. Full1254square canvas matching input. Small smooth authored body changes, not global scale or translated image. Temporal position 1/6 (17 percent) from before to after. Chest gradually expands while shoulders rise only8px total; head follows by3px max. Feet and legs fixed. Hands retain shape.",
+    "method": "built-in-imagegen",
+    "visual_status": "STUDY_UNAPPROVED"
+  },
+  {
+    "id": "inhale_2",
+    "refs": [
+      "front.png",
+      "breathe_peak.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Single full-canvas animation sprite of this exact purple mon, pure black background. Image1 BEFORE key, image2 AFTER key. Produce one intermediate drawing in that exact transition; never make a sheet. Preserve exact feet/toes placements, pelvis, head flame topology, outlines, palette, face identity, two fingers+thumb each hand, three toes perfoot. Full FRONT facing, no yaw, no limb lifting, no camera shift, no ground texture, no text. Full1254square canvas matching input. Small smooth authored body changes, not global scale or translated image. Temporal position 2/6 (33 percent) from before to after. Chest gradually expands while shoulders rise only8px total; head follows by3px max. Feet and legs fixed. Hands retain shape.",
+    "method": "built-in-imagegen",
+    "visual_status": "STUDY_UNAPPROVED"
+  },
+  {
+    "id": "inhale_3",
+    "refs": [
+      "front.png",
+      "breathe_peak.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Single full-canvas animation sprite of this exact purple mon, pure black background. Image1 BEFORE key, image2 AFTER key. Produce one intermediate drawing in that exact transition; never make a sheet. Preserve exact feet/toes placements, pelvis, head flame topology, outlines, palette, face identity, two fingers+thumb each hand, three toes perfoot. Full FRONT facing, no yaw, no limb lifting, no camera shift, no ground texture, no text. Full1254square canvas matching input. Small smooth authored body changes, not global scale or translated image. Temporal position 3/6 (50 percent) from before to after. Chest gradually expands while shoulders rise only8px total; head follows by3px max. Feet and legs fixed. Hands retain shape.",
+    "method": "built-in-imagegen",
+    "visual_status": "STUDY_UNAPPROVED"
+  },
+  {
+    "id": "inhale_4",
+    "refs": [
+      "front.png",
+      "breathe_peak.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Single full-canvas animation sprite of this exact purple mon, pure black background. Image1 BEFORE key, image2 AFTER key. Produce one intermediate drawing in that exact transition; never make a sheet. Preserve exact feet/toes placements, pelvis, head flame topology, outlines, palette, face identity, two fingers+thumb each hand, three toes perfoot. Full FRONT facing, no yaw, no limb lifting, no camera shift, no ground texture, no text. Full1254square canvas matching input. Small smooth authored body changes, not global scale or translated image. Temporal position 4/6 (67 percent) from before to after. Chest gradually expands while shoulders rise only8px total; head follows by3px max. Feet and legs fixed. Hands retain shape.",
+    "method": "built-in-imagegen",
+    "visual_status": "STUDY_UNAPPROVED"
+  },
+  {
+    "id": "left_down_passing_late",
+    "refs": [
+      "left_down_armfix.png",
+      "left_passing_repair2.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Asset: single full-canvas 2D animation in-between sprite, solid pure black background. Image1 is the BEFORE down key; image2 is the AFTER passing key. Draw exactly one three-quarter-progress pose BETWEEN them, not a copy of either. Same original purple flame-headed mon, full LEFT profile, exact same head shape, black eye white pupil, same cel shading, broad limbs and three toes, two fingers plus thumb. Fixed camera and canvas1254 square. Do not change head silhouette, size, framing, face, palette or number of limbs. Critical leg pose: NEAR leg remains supporting on ground and moves back slightly (screen-right). Its sole spans approximately x390..680 at y1195. FAR leg currently trails on screen-right in image1: bend its knee and swing its entire foot forward LEFT, underneath pelvis. The FAR foot must be visibly airborne centered about x505,y1035, sole y1070, toes pointing LEFT. It must NOT remain at x850 behind the body. Far knee about x620,y925, thigh flexed; connect naturally to far hip. Clearly separate the two legs; no extra foot, no fused legs. Arms relax three-quarters toward vertical as in image2; stable hands not open palms. Pelvis three-quarters between refs. This is a three-quarter-progress movement, not morphing/blending two ghost silhouettes. One clean opaque sprite on uniform #000000; no words, panels, floor line, decorations or cutout.",
+    "method": "built-in-imagegen",
+    "visual_status": "STUDY_UNAPPROVED"
+  },
+  {
+    "id": "left_down_passing_late_repair",
+    "refs": [
+      "left_down_passing_retry.png",
+      "left_passing_repair2.png"
+    ],
+    "prompt": "Use case: precise-object-edit. Image1 is exact EDIT TARGET; image2 is supporting endpoint reference only. Single animation frame on solid black. ONLY MOVE THE FAR AIRBORNE FOOT LEFT TOWARD THE PASSING POSE; never exchange the legs. In image1 the foreground NEAR leg makes a long uninterrupted curve from foreground hip at x650,y875 through x540,y1000 to the large planted foot at bottom left. KEEP THAT ENTIRE FOREGROUND SUPPORT LEG AND ITS PLANTED FOOT EXACTLY AS IMAGE1. Do not lift it, swap it, change its layering, or replace it with the bent far leg. The small bent far leg behind this support leg ends at the airborne foot on screen-right. Move ONLY this BACKGROUND swing foot leftward approximately140pixels, so it is mostly behind/occluded by the foreground shin with its toes just emerging on the left edge. Keep its sole clearly off the ground, aroundy1080. Far knee stays behind foreground leg. Image2 shows the destination leg layering, but we have not reached it yet. Keep head, torso, both arms, both hands, palette, backdrop and canvas exactly unchanged. No blending, extra limbs, redraw of silhouette, head movement, camera movement, words, border or panels. Exact same creature/anatomy. One full-canvas 1254square intermediate sprite.",
+    "method": "built-in-imagegen",
+    "visual_status": "STUDY_UNAPPROVED"
+  },
+  {
+    "id": "left_down_passing_retry",
+    "prompt": "Use case: precise-object-edit. Asset: single full-canvas 2D animation in-between sprite, solid pure black background. Image1 is the BEFORE down key; image2 is the AFTER passing key. Draw exactly one halfway pose BETWEEN them, not a copy of either. Same original purple flame-headed mon, full LEFT profile, exact same head shape, black eye white pupil, same cel shading, broad limbs and three toes, two fingers plus thumb. Fixed camera and canvas1254 square. Do not change head silhouette, size, framing, face, palette or number of limbs. Critical leg pose: NEAR leg remains supporting on ground and moves back slightly (screen-right). Its sole spans approximately x350..650 at y1195. FAR leg currently trails on screen-right in image1: bend its knee and swing its entire foot forward LEFT, underneath pelvis. The FAR foot must be visibly airborne centered about x620,y1065, sole y1100, toes pointing LEFT. It must NOT remain at x850 behind the body. Far knee about x690,y960, thigh flexed; connect naturally to far hip. Clearly separate the two legs; no extra foot, no fused legs. Arms relax halfway toward vertical as in image2; stable hands not open palms. Pelvis halfway between refs. This is a halfway movement, not morphing/blending two ghost silhouettes. One clean opaque sprite on uniform #000000; no words, panels, floor line, decorations or cutout.",
+    "references": [
+      "left_down_armfix",
+      "left_passing_repair2"
+    ],
+    "method": "built-in-imagegen",
+    "visual_status": "STUDY_UNAPPROVED"
+  }
+]

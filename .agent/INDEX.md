@@ -19,6 +19,7 @@
 - Current directive: `COMPANION-ALPHA50-003-LIVE-001-C01`.
 - Repository Review 26: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C01/ARCHITECT_REVIEW_26.md`.
 - Repository directive: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C01/DIRECTIVE.md`.
+- Current C01 implementation record: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C01/C01_RESULT.md`.
 - Notion Review 26: https://app.notion.com/p/3dc833cb27ff811abaa5c0b57c6530fe
 - Reviewed Alpha50-003 executable: `d484c0370512ab3bb9fbcebaf99b9e44a718cdba`.
 - Reviewed Alpha50-003 publication: `299886beb2dac046e9ba5a25055f5f51c34eb9df`.

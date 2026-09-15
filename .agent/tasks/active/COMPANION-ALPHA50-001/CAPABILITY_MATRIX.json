@@ -1,0 +1,19 @@
+{
+  "profile": "COMPANION_ALPHA50_CAPABILITY_MATRIX_V2",
+  "statuses": {
+    "architecture_foundation": {"status": "accepted-by-existing-authority", "evidence": "E4_REGRESSION_PROTECTED"},
+    "embodiment_habitat": {"status": "bounded-c06-only", "evidence": "E4_REGRESSION_PROTECTED", "boundary": "frozen-art/controller/render/timing evidence; Phase 02 not accepted"},
+    "organism_autonomy": {"status": "candidate-v2-only", "tested": true, "evidence": "E3_TARGET_TESTED", "boundary": "resident deterministic V2 qualification; no autonomy claim"},
+    "memory_continuity": {"status": "candidate-v2-only", "tested": true, "evidence": "E3_TARGET_TESTED", "boundary": "typed ordinary ingress and local restart trace; full Alpha continuity open"},
+    "learning_development": {"status": "candidate-v2-only", "tested": true, "evidence": "E3_TARGET_TESTED", "boundary": "preference/correction/outcome plumbing; operative development/consolidation open"},
+    "sensor_io_foundation": {"status": "implemented", "host-observed": true, "degraded": true, "evidence": "E1_OBSERVED"},
+    "speech_perception_semantics": {"status": "not-attempted", "evidence": "E0_CLAIMED"},
+    "care_shadow_path": {"status": "implemented", "tested": true, "evidence": "E3_TARGET_TESTED", "boundary": "synthetic direct-care smoke; process-loss independence not yet proven"},
+    "identity_consent_vault": {"status": "accepted-foundation-only", "evidence": "E4_REGRESSION_PROTECTED", "boundary": "deny-all/stub; no product identity or consent capability"},
+    "notification_escalation": {"status": "not-attempted", "evidence": "E0_CLAIMED"},
+    "security_resilience": {"status": "accepted-foundation-only", "evidence": "E4_REGRESSION_PROTECTED", "boundary": "foundation controls only; no security certification or resilience claim"},
+    "pilot_release": {"status": "not-attempted", "evidence": "E0_CLAIMED"}
+  },
+  "claim_boundary": "engineering milestone evidence only; no product, medical, safety efficacy, reliability, SLA, or release claim",
+  "overall_completion": "architect_assigned"
+}

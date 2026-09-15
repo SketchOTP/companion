@@ -1,0 +1,4797 @@
+{
+  "approval_state": "candidate",
+  "approved_references": {
+    "identity_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+    "turnaround_sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
+  },
+  "body_revision": "mon-approved-identity-candidate-r05-v1",
+  "developmental_stage": "candidate",
+  "pack_id": "05a17a00-0000-4000-8000-000000000001",
+  "pack_revision": "r05-author-001-bounded-v1",
+  "profile": "MON_AUTHORED_FRAME_SOURCE_PACK_V1",
+  "provenance": {
+    "art_authority": "Codex image generation under operator-authorized ADR-57",
+    "generation_or_edit_method": "OpenAI reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+    "rights_record": "project-approved original reference assets; operator-authorized candidate derivative generation",
+    "source_authority": "COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-001 / Architect Review 10"
+  },
+  "request_profile": "phase02_bounded_motion_proof_v1",
+  "schema_version": 1,
+  "source_assets": [
+    {
+      "asset_id": "asset_neutral_construction_front_neutral_01_000",
+      "filename": "frames/neutral_construction__front__neutral__v01__f000.png",
+      "sha256": "3221f507ff8a453273239676b06d44aef85be0a6cf7bc3dce2a83122117d766e"
+    },
+    {
+      "asset_id": "asset_neutral_construction_right_neutral_01_000",
+      "filename": "frames/neutral_construction__right__neutral__v01__f000.png",
+      "sha256": "4ee853820fd36907907a1b232cade54df2d2d29223036e21f6948a7d8be23844"
+    },
+    {
+      "asset_id": "asset_neutral_construction_front_left_neutral_01_000",
+      "filename": "frames/neutral_construction__front_left__neutral__v01__f000.png",
+      "sha256": "10c239a7beb7734cb47de8d8593ef28ac2e1e986aaa50a1c5ecac93429574c64"
+    },
+    {
+      "asset_id": "asset_idle_breathe_front_left_neutral_01_000",
+      "filename": "frames/idle_breathe__front_left__neutral__v01__f000.png",
+      "sha256": "415136d85df10f3fac65f5636f0c7ad8fac19bcb11ffcaed07efd22ff8970afc"
+    },
+    {
+      "asset_id": "asset_idle_breathe_front_left_neutral_01_001",
+      "filename": "frames/idle_breathe__front_left__neutral__v01__f001.png",
+      "sha256": "9e09bb8923affcab2da73a509fb14a5aad2b23a3187550944e448b763f07554a"
+    },
+    {
+      "asset_id": "asset_idle_breathe_front_left_neutral_01_002",
+      "filename": "frames/idle_breathe__front_left__neutral__v01__f002.png",
+      "sha256": "4dd1074974eae4e5f09b8d97c8bbf056afd7ebe1b37f733f584fba65624451e0"
+    },
+    {
+      "asset_id": "asset_idle_breathe_front_left_neutral_01_003",
+      "filename": "frames/idle_breathe__front_left__neutral__v01__f003.png",
+      "sha256": "42c64fdfcd5c4b26a5abf09535e4fc21b5bce2687433f0b715b24d7f127cee05"
+    },
+    {
+      "asset_id": "asset_idle_breathe_front_left_neutral_01_004",
+      "filename": "frames/idle_breathe__front_left__neutral__v01__f004.png",
+      "sha256": "848b9b1ab3970aa528580572af56a6ea4267cee54cb2156a669a29494e4e5f2f"
+    },
+    {
+      "asset_id": "asset_idle_breathe_front_left_neutral_01_005",
+      "filename": "frames/idle_breathe__front_left__neutral__v01__f005.png",
+      "sha256": "322dc56523ac8491b0b34be808dac7d0075fddffa3356f0643984a2b34ee9573"
+    },
+    {
+      "asset_id": "asset_idle_breathe_front_left_neutral_01_006",
+      "filename": "frames/idle_breathe__front_left__neutral__v01__f006.png",
+      "sha256": "e69fd9363a87b08157a9ab810dfaace782617d5c431fad954173b6b7f3c7fcae"
+    },
+    {
+      "asset_id": "asset_idle_breathe_front_left_neutral_01_007",
+      "filename": "frames/idle_breathe__front_left__neutral__v01__f007.png",
+      "sha256": "e606fd6d72e39638cd1d587fce5faf710a74ea0eab8071724f62194349d54280"
+    },
+    {
+      "asset_id": "asset_walk_front_left_walking_01_000",
+      "filename": "frames/walk__front_left__walking__v01__f000.png",
+      "sha256": "54fcc8c8ef14e5c71a6524b68ebd673e17a43a98f89dc643cfb9e8f6e8d82e06"
+    },
+    {
+      "asset_id": "asset_walk_front_left_walking_01_001",
+      "filename": "frames/walk__front_left__walking__v01__f001.png",
+      "sha256": "df96aef8c6c691a09a8b86aba6ed1b3b5dc71068e121fb6044c000822520a744"
+    },
+    {
+      "asset_id": "asset_walk_front_left_walking_01_002",
+      "filename": "frames/walk__front_left__walking__v01__f002.png",
+      "sha256": "437af45d3ff144bf72b15c7df93cd1353453eecad1890655265917f8798b85fe"
+    },
+    {
+      "asset_id": "asset_walk_front_left_walking_01_003",
+      "filename": "frames/walk__front_left__walking__v01__f003.png",
+      "sha256": "68a00cf4ec568626b2b6c07ad14a91058dc6f16217dc0127dbad011a27cfc246"
+    },
+    {
+      "asset_id": "asset_walk_front_left_walking_01_004",
+      "filename": "frames/walk__front_left__walking__v01__f004.png",
+      "sha256": "6b1f407e71881c9c749f684b5fec17159dd5a8e9ae5df9e9f33ed51a9ebbda96"
+    },
+    {
+      "asset_id": "asset_walk_front_left_walking_01_005",
+      "filename": "frames/walk__front_left__walking__v01__f005.png",
+      "sha256": "bbe513875cd27c05f844686b43cd6be346414c59790464e58365bee1e661b5c1"
+    },
+    {
+      "asset_id": "asset_walk_front_left_walking_01_006",
+      "filename": "frames/walk__front_left__walking__v01__f006.png",
+      "sha256": "57c799ef5b72e836894e2269ad56ba2ed0df63a3576659ca1819b3643e10451f"
+    },
+    {
+      "asset_id": "asset_walk_front_left_walking_01_007",
+      "filename": "frames/walk__front_left__walking__v01__f007.png",
+      "sha256": "6f5bcd3412b34673e3c1602731e01cb15fac4c45501c4bb5ef9f3213b7ddd091"
+    },
+    {
+      "asset_id": "asset_orient_front_to_front_left_front_neutral_01_000",
+      "filename": "frames/orient_front_to_front_left__front__neutral__v01__f000.png",
+      "sha256": "f54cc6fe19c7c6bd014d9928cc8a877579eff465a69a041f33cbcbc78b03eebf"
+    },
+    {
+      "asset_id": "asset_orient_front_to_front_left_front_neutral_01_001",
+      "filename": "frames/orient_front_to_front_left__front__neutral__v01__f001.png",
+      "sha256": "7a91a26e2c6240d1df8f153ee708a0d1f8b508e1ae607ad7965b845053eba6af"
+    },
+    {
+      "asset_id": "asset_orient_front_to_front_left_front_left_neutral_01_002",
+      "filename": "frames/orient_front_to_front_left__front_left__neutral__v01__f002.png",
+      "sha256": "2dae2005c00e49928178fa2c49527bf246b1a2ed37a83eac1d9a7035ce39dc71"
+    },
+    {
+      "asset_id": "asset_orient_front_to_front_left_front_left_neutral_01_003",
+      "filename": "frames/orient_front_to_front_left__front_left__neutral__v01__f003.png",
+      "sha256": "b2384d9e89af71a032175375a530afa533d986fe42929fc5d0051e7a2402eb90"
+    },
+    {
+      "asset_id": "asset_orient_front_left_to_front_front_left_neutral_01_000",
+      "filename": "frames/orient_front_left_to_front__front_left__neutral__v01__f000.png",
+      "sha256": "b2384d9e89af71a032175375a530afa533d986fe42929fc5d0051e7a2402eb90"
+    },
+    {
+      "asset_id": "asset_orient_front_left_to_front_front_left_neutral_01_001",
+      "filename": "frames/orient_front_left_to_front__front_left__neutral__v01__f001.png",
+      "sha256": "2dae2005c00e49928178fa2c49527bf246b1a2ed37a83eac1d9a7035ce39dc71"
+    },
+    {
+      "asset_id": "asset_orient_front_left_to_front_front_neutral_01_002",
+      "filename": "frames/orient_front_left_to_front__front__neutral__v01__f002.png",
+      "sha256": "7a91a26e2c6240d1df8f153ee708a0d1f8b508e1ae607ad7965b845053eba6af"
+    },
+    {
+      "asset_id": "asset_orient_front_left_to_front_front_neutral_01_003",
+      "filename": "frames/orient_front_left_to_front__front__neutral__v01__f003.png",
+      "sha256": "f54cc6fe19c7c6bd014d9928cc8a877579eff465a69a041f33cbcbc78b03eebf"
+    },
+    {
+      "asset_id": "asset_listen_acknowledge_front_left_listening_01_000",
+      "filename": "frames/listen_acknowledge__front_left__listening__v01__f000.png",
+      "sha256": "5457abb46072fdebfd8439a3496d1e61c93d05993a5a5f0a3060a94377d6b5b2"
+    },
+    {
+      "asset_id": "asset_listen_acknowledge_front_left_listening_01_001",
+      "filename": "frames/listen_acknowledge__front_left__listening__v01__f001.png",
+      "sha256": "ab1b8e58568741b50b5d73ce878266efcc9b03f6fca43975ece2a42341a005bf"
+    },
+    {
+      "asset_id": "asset_listen_acknowledge_front_left_listening_01_002",
+      "filename": "frames/listen_acknowledge__front_left__listening__v01__f002.png",
+      "sha256": "f049b7ce075598c77ef2020d480099af91b2eb9ff37b7df148d60505f329bc52"
+    },
+    {
+      "asset_id": "asset_listen_acknowledge_front_left_listening_01_003",
+      "filename": "frames/listen_acknowledge__front_left__listening__v01__f003.png",
+      "sha256": "cae0b65a84914462a5a37f31a18d6c74f984db33cdc984c4a7f5de1dc18374c9"
+    },
+    {
+      "asset_id": "asset_listen_acknowledge_front_left_acknowledging_01_004",
+      "filename": "frames/listen_acknowledge__front_left__acknowledging__v01__f004.png",
+      "sha256": "6e7c4de828e3679f29608e5f63170871a3343125132dc48c503970c971312be6"
+    },
+    {
+      "asset_id": "asset_listen_acknowledge_front_left_acknowledging_01_005",
+      "filename": "frames/listen_acknowledge__front_left__acknowledging__v01__f005.png",
+      "sha256": "638c90b717ea5abc1ec5fc38e233b23e37daf3ca8aa8dc4bac982d5a3e885c0e"
+    }
+  ],
+  "timing": {
+    "fps": 24,
+    "tick_unit": "1/24_second"
+  },
+  "tracks": [
+    {
+      "completion": "once",
+      "contacts": [
+        {
+          "end_tick": 1,
+          "landmark": "ground_contact_left",
+          "start_tick": 0,
+          "state": "planted"
+        },
+        {
+          "end_tick": 1,
+          "landmark": "ground_contact_right",
+          "start_tick": 0,
+          "state": "planted"
+        }
+      ],
+      "entry_facing": "front",
+      "entry_posture": "neutral",
+      "events": [],
+      "exit_facing": "front",
+      "exit_posture": "neutral",
+      "family": "neutral_construction",
+      "frames": [
+        {
+          "action_phase": "rest",
+          "duration_ticks": 1,
+          "facing": "front",
+          "filename": "neutral_construction__front__neutral__v01__f000.png",
+          "frame_id": "neutral_construction_front_neutral_01_000",
+          "frame_index": 0,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 605
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 464,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 560,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 394,
+                "y": 895
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 627,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 394,
+                "y": 895
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 627,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 328,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 697,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 329
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 479
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "neutral_construction__front__neutral__v01__f000.frame.json",
+          "source_asset_id": "asset_neutral_construction_front_neutral_01_000",
+          "source_sha256": "3221f507ff8a453273239676b06d44aef85be0a6cf7bc3dce2a83122117d766e"
+        }
+      ],
+      "interruption_ranges": [
+        {
+          "end_tick": 1,
+          "start_tick": 0
+        }
+      ],
+      "posture": "neutral",
+      "selection_facing": "front",
+      "track_checksum": "a86cae5860c5ff6c4a3dc322eb605484be2d7227e19fbc3f604d4a68dee736b6",
+      "track_id": "candidate:neutral_construction:front:1",
+      "variant": 1
+    },
+    {
+      "completion": "once",
+      "contacts": [
+        {
+          "end_tick": 1,
+          "landmark": "ground_contact_left",
+          "start_tick": 0,
+          "state": "planted"
+        },
+        {
+          "end_tick": 1,
+          "landmark": "ground_contact_right",
+          "start_tick": 0,
+          "state": "planted"
+        }
+      ],
+      "entry_facing": "right",
+      "entry_posture": "neutral",
+      "events": [],
+      "exit_facing": "right",
+      "exit_posture": "neutral",
+      "family": "neutral_construction",
+      "frames": [
+        {
+          "action_phase": "rest",
+          "duration_ticks": 1,
+          "facing": "right",
+          "filename": "neutral_construction__right__neutral__v01__f000.png",
+          "frame_id": "neutral_construction_right_neutral_01_000",
+          "frame_index": 0,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 605
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": null,
+              "state": "occluded"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 554,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 506,
+                "y": 893
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 571,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 506,
+                "y": 893
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 571,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": null,
+              "state": "occluded"
+            },
+            "hand_right": {
+              "point": {
+                "x": 672,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 329
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 479
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "neutral_construction__right__neutral__v01__f000.frame.json",
+          "source_asset_id": "asset_neutral_construction_right_neutral_01_000",
+          "source_sha256": "4ee853820fd36907907a1b232cade54df2d2d29223036e21f6948a7d8be23844"
+        }
+      ],
+      "interruption_ranges": [
+        {
+          "end_tick": 1,
+          "start_tick": 0
+        }
+      ],
+      "posture": "neutral",
+      "selection_facing": "right",
+      "track_checksum": "720607d557c6d8e4a1925e190e5a5a64db9535be7d91878ce4542a1c517ee108",
+      "track_id": "candidate:neutral_construction:right:1",
+      "variant": 1
+    },
+    {
+      "completion": "once",
+      "contacts": [
+        {
+          "end_tick": 1,
+          "landmark": "ground_contact_left",
+          "start_tick": 0,
+          "state": "planted"
+        },
+        {
+          "end_tick": 1,
+          "landmark": "ground_contact_right",
+          "start_tick": 0,
+          "state": "planted"
+        }
+      ],
+      "entry_facing": "front_left",
+      "entry_posture": "neutral",
+      "events": [],
+      "exit_facing": "front_left",
+      "exit_posture": "neutral",
+      "family": "neutral_construction",
+      "frames": [
+        {
+          "action_phase": "rest",
+          "duration_ticks": 1,
+          "facing": "front_left",
+          "filename": "neutral_construction__front_left__neutral__v01__f000.png",
+          "frame_id": "neutral_construction_front_left_neutral_01_000",
+          "frame_index": 0,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 603
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 463,
+                "y": 404
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 404
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 561,
+                "y": 404
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 378,
+                "y": 888
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 624,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 378,
+                "y": 888
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 624,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 326,
+                "y": 627
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 698,
+                "y": 627
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 325
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 404
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 476
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "neutral_construction__front_left__neutral__v01__f000.frame.json",
+          "source_asset_id": "asset_neutral_construction_front_left_neutral_01_000",
+          "source_sha256": "10c239a7beb7734cb47de8d8593ef28ac2e1e986aaa50a1c5ecac93429574c64"
+        }
+      ],
+      "interruption_ranges": [
+        {
+          "end_tick": 1,
+          "start_tick": 0
+        }
+      ],
+      "posture": "neutral",
+      "selection_facing": "front_left",
+      "track_checksum": "08163861908e3c924d6c33a6d9144995b20f7c6acc8b210d0e3fdff8b70c14be",
+      "track_id": "candidate:neutral_construction:front_left:1",
+      "variant": 1
+    },
+    {
+      "completion": "loop",
+      "contacts": [
+        {
+          "end_tick": 16,
+          "landmark": "ground_contact_right",
+          "start_tick": 0,
+          "state": "planted"
+        },
+        {
+          "end_tick": 16,
+          "landmark": "ground_contact_left",
+          "start_tick": 0,
+          "state": "clear"
+        }
+      ],
+      "entry_facing": "front_left",
+      "entry_posture": "neutral",
+      "events": [],
+      "exit_facing": "front_left",
+      "exit_posture": "neutral",
+      "family": "idle_breathe",
+      "frames": [
+        {
+          "action_phase": "settle",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "idle_breathe__front_left__neutral__v01__f000.png",
+          "frame_id": "idle_breathe_front_left_neutral_01_000",
+          "frame_index": 0,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 511,
+                "y": 605
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 463,
+                "y": 407
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 511,
+                "y": 407
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 559,
+                "y": 407
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 384,
+                "y": 891
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 384,
+                "y": 891
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 327,
+                "y": 628
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 696,
+                "y": 628
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 511,
+                "y": 328
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 511,
+                "y": 407
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 511,
+                "y": 478
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "idle_breathe__front_left__neutral__v01__f000.frame.json",
+          "source_asset_id": "asset_idle_breathe_front_left_neutral_01_000",
+          "source_sha256": "415136d85df10f3fac65f5636f0c7ad8fac19bcb11ffcaed07efd22ff8970afc"
+        },
+        {
+          "action_phase": "inhale",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "idle_breathe__front_left__neutral__v01__f001.png",
+          "frame_id": "idle_breathe_front_left_neutral_01_001",
+          "frame_index": 1,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 514,
+                "y": 603
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 464,
+                "y": 404
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 514,
+                "y": 404
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 564,
+                "y": 404
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 383,
+                "y": 891
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 383,
+                "y": 891
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 325,
+                "y": 627
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 703,
+                "y": 627
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 514,
+                "y": 325
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 514,
+                "y": 404
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 514,
+                "y": 476
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "idle_breathe__front_left__neutral__v01__f001.frame.json",
+          "source_asset_id": "asset_idle_breathe_front_left_neutral_01_001",
+          "source_sha256": "9e09bb8923affcab2da73a509fb14a5aad2b23a3187550944e448b763f07554a"
+        },
+        {
+          "action_phase": "expand",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "idle_breathe__front_left__neutral__v01__f002.png",
+          "frame_id": "idle_breathe_front_left_neutral_01_002",
+          "frame_index": 2,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 504,
+                "y": 597
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 452,
+                "y": 394
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 504,
+                "y": 394
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 556,
+                "y": 394
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 373,
+                "y": 891
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 373,
+                "y": 891
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 308,
+                "y": 621
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 701,
+                "y": 621
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 504,
+                "y": 313
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 504,
+                "y": 394
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 504,
+                "y": 467
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "idle_breathe__front_left__neutral__v01__f002.frame.json",
+          "source_asset_id": "asset_idle_breathe_front_left_neutral_01_002",
+          "source_sha256": "4dd1074974eae4e5f09b8d97c8bbf056afd7ebe1b37f733f584fba65624451e0"
+        },
+        {
+          "action_phase": "breath_apex",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "idle_breathe__front_left__neutral__v01__f003.png",
+          "frame_id": "idle_breathe_front_left_neutral_01_003",
+          "frame_index": 3,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 513,
+                "y": 605
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 465,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 513,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 561,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 388,
+                "y": 891
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 388,
+                "y": 891
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 329,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 698,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 513,
+                "y": 329
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 513,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 513,
+                "y": 479
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "idle_breathe__front_left__neutral__v01__f003.frame.json",
+          "source_asset_id": "asset_idle_breathe_front_left_neutral_01_003",
+          "source_sha256": "42c64fdfcd5c4b26a5abf09535e4fc21b5bce2687433f0b715b24d7f127cee05"
+        },
+        {
+          "action_phase": "exhale",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "idle_breathe__front_left__neutral__v01__f004.png",
+          "frame_id": "idle_breathe_front_left_neutral_01_004",
+          "frame_index": 4,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 605
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 464,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 560,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 386,
+                "y": 893
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 386,
+                "y": 893
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 330,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 695,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 329
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 479
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "idle_breathe__front_left__neutral__v01__f004.frame.json",
+          "source_asset_id": "asset_idle_breathe_front_left_neutral_01_004",
+          "source_sha256": "848b9b1ab3970aa528580572af56a6ea4267cee54cb2156a669a29494e4e5f2f"
+        },
+        {
+          "action_phase": "relax",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "idle_breathe__front_left__neutral__v01__f005.png",
+          "frame_id": "idle_breathe_front_left_neutral_01_005",
+          "frame_index": 5,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 514,
+                "y": 607
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 466,
+                "y": 410
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 514,
+                "y": 410
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 562,
+                "y": 410
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 382,
+                "y": 891
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 382,
+                "y": 891
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 333,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 696,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 514,
+                "y": 332
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 514,
+                "y": 410
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 514,
+                "y": 481
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "idle_breathe__front_left__neutral__v01__f005.frame.json",
+          "source_asset_id": "asset_idle_breathe_front_left_neutral_01_005",
+          "source_sha256": "322dc56523ac8491b0b34be808dac7d0075fddffa3356f0643984a2b34ee9573"
+        },
+        {
+          "action_phase": "follow_through",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "idle_breathe__front_left__neutral__v01__f006.png",
+          "frame_id": "idle_breathe_front_left_neutral_01_006",
+          "frame_index": 6,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 608
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 464,
+                "y": 412
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 412
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 560,
+                "y": 412
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 380,
+                "y": 893
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 380,
+                "y": 893
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 328,
+                "y": 631
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 697,
+                "y": 631
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 334
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 412
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 483
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "idle_breathe__front_left__neutral__v01__f006.frame.json",
+          "source_asset_id": "asset_idle_breathe_front_left_neutral_01_006",
+          "source_sha256": "e69fd9363a87b08157a9ab810dfaace782617d5c431fad954173b6b7f3c7fcae"
+        },
+        {
+          "action_phase": "neutral",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "idle_breathe__front_left__neutral__v01__f007.png",
+          "frame_id": "idle_breathe_front_left_neutral_01_007",
+          "frame_index": 7,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 510,
+                "y": 606
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 461,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 510,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 559,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 382,
+                "y": 891
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 382,
+                "y": 891
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 625,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 325,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 695,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 510,
+                "y": 330
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 510,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 510,
+                "y": 480
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "idle_breathe__front_left__neutral__v01__f007.frame.json",
+          "source_asset_id": "asset_idle_breathe_front_left_neutral_01_007",
+          "source_sha256": "e606fd6d72e39638cd1d587fce5faf710a74ea0eab8071724f62194349d54280"
+        }
+      ],
+      "interruption_ranges": [
+        {
+          "end_tick": 16,
+          "start_tick": 0
+        }
+      ],
+      "posture": "neutral",
+      "selection_facing": "front_left",
+      "track_checksum": "6c251788a948192e5f339c3aec1584a7a990d76d658e6d86627c13286b10d852",
+      "track_id": "candidate:idle_breathe:front_left:1",
+      "variant": 1
+    },
+    {
+      "completion": "loop",
+      "contacts": [
+        {
+          "end_tick": 2,
+          "landmark": "ground_contact_left",
+          "start_tick": 0,
+          "state": "planted"
+        },
+        {
+          "end_tick": 8,
+          "landmark": "ground_contact_right",
+          "start_tick": 0,
+          "state": "swing"
+        },
+        {
+          "end_tick": 10,
+          "landmark": "ground_contact_right",
+          "start_tick": 8,
+          "state": "planted"
+        },
+        {
+          "end_tick": 16,
+          "landmark": "ground_contact_left",
+          "start_tick": 2,
+          "state": "swing"
+        }
+      ],
+      "entry_facing": "front_left",
+      "entry_posture": "walking",
+      "events": [
+        {
+          "event_id": "walk_left_footfall",
+          "frame_index": 0,
+          "name": "footfall_left",
+          "tick": 0
+        },
+        {
+          "event_id": "walk_right_footfall",
+          "frame_index": 4,
+          "name": "footfall_right",
+          "tick": 8
+        }
+      ],
+      "exit_facing": "front_left",
+      "exit_posture": "walking",
+      "family": "walk",
+      "frames": [
+        {
+          "action_phase": "left_contact",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "walk__front_left__walking__v01__f000.png",
+          "frame_id": "walk_front_left_walking_01_000",
+          "frame_index": 0,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 605
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 458,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 566,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 447,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 588,
+                "y": 866
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 447,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 588,
+                "y": 866
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 305,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 719,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 328
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 479
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "walking",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "walk__front_left__walking__v01__f000.frame.json",
+          "source_asset_id": "asset_walk_front_left_walking_01_000",
+          "source_sha256": "54fcc8c8ef14e5c71a6524b68ebd673e17a43a98f89dc643cfb9e8f6e8d82e06"
+        },
+        {
+          "action_phase": "left_down",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "walk__front_left__walking__v01__f001.png",
+          "frame_id": "walk_front_left_walking_01_001",
+          "frame_index": 1,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 511,
+                "y": 605
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 458,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 511,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 564,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 485,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 521,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 485,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 521,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 310,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 713,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 511,
+                "y": 328
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 511,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 511,
+                "y": 479
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "walking",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "walk__front_left__walking__v01__f001.frame.json",
+          "source_asset_id": "asset_walk_front_left_walking_01_001",
+          "source_sha256": "df96aef8c6c691a09a8b86aba6ed1b3b5dc71068e121fb6044c000822520a744"
+        },
+        {
+          "action_phase": "left_passing",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "walk__front_left__walking__v01__f002.png",
+          "frame_id": "walk_front_left_walking_01_002",
+          "frame_index": 2,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 605
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 460,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 564,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 473,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 512,
+                "y": 873
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 473,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 512,
+                "y": 873
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 316,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 708,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 328
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 479
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "walking",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "walk__front_left__walking__v01__f002.frame.json",
+          "source_asset_id": "asset_walk_front_left_walking_01_002",
+          "source_sha256": "437af45d3ff144bf72b15c7df93cd1353453eecad1890655265917f8798b85fe"
+        },
+        {
+          "action_phase": "left_up",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "walk__front_left__walking__v01__f003.png",
+          "frame_id": "walk_front_left_walking_01_003",
+          "frame_index": 3,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 605
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 460,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 564,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 471,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 520,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 471,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 520,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 315,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 710,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 328
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 479
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "walking",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "walk__front_left__walking__v01__f003.frame.json",
+          "source_asset_id": "asset_walk_front_left_walking_01_003",
+          "source_sha256": "68a00cf4ec568626b2b6c07ad14a91058dc6f16217dc0127dbad011a27cfc246"
+        },
+        {
+          "action_phase": "right_contact",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "walk__front_left__walking__v01__f004.png",
+          "frame_id": "walk_front_left_walking_01_004",
+          "frame_index": 4,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 511,
+                "y": 607
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 460,
+                "y": 411
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 511,
+                "y": 411
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 562,
+                "y": 411
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 461,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 512,
+                "y": 875
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 461,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 512,
+                "y": 875
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 318,
+                "y": 631
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 705,
+                "y": 631
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 511,
+                "y": 332
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 511,
+                "y": 411
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 511,
+                "y": 481
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "walking",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "walk__front_left__walking__v01__f004.frame.json",
+          "source_asset_id": "asset_walk_front_left_walking_01_004",
+          "source_sha256": "6b1f407e71881c9c749f684b5fec17159dd5a8e9ae5df9e9f33ed51a9ebbda96"
+        },
+        {
+          "action_phase": "right_down",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "walk__front_left__walking__v01__f005.png",
+          "frame_id": "walk_front_left_walking_01_005",
+          "frame_index": 5,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 609
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 461,
+                "y": 413
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 413
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 563,
+                "y": 413
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 477,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 519,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 477,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 519,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 318,
+                "y": 632
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 707,
+                "y": 632
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 335
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 413
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 484
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "walking",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "walk__front_left__walking__v01__f005.frame.json",
+          "source_asset_id": "asset_walk_front_left_walking_01_005",
+          "source_sha256": "bbe513875cd27c05f844686b43cd6be346414c59790464e58365bee1e661b5c1"
+        },
+        {
+          "action_phase": "right_passing",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "walk__front_left__walking__v01__f006.png",
+          "frame_id": "walk_front_left_walking_01_006",
+          "frame_index": 6,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 611
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 460,
+                "y": 417
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 417
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 564,
+                "y": 417
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 441,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 580,
+                "y": 871
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 441,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 580,
+                "y": 871
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 315,
+                "y": 634
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 709,
+                "y": 634
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 340
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 417
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 487
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "walking",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "walk__front_left__walking__v01__f006.frame.json",
+          "source_asset_id": "asset_walk_front_left_walking_01_006",
+          "source_sha256": "57c799ef5b72e836894e2269ad56ba2ed0df63a3576659ca1819b3643e10451f"
+        },
+        {
+          "action_phase": "right_up",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "walk__front_left__walking__v01__f007.png",
+          "frame_id": "walk_front_left_walking_01_007",
+          "frame_index": 7,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 606
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 462,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 562,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 501,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 518,
+                "y": 894
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 501,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 518,
+                "y": 894
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 322,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 702,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 330
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 480
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "walking",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "walk__front_left__walking__v01__f007.frame.json",
+          "source_asset_id": "asset_walk_front_left_walking_01_007",
+          "source_sha256": "6f5bcd3412b34673e3c1602731e01cb15fac4c45501c4bb5ef9f3213b7ddd091"
+        }
+      ],
+      "interruption_ranges": [
+        {
+          "end_tick": 16,
+          "start_tick": 0
+        }
+      ],
+      "posture": "walking",
+      "selection_facing": "front_left",
+      "track_checksum": "22ca1fae4682f49cb9d5d254315f50f9ad18c27fbc8e851966ff2759faf1e707",
+      "track_id": "candidate:walk:front_left:1",
+      "variant": 1
+    },
+    {
+      "completion": "once",
+      "contacts": [],
+      "entry_facing": "front",
+      "entry_posture": "neutral",
+      "events": [
+        {
+          "event_id": "orient_forward_done",
+          "frame_index": 3,
+          "name": "facing_changed",
+          "tick": 6
+        }
+      ],
+      "exit_facing": "front_left",
+      "exit_posture": "neutral",
+      "family": "orient_front_to_front_left",
+      "frames": [
+        {
+          "action_phase": "anticipate",
+          "duration_ticks": 2,
+          "facing": "front",
+          "filename": "orient_front_to_front_left__front__neutral__v01__f000.png",
+          "frame_id": "orient_front_to_front_left_front_neutral_01_000",
+          "frame_index": 0,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 606
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 463,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 561,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 395,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 628,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 395,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 628,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 327,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 698,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 331
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 480
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "orient_front_to_front_left__front__neutral__v01__f000.frame.json",
+          "source_asset_id": "asset_orient_front_to_front_left_front_neutral_01_000",
+          "source_sha256": "f54cc6fe19c7c6bd014d9928cc8a877579eff465a69a041f33cbcbc78b03eebf"
+        },
+        {
+          "action_phase": "turn_begin",
+          "duration_ticks": 2,
+          "facing": "front",
+          "filename": "orient_front_to_front_left__front__neutral__v01__f001.png",
+          "frame_id": "orient_front_to_front_left_front_neutral_01_001",
+          "frame_index": 1,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 606
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 466,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 558,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 378,
+                "y": 890
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 609,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 378,
+                "y": 890
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 609,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 336,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 688,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 330
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 480
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "orient_front_to_front_left__front__neutral__v01__f001.frame.json",
+          "source_asset_id": "asset_orient_front_to_front_left_front_neutral_01_001",
+          "source_sha256": "7a91a26e2c6240d1df8f153ee708a0d1f8b508e1ae607ad7965b845053eba6af"
+        },
+        {
+          "action_phase": "turn_follow",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "orient_front_to_front_left__front_left__neutral__v01__f002.png",
+          "frame_id": "orient_front_to_front_left_front_left_neutral_01_002",
+          "frame_index": 2,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 606
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 464,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 560,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 366,
+                "y": 889
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 589,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 366,
+                "y": 889
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 589,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 330,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 694,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 330
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 480
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "orient_front_to_front_left__front_left__neutral__v01__f002.frame.json",
+          "source_asset_id": "asset_orient_front_to_front_left_front_left_neutral_01_002",
+          "source_sha256": "2dae2005c00e49928178fa2c49527bf246b1a2ed37a83eac1d9a7035ce39dc71"
+        },
+        {
+          "action_phase": "settle",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "orient_front_to_front_left__front_left__neutral__v01__f003.png",
+          "frame_id": "orient_front_to_front_left_front_left_neutral_01_003",
+          "frame_index": 3,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 604
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 465,
+                "y": 407
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 407
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 559,
+                "y": 407
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 377,
+                "y": 888
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 610,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 377,
+                "y": 888
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 610,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 333,
+                "y": 628
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 691,
+                "y": 628
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 327
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 407
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 478
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "orient_front_to_front_left__front_left__neutral__v01__f003.frame.json",
+          "source_asset_id": "asset_orient_front_to_front_left_front_left_neutral_01_003",
+          "source_sha256": "b2384d9e89af71a032175375a530afa533d986fe42929fc5d0051e7a2402eb90"
+        }
+      ],
+      "interruption_ranges": [
+        {
+          "end_tick": 8,
+          "start_tick": 0
+        }
+      ],
+      "posture": "neutral",
+      "selection_facing": "front",
+      "track_checksum": "9a9b1b93b170433bd92459fd632c361a388df0c10d1d572429fb5b535ba321a0",
+      "track_id": "candidate:orient_front_to_front_left:front:1",
+      "variant": 1
+    },
+    {
+      "completion": "once",
+      "contacts": [],
+      "entry_facing": "front_left",
+      "entry_posture": "neutral",
+      "events": [
+        {
+          "event_id": "orient_reverse_done",
+          "frame_index": 3,
+          "name": "facing_changed",
+          "tick": 6
+        }
+      ],
+      "exit_facing": "front",
+      "exit_posture": "neutral",
+      "family": "orient_front_left_to_front",
+      "frames": [
+        {
+          "action_phase": "anticipate",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "orient_front_left_to_front__front_left__neutral__v01__f000.png",
+          "frame_id": "orient_front_left_to_front_front_left_neutral_01_000",
+          "frame_index": 0,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 604
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 465,
+                "y": 407
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 407
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 559,
+                "y": 407
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 377,
+                "y": 888
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 610,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 377,
+                "y": 888
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 610,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 333,
+                "y": 628
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 691,
+                "y": 628
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 327
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 407
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 478
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "orient_front_left_to_front__front_left__neutral__v01__f000.frame.json",
+          "source_asset_id": "asset_orient_front_left_to_front_front_left_neutral_01_000",
+          "source_sha256": "b2384d9e89af71a032175375a530afa533d986fe42929fc5d0051e7a2402eb90"
+        },
+        {
+          "action_phase": "turn_begin",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "orient_front_left_to_front__front_left__neutral__v01__f001.png",
+          "frame_id": "orient_front_left_to_front_front_left_neutral_01_001",
+          "frame_index": 1,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 606
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 464,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 560,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 366,
+                "y": 889
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 589,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 366,
+                "y": 889
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 589,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 330,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 694,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 330
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 480
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "orient_front_left_to_front__front_left__neutral__v01__f001.frame.json",
+          "source_asset_id": "asset_orient_front_left_to_front_front_left_neutral_01_001",
+          "source_sha256": "2dae2005c00e49928178fa2c49527bf246b1a2ed37a83eac1d9a7035ce39dc71"
+        },
+        {
+          "action_phase": "turn_follow",
+          "duration_ticks": 2,
+          "facing": "front",
+          "filename": "orient_front_left_to_front__front__neutral__v01__f002.png",
+          "frame_id": "orient_front_left_to_front_front_neutral_01_002",
+          "frame_index": 2,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 606
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 466,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 558,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 378,
+                "y": 890
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 609,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 378,
+                "y": 890
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 609,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 336,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 688,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 330
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 480
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "orient_front_left_to_front__front__neutral__v01__f002.frame.json",
+          "source_asset_id": "asset_orient_front_left_to_front_front_neutral_01_002",
+          "source_sha256": "7a91a26e2c6240d1df8f153ee708a0d1f8b508e1ae607ad7965b845053eba6af"
+        },
+        {
+          "action_phase": "settle",
+          "duration_ticks": 2,
+          "facing": "front",
+          "filename": "orient_front_left_to_front__front__neutral__v01__f003.png",
+          "frame_id": "orient_front_left_to_front_front_neutral_01_003",
+          "frame_index": 3,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 606
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 463,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 561,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 395,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 628,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 395,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 628,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 327,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 698,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 331
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 480
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "neutral",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "orient_front_left_to_front__front__neutral__v01__f003.frame.json",
+          "source_asset_id": "asset_orient_front_left_to_front_front_neutral_01_003",
+          "source_sha256": "f54cc6fe19c7c6bd014d9928cc8a877579eff465a69a041f33cbcbc78b03eebf"
+        }
+      ],
+      "interruption_ranges": [
+        {
+          "end_tick": 8,
+          "start_tick": 0
+        }
+      ],
+      "posture": "neutral",
+      "selection_facing": "front_left",
+      "track_checksum": "c873462db99ff1bb90304ea323ab23dfdac2b72dde4ce613d9544d65f412aafd",
+      "track_id": "candidate:orient_front_left_to_front:front_left:1",
+      "variant": 1
+    },
+    {
+      "completion": "once",
+      "contacts": [
+        {
+          "end_tick": 12,
+          "landmark": "ground_contact_right",
+          "start_tick": 0,
+          "state": "planted"
+        },
+        {
+          "end_tick": 12,
+          "landmark": "ground_contact_left",
+          "start_tick": 0,
+          "state": "clear"
+        }
+      ],
+      "entry_facing": "front_left",
+      "entry_posture": "listening",
+      "events": [
+        {
+          "event_id": "listen_attention",
+          "frame_index": 1,
+          "name": "attention_acquired",
+          "tick": 2
+        },
+        {
+          "event_id": "listen_ack",
+          "frame_index": 4,
+          "name": "acknowledge",
+          "tick": 8
+        },
+        {
+          "event_id": "listen_settled",
+          "frame_index": 5,
+          "name": "settled",
+          "tick": 10
+        }
+      ],
+      "exit_facing": "front_left",
+      "exit_posture": "acknowledging",
+      "family": "listen_acknowledge",
+      "frames": [
+        {
+          "action_phase": "neutral_attention",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "listen_acknowledge__front_left__listening__v01__f000.png",
+          "frame_id": "listen_acknowledge_front_left_listening_01_000",
+          "frame_index": 0,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 519,
+                "y": 606
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 471,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 519,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 567,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 387,
+                "y": 892
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 630,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 387,
+                "y": 892
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 630,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 335,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 704,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 519,
+                "y": 330
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 519,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 519,
+                "y": 480
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "listening",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "listen_acknowledge__front_left__listening__v01__f000.frame.json",
+          "source_asset_id": "asset_listen_acknowledge_front_left_listening_01_000",
+          "source_sha256": "5457abb46072fdebfd8439a3496d1e61c93d05993a5a5f0a3060a94377d6b5b2"
+        },
+        {
+          "action_phase": "head_lead",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "listen_acknowledge__front_left__listening__v01__f001.png",
+          "frame_id": "listen_acknowledge_front_left_listening_01_001",
+          "frame_index": 1,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 511,
+                "y": 607
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 465,
+                "y": 411
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 511,
+                "y": 411
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 557,
+                "y": 411
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 388,
+                "y": 890
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 630,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 388,
+                "y": 890
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 630,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 336,
+                "y": 631
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 687,
+                "y": 631
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 511,
+                "y": 332
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 511,
+                "y": 411
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 511,
+                "y": 481
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "listening",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "listen_acknowledge__front_left__listening__v01__f001.frame.json",
+          "source_asset_id": "asset_listen_acknowledge_front_left_listening_01_001",
+          "source_sha256": "ab1b8e58568741b50b5d73ce878266efcc9b03f6fca43975ece2a42341a005bf"
+        },
+        {
+          "action_phase": "posture_response",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "listen_acknowledge__front_left__listening__v01__f002.png",
+          "frame_id": "listen_acknowledge_front_left_listening_01_002",
+          "frame_index": 2,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 489,
+                "y": 610
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 439,
+                "y": 415
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 489,
+                "y": 415
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 539,
+                "y": 415
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 394,
+                "y": 890
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 630,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 394,
+                "y": 890
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 630,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 298,
+                "y": 633
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 681,
+                "y": 633
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 489,
+                "y": 337
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 489,
+                "y": 415
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 489,
+                "y": 485
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "listening",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "listen_acknowledge__front_left__listening__v01__f002.frame.json",
+          "source_asset_id": "asset_listen_acknowledge_front_left_listening_01_002",
+          "source_sha256": "f049b7ce075598c77ef2020d480099af91b2eb9ff37b7df148d60505f329bc52"
+        },
+        {
+          "action_phase": "settle_attention",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "listen_acknowledge__front_left__listening__v01__f003.png",
+          "frame_id": "listen_acknowledge_front_left_listening_01_003",
+          "frame_index": 3,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 519,
+                "y": 605
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 470,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 519,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 568,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 380,
+                "y": 892
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 630,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 380,
+                "y": 892
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 630,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 333,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 705,
+                "y": 629
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 519,
+                "y": 328
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 519,
+                "y": 408
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 519,
+                "y": 479
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "listening",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "listen_acknowledge__front_left__listening__v01__f003.frame.json",
+          "source_asset_id": "asset_listen_acknowledge_front_left_listening_01_003",
+          "source_sha256": "cae0b65a84914462a5a37f31a18d6c74f984db33cdc984c4a7f5de1dc18374c9"
+        },
+        {
+          "action_phase": "acknowledge",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "listen_acknowledge__front_left__acknowledging__v01__f004.png",
+          "frame_id": "listen_acknowledge_front_left_acknowledging_01_004",
+          "frame_index": 4,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 485,
+                "y": 606
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 430,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 485,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 540,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 369,
+                "y": 890
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 630,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 369,
+                "y": 890
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 630,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 278,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 693,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 485,
+                "y": 330
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 485,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 485,
+                "y": 480
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "acknowledging",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "listen_acknowledge__front_left__acknowledging__v01__f004.frame.json",
+          "source_asset_id": "asset_listen_acknowledge_front_left_acknowledging_01_004",
+          "source_sha256": "6e7c4de828e3679f29608e5f63170871a3343125132dc48c503970c971312be6"
+        },
+        {
+          "action_phase": "follow_through",
+          "duration_ticks": 2,
+          "facing": "front_left",
+          "filename": "listen_acknowledge__front_left__acknowledging__v01__f005.png",
+          "frame_id": "listen_acknowledge_front_left_acknowledging_01_005",
+          "frame_index": 5,
+          "landmarks": {
+            "action_anchor": {
+              "point": {
+                "x": 512,
+                "y": 606
+              },
+              "state": "visible"
+            },
+            "attachment_back": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "attachment_front": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "eye_left": {
+              "point": {
+                "x": 465,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_midpoint": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "eye_right": {
+              "point": {
+                "x": 559,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "foot_left": {
+              "point": {
+                "x": 378,
+                "y": 892
+              },
+              "state": "visible"
+            },
+            "foot_right": {
+              "point": {
+                "x": 630,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "ground_contact_left": {
+              "point": {
+                "x": 378,
+                "y": 892
+              },
+              "state": "visible"
+            },
+            "ground_contact_right": {
+              "point": {
+                "x": 630,
+                "y": 896
+              },
+              "state": "visible"
+            },
+            "hand_left": {
+              "point": {
+                "x": 332,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "hand_right": {
+              "point": {
+                "x": 692,
+                "y": 630
+              },
+              "state": "visible"
+            },
+            "head_center": {
+              "point": {
+                "x": 512,
+                "y": 330
+              },
+              "state": "visible"
+            },
+            "interaction_focus": {
+              "point": {
+                "x": 512,
+                "y": 409
+              },
+              "state": "visible"
+            },
+            "mouth_center": {
+              "point": {
+                "x": 512,
+                "y": 480
+              },
+              "state": "visible"
+            },
+            "object_anchor": {
+              "point": null,
+              "state": "not_applicable"
+            },
+            "root": {
+              "point": {
+                "x": 512,
+                "y": 896
+              },
+              "state": "visible"
+            }
+          },
+          "posture": "acknowledging",
+          "provenance": {
+            "authored_by": "Codex image generation under Operator Override ADR-57",
+            "method": "reference-conditioned image generation; deterministic chroma-alpha and MON_FRAME_V1 normalization",
+            "source_revision": "r05-author-001-v1"
+          },
+          "reuse_of": null,
+          "sidecar_filename": "listen_acknowledge__front_left__acknowledging__v01__f005.frame.json",
+          "source_asset_id": "asset_listen_acknowledge_front_left_acknowledging_01_005",
+          "source_sha256": "638c90b717ea5abc1ec5fc38e233b23e37daf3ca8aa8dc4bac982d5a3e885c0e"
+        }
+      ],
+      "interruption_ranges": [
+        {
+          "end_tick": 12,
+          "start_tick": 0
+        }
+      ],
+      "posture": "listening",
+      "selection_facing": "front_left",
+      "track_checksum": "265b632803ffb46e595d48383656394919d80bc0305357fa4bff0946b96145d0",
+      "track_id": "candidate:listen_acknowledge:front_left:1",
+      "variant": 1
+    }
+  ]
+}

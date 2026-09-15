@@ -1,0 +1,34 @@
+{
+  "artifact_tree_sha256": "49e67b8058edd8bd41c317ee74de8116edbf38bf7dedbcb5f834f5a46052b0bd",
+  "command": "python3 experiments/p02-embodiment/scripts/run_r05_candidate_evidence.py --out OUT --cargo CARGO --godot GODOT",
+  "evidence_ceiling": "E3_TARGET_TESTED candidate art intake/playback plus visual review material; operator approval and Phase 02 acceptance remain pending.",
+  "execution_end_utc": "2026-09-12T12:48:43.640379Z",
+  "execution_start_utc": "2026-09-12T12:47:52.378114Z",
+  "git_commit": "9e3ba3609da41b464b5eb3222a59f167df89c79c",
+  "profile": "COMPANION_P02_R05_EVIDENCE_PROVENANCE_V1",
+  "result_sha256": {
+    "candidate_pack.json": "b47fe43ca6aa08172898eca35b305f1af2f0e24288dce405de6afde52f03298e",
+    "export_restore.json": "6c529d166e11513de63a591881b0d90bbda60887485001f4475c3218721dbdcc",
+    "frame_qa.json": "b54df7fb7ca272b090b87c2084b57d4e61b05b2581c2fd3e14e385656708fe6e",
+    "godot_runtime.json": "379c4c35f17694ea96e745b40bce3ba6a24586e97805e7296e8fadfaaa18e369",
+    "intake.json": "e4b4cec7ba1bc8119223634e9a86ed0fdeca60a21be33e27befb2ac0db0d0eba",
+    "rust_contract.json": "b2ff48a63a5c4919d965f42cbb80e7cad78d5147a2e499f76796c32cc31acd14"
+  },
+  "runtimes": {
+    "godot": "4.7.2.stable.official.ed1daf0bf",
+    "python": "qualification interpreter",
+    "rust": "1.98.1"
+  },
+  "source_identities": {
+    "identity_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+    "turnaround_sha256": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
+  },
+  "source_sheet_sha256": {
+    "idle-breathe-sheet.png": "b201607ee9fcf170585a4d69f763cbe24b58fc93119054d086eae291f2ecffe7",
+    "listen-acknowledge-sheet.png": "2a0de17f14a9f7797ffad777f9ac46d2987cd19d508a51e5a58d34b5230a5855",
+    "neutral-construction-sheet.png": "aa6e2efd8cf7f9a2273bf22b9ebbbc6904fd364ba6749113087b4447617e2d39",
+    "neutral-right-profile.png": "7dd7bc596d27f10073ebbf4b4fbae15735992dc1569f9eaae59a3b6cbf485dd4",
+    "orient-front-to-front-left-sheet.png": "99ef17e22db3ac0514a082244a850ae7d8db427610ead01e62ce969587aed92d",
+    "walk-sheet.png": "01ba5c7a781fd6cd627632d3cd6ed4505498c990181b969c84e73dec5b4afe36"
+  }
+}

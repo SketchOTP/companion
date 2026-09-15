@@ -1,0 +1,1604 @@
+{
+  "body_revision": "mon-body-v2-r03",
+  "profile": "MON_TEMPORAL_TRACKS_V2",
+  "timing": {
+    "fps": 24,
+    "relative_duration_weights": true,
+    "unit": "1/24s"
+  },
+  "tracks": [
+    {
+      "body_revision": "mon-body-v2-r03",
+      "clip_id": "idle_breathe",
+      "entry_posture": "neutral",
+      "events": [
+        {
+          "frame_index": 2,
+          "kind": "breath_peak"
+        }
+      ],
+      "exit_posture": "neutral",
+      "facing": "front_left",
+      "family": "idle_breathe",
+      "fps": 24,
+      "frame_profile": "MON_FRAME_V1",
+      "frames": [
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 0
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_00",
+          "frame_index": 0,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_00.png",
+          "sha256": "891e49248e6f84a3fe08780971318dae35fa0a2eff82cf6249f706748279feff",
+          "source_pose_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_00"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 1
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_01",
+          "frame_index": 1,
+          "landmarks": {
+            "eye_left": [
+              448,
+              427
+            ],
+            "eye_right": [
+              612,
+              427
+            ],
+            "head": [
+              528,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_01.png",
+          "sha256": "0cab39222c21a5a4b7dd1b8311fd3c20c98ada79783605d8112cf9d7c39d3509",
+          "source_pose_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_01"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 3
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_02",
+          "frame_index": 2,
+          "landmarks": {
+            "eye_left": [
+              449,
+              427
+            ],
+            "eye_right": [
+              613,
+              427
+            ],
+            "head": [
+              528,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_02.png",
+          "sha256": "d0c3a4fe075266b7d5096c5e5c2b6634ac30fcf2df42401e87f4024f3bc144c2",
+          "source_pose_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_02"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 4
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_03",
+          "frame_index": 3,
+          "landmarks": {
+            "eye_left": [
+              448,
+              427
+            ],
+            "eye_right": [
+              612,
+              427
+            ],
+            "head": [
+              528,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_03.png",
+          "sha256": "e53fdc5e1fb52aa18a7225f6d89577cfaa988e05f987a56c28fee88166a6965a",
+          "source_pose_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_03"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 6
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_04",
+          "frame_index": 4,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_04.png",
+          "sha256": "fa8ce9251c6d0f259fcf78846288b5b31db2216ae8b482108990bc49dfc63669",
+          "source_pose_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_04"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 7
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_05",
+          "frame_index": 5,
+          "landmarks": {
+            "eye_left": [
+              446,
+              427
+            ],
+            "eye_right": [
+              610,
+              427
+            ],
+            "head": [
+              526,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_05.png",
+          "sha256": "21cead2af2679b7a0c91e72e43ba6247ee9fbeefcf76c5fd2883d5e08451108f",
+          "source_pose_id": "mon-body-v2-r03_candidate_idle_breathe_front_left_neutral_1_05"
+        }
+      ],
+      "interruptible_ranges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "loop_mode": "loop",
+      "pack_revision": "p02-r03-proof-v1",
+      "posture": "neutral",
+      "root_motion_policy": "forbidden",
+      "source_checksum": "26ee698e6e46fa059f883298c507f17e5fff4389c9f06cdcbf42548ab58fc71c",
+      "source_reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+      "source_revision": "mon-body-source-v2-r03",
+      "stage": "candidate",
+      "track_checksum": "63adce82af47682ee815c979b75ab2e018348f5838da18f36cacea9303ab8d1a",
+      "track_id": "mon-body-v2-r03:candidate:idle_breathe:front_left:neutral:1",
+      "travel_direction": null,
+      "variant": 1,
+      "version": 2
+    },
+    {
+      "body_revision": "mon-body-v2-r03",
+      "clip_id": "walk",
+      "entry_posture": "neutral",
+      "events": [
+        {
+          "frame_index": 0,
+          "kind": "left_contact"
+        },
+        {
+          "frame_index": 4,
+          "kind": "right_contact"
+        }
+      ],
+      "exit_posture": "neutral",
+      "facing": "front_left",
+      "family": "walk",
+      "fps": 24,
+      "frame_profile": "MON_FRAME_V1",
+      "frames": [
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 0
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_00",
+          "frame_index": 0,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              642,
+              888
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_walk_front_left_neutral_1_00.png",
+          "sha256": "12c9a031ce1df71c4f742c9d07564e2f7deb132bc39a11bacb537f6ab6fbe03a",
+          "source_pose_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_00"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 1
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_01",
+          "frame_index": 1,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              644,
+              874
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_walk_front_left_neutral_1_01.png",
+          "sha256": "45cc42016e61df4fcfdcce25094de262a08a3583462d0946041ca20b6076b929",
+          "source_pose_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_01"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 3
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_02",
+          "frame_index": 2,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              392,
+              874
+            ],
+            "right_foot": [
+              632,
+              886
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_walk_front_left_neutral_1_02.png",
+          "sha256": "3d0e4c0766026af0895c497c438f0c09c8d9f9e8a8e2b4d147e2910d3d2e55e1",
+          "source_pose_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_02"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 4
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_03",
+          "frame_index": 3,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              386,
+              866
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_walk_front_left_neutral_1_03.png",
+          "sha256": "eb1ea29c0ab5aee8f4d133272482027e1dde3f0051471afb61001603f7ef79a3",
+          "source_pose_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_03"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 6
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_04",
+          "frame_index": 4,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              386,
+              886
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_walk_front_left_neutral_1_04.png",
+          "sha256": "4ce362c89bca8c65eafb7e46d85c7d21b212180eee565e5c74a986abdb6cac0a",
+          "source_pose_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_04"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 7
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_05",
+          "frame_index": 5,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              398,
+              872
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_walk_front_left_neutral_1_05.png",
+          "sha256": "a283123a667cb4a4611b02bba75c21ad7d96066261fc6ab355f522c312fc6763",
+          "source_pose_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_05"
+        },
+        {
+          "contacts": [
+            {
+              "active": false,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 9
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_06",
+          "frame_index": 6,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              410,
+              888
+            ],
+            "right_foot": [
+              634,
+              872
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_walk_front_left_neutral_1_06.png",
+          "sha256": "47177f5b5184c7853260185e7b1358e06da29cb87163324e05bef49427f284d4",
+          "source_pose_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_06"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": false,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 10
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_07",
+          "frame_index": 7,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              639,
+              868
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_walk_front_left_neutral_1_07.png",
+          "sha256": "09b8582e4e84a901d3f1607153fa71c5eb3362d778d5bb41afeb592de30aa065",
+          "source_pose_id": "mon-body-v2-r03_candidate_walk_front_left_neutral_1_07"
+        }
+      ],
+      "interruptible_ranges": [
+        [
+          0,
+          12
+        ]
+      ],
+      "loop_mode": "loop",
+      "pack_revision": "p02-r03-proof-v1",
+      "posture": "neutral",
+      "root_motion_policy": "forbidden",
+      "source_checksum": "26ee698e6e46fa059f883298c507f17e5fff4389c9f06cdcbf42548ab58fc71c",
+      "source_reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+      "source_revision": "mon-body-source-v2-r03",
+      "stage": "candidate",
+      "track_checksum": "db27b47ed6fa0622859f68966236678d76881ec7fcfb4b955338184b3f2a5728",
+      "track_id": "mon-body-v2-r03:candidate:walk:front_left:neutral:1",
+      "travel_direction": null,
+      "variant": 1,
+      "version": 2
+    },
+    {
+      "body_revision": "mon-body-v2-r03",
+      "clip_id": "orient_front_to_front_left",
+      "entry_posture": "neutral",
+      "events": [
+        {
+          "frame_index": 3,
+          "kind": "facing_changed"
+        }
+      ],
+      "exit_posture": "neutral",
+      "facing": "front",
+      "family": "orient_front_to_front_left",
+      "fps": 24,
+      "frame_profile": "MON_FRAME_V1",
+      "frames": [
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 0
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_00",
+          "frame_index": 0,
+          "landmarks": {
+            "eye_left": [
+              426,
+              427
+            ],
+            "eye_right": [
+              590,
+              427
+            ],
+            "head": [
+              512,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_00.png",
+          "sha256": "f335297d0d882690e5edaea4b9a11466539adfcc5e09cfe643352477d3b66e8e",
+          "source_pose_id": "mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_00"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 1
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_01",
+          "frame_index": 1,
+          "landmarks": {
+            "eye_left": [
+              433,
+              427
+            ],
+            "eye_right": [
+              597,
+              427
+            ],
+            "head": [
+              517,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_01.png",
+          "sha256": "9cc97c2d6b2388230717114750b79977bfa3cf04a8030658bc29df3dc84f3a7c",
+          "source_pose_id": "mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_01"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 3
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_02",
+          "frame_index": 2,
+          "landmarks": {
+            "eye_left": [
+              441,
+              427
+            ],
+            "eye_right": [
+              605,
+              427
+            ],
+            "head": [
+              522,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_02.png",
+          "sha256": "e5629536b5089bf32eee4fd54b627d0bfd2546b2ad0e8ee5f635043244dc31af",
+          "source_pose_id": "mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_02"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 4
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_03",
+          "frame_index": 3,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_03.png",
+          "sha256": "239023bd4c8dfeaf8d6a7cc6cb358020c727c8c38eaba695a0e0123078d760c8",
+          "source_pose_id": "mon-body-v2-r03_candidate_orient_front_to_front_left_front_neutral_1_03"
+        }
+      ],
+      "interruptible_ranges": [
+        [
+          0,
+          6
+        ]
+      ],
+      "loop_mode": "once",
+      "pack_revision": "p02-r03-proof-v1",
+      "posture": "neutral",
+      "root_motion_policy": "forbidden",
+      "source_checksum": "26ee698e6e46fa059f883298c507f17e5fff4389c9f06cdcbf42548ab58fc71c",
+      "source_reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+      "source_revision": "mon-body-source-v2-r03",
+      "stage": "candidate",
+      "track_checksum": "281d2a085145f19300619c60897887bffaab5ead527214ecc9c574a2839dabc2",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_to_front_left:front:neutral:1",
+      "travel_direction": null,
+      "variant": 1,
+      "version": 2
+    },
+    {
+      "body_revision": "mon-body-v2-r03",
+      "clip_id": "orient_front_left_to_front",
+      "entry_posture": "neutral",
+      "events": [
+        {
+          "frame_index": 3,
+          "kind": "facing_changed"
+        }
+      ],
+      "exit_posture": "neutral",
+      "facing": "front_left",
+      "family": "orient_front_left_to_front",
+      "fps": 24,
+      "frame_profile": "MON_FRAME_V1",
+      "frames": [
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 0
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_00",
+          "frame_index": 0,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_00.png",
+          "sha256": "239023bd4c8dfeaf8d6a7cc6cb358020c727c8c38eaba695a0e0123078d760c8",
+          "source_pose_id": "mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_00"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 1
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_01",
+          "frame_index": 1,
+          "landmarks": {
+            "eye_left": [
+              439,
+              427
+            ],
+            "eye_right": [
+              603,
+              427
+            ],
+            "head": [
+              521,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_01.png",
+          "sha256": "e63071c974bceb1d18f71edf2ce2e2868b0d0992be46119707d4b83930b96fce",
+          "source_pose_id": "mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_01"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 3
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_02",
+          "frame_index": 2,
+          "landmarks": {
+            "eye_left": [
+              432,
+              427
+            ],
+            "eye_right": [
+              596,
+              427
+            ],
+            "head": [
+              516,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_02.png",
+          "sha256": "f9a3ee60b858bd606731aca4b94c6b69b319b51ad964f3a97c83a64b09df5c62",
+          "source_pose_id": "mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_02"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 4
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_03",
+          "frame_index": 3,
+          "landmarks": {
+            "eye_left": [
+              426,
+              427
+            ],
+            "eye_right": [
+              590,
+              427
+            ],
+            "head": [
+              512,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_03.png",
+          "sha256": "f335297d0d882690e5edaea4b9a11466539adfcc5e09cfe643352477d3b66e8e",
+          "source_pose_id": "mon-body-v2-r03_candidate_orient_front_left_to_front_front_left_neutral_1_03"
+        }
+      ],
+      "interruptible_ranges": [
+        [
+          0,
+          6
+        ]
+      ],
+      "loop_mode": "once",
+      "pack_revision": "p02-r03-proof-v1",
+      "posture": "neutral",
+      "root_motion_policy": "forbidden",
+      "source_checksum": "26ee698e6e46fa059f883298c507f17e5fff4389c9f06cdcbf42548ab58fc71c",
+      "source_reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+      "source_revision": "mon-body-source-v2-r03",
+      "stage": "candidate",
+      "track_checksum": "72c02ca0cd943e415cfe4e4094a0fda6ce4a3ea0e888fe82bee1a037e9b99b8a",
+      "track_id": "mon-body-v2-r03:candidate:orient_front_left_to_front:front_left:neutral:1",
+      "travel_direction": null,
+      "variant": 1,
+      "version": 2
+    },
+    {
+      "body_revision": "mon-body-v2-r03",
+      "clip_id": "listen_acknowledge",
+      "entry_posture": "neutral",
+      "events": [
+        {
+          "frame_index": 1,
+          "kind": "attention_lead"
+        },
+        {
+          "frame_index": 4,
+          "kind": "acknowledge"
+        }
+      ],
+      "exit_posture": "neutral",
+      "facing": "front_left",
+      "family": "listen_acknowledge",
+      "fps": 24,
+      "frame_profile": "MON_FRAME_V1",
+      "frames": [
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 0
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_00",
+          "frame_index": 0,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_00.png",
+          "sha256": "b1b645ea5c75f7385451a28a677646a2b5c2d4a836acdbc21f58f01cb8bbec6d",
+          "source_pose_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_00"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 1
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_01",
+          "frame_index": 1,
+          "landmarks": {
+            "eye_left": [
+              444,
+              427
+            ],
+            "eye_right": [
+              608,
+              427
+            ],
+            "head": [
+              525,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_01.png",
+          "sha256": "18dd137d3f8e8a1fc3bac7bad8693df4640308ca71d3c69ab2c85c307d5ae96e",
+          "source_pose_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_01"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 3
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_02",
+          "frame_index": 2,
+          "landmarks": {
+            "eye_left": [
+              442,
+              427
+            ],
+            "eye_right": [
+              606,
+              427
+            ],
+            "head": [
+              523,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_02.png",
+          "sha256": "3831452041adc9013a17273e81c776c7d4b2bf1cf6be23a202a6d47d26472761",
+          "source_pose_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_02"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 4
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_03",
+          "frame_index": 3,
+          "landmarks": {
+            "eye_left": [
+              444,
+              427
+            ],
+            "eye_right": [
+              608,
+              427
+            ],
+            "head": [
+              525,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_03.png",
+          "sha256": "83d6f6629554409e8952b54aa85e6cf1e132185e0365105561e2d8ea130696dc",
+          "source_pose_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_03"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 1,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 6
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_04",
+          "frame_index": 4,
+          "landmarks": {
+            "eye_left": [
+              446,
+              427
+            ],
+            "eye_right": [
+              610,
+              427
+            ],
+            "head": [
+              526,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_04.png",
+          "sha256": "b36c2979c1126505c78123e60260ff5a58a7cf737198bd80af758292718a142d",
+          "source_pose_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_04"
+        },
+        {
+          "contacts": [
+            {
+              "active": true,
+              "landmark": "left_foot"
+            },
+            {
+              "active": true,
+              "landmark": "right_foot"
+            }
+          ],
+          "duration_ticks": 2,
+          "events": [
+            {
+              "kind": "frame_marker",
+              "tick": 7
+            }
+          ],
+          "frame_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_05",
+          "frame_index": 5,
+          "landmarks": {
+            "eye_left": [
+              447,
+              427
+            ],
+            "eye_right": [
+              611,
+              427
+            ],
+            "head": [
+              527,
+              95
+            ],
+            "left_foot": [
+              410,
+              896
+            ],
+            "right_foot": [
+              614,
+              896
+            ],
+            "root": [
+              512,
+              896
+            ]
+          },
+          "path": "frames/mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_05.png",
+          "sha256": "239023bd4c8dfeaf8d6a7cc6cb358020c727c8c38eaba695a0e0123078d760c8",
+          "source_pose_id": "mon-body-v2-r03_candidate_listen_acknowledge_front_left_neutral_1_05"
+        }
+      ],
+      "interruptible_ranges": [
+        [
+          0,
+          9
+        ]
+      ],
+      "loop_mode": "once",
+      "pack_revision": "p02-r03-proof-v1",
+      "posture": "neutral",
+      "root_motion_policy": "forbidden",
+      "source_checksum": "26ee698e6e46fa059f883298c507f17e5fff4389c9f06cdcbf42548ab58fc71c",
+      "source_reference_sha256": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+      "source_revision": "mon-body-source-v2-r03",
+      "stage": "candidate",
+      "track_checksum": "b27cd13668947b5723d04a01703cd48e892928e99423a7a1d14850c813b584ea",
+      "track_id": "mon-body-v2-r03:candidate:listen_acknowledge:front_left:neutral:1",
+      "travel_direction": null,
+      "variant": 1,
+      "version": 2
+    }
+  ]
+}

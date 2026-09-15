@@ -1,0 +1,21 @@
+{
+  "schema_version": 2,
+  "identity": "a1fa5200-0000-0000-0000-000000000001",
+  "origin": "alpha50-v2",
+  "organism_epoch": 1,
+  "organism_tick": 0,
+  "lifecycle": "alive",
+  "developmental_stage": "seed",
+  "internal": {"energy_milli": 780, "rest_pressure_milli": 120, "engagement_milli": 350, "social_need_milli": 250, "curiosity_milli": 300, "confidence_milli": 700, "stress_milli": 100},
+  "drives": [],
+  "goals": [],
+  "commitments": [],
+  "memories": [],
+  "skills": [],
+  "learned_preferences": {},
+  "learned_outcomes": {},
+  "capability_gates": {},
+  "degradation": [],
+  "next_intent_sequence": 1,
+  "last_intent": null
+}

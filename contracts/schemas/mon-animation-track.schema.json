@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://companion.local/schema/mon-animation-track-v1.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["track_id", "clip_id", "version", "body_revision", "stage", "family", "direction", "posture", "variant", "source_revision", "source_reference_sha256", "frame_profile", "frames", "loop_mode", "root_motion_policy", "track_checksum"],
+  "properties": {
+    "track_id": {"type": "string", "minLength": 1},
+    "clip_id": {"type": "string", "pattern": "^[a-z][a-z0-9_]{2,63}$"},
+    "version": {"const": 1},
+    "body_revision": {"type": "string", "minLength": 1},
+    "stage": {"enum": ["candidate", "approved"]},
+    "family": {"type": "string", "minLength": 1},
+    "direction": {"enum": ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]},
+    "posture": {"type": "string", "minLength": 1},
+    "variant": {"type": "integer", "minimum": 1, "maximum": 99},
+    "source_revision": {"type": "string", "minLength": 1},
+    "source_reference_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "frame_profile": {"const": "MON_FRAME_V1"},
+    "frames": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["frame_id", "duration_ticks", "path", "sha256"], "properties": {"frame_id": {"type": "string", "minLength": 1}, "duration_ticks": {"type": "integer", "minimum": 1, "maximum": 240}, "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}},
+    "loop_mode": {"enum": ["once", "loop", "ping_pong"]},
+    "root_motion_policy": {"const": "forbidden"},
+    "track_checksum": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

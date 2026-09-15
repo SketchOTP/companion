@@ -1,0 +1,20 @@
+{
+  "profile": "MON_GODOT_TEMPORAL_PROOF_OBSERVATION_V1",
+  "status": "PASSED",
+  "godot_version": "4.7.2.stable.official.ed1daf0bf",
+  "artifact_sha256": "cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4",
+  "execution": "headless temporary project copy; no GUI or renderer window",
+  "tracks_observed": 6,
+  "facing_observed": "front_left",
+  "frame_marker_events": 5,
+  "completion_events": 1,
+  "observations": [
+    "idle intent loaded a temporal SpriteFrames track",
+    "walk intent loaded a separate temporal SpriteFrames track",
+    "frame_marker signal events were observed",
+    "orient_front_to_front_left completion signal was observed",
+    "visible state reported the selected track and final frame"
+  ],
+  "evidence_level": "E3_TARGET_TESTED",
+  "ceiling": "bounded headless presentation proof; not visual approval, target-host playback, or product capability"
+}

@@ -1,0 +1,30 @@
+{
+  "workflow": "phase02-embodiment-r06",
+  "run_id": 34761173688,
+  "head_sha": "a2826a546c700897bb049b1ce4defc354374f76a",
+  "artifact": "phase02-embodiment-r06-c01-a2826a546c700897bb049b1ce4defc354374f76a",
+  "status": "PASSED",
+  "godot_version": "4.7.2.stable.official.ed1daf0bf",
+  "renderer": "Mesa llvmpipe OpenGL 4.5 under Xvfb",
+  "audio_driver": "Dummy",
+  "render_observation": "SubViewport.texture.get_image",
+  "semantic_status": "PASS",
+  "tracks": 24,
+  "frame_slots": 283,
+  "observed_events": 144,
+  "godot_error_count": 0,
+  "godot_warning_count": 1,
+  "warning_policy": "V-Sync warning retained; not an ERROR",
+  "source_pack_sha256": "1b3ee70ea8dd4d6633b4d9e0d14c1213613094987e56b0308c56b9b7f6b83cbf",
+  "runtime_pack_sha256": "f7ecc6e13a82bf162d68aa4da703842ad349ae307e7eb5b6ce72b2f7b819eb8e",
+  "receipt_sha256": "7912a2035f09d30029840f4f200a17b3268e28511e3e812d00f61e04439a9b0e",
+  "result_sha256": "732c0db3928c8a42eeb5a579e9dd64b6fe7f277aa9e1fe30761e313c20f19f50",
+  "log_sha256": {
+    "stdout": "2455b02d4a9bbc7ff7f759886024ada0d3b46fad0992bf134d2db59c45626e3e",
+    "stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "engine": "f451e8003ce93608d3c707df28a81f43a1ef1969384fced26bfe3aac7f4c22f6",
+    "xvfb_wrapper": "b987a262609a3720f450ab6815ed90b2069dd47b7b012959ca19c325aebf5d55"
+  },
+  "evidence_ceiling": "E3_TARGET_TESTED",
+  "claim_boundary": "real-art candidate pack integration only; no Phase 02 acceptance, visual approval, product, safety, security, reliability, or SLA claim"
+}

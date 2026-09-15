@@ -29,3 +29,37 @@ start, frame/event, interruption, completion, and failure/degradation.
 
 Include 10,000-case retained-seed transition results, illegal-transition count,
 selection latency, bridge round-trip latency, and tamper-negative evidence.
+
+## Executed result
+
+`godot/main.tscn` contains the required layered `MonAvatar` tree. The avatar
+loads `SpriteFrames` from the generated raster manifest and alternates BodyA /
+BodyB; `MonAnimationDirector` performs deterministic seed-based selection,
+recent-use suppression, legal connector fallback, interruptible semantic
+intents, and versioned results. `EmbodimentBridge` emits versioned intent,
+frame, completion, interruption, and degradation-shaped events. The headless
+Godot 4.7.2 test reports a live `gaze` intent and visible body state. Missing
+manifest/empty clips degrade explicitly. Canonical state and care policy are
+not present in these scripts.
+# Architect Review 01 correction — temporal playback semantics (2026-09-11)
+
+`MonAvatar` now consumes `MON_TEMPORAL_TRACKS_V1`, sets an explicit 12 FPS,
+passes integer 24 Hz tick weights as SpriteFrames relative durations, and
+emits frame-marker and completion events from actual AnimatedSprite2D signals.
+`MonAnimationDirector` selects by family/direction/posture/variant with recent
+use suppression; Godot remains a nonauthoritative presentation adapter.
+# R03 Godot semantics
+
+`MonAvatar` now supports v2 facing-selected tracks and declares 24 FPS, using
+integer MON_FRAME_V1 duration ticks as relative `SpriteFrames` weights. The
+focused `r03_temporal_playback_test.gd` creates actual `AnimatedSprite2D`
+resources from every generated frame, observes frame-change signals and
+terminal once-track state, and rejects missing-track selection. Godot owns only
+presentation execution; no organism or care authority is introduced.
+# R04 runtime acknowledgment boundary
+
+The director resolves an exact authored track and delegates presentation to
+`MonAvatar`. Missing, ineligible, malformed, hash-mismatched, corrupt, or
+unloadable tracks emit failure and never emit `started`. `started` follows an
+observed visible frame-zero assignment after one process frame. Playback then
+uses explicit 24 FPS and integer relative-duration weights.
