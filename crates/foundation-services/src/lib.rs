@@ -871,7 +871,7 @@ fn producer(
         packet["mac"] = json!(mac(&secret, &bytes)?);
         let encoded = serde_json::to_vec(&packet)?;
         ipc::send(&sock, &encoded)?;
-        if index == 0 {
+        if index == 0 && env::var_os("COMPANION_REAL_GODOT").is_some() {
             // Ordinary evidence uses a separately addressed authenticated
             // stream; safety candidates remain on the seqpacket channel.
             last_ordinary_packet = Some(send_ordinary_evidence(&generation)?);
