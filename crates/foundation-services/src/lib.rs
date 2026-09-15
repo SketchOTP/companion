@@ -871,7 +871,12 @@ fn producer(
         packet["mac"] = json!(mac(&secret, &bytes)?);
         let encoded = serde_json::to_vec(&packet)?;
         ipc::send(&sock, &encoded)?;
-        if index == 0 && env::var_os("COMPANION_REAL_GODOT").is_some() {
+        if index == 0 && env::var_os("COMPANION_PHASE01_COMPAT").is_some() {
+            // The inherited Phase 01 closeout fixture needs one ordinary
+            // packet at startup to exercise its separated compatibility
+            // assertion.  Alpha live mode never sets this switch; its
+            // ordinary ingress is control-triggered through the authenticated
+            // sensor-gateway socket.
             // Ordinary evidence uses a separately addressed authenticated
             // stream; safety candidates remain on the seqpacket channel.
             last_ordinary_packet = Some(send_ordinary_evidence(&generation)?);
