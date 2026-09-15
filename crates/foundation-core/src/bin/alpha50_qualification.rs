@@ -178,7 +178,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     );
     let causal_ok = causal.values().all(|v| *v);
     let evidence = Evidence {
-        profile: "COMPANION_ALPHA50_ORGANISM_MEMORY_V1",
+        profile: "COMPANION_ALPHA50_ORGANISM_MEMORY_V2",
         status: if integrity && restart_continuity && restart_ok && causal_ok && fixed_point_causal
         {
             "PASS"
