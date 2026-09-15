@@ -28,3 +28,10 @@ including classified retry attempts, eliminating the startup signal race
 observed in hosted case 118.  The Alpha workflow uses a guaranteed Python
 regex scanner with synthetic fail/pass self-tests because hosted runners do
 not provide `rg`; scanner absence remains fail-closed at the executable step.
+
+Exact implementation head `d83e5c396427ba8a193db2febdb359d7294a57e5` passed
+hosted Alpha50 (`34946179230`, `34946183524`), Phase 01 (`34946179362`,
+`34946183516`), focused R06 (`34946179214`, `34946183515`), and inherited
+Phase 02 (`34946179206`, `34946183562`) push/PR runs. The published Alpha
+artifact is `10387258357` with ZIP SHA-256
+`2d81281a09e1d8edd40667bce5e800d2ba7b06a7a893984479ea0efd15937f08`.
