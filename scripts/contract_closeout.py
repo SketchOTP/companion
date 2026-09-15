@@ -60,6 +60,7 @@ def main():
             "mon-frame-intake-receipt-v1.schema.json": "mon-authored-frame-intake-receipt-v1.json",
             "mon-opaque-black-frame-source-pack-v1.schema.json": "assets/source/p02/r06/approved/pack.json",
             "mon-locomotion-intent-v1.schema.json": "mon-locomotion-intent-v1.json",
+            "organism-state-v1.schema.json": "organism-state-v1.json",
         }.get(path.name)
         if fixture_name:
             fixture_path = ROOT / fixture_name if fixture_name.startswith("assets/") else ROOT / "contracts/fixtures" / fixture_name
