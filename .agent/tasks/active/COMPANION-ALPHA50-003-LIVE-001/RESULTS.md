@@ -31,3 +31,7 @@ inherited Phase 02 `35026685797` on the same SHA. The Alpha workflow's green
 result reflects the assertions currently encoded; it does not promote the
 Python transition proxy into production Godot or turn repeated graceful
 restart into the required multi-class failure campaign.
+
+Published artifacts: Alpha evidence artifact `10419532624`
+(`companion-alpha50-d484c0370512ab3bb9fbcebaf99b9e44a718cdba`); focused R06
+artifact `10419603907`. Artifact identity is retained for independent retrieval.
