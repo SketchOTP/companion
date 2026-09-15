@@ -90,6 +90,11 @@ If Alpha50-002 fully passes independent Architect review, the intended evidence-
 - New work is candidate `E3_TARGET_TESTED`; no phase acceptance or completion
   percentage is assigned by Codex.
 
+Final executable head `70b2a5ca51a7c8adb688a97e42243f88c36cc5fc` passed the
+Alpha50, Phase 01, focused R06, and inherited Phase 02 hosted push/PR runs;
+artifact `10387094480` SHA-256
+`d032bc5e436a470c40f43e337e6eaa49fc83e7e60d71c7babde18d6286f95395`.
+
 ## Alpha50-002 hosted candidate closeout
 
 - Exact head: `d83e5c396427ba8a193db2febdb359d7294a57e5`.

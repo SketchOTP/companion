@@ -1076,3 +1076,16 @@ now waits for the sanitized readiness marker before each shutdown, including
 retries; the workflow uses a guaranteed Python scanner with explicit synthetic
 detection and clean-fixture checks. The first failed hosted run is preserved as
 historical evidence; a fresh exact-head run is required.
+
+## Alpha50-002 final exact-head qualification — 2026-09-15
+
+Implementation head `70b2a5ca51a7c8adb688a97e42243f88c36cc5fc` passed Alpha50
+push `34947556168` and PR `34947561777`, Phase 01 push `34947556236` and PR
+`34947561885`, focused R06 push `34947556187` and PR `34947561741`, and
+inherited Phase 02 push `34947556234` and PR `34947561853`. Artifact
+`10387094480` ZIP SHA-256
+`d032bc5e436a470c40f43e337e6eaa49fc83e7e60d71c7babde18d6286f95395` reports
+the canonical organism profile as V2 and retains 500/500 graceful restart
+evidence. This is still bounded candidate evidence; multi-class failure,
+resident Godot/result learning, care process-loss independence, target devices,
+and Openbox remain unproven or unavailable.

@@ -35,3 +35,8 @@ hosted Alpha50 (`34946179230`, `34946183524`), Phase 01 (`34946179362`,
 Phase 02 (`34946179206`, `34946183562`) push/PR runs. The published Alpha
 artifact is `10387258357` with ZIP SHA-256
 `2d81281a09e1d8edd40667bce5e800d2ba7b06a7a893984479ea0efd15937f08`.
+
+The final executable qualification head is `70b2a5ca51a7c8adb688a97e42243f88c36cc5fc`;
+its Alpha50, Phase 01, focused R06, and inherited Phase 02 hosted push/PR
+runs all passed. Artifact `10387094480` has ZIP SHA-256
+`d032bc5e436a470c40f43e337e6eaa49fc83e7e60d71c7babde18d6286f95395`.
