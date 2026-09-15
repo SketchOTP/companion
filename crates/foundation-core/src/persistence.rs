@@ -229,6 +229,39 @@ impl Store {
         self.insert("INSERT OR IGNORE INTO event_log(message_id,event_type,payload,created_utc) VALUES (?1,?2,?3,?4);", &[(1,message_id),(2,event_type),(3,payload),(4,utc)], &[])
     }
 
+    /// Check the durable companion event log before applying an external
+    /// message.  This is intentionally separate from the in-memory receiver
+    /// cache so replay protection survives a companion restart.
+    pub fn event_exists(&self, message_id: &str) -> Result<bool, StoreError> {
+        if self.authority != "companion" {
+            return Err(StoreError::Authority(
+                "event log belongs to companion".into(),
+            ));
+        }
+        let sql = CString::new("SELECT 1 FROM event_log WHERE message_id=?1 LIMIT 1;").unwrap();
+        let mut stmt = std::ptr::null_mut();
+        let rc = unsafe {
+            sqlite3_prepare_v2(self.db, sql.as_ptr(), -1, &mut stmt, std::ptr::null_mut())
+        };
+        if rc != SQLITE_OK {
+            return Err(sqlite_error(self.db, rc));
+        }
+        let id = CString::new(message_id)
+            .map_err(|_| StoreError::Authority("message id contains NUL".into()))?;
+        let bind = unsafe { sqlite3_bind_text(stmt, 1, id.as_ptr(), -1, SQLITE_TRANSIENT) };
+        let step = if bind == SQLITE_OK {
+            unsafe { sqlite3_step(stmt) }
+        } else {
+            bind
+        };
+        unsafe { sqlite3_finalize(stmt) };
+        match step {
+            SQLITE_ROW => Ok(true),
+            SQLITE_DONE => Ok(false),
+            _ => Err(sqlite_error(self.db, step)),
+        }
+    }
+
     /// Append a durable organism snapshot in the companion-owned store. The
     /// event log remains append-only; snapshots are an acceleration/index for
     /// restart recovery and never replace event evidence.

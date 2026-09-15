@@ -26,6 +26,24 @@ Current authority:
 - Issue #8: open
 - Branch: `codex/p02-embodiment-001`
 
+## C01 implementation checkpoint — 2026-09-15
+
+The C01 candidate tree now binds ordinary evidence to the checked-in
+`sensor-gateway` process with a separately provisioned HMAC domain, kernel peer
+credentials, producer generation, freshness, and durable replay authority.
+Sequence exhaustion fails closed. The resident bridge invokes the configured
+Godot runner rather than manufacturing a result, and the Alpha workflow's
+10,000-case legal campaign is now Godot-owned with an independent verifier;
+the historical Python qualification is no longer an acceptance step. Artifact
+manifest self-hashing was corrected.
+
+Local Rust and syntax regressions pass. An exploratory Godot 4.6/Xvfb run
+exercised the bridge and causal trace, but the exact Godot 4.7.2 binary is not
+installed locally, so that run is not acceptance evidence. Exact-version Godot
+causal execution, hosted transition evidence, and the remaining C01 campaigns
+are not yet accepted. See
+`COMPANION-ALPHA50-003-LIVE-001-C01/C01_RESULT.md`.
+
 No new character artwork is authorized.
 
 ## Retained Alpha50-003 boundary

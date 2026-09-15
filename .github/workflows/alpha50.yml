@@ -28,6 +28,15 @@ jobs:
           cargo fmt --all -- --check
           cargo test --workspace --locked
           cargo build --release --workspace --locked
+      - name: Fetch pinned Godot 4.7.2 for resident embodiment execution
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/godot"
+          curl --fail --location --retry 3 https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip -o "$RUNNER_TEMP/godot/godot.zip"
+          test "$(sha256sum "$RUNNER_TEMP/godot/godot.zip" | awk '{print $1}')" = cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4
+          unzip -q "$RUNNER_TEMP/godot/godot.zip" -d "$RUNNER_TEMP/godot"
+          chmod +x "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64"
+          echo "GODOT_BIN=$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" >> "$GITHUB_ENV"
       - name: Organism, typed memory, restart, and 30-day qualification
         env:
           COMPANION_SQLITE_SOURCE: ${{ runner.temp }}/sqlite/sqlite-amalgamation-3530400/sqlite3.c
@@ -48,7 +57,9 @@ jobs:
           COMPANION_SQLITE_SOURCE: ${{ runner.temp }}/sqlite/sqlite-amalgamation-3530400/sqlite3.c
         run: |
           set -euo pipefail
-          python3 scripts/alpha50_live_trace.py --output "$RUNNER_TEMP/alpha50/live-trace.json" --companion target/release/companion-core --bridge target/release/godot-bridge
+          COMPANION_GODOT_PROJECT="$GITHUB_WORKSPACE/godot" \
+          COMPANION_GODOT_PACK="$GITHUB_WORKSPACE/assets/source/p02/r06/approved/pack.json" \
+          python3 scripts/alpha50_live_trace.py --output "$RUNNER_TEMP/alpha50/live-trace.json" --supervisor target/release/ops-supervisor
           python3 - <<'PY'
           import json, os
           p=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'alpha50','live-trace.json')))
@@ -57,10 +68,19 @@ jobs:
           PY
       - name: Validate canonical organism V2 schema and fixture
         run: python3 scripts/validate_schemas.py
-      - name: Legal transition qualification over frozen pack
+      - name: Production Godot legal graph campaign
+        env:
+          COMPANION_GODOT_PROJECT: ${{ github.workspace }}/godot
         run: |
           set -euo pipefail
-          python3 scripts/alpha50_transition_qualification.py --pack assets/source/p02/r06/approved/pack.json --output "$RUNNER_TEMP/alpha50/transitions.json" --cases 10000
+          "$GODOT_BIN" --audio-driver Dummy --headless --path godot --script res://alpha50_transition_campaign.gd -- --output="$RUNNER_TEMP/alpha50/godot-transitions.json" --cases=10000
+          python3 - <<'PY'
+          import json, os
+          p=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'alpha50','godot-transitions.json')))
+          assert p['status']=='PASS' and p['process']=='Godot' and p['case_count']==10000 and p['illegal_count']>0
+          assert all(c['pack_sha256']=='1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40' for c in p['cases'])
+          PY
+          python3 scripts/verify_alpha50_godot_transitions.py "$RUNNER_TEMP/alpha50/godot-transitions.json"
       - name: Sensor gateway inventory and explicit degraded coverage
         run: python3 scripts/alpha50_sensor_probe.py --output "$RUNNER_TEMP/alpha50/sensors.json"
       - name: Existing direct care independence regression
@@ -82,9 +102,11 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "$RUNNER_TEMP/alpha50"
-          find "$RUNNER_TEMP/alpha50" -maxdepth 1 -type f -printf '%f\n' | sort | while read -r name; do
+          find "$RUNNER_TEMP/alpha50" -maxdepth 1 -type f ! -name artifact-sha256.txt ! -name artifact-sha256.manifest.sha256 -printf '%f\n' | sort | while read -r name; do
             sha256sum "$RUNNER_TEMP/alpha50/$name"
-          done > "$RUNNER_TEMP/alpha50/artifact-sha256.txt"
+          done > "$RUNNER_TEMP/alpha50/artifact-sha256.txt.tmp"
+          mv "$RUNNER_TEMP/alpha50/artifact-sha256.txt.tmp" "$RUNNER_TEMP/alpha50/artifact-sha256.txt"
+          sha256sum "$RUNNER_TEMP/alpha50/artifact-sha256.txt" > "$RUNNER_TEMP/alpha50/artifact-sha256.manifest.sha256"
       - name: Upload Alpha50 evidence (including failures)
         if: always()
         uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08

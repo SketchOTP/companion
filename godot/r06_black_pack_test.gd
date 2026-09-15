@@ -156,5 +156,8 @@ func _measure_compositor(source: Image, rendered: Image, track_name: String) -> 
 		compositor_samples.append({"track_id":track_name,"source_point":[point.x,point.y],"viewport_point":[viewport_point.x,viewport_point.y],"source_rgb":[round(src.r*255.0),round(src.g*255.0),round(src.b*255.0)],"rendered_rgb":[round(rendered_pixel.r*255.0),round(rendered_pixel.g*255.0),round(rendered_pixel.b*255.0)],"outside_rgb":[round(outside_pixel.r*255.0),round(outside_pixel.g*255.0),round(outside_pixel.b*255.0)],"delta_from_black":max(round(rendered_pixel.r*255.0),max(round(rendered_pixel.g*255.0),round(rendered_pixel.b*255.0)))})
 
 func _finish(reason: String) -> void:
-	print(JSON.stringify({"status":"PASS" if errors.is_empty() else "FAIL","reason":reason,"errors":errors,"events":events,"godot_version":Engine.get_version_info().get("string","unknown"),"render_observation":render_observation,"compositor_samples":compositor_samples,"fps":24}, "  "))
+	# Keep the bridge result one canonical JSON line.  The detailed evidence is
+	# still retained in the structured object, while the resident bridge can
+	# parse it without guessing where a pretty-printed value ends.
+	print(JSON.stringify({"status":"PASS" if errors.is_empty() else "FAIL","reason":reason,"errors":errors,"events":events,"godot_version":Engine.get_version_info().get("string","unknown"),"render_observation":render_observation,"compositor_samples":compositor_samples,"fps":24}))
 	quit(0 if errors.is_empty() else 1)

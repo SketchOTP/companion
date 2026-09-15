@@ -44,19 +44,19 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let store = Store::open(&paths, "companion")?;
     let mut state = OrganismStateV2::deterministic(50);
     let identity = state.identity;
-    let baseline = state.step(true).selected;
+    let baseline = state.step(true)?.selected;
     let preference = state.record_preference("primary_user", "acknowledge");
-    let preferred = state.step(true).selected;
+    let preferred = state.step(true)?.selected;
     let correction = state.correct_preference(preference, "primary_user", "listen")?;
-    let corrected = state.step(true).selected;
+    let corrected = state.step(true)?.selected;
     let commitment = state.add_commitment(
         "resume interrupted greeting",
         state.organism_tick + 20,
         Some(correction),
     );
-    let pending = state.step(true).selected;
+    let pending = state.step(true)?.selected;
     state.observe_action_result("listen", true);
-    let _learned = state.step(false).selected;
+    let _learned = state.step(false)?.selected;
     state.snapshot_to(&store)?;
     let restored = restore_latest(&store)?.ok_or("missing V2 snapshot")?;
     let restart_continuity = restored.identity == identity
@@ -91,7 +91,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut intents = Vec::new();
     for day in 0..30_u32 {
         for slot in 0..24_u32 {
-            let step = state.step((day + slot) % 3 != 0);
+            let step = state.step((day + slot) % 3 != 0)?;
             if slot == 0 {
                 intents.push(json!({"day":day,"tick":step.tick,"action":step.selected.action}));
             }

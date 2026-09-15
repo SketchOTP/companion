@@ -80,6 +80,7 @@ dependencies = [
  "foundation-core",
  "hmac",
  "libc",
+ "serde",
  "serde_json",
  "sha2",
  "uuid",

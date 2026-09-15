@@ -12,6 +12,21 @@ pub const ORGANISM_V2_SCHEMA: u16 = 2;
 pub const SCALE: i32 = 1_000;
 pub const INTENT_SEQUENCE_MAX: u64 = i64::MAX as u64;
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum IntentEmissionError {
+    SequenceExhausted,
+}
+
+impl std::fmt::Display for IntentEmissionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match self {
+            Self::SequenceExhausted => f.write_str("intent_sequence_exhausted"),
+        }
+    }
+}
+
+impl std::error::Error for IntentEmissionError {}
+
 #[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Fixed(pub i32);
 
@@ -176,13 +191,18 @@ impl OrganismStateV2 {
         ];
     }
 
-    pub fn select_action(&mut self, user_present: bool) -> BodyNeutralIntent {
-        // Do not emit a wire value that Godot's signed int64 cannot represent.
-        // Saturation is fail-closed: once exhausted no further intent can be
-        // issued and the lifecycle is marked degraded.
-        if self.next_intent_sequence > INTENT_SEQUENCE_MAX {
+    pub fn select_action(
+        &mut self,
+        user_present: bool,
+    ) -> Result<BodyNeutralIntent, IntentEmissionError> {
+        // A signed-64 sequence is a hard wire boundary.  Once max has been
+        // consumed there is no representable successor, so refuse emission
+        // instead of reusing max or silently wrapping.
+        if self.next_intent_sequence == 0 || self.next_intent_sequence > INTENT_SEQUENCE_MAX {
             self.lifecycle = "degraded".into();
-            self.next_intent_sequence = INTENT_SEQUENCE_MAX;
+            self.degradation
+                .push("body_output_intent_sequence_exhausted".into());
+            return Err(IntentEmissionError::SequenceExhausted);
         }
         let candidates = ["idle", "listen", "acknowledge"];
         let mut best = "idle";
@@ -216,15 +236,12 @@ impl OrganismStateV2 {
             reason: reason.into(),
             source_goal: self.goals.first().map(|g| g.goal_id),
         };
-        self.next_intent_sequence = self
-            .next_intent_sequence
-            .saturating_add(1)
-            .min(INTENT_SEQUENCE_MAX.saturating_add(1));
+        self.next_intent_sequence = self.next_intent_sequence.saturating_add(1);
         self.last_intent = Some(intent.clone());
-        intent
+        Ok(intent)
     }
 
-    pub fn step(&mut self, user_present: bool) -> V2Step {
+    pub fn step(&mut self, user_present: bool) -> Result<V2Step, IntentEmissionError> {
         self.organism_tick = self.organism_tick.saturating_add(1);
         self.internal.energy_milli = (self.internal.energy_milli - 2).max(0);
         self.internal.rest_pressure_milli = (self.internal.rest_pressure_milli + 4).min(SCALE);
@@ -233,8 +250,8 @@ impl OrganismStateV2 {
         self.internal.curiosity_milli =
             (self.internal.curiosity_milli + if user_present { 2 } else { 4 }).min(SCALE);
         self.recompute_drives();
-        let selected = self.select_action(user_present);
-        V2Step {
+        let selected = self.select_action(user_present)?;
+        Ok(V2Step {
             tick: self.organism_tick,
             selected,
             alternatives: vec!["idle".into(), "listen".into(), "acknowledge".into()],
@@ -245,7 +262,7 @@ impl OrganismStateV2 {
                     .unwrap_or("idle"),
                 user_present,
             ),
-        }
+        })
     }
 
     pub fn observe_action_result(&mut self, action: &str, success: bool) {
@@ -401,7 +418,7 @@ mod tests {
     fn canonical_values_are_integer_and_bounded() {
         let mut s = OrganismStateV2::deterministic(1);
         for _ in 0..2000 {
-            s.step(false);
+            s.step(false).expect("bounded test sequence");
         }
         assert!((0..=SCALE).contains(&s.internal.energy_milli));
         assert!((0..=SCALE).contains(&s.internal.rest_pressure_milli));
@@ -413,11 +430,11 @@ mod tests {
         base.internal.curiosity_milli = 0;
         base.internal.social_need_milli = 0;
         base.internal.rest_pressure_milli = 0;
-        let before = base.step(true).selected.action;
+        let before = base.step(true).unwrap().selected.action;
         base.observe_action_result("acknowledge", true);
         base.observe_action_result("acknowledge", true);
         base.learned_preferences.clear();
-        let after = base.step(true).selected.action;
+        let after = base.step(true).unwrap().selected.action;
         assert_ne!(before, after);
         assert_eq!(after, "acknowledge");
     }
@@ -425,16 +442,42 @@ mod tests {
     fn preference_is_consumed_not_report_only() {
         let mut s = OrganismStateV2::deterministic(3);
         s.record_preference("user", "listen");
-        assert_eq!(s.step(true).selected.action, "listen");
+        assert_eq!(s.step(true).unwrap().selected.action, "listen");
     }
 
     #[test]
     fn generated_intent_uses_common_signed_64_wire_bound() {
         let mut state = OrganismStateV2::deterministic(4);
+        state.next_intent_sequence = INTENT_SEQUENCE_MAX - 1;
+        assert!(state.step(false).unwrap().selected.validate_wire().is_ok());
+        assert!(state.step(false).unwrap().selected.validate_wire().is_ok());
+        assert_eq!(
+            state.step(false).unwrap_err(),
+            IntentEmissionError::SequenceExhausted
+        );
+    }
+
+    #[test]
+    fn sequence_exhaustion_refuses_without_reusing_maximum() {
+        let mut state = OrganismStateV2::deterministic(5);
         state.next_intent_sequence = INTENT_SEQUENCE_MAX;
-        assert!(state.step(false).selected.validate_wire().is_ok());
-        let mut over = state.step(false).selected;
-        over.intent_sequence = INTENT_SEQUENCE_MAX + 1;
-        assert!(over.validate_wire().is_err());
+        let last = state
+            .step(false)
+            .expect("maximum sequence is valid")
+            .selected;
+        assert_eq!(last.intent_sequence, INTENT_SEQUENCE_MAX);
+        assert_eq!(state.next_intent_sequence, INTENT_SEQUENCE_MAX + 1);
+        let before = state.last_intent.clone();
+        let refusal = state
+            .step(false)
+            .expect_err("no successor is representable");
+        assert_eq!(refusal, IntentEmissionError::SequenceExhausted);
+        assert_eq!(state.last_intent, before);
+        assert!(
+            state
+                .degradation
+                .iter()
+                .any(|v| v == "body_output_intent_sequence_exhausted")
+        );
     }
 }

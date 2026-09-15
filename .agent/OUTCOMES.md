@@ -1113,3 +1113,17 @@ enabled; the Alpha path remains the authenticated ordinary-evidence UDS. The
 hosted green state is retained as candidate engineering evidence and does not
 close the production Godot, multi-class failure, care process-loss, resident
 restore, sensor, or Openbox criteria.
+
+## Alpha50-003-C01 implementation checkpoint — 2026-09-15
+
+The candidate correction now uses the checked-in sensor-gateway producer with
+separately provisioned HMAC ordinary evidence, durable replay authority before
+V2 mutation, and fail-closed signed-64 intent exhaustion. The Rust bridge
+invokes the configured Godot 4.7.2 runner and requires its frozen-pack result
+plus `RenderingServer.frame_post_draw`; it no longer fabricates an accepted
+result. The workflow now runs the production legal graph in Godot for 10,000
+raw cases with an independent verifier and uses a non-self-hashing artifact
+manifest. Workspace Rust tests and local syntax checks pass. An exploratory
+Godot 4.6/Xvfb run exercises the bridge and causal trace, but exact Godot
+4.7.2 is not installed locally; hosted Godot and the remaining C01 campaigns
+remain unproven.

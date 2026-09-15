@@ -1,74 +1,112 @@
 #!/usr/bin/env python3
-"""Exercise the resident ordinary -> V2 -> bridge result production path.
-
-This intentionally starts the checked-in service binaries and communicates via
-their Unix sockets; it never writes ordinary-observation.json or calls V2
-helpers directly.
-"""
+"""Exercise the resident sensor-gateway -> companion V2 path."""
 from __future__ import annotations
-import argparse, hashlib, json, os, pathlib, signal, socket, sqlite3, subprocess, tempfile, time, uuid
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
+import argparse
+import json
+import os
+import pathlib
+import signal
+import socket
+import sqlite3
+import subprocess
+import tempfile
+import time
 
-def envelope() -> dict:
-    value = {
-        "schema_major": 1, "message_id": str(uuid.uuid4()),
-        "producer_generation": "live-trace-generation", "source": "sensor-gateway",
-        "observed_at": "2026-01-01T00:00:00Z", "monotonic_ns": time.monotonic_ns(),
-        "confidence_milli": 900, "quality_milli": 900, "replay": False,
-        "causation_id": None, "correlation_id": str(uuid.uuid4()),
-        "auth_scheme": "scm-credentials-v1", "mac": "",
-        "payload": {"kind": "preference", "subject": "primary_user", "value": "listen"},
-    }
-    unsigned = dict(value); unsigned["mac"] = ""
-    value["mac"] = hashlib.sha256(json.dumps(unsigned, separators=(",", ":")).encode()).hexdigest()
-    return value
 
-def send(path: pathlib.Path, value: dict) -> dict:
-    with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as s:
-        deadline = time.time() + 5
-        while True:
-            try: s.connect(str(path)); break
-            except OSError:
-                if time.time() > deadline: raise
-                time.sleep(.05)
-        s.sendall(json.dumps(value).encode()); s.shutdown(socket.SHUT_WR)
-        return json.loads(s.recv(8192))
+def request(path: pathlib.Path, value: dict) -> dict:
+    deadline = time.time() + 10
+    while True:
+        try:
+            with socket.socket(socket.AF_UNIX, socket.SOCK_STREAM) as sock:
+                sock.settimeout(3)
+                sock.connect(str(path))
+                sock.sendall((json.dumps(value, sort_keys=True) + "\n").encode())
+                sock.shutdown(socket.SHUT_WR)
+                return json.loads(sock.recv(128 * 1024))
+        except OSError:
+            if time.time() >= deadline:
+                raise
+            time.sleep(0.05)
 
-def wait_socket(path: pathlib.Path) -> None:
-    deadline = time.time() + 5
+
+def wait_health(control: pathlib.Path, predicate, timeout: float = 15.0) -> dict:
+    deadline = time.time() + timeout
+    latest = {}
     while time.time() < deadline:
-        if path.exists(): return
-        time.sleep(.05)
-    raise RuntimeError(f"socket unavailable: {path.name}")
+        latest = request(control, {"command": "health"})
+        try:
+            health = json.loads(latest["health"])
+        except (KeyError, TypeError, json.JSONDecodeError):
+            health = {}
+        if predicate(health):
+            return health
+        time.sleep(0.1)
+    raise RuntimeError(f"health predicate did not converge: {latest}")
+
 
 def main() -> int:
-    ap = argparse.ArgumentParser(); ap.add_argument("--output", type=pathlib.Path, required=True); ap.add_argument("--companion", default="target/release/companion-core"); ap.add_argument("--bridge", default="target/release/godot-bridge"); args = ap.parse_args()
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--output", type=pathlib.Path, required=True)
+    ap.add_argument("--supervisor", default="target/release/ops-supervisor")
+    args = ap.parse_args()
     with tempfile.TemporaryDirectory(prefix="companion-alpha50-live-") as td:
-        root = pathlib.Path(td); env = os.environ.copy(); env["COMPANION_XDG_ROOT"] = str(root)
-        bridge = subprocess.Popen([args.bridge, "--service"], env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        companion = subprocess.Popen([args.companion, "--service"], env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        ordinary = root / "companion" / "ordinary-evidence.sock"; godot = root / "companion" / "godot-bridge.sock"
-        wait_socket(ordinary); wait_socket(godot)
-        obs = envelope(); response = send(ordinary, obs); time.sleep(.6)
-        companion.send_signal(signal.SIGTERM); companion.wait(timeout=5)
-        companion2 = subprocess.Popen([args.companion, "--service"], env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        wait_socket(ordinary); time.sleep(.15)
-        db = root / "companion" / "companion.sqlite3"; rows = []
-        restored_identity = None
-        if db.exists():
-            con = sqlite3.connect(db); rows = con.execute("select event_type from event_log order by id").fetchall()
-            try:
-                raw = con.execute("select state_json from organism_snapshots order by id desc limit 1").fetchone()
-                restored_identity = json.loads(raw[0])["identity"] if raw else None
-            except sqlite3.Error:
-                restored_identity = None
+        root = pathlib.Path(td)
+        env = os.environ.copy()
+        env.update({"COMPANION_XDG_ROOT": str(root), "COMPANION_CYCLES": "0"})
+        supervisor = subprocess.Popen([args.supervisor], env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        control = root / "companion" / "supervisor.sock"
+        try:
+            health = wait_health(control, lambda h: all(
+                any(c.get("role") == role and c.get("ready") for c in h.get("children", []))
+                for role in ("sensor-gateway", "companion-core", "godot-bridge")
+            ))
+            ordinary = request(control, {"command": "inject", "kind": "valid_ordinary_observation", "request_id": "sensor-gateway-live-positive"})
+            db = root / "companion" / "companion.sqlite3"
+            deadline = time.time() + 45
+            rows = []
+            snapshot = None
+            while time.time() < deadline:
+                con = sqlite3.connect(db)
+                rows = con.execute("select message_id,event_type,payload from event_log order by id").fetchall()
+                snapshot = con.execute("select state_json from organism_snapshots order by id desc limit 1").fetchone()
+                con.close()
+                if any(row[1] == "observed_embodiment_result" for row in rows):
+                    break
+                time.sleep(0.2)
+            events = [row[1] for row in rows]
+            first_identity = json.loads(snapshot[0])["identity"] if snapshot else None
+            request(control, {"command": "kill", "role": "companion-core"})
+            restarted = wait_health(control, lambda h: any(
+                c.get("role") == "companion-core" and c.get("ready") and c.get("restarts", 0) >= 1
+                for c in h.get("children", [])
+            ))
+            replay = request(control, {"command": "inject", "kind": "duplicate_ordinary_observation", "request_id": "sensor-gateway-live-positive"})
+            time.sleep(0.3)
+            con = sqlite3.connect(db)
+            rows_after = con.execute("select message_id,event_type,payload from event_log order by id").fetchall()
+            snapshot_after = con.execute("select state_json from organism_snapshots order by id desc limit 1").fetchone()
             con.close()
-        events = [r[0] for r in rows]
-        ok = response.get("accepted") is True and "ordinary_evidence_accepted" in events and "body_neutral_intent" in events and "observed_embodiment_result" in events and restored_identity is not None
-        result = {"status": "PASS" if ok else "FAIL", "ordinary_response": response, "event_types": events, "message_id": obs["message_id"], "restored_identity": restored_identity, "bridge_result_observed": "observed_embodiment_result" in events, "v2_only": True, "transport": "authenticated ordinary Unix peer-credential channel", "claim_boundary": "resident production-process causal trace; no product autonomy/care claim"}
-        companion2.send_signal(signal.SIGTERM); companion2.wait(timeout=5); bridge.send_signal(signal.SIGTERM); bridge.wait(timeout=5)
-        args.output.parent.mkdir(parents=True, exist_ok=True); args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
-        print(json.dumps(result, sort_keys=True)); return 0 if ok else 1
+            final_identity = json.loads(snapshot_after[0])["identity"] if snapshot_after else None
+            received = [row for row in rows_after if row[1] == "ordinary_evidence_received"]
+            event_types = [row[1] for row in rows_after]
+            bridge_result_observed = "observed_embodiment_result" in event_types
+            ok = (ordinary.get("accepted") is True and len(received) == 1 and
+                  replay.get("accepted") is True and "body_neutral_intent" in event_types and
+                  bridge_result_observed and first_identity == final_identity)
+            result = {"status": "PASS" if ok else "FAIL", "ordinary_transport": ordinary, "replay_control": replay, "event_types": event_types, "ordinary_received_count": len(received), "bridge_result_observed": bridge_result_observed, "identity_preserved": first_identity == final_identity, "supervisor_health_before_restart": health, "supervisor_health_after_restart": restarted, "producer": "checked-in sensor-gateway child via supervisor control", "legacy_file_written": False, "claim_boundary": "resident authenticated ordinary ingress plus real Godot result required; this run fails closed when Godot is not provisioned"}
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
+            print(json.dumps(result, sort_keys=True))
+            return 0 if ok else 1
+        finally:
+            if supervisor.poll() is None:
+                try:
+                    request(control, {"command": "shutdown"})
+                except OSError:
+                    supervisor.send_signal(signal.SIGTERM)
+                supervisor.wait(timeout=15)
 
-if __name__ == "__main__": raise SystemExit(main())
+
+if __name__ == "__main__":
+    raise SystemExit(main())

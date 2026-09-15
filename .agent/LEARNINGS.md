@@ -713,3 +713,13 @@ Body-neutral intents remain serializable observations for Godot; they do not
 transfer identity, memory, goals, or safety authority to the presentation
 adapter. Hardware inventory must report explicit degraded coverage rather than
 pretend unavailable webcam/audio devices were exercised.
+
+## Alpha50-C01 learning — 2026-09-15
+
+A typed bridge result is not an observed embodiment result. The production
+bridge must start the configured Godot process and require its frozen-pack
+result plus `RenderingServer.frame_post_draw`; the live trace must fail closed
+when that binary is absent. Likewise, a transition test is not production
+legality evidence while Python still owns the decision, so the acceptance
+workflow must execute the graph in Godot and reserve Python for independent
+verification only. Artifact manifests must exclude their own digest file.
