@@ -40,6 +40,7 @@ jobs:
           p=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'alpha50','organism.json')))
           assert p['status']=='PASS' and p['simulated_days']==30 and p['restart_cases']>=500
           assert all(p['causal'].values())
+          PY
       - name: Fail closed on historical V1 acceptance path
         run: python3 scripts/alpha50_v2_guard.py --source crates/foundation-core/src/bin/alpha50_qualification.rs
       - name: Resident ordinary to V2 to Godot result trace
@@ -53,7 +54,6 @@ jobs:
           p=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'alpha50','live-trace.json')))
           assert p['status']=='PASS' and p['v2_only'] and p['bridge_result_observed']
           assert 'ordinary_evidence_accepted' in p['event_types']
-          PY
           PY
       - name: Validate canonical organism V2 schema and fixture
         run: python3 scripts/validate_schemas.py
