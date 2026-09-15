@@ -253,6 +253,37 @@ pub struct OrdinaryObservation {
     pub payload: serde_json::Value,
 }
 
+/// Authenticated ordinary evidence is deliberately separate from the
+/// direct-care safety envelope.  The supervisor binds the producer process
+/// through the Unix peer credentials; this envelope adds generation, replay,
+/// causation and freshness fields for durable idempotency at companion-core.
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct OrdinaryEvidenceV1 {
+    pub schema_major: u16,
+    pub message_id: Uuid,
+    pub producer_generation: String,
+    pub source: String,
+    pub observed_at: String,
+    pub monotonic_ns: u64,
+    pub confidence_milli: u16,
+    pub quality_milli: u16,
+    pub replay: bool,
+    pub causation_id: Option<Uuid>,
+    pub correlation_id: Option<Uuid>,
+    pub auth_scheme: String,
+    pub mac: String,
+    pub payload: OrdinaryPayload,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct OrdinaryPayload {
+    pub kind: String,
+    pub subject: String,
+    pub value: String,
+}
+
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct EmbodimentIntent {
     pub schema_major: u16,
@@ -265,6 +296,24 @@ pub struct EmbodimentResult {
     pub schema_major: u16,
     pub intent_id: Uuid,
     pub status: String,
+}
+
+/// Typed observed result returned by the Godot presentation adapter.  The
+/// organism remains the authority for all state and learning consequences.
+#[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
+pub struct ObservedEmbodimentResultV1 {
+    pub schema_major: u16,
+    pub intent_id: Uuid,
+    pub intent_sequence: u64,
+    pub accepted: bool,
+    pub track_id: Option<String>,
+    pub terminal_state: String,
+    pub completion_reason: String,
+    pub pack_revision: Option<String>,
+    pub source_pack_sha256: Option<String>,
+    pub correlation_id: Option<Uuid>,
+    pub causation_id: Option<Uuid>,
 }
 
 /// Controller-owned lateral movement input for bounded Phase 02 presentation

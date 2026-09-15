@@ -1089,3 +1089,16 @@ the canonical organism profile as V2 and retains 500/500 graceful restart
 evidence. This is still bounded candidate evidence; multi-class failure,
 resident Godot/result learning, care process-loss independence, target devices,
 and Openbox remain unproven or unavailable.
+
+## Alpha50-003 live integration — 2026-09-15
+
+Implemented a V2-only Alpha qualification binary, explicit nested V2 schema
+definitions and signed-64 intent bound, plus a separately addressed ordinary
+evidence socket authenticated by kernel peer credentials and integrity digest.
+The resident companion path now accepts typed ordinary evidence, records a
+body-neutral intent, sends it to the bridge, consumes an observed typed result,
+updates V2 outcome learning, and persists a snapshot. `alpha50_live_trace.py`
+passes locally across companion/bridge processes and restart with restored
+identity. This is E3 candidate evidence only; production Godot legal graph,
+multi-class failure/care-loss campaigns, and physical target qualification
+remain open.

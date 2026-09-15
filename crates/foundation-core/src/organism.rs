@@ -116,6 +116,7 @@ pub struct MemoryRecord {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
+#[serde(deny_unknown_fields)]
 pub struct BodyNeutralIntent {
     pub intent_id: Uuid,
     pub intent_sequence: u64,
@@ -123,6 +124,17 @@ pub struct BodyNeutralIntent {
     pub facing: String,
     pub reason: String,
     pub source_goal: Option<Uuid>,
+}
+
+impl BodyNeutralIntent {
+    /// The common wire ceiling is the signed int64 range consumed by Godot.
+    pub const WIRE_SEQUENCE_MAX: u64 = i64::MAX as u64;
+
+    pub fn validate_wire(&self) -> Result<(), &'static str> {
+        (self.intent_sequence <= Self::WIRE_SEQUENCE_MAX)
+            .then_some(())
+            .ok_or("intent_sequence_exceeds_common_signed_64_range")
+    }
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq)]

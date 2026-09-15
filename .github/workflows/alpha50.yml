@@ -40,6 +40,20 @@ jobs:
           p=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'alpha50','organism.json')))
           assert p['status']=='PASS' and p['simulated_days']==30 and p['restart_cases']>=500
           assert all(p['causal'].values())
+      - name: Fail closed on historical V1 acceptance path
+        run: python3 scripts/alpha50_v2_guard.py --source crates/foundation-core/src/bin/alpha50_qualification.rs
+      - name: Resident ordinary to V2 to Godot result trace
+        env:
+          COMPANION_SQLITE_SOURCE: ${{ runner.temp }}/sqlite/sqlite-amalgamation-3530400/sqlite3.c
+        run: |
+          set -euo pipefail
+          python3 scripts/alpha50_live_trace.py --output "$RUNNER_TEMP/alpha50/live-trace.json" --companion target/release/companion-core --bridge target/release/godot-bridge
+          python3 - <<'PY'
+          import json, os
+          p=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'alpha50','live-trace.json')))
+          assert p['status']=='PASS' and p['v2_only'] and p['bridge_result_observed']
+          assert 'ordinary_evidence_accepted' in p['event_types']
+          PY
           PY
       - name: Validate canonical organism V2 schema and fixture
         run: python3 scripts/validate_schemas.py
@@ -80,4 +94,6 @@ jobs:
             ${{ runner.temp }}/alpha50
             contracts/schemas/organism-state-v1.schema.json
             contracts/schemas/organism-state-v2.schema.json
+            contracts/schemas/ordinary-evidence-v1.schema.json
+            contracts/fixtures/ordinary-evidence-v1.json
           if-no-files-found: warn

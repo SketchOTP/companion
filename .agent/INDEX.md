@@ -120,3 +120,16 @@ artifact `10387094480` SHA-256
 - Candidate remains pending Architect review; unresolved integration and
   hardware/product claims are explicitly bounded in the task record.
 If Alpha50-003 closes the central software boundary and passes independent Architect review, the intended evidence-based range is approximately **50–55%** while semantic vision, STT/TTS, biometric identity, live notification, pilot and release remain incomplete.
+
+## Alpha50-003 live integration candidate
+
+- Alpha qualification is V2-only and guarded against historical V1 use.
+- V2 nested state is schema-constrained; signed intent sequencing is bounded to
+  the common Godot signed-64 range.
+- Ordinary evidence uses a separate peer-credential-authenticated Unix channel
+  and is durably recorded by companion-core; direct safety transport remains
+  independent.
+- Local resident evidence covers ordinary evidence → V2 intent → bridge result
+  → outcome learning → snapshot → restart identity continuity.
+- Candidate remains below Alpha acceptance: production Godot legal transitions,
+  multi-class failure/care-loss campaigns, and target hardware are not proven.

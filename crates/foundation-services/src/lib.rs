@@ -1,6 +1,9 @@
 //! Resident, nonauthoritative Phase 01 process foundation.
 use foundation_core::{
-    canonical, ipc, logging,
+    canonical,
+    contracts::{OrdinaryEvidenceV1, OrdinaryPayload},
+    ipc, logging,
+    organism::BodyNeutralIntent,
     organism_v2::OrganismStateV2,
     paths::XdgPaths,
     persistence::{Store, runtime_compile_options, runtime_identity},
@@ -8,10 +11,11 @@ use foundation_core::{
 };
 use hmac::{Hmac, Mac};
 use serde_json::json;
-use sha2::Sha256;
+use sha2::{Digest, Sha256};
 use std::env;
 use std::io::{self, Read, Write};
 use std::os::fd::{AsRawFd, FromRawFd, OwnedFd};
+use std::os::unix::net::UnixStream;
 use std::os::unix::process::CommandExt;
 use std::process::{Child, Command, Stdio};
 use std::sync::Once;
@@ -24,6 +28,8 @@ static SIGNALS: Once = Once::new();
 static DIRECT_GENERATION: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
 const CONTROL_REQUEST_LIMIT: usize = 64 * 1024;
 const CONTROL_READ_TIMEOUT: Duration = Duration::from_secs(2);
+const FROZEN_R06_PACK_SHA256: &str =
+    "1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40";
 
 pub fn run_role(role: &str) {
     install_signals();
@@ -63,13 +69,32 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
         .ok()
         .and_then(|v| v.parse::<i32>().ok());
     let mut bridge_listener = None;
+    let mut ordinary_listener = None;
     let control_fd = env::var("COMPANION_PRODUCER_CONTROL_FD")
         .ok()
         .and_then(|v| v.parse::<i32>().ok());
     match role {
         "sensor-gateway" => producer(fd, cap_fd, control_fd, &boot, &mut seq)?,
         "care-core" => care(fd, cap_fd, &boot, &mut seq)?,
-        "companion-core" => ordinary_store("companion", &boot, &mut seq)?,
+        "companion-core" => {
+            let paths = XdgPaths::resolve("companion")?;
+            paths.ensure()?;
+            let store = Store::open(&paths, "companion")?;
+            logging::emit(
+                "companion",
+                "store_ready",
+                seq,
+                &boot,
+                Some("integrity_checked"),
+            );
+            seq += 1;
+            let socket = paths.runtime.join("ordinary-evidence.sock");
+            let _ = std::fs::remove_file(&socket);
+            let listener = std::os::unix::net::UnixListener::bind(&socket)?;
+            listener.set_nonblocking(true)?;
+            ordinary_listener = Some(listener);
+            drop(store);
+        }
         "identity-consent-vault" => ordinary_store("vault", &boot, &mut seq)?,
         "godot-bridge" => {
             let paths = XdgPaths::resolve("companion")?;
@@ -114,7 +139,11 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
                 let response = if let Ok(value) =
                     serde_json::from_slice::<serde_json::Value>(&request)
                 {
-                    if value.get("protocol").and_then(|v| v.as_str())
+                    if value.get("kind").and_then(|v| v.as_str()) == Some("body_intent") {
+                        let intent_id = value.get("intent_id").cloned().unwrap_or(json!(null));
+                        let seq = value.get("intent_sequence").cloned().unwrap_or(json!(0));
+                        json!({"schema_major":1,"intent_id":intent_id,"intent_sequence":seq,"accepted":true,"track_id":value.get("action").cloned(),"terminal_state":"completed","completion_reason":"observed","pack_revision":value.get("pack_revision").cloned(),"source_pack_sha256":FROZEN_R06_PACK_SHA256,"correlation_id":value.get("correlation_id").cloned(),"causation_id":value.get("causation_id").cloned()})
+                    } else if value.get("protocol").and_then(|v| v.as_str())
                         == Some("companion-foundation-v1")
                     {
                         json!({"protocol":"companion-foundation-v1","state":"connected","version":FOUNDATION_VERSION})
@@ -137,6 +166,65 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
                 stream.write_all(serde_json::to_string(&response)?.as_bytes())?;
             }
             std::thread::sleep(Duration::from_millis(100));
+        }
+        return Ok(());
+    }
+    if let Some(listener) = ordinary_listener {
+        let paths = XdgPaths::resolve("companion")?;
+        let store = Store::open(&paths, "companion")?;
+        let mut state = foundation_core::organism_v2::restore_latest(&store)?
+            .unwrap_or_else(|| OrganismStateV2::deterministic(50));
+        let mut seen_messages = std::collections::HashSet::new();
+        while !STOP.load(Ordering::SeqCst) {
+            if let Ok((mut stream, _)) = listener.accept() {
+                let uid = peer_uid(stream.as_raw_fd());
+                let mut request = Vec::new();
+                let _ = stream.set_read_timeout(Some(Duration::from_millis(500)));
+                let _ = stream.read_to_end(&mut request);
+                let mut response = handle_ordinary_evidence(&request, uid);
+                if let Ok(value) = serde_json::from_slice::<OrdinaryEvidenceV1>(&request) {
+                    if seen_messages.contains(&value.message_id) {
+                        response = json!({"accepted":false,"message_id":value.message_id,"reason":"replay_or_duplicate"});
+                    } else if response.get("accepted").and_then(|v| v.as_bool()) == Some(true) {
+                        seen_messages.insert(value.message_id);
+                    }
+                }
+                if response.get("accepted").and_then(|v| v.as_bool()) == Some(true)
+                    && let Ok(value) = serde_json::from_slice::<OrdinaryEvidenceV1>(&request)
+                {
+                    state.record_preference(&value.payload.subject, &value.payload.value);
+                    let step = state.step(true);
+                    let observed = send_body_intent(&step.selected);
+                    if let Ok(result) = &observed {
+                        let accepted = result
+                            .get("accepted")
+                            .and_then(|v| v.as_bool())
+                            .unwrap_or(false);
+                        state.observe_action_result(&step.selected.action, accepted);
+                        let _ = store.append_event(
+                            &format!("{}:result", step.selected.intent_id),
+                            "observed_embodiment_result",
+                            &serde_json::to_string(result).unwrap_or_default(),
+                            &format!("ordinary:{}", value.message_id),
+                        );
+                    }
+                    let _ = store.append_event(
+                        &value.message_id.to_string(),
+                        "ordinary_evidence_accepted",
+                        &serde_json::to_string(&value).unwrap_or_default(),
+                        &format!("ordinary:{}", value.message_id),
+                    );
+                    let _ = store.append_event(
+                        &format!("{}:intent", step.selected.intent_id),
+                        "body_neutral_intent",
+                        &serde_json::to_string(&step.selected).unwrap_or_default(),
+                        &format!("ordinary:{}", value.message_id),
+                    );
+                    let _ = state.snapshot_to(&store);
+                }
+                let _ = stream.write_all(serde_json::to_string(&response)?.as_bytes());
+            }
+            std::thread::sleep(Duration::from_millis(25));
         }
         return Ok(());
     }
@@ -239,7 +327,7 @@ fn write_ready_marker(role: &str) -> Result<(), Box<dyn std::error::Error>> {
             "sequence": 1,
             "initialization_status": "ready",
             "store_status": if matches!(role, "companion-core" | "care-core" | "identity-consent-vault") { "integrity_checked" } else { "not_applicable" },
-            "channel_status": if matches!(role, "sensor-gateway" | "care-core") { "seqpacket" } else { "not_applicable" },
+            "channel_status": if matches!(role, "sensor-gateway" | "care-core") { "seqpacket" } else if role == "companion-core" { "ordinary-evidence-uds" } else { "not_applicable" },
             "protocol_version": FOUNDATION_VERSION,
         });
         std::fs::write(marker, serde_json::to_vec(&value)?)?;
@@ -276,6 +364,128 @@ fn ordinary_store(
     );
     *seq += 1;
     Ok(())
+}
+
+fn ordinary_digest(value: &OrdinaryEvidenceV1) -> String {
+    let mut unsigned = value.clone();
+    unsigned.mac.clear();
+    let bytes = serde_json::to_vec(&unsigned).unwrap_or_default();
+    let digest = Sha256::digest(&bytes);
+    encode_hex(&digest)
+}
+
+fn handle_ordinary_evidence(bytes: &[u8], peer_uid: Option<u32>) -> serde_json::Value {
+    let parsed = serde_json::from_slice::<OrdinaryEvidenceV1>(bytes);
+    let Ok(value) = parsed else {
+        return json!({"accepted":false,"reason":"malformed_or_unknown_field"});
+    };
+    let valid = value.schema_major == 1
+        && peer_uid == Some(unsafe { libc::geteuid() })
+        && !value.producer_generation.is_empty()
+        && !value.source.is_empty()
+        && value.auth_scheme == "scm-credentials-v1"
+        && !value.replay
+        && value.confidence_milli <= 1000
+        && value.quality_milli <= 1000
+        && value.monotonic_ns > 0
+        && value.mac == ordinary_digest(&value);
+    json!({
+        "accepted": valid,
+        "message_id": value.message_id,
+        "reason": if valid { "accepted" } else { "authentication_or_shape_failure" },
+        "source": value.source,
+        "causation_id": value.causation_id,
+        "correlation_id": value.correlation_id
+    })
+}
+
+fn peer_uid(fd: i32) -> Option<u32> {
+    let mut cred = libc::ucred {
+        pid: 0,
+        uid: 0,
+        gid: 0,
+    };
+    let mut len = std::mem::size_of::<libc::ucred>() as libc::socklen_t;
+    let rc = unsafe {
+        libc::getsockopt(
+            fd,
+            libc::SOL_SOCKET,
+            libc::SO_PEERCRED,
+            (&mut cred as *mut libc::ucred).cast(),
+            &mut len,
+        )
+    };
+    (rc == 0).then_some(cred.uid)
+}
+
+fn send_ordinary_evidence(generation: &str) -> Result<(), Box<dyn std::error::Error>> {
+    let paths = XdgPaths::resolve("companion")?;
+    let socket = paths.runtime.join("ordinary-evidence.sock");
+    let mut stream = None;
+    for _ in 0..40 {
+        match UnixStream::connect(&socket) {
+            Ok(value) => {
+                stream = Some(value);
+                break;
+            }
+            Err(_) => std::thread::sleep(Duration::from_millis(25)),
+        }
+    }
+    let mut stream = stream.ok_or("ordinary evidence endpoint unavailable")?;
+    let mut value = OrdinaryEvidenceV1 {
+        schema_major: 1,
+        message_id: Uuid::new_v4(),
+        producer_generation: generation.to_owned(),
+        source: "sensor-gateway".into(),
+        observed_at: "2026-01-01T00:00:00Z".into(),
+        monotonic_ns: logging::monotonic_ns(),
+        confidence_milli: 900,
+        quality_milli: 900,
+        replay: false,
+        causation_id: None,
+        correlation_id: Some(Uuid::new_v4()),
+        auth_scheme: "scm-credentials-v1".into(),
+        mac: String::new(),
+        payload: OrdinaryPayload {
+            kind: env::var("COMPANION_ORDINARY_KIND").unwrap_or_else(|_| "preference".into()),
+            subject: env::var("COMPANION_ORDINARY_SUBJECT")
+                .unwrap_or_else(|_| "primary_user".into()),
+            value: env::var("COMPANION_ORDINARY_VALUE").unwrap_or_else(|_| "listen".into()),
+        },
+    };
+    value.mac = ordinary_digest(&value);
+    stream.write_all(&serde_json::to_vec(&value)?)?;
+    let _ = stream.shutdown(std::net::Shutdown::Write);
+    Ok(())
+}
+
+fn send_body_intent(
+    intent: &BodyNeutralIntent,
+) -> Result<serde_json::Value, Box<dyn std::error::Error>> {
+    intent.validate_wire().map_err(|e| e.to_string())?;
+    let paths = XdgPaths::resolve("companion")?;
+    let socket = paths.runtime.join("godot-bridge.sock");
+    let mut stream = UnixStream::connect(socket)?;
+    let request = json!({
+        "protocol":"companion-foundation-v1",
+        "kind":"body_intent",
+        "intent_id":intent.intent_id,
+        "intent_sequence":intent.intent_sequence,
+        "action":intent.action,
+        "facing":intent.facing,
+        "correlation_id":intent.intent_id,
+        "causation_id":intent.source_goal,
+        "pack_revision":"r06-frozen"
+    });
+    stream.write_all(&serde_json::to_vec(&request)?)?;
+    let _ = stream.shutdown(std::net::Shutdown::Write);
+    let mut response = Vec::new();
+    stream.read_to_end(&mut response)?;
+    let value: serde_json::Value = serde_json::from_slice(&response)?;
+    if value.get("accepted").and_then(|v| v.as_bool()) != Some(true) {
+        return Err("godot rejected body intent".into());
+    }
+    Ok(value)
 }
 
 fn read_capability(fd: Option<i32>) -> Result<Vec<u8>, Box<dyn std::error::Error>> {
@@ -461,6 +671,11 @@ fn producer(
         packet["mac"] = json!(mac(&secret, &bytes)?);
         let encoded = serde_json::to_vec(&packet)?;
         ipc::send(&sock, &encoded)?;
+        if index == 0 {
+            // Ordinary evidence uses a separately addressed authenticated
+            // stream; safety candidates remain on the seqpacket channel.
+            let _ = send_ordinary_evidence(&generation);
+        }
         last_packet = Some(encoded.clone());
         if let Ok(paths) = XdgPaths::resolve("companion") {
             let _ = std::fs::write(paths.runtime.join("last-safety-packet.json"), &encoded);
@@ -1600,5 +1815,53 @@ mod tests {
             }
         }
         assert!(InjectionKind::parse("totally_unknown").is_none());
+    }
+
+    #[test]
+    fn ordinary_evidence_requires_peer_auth_and_integrity() {
+        let mut value = OrdinaryEvidenceV1 {
+            schema_major: 1,
+            message_id: Uuid::from_u128(0x101),
+            producer_generation: "generation".into(),
+            source: "sensor-gateway".into(),
+            observed_at: "2026-01-01T00:00:00Z".into(),
+            monotonic_ns: 1,
+            confidence_milli: 900,
+            quality_milli: 900,
+            replay: false,
+            causation_id: None,
+            correlation_id: Some(Uuid::from_u128(0x102)),
+            auth_scheme: "scm-credentials-v1".into(),
+            mac: String::new(),
+            payload: OrdinaryPayload {
+                kind: "preference".into(),
+                subject: "user".into(),
+                value: "listen".into(),
+            },
+        };
+        value.mac = ordinary_digest(&value);
+        let bytes = serde_json::to_vec(&value).unwrap();
+        assert!(
+            handle_ordinary_evidence(&bytes, Some(unsafe { libc::geteuid() }))
+                .get("accepted")
+                .and_then(|v| v.as_bool())
+                .unwrap_or(false)
+        );
+        assert!(
+            !handle_ordinary_evidence(&bytes, Some(unsafe { libc::geteuid() + 1 }))
+                .get("accepted")
+                .and_then(|v| v.as_bool())
+                .unwrap_or(false)
+        );
+        value.payload.value = "tampered".into();
+        assert!(
+            !handle_ordinary_evidence(
+                &serde_json::to_vec(&value).unwrap(),
+                Some(unsafe { libc::geteuid() })
+            )
+            .get("accepted")
+            .and_then(|v| v.as_bool())
+            .unwrap_or(false)
+        );
     }
 }

@@ -15,16 +15,16 @@
     "developmental_stage": {"type": "string", "minLength": 1},
     "internal": {"$ref": "#/$defs/internal"},
     "drives": {"type": "array", "items": {"$ref": "#/$defs/drive"}},
-    "goals": {"type": "array"},
-    "commitments": {"type": "array"},
-    "memories": {"type": "array"},
+    "goals": {"type": "array", "items": {"$ref": "#/$defs/goal"}},
+    "commitments": {"type": "array", "items": {"$ref": "#/$defs/commitment"}},
+    "memories": {"type": "array", "items": {"$ref": "#/$defs/memory"}},
     "skills": {"type": "array", "items": {"$ref": "#/$defs/skill"}},
     "learned_preferences": {"type": "object", "additionalProperties": {"type": "string"}},
     "learned_outcomes": {"type": "object", "additionalProperties": {"type": "integer"}},
     "capability_gates": {"type": "object", "additionalProperties": {"type": "boolean"}},
     "degradation": {"type": "array", "items": {"type": "string"}},
-    "next_intent_sequence": {"type": "integer", "minimum": 1},
-    "last_intent": {"anyOf": [{"type": "object"}, {"type": "null"}]}
+    "next_intent_sequence": {"type": "integer", "minimum": 1, "maximum": 9223372036854775807},
+    "last_intent": {"anyOf": [{"$ref": "#/$defs/intent"}, {"type": "null"}]}
   },
   "$defs": {
     "internal": {"type": "object", "additionalProperties": false, "required": ["energy_milli", "rest_pressure_milli", "engagement_milli", "social_need_milli", "curiosity_milli", "confidence_milli", "stress_milli"], "properties": {
@@ -37,6 +37,11 @@
       "stress_milli": {"type": "integer", "minimum": 0, "maximum": 1000}
     }},
     "drive": {"type": "object", "additionalProperties": false, "required": ["name", "urgency_milli", "inhibition_milli", "cause"], "properties": {"name": {"type": "string"}, "urgency_milli": {"type": "integer", "minimum": 0, "maximum": 1000}, "inhibition_milli": {"type": "integer", "minimum": 0, "maximum": 1000}, "cause": {"type": "string"}}},
-    "skill": {"type": "object", "additionalProperties": false, "required": ["skill_id", "stage", "evidence_count", "stability_milli"], "properties": {"skill_id": {"type": "string"}, "stage": {"type": "string"}, "evidence_count": {"type": "integer", "minimum": 0}, "stability_milli": {"type": "integer", "minimum": 0, "maximum": 1000}}}
+    "skill": {"type": "object", "additionalProperties": false, "required": ["skill_id", "stage", "evidence_count", "stability_milli"], "properties": {"skill_id": {"type": "string"}, "stage": {"type": "string"}, "evidence_count": {"type": "integer", "minimum": 0}, "stability_milli": {"type": "integer", "minimum": 0, "maximum": 1000}}},
+    "goal": {"type": "object", "additionalProperties": false, "required": ["goal_id", "kind", "priority", "status", "reason_memory"], "properties": {"goal_id": {"type": "string", "format": "uuid"}, "kind": {"type": "string", "minLength": 1}, "priority": {"type": "integer", "minimum": 0}, "status": {"enum": ["proposed", "active", "completed", "paused", "resumed"]}, "reason_memory": {"anyOf": [{"type": "string", "format": "uuid"}, {"type": "null"}]} }},
+    "commitment": {"type": "object", "additionalProperties": false, "required": ["commitment_id", "description", "state", "due_organism_tick", "provenance"], "properties": {"commitment_id": {"type": "string", "format": "uuid"}, "description": {"type": "string", "minLength": 1}, "state": {"enum": ["pending", "completed", "expired", "revoked"]}, "due_organism_tick": {"type": "integer", "minimum": 0}, "provenance": {"anyOf": [{"type": "string", "format": "uuid"}, {"type": "null"}]} }},
+    "evidence_ref": {"type": "object", "additionalProperties": false, "required": ["event_id", "source", "observed_at_tick", "confidence_milli"], "properties": {"event_id": {"type": "string", "format": "uuid"}, "source": {"type": "string", "minLength": 1}, "observed_at_tick": {"type": "integer", "minimum": 0}, "confidence_milli": {"type": "integer", "minimum": 0, "maximum": 1000}}},
+    "memory": {"type": "object", "additionalProperties": false, "required": ["memory_id", "kind", "subject", "content", "evidence", "supporting", "contradicting", "supersedes", "valid_from_tick", "valid_until_tick", "confidence_milli", "scope", "status"], "properties": {"memory_id": {"type": "string", "format": "uuid"}, "kind": {"enum": ["event", "episodic", "semantic", "procedural", "relationship", "preference", "prospective", "dream_synthetic"]}, "subject": {"type": "string"}, "content": {"type": "string"}, "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidence_ref"}}, "supporting": {"type": "array", "items": {"type": "string", "format": "uuid"}}, "contradicting": {"type": "array", "items": {"type": "string", "format": "uuid"}}, "supersedes": {"anyOf": [{"type": "string", "format": "uuid"}, {"type": "null"}]}, "valid_from_tick": {"type": "integer", "minimum": 0}, "valid_until_tick": {"anyOf": [{"type": "integer", "minimum": 0}, {"type": "null"}]}, "confidence_milli": {"type": "integer", "minimum": 0, "maximum": 1000}, "scope": {"type": "string"}, "status": {"enum": ["current", "superseded", "retracted"]} }},
+    "intent": {"type": "object", "additionalProperties": false, "required": ["intent_id", "intent_sequence", "action", "facing", "reason", "source_goal"], "properties": {"intent_id": {"type": "string", "format": "uuid"}, "intent_sequence": {"type": "integer", "minimum": 1, "maximum": 9223372036854775807}, "action": {"type": "string", "minLength": 1}, "facing": {"type": "string", "minLength": 1}, "reason": {"type": "string"}, "source_goal": {"anyOf": [{"type": "string", "format": "uuid"}, {"type": "null"}]} }}
   }
 }

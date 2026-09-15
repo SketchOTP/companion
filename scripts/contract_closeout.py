@@ -62,6 +62,7 @@ def main():
             "mon-locomotion-intent-v1.schema.json": "mon-locomotion-intent-v1.json",
             "organism-state-v1.schema.json": "organism-state-v1.json",
             "organism-state-v2.schema.json": "organism-state-v2.json",
+            "ordinary-evidence-v1.schema.json": "ordinary-evidence-v1.json",
         }.get(path.name)
         if fixture_name:
             fixture_path = ROOT / fixture_name if fixture_name.startswith("assets/") else ROOT / "contracts/fixtures" / fixture_name

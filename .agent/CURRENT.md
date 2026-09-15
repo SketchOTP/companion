@@ -84,3 +84,18 @@ passed (`34947556168`, `34947561777`, `34947556236`, `34947561885`,
 `34947556187`, `34947561741`, `34947556234`, `34947561853`). Artifact
 `10387094480` ZIP SHA-256 is
 `d032bc5e436a470c40f43e337e6eaa49fc83e7e60d71c7babde18d6286f95395`.
+
+## Alpha50-003 live integration candidate — 2026-09-15
+
+Review 25 authority was merged normally at `7d23b1f`. The Alpha qualification
+binary is now V2-only and guarded against historical V1 instantiation. V2
+schema nested state is explicit and the signed-64 intent bound is shared.
+Companion exposes an authenticated, separately addressed ordinary-evidence
+Unix channel; the resident trace sends typed evidence, records a V2 intent,
+executes the typed bridge result, applies outcome learning, snapshots, and
+restores the same identity after restart. Local trace evidence is retained at
+`.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001/results/live-trace-local.json`.
+
+This remains candidate engineering evidence. Production Godot legal-graph
+10,000-case execution, multi-class failure qualification, care process-loss
+independence, target sensors, and Openbox endurance are not claimed.

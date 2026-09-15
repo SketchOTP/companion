@@ -13,6 +13,7 @@ mapping = {
     "readiness.schema.json": "Readiness",
     "health.schema.json": "HealthSnapshot",
     "ordinary-observation.schema.json": "OrdinaryObservation",
+    "ordinary-evidence-v1.schema.json": "OrdinaryEvidenceV1",
     "safety-candidate.schema.json": "SafetyCandidate",
     "care-receipt.schema.json": "CareReceipt",
     "embodiment-intent.schema.json": "EmbodimentIntent",

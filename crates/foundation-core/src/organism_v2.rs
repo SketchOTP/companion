@@ -2,7 +2,7 @@
 //!
 //! V1 remains available for historical fixtures.  This module is the
 //! canonical non-floating representation used by the Alpha50 resident path.
-use crate::organism::{BodyNeutralIntent, EvidenceRef, MemoryKind, MemoryRecord};
+use crate::organism::{BodyNeutralIntent, Commitment, EvidenceRef, MemoryKind, MemoryRecord};
 use crate::persistence::{Store, StoreError};
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
@@ -10,6 +10,7 @@ use uuid::Uuid;
 
 pub const ORGANISM_V2_SCHEMA: u16 = 2;
 pub const SCALE: i32 = 1_000;
+pub const INTENT_SEQUENCE_MAX: u64 = i64::MAX as u64;
 
 #[derive(Debug, Clone, Copy, Serialize, Deserialize, PartialEq, Eq)]
 pub struct Fixed(pub i32);
@@ -176,6 +177,13 @@ impl OrganismStateV2 {
     }
 
     pub fn select_action(&mut self, user_present: bool) -> BodyNeutralIntent {
+        // Do not emit a wire value that Godot's signed int64 cannot represent.
+        // Saturation is fail-closed: once exhausted no further intent can be
+        // issued and the lifecycle is marked degraded.
+        if self.next_intent_sequence > INTENT_SEQUENCE_MAX {
+            self.lifecycle = "degraded".into();
+            self.next_intent_sequence = INTENT_SEQUENCE_MAX;
+        }
         let candidates = ["idle", "listen", "acknowledge"];
         let mut best = "idle";
         let mut best_score = i32::MIN;
@@ -208,7 +216,10 @@ impl OrganismStateV2 {
             reason: reason.into(),
             source_goal: self.goals.first().map(|g| g.goal_id),
         };
-        self.next_intent_sequence = self.next_intent_sequence.saturating_add(1);
+        self.next_intent_sequence = self
+            .next_intent_sequence
+            .saturating_add(1)
+            .min(INTENT_SEQUENCE_MAX.saturating_add(1));
         self.last_intent = Some(intent.clone());
         intent
     }
@@ -290,6 +301,78 @@ impl OrganismStateV2 {
         id
     }
 
+    /// Supersede an earlier preference while retaining its evidence chain.
+    pub fn correct_preference(
+        &mut self,
+        previous: Uuid,
+        subject: &str,
+        action: &str,
+    ) -> Result<Uuid, &'static str> {
+        let Some(old) = self.memories.iter_mut().find(|m| m.memory_id == previous) else {
+            return Err("preference_memory_not_found");
+        };
+        old.status = "superseded".into();
+        let id = Uuid::from_u128(
+            0xE530_0000_0000_0000_0000_0000_0000_0000u128 | self.organism_tick as u128,
+        );
+        self.learned_preferences
+            .insert("default".into(), action.into());
+        self.memories.push(MemoryRecord {
+            memory_id: id,
+            kind: MemoryKind::Preference,
+            subject: subject.into(),
+            content: format!("prefers:{action}"),
+            evidence: vec![EvidenceRef {
+                event_id: id,
+                source: "ordinary_evidence".into(),
+                observed_at_tick: self.organism_tick,
+                confidence_milli: 950,
+            }],
+            supporting: vec![id],
+            contradicting: vec![previous],
+            supersedes: Some(previous),
+            valid_from_tick: self.organism_tick,
+            valid_until_tick: None,
+            confidence_milli: 950,
+            scope: "user-local".into(),
+            status: "current".into(),
+        });
+        Ok(id)
+    }
+
+    pub fn add_commitment(
+        &mut self,
+        description: &str,
+        due_tick: u64,
+        provenance: Option<Uuid>,
+    ) -> Uuid {
+        let id = Uuid::from_u128(
+            0xC520_0000_0000_0000_0000_0000_0000_0000u128 | self.organism_tick as u128,
+        );
+        self.commitments.push(Commitment {
+            commitment_id: id,
+            description: description.into(),
+            state: "pending".into(),
+            due_organism_tick: due_tick,
+            provenance,
+        });
+        id
+    }
+
+    pub fn transition_commitment(&mut self, id: Uuid, state: &str) -> bool {
+        if !matches!(state, "completed" | "expired" | "revoked") {
+            return false;
+        }
+        self.commitments
+            .iter_mut()
+            .find(|c| c.commitment_id == id)
+            .map(|c| {
+                c.state = state.into();
+                true
+            })
+            .unwrap_or(false)
+    }
+
     pub fn snapshot_to(&self, store: &Store) -> Result<bool, StoreError> {
         let payload =
             serde_json::to_string(self).map_err(|e| StoreError::Authority(e.to_string()))?;
@@ -343,5 +426,15 @@ mod tests {
         let mut s = OrganismStateV2::deterministic(3);
         s.record_preference("user", "listen");
         assert_eq!(s.step(true).selected.action, "listen");
+    }
+
+    #[test]
+    fn generated_intent_uses_common_signed_64_wire_bound() {
+        let mut state = OrganismStateV2::deterministic(4);
+        state.next_intent_sequence = INTENT_SEQUENCE_MAX;
+        assert!(state.step(false).selected.validate_wire().is_ok());
+        let mut over = state.step(false).selected;
+        over.intent_sequence = INTENT_SEQUENCE_MAX + 1;
+        assert!(over.validate_wire().is_err());
     }
 }
