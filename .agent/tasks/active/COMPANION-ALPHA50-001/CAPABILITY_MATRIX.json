@@ -1,0 +1,19 @@
+{
+  "profile": "COMPANION_ALPHA50_CAPABILITY_MATRIX_V1",
+  "statuses": {
+    "architecture_foundation": {"status": "accepted-by-existing-authority", "evidence": "E4_REGRESSION_PROTECTED"},
+    "embodiment_habitat": {"status": "accepted-by-existing-authority", "evidence": "E4_REGRESSION_PROTECTED"},
+    "organism_autonomy": {"status": "implemented", "tested": true, "evidence": "E3_TARGET_TESTED"},
+    "memory_continuity": {"status": "implemented", "tested": true, "evidence": "E3_TARGET_TESTED"},
+    "learning_development": {"status": "implemented", "tested": true, "evidence": "E3_TARGET_TESTED"},
+    "sensor_io_foundation": {"status": "implemented", "host-observed": true, "degraded": true, "evidence": "E1_OBSERVED"},
+    "speech_perception_semantics": {"status": "not-attempted", "evidence": "E0_CLAIMED"},
+    "care_shadow_path": {"status": "accepted-by-existing-authority", "tested": true, "evidence": "E3_TARGET_TESTED"},
+    "identity_consent_vault": {"status": "accepted-by-existing-authority", "evidence": "E4_REGRESSION_PROTECTED"},
+    "notification_escalation": {"status": "not-attempted", "evidence": "E0_CLAIMED"},
+    "security_resilience": {"status": "accepted-by-existing-authority", "evidence": "E4_REGRESSION_PROTECTED"},
+    "pilot_release": {"status": "not-attempted", "evidence": "E0_CLAIMED"}
+  },
+  "claim_boundary": "engineering milestone evidence only; no product, medical, safety efficacy, reliability, SLA, or release claim",
+  "overall_completion": "architect_assigned"
+}

@@ -202,6 +202,9 @@ impl Store {
         if self.authority == "care" {
             self.exec("CREATE TABLE IF NOT EXISTS safety_attempts (id INTEGER PRIMARY KEY, candidate_id TEXT, accepted INTEGER NOT NULL, duplicate INTEGER NOT NULL, reason TEXT NOT NULL, created_utc TEXT NOT NULL);")?;
         }
+        if self.authority == "companion" {
+            self.exec("CREATE TABLE IF NOT EXISTS organism_snapshots (id INTEGER PRIMARY KEY, identity TEXT NOT NULL, epoch TEXT NOT NULL, state_json TEXT NOT NULL, created_utc TEXT NOT NULL);")?;
+        }
         let sql = format!(
             "INSERT OR REPLACE INTO authority_meta(k,v) VALUES ('authority', '{}');",
             self.authority.replace('\'', "''")
@@ -224,6 +227,61 @@ impl Store {
             ));
         }
         self.insert("INSERT OR IGNORE INTO event_log(message_id,event_type,payload,created_utc) VALUES (?1,?2,?3,?4);", &[(1,message_id),(2,event_type),(3,payload),(4,utc)], &[])
+    }
+
+    /// Append a durable organism snapshot in the companion-owned store. The
+    /// event log remains append-only; snapshots are an acceleration/index for
+    /// restart recovery and never replace event evidence.
+    pub fn append_organism_snapshot(
+        &self,
+        identity: &str,
+        epoch: u64,
+        state_json: &str,
+        utc: &str,
+    ) -> Result<bool, StoreError> {
+        if self.authority != "companion" {
+            return Err(StoreError::Authority(
+                "organism snapshots belong to companion".into(),
+            ));
+        }
+        self.insert(
+            "INSERT INTO organism_snapshots(identity,epoch,state_json,created_utc) VALUES (?1,?2,?3,?4);",
+            &[(1, identity), (2, &epoch.to_string()), (3, state_json), (4, utc)],
+            &[],
+        )
+    }
+
+    pub fn latest_organism_snapshot(&self) -> Result<Option<String>, StoreError> {
+        if self.authority != "companion" {
+            return Err(StoreError::Authority(
+                "organism snapshots belong to companion".into(),
+            ));
+        }
+        let sql =
+            CString::new("SELECT state_json FROM organism_snapshots ORDER BY id DESC LIMIT 1;")
+                .unwrap();
+        let mut stmt = std::ptr::null_mut();
+        let rc = unsafe {
+            sqlite3_prepare_v2(self.db, sql.as_ptr(), -1, &mut stmt, std::ptr::null_mut())
+        };
+        if rc != SQLITE_OK {
+            return Err(sqlite_error(self.db, rc));
+        }
+        let rc = unsafe { sqlite3_step(stmt) };
+        let value = if rc == SQLITE_ROW {
+            let p = unsafe { sqlite3_column_text(stmt, 0) };
+            (!p.is_null()).then(|| unsafe { CStr::from_ptr(p).to_string_lossy().into_owned() })
+        } else {
+            None
+        };
+        unsafe {
+            sqlite3_finalize(stmt);
+        }
+        if rc == SQLITE_ROW || rc == SQLITE_DONE {
+            Ok(value)
+        } else {
+            Err(sqlite_error(self.db, rc))
+        }
     }
     pub fn append_receipt(
         &self,

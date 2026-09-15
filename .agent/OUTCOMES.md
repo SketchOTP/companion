@@ -1045,3 +1045,17 @@ Artifact `10344096459` digest:
 Hosted evidence includes non-black captures, strict `frame_post_draw`, the
 32-tick loop, signed-64 wire limits, and categorized negative checks. Docs-only
 publication reconciliation is `657c11e`.
+
+## Alpha50 integrated milestone implementation — 2026-09-14
+
+Added the first bounded persistent organism/memory implementation on top of
+the accepted foundation. `foundation_core::organism` now carries durable typed
+identity/epoch, physiology, competing drives, goals, commitments, body-neutral
+intents, provenance-bearing memories, corrections/supersession, skill outcome
+updates, and deterministic model-free stepping. Companion snapshots use an
+append-only SQLite table and the companion service has an opt-in life mode.
+Added frozen-pack legal transition qualification (10,000 deterministic cases),
+sensor inventory with explicit degraded hardware status, a typed organism
+schema, a 30-day/500-restart Rust qualification binary, and unconditional Alpha
+artifact publication. Evidence is bounded engineering qualification only; no
+roadmap phase or product claim is accepted.

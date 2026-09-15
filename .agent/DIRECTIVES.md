@@ -469,3 +469,15 @@ selection, cumulative start→loop→loop→stop qualification at slow/nominal/f
 velocities, interruption traces, actual Godot playback, and independent
 negative cases. No source pixels change. Return to Architect after the bounded
 qualification; transition and Openbox gates remain closed.
+
+## 2026-09-14 — COMPANION-ALPHA50-001 integrated milestone
+
+Architect Replan 23 supersedes the unissued R07 transition directive and
+authorizes one integrated milestone. Extend the accepted foundation and R06
+embodiment with persistent model-free organism state, typed memory and
+learning/development, organism-driven body-neutral intents, bounded sensor
+inventory, independent shadow-care integration, legal transition qualification,
+simulated life, restart/failure, and export/restore evidence. Preserve frozen
+art and all prior negative evidence. Do not claim phase acceptance, care
+efficacy, semantic perception/speech, reliability, release readiness, or a
+completion percentage.

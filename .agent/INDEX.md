@@ -61,3 +61,12 @@ One final Codex handoff must attempt, without separate Architect returns:
 ## Completion target
 
 Current completion remains below 10% until new capability is implemented and accepted. If the complete Alpha50 evidence boundary passes independent Architect review, the intended accepted project position is at least 50% overall completion, likely about 52–55%. Codex may not self-approve that percentage or any roadmap phase.
+
+## Alpha50 implementation pointers
+
+- Typed organism/life loop: `crates/foundation-core/src/organism.rs`.
+- Companion snapshot/backup extensions: `crates/foundation-core/src/persistence.rs`.
+- Deterministic qualification: `crates/foundation-core/src/bin/alpha50_qualification.rs`.
+- Transition, sensor, and restart campaigns: `scripts/alpha50_transition_qualification.py`, `scripts/alpha50_sensor_probe.py`, `scripts/alpha50_failure_campaign.py`.
+- Schema and capability matrix: `contracts/schemas/organism-state-v1.schema.json`, `.agent/tasks/active/COMPANION-ALPHA50-001/CAPABILITY_MATRIX.json`.
+- Workflow: `.github/workflows/alpha50.yml`.

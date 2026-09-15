@@ -34,6 +34,14 @@ Execute one integrated Alpha milestone and return one final handoff:
 9. 30 simulated days, 500+ restart/failure cases, model-worker outage, integrity, backup/export, and clean-root restore;
 10. one machine-readable capability matrix and `# CODEX RESULT — COMPANION-ALPHA50-001`.
 
+Current candidate implementation adds the companion-owned typed organism
+state/life loop, SQLite snapshot plus backup/clean-root restore evidence,
+memory correction/retrieval/commitment behavior, sensor-gateway degradation
+inventory, legal-transition graph qualification, and a retained 500-case
+restart campaign. These remain bounded engineering observations pending
+Architect review; no roadmap phase or overall completion percentage is
+self-approved.
+
 ## Completion target
 
 Current completion remains below 10% until the work is implemented and reviewed. If the complete Alpha50 boundary passes independent Architect review, the target completion is at least 50%, likely about 52–55%. Codex does not assign this percentage.

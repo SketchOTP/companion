@@ -206,3 +206,13 @@ REFERENCE: contact/down/passing/up, arm/body weight response and leg crossover.
 No external software or dependency adopted. These sources support the existing
 motion model, not the quality of the generated frames. Seven built-in imagegen
 trials remain candidate/rejected evidence; exact prompts and outputs retained.
+
+## 2026-09-14 — Alpha50 architecture implementation
+
+DISCOVERY: no new runtime package or external framework was required. Existing
+Rust/SQLite authority stores, supervisor/IPC, R06 Godot adapter, and host
+`/dev`/`/proc` APIs cover the bounded milestone surfaces. DISPOSITION: BUILD on
+the accepted internal abstractions; keep model workers optional and raw sensor
+media ephemeral. RECHECK: revisit only if target-device acquisition or the
+transition campaign exposes a capability gap that cannot be satisfied by the
+selected stack.

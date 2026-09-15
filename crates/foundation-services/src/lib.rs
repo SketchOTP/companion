@@ -1,6 +1,7 @@
 //! Resident, nonauthoritative Phase 01 process foundation.
 use foundation_core::{
     canonical, ipc, logging,
+    organism::{self, OrganismState},
     paths::XdgPaths,
     persistence::{Store, runtime_compile_options, runtime_identity},
     version::FOUNDATION_VERSION,
@@ -155,6 +156,26 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
                 return Err(format!("{authority} store fault injected").into());
             }
             if role == "companion-core" {
+                // Alpha50 life mode is opt-in so the accepted Phase 01
+                // service behavior remains unchanged for existing checks.
+                // Canonical organism state is restored from the companion
+                // authority store and advanced independently of Godot/model
+                // workers; each step emits a body-neutral intent event.
+                if env::var_os("COMPANION_ALPHA_LIFE").is_some() {
+                    let store = Store::open(&paths, "companion")?;
+                    let mut state = organism::restore_latest(&store)?
+                        .unwrap_or_else(|| OrganismState::deterministic(50));
+                    let user_present = env::var_os("COMPANION_USER_PRESENT").is_some();
+                    let step = state.step(user_present);
+                    let payload = serde_json::to_string(&step.selected)?;
+                    let _ = store.append_event(
+                        &step.selected.intent_id.to_string(),
+                        "body_neutral_intent",
+                        &payload,
+                        &format!("boot:{}:organism_tick:{}", boot, step.tick),
+                    )?;
+                    let _ = state.snapshot_to(&store)?;
+                }
                 let observation = paths.runtime.join("ordinary-observation.json");
                 if let Ok(bytes) = std::fs::read(&observation) {
                     if let Ok(value) = serde_json::from_slice::<serde_json::Value>(&bytes) {

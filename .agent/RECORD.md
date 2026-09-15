@@ -917,3 +917,12 @@ transition gate changed.
 - First retry `34835193580` failed only on an undefined workflow capture-path
   assertion; `de9d7c0` corrected that assertion. No source PNG changed.
 - Publication-only reconciliation: `657c11e`.
+
+## Alpha50 milestone routing — 2026-09-14
+
+Architect Replan 23 superseded the unissued R07 transition directive and routed
+the existing Phase 02 branch to one integrated Alpha50 milestone. The merge
+was performed normally in a clean ext4 worktree. New organism/memory,
+transition, and sensor qualification surfaces are additive; frozen R06 source
+bytes and prior negative evidence are preserved. Review/acceptance remains with
+the Architect.

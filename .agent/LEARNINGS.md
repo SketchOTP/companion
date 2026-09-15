@@ -703,3 +703,13 @@ Per-run evidence assertions must resolve capture files relative to the matching
 run directory. The first retry exposed an undefined path variable even though
 Godot had produced valid non-black captures; correcting that assertion kept
 the runtime gate fail-closed while making artifact validation causal.
+
+## Alpha50 implementation learning — 2026-09-14
+
+An organism authority can be added without creating a second writer by keeping
+typed state in the existing companion-owned SQLite authority and treating
+snapshots as an append-only recovery index beside canonical event evidence.
+Body-neutral intents remain serializable observations for Godot; they do not
+transfer identity, memory, goals, or safety authority to the presentation
+adapter. Hardware inventory must report explicit degraded coverage rather than
+pretend unavailable webcam/audio devices were exercised.

@@ -75,6 +75,19 @@ consent, secrets, contacts, care policy, incidents, or notification authority.
 No media capture, speech/model dependency, real user data, or live care behavior
 is authorized in Phase 02.
 
+## Alpha50 additions — 2026-09-14
+
+- `crates/foundation-core/src/organism.rs` — typed companion-owned organism,
+  drives, goals, commitments, memories, corrections, skills, and life steps.
+- `crates/foundation-core/src/bin/alpha50_qualification.rs` — deterministic
+  30-day/500-restart/causal qualification fixture.
+- `scripts/alpha50_transition_qualification.py` — fail-closed authored-track
+  graph resolver and 10,000-case evidence generator.
+- `scripts/alpha50_sensor_probe.py` — bounded host device inventory with
+  explicit degraded coverage and ephemeral-media policy.
+- `.github/workflows/alpha50.yml` — Alpha50 bounded qualification workflow;
+  artifact upload is unconditional on failure.
+
 ## Protected operator files
 
 The primary SSHFS worktree contains operator-owned modifications to root
