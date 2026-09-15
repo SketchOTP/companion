@@ -33,3 +33,8 @@ Additional exact-head checks after the inherited Phase 01 compatibility fix:
   duration was 304.303 seconds.
 - Latest live-trace output SHA-256:
   `29a4249d4299e3be2b4f84fa8c8ef7f3a3c8c9953b9be96c4da2c4e32d6f428d`.
+- Physical probe: `/dev/video0`, `/dev/video1`, and microphone/audio cards were
+  observed (`E1_OBSERVED` inventory only); no semantic sensor capture was run.
+- Target probe: current X11 is GNOME Shell/mutter at 7680x2160, not the
+  dedicated 1366x768 Openbox target. Openbox endurance is therefore
+  `BLOCKED`, with no host reconfiguration attempted.
