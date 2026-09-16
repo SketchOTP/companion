@@ -59,3 +59,11 @@ A fully passing C03 may support approximately **52–55%** after independent Arc
 ## Protected work
 
 The primary SSHFS checkout's operator-owned `.gitignore` and `AGENTS.md` modifications remain protected. Do not inspect, commit, reset, stash, overwrite, copy or reformat them.
+
+## C03 checkpoint (2026-09-16)
+
+Reproduced and repaired the C02 zero-snapshot restart regression by placing one
+explicit Alpha-mode V2 step/snapshot before the ordinary listener loop. A local
+20-case restart probe passed with stable identity and durable snapshots. Hosted
+validation for implementation `98e970854f55e263ef78b642110d396633cea833` was
+dispatched; Alpha/R06/Phase 01 results remain subject to hosted completion.
