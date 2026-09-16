@@ -12,19 +12,15 @@
 - Accepted foundation: Roadmap Phase 01.
 - Accepted bounded embodiment/runtime closeout: R06-C06.
 - Phase 02 acceptance: `NOT GRANTED`.
-- Alpha50-001: `PARTIAL ACCEPTED`.
-- Alpha50-002: `PARTIAL ACCEPTED`.
-- Alpha50-003-LIVE-001: `PARTIAL ACCEPTED`.
-- Alpha50-003-LIVE-001-C01: `PARTIAL ACCEPTED`.
-- Alpha50-003-LIVE-001-C02: `PARTIAL ACCEPTED` with exact-head Alpha regression preserved.
-- Current disposition: `CONTINUE — ALPHA50-003-LIVE-001-C03 PERSISTENT-INDIVIDUAL ACCEPTANCE CAMPAIGN ACTIVE`.
-- Current directive: `COMPANION-ALPHA50-003-LIVE-001-C03`.
-- Repository Review 28: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C03/ARCHITECT_REVIEW_28.md`.
-- Repository directive: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C03/DIRECTIVE.md`.
-- Notion Review 28: https://app.notion.com/p/3dd833cb27ff81a7ad9ee6794ee06a1b
-- Reviewed C02 task head: `9c83199a9beaf2fbb9ace037875035975fc8b12c`.
-- C02 Alpha PR run `35055274200`: `FAILURE` at retained restart/failure campaign.
-- Failed C02 artifact: `10430534095`, ZIP SHA-256 `0d650aa6d47c4b984d2f11ab6308a9e69b3ed599032ba607fb5f8091fa307ed4`.
+- Alpha50-001 / 002 / 003 / C01 / C02 / C03: bounded partial acceptance only.
+- C03 restart regression repair: retained; exact branch-head Alpha/Phase01/R06/R05 push regressions green on `ae227c1a273dc50d682a7dfee1972b0b114063cc`.
+- Current disposition: `CONTINUE — REMEMBERED-CAUSAL GATE ACTIVE`.
+- Current directive: `COMPANION-ALPHA50-004-REMEMBERED-CAUSAL-001`.
+- Repository Review 29: `.agent/tasks/active/COMPANION-ALPHA50-004-REMEMBERED-CAUSAL-001/ARCHITECT_REVIEW_29.md`.
+- Repository directive: `.agent/tasks/active/COMPANION-ALPHA50-004-REMEMBERED-CAUSAL-001/DIRECTIVE.md`.
+- Notion Review 29: https://app.notion.com/p/3dd833cb27ff81209f71d18b644110ae
+- Exact Alpha push run: `35086956393`; artifact `10442678067`; ZIP SHA-256 `1c30f5d2041677f3658a3b1f4d5aa400ea0362b9423abeceaa02440e9e8b8bab`.
+- C02 failed Alpha run `35055274200` and artifact `10430534095` remain negative history.
 - Frozen R06 pack: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`.
 - PR #9: draft/open/unmerged.
 - Issue #8: open.
@@ -32,58 +28,26 @@
 
 ## Accepted / retained boundary
 
-Accepted authority remains Architecture v1.0, Roadmap Phase 01, and bounded R06-C06 source/intake/controller/render/timing evidence.
+Accepted authority remains Architecture v1.0, Phase 01 and bounded R06-C06.
 
-Retained bounded Alpha candidate capability/evidence includes:
+Retained bounded Alpha implementation/evidence includes V2 fixed-point organism state, typed memory/commitment scaffolding, authenticated sensor-gateway ordinary ingress with durable replay reservation, signed-sequence exhaustion refusal, real Godot 4.7.2 render/result participation, shared transition-resolver scaffolding, version-neutral canonical aliases, and restored graceful restart identity continuity.
 
-- V2-only acceptance direction and fixed-point V2 numerical state;
-- authenticated ordinary evidence bound to expected sensor-gateway PID/UID/generation plus independent HMAC domain;
-- durable ordinary message reservation before V2 mutation;
-- fail-closed signed-64 sequence exhaustion;
-- real Godot 4.7.2 frozen-pack render/result participation;
-- shared transition-authority + resolver scaffolding used by director and campaign;
-- frozen-pack metadata track-selection direction;
-- version-neutral canonical aliases for shared goal/commitment/evidence/memory/intent contracts;
-- manifest temp-file fix;
-- C02 Alpha run failure retained as negative evidence.
+Not accepted: compatibility-only legacy ingress in the ordinary listener; one unified production Godot body path; resident paired preference/correction/commitment/real-outcome causality; remembered post-restart action change; rich autonomous goals/development/consolidation; multi-class failures; care independence; resident clean-root restore; governed sensor closeout; semantic perception/speech; Phase 02/Alpha/release.
 
-Not accepted:
+## Review 29 findings
 
-- one full production Godot director/avatar/controller path shared by live intents and 10k campaign;
-- transition authority semantically grounded against frozen pack role/facing/posture/entry-exit/interruption data;
-- compatibility-only legacy file isolation in all non-compatibility modes;
-- resident paired preference/correction/commitment/outcome causality;
-- post-restart remembered behavior proof;
-- rich goals/development/retrieval/consolidation;
-- non-degenerate long-horizon organism qualification;
-- multi-class failure qualification;
-- care process-loss independence;
-- resident clean-root restore;
-- model-worker topology proof;
-- governed target-host sensor artifact;
-- semantic perception/speech;
-- Phase 02/Alpha/product reliability/release.
+1. C03's executable contribution is the restart-regression repair; it restores previously retained evidence rather than adding the missing product capability.
+2. Exact branch-head Alpha, Phase01, R06 and R05 push runs are green.
+3. The ordinary-listener source still reads `ordinary-observation.json` when `COMPANION_ALPHA_LIFE` is absent, contradicting the handoff's default-mode compatibility-only claim.
+4. The central missing evidence is causal: persistent remembered experience has not been shown to alter later resident body behavior through real Godot after restart.
+5. Broad Alpha directives repeatedly returned after narrow repairs, so the next directive isolates this one decisive gate.
 
-## Review 28 findings
+## Active gate
 
-1. shared transition data/resolver is progress, but campaign invokes resolver directly while resident embodiment follows a separate bridge/render path;
-2. transition authority validator checks graph consistency, not semantic derivation/cross-validation against the frozen pack;
-3. legacy file negative is proven only with `COMPANION_ALPHA_LIFE=1`; the ordinary listener is not exclusively gated by `COMPANION_PHASE01_COMPAT=1`;
-4. canonical aliases are an acceptable promotion direction but richer lifecycle semantics remain shallow;
-5. four resident causal comparisons, remembered restart behavior and Godot-loss continuity remain unrun;
-6. operative goals/development/consolidation and rich 30-day V2 life remain unqualified;
-7. multi-class failures, care loss, resident restore and model-worker topology remain unrun;
-8. target sensor observations are local and ungoverned;
-9. exact C02 Alpha PR run failed the retained restart campaign: `0/500`, `identity=null`, zero snapshots.
+`COMPANION-ALPHA50-004-REMEMBERED-CAUSAL-001` must prove four paired resident causal differences—remembered preference, correction, unfinished commitment, and learned real-Godot outcome—and at least one full companion+Godot restart where the same persistent individual later selects and executes a different action because of remembered evidence.
 
-## C03 gate
-
-C03 must first repair the C02 restart regression using a supported state-producing production path. It must then collapse live embodiment and transition qualification onto one production Godot director/resolver/avatar/controller/result chain, ground legal-transition authority against frozen pack semantics, prove resident paired memory/learning causality and remembered behavior across restart, qualify bounded organism goals/development/consolidation and non-degenerate 30-day life, execute genuine multi-class failures and care independence, boot resident clean-root restore, prove model-worker independence, and publish governed target-host camera/mic evidence.
-
-Openbox may remain an explicit blocker if unavailable without prohibited host reconfiguration.
+Failure/care/30-day/restore/sensor closeouts are deferred until this causal gate is accepted.
 
 ## Completion position
 
-Review 28 sets evidence-grounded overall completion to **46%**.
-
-A fully passing C03 may support approximately **52–55%** after independent review while semantic vision, STT/TTS, live escalation/notification, complete vault/consent, security/reliability qualification, pilot and release remain incomplete.
+Review 29 holds evidence-grounded overall completion at **46%**. A fully passing remembered-causal gate may support approximately **50–51%** after independent Architect review.
