@@ -63,7 +63,22 @@ Independent verification must derive expected legality from frozen authority/met
 
 Required mutations: edge removal, illegal edge insertion, facing/posture mismatch, interruption-range mutation, pack/source mutation, runtime-success/observed-route mismatch, stale/wrong result correlation, post-rejection recovery.
 
-### B — Promote or replace shared V2 canonical types
+### B — Isolate legacy ordinary compatibility ingress
+
+The inherited `ordinary-observation.json` fixture may remain only behind an explicit compatibility/test-only switch used by the inherited Phase 01 workflow.
+
+Default/live Alpha service mode must not read or apply this file.
+
+Add a negative that, while Alpha live mode and the authenticated ordinary UDS are active:
+
+- writes a syntactically valid `ordinary-observation.json` into the runtime directory;
+- proves no accepted ordinary event is created from it;
+- proves no V2 memory/internal/goal/commitment state changes from it;
+- proves the real authenticated sensor-gateway path remains functional afterward.
+
+Do not make `COMPANION_ALPHA_LIFE` absence itself authorize the legacy file path.
+
+### C — Promote or replace shared V2 canonical types
 
 Resolve the ambiguous V2 boundary.
 
@@ -74,7 +89,7 @@ For `Goal`, `Commitment`, `MemoryRecord`, `EvidenceRef`, and `BodyNeutralIntent`
 
 Do not destructively migrate potentially lived data.
 
-### C — Resident paired causal controls
+### D — Resident paired causal controls
 
 Through real processes only:
 
@@ -91,7 +106,7 @@ Prove different later production behavior for:
 
 Publish causal terms and state diffs. Direct helper calls are insufficient.
 
-### D — Post-restart remembered behavior
+### E — Post-restart remembered behavior
 
 After a real causal interaction:
 
@@ -102,7 +117,7 @@ After a real causal interaction:
 - show the remembered/learned state changes the later resident action versus a paired control;
 - execute the changed action in real Godot.
 
-### E — Operative bounded organism behavior
+### F — Operative bounded organism behavior
 
 Implement and qualify:
 
@@ -118,7 +133,7 @@ Implement and qualify:
 - V2 consolidation with auditable episode closure, contradiction/generalization, skill/preference/routine proposals, unfinished-goal carry-forward, and curiosity/question proposals where evidence supports them;
 - explicit dream/rehearsal synthetic boundary and dream->fact rejection negative.
 
-### F — Rich isolated 30-day V2 campaign
+### G — Rich isolated 30-day V2 campaign
 
 Use actual V2 production logic in an isolated store.
 
@@ -128,7 +143,7 @@ Include present/absent periods, rest cycles, commitments across lifecycle states
 
 Report distributions and transitions. Simulation is qualification evidence only.
 
-### G — 500+ multi-class failures
+### H — 500+ multi-class failures
 
 Replace repeated restart dominance with at least 500 deterministic cases distributed across materially different failure classes:
 
@@ -148,7 +163,7 @@ Replace repeated restart dominance with at least 500 deterministic cases distrib
 
 Verify no reseed, duplicate event/outcome application, silent commitment loss, provenance corruption or cross-authority writes. Unrecoverable corruption must degrade/freeze explicitly.
 
-### H — Care process-loss independence
+### I — Care process-loss independence
 
 Using the real direct-care path:
 
@@ -160,7 +175,7 @@ Using the real direct-care path:
 
 No external notification.
 
-### I — Resident clean-root restore
+### J — Resident clean-root restore
 
 After nontrivial V2 history exists:
 
@@ -171,23 +186,24 @@ After nontrivial V2 history exists:
 - verify identity, epoch, internal variables, memories/supersession, goals, commitments, learned outcomes, skills, development, and next legal sequence;
 - execute a post-restore action through real Godot.
 
-### J — Model-worker independence
+### K — Model-worker independence
 
 If a model worker process exists, remove/kill it during qualification. If none exists, prove from actual topology that core life/memory/action/persistence/Godot intent generation has no model-worker dependency. Do not invent a fake worker solely for the test.
 
-### K — Governed target-host sensor evidence
+### L — Governed target-host sensor evidence
 
 The handoff reports real host camera/mic acquisition. Publish sanitized governed evidence containing device identifiers, formats, timing/freshness, capture success/failure, and low-level brightness/change/audio-level metrics while preserving ephemeral raw media.
 
 Do not claim semantic vision, person recognition, STT or TTS.
 
-### L — Evidence integrity
+### M — Evidence integrity
 
-Fix the artifact manifest temp-file bug: do not include the temporary output file in the manifest.
+Fix the artifact manifest temp-file bug: do not include the temporary output file in the manifest. Generate temporary output outside the scanned evidence directory or explicitly exclude temporary files.
 
 Artifacts must contain raw/reconstructable evidence for:
 
 - ordinary authorization/replay negatives;
+- legacy-file-ingress rejection in live Alpha mode;
 - shared production Godot routing;
 - paired causal comparisons;
 - remembered post-restart comparison;
@@ -223,20 +239,21 @@ C02 passes only when one exact executable tree proves:
 
 1. live intents and 10k transition campaign share the same production Godot resolver/director path;
 2. no qualification-only duplicate graph owns legality;
-3. shared/V2 canonical types have an explicit accepted contract;
-4. all four resident paired causal comparisons pass;
-5. post-restart remembered evidence changes real resident behavior;
-6. Godot loss/reconnect preserves organism truth;
-7. goals/development/retrieval/consolidation are causally operative;
-8. rich 30-day V2 behavior is non-degenerate;
-9. 500+ genuine multi-class failure cases pass their invariants;
-10. care works without companion and companion degrades explicitly without care;
-11. resident clean-root restore succeeds and executes through Godot;
-12. model-worker independence is topology-qualified;
-13. sanitized target-host camera/mic evidence is governed or exact blockers are recorded;
-14. artifact manifest is internally correct;
-15. Phase 01, focused R06, inherited Phase 02 and C02 exact-head CI are green;
-16. raw evidence supports independent reconstruction.
+3. legacy file ingress is disabled in Alpha live mode and its negative passes;
+4. shared/V2 canonical types have an explicit accepted contract;
+5. all four resident paired causal comparisons pass;
+6. post-restart remembered evidence changes real resident behavior;
+7. Godot loss/reconnect preserves organism truth;
+8. goals/development/retrieval/consolidation are causally operative;
+9. rich 30-day V2 behavior is non-degenerate;
+10. 500+ genuine multi-class failure cases pass their invariants;
+11. care works without companion and companion degrades explicitly without care;
+12. resident clean-root restore succeeds and executes through Godot;
+13. model-worker independence is topology-qualified;
+14. sanitized target-host camera/mic evidence is governed or exact blockers are recorded;
+15. artifact manifest is internally correct;
+16. Phase 01, focused R06, inherited Phase 02 and C02 exact-head CI are green;
+17. raw evidence supports independent reconstruction.
 
 A complete pass is expected to support an Architect completion assessment around **52–55%**, assigned only after independent review.
 
@@ -257,6 +274,7 @@ with sections:
 ## Protected work
 ## Baseline / merge / branch
 ## Retained C01 evidence
+## Legacy live-ingress isolation
 ## Shared V2 canonical type disposition
 ## Unified production Godot resolver/director
 ## 10,000-case production transition campaign
