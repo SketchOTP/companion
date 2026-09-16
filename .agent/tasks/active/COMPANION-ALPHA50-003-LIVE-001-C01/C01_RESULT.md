@@ -35,3 +35,14 @@ consolidation, paired production causal controls, restart-remembered behavior
 through real Godot, multi-class failures, care process-loss independence,
 resident clean-root restore, and the hosted exact-head regressions remain
 required before an Alpha handoff.
+
+## C01 exact-head regression closeout — 2026-09-15
+
+Final executable head `794571f10e6bec1814af6b7d27da227a234f2566` passed the
+hosted Alpha50, Phase 01, focused R06, and inherited Phase 02 workflows. The
+Phase 01 ordinary compatibility fixture is explicitly workflow-scoped; Alpha
+live mode remains on the authenticated ordinary-evidence UDS. This is bounded
+engineering evidence only: paired causal controls, typed full V2 goals/
+development/consolidation, multi-class failure, care process loss, resident
+clean-root restore, model outage, physical sensors, and Openbox remain
+unproven or unavailable.

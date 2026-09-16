@@ -1127,3 +1127,11 @@ manifest. Workspace Rust tests and local syntax checks pass. An exploratory
 Godot 4.6/Xvfb run exercises the bridge and causal trace, but exact Godot
 4.7.2 is not installed locally; hosted Godot and the remaining C01 campaigns
 remain unproven.
+
+## Alpha50-003-C01 exact-head regression closeout — 2026-09-15
+
+Head `794571f10e6bec1814af6b7d27da227a234f2566` passed hosted Alpha50,
+Phase 01, focused R06, and inherited Phase 02. The Phase 01 ordinary
+compatibility fixture is explicitly workflow-scoped; Alpha live evidence
+remains authenticated sensor-gateway ingress. Remaining C01 central criteria
+are still unproven and await Architect review.

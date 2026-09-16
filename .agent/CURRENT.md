@@ -141,3 +141,11 @@ campaign remains repeated graceful V2 restart rather than the required
 multi-class commit-point campaign, and care process-loss independence,
 resident clean-root restore, and target hardware/Openbox qualification remain
 unproven or unavailable.
+
+## C01 exact-head regression closeout — 2026-09-15
+
+Final executable head `794571f10e6bec1814af6b7d27da227a234f2566` passed hosted
+Alpha50, Phase 01, focused R06, and inherited Phase 02 workflows. The Phase 01
+ordinary compatibility fixture is explicitly workflow-scoped; Alpha live mode
+remains on authenticated ordinary-evidence UDS. Remaining C01 causal, failure,
+care-loss, restore, sensor, and Openbox criteria are not accepted.

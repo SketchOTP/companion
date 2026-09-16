@@ -81,3 +81,10 @@ Openbox may remain an explicit blocker if unavailable without prohibited host re
 Review 26 sets evidence-grounded overall completion to **39%**.
 
 A fully passing C01 may support approximately **50–53%** after independent review while semantic vision, STT/TTS, live escalation/notification, full vault/consent, security/reliability qualification, pilot and release remain incomplete.
+
+## Latest C01 execution checkpoint — 2026-09-15
+
+The final branch head `794571f10e6bec1814af6b7d27da227a234f2566` passed the
+hosted Alpha50, Phase 01, focused R06, and inherited Phase 02 workflows. This
+records exact-head regression status only; it does not promote remaining C01
+criteria to accepted capability.

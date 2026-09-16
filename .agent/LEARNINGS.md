@@ -723,3 +723,12 @@ when that binary is absent. Likewise, a transition test is not production
 legality evidence while Python still owns the decision, so the acceptance
 workflow must execute the graph in Godot and reserve Python for independent
 verification only. Artifact manifests must exclude their own digest file.
+
+## Alpha50-C01 regression learning — 2026-09-15
+
+Replacing a legacy ordinary-observation fixture with authenticated ordinary
+ingress requires inherited counters to recognize the durable
+`ordinary_evidence_received` event. High-volume supervisor injection also
+needs bounded producer-control capacity so a burst cannot block the supervisor
+request socket. Both changes remain outside Alpha live mode and are covered by
+exact-head hosted runs.
