@@ -99,16 +99,15 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
                 Some("integrity_checked"),
             );
             seq += 1;
-            // Isolated Alpha life qualification uses the resident loop
-            // directly and intentionally has no ordinary ingress. Production
-            // live mode binds the authenticated ordinary-evidence endpoint.
-            if env::var_os("COMPANION_ALPHA_LIFE").is_none() {
-                let socket = paths.runtime.join("ordinary-evidence.sock");
-                let _ = std::fs::remove_file(&socket);
-                let listener = std::os::unix::net::UnixListener::bind(&socket)?;
-                listener.set_nonblocking(true)?;
-                ordinary_listener = Some(listener);
-            }
+            // The authenticated ordinary-evidence endpoint is a production
+            // channel and therefore exists in both Alpha live and inherited
+            // compatibility runs.  Only the legacy file reader below is
+            // compatibility-gated; it is never used to provision authority.
+            let socket = paths.runtime.join("ordinary-evidence.sock");
+            let _ = std::fs::remove_file(&socket);
+            let listener = std::os::unix::net::UnixListener::bind(&socket)?;
+            listener.set_nonblocking(true)?;
+            ordinary_listener = Some(listener);
             drop(store);
         }
         "identity-consent-vault" => ordinary_store("vault", &boot, &mut seq)?,
@@ -351,7 +350,8 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
                     let _ = state.snapshot_to(&store)?;
                 }
                 let observation = paths.runtime.join("ordinary-observation.json");
-                if env::var_os("COMPANION_ALPHA_LIFE").is_none()
+                if env::var_os("COMPANION_PHASE01_COMPAT").is_some()
+                    && env::var_os("COMPANION_ALPHA_LIFE").is_none()
                     && let Ok(bytes) = std::fs::read(&observation)
                 {
                     if let Ok(value) = serde_json::from_slice::<serde_json::Value>(&bytes) {
@@ -598,9 +598,40 @@ fn execute_real_godot(value: &serde_json::Value) -> serde_json::Value {
         .get("action")
         .and_then(|v| v.as_str())
         .unwrap_or("idle");
-    let track = match action {
-        "listen" | "acknowledge" => "r06_playback_track_05",
-        _ => "r06_playback_track_00",
+    // Resolve from the frozen manifest rather than maintaining an action to
+    // track shortcut in the bridge. The manifest is the production
+    // presentation authority; this adapter only selects a declared track.
+    let requested_family = match action {
+        "listen" | "acknowledge" => "listen_acknowledge",
+        _ => "assembled_action",
+    };
+    let requested_facing = value
+        .get("facing")
+        .and_then(|v| v.as_str())
+        .unwrap_or("front");
+    let track = std::fs::read_to_string(&pack)
+        .ok()
+        .and_then(|text| serde_json::from_str::<serde_json::Value>(&text).ok())
+        .and_then(|manifest| manifest.get("tracks").cloned())
+        .and_then(|tracks| tracks.as_array().cloned())
+        .and_then(|tracks| {
+            tracks.into_iter().find(|candidate| {
+                candidate.get("family").and_then(|v| v.as_str()) == Some(requested_family)
+                    && candidate
+                        .get("selection_facing")
+                        .or_else(|| candidate.get("facing"))
+                        .and_then(|v| v.as_str())
+                        == Some(requested_facing)
+            })
+        })
+        .and_then(|candidate| {
+            candidate
+                .get("track_id")
+                .and_then(|v| v.as_str())
+                .map(str::to_owned)
+        });
+    let Some(track) = track else {
+        return json!({"accepted":false,"reason":"production_track_resolution_failed","family":requested_family,"facing":requested_facing});
     };
     let paths = match XdgPaths::resolve("companion") {
         Ok(paths) => paths,

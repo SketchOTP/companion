@@ -143,3 +143,14 @@ Alpha50, Phase 01, focused R06, and inherited Phase 02 workflows. The Phase 01
 ordinary compatibility fixture is explicitly workflow-scoped; Alpha live mode
 remains on authenticated ordinary-evidence UDS. Remaining C01 causal, failure,
 care-loss, restore, sensor, and Openbox criteria are not accepted.
+
+## C02 implementation checkpoint — 2026-09-16
+
+Legacy `ordinary-observation.json` is now explicit compatibility-only ingress;
+Alpha live mode keeps the authenticated ordinary UDS and records a negative
+file-isolation probe. Godot campaign and live director share a data-backed
+transition authority, V2 uses named version-neutral canonical contract aliases,
+and artifact-manifest temporary output is outside the scanned directory.
+Local implementation checks pass. Resident paired causality, rich organism,
+multi-class failure, care-loss, clean-restore, governed sensor, hosted C02,
+and Openbox criteria remain unproven or blocked.

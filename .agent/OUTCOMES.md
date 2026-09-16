@@ -1135,3 +1135,14 @@ Phase 01, focused R06, and inherited Phase 02. The Phase 01 ordinary
 compatibility fixture is explicitly workflow-scoped; Alpha live evidence
 remains authenticated sensor-gateway ingress. Remaining C01 central criteria
 are still unproven and await Architect review.
+
+## Alpha50-003-C02 implementation checkpoint — 2026-09-16
+
+C02 corrected legacy ordinary-file ingress isolation, replaced the bridge's
+action-to-track shortcut with frozen-pack metadata resolution, and moved the
+Godot transition campaign/verifier to one shared production authority source.
+V2 now names its version-neutral canonical contract aliases explicitly. The
+artifact manifest temporary file is outside the scanned directory. Rust,
+clippy, schema, scanner, syntax, diff, and local legacy-ingress checks pass;
+the resident paired causal, rich organism, multi-class failure, care-loss,
+clean-restore, target-sensor, and Openbox criteria remain unproven or blocked.

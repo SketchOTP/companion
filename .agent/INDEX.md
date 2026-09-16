@@ -82,3 +82,12 @@ Openbox may remain an explicit blocker if unavailable without prohibited host re
 Review 27 sets evidence-grounded overall completion to **44%**.
 
 A fully passing C02 may support approximately **52–55%** after independent review while semantic vision, STT/TTS, live escalation/notification, full vault/consent, security/reliability qualification, pilot and release remain incomplete.
+
+## C02 implementation checkpoint — 2026-09-16
+
+Candidate C02 changes isolate legacy file ingress behind explicit
+`COMPANION_PHASE01_COMPAT=1`, share a data-backed Godot transition authority
+between the campaign and live director, name the version-neutral V2 canonical
+contract aliases, and prevent manifest temporary-file self-inclusion. Local
+checks pass; central resident causality, resilience, restore, target-sensor,
+hosted C02, and Openbox criteria remain unproven or blocked.

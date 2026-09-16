@@ -2,7 +2,10 @@
 //!
 //! V1 remains available for historical fixtures.  This module is the
 //! canonical non-floating representation used by the Alpha50 resident path.
-use crate::organism::{BodyNeutralIntent, Commitment, EvidenceRef, MemoryKind, MemoryRecord};
+use crate::organism::{
+    CanonicalBodyNeutralIntent, CanonicalCommitment, CanonicalGoal, CanonicalMemoryRecord,
+    MemoryKind,
+};
 use crate::persistence::{Store, StoreError};
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
@@ -11,6 +14,11 @@ use uuid::Uuid;
 pub const ORGANISM_V2_SCHEMA: u16 = 2;
 pub const SCALE: i32 = 1_000;
 pub const INTENT_SEQUENCE_MAX: u64 = i64::MAX as u64;
+
+/// The V2 state uses the version-neutral canonical contracts.  Their schema
+/// and serde representation are tested in this module so a future V3 cannot
+/// silently fork the wire semantics.
+pub const CANONICAL_CONTRACT_REVISION: &str = "companion-canonical-contract-v1";
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum IntentEmissionError {
@@ -93,22 +101,22 @@ pub struct OrganismStateV2 {
     pub developmental_stage: String,
     pub internal: InternalStateV2,
     pub drives: Vec<DriveV2>,
-    pub goals: Vec<crate::organism::Goal>,
-    pub commitments: Vec<crate::organism::Commitment>,
-    pub memories: Vec<MemoryRecord>,
+    pub goals: Vec<CanonicalGoal>,
+    pub commitments: Vec<CanonicalCommitment>,
+    pub memories: Vec<CanonicalMemoryRecord>,
     pub skills: Vec<SkillV2>,
     pub learned_preferences: BTreeMap<String, String>,
     pub learned_outcomes: BTreeMap<String, i32>,
     pub capability_gates: BTreeMap<String, bool>,
     pub degradation: Vec<String>,
     pub next_intent_sequence: u64,
-    pub last_intent: Option<BodyNeutralIntent>,
+    pub last_intent: Option<CanonicalBodyNeutralIntent>,
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize, PartialEq, Eq)]
 pub struct V2Step {
     pub tick: u64,
-    pub selected: BodyNeutralIntent,
+    pub selected: CanonicalBodyNeutralIntent,
     pub alternatives: Vec<String>,
     pub winner_score_milli: i32,
 }
@@ -194,7 +202,7 @@ impl OrganismStateV2 {
     pub fn select_action(
         &mut self,
         user_present: bool,
-    ) -> Result<BodyNeutralIntent, IntentEmissionError> {
+    ) -> Result<CanonicalBodyNeutralIntent, IntentEmissionError> {
         // A signed-64 sequence is a hard wire boundary.  Once max has been
         // consumed there is no representable successor, so refuse emission
         // instead of reusing max or silently wrapping.
@@ -226,7 +234,7 @@ impl OrganismStateV2 {
         } else {
             "drive_arbitration"
         };
-        let intent = BodyNeutralIntent {
+        let intent = CanonicalBodyNeutralIntent {
             intent_id: Uuid::from_u128(
                 0xB0D2_0000_0000_0000_0000_0000_0000_0000u128 | self.next_intent_sequence as u128,
             ),
@@ -295,12 +303,12 @@ impl OrganismStateV2 {
         );
         self.learned_preferences
             .insert("default".into(), action.into());
-        self.memories.push(MemoryRecord {
+        self.memories.push(CanonicalMemoryRecord {
             memory_id: id,
             kind: MemoryKind::Preference,
             subject: subject.into(),
             content: format!("prefers:{action}"),
-            evidence: vec![EvidenceRef {
+            evidence: vec![crate::organism::CanonicalEvidenceRef {
                 event_id: id,
                 source: "ordinary_observation".into(),
                 observed_at_tick: self.organism_tick,
@@ -334,12 +342,12 @@ impl OrganismStateV2 {
         );
         self.learned_preferences
             .insert("default".into(), action.into());
-        self.memories.push(MemoryRecord {
+        self.memories.push(CanonicalMemoryRecord {
             memory_id: id,
             kind: MemoryKind::Preference,
             subject: subject.into(),
             content: format!("prefers:{action}"),
-            evidence: vec![EvidenceRef {
+            evidence: vec![crate::organism::CanonicalEvidenceRef {
                 event_id: id,
                 source: "ordinary_evidence".into(),
                 observed_at_tick: self.organism_tick,
@@ -366,7 +374,7 @@ impl OrganismStateV2 {
         let id = Uuid::from_u128(
             0xC520_0000_0000_0000_0000_0000_0000_0000u128 | self.organism_tick as u128,
         );
-        self.commitments.push(Commitment {
+        self.commitments.push(CanonicalCommitment {
             commitment_id: id,
             description: description.into(),
             state: "pending".into(),

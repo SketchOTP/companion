@@ -53,7 +53,10 @@ def main() -> int:
     with tempfile.TemporaryDirectory(prefix="companion-alpha50-live-") as td:
         root = pathlib.Path(td)
         env = os.environ.copy()
-        env.update({"COMPANION_XDG_ROOT": str(root), "COMPANION_CYCLES": "0"})
+        # Alpha live mode always uses the authenticated ordinary-evidence UDS.
+        # The legacy JSON reader is disabled even when the compatibility
+        # switch is absent; Phase 01 opts in explicitly in its own workflow.
+        env.update({"COMPANION_XDG_ROOT": str(root), "COMPANION_CYCLES": "0", "COMPANION_ALPHA_LIFE": "1"})
         supervisor = subprocess.Popen([args.supervisor], env=env, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         control = root / "companion" / "supervisor.sock"
         try:
@@ -61,8 +64,13 @@ def main() -> int:
                 any(c.get("role") == role and c.get("ready") for c in h.get("children", []))
                 for role in ("sensor-gateway", "companion-core", "godot-bridge")
             ))
-            ordinary = request(control, {"command": "inject", "kind": "valid_ordinary_observation", "request_id": "sensor-gateway-live-positive"})
             db = root / "companion" / "companion.sqlite3"
+            legacy = root / "companion" / "ordinary-observation.json"
+            legacy.write_text(json.dumps({"message_id": "legacy-file-must-not-be-consumed", "kind": "preference", "payload": {"value": "acknowledge"}}))
+            time.sleep(0.25)
+            with sqlite3.connect(db) as con:
+                legacy_events = int(con.execute("select count(*) from event_log where event_type = 'ordinary_observation'").fetchone()[0])
+            ordinary = request(control, {"command": "inject", "kind": "valid_ordinary_observation", "request_id": "sensor-gateway-live-positive"})
             deadline = time.time() + 45
             rows = []
             snapshot = None
@@ -91,10 +99,10 @@ def main() -> int:
             received = [row for row in rows_after if row[1] == "ordinary_evidence_received"]
             event_types = [row[1] for row in rows_after]
             bridge_result_observed = "observed_embodiment_result" in event_types
-            ok = (ordinary.get("accepted") is True and len(received) == 1 and
+            ok = (ordinary.get("accepted") is True and legacy_events == 0 and len(received) == 1 and
                   replay.get("accepted") is True and "body_neutral_intent" in event_types and
                   bridge_result_observed and first_identity == final_identity)
-            result = {"status": "PASS" if ok else "FAIL", "v2_only": True, "ordinary_transport": ordinary, "replay_control": replay, "event_types": event_types, "ordinary_received_count": len(received), "bridge_result_observed": bridge_result_observed, "identity_preserved": first_identity == final_identity, "supervisor_health_before_restart": health, "supervisor_health_after_restart": restarted, "producer": "checked-in sensor-gateway child via supervisor control", "legacy_file_written": False, "claim_boundary": "resident authenticated ordinary ingress plus real Godot result required; this run fails closed when Godot is not provisioned"}
+            result = {"status": "PASS" if ok else "FAIL", "v2_only": True, "ordinary_transport": ordinary, "replay_control": replay, "event_types": event_types, "ordinary_received_count": len(received), "legacy_file_written": True, "legacy_file_event_count": legacy_events, "legacy_file_ignored": legacy_events == 0, "bridge_result_observed": bridge_result_observed, "identity_preserved": first_identity == final_identity, "supervisor_health_before_restart": health, "supervisor_health_after_restart": restarted, "producer": "checked-in sensor-gateway child via supervisor control", "claim_boundary": "resident authenticated ordinary ingress plus real Godot result required; this run fails closed when Godot is not provisioned"}
             args.output.parent.mkdir(parents=True, exist_ok=True)
             args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
             print(json.dumps(result, sort_keys=True))

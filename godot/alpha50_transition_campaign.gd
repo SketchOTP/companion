@@ -1,4 +1,5 @@
 extends SceneTree
+const TransitionResolver = preload("res://mon_transition_resolver.gd")
 
 const PACK_SHA := "1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40"
 const STATES := ["front_rest", "left_profile_rest", "right_profile_rest", "left_start", "left_loop", "left_stop", "right_start", "right_loop", "right_stop", "listen"]
@@ -23,29 +24,13 @@ func _run() -> void:
 	for i in range(case_count):
 		var start: String = STATES[(i * 17 + 3) % STATES.size()]
 		var request: String = REQUESTS[(i * 31 + 5) % REQUESTS.size()]
-		var route := _resolve(start, request)
+		var route := TransitionResolver.resolve(start, request)
 		var accepted: bool = not route.is_empty()
 		if not accepted: illegal += 1
 		cases.append({"case_id": "godot-alpha50-%06d" % i, "start_state": start, "request": request, "accepted": accepted, "route": route, "terminal_state": route[-1] if accepted else start, "pack_sha256": PACK_SHA})
-	var result := {"status": "PASS" if cases.size() == case_count and illegal > 0 else "FAIL", "process": "Godot", "cases": cases, "case_count": cases.size(), "illegal_count": illegal, "pack_sha256": PACK_SHA, "authority": "godot_production_legal_graph"}
+	var result := {"status": "PASS" if cases.size() == case_count and illegal > 0 else "FAIL", "process": "Godot", "cases": cases, "case_count": cases.size(), "illegal_count": illegal, "pack_sha256": PACK_SHA, "authority": "godot_production_legal_graph", "authority_revision": TransitionResolver.AUTHORITY_REVISION}
 	var file := FileAccess.open(output_path, FileAccess.WRITE)
 	file.store_string(JSON.stringify(result))
 	file.close()
 	print(JSON.stringify({"status": result.status, "case_count": cases.size(), "illegal_count": illegal, "pack_sha256": PACK_SHA}))
 	quit(0 if result.status == "PASS" else 1)
-
-func _resolve(start: String, request: String) -> Array:
-	match request:
-		"left":
-			if start in ["front_rest", "listen", "left_profile_rest"]: return [start, "left_start", "left_loop", "left_stop", "left_profile_rest"]
-		"right":
-			if start in ["front_rest", "listen", "right_profile_rest"]: return [start, "right_start", "right_loop", "right_stop", "right_profile_rest"]
-		"listen":
-			if start in ["front_rest", "listen"]: return [start, "listen"]
-		"stop":
-			if start in ["left_start", "left_loop"]: return [start, "left_stop", "left_profile_rest"]
-			if start in ["right_start", "right_loop"]: return [start, "right_stop", "right_profile_rest"]
-		"cancel":
-			if start in ["left_start", "left_loop"]: return [start, "left_stop"]
-			if start in ["right_start", "right_loop"]: return [start, "right_stop"]
-	return []

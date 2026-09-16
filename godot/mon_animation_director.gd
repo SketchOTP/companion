@@ -1,5 +1,6 @@
 class_name MonAnimationDirector
 extends Node
+const TransitionResolver = preload("res://mon_transition_resolver.gd")
 
 ## Presentation-only semantic director. It never owns organism or care truth.
 signal intent_started(result: Dictionary)
@@ -11,6 +12,7 @@ const VERSION := "MonAnimationDirector-r04-c02"
 var deterministic_seed: int = 17
 var sequence: int = 0
 var avatar: Node
+var presentation_state := "front_rest"
 
 func configure(target: Node, seed: int = 17) -> void:
 	avatar = target
@@ -24,6 +26,13 @@ func _observe(name: String, details: Dictionary = {}) -> void:
 func request_intent(family: String, _priority: int = 0, _interruptible: bool = true, facing: String = "front", posture: String = "neutral", _affect: String = "neutral", _energy: String = "medium", variant: int = 1) -> Dictionary:
 	sequence += 1
 	_observe("intent_received", {"family": family, "facing": facing, "posture": posture, "variant": variant})
+	# Transition requests use the same production authority as the Godot
+	# campaign.  Ordinary clip requests retain their existing pack lookup.
+	if family in ["left", "right", "listen", "stop", "cancel"]:
+		var route := TransitionResolver.resolve(presentation_state, family)
+		if route.is_empty():
+			return _fail(family, "transition_path_missing")
+		presentation_state = route[route.size() - 1]
 	if avatar == null or not avatar.has_method("present_track"):
 		return _fail(family, "avatar_unavailable")
 	var result: Dictionary = await avatar.present_track(family, facing, posture, variant)

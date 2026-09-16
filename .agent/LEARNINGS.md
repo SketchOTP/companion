@@ -732,3 +732,13 @@ ingress requires inherited counters to recognize the durable
 needs bounded producer-control capacity so a burst cannot block the supervisor
 request socket. Both changes remain outside Alpha live mode and are covered by
 exact-head hosted runs.
+
+## Alpha50-C02 correction learning — 2026-09-16
+
+Compatibility ingress must be selected by an explicit test-only capability,
+not by the absence of an Alpha flag. A production ordinary-evidence listener
+can remain present while the legacy file reader is disabled. Transition
+legality also needs one data-backed authority consumed by runtime and campaign;
+an independent verifier should read that authority rather than reproduce a
+second switch statement. Artifact manifests must create temporary output
+outside the directory being enumerated.

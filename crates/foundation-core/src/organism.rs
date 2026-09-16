@@ -126,6 +126,15 @@ pub struct BodyNeutralIntent {
     pub source_goal: Option<Uuid>,
 }
 
+/// Version-neutral canonical contracts shared by resident organism versions.
+/// V2 intentionally reuses these wire-stable definitions rather than
+/// maintaining a second, drifting representation.
+pub type CanonicalGoal = Goal;
+pub type CanonicalCommitment = Commitment;
+pub type CanonicalEvidenceRef = EvidenceRef;
+pub type CanonicalMemoryRecord = MemoryRecord;
+pub type CanonicalBodyNeutralIntent = BodyNeutralIntent;
+
 impl BodyNeutralIntent {
     /// The common wire ceiling is the signed int64 range consumed by Godot.
     pub const WIRE_SEQUENCE_MAX: u64 = i64::MAX as u64;
