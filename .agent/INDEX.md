@@ -87,3 +87,10 @@ Openbox may remain an explicit blocker if unavailable without prohibited host re
 Review 28 sets evidence-grounded overall completion to **46%**.
 
 A fully passing C03 may support approximately **52–55%** after independent review while semantic vision, STT/TTS, live escalation/notification, complete vault/consent, security/reliability qualification, pilot and release remain incomplete.
+
+## C03 checkpoint
+
+The C02 restart regression was reproduced and corrected with an explicit
+Alpha-mode initialization step that creates durable V2 state before listener
+qualification. Local 20-case restart evidence passed; hosted runs for
+`98e970854f55e263ef78b642110d396633cea833` were dispatched.

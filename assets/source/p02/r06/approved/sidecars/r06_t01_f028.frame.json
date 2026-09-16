@@ -1,0 +1,129 @@
+{
+  "frame_id": "r06_t01_f028",
+  "grounding": {
+    "evidence": "overlays/grounding_representative_left.png",
+    "measured_contour_candidates": [
+      {
+        "x": 614,
+        "y": 1185
+      }
+    ],
+    "method": "foreground_silhouette_contour_v1",
+    "review_state": "machine_assisted_checked",
+    "source_sha256": "554323809b03401ff46be8d4e52a3e3fde0012d38b2ed8d43a8ee7ecdf7f4a75"
+  },
+  "landmarks": {
+    "action_anchor": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "attachment_back": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "attachment_front": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "eye_left": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "eye_midpoint": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "eye_right": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "foot_left": {
+      "point": {
+        "x": 614,
+        "y": 1185
+      },
+      "state": "visible"
+    },
+    "foot_right": {
+      "point": null,
+      "state": "occluded"
+    },
+    "ground_contact_left": {
+      "point": {
+        "x": 614,
+        "y": 1185
+      },
+      "state": "visible"
+    },
+    "ground_contact_right": {
+      "point": null,
+      "state": "occluded"
+    },
+    "hand_left": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "hand_right": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "head_center": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "interaction_focus": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "mouth_center": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "object_anchor": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "root": {
+      "point": {
+        "x": 614,
+        "y": 1185
+      },
+      "state": "visible"
+    }
+  },
+  "observations": {
+    "background": "near_black_field",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "perimeter": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  "presentation_profile": "R05_BLACK_FIELD_RGB8_V1",
+  "profile": "R05_RUNTIME_FRAME_SIDECAR_V1",
+  "source_asset_id": "r06_left_fix",
+  "source_path": "raw/base_left_fix.png",
+  "source_sha256": "554323809b03401ff46be8d4e52a3e3fde0012d38b2ed8d43a8ee7ecdf7f4a75"
+}

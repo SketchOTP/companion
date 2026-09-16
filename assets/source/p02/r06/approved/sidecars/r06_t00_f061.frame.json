@@ -1,0 +1,129 @@
+{
+  "frame_id": "r06_t00_f061",
+  "grounding": {
+    "evidence": "overlays/grounding_representative_right.png",
+    "measured_contour_candidates": [
+      {
+        "x": 775,
+        "y": 1185
+      }
+    ],
+    "method": "foreground_silhouette_contour_v1",
+    "review_state": "machine_assisted_checked",
+    "source_sha256": "31e3f586fa0352afd2c56a4372ec598e5e521e597c1310498062b36f9aa3bc3e"
+  },
+  "landmarks": {
+    "action_anchor": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "attachment_back": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "attachment_front": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "eye_left": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "eye_midpoint": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "eye_right": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "foot_left": {
+      "point": null,
+      "state": "occluded"
+    },
+    "foot_right": {
+      "point": {
+        "x": 775,
+        "y": 1185
+      },
+      "state": "visible"
+    },
+    "ground_contact_left": {
+      "point": null,
+      "state": "occluded"
+    },
+    "ground_contact_right": {
+      "point": {
+        "x": 775,
+        "y": 1185
+      },
+      "state": "visible"
+    },
+    "hand_left": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "hand_right": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "head_center": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "interaction_focus": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "mouth_center": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "object_anchor": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "root": {
+      "point": {
+        "x": 775,
+        "y": 1185
+      },
+      "state": "visible"
+    }
+  },
+  "observations": {
+    "background": "near_black_field",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "perimeter": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        2,
+        1
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  "presentation_profile": "R05_BLACK_FIELD_RGB8_V1",
+  "profile": "R05_RUNTIME_FRAME_SIDECAR_V1",
+  "source_asset_id": "r06_right_passing_far_repair",
+  "source_path": "raw/base_right_passing_far_repair.png",
+  "source_sha256": "31e3f586fa0352afd2c56a4372ec598e5e521e597c1310498062b36f9aa3bc3e"
+}

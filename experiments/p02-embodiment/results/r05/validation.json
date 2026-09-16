@@ -1,0 +1,14 @@
+{
+  "errors": [],
+  "status": "PASSED",
+  "tamper_negative": {
+    "cases": {
+      "approval_escalation": "REJECTED",
+      "byte_preservation": "REJECTED",
+      "contact_drift": "REJECTED",
+      "godot_error": "REJECTED",
+      "track_count": "REJECTED"
+    },
+    "status": "PASSED"
+  }
+}

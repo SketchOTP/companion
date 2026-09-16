@@ -67,3 +67,100 @@ Report only `PASSED`, `FAILED`, `BLOCKED`, `NOT RUN`, or `NOT APPLICABLE`.
 63. Phase 03+ closed.
 64. No prohibited capability or claim.
 65. Operator visual approval correctly pending or recorded.
+# Architect Review 01 correction — current validation (2026-09-11)
+
+Local Python syntax/schema/contract checks and the private core-motion build
+returned zero errors.  A second clean-process build was byte-identical in the
+generated manifest, track definitions, frame corpus, and atlas pages.  Godot
+4.7.2 headless and hosted Phase 02 CI are not run in this worktree because the
+artifact is not installed; the workflow downloads it ephemerally after hash
+verification.  Openbox two-hour playback remains `NOT RUN`.
+# R03 validation matrix
+
+| Property | Positive observation | Tamper-negative |
+| --- | --- | --- |
+| Root | rendered track landmarks remain `[512,896]` | one-pixel root mutation rejected |
+| Planted contact | idle and active contacts remain on baseline | contact shift rejected |
+| Swing foot | walk rendered x/y displacement across phases | frozen/shifted contact rejected |
+| Anatomy | bilateral hierarchy includes every digit/toe | removed digit rejected |
+| Facing | connector endpoint frame hashes differ | endpoint reuse rejected |
+| Timing | Godot `SpriteFrames` speed 24, integer weights | zero duration/schema mutation rejected |
+| Track selection | every generated family starts; missing family is rejected | nonexistent track never emits start |
+| Schema/Rust | actual v2 tracks validate and round-trip | malformed field/schema mutation rejected |
+
+R03 status is bounded `E3_TARGET_TESTED` candidate evidence; operator visual
+approval, complete library, Openbox endurance, and later phases remain deferred.
+# R04 superseding validation matrix
+
+| Check | Required result |
+|---|---|
+| Valid synthetic intake | PASSED; exact source/CAS/runtime bytes |
+| Wrong dimensions / mode / hash | REJECTED with exact reason |
+| Ineligible approval | REJECTED before presentation |
+| Missing landmark | REJECTED |
+| Contact / duration / event tamper | REJECTED |
+| Missing required Rust pack path | nonzero |
+| Actual generated-pack Rust round trip | PASSED |
+| Exact Godot track | frame zero presented before `started` |
+| Missing/corrupt pack | failed/degraded; no `started` |
+| Restored pack | exact track starts |
+| Clean clone and hosted CI | required before handoff |
+
+## R04 executed result
+
+| Check | Status | Observation |
+|---|---|---|
+| Valid source intake | `PASSED` | input, content-addressed, and runtime bytes/hash equal for both synthetic frames |
+| Wrong dimension | `PASSED` | rejected as `wrong_dimensions` |
+| Wrong mode | `PASSED` | rejected as `wrong_mode` |
+| Source-hash tamper | `PASSED` | rejected as `source_hash_mismatch` |
+| Approval-state rejection | `PASSED` | rejected as `approval_ineligible` |
+| Missing landmark | `PASSED` | rejected as `landmark_missing` |
+| Contact tamper | `PASSED` | rejected as `contact_invalid` |
+| Duration tamper | `PASSED` | rejected as `duration_invalid` |
+| Event-order tamper | `PASSED` | rejected as `event_order_invalid` |
+| Missing generated-pack path | `PASSED` | Rust validator returned nonzero |
+| Actual generated-pack Rust round trip | `PASSED` | required exported path consumed; one typed track reserialized |
+| Godot exact-track selection | `PASSED` | exact synthetic track selected at 24 FPS |
+| First-frame acknowledgment order | `PASSED` | `first_frame_presented` observed before `started` |
+| Missing track | `PASSED` | `track_missing`; no `started` |
+| Ineligible pack | `PASSED` | `approval_ineligible`; no `started` |
+| Corrupt frame | `PASSED` | `frame_hash_mismatch`, degraded |
+| Restoration | `PASSED` | restored exact pack emitted `started` after frame-zero presentation |
+| Result validator tamper negatives | `PASSED` | hash, byte equality, rejection reason, and event order each rejected |
+| Clean clone at implementation commit | `PASSED` | complete R04 evidence plus Cargo/contract checks; tracked diff empty |
+| Focused Phase 02 hosted run | `PASSED` | run `34656090767`; artifact `10285600941` |
+| Inherited Phase 01 hosted run | `FAILED` | run `34656090763` exposed an intermittent ordinary-observation marker race |
+| Corrected 3,000-message local matrix | `PASSED` | 3,000/3,000 exact accounting; 198/198 ordinary observations persisted with the consumption barrier |
+
+The failed inherited run is not converted to a pass. Final reconciliation and
+new exact-head hosted Phase 01 validation remain required. Production art, animation,
+Openbox endurance, and Phase 02 acceptance remain `NOT RUN`.
+
+## R05-AUTHOR-001 local validation
+
+| Check | Status | Evidence |
+| --- | --- | --- |
+| Review 10 / ADR-57 authority | `PASSED` | live authority reconciled; candidate authorship authorized |
+| Exact reference hashes | `PASSED` | identity and turnaround hashes match |
+| Bounded request equation | `PASSED` | 8 tracks / 33 occurrences / 29 unique hashes |
+| Clean-process pack determinism | `PASSED` | source-tree digest equality |
+| MON_FRAME_V1 PNG/intake | `PASSED` | 33/33 byte-identical review intake |
+| Rust actual-pack round trip | `PASSED` | actual path returned 0; missing path returned nonzero |
+| Godot import/cold/warm | `PASSED` | exact 4.7.2; zero application errors |
+| All requested Godot tracks | `PASSED` | eight exact requested roles started |
+| Marker order | `PASSED` | footfalls, facing changes, attention/acknowledge/settled |
+| Production eligibility | `PASSED` | candidate rejected for production |
+| Corruption and recovery | `PASSED` | `frame_hash_mismatch`, then restored `started` |
+| Rendered bounds/contact QA | `PASSED` | zero safety/perimeter/drift failures |
+| Semantic tamper negatives | `PASSED` | 5/5 rejected |
+| Local export/fresh restore | `PASSED` | full restored hash equality |
+| Hosted Phase 01 | `FAILED` | run `34695095049` passed but duplicate run `34695094043` failed with late `BrokenPipeError`; mixed evidence supersedes a pass |
+| Hosted Phase 02 / artifact | `PASSED` | run `34695095027`; artifact `10298790129`, digest `sha256:b4c802a0fa20bb2f2e8652bc4d56cbf8887766929412c3abd1debac32c8e82f1` |
+| Delayed control-frame regression | `PASSED` | 150 ms delayed send exceeds superseded 50 ms window and completes under bounded framing |
+| Complete local Phase 01 after correction | `PASSED` | all 12 groups and exact 3,000-message closeout pass with exact Godot 4.7.2 configured |
+| Corrected hosted Phase 01 stability | `PASSED` | exact `b5c9e9a5…`: push `34696075240`, PR `34696077231` |
+| Corrected hosted Phase 02 stability | `PASSED` | exact `b5c9e9a5…`: push `34696075224`, PR `34696077241` |
+| Corrected R05 workflow artifact | `PASSED` | `10298349112`, 49,267,551 bytes, `sha256:9462bdb227d38b2d6051d6727bf4246b1d41f9bd6042305a1b422cead1ca945a` |
+| Operator visual approval | `NOT RUN` | candidate package not self-approved |
+| Phase 02 acceptance | `NOT RUN` | requires Architect review and later gates |

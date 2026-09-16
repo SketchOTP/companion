@@ -28,7 +28,7 @@ def sample(schema: dict) -> dict:
         elif spec.get("format") == "date-time":
             result[key] = "2026-01-01T00:00:00Z"
         elif "pattern" in spec:
-            result[key] = "0" * 64
+            result[key] = "0" * 64 if "[0-9a-f]" in spec["pattern"] else "synthetic_value"
         elif spec.get("type") == "boolean":
             result[key] = False
         elif spec.get("type") == "integer":
@@ -66,7 +66,23 @@ for name in NAMES:
         if schema.get("type") != "object" or schema.get("additionalProperties") is not False:
             errors.append(f"{name}: unsafe object policy")
         valid = sample(schema)
+        if name in {"mon-animation-clip.schema.json", "mon-animation-track.schema.json", "mon-temporal-track-v2.schema.json", "mon-authored-frame-pack-v1.schema.json", "mon-authored-frame-source-pack-v1.schema.json", "mon-ingested-frame-pack-v1.schema.json", "mon-frame-intake-receipt-v1.schema.json", "mon-opaque-black-frame-source-pack-v1.schema.json", "mon-locomotion-intent-v1.schema.json", "mon-locomotion-intent-v2.schema.json", "organism-state-v1.schema.json", "organism-state-v2.schema.json", "ordinary-evidence-v1.schema.json"}:
+            fixture_name = {"mon-animation-clip.schema.json": "mon-animation-clip-v1.json", "mon-animation-track.schema.json": "mon-animation-track-v1.json", "mon-temporal-track-v2.schema.json": "mon-temporal-track-v2.json", "mon-authored-frame-pack-v1.schema.json": "mon-authored-frame-pack-v1.json", "mon-authored-frame-source-pack-v1.schema.json": "mon-authored-frame-source-pack-v1.json", "mon-ingested-frame-pack-v1.schema.json": "mon-ingested-frame-pack-v1.json", "mon-frame-intake-receipt-v1.schema.json": "mon-authored-frame-intake-receipt-v1.json", "mon-opaque-black-frame-source-pack-v1.schema.json": "mon-opaque-black-frame-source-pack-v1.json", "mon-locomotion-intent-v1.schema.json": "mon-locomotion-intent-v1.json", "mon-locomotion-intent-v2.schema.json": "mon-locomotion-intent-v2.json", "organism-state-v1.schema.json": "organism-state-v1.json", "organism-state-v2.schema.json": "organism-state-v2.json", "ordinary-evidence-v1.schema.json": "ordinary-evidence-v1.json"}[name]
+            fixture = (ROOT / "assets/source/p02/r06/approved/pack.json") if name == "mon-opaque-black-frame-source-pack-v1.schema.json" else (ROOT / "contracts" / "fixtures" / fixture_name)
+            if fixture.exists():
+                valid = json.loads(fixture.read_text(encoding="utf-8"))
         validate(valid, schema)
+        if name == "mon-locomotion-intent-v2.schema.json":
+            for sequence, should_pass in ((0, True), (9223372036854775807, True), (9223372036854775808, False), (18446744073709551615, False)):
+                boundary = copy.deepcopy(valid)
+                boundary["intent_sequence"] = sequence
+                try:
+                    validate(boundary, schema)
+                    observed = True
+                except Exception:
+                    observed = False
+                if observed != should_pass:
+                    errors.append(f"{name}: sequence boundary {sequence} expected={should_pass} observed={observed}")
         for mutation in (
             lambda v: v.pop(next(iter(schema.get("required", []))), None),
             lambda v: v.__setitem__("__unknown", True),

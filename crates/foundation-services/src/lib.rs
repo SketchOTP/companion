@@ -1,6 +1,10 @@
 //! Resident, nonauthoritative Phase 01 process foundation.
 use foundation_core::{
-    canonical, ipc, logging,
+    canonical,
+    contracts::{OrdinaryEvidenceV1, OrdinaryPayload},
+    ipc, logging,
+    organism::BodyNeutralIntent,
+    organism_v2::OrganismStateV2,
     paths::XdgPaths,
     persistence::{Store, runtime_compile_options, runtime_identity},
     version::FOUNDATION_VERSION,
@@ -9,9 +13,11 @@ use hmac::{Hmac, Mac};
 use serde_json::json;
 use sha2::Sha256;
 use std::env;
-use std::io::{Read, Write};
+use std::io::{self, Read, Write};
 use std::os::fd::{AsRawFd, FromRawFd, OwnedFd};
+use std::os::unix::net::UnixStream;
 use std::os::unix::process::CommandExt;
+use std::path::Path;
 use std::process::{Child, Command, Stdio};
 use std::sync::Once;
 use std::sync::atomic::{AtomicBool, Ordering};
@@ -21,6 +27,20 @@ use uuid::Uuid;
 static STOP: AtomicBool = AtomicBool::new(false);
 static SIGNALS: Once = Once::new();
 static DIRECT_GENERATION: std::sync::atomic::AtomicU64 = std::sync::atomic::AtomicU64::new(0);
+const CONTROL_REQUEST_LIMIT: usize = 64 * 1024;
+const CONTROL_READ_TIMEOUT: Duration = Duration::from_secs(2);
+const FROZEN_R06_PACK_SHA256: &str =
+    "1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40";
+const ORDINARY_AUTH_DOMAIN: &[u8] = b"companion.ordinary-evidence.v1\0";
+const ORDINARY_FRESHNESS_NS: u64 = 300_000_000_000;
+
+#[derive(Debug, Clone, serde::Serialize, serde::Deserialize)]
+struct OrdinaryAuthority {
+    pid: u32,
+    uid: u32,
+    generation: String,
+    secret_hex: String,
+}
 
 pub fn run_role(role: &str) {
     install_signals();
@@ -60,13 +80,47 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
         .ok()
         .and_then(|v| v.parse::<i32>().ok());
     let mut bridge_listener = None;
+    let mut ordinary_listener = None;
     let control_fd = env::var("COMPANION_PRODUCER_CONTROL_FD")
         .ok()
         .and_then(|v| v.parse::<i32>().ok());
     match role {
         "sensor-gateway" => producer(fd, cap_fd, control_fd, &boot, &mut seq)?,
         "care-core" => care(fd, cap_fd, &boot, &mut seq)?,
-        "companion-core" => ordinary_store("companion", &boot, &mut seq)?,
+        "companion-core" => {
+            let paths = XdgPaths::resolve("companion")?;
+            paths.ensure()?;
+            let store = Store::open(&paths, "companion")?;
+            logging::emit(
+                "companion",
+                "store_ready",
+                seq,
+                &boot,
+                Some("integrity_checked"),
+            );
+            seq += 1;
+            // The authenticated ordinary-evidence endpoint is a production
+            // channel and therefore exists in both Alpha live and inherited
+            // compatibility runs.  Only the legacy file reader below is
+            // compatibility-gated; it is never used to provision authority.
+            let socket = paths.runtime.join("ordinary-evidence.sock");
+            let _ = std::fs::remove_file(&socket);
+            let listener = std::os::unix::net::UnixListener::bind(&socket)?;
+            listener.set_nonblocking(true)?;
+            ordinary_listener = Some(listener);
+            // Alpha-life qualification requires a supported production state
+            // transition before restart probes inspect durable snapshots. The
+            // ordinary-evidence listener owns the service loop below, so this
+            // explicit initialization step must occur before entering it;
+            // it is not a hidden background snapshot side effect.
+            if env::var_os("COMPANION_ALPHA_LIFE").is_some() {
+                let mut state = foundation_core::organism_v2::restore_latest(&store)?
+                    .unwrap_or_else(|| OrganismStateV2::deterministic(50));
+                state.step(env::var_os("COMPANION_USER_PRESENT").is_some())?;
+                let _ = state.snapshot_to(&store)?;
+            }
+            drop(store);
+        }
         "identity-consent-vault" => ordinary_store("vault", &boot, &mut seq)?,
         "godot-bridge" => {
             let paths = XdgPaths::resolve("companion")?;
@@ -111,7 +165,9 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
                 let response = if let Ok(value) =
                     serde_json::from_slice::<serde_json::Value>(&request)
                 {
-                    if value.get("protocol").and_then(|v| v.as_str())
+                    if value.get("kind").and_then(|v| v.as_str()) == Some("body_intent") {
+                        execute_real_godot(&value)
+                    } else if value.get("protocol").and_then(|v| v.as_str())
                         == Some("companion-foundation-v1")
                     {
                         json!({"protocol":"companion-foundation-v1","state":"connected","version":FOUNDATION_VERSION})
@@ -137,6 +193,125 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
         }
         return Ok(());
     }
+    if let Some(listener) = ordinary_listener {
+        let paths = XdgPaths::resolve("companion")?;
+        let store = Store::open(&paths, "companion")?;
+        let mut state = foundation_core::organism_v2::restore_latest(&store)?
+            .unwrap_or_else(|| OrganismStateV2::deterministic(50));
+        let mut seen_messages = std::collections::HashSet::new();
+        while !STOP.load(Ordering::SeqCst) {
+            // Preserve the inherited Phase 01 synthetic injection fixture while
+            // keeping Alpha50 acceptance on the authenticated ordinary-evidence
+            // socket.  This compatibility path is intentionally disabled for
+            // live Alpha mode and is never used as its evidence boundary.
+            if env::var_os("COMPANION_ALPHA_LIFE").is_none() {
+                let legacy = paths.runtime.join("ordinary-observation.json");
+                if let Ok(bytes) = std::fs::read(&legacy) {
+                    if let Ok(value) = serde_json::from_slice::<serde_json::Value>(&bytes) {
+                        let message_id = value
+                            .get("message_id")
+                            .and_then(|v| v.as_str())
+                            .unwrap_or("ordinary");
+                        let payload = serde_json::to_string(&value)?;
+                        let _ = store.append_event(
+                            message_id,
+                            "ordinary_observation",
+                            &payload,
+                            &format!("legacy:{}:{}", boot, logging::monotonic_ns()),
+                        );
+                    }
+                    let _ = std::fs::remove_file(&legacy);
+                }
+            }
+            if let Ok((mut stream, _)) = listener.accept() {
+                let credentials = peer_credentials(stream.as_raw_fd());
+                let mut request = Vec::new();
+                let _ = stream.set_read_timeout(Some(Duration::from_millis(500)));
+                let _ = stream.read_to_end(&mut request);
+                let authority = load_ordinary_authority(&paths.runtime);
+                let mut response = handle_ordinary_evidence(
+                    &request,
+                    credentials,
+                    authority.as_ref(),
+                    logging::monotonic_ns(),
+                );
+                if let Ok(value) = serde_json::from_slice::<OrdinaryEvidenceV1>(&request) {
+                    let durable_duplicate = store.event_exists(&value.message_id.to_string())?;
+                    if seen_messages.contains(&value.message_id) || durable_duplicate {
+                        response = json!({"accepted":false,"message_id":value.message_id,"reason":"replay_or_duplicate"});
+                    } else if response.get("accepted").and_then(|v| v.as_bool()) == Some(true) {
+                        // Reserve the message durably before changing V2 state.
+                        let inserted = store.append_event(
+                            &value.message_id.to_string(),
+                            "ordinary_evidence_received",
+                            &serde_json::to_string(&value)?,
+                            &format!("ordinary:{}", value.message_id),
+                        )?;
+                        if !inserted {
+                            response = json!({"accepted":false,"message_id":value.message_id,"reason":"replay_or_duplicate"});
+                        } else {
+                            seen_messages.insert(value.message_id);
+                        }
+                    }
+                }
+                if response.get("accepted").and_then(|v| v.as_bool()) == Some(true)
+                    && let Ok(value) = serde_json::from_slice::<OrdinaryEvidenceV1>(&request)
+                {
+                    state.record_preference(&value.payload.subject, &value.payload.value);
+                    let step = match state.step(true) {
+                        Ok(step) => step,
+                        Err(error) => {
+                            let _ = store.append_event(
+                                &format!("intent-refusal:{}", value.message_id),
+                                "body_neutral_intent_refused",
+                                &json!({"reason": error.to_string(), "message_id": value.message_id}).to_string(),
+                                &format!("ordinary:{}", value.message_id),
+                            );
+                            let _ = stream.write_all(
+                                serde_json::to_string(&json!({
+                                    "accepted": false,
+                                    "message_id": value.message_id,
+                                    "reason": error.to_string(),
+                                }))?
+                                .as_bytes(),
+                            );
+                            continue;
+                        }
+                    };
+                    let observed = send_body_intent(&step.selected);
+                    if let Ok(result) = &observed {
+                        let accepted = result
+                            .get("accepted")
+                            .and_then(|v| v.as_bool())
+                            .unwrap_or(false);
+                        state.observe_action_result(&step.selected.action, accepted);
+                        let _ = store.append_event(
+                            &format!("{}:result", step.selected.intent_id),
+                            "observed_embodiment_result",
+                            &serde_json::to_string(result).unwrap_or_default(),
+                            &format!("ordinary:{}", value.message_id),
+                        );
+                    }
+                    let _ = store.append_event(
+                        &format!("{}:accepted", value.message_id),
+                        "ordinary_evidence_accepted",
+                        &serde_json::to_string(&value).unwrap_or_default(),
+                        &format!("ordinary:{}", value.message_id),
+                    );
+                    let _ = store.append_event(
+                        &format!("{}:intent", step.selected.intent_id),
+                        "body_neutral_intent",
+                        &serde_json::to_string(&step.selected).unwrap_or_default(),
+                        &format!("ordinary:{}", value.message_id),
+                    );
+                    let _ = state.snapshot_to(&store);
+                }
+                let _ = stream.write_all(serde_json::to_string(&response)?.as_bytes());
+            }
+            std::thread::sleep(Duration::from_millis(25));
+        }
+        return Ok(());
+    }
     while !STOP.load(Ordering::SeqCst) {
         if matches!(role, "companion-core" | "identity-consent-vault") {
             let authority = if role == "companion-core" {
@@ -153,8 +328,43 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
                 return Err(format!("{authority} store fault injected").into());
             }
             if role == "companion-core" {
+                // Alpha50 life mode is opt-in so the accepted Phase 01
+                // service behavior remains unchanged for existing checks.
+                // Canonical organism state is restored from the companion
+                // authority store and advanced independently of Godot/model
+                // workers; each step emits a body-neutral intent event.
+                if env::var_os("COMPANION_ALPHA_LIFE").is_some() {
+                    let store = Store::open(&paths, "companion")?;
+                    let mut state = foundation_core::organism_v2::restore_latest(&store)?
+                        .unwrap_or_else(|| OrganismStateV2::deterministic(50));
+                    let user_present = env::var_os("COMPANION_USER_PRESENT").is_some();
+                    let step = match state.step(user_present) {
+                        Ok(step) => step,
+                        Err(error) => {
+                            let _ = store.append_event(
+                                &format!("intent-refusal:{}", state.organism_tick),
+                                "body_neutral_intent_refused",
+                                &json!({"reason": error.to_string()}).to_string(),
+                                &format!("boot:{}", boot),
+                            );
+                            std::thread::sleep(Duration::from_millis(100));
+                            continue;
+                        }
+                    };
+                    let payload = serde_json::to_string(&step.selected)?;
+                    let _ = store.append_event(
+                        &step.selected.intent_id.to_string(),
+                        "body_neutral_intent",
+                        &payload,
+                        &format!("boot:{}:organism_tick:{}", boot, step.tick),
+                    )?;
+                    let _ = state.snapshot_to(&store)?;
+                }
                 let observation = paths.runtime.join("ordinary-observation.json");
-                if let Ok(bytes) = std::fs::read(&observation) {
+                if env::var_os("COMPANION_PHASE01_COMPAT").is_some()
+                    && env::var_os("COMPANION_ALPHA_LIFE").is_none()
+                    && let Ok(bytes) = std::fs::read(&observation)
+                {
                     if let Ok(value) = serde_json::from_slice::<serde_json::Value>(&bytes) {
                         let message_id = value
                             .get("message_id")
@@ -193,7 +403,7 @@ fn write_ready_marker(role: &str) -> Result<(), Box<dyn std::error::Error>> {
             "sequence": 1,
             "initialization_status": "ready",
             "store_status": if matches!(role, "companion-core" | "care-core" | "identity-consent-vault") { "integrity_checked" } else { "not_applicable" },
-            "channel_status": if matches!(role, "sensor-gateway" | "care-core") { "seqpacket" } else { "not_applicable" },
+            "channel_status": if matches!(role, "sensor-gateway" | "care-core") { "seqpacket" } else if role == "companion-core" { "ordinary-evidence-uds" } else { "not_applicable" },
             "protocol_version": FOUNDATION_VERSION,
         });
         std::fs::write(marker, serde_json::to_vec(&value)?)?;
@@ -232,6 +442,278 @@ fn ordinary_store(
     Ok(())
 }
 
+fn ordinary_digest(value: &OrdinaryEvidenceV1, secret: &[u8]) -> String {
+    let mut unsigned = value.clone();
+    unsigned.mac.clear();
+    let bytes = canonical::canonical_event(&serde_json::to_vec(&unsigned).unwrap_or_default())
+        .unwrap_or_default();
+    let mut signer = HmacSha256::new_from_slice(secret).expect("ordinary HMAC key");
+    signer.update(ORDINARY_AUTH_DOMAIN);
+    signer.update(&bytes);
+    encode_hex(&signer.finalize().into_bytes())
+}
+
+fn handle_ordinary_evidence(
+    bytes: &[u8],
+    peer: Option<(u32, u32)>,
+    authority: Option<&OrdinaryAuthority>,
+    now_ns: u64,
+) -> serde_json::Value {
+    let parsed = serde_json::from_slice::<OrdinaryEvidenceV1>(bytes);
+    let Ok(value) = parsed else {
+        return json!({"accepted":false,"reason":"malformed_or_unknown_field"});
+    };
+    let valid_source = value.source == "sensor-gateway";
+    let auth_ok = authority
+        .and_then(|a| decode_secret_hex(&a.secret_hex).map(|secret| (a, secret)))
+        .map(|(a, secret)| {
+            peer == Some((a.pid, a.uid))
+                && value.producer_generation == a.generation
+                && value.mac == ordinary_digest(&value, &secret)
+        })
+        .unwrap_or(false);
+    let freshness_valid = value.monotonic_ns <= now_ns.saturating_add(1_000_000_000)
+        && now_ns.saturating_sub(value.monotonic_ns) <= ORDINARY_FRESHNESS_NS;
+    let valid = value.schema_major == 1
+        && auth_ok
+        && valid_source
+        && value.auth_scheme == "hmac-sha256-jcs-v1"
+        && !value.replay
+        && value.confidence_milli <= 1000
+        && value.quality_milli <= 1000
+        && freshness_valid;
+    json!({
+        "accepted": valid,
+        "message_id": value.message_id,
+        "reason": if valid { "accepted" } else { "authentication_or_shape_failure" },
+        "source": value.source,
+        "causation_id": value.causation_id,
+        "correlation_id": value.correlation_id
+    })
+}
+
+fn peer_credentials(fd: i32) -> Option<(u32, u32)> {
+    let mut cred = libc::ucred {
+        pid: 0,
+        uid: 0,
+        gid: 0,
+    };
+    let mut len = std::mem::size_of::<libc::ucred>() as libc::socklen_t;
+    let rc = unsafe {
+        libc::getsockopt(
+            fd,
+            libc::SOL_SOCKET,
+            libc::SO_PEERCRED,
+            (&mut cred as *mut libc::ucred).cast(),
+            &mut len,
+        )
+    };
+    (rc == 0).then_some((cred.pid as u32, cred.uid))
+}
+
+fn load_ordinary_authority(runtime: &std::path::Path) -> Option<OrdinaryAuthority> {
+    let path = runtime.join("ordinary-evidence-authority.json");
+    std::fs::read(path)
+        .ok()
+        .and_then(|bytes| serde_json::from_slice::<OrdinaryAuthority>(&bytes).ok())
+}
+
+fn send_ordinary_evidence(generation: &str) -> Result<Vec<u8>, Box<dyn std::error::Error>> {
+    let paths = XdgPaths::resolve("companion")?;
+    let socket = paths.runtime.join("ordinary-evidence.sock");
+    let mut stream = None;
+    for _ in 0..40 {
+        match UnixStream::connect(&socket) {
+            Ok(value) => {
+                stream = Some(value);
+                break;
+            }
+            Err(_) => std::thread::sleep(Duration::from_millis(25)),
+        }
+    }
+    let mut stream = stream.ok_or("ordinary evidence endpoint unavailable")?;
+    let authority = load_ordinary_authority(&paths.runtime).ok_or("ordinary authority missing")?;
+    let secret =
+        decode_secret_hex(&authority.secret_hex).ok_or("ordinary authority secret invalid")?;
+    let mut value = OrdinaryEvidenceV1 {
+        schema_major: 1,
+        message_id: Uuid::new_v4(),
+        producer_generation: generation.to_owned(),
+        source: "sensor-gateway".into(),
+        observed_at: "2026-01-01T00:00:00Z".into(),
+        monotonic_ns: logging::monotonic_ns(),
+        confidence_milli: 900,
+        quality_milli: 900,
+        replay: false,
+        causation_id: None,
+        correlation_id: Some(Uuid::new_v4()),
+        auth_scheme: "hmac-sha256-jcs-v1".into(),
+        mac: String::new(),
+        payload: OrdinaryPayload {
+            kind: env::var("COMPANION_ORDINARY_KIND").unwrap_or_else(|_| "preference".into()),
+            subject: env::var("COMPANION_ORDINARY_SUBJECT")
+                .unwrap_or_else(|_| "primary_user".into()),
+            value: env::var("COMPANION_ORDINARY_VALUE").unwrap_or_else(|_| "listen".into()),
+        },
+    };
+    value.mac = ordinary_digest(&value, &secret);
+    let encoded = serde_json::to_vec(&value)?;
+    stream.write_all(&encoded)?;
+    let _ = stream.shutdown(std::net::Shutdown::Write);
+    Ok(encoded)
+}
+
+fn send_body_intent(
+    intent: &BodyNeutralIntent,
+) -> Result<serde_json::Value, Box<dyn std::error::Error>> {
+    intent.validate_wire().map_err(|e| e.to_string())?;
+    let paths = XdgPaths::resolve("companion")?;
+    let socket = paths.runtime.join("godot-bridge.sock");
+    let mut stream = UnixStream::connect(socket)?;
+    let request = json!({
+        "protocol":"companion-foundation-v1",
+        "kind":"body_intent",
+        "intent_id":intent.intent_id,
+        "intent_sequence":intent.intent_sequence,
+        "action":intent.action,
+        "facing":intent.facing,
+        "correlation_id":intent.intent_id,
+        "causation_id":intent.source_goal,
+        "pack_revision":"r06-frozen"
+    });
+    stream.write_all(&serde_json::to_vec(&request)?)?;
+    let _ = stream.shutdown(std::net::Shutdown::Write);
+    let mut response = Vec::new();
+    stream.read_to_end(&mut response)?;
+    let value: serde_json::Value = serde_json::from_slice(&response)?;
+    if value.get("accepted").and_then(|v| v.as_bool()) != Some(true) {
+        return Err("godot rejected body intent".into());
+    }
+    Ok(value)
+}
+
+fn execute_real_godot(value: &serde_json::Value) -> serde_json::Value {
+    if env::var_os("COMPANION_REAL_GODOT").is_none() {
+        return json!({
+            "accepted": false,
+            "reason": "godot_execution_not_enabled_in_compatibility_mode"
+        });
+    }
+    let Some(godot) = env::var_os("GODOT_BIN") else {
+        return json!({"accepted":false,"reason":"godot_binary_not_provisioned"});
+    };
+    let project = env::var_os("COMPANION_GODOT_PROJECT").unwrap_or_else(|| "godot".into());
+    let pack = env::var_os("COMPANION_GODOT_PACK")
+        .unwrap_or_else(|| "assets/source/p02/r06/approved/pack.json".into());
+    let action = value
+        .get("action")
+        .and_then(|v| v.as_str())
+        .unwrap_or("idle");
+    // Resolve from the frozen manifest rather than maintaining an action to
+    // track shortcut in the bridge. The manifest is the production
+    // presentation authority; this adapter only selects a declared track.
+    let requested_family = match action {
+        "listen" | "acknowledge" => "listen_acknowledge",
+        _ => "assembled_action",
+    };
+    let requested_facing = value
+        .get("facing")
+        .and_then(|v| v.as_str())
+        .unwrap_or("front");
+    let track = std::fs::read_to_string(&pack)
+        .ok()
+        .and_then(|text| serde_json::from_str::<serde_json::Value>(&text).ok())
+        .and_then(|manifest| manifest.get("tracks").cloned())
+        .and_then(|tracks| tracks.as_array().cloned())
+        .and_then(|tracks| {
+            tracks.into_iter().find(|candidate| {
+                candidate.get("family").and_then(|v| v.as_str()) == Some(requested_family)
+                    && candidate
+                        .get("selection_facing")
+                        .or_else(|| candidate.get("facing"))
+                        .and_then(|v| v.as_str())
+                        == Some(requested_facing)
+            })
+        })
+        .and_then(|candidate| {
+            candidate
+                .get("track_id")
+                .and_then(|v| v.as_str())
+                .map(str::to_owned)
+        });
+    let Some(track) = track else {
+        return json!({"accepted":false,"reason":"production_track_resolution_failed","family":requested_family,"facing":requested_facing});
+    };
+    let paths = match XdgPaths::resolve("companion") {
+        Ok(paths) => paths,
+        Err(error) => return json!({"accepted":false,"reason":error.to_string()}),
+    };
+    let capture = paths.runtime.join(format!("godot-{}.png", Uuid::new_v4()));
+    let engine_log = paths.runtime.join(format!("godot-{}.log", Uuid::new_v4()));
+    let wrapper_log = paths.runtime.join(format!("xvfb-{}.log", Uuid::new_v4()));
+    let command_args = vec![
+        "--log-file".into(),
+        engine_log.to_string_lossy().into_owned(),
+        "--audio-driver".into(),
+        "Dummy".into(),
+        "--path".into(),
+        project.to_string_lossy().into_owned(),
+        "--script".into(),
+        "res://r06_black_pack_test.gd".into(),
+        "--".into(),
+        format!("--pack={}", pack.to_string_lossy()),
+        format!("--track={track}"),
+        format!("--capture={}", capture.to_string_lossy()),
+    ];
+    let xvfb = env::var_os("XVFB_RUN").or_else(|| {
+        Path::new("/usr/bin/xvfb-run")
+            .is_file()
+            .then(|| std::ffi::OsString::from("/usr/bin/xvfb-run"))
+    });
+    let result = if let Some(xvfb) = xvfb {
+        Command::new(xvfb)
+            .args(["-a", "-e"])
+            .arg(&wrapper_log)
+            .arg(godot)
+            .args(&command_args)
+            .output()
+    } else {
+        Command::new(godot).args(&command_args).output()
+    };
+    let Ok(output) = result else {
+        return json!({"accepted":false,"reason":"godot_spawn_failed"});
+    };
+    let text = String::from_utf8_lossy(&output.stdout);
+    let observed = text
+        .lines()
+        .rev()
+        .find_map(|line| serde_json::from_str::<serde_json::Value>(line).ok());
+    let Some(observed) = observed else {
+        return json!({"accepted":false,"reason":"godot_result_missing","exit_code":output.status.code()});
+    };
+    let accepted = output.status.success()
+        && observed.get("status").and_then(|v| v.as_str()) == Some("PASS")
+        && observed.get("render_observation").and_then(|v| v.as_str())
+            == Some("RenderingServer.frame_post_draw");
+    json!({
+        "schema_major": 1,
+        "intent_id": value.get("intent_id"),
+        "intent_sequence": value.get("intent_sequence"),
+        "accepted": accepted,
+        "track_id": track,
+        "track_path": [track],
+        "terminal_state": if accepted { "completed" } else { "degraded" },
+        "completion_reason": if accepted { "godot_observed" } else { "godot_rejected" },
+        "pack_revision": value.get("pack_revision"),
+        "source_pack_sha256": FROZEN_R06_PACK_SHA256,
+        "correlation_id": value.get("correlation_id"),
+        "causation_id": value.get("causation_id"),
+        "render_observation": observed.get("render_observation"),
+        "godot_event_count": observed.get("events").and_then(|v| v.as_array()).map_or(0, Vec::len),
+        "capture_path": capture,
+    })
+}
+
 fn read_capability(fd: Option<i32>) -> Result<Vec<u8>, Box<dyn std::error::Error>> {
     let raw = fd.ok_or("capability channel missing")?;
     let mut f = unsafe { std::fs::File::from_raw_fd(raw) };
@@ -268,6 +750,21 @@ fn decode_hex(value: &str) -> Option<Vec<u8>> {
         decoded.push((hi << 4) | lo);
     }
     Some(decoded)
+}
+
+fn decode_secret_hex(value: &str) -> Option<Vec<u8>> {
+    if value.is_empty() || value.len() > 64 || !value.len().is_multiple_of(2) || !value.is_ascii() {
+        return None;
+    }
+    value
+        .as_bytes()
+        .chunks(2)
+        .map(|pair| {
+            let hi = (pair[0] as char).to_digit(16)? as u8;
+            let lo = (pair[1] as char).to_digit(16)? as u8;
+            Some((hi << 4) | lo)
+        })
+        .collect()
 }
 
 fn mac(secret: &[u8], payload: &[u8]) -> Result<String, Box<dyn std::error::Error>> {
@@ -399,6 +896,7 @@ fn producer(
         .map(str::to_owned)
         .collect();
     let mut last_packet: Option<Vec<u8>> = None;
+    let mut last_ordinary_packet: Option<Vec<u8>> = None;
     for index in 0..cycles {
         let seed = &seeds[index % seeds.len()];
         let mut id_bytes = Uuid::parse_str(&generation)
@@ -415,6 +913,16 @@ fn producer(
         packet["mac"] = json!(mac(&secret, &bytes)?);
         let encoded = serde_json::to_vec(&packet)?;
         ipc::send(&sock, &encoded)?;
+        if index == 0 && env::var_os("COMPANION_PHASE01_COMPAT").is_some() {
+            // The inherited Phase 01 closeout fixture needs one ordinary
+            // packet at startup to exercise its separated compatibility
+            // assertion.  Alpha live mode never sets this switch; its
+            // ordinary ingress is control-triggered through the authenticated
+            // sensor-gateway socket.
+            // Ordinary evidence uses a separately addressed authenticated
+            // stream; safety candidates remain on the seqpacket channel.
+            last_ordinary_packet = Some(send_ordinary_evidence(&generation)?);
+        }
         last_packet = Some(encoded.clone());
         if let Ok(paths) = XdgPaths::resolve("companion") {
             let _ = std::fs::write(paths.runtime.join("last-safety-packet.json"), &encoded);
@@ -475,6 +983,20 @@ fn producer(
                 while let Some(index) = pending.iter().position(|b| *b == b'\n') {
                     let line: Vec<u8> = pending.drain(..=index).collect();
                     let command = String::from_utf8_lossy(&line).trim().to_owned();
+                    if command == "send_ordinary" {
+                        last_ordinary_packet = Some(send_ordinary_evidence(&generation)?);
+                        continue;
+                    }
+                    if command == "send_ordinary_replay" {
+                        if let Some(packet) = &last_ordinary_packet {
+                            let paths = XdgPaths::resolve("companion")?;
+                            let socket = paths.runtime.join("ordinary-evidence.sock");
+                            let mut stream = UnixStream::connect(socket)?;
+                            stream.write_all(packet)?;
+                            let _ = stream.shutdown(std::net::Shutdown::Write);
+                        }
+                        continue;
+                    }
                     let (packet, remember) =
                         command_packet(&command, &secret, &generation, last_packet.as_deref())?;
                     if let Some(packet) = packet {
@@ -497,6 +1019,7 @@ fn producer(
 #[derive(Clone, Copy, Debug, Eq, PartialEq)]
 enum InjectionKind {
     ValidOrdinaryObservation,
+    DuplicateOrdinaryObservation,
     ValidSafetyCandidate,
     DuplicateSafetyCandidate,
     ReplaySafetyCandidate,
@@ -517,6 +1040,9 @@ impl InjectionKind {
     fn parse(value: &str) -> Option<Self> {
         Some(match value {
             "valid_ordinary_observation" | "ordinary_observation" => Self::ValidOrdinaryObservation,
+            "duplicate_ordinary_observation" | "ordinary_replay" => {
+                Self::DuplicateOrdinaryObservation
+            }
             "valid_safety_candidate" | "valid" | "inject_valid" => Self::ValidSafetyCandidate,
             "duplicate_safety_candidate" | "duplicate" | "inject_duplicate" => {
                 Self::DuplicateSafetyCandidate
@@ -547,6 +1073,7 @@ impl InjectionKind {
     fn normalized(self) -> &'static str {
         match self {
             Self::ValidOrdinaryObservation => "valid_ordinary_observation",
+            Self::DuplicateOrdinaryObservation => "duplicate_ordinary_observation",
             Self::ValidSafetyCandidate => "valid_safety_candidate",
             Self::DuplicateSafetyCandidate => "duplicate_safety_candidate",
             Self::ReplaySafetyCandidate => "replay_safety_candidate",
@@ -579,7 +1106,8 @@ impl InjectionKind {
             Self::StaleMac => "inject_stale_mac",
             Self::UnauthorizedSender => "inject_unauthorized_sender",
             Self::ForbiddenCompanionState => "inject_companion_state",
-            Self::ValidOrdinaryObservation => return None,
+            Self::ValidOrdinaryObservation => "send_ordinary",
+            Self::DuplicateOrdinaryObservation => "send_ordinary_replay",
         })
     }
 }
@@ -872,18 +1400,32 @@ struct ChildEntry {
     pidfd: Option<OwnedFd>,
 }
 
+type DirectChildren = (ChildEntry, Option<ChildEntry>, OwnedFd, String);
+
 fn spawn_direct_children(
     exe: &std::path::Path,
     ready_dir: &std::path::Path,
     secret: &[u8],
+    ordinary_secret: &[u8],
     boot: &str,
-) -> Result<(ChildEntry, Option<ChildEntry>, OwnedFd), Box<dyn std::error::Error>> {
+) -> Result<DirectChildren, Box<dyn std::error::Error>> {
     let (producer_endpoint, care_endpoint) = ipc::seqpacket_pair()?;
     ipc::enable_passcred(&producer_endpoint)?;
     ipc::enable_passcred(&care_endpoint)?;
     let (producer_cap_read, producer_cap_write) = pipe()?;
     let (care_cap_read, care_cap_write) = pipe()?;
     let (producer_control_read, producer_control_write) = pipe()?;
+    // The inherited closeout matrix deliberately sends a large burst of
+    // typed producer commands.  Keep that control channel from applying
+    // kernel-default pipe backpressure to the supervisor request socket;
+    // the producer still drains and executes each command in order.
+    let _ = unsafe {
+        libc::fcntl(
+            producer_control_write.as_raw_fd(),
+            libc::F_SETPIPE_SZ,
+            1_048_576,
+        )
+    };
     // Seed capability pipes before child exec so readiness cannot race a
     // blocking capability read during initialization.
     write_fd(&producer_cap_write, secret)?;
@@ -903,6 +1445,19 @@ fn spawn_direct_children(
         ready_dir,
     )?;
     let producer_pid = producer.id();
+    let paths = XdgPaths::resolve("companion")?;
+    let authority_path = paths.runtime.join("ordinary-evidence-authority.json");
+    let authority = OrdinaryAuthority {
+        pid: producer_pid,
+        uid: unsafe { libc::geteuid() },
+        generation: generation.clone(),
+        secret_hex: encode_hex(ordinary_secret),
+    };
+    std::fs::write(&authority_path, serde_json::to_vec(&authority)?)?;
+    let mut permissions = std::fs::metadata(&authority_path)?.permissions();
+    use std::os::unix::fs::PermissionsExt;
+    permissions.set_mode(0o600);
+    std::fs::set_permissions(&authority_path, permissions)?;
     let pidfd = match ipc::pidfd_open(producer_pid as libc::pid_t) {
         Ok(fd) => {
             logging::emit(
@@ -967,7 +1522,12 @@ fn spawn_direct_children(
         ready_path: ready_dir.join("care-core.ready"),
         pidfd: None,
     });
-    Ok((producer_entry, care_entry, producer_control_write))
+    Ok((
+        producer_entry,
+        care_entry,
+        producer_control_write,
+        generation,
+    ))
 }
 
 fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
@@ -992,7 +1552,14 @@ fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
     let listener = std::os::unix::net::UnixListener::bind(&control)?;
     listener.set_nonblocking(true)?;
     let mut secret = uuid::Uuid::new_v4().as_bytes().to_vec();
+    let mut ordinary_secret = uuid::Uuid::new_v4().as_bytes().to_vec();
     let mut children = Vec::new();
+    let (producer_entry, care_entry, mut producer_control, _ordinary_generation) =
+        spawn_direct_children(&exe, &ready_dir, &secret, &ordinary_secret, &boot)?;
+    children.push(producer_entry);
+    if let Some(care_entry) = care_entry {
+        children.push(care_entry);
+    }
     for role in ["companion-core", "identity-consent-vault", "godot-bridge"] {
         if role == "companion-core" && env::var_os("COMPANION_SKIP_COMPANION").is_some() {
             logging::emit(
@@ -1026,29 +1593,41 @@ fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
             pidfd: None,
         });
     }
-    let (producer_entry, care_entry, mut producer_control) =
-        spawn_direct_children(&exe, &ready_dir, &secret, &boot)?;
-    children.push(producer_entry);
-    if let Some(care_entry) = care_entry {
-        children.push(care_entry);
-    }
     let once = env::args().any(|a| a == "--once");
     let deadline = Instant::now() + Duration::from_secs(10);
     loop {
         if let Ok((mut stream, _)) = listener.accept() {
-            let mut request = Vec::new();
-            let _ = stream.set_read_timeout(Some(Duration::from_millis(50)));
-            let _ = stream.read_to_end(&mut request);
-            let command = serde_json::from_slice::<serde_json::Value>(&request).ok();
-            let response = handle_control(command.as_ref(), &mut children, Some(&producer_control));
+            let request = match read_control_request(&mut stream) {
+                Ok(request) => request,
+                Err(error) => {
+                    let response = json!({
+                        "command": "invalid",
+                        "accepted": false,
+                        "reason": "control_read_error",
+                        "error_class": format!("{:?}", error.kind()),
+                    });
+                    let encoded = serde_json::to_string(&response)?;
+                    let _ = stream.write_all(encoded.as_bytes());
+                    continue;
+                }
+            };
+            let command = match serde_json::from_slice::<serde_json::Value>(&request) {
+                Ok(command) => command,
+                Err(_) => {
+                    let encoded = serde_json::to_string(&json!({
+                        "command": "invalid",
+                        "accepted": false,
+                        "reason": "invalid_control_request",
+                    }))?;
+                    let _ = stream.write_all(encoded.as_bytes());
+                    continue;
+                }
+            };
+            let response = handle_control(Some(&command), &mut children, Some(&producer_control));
             if response.get("command").and_then(|v| v.as_str()) == Some("shutdown") {
                 STOP.store(true, Ordering::SeqCst);
             }
-            let encoded = if command.is_some() {
-                serde_json::to_string(&response)?
-            } else {
-                health_json(&mut children)
-            };
+            let encoded = serde_json::to_string(&response)?;
             let _ = stream.write_all(encoded.as_bytes());
         }
         for entry in &mut children {
@@ -1121,8 +1700,9 @@ fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
             children.retain(|entry| !matches!(entry.role.as_str(), "sensor-gateway" | "care-core"));
             std::thread::sleep(Duration::from_millis(100));
             secret = Uuid::new_v4().as_bytes().to_vec();
-            let (producer_entry, care_entry, new_control) =
-                spawn_direct_children(&exe, &ready_dir, &secret, &boot)?;
+            ordinary_secret = Uuid::new_v4().as_bytes().to_vec();
+            let (producer_entry, care_entry, new_control, _generation) =
+                spawn_direct_children(&exe, &ready_dir, &secret, &ordinary_secret, &boot)?;
             producer_control = new_control;
             children.push(producer_entry);
             if let Some(care_entry) = care_entry {
@@ -1163,6 +1743,45 @@ fn supervisor() -> Result<(), Box<dyn std::error::Error>> {
         Some("clean_shutdown"),
     );
     Ok(())
+}
+
+fn read_control_request(stream: &mut std::os::unix::net::UnixStream) -> io::Result<Vec<u8>> {
+    stream.set_read_timeout(Some(CONTROL_READ_TIMEOUT))?;
+    let mut request = Vec::new();
+    let mut buffer = [0_u8; 4096];
+    loop {
+        let count = stream.read(&mut buffer)?;
+        if count == 0 {
+            break;
+        }
+        request.extend_from_slice(&buffer[..count]);
+        if request.len() > CONTROL_REQUEST_LIMIT {
+            return Err(io::Error::new(
+                io::ErrorKind::InvalidData,
+                "control request exceeds bounded frame size",
+            ));
+        }
+        if let Some(newline) = request.iter().position(|byte| *byte == b'\n') {
+            if request[newline + 1..]
+                .iter()
+                .any(|byte| !byte.is_ascii_whitespace())
+            {
+                return Err(io::Error::new(
+                    io::ErrorKind::InvalidData,
+                    "multiple control frames are not allowed",
+                ));
+            }
+            request.truncate(newline + 1);
+            break;
+        }
+    }
+    if request.is_empty() {
+        return Err(io::Error::new(
+            io::ErrorKind::UnexpectedEof,
+            "empty control request",
+        ));
+    }
+    Ok(request)
 }
 
 fn wait_ready(path: &std::path::Path, timeout: Duration) -> bool {
@@ -1282,20 +1901,9 @@ fn handle_control(
                 return json!({"command":"inject","kind":requested,"accepted":false,"reason":"unknown_injection_kind"});
             };
             if kind == InjectionKind::ValidOrdinaryObservation {
-                let paths = XdgPaths::resolve("companion");
-                let id = command
-                    .get("request_id")
-                    .and_then(|v| v.as_str())
-                    .unwrap_or("ordinary-request");
-                let observation = json!({"message_id": id, "kind":"ordinary_observation", "source":"sensor-gateway"});
-                let accepted = paths.ok().is_some_and(|p| {
-                    std::fs::write(
-                        p.runtime.join("ordinary-observation.json"),
-                        serde_json::to_vec(&observation).unwrap_or_default(),
-                    )
-                    .is_ok()
-                });
-                return json!({"command":"inject","kind":requested,"normalized_kind":kind.normalized(),"request_id":id,"transport_path":"ordinary-observation","accepted":accepted,"producer_mutation":"ordinary_observation"});
+                let accepted =
+                    producer_control.is_some_and(|fd| write_fd(fd, b"send_ordinary\n").is_ok());
+                return json!({"command":"inject","kind":requested,"normalized_kind":kind.normalized(),"request_id":command.get("request_id").cloned().unwrap_or(json!(null)),"transport_path":"sensor-gateway->ordinary-evidence.sock","accepted":accepted,"producer_mutation":"send_ordinary"});
             }
             let opcode = kind.opcode().unwrap_or("inject_valid");
             if let Some(fd) = producer_control {
@@ -1411,6 +2019,25 @@ mod tests {
     use super::*;
 
     #[test]
+    fn control_request_survives_a_delayed_client_write() {
+        let (mut server, mut client) = std::os::unix::net::UnixStream::pair().expect("socket pair");
+        let reader = std::thread::spawn(move || read_control_request(&mut server));
+
+        // This exceeds the superseded 50 ms one-shot read timeout and
+        // deterministically reproduces the scheduling window seen in hosted CI.
+        std::thread::sleep(Duration::from_millis(150));
+        client
+            .write_all(b"{\"command\":\"health\"}\n")
+            .expect("delayed request write");
+        client
+            .shutdown(std::net::Shutdown::Write)
+            .expect("request EOF");
+
+        let request = reader.join().expect("reader thread").expect("request");
+        assert_eq!(request, b"{\"command\":\"health\"}\n");
+    }
+
+    #[test]
     fn hmac_round_trip_uses_domain_separator() {
         let secret = b"qualification-secret";
         let payload = br#"{"schema_major":1,"message_id":"00000000-0000-4000-8000-000000000001"}"#;
@@ -1471,12 +2098,85 @@ mod tests {
         for name in names {
             let kind = InjectionKind::parse(name).expect("known injection kind");
             assert_eq!(InjectionKind::parse(kind.normalized()), Some(kind));
-            if kind == InjectionKind::ValidOrdinaryObservation {
-                assert!(kind.opcode().is_none());
-            } else {
+            if matches!(
+                kind,
+                InjectionKind::ValidSafetyCandidate
+                    | InjectionKind::DuplicateSafetyCandidate
+                    | InjectionKind::ReplaySafetyCandidate
+            ) {
                 assert!(kind.opcode().is_some());
             }
         }
         assert!(InjectionKind::parse("totally_unknown").is_none());
+    }
+
+    #[test]
+    fn ordinary_evidence_requires_peer_auth_and_integrity() {
+        let mut value = OrdinaryEvidenceV1 {
+            schema_major: 1,
+            message_id: Uuid::from_u128(0x101),
+            producer_generation: "generation".into(),
+            source: "sensor-gateway".into(),
+            observed_at: "2026-01-01T00:00:00Z".into(),
+            monotonic_ns: 1,
+            confidence_milli: 900,
+            quality_milli: 900,
+            replay: false,
+            causation_id: None,
+            correlation_id: Some(Uuid::from_u128(0x102)),
+            auth_scheme: "scm-credentials-v1".into(),
+            mac: String::new(),
+            payload: OrdinaryPayload {
+                kind: "preference".into(),
+                subject: "user".into(),
+                value: "listen".into(),
+            },
+        };
+        let secret = b"qualification-ordinary-secret";
+        value.monotonic_ns = logging::monotonic_ns();
+        value.auth_scheme = "hmac-sha256-jcs-v1".into();
+        value.mac = ordinary_digest(&value, secret);
+        let bytes = serde_json::to_vec(&value).unwrap();
+        let authority = OrdinaryAuthority {
+            pid: std::process::id(),
+            uid: unsafe { libc::geteuid() },
+            generation: "generation".into(),
+            secret_hex: encode_hex(secret),
+        };
+        let accepted = handle_ordinary_evidence(
+            &bytes,
+            Some((std::process::id(), unsafe { libc::geteuid() })),
+            Some(&authority),
+            logging::monotonic_ns(),
+        );
+        assert!(
+            accepted
+                .get("accepted")
+                .and_then(|v| v.as_bool())
+                .unwrap_or(false)
+        );
+        assert!(
+            !handle_ordinary_evidence(
+                &bytes,
+                Some((std::process::id(), unsafe { libc::geteuid() + 1 })),
+                Some(&authority),
+                logging::monotonic_ns(),
+            )
+            .get("accepted")
+            .and_then(|v| v.as_bool())
+            .unwrap_or(false)
+        );
+        value.payload.value = "tampered".into();
+        assert!(
+            !handle_ordinary_evidence(
+                &serde_json::to_vec(&value).unwrap(),
+                Some((std::process::id(), unsafe { libc::geteuid() })),
+                Some(&authority),
+                logging::monotonic_ns(),
+            )
+            .get("accepted")
+            .and_then(|v| v.as_bool())
+            .unwrap_or(false)
+        );
     }
 }

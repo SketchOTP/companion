@@ -1,0 +1,245 @@
+{
+  "status": "PASSED_SOURCE_BINDING_ONLY",
+  "raw_files": [
+    {
+      "id": "acknowledge_down",
+      "sha256": "8f074ad93434ada9f31ab468a47cd552aa6337ef962fc53a9ada2ba25b8e6f21",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "attention_01",
+      "sha256": "c2e6cb8f273b4b4239c130374314da614b9529f3e56593dea538438934f1546b",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "attention_02",
+      "sha256": "38ea17b31a6c95bc36824c258966b4e7f01a260cbcbe38a25f819de960fb50a1",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "attention_lead",
+      "sha256": "a62fc57802be9060b184f695244f8139c1eeda81a54a8e29d15580330e68412c",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "front",
+      "sha256": "fa788e5f08dd3ae6b607cb127b3fd1437d5eb08b184e1024d5e0e861f236c316",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "listen_entry",
+      "sha256": "40626ba2442431846f640b828f66414d54eca456fd923e4bf8ac5631b0060c91",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "listen_hold",
+      "sha256": "3f17328e0be3e1476a85530a125f9f69ec50f96bdbfe78042ca7596bc194ee4f",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "nod_01",
+      "sha256": "c6c511703c46cf1a3304ff3296bc52ead43e4f0b50089346f614075af10d7820",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "nod_02",
+      "sha256": "5986eb1f3482c9a9a6a1b8e01ae1b8c92045cb7204361e90279c445d7414470c",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "nod_entry",
+      "sha256": "b38c00bcf5f1bab980d30008bac9773ed34eb194cde163a86d351bb099cd7fd8",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": false,
+      "rejection": "Extra doubled upper-eyelid contour"
+    },
+    {
+      "id": "nod_late",
+      "sha256": "60c8f32d9cc0291945b3f39ff1e9995fb998711177dbead9c57b18e9b274acc8",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": false,
+      "rejection": "Eye-field shape drifts from chosen endpoints"
+    },
+    {
+      "id": "nod_middle",
+      "sha256": "4a90be42974fbe5fcb5916193808cd9d958c16a5819d647738a3b525616ed9d7",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": false,
+      "rejection": "Purple band contaminates white pupils"
+    },
+    {
+      "id": "recover_01",
+      "sha256": "54bdb29f2cd16892f57c9e31435214f0ff8e659c19e3e963d50278a47b8ccfe6",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "recover_02",
+      "sha256": "f473cec3f701ebb11ee6aeb514af9b9ffd48baaba97a8d33081ba043a2ca3c74",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "recover_03",
+      "sha256": "68949f15d00f2addfda3fcf5b63fe50428bc750b0df43449ee3241fa598478ef",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "rest_approach_01",
+      "sha256": "26236f730a7d661f7fd849d34745e21ade2e6dd912e153388a5f5d67ef0c3f4b",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": false,
+      "rejection": "Unwanted exposed rectangular neck"
+    },
+    {
+      "id": "rest_approach_02",
+      "sha256": "e3e0609c9e994921d6de1947166a807b874268de7c8d577fbf1c4d4973503d5b",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": false,
+      "rejection": "Unwanted exposed rectangular neck"
+    },
+    {
+      "id": "rest_approach_03",
+      "sha256": "813a815084a6886f59776975e4742d0cc45f88c6db88076a91f673bd624942df",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "settle_01",
+      "sha256": "62510b46a066c346e3697677adf1fe28ac2f14de55fb9de690050e4a2bbd17e6",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "settle_02",
+      "sha256": "c00c6dbf575c16ddb9c89b9a36ac37c026843d63b266e469dde898553f2446e6",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    },
+    {
+      "id": "settle_03",
+      "sha256": "81efebeb82fb0a48cd7ab2fd306c22bbb1ad3a2d51fd8da2e80cbabd78c64b5c",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGB",
+      "selected": true,
+      "rejection": null
+    }
+  ],
+  "selected_drawings": 16,
+  "slots": 17,
+  "ticks": 116,
+  "fps": 24,
+  "requests_sha256": "fcdcdc685bd9a5cc5f55789a6667751085915c7c8d6746a4535771e27e7f0357",
+  "selection_sha256": "27ab273a8e0ab8a50cf81c59f34741e491d3338863012df6a2a2f6ee135949a7",
+  "prompts_sha256": "76b71532620b6f4fceee673d45bd0ef82ebc308c7886be5cca9138dd66d83713",
+  "root_contacts": "NOT_QUALIFIED",
+  "production_approval": "NOT_RUN"
+}

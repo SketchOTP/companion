@@ -1,0 +1,125 @@
+name: companion-alpha50
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  alpha50-bounded-qualification:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - name: Install pinned Python validation tools
+        run: python3 -m pip install --disable-pip-version-check --no-input 'Pillow==11.3.0' 'jsonschema==4.25.1'
+      - name: Fetch exact SQLite source and build foundation
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/sqlite"
+          curl --fail --location --retry 3 https://www.sqlite.org/2026/sqlite-amalgamation-3530400.zip -o "$RUNNER_TEMP/sqlite/sqlite.zip"
+          unzip -q "$RUNNER_TEMP/sqlite/sqlite.zip" -d "$RUNNER_TEMP/sqlite"
+          test "$(sha256sum "$RUNNER_TEMP/sqlite/sqlite-amalgamation-3530400/sqlite3.c" | awk '{print $1}')" = b1dd5d74ec7f29055a6684fa06fb3c2f6821c87dd38f9a458dfd2e8a1db28189
+          export COMPANION_SQLITE_SOURCE="$RUNNER_TEMP/sqlite/sqlite-amalgamation-3530400/sqlite3.c"
+          rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
+          cargo fmt --all -- --check
+          cargo test --workspace --locked
+          cargo build --release --workspace --locked
+      - name: Fetch pinned Godot 4.7.2 for resident embodiment execution
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/godot"
+          curl --fail --location --retry 3 https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip -o "$RUNNER_TEMP/godot/godot.zip"
+          test "$(sha256sum "$RUNNER_TEMP/godot/godot.zip" | awk '{print $1}')" = cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4
+          unzip -q "$RUNNER_TEMP/godot/godot.zip" -d "$RUNNER_TEMP/godot"
+          chmod +x "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64"
+          echo "GODOT_BIN=$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" >> "$GITHUB_ENV"
+      - name: Organism, typed memory, restart, and 30-day qualification
+        env:
+          COMPANION_SQLITE_SOURCE: ${{ runner.temp }}/sqlite/sqlite-amalgamation-3530400/sqlite3.c
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/alpha50"
+          target/release/alpha50_qualification --output="$RUNNER_TEMP/alpha50/organism.json"
+          python3 - <<'PY'
+          import json, os
+          p=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'alpha50','organism.json')))
+          assert p['status']=='PASS' and p['simulated_days']==30 and p['restart_cases']>=500
+          assert all(p['causal'].values())
+          PY
+      - name: Fail closed on historical V1 acceptance path
+        run: python3 scripts/alpha50_v2_guard.py --source crates/foundation-core/src/bin/alpha50_qualification.rs
+      - name: Resident ordinary to V2 to Godot result trace
+        env:
+          COMPANION_SQLITE_SOURCE: ${{ runner.temp }}/sqlite/sqlite-amalgamation-3530400/sqlite3.c
+        run: |
+          set -euo pipefail
+          COMPANION_REAL_GODOT=1 \
+          COMPANION_GODOT_PROJECT="$GITHUB_WORKSPACE/godot" \
+          COMPANION_GODOT_PACK="$GITHUB_WORKSPACE/assets/source/p02/r06/approved/pack.json" \
+          python3 scripts/alpha50_live_trace.py --output "$RUNNER_TEMP/alpha50/live-trace.json" --supervisor target/release/ops-supervisor
+          python3 - <<'PY'
+          import json, os
+          p=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'alpha50','live-trace.json')))
+          assert p['status']=='PASS' and p['v2_only'] and p['bridge_result_observed']
+          assert 'ordinary_evidence_accepted' in p['event_types']
+          assert p['legacy_file_ignored'] and p['legacy_file_event_count'] == 0
+          PY
+      - name: Validate canonical organism V2 schema and fixture
+        run: python3 scripts/validate_schemas.py
+      - name: Production Godot legal graph campaign
+        env:
+          COMPANION_GODOT_PROJECT: ${{ github.workspace }}/godot
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_transition_authority.py
+          "$GODOT_BIN" --audio-driver Dummy --headless --path godot --script res://alpha50_transition_campaign.gd -- --output="$RUNNER_TEMP/alpha50/godot-transitions.json" --cases=10000
+          python3 - <<'PY'
+          import json, os
+          p=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'alpha50','godot-transitions.json')))
+          assert p['status']=='PASS' and p['process']=='Godot' and p['case_count']==10000 and p['illegal_count']>0
+          assert all(c['pack_sha256']=='1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40' for c in p['cases'])
+          PY
+          python3 scripts/verify_alpha50_godot_transitions.py "$RUNNER_TEMP/alpha50/godot-transitions.json"
+      - name: Sensor gateway inventory and explicit degraded coverage
+        run: python3 scripts/alpha50_sensor_probe.py --output "$RUNNER_TEMP/alpha50/sensors.json"
+      - name: Existing direct care independence regression
+        env:
+          FOUNDATION_SUPERVISOR: target/release/ops-supervisor
+        run: python3 scripts/direct_care_smoke.py --output "$RUNNER_TEMP/alpha50/care.json"
+      - name: Retained restart and failure campaign
+        env:
+          COMPANION_NONAUTHORITATIVE_HOST_SQLITE: "1"
+        run: python3 scripts/alpha50_failure_campaign.py --binary target/release/companion-core --output "$RUNNER_TEMP/alpha50/failures.json" --cases 500
+      - name: Preserve exact source identity and policy boundaries
+        run: |
+          set -euo pipefail
+          test "$(sha256sum assets/source/p02/r06/approved/pack.json | awk '{print $1}')" = 1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40
+      - name: Secret scanner fail-closed self-test
+        run: python3 scripts/alpha50_scanner_selftest.py --repository scripts/alpha50 crates/foundation-core/src/organism.rs
+      - name: Hash Alpha50 evidence bundle
+        if: always()
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/alpha50"
+          manifest_tmp="$RUNNER_TEMP/artifact-sha256.txt.tmp"
+          find "$RUNNER_TEMP/alpha50" -maxdepth 1 -type f ! -name artifact-sha256.txt ! -name artifact-sha256.manifest.sha256 -printf '%f\n' | sort | while read -r name; do
+            sha256sum "$RUNNER_TEMP/alpha50/$name"
+          done > "$manifest_tmp"
+          mv "$manifest_tmp" "$RUNNER_TEMP/alpha50/artifact-sha256.txt"
+          sha256sum "$RUNNER_TEMP/alpha50/artifact-sha256.txt" > "$RUNNER_TEMP/alpha50/artifact-sha256.manifest.sha256"
+      - name: Upload Alpha50 evidence (including failures)
+        if: always()
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+        with:
+          name: companion-alpha50-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/alpha50
+            contracts/schemas/organism-state-v1.schema.json
+            contracts/schemas/organism-state-v2.schema.json
+            contracts/schemas/ordinary-evidence-v1.schema.json
+            contracts/fixtures/ordinary-evidence-v1.json
+          if-no-files-found: warn

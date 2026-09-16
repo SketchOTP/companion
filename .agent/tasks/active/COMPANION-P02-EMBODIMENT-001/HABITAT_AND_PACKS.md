@@ -29,3 +29,33 @@ texture memory, load latency, first-use stall, hashes, and corruption handling.
 List what is committed, what is generated locally, what is published as a
 versioned artifact, and how the complete asset bundle is exported/restored
 without GitHub. Confirm ordinary-Git binary budget and no Git LFS change.
+
+## Executed result
+
+`godot/habitat_policy.md` and `embodiment_habitat.gd` lock a 640×360 logical
+base, 960×540 initial window, 640×360 minimum, 1366×768 maximum, canvas-items
+keep-aspect scaling, uniform raster scaling, target screen 0, visible-area
+clamping, `user://` geometry persistence, and primary-screen fallback. The
+metadata-only host probe observed an X11 desktop with two 3840×2160 outputs and
+GNOME Shell/mutter framing rather than the dedicated 1366×768 Openbox target;
+no display configuration was changed, so physical habitat and two-hour
+playback remain unverified. The generated tree is 11 MB; no Git LFS was added.
+# Architect Review 01 correction — artifact packaging (2026-09-11)
+
+The core exporter performs transparent-bound trim, four-pixel edge extrusion,
+reserved gutter placement, and source-space trim metadata on ≤4096×4096 pages.
+The complete frame/atlas corpus is generated as a workflow artifact/private
+local export; only manifests and selected review derivatives remain in Git.
+The dedicated Openbox target remains unavailable and is not reconfigured.
+
+## R04 authored-source storage boundary
+
+Canonical Architect PNG bytes are copied without mutation into
+content-addressed source storage. Runtime copies, review derivatives, atlases,
+and export archives are separate generated outputs. A deterministic local ZIP
+export restored eight files into a fresh directory with an equal tree digest;
+archive SHA-256 is
+`7655de20516eb61aa5bc9f0564960eafe3fa8f52e1461ee8161f565a796bcd00`.
+Godot import metadata and runtime textures are derived without rewriting the
+source PNG. Production atlas scale, Openbox playback, and endurance remain
+deferred pending the Architect frame pack and later visual approval.

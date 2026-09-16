@@ -1,0 +1,1 @@
+{"errors": [], "negative_cases": "missing_required_and_unknown_field", "rust_fixture": "contracts/fixtures/mon-animation-clip-v1.json", "schemas_tested": 10, "status": "PASSED"}

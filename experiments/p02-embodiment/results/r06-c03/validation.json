@@ -1,0 +1,16 @@
+{
+  "left_net_displacement_px": 255.0,
+  "negative_tests": {
+    "hidden_root_reset_rejected": true,
+    "omitted_passing_up_support_rejected": true,
+    "planted_slip_over_two_px_rejected": true,
+    "reversed_touchdown_rejected": true,
+    "second_loop_recenter_rejected": true,
+    "support_identity_swap_rejected": true,
+    "zero_net_loop_rejected": true
+  },
+  "positive_predicate": false,
+  "profile": "COMPANION_P02_R06_C03_SUPPORT_VALIDATION_V1",
+  "right_net_displacement_px": -336.0,
+  "status": "BLOCKED"
+}

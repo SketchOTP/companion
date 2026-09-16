@@ -1,0 +1,45 @@
+{
+  "revision": "r06-production-transition-authority-v1",
+  "edges": {
+    "front_rest": {
+      "left": ["front_rest", "left_start", "left_loop", "left_stop", "left_profile_rest"],
+      "right": ["front_rest", "right_start", "right_loop", "right_stop", "right_profile_rest"],
+      "listen": ["front_rest", "listen"]
+    },
+    "listen": {
+      "left": ["listen", "left_start", "left_loop", "left_stop", "left_profile_rest"],
+      "right": ["listen", "right_start", "right_loop", "right_stop", "right_profile_rest"],
+      "listen": ["listen"]
+    },
+    "left_profile_rest": {
+      "left": ["left_profile_rest", "left_start", "left_loop", "left_stop", "left_profile_rest"],
+      "stop": ["left_profile_rest"]
+    },
+    "right_profile_rest": {
+      "right": ["right_profile_rest", "right_start", "right_loop", "right_stop", "right_profile_rest"],
+      "stop": ["right_profile_rest"]
+    },
+    "left_start": {
+      "left": ["left_start", "left_loop", "left_stop", "left_profile_rest"],
+      "stop": ["left_start", "left_stop", "left_profile_rest"],
+      "cancel": ["left_start", "left_stop"]
+    },
+    "left_loop": {
+      "left": ["left_loop", "left_loop", "left_stop", "left_profile_rest"],
+      "stop": ["left_loop", "left_stop", "left_profile_rest"],
+      "cancel": ["left_loop", "left_stop"]
+    },
+    "right_start": {
+      "right": ["right_start", "right_loop", "right_stop", "right_profile_rest"],
+      "stop": ["right_start", "right_stop", "right_profile_rest"],
+      "cancel": ["right_start", "right_stop"]
+    },
+    "right_loop": {
+      "right": ["right_loop", "right_loop", "right_stop", "right_profile_rest"],
+      "stop": ["right_loop", "right_stop", "right_profile_rest"],
+      "cancel": ["right_loop", "right_stop"]
+    },
+    "left_stop": {"stop": ["left_stop", "left_profile_rest"]},
+    "right_stop": {"stop": ["right_stop", "right_profile_rest"]}
+  }
+}

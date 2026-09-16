@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- MON_BODY_SOURCE_V1 layered-vector candidate; identity PNG remains canonical. -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>MON_BODY_SOURCE_V1 candidate layered path comparison</title>
+  <metadata>Source identity SHA-256: 86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56; candidate only.</metadata>
+  <g id="shadow" data-role="shadow-footprint" fill="#5b3299" opacity="0.72"><ellipse cx="512" cy="896" rx="230" ry="26"/></g>
+  <g id="body" data-role="body-silhouette" fill="#8b54d9" stroke="#261444" stroke-width="10" stroke-linejoin="round">
+    <path id="body-path" d="M512 175 C420 175 335 250 330 365 C326 470 382 523 430 545 C389 590 355 663 360 760 C365 820 415 865 470 870 L470 896 L350 896 C318 896 292 874 300 846 C314 798 344 765 370 738 C330 700 300 642 305 585 C312 512 352 472 390 440 C350 400 332 349 345 298 C366 221 432 170 512 175 Z"/>
+    <path id="head-spikes" d="M332 360 L250 290 L350 300 L318 195 L430 250 L470 112 L520 230 L620 130 L602 260 L760 220 L650 340 L790 350 L620 455 L512 490 L400 455 Z" fill="#8b54d9"/>
+  </g>
+  <g id="face" data-role="face" fill="#090711"><ellipse cx="425" cy="380" rx="45" ry="66"/><ellipse cx="600" cy="380" rx="45" ry="66"/></g>
+  <g id="pupils" data-role="pupils" fill="#fff9ff"><ellipse cx="425" cy="385" rx="14" ry="27"/><ellipse cx="600" cy="385" rx="14" ry="27"/></g>
+  <path id="mouth" data-role="mouth" d="M465 445 Q512 470 559 445" fill="none" stroke="#2b1238" stroke-width="8" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,9 @@
+{
+  "schema_major": 1,
+  "intent_id": "00000000-0000-4000-8000-000000000021",
+  "requested_direction": "left",
+  "requested_facing": "left",
+  "commanded_velocity_px_per_second": -96,
+  "state": "cruise",
+  "cancellation_id": null
+}

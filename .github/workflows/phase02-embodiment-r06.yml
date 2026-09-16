@@ -1,0 +1,285 @@
+name: phase02-embodiment-r06
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  r06-real-art-integration:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - name: Install pinned validation tools
+        run: python3 -m pip install --disable-pip-version-check --no-input 'Pillow==11.3.0' 'jsonschema==4.25.1'
+      - name: Validate frozen production selection and source bytes
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_schemas.py
+          python3 scripts/check_contract_types.py
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          from PIL import Image
+          root=Path('assets/source/p02/r06/approved'); pack=json.loads((root/'pack.json').read_text())
+          assert pack['profile']=='MON_OPAQUE_BLACK_FRAME_SOURCE_PACK_V1'
+          assert len(pack['tracks'])==24 and sum(len(t['frames']) for t in pack['tracks'])==283
+          for asset in pack['source_assets']:
+              p=root/asset['filename']; assert hashlib.sha256(p.read_bytes()).hexdigest()==asset['sha256']
+              with Image.open(p) as im:
+                  assert im.size==(1254,1254) and im.mode=='RGB'
+                  assert max(max(im.getpixel(c)) for c in ((0,0),(1253,0),(0,1253),(1253,1253)))<=4
+          print('r06_source_selection_ok assets=%d tracks=%d frames=%d' % (len(pack['source_assets']),len(pack['tracks']),sum(len(t['frames']) for t in pack['tracks'])))
+          PY
+      - name: Ground semantic landmarks and world-contact plans
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/r06-c02"
+          python3 experiments/p02-embodiment/scripts/ground_r06_c02.py \
+            --source assets/source/p02/r06/approved --evidence "$RUNNER_TEMP/r06-c02"
+          python3 experiments/p02-embodiment/scripts/validate_r06_c02.py \
+            --source assets/source/p02/r06/approved --evidence "$RUNNER_TEMP/r06-c02"
+      - name: Immutable intake and atomic publication
+        run: |
+          set -euo pipefail
+          python3 experiments/p02-embodiment/scripts/intake_r06_pack.py --source assets/source/p02/r06/approved --out "$RUNNER_TEMP/r06-intake"
+          if python3 experiments/p02-embodiment/scripts/intake_r06_pack.py --source assets/source/p02/r06/approved --out "$RUNNER_TEMP/r06-injected" --inject-failure; then
+            echo 'injected intake unexpectedly succeeded' >&2; exit 1
+          fi
+          test ! -e "$RUNNER_TEMP/r06-injected"
+          python3 experiments/p02-embodiment/scripts/record_r06_c02_evidence.py \
+            --source assets/source/p02/r06/approved \
+            --intake "$RUNNER_TEMP/r06-intake" \
+            --grounding "$RUNNER_TEMP/r06-c02" \
+            --out "$RUNNER_TEMP/r06-results"
+          R06_INGESTED="$RUNNER_TEMP/r06-intake/runtime/pack.json" python3 - <<'PY'
+          import json, os
+          from jsonschema import Draft202012Validator, FormatChecker
+          schema = json.load(open('contracts/schemas/mon-ingested-frame-pack-v1.schema.json'))
+          pack = json.load(open(os.environ['R06_INGESTED']))
+          Draft202012Validator(schema, format_checker=FormatChecker()).validate(pack)
+          print('r06_ingested_schema_ok tracks=%d' % len(pack['tracks']))
+          PY
+      - name: Exact Rust typed source-pack round trip
+        env:
+          RUSTUP_TOOLCHAIN: 1.98.1
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/sqlite"
+          curl --fail --location --retry 3 https://www.sqlite.org/2026/sqlite-amalgamation-3530400.zip -o "$RUNNER_TEMP/sqlite/sqlite.zip"
+          unzip -q "$RUNNER_TEMP/sqlite/sqlite.zip" -d "$RUNNER_TEMP/sqlite"
+          test "$(sha256sum "$RUNNER_TEMP/sqlite/sqlite-amalgamation-3530400/sqlite3.c" | awk '{print $1}')" = b1dd5d74ec7f29055a6684fa06fb3c2f6821c87dd38f9a458dfd2e8a1db28189
+          echo "COMPANION_SQLITE_SOURCE=$RUNNER_TEMP/sqlite/sqlite-amalgamation-3530400/sqlite3.c" >> "$GITHUB_ENV"
+          export COMPANION_SQLITE_SOURCE="$RUNNER_TEMP/sqlite/sqlite-amalgamation-3530400/sqlite3.c"
+          rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
+          cargo fmt --all -- --check
+          cargo test --workspace --locked
+          cargo run -p foundation-core --bin validate-opaque-pack --locked -- assets/source/p02/r06/approved/pack.json
+      - name: Fetch exact Godot 4.7.2
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/godot"
+          curl --fail --location --retry 3 https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip -o "$RUNNER_TEMP/godot/godot.zip"
+          test "$(sha256sum "$RUNNER_TEMP/godot/godot.zip" | awk '{print $1}')" = cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4
+          unzip -q "$RUNNER_TEMP/godot/godot.zip" -d "$RUNNER_TEMP/godot"
+          chmod +x "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64"
+      - name: Exact-track Godot playback over black habitat
+        run: |
+          set -euo pipefail
+          python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+            --godot "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" \
+            --out "$RUNNER_TEMP/r06-results" --mode semantic \
+            --pack "$RUNNER_TEMP/r06-intake/runtime/pack.json" \
+            --script r06_black_pack_test.gd --label r06-black-pack
+          RESULT_PATH="$RUNNER_TEMP/r06-results/result.json" python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          result = json.loads(Path(os.environ["RESULT_PATH"]).read_text())
+          assert result["status"] == "PASSED", result
+          assert result["godot_error_count"] == 0, result
+          semantic = result.get("semantic_test_result") or {}
+          assert semantic.get("status") == "PASS", result
+          assert semantic.get("render_observation") == "RenderingServer.frame_post_draw", semantic
+          samples = semantic.get("compositor_samples") or []
+          assert samples, semantic
+          assert len({s.get("track_id") for s in samples}) >= 58, semantic
+          assert max(s.get("delta_from_black", 999) for s in samples) <= 4, semantic
+          PY
+      - name: Controller-owned C05 locomotion qualification
+        run: |
+          set -euo pipefail
+          python3 experiments/p02-embodiment/scripts/qualify_r06_c05.py \
+            --pack assets/source/p02/r06/approved/pack.json \
+            --out "$RUNNER_TEMP/r06-c05"
+          python3 experiments/p02-embodiment/scripts/validate_r06_c05.py \
+            "$RUNNER_TEMP/r06-c05/controller_locomotion_qualification.json"
+          for side_velocity in left:-96 right:96; do
+            side="${side_velocity%%:*}"
+            velocity="${side_velocity##*:}"
+            godot_out="$RUNNER_TEMP/r06-c05-godot-$side"
+            python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+              --godot "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" \
+              --out "$godot_out" --mode semantic \
+              --pack "$RUNNER_TEMP/r06-intake/runtime/pack.json" \
+              --script r06_c05_locomotion_test.gd --label "r06-c05-$side" \
+              --script-arg="--pack=$RUNNER_TEMP/r06-intake/runtime/pack.json" \
+              --script-arg="--side=$side" --script-arg="--velocity=$velocity" \
+              --script-arg="--out=$godot_out/movement.json"
+            RESULT_PATH="$godot_out/result.json" python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          result=json.loads(Path(os.environ['RESULT_PATH']).read_text())
+          assert result['status']=='PASSED', result
+          assert result['godot_error_count']==0, result
+          semantic=result.get('semantic_test_result') or {}
+          assert semantic.get('status')=='PASS', semantic
+          assert semantic.get('canonical_owner')=='controller', semantic
+          assert semantic.get('presentation_owner')=='godot', semantic
+          PY
+          done
+      - name: Replay-safe fixed-step C06 locomotion qualification
+        run: |
+          set -euo pipefail
+          python3 experiments/p02-embodiment/scripts/qualify_r06_c06.py \
+            --pack assets/source/p02/r06/approved/pack.json \
+            --out "$RUNNER_TEMP/r06-c06"
+          python3 experiments/p02-embodiment/scripts/validate_r06_c06.py \
+            "$RUNNER_TEMP/r06-c06/controller_locomotion_qualification.json"
+          test "$(python3 - <<'PY'
+          import json
+          p=json.load(open('contracts/schemas/mon-locomotion-intent-v2.schema.json'))
+          print(p['properties']['intent_sequence']['maximum'])
+          PY
+          )" = "9223372036854775807"
+          godot_paths=()
+          for spec in left:-96:1.0 left:-96:0.25 right:96:1.0 right:96:0.25; do
+            side="${spec%%:*}"; rest="${spec#*:}"; velocity="${rest%%:*}"; rate="${rest##*:}"
+            godot_out="$RUNNER_TEMP/r06-c06-godot-${side}-${rate}"
+            python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+              --godot "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" \
+              --out "$godot_out" --mode semantic \
+              --pack "$RUNNER_TEMP/r06-intake/runtime/pack.json" \
+              --script r06_c06_locomotion_test.gd --label "r06-c06-${side}-${rate}" \
+              --script-arg="--pack=$RUNNER_TEMP/r06-intake/runtime/pack.json" \
+              --script-arg="--side=$side" --script-arg="--velocity=$velocity" \
+              --script-arg="--review-rate=$rate" \
+              --script-arg="--out=$godot_out/movement.json"
+            godot_paths+=("$godot_out/movement.json")
+            RESULT_PATH="$godot_out/result.json" python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          result=json.loads(Path(os.environ['RESULT_PATH']).read_text())
+          assert result['status']=='PASSED', result
+          assert result['godot_error_count']==0, result
+          semantic=result.get('semantic_test_result') or {}
+          assert semantic.get('status')=='PASS', semantic
+          assert semantic.get('schema_major')==2, semantic
+          assert semantic.get('render_observations', 0)>0, semantic
+          assert semantic.get('authored_loop_ticks') == 32, semantic
+          captures=semantic.get('captures') or []
+          assert {c.get('label') for c in captures} == {'start','first_cruise','second_loop_cruise','stop'}, semantic
+          assert all(c.get('non_black') is True for c in captures), semantic
+          assert semantic.get('stop_terminal') is True, semantic
+          assert semantic.get('cadence_probe', {}).get('equivalent') is True, semantic
+          negatives=semantic.get('negative_categories', {})
+          assert len(negatives.get('controller_path', [])) >= 8, semantic
+          assert len(negatives.get('loader_resolver_path', [])) >= 3, semantic
+          assert all(v.get('independent') is True for v in negatives.get('controller_path', [])), semantic
+          assert all(v.get('independent') is True for v in negatives.get('loader_resolver_path', [])), semantic
+          assert negatives.get('wire_boundary', {}).get('max_accepted') is True, semantic
+          assert negatives.get('wire_boundary', {}).get('max_plus_one_rejected') is True, semantic
+          assert negatives.get('wire_boundary', {}).get('u64_max_rejected') is True, semantic
+          assert semantic.get('review_rate') in (1.0, 0.25), semantic
+          PY
+              python3 experiments/p02-embodiment/scripts/verify_c06_trace.py "$godot_out/movement.json" "$RUNNER_TEMP/r06-intake/runtime/pack.json"
+          done
+          GODOT_ROOT="$RUNNER_TEMP" python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          root=Path(os.environ['GODOT_ROOT'])
+          paths={
+            'left_normal': root/'r06-c06-godot-left-1.0/movement.json',
+            'left_quarter': root/'r06-c06-godot-left-0.25/movement.json',
+            'right_normal': root/'r06-c06-godot-right-1.0/movement.json',
+            'right_quarter': root/'r06-c06-godot-right-0.25/movement.json',
+          }
+          data={k:json.loads(p.read_text()) for k,p in paths.items()}
+          for key,d in data.items():
+              assert d['status']=='PASS', (key,d)
+              assert len(d['captures']) == 4, (key, d)
+              assert all((paths[key].parent / c['file']).is_file() for c in d['captures']), (key, d)
+          for side in ('left','right'):
+              normal=data[f'{side}_normal']; quarter=data[f'{side}_quarter']
+              nlabels=[c['label'] for c in normal['captures']]; qlabels=[c['label'] for c in quarter['captures']]
+              assert nlabels==qlabels==['start','first_cruise','second_loop_cruise','stop'], (side,nlabels,qlabels)
+              ratio=quarter['review_wall_time_ms']/normal['review_wall_time_ms']
+              assert 3.90 <= ratio <= 4.10, (side,ratio,normal['review_wall_time_ms'],quarter['review_wall_time_ms'])
+              n_by_label={c['label']:c for c in normal['captures']}; q_by_label={c['label']:c for c in quarter['captures']}
+              for label in ('first_cruise','second_loop_cruise','stop'):
+                  nr=n_by_label[label]['review_observed_elapsed_usec']; qr=q_by_label[label]['review_observed_elapsed_usec']
+                  checkpoint_ratio=qr/nr
+                  assert 3.90 <= checkpoint_ratio <= 4.10, (side,label,checkpoint_ratio,nr,qr)
+              for capture in normal['captures']+quarter['captures']:
+                  for key in ('capture_index','source_pack_sha256','source_frame_filename','source_frame_sha256','capture_sha256','review_observed_elapsed_usec','review_elapsed_usec','authored_tick_cursor','authored_loop_ticks','track_derived_phase'):
+                      assert capture.get(key) is not None and capture.get(key) != '', (side,capture,key)
+              assert [c['semantic_tick'] for c in normal['captures']] == [c['semantic_tick'] for c in quarter['captures']]
+              assert [(c['actor_root_x'],c['track_id'],c['frame_index'],c['authored_track_tick'],c['track_derived_phase'],c['source_frame_sha256']) for c in normal['captures']] == [(c['actor_root_x'],c['track_id'],c['frame_index'],c['authored_track_tick'],c['track_derived_phase'],c['source_frame_sha256']) for c in quarter['captures']]
+              assert all(c['non_black'] for c in normal['captures']+quarter['captures'])
+              assert len({c['actor_root_x'] for c in normal['captures'] if c['label'] in ('first_cruise','second_loop_cruise')})==2
+          print('c06_rendered_capture_sets_ok quarter_wall_time_ratio=4x checkpoints=4 metadata=bound')
+          PY
+          python3 experiments/p02-embodiment/scripts/build_c06_capture_review.py \
+            --out "$RUNNER_TEMP/r06-c06-capture-media" \
+            "$RUNNER_TEMP/r06-c06-godot-left-1.0" "$RUNNER_TEMP/r06-c06-godot-left-0.25" \
+            "$RUNNER_TEMP/r06-c06-godot-right-1.0" "$RUNNER_TEMP/r06-c06-godot-right-0.25"
+          python3 experiments/p02-embodiment/scripts/verify_c06_review_timing.py \
+            --left-normal "$RUNNER_TEMP/r06-c06-godot-left-1.0/movement.json" \
+            --left-quarter "$RUNNER_TEMP/r06-c06-godot-left-0.25/movement.json" \
+            --right-normal "$RUNNER_TEMP/r06-c06-godot-right-1.0/movement.json" \
+            --right-quarter "$RUNNER_TEMP/r06-c06-godot-right-0.25/movement.json"
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          bad=3.33
+          assert not (3.90 <= bad <= 4.10), 'artificial 3.33x ratio unexpectedly accepted'
+          print('c06_timing_negative_3_33_rejected')
+          PY
+      - name: Upload R06-C03 evidence (including failures)
+        if: always()
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+        with:
+          name: phase02-embodiment-r06-c06-c03-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/r06-results
+            ${{ runner.temp }}/r06-c02
+            ${{ runner.temp }}/r06-intake
+            ${{ runner.temp }}/r06-c05
+            ${{ runner.temp }}/r06-c05-godot-left
+            ${{ runner.temp }}/r06-c05-godot-right
+            ${{ runner.temp }}/r06-c06
+            ${{ runner.temp }}/r06-c06-godot-left-1.0
+            ${{ runner.temp }}/r06-c06-godot-left-0.25
+            ${{ runner.temp }}/r06-c06-godot-right-1.0
+            ${{ runner.temp }}/r06-c06-godot-right-0.25
+            ${{ runner.temp }}/r06-c06-capture-media
+            experiments/p02-embodiment/results/r06-c02
+            assets/source/p02/r06/approved/R05_PRODUCTION_VISUAL_SELECTION_V1.json
+            assets/source/p02/r06/approved/pack.json
+            godot/r06_black_pack_test.gd
+            godot/r06_c05_locomotion_test.gd
+            godot/mon_locomotion_controller.gd
+            godot/r06_c06_locomotion_test.gd
+            experiments/p02-embodiment/scripts/verify_c06_trace.py
+            experiments/p02-embodiment/scripts/build_c06_capture_review.py
+            experiments/p02-embodiment/scripts/verify_c06_review_timing.py
+            contracts/schemas/mon-locomotion-intent-v1.schema.json
+            contracts/schemas/mon-locomotion-intent-v2.schema.json
+            contracts/fixtures/mon-locomotion-intent-v1.json
+            contracts/fixtures/mon-locomotion-intent-v2.json
+            contracts/schemas/mon-opaque-black-frame-source-pack-v1.schema.json
+          if-no-files-found: error

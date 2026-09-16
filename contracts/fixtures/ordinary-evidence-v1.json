@@ -1,0 +1,16 @@
+{
+  "schema_major": 1,
+  "message_id": "00000000-0000-4000-8000-000000000101",
+  "producer_generation": "sensor-test-generation",
+  "source": "sensor-gateway",
+  "observed_at": "2026-01-01T00:00:00Z",
+  "monotonic_ns": 1,
+  "confidence_milli": 900,
+  "quality_milli": 900,
+  "replay": false,
+  "causation_id": null,
+  "correlation_id": "00000000-0000-4000-8000-000000000102",
+  "auth_scheme": "scm-credentials-v1",
+  "mac": "0000000000000000000000000000000000000000000000000000000000000000",
+  "payload": {"kind": "preference", "subject": "primary_user", "value": "listen"}
+}

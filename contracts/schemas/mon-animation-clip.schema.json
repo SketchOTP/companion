@@ -1,0 +1,20 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://companion.local/schema/mon-animation-clip-v1.json",
+  "type":"object","additionalProperties":false,
+  "required":["clip_id","version","body_revision","stage","direction_coverage","start_posture","end_posture","behavior_tags","affect_compatibility","energy_compatibility","loop_mode","seam","frames","root_motion_policy","contacts","connectors","interruptible_ranges","events","overlay_requirements","repeat_bounds","pack_revision","checksum"],
+  "properties":{
+    "clip_id":{"type":"string","pattern":"^[a-z][a-z0-9_]{2,63}$"},"version":{"const":1},"body_revision":{"type":"string","minLength":1},"stage":{"enum":["candidate","approved"]},
+    "direction_coverage":{"type":"array","items":{"enum":["N","NE","E","SE","S","SW","W","NW"]},"minItems":1,"uniqueItems":true},
+    "start_posture":{"type":"string","minLength":1},"end_posture":{"type":"string","minLength":1},"behavior_tags":{"type":"array","items":{"type":"string","minLength":1},"minItems":1},
+    "affect_compatibility":{"type":"array","items":{"type":"string"}},"energy_compatibility":{"type":"array","items":{"type":"string"}},"loop_mode":{"enum":["once","loop","ping_pong"]},
+    "seam":{"type":"object","additionalProperties":false,"required":["first_frame","last_frame","root_drift_px"],"properties":{"first_frame":{"type":"string"},"last_frame":{"type":"string"},"root_drift_px":{"const":0}}},
+    "frames":{"type":"array","minItems":1,"items":{"type":"object","additionalProperties":false,"required":["frame_id","source_id","path","duration_ticks","landmarks"],"properties":{"frame_id":{"type":"string"},"source_id":{"type":"string"},"path":{"type":"string"},"duration_ticks":{"type":"integer","minimum":1,"maximum":240},"landmarks":{"type":"object"}}}},
+    "root_motion_policy":{"const":"forbidden"},"contacts":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["landmark","start_tick","end_tick"],"properties":{"landmark":{"type":"string"},"start_tick":{"type":"integer","minimum":0},"end_tick":{"type":"integer","minimum":0}}}},
+    "connectors":{"type":"object","additionalProperties":false,"required":["entry","exit"],"properties":{"entry":{"type":"array","items":{"type":"string"}},"exit":{"type":"array","items":{"type":"string"}}}},
+    "interruptible_ranges":{"type":"array","items":{"type":"array","minItems":2,"maxItems":2,"items":{"type":"integer","minimum":0}}},"events":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["tick","kind"],"properties":{"tick":{"type":"integer","minimum":0},"kind":{"type":"string"}}}},
+    "overlay_requirements":{"type":"object","additionalProperties":false,"required":["eyes","mouth"],"properties":{"eyes":{"type":"boolean"},"mouth":{"type":"boolean"}}},
+    "repeat_bounds":{"type":"object","additionalProperties":false,"required":["min","max","cooldown_ticks","rarity","recent_use_suppression"],"properties":{"min":{"type":"integer","minimum":0},"max":{"type":"integer","minimum":1},"cooldown_ticks":{"type":"integer","minimum":0},"rarity":{"type":"integer","minimum":1},"recent_use_suppression":{"type":"integer","minimum":0}}},
+    "pack_revision":{"type":"string","minLength":1},"checksum":{"type":"string","pattern":"^[0-9a-f]{64}$"}
+  }
+}

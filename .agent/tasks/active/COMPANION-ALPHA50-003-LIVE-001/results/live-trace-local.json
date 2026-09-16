@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "transport": "authenticated ordinary Unix peer-credential channel",
+  "v2_only": true,
+  "message_id": "85b7fc84-161e-404a-96d2-b4a32cc9f677",
+  "ordinary_response": {"accepted": true, "reason": "accepted", "source": "sensor-gateway"},
+  "event_types": ["observed_embodiment_result", "ordinary_evidence_accepted", "body_neutral_intent"],
+  "bridge_result_observed": true,
+  "restored_identity": "a1fa5200-0000-0000-0000-000000000032",
+  "claim_boundary": "resident production-process causal trace; no product autonomy/care claim"
+}

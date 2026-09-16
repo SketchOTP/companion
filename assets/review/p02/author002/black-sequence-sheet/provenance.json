@@ -1,0 +1,36 @@
+{
+  "status": "FAILED_MOTION_GATE",
+  "method": "built-in imagegen jointly authored sequence sheet then localized lower-limb edit",
+  "date": "2026-09-12",
+  "source_reference_base": "black-motion-studies-2026-09-12-v1/raw",
+  "attempts": [
+    {
+      "file": "walk-left-sheet.png",
+      "sha256": "8d9bf8001e114029d7cd604c63c478309a2b92406480d1c72f2ece700017da1c",
+      "prompt": "Use case: identity-preserve. Create ONE coherent animation sprite sheet: exactly 4 columns by 4 rows, 16 equal square cells, square canvas, solid pure black background throughout. No text, labels, lines, borders, shadows on floor or watermarks. Every cell contains the complete purple creature at identical scale and registered pelvis center and floor height. Leave black gutters within every cell so no neighboring drawings touch. Reference images 1 through 4 are selected surrounding keys for ONE left-facing walk, not four different characters. Preserve their exact rounded purple organic character, curved asymmetric flame head, eye, broad hands with two fingers plus thumb, broad three-toed feet, clean cel shading. Do not simplify to a chibi or change head proportions.\nAuthor a continuous anatomically coherent in-place TWO-STEP left-profile walk. All 16 drawings face precisely screen-left. Read row-major. Near leg is the brighter foreground leg and remains the SAME anatomical leg throughout; far leg is shaded darker and remains behind. The near leg moves back under weight during its support half while the far leg swings forward with clear ground clearance. Then support switches; near leg swings forward while far leg supports. Arms counter-swing with stable fingers and wrist anatomy. Do NOT march with both knees up, do not swap near/far shading at overlap, do not repeat identical poses.\nOrdered drawings:\n0 near heel forward contact / far toe behind;\n1 weight settles into near foot;\n2 near support down / far toe lifts;\n3 far foot traveling forward low;\n4 far foot passes under pelvis lifted, near foot planted under pelvis;\n5 far knee forward, near heel beginning to rise;\n6 far leg extends ahead;\n7 far heel approaches ground;\n8 far heel forward contact / near toe behind;\n9 weight settles into far foot;\n10 far support down / near toe lifts;\n11 near foot swinging forward low;\n12 near foot passes under pelvis lifted, far foot planted;\n13 near knee forward, far heel beginning to rise;\n14 near leg extends ahead;\n15 near heel approaches next contact, smoothly joining frame0.\nSmooth consecutive articulated poses, 16 distinct temporal drawings, small controlled torso weight response, head and hands remain stable, whole character never translates out of its cell. Strict 4x4 equal-cell layout intended for slicing into animation frames. Same reference character in EVERY frame.",
+      "references": [
+        "left_contact_near_armfix.png",
+        "left_passing_repair2.png",
+        "left_contact_far.png",
+        "left_passing_far.png"
+      ],
+      "observation": "Foreground leg stays forward across most cells; opposite stride and consistent support exchange are absent."
+    },
+    {
+      "file": "walk-left-sheet-repair.png",
+      "sha256": "643e995c7c283cbaf3378222ea031854380acff8f045fff90e226a7bf2e2c2f9",
+      "prompt": "Edit this 4x4 animation sheet. Keep the character design, black background, 4x4 cell registration and all upper bodies unchanged. Correct the lower limbs to show a genuine full two-step walk. Currently the same foreground foot stays in front in nearly every cell. This is wrong. Change only legs and feet below the pelvis.\nIn row1 frames0,1,2,3 the bright foreground LEFT leg begins extended toward screen-left and moves BACK toward screen-right as it bears weight. Dark far RIGHT foot lifts behind and swings toward screen-left.\nRow2 frames4,5,6,7: bright foreground LEFT leg moves from under pelvis toward screen-right rear position. Dark far RIGHT leg passes then extends out toward screen-left. Keep near/far overlap consistent.\nRow3 frames8,9,10,11 MUST show THE OPPOSITE STRIDE to row1: bright foreground LEFT thigh slopes down and RIGHT, its large foreground foot is visibly at SCREEN-RIGHT of the pelvis; dark far RIGHT leg extends toward SCREEN-LEFT and bears weight. This is a critical silhouette change. The forward screen-left foot belongs to the DARK FAR leg, not the bright foreground leg. Both feet point screen-left even when trailing. Row3 MUST NOT repeat row1 silhouettes.\nRow4 frames12,13,14,15: dark far leg moves back under support; bright foreground LEFT knee lifts and swings from screen-right to screen-left, passing with clearance then extending toward the next contact. End near row1col1 stride but not identical.\nDo not change body shape, face, head, colors, lighting, hands, scale or cel style. Every foot retains three toes. No added limbs. Exactly16 unique progressive poses. No text or labels. No whole-image warping.",
+      "references": [
+        "walk-left-sheet.png"
+      ],
+      "observation": "Requested second-half opposite stride is not produced. Lower-limb motion remains unsuitable."
+    }
+  ],
+  "claimed_complete_tracks": 0,
+  "remaining_incomplete_tracks": 12,
+  "evidence_level": "E1_OBSERVED",
+  "pixel_edits_by_code": false,
+  "operator_approval": "NOT_REQUESTED",
+  "normalized_frames": "NOT_RUN",
+  "timing_and_contacts": "NOT_RUN"
+}

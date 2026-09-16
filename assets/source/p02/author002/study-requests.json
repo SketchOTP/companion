@@ -1,0 +1,237 @@
+{
+  "directive": "COMPANION-P02-EMBODIMENT-001-R05-AUTHOR-002",
+  "status": "BLOCKED_AT_VISUAL_KEY_GATE",
+  "generator": "approved built-in image_gen reference editing",
+  "source_references": {
+    "identity": "86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56",
+    "turnaround": "3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4"
+  },
+  "provenance_limit": "Prompts and exact returned bytes are retained. Full per-call reference argument lists remain in the task tool history; this manifest is not a complete replay recipe or a deterministic generation claim.",
+  "studies": [
+    {
+      "id": "front",
+      "file": "exec-e186b889-047f-49df-b7a9-f1994d917111.png",
+      "group": "construction",
+      "observation": "Provisional frontal study, not promoted",
+      "prompt": "Use case: identity-preserve. Create ONE neutral FRONT-facing full-body construction sprite of exactly the original purple mon in the two reference images. Image 1 is identity/color/line/shadow authority; image 2 is approved turnaround, specifically its top-left FRONT view is the pose and proportion authority. Reproduce that front view faithfully at high resolution, not the raised-hand hero pose. Head, torso, pelvis and both feet all face directly toward viewer. Both arms hang relaxed at the sides with a slight natural gap. Rounded integrated broad limbs, smooth curving flame-spike silhouette, black eye fields and white pupils, small neutral friendly mouth. Each hand exactly TWO broad rounded fingers plus ONE thumb, each foot exactly THREE integrated rounded toes. Retain original asymmetric sweeping head topology and purple cel shadow shapes. No nose, ears, horns, clothes, accessories, extra digits, tiny bead-like digits, angular polygon joints or extra outlines. Intended 1024x1024 full-canvas sprite: feet on baseline y896, body centered on root (512,896), comfortable transparent margin, all artwork inside x64..960 y32..960. Genuinely transparent background with clean antialiased alpha, no checkerboard painted into image, no green, no glow or colored fringe, no ground shadow, no text. This is a neutral construction master candidate, NOT a sheet or animation. Keep the exact approved visual identity; do not redesign.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_initial",
+      "file": "exec-1e173b45-9a29-4c30-a881-97ea2a14c8f0.png",
+      "group": "construction",
+      "observation": "Rejected: extra finger",
+      "prompt": "Use case identity-preserve. One full-body neutral construction sprite of the EXACT purple mon from reference 1 (approved identity) and reference 2 (approved six-view turnaround). Reference 3 is the new neutral front candidate for consistent proportions, not authority over references 1/2. Keep the approved broad rounded integrated limbs and feet, sweeping CURVED flame head silhouette, purple cel shadows, thin dark contour, black eye fields/white pupils, small mouth. Exactly two broad fingers plus thumb on each complete hand, exactly three integrated toes per foot, naturally occluded parts can be hidden but never add visible digits. Arms relaxed down, legs neutral planted, no gesture, no clothing/nose/ears/horns/accessories. Single sprite centered with generous padding on truly transparent background; no checkerboard graphic, no green, no gray backdrop, no shadow, no text. Intended1024 square source root at512,896. FULL LEFT PROFILE. Body and face point exactly SCREEN LEFT, a 90degree side view, not three quarter. Use the approved turnaround TOP RIGHT labeled LEFT PROFILE as direct silhouette authority. Only near eye seen. Near arm/hand hangs over near thigh; far limbs mostly occluded, both planted feet at same baseline, no doubled silhouettes. The large flame spikes sweep backward toward SCREEN RIGHT. Do NOT reuse a front pose.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "right_initial",
+      "file": "exec-31b39194-5c0f-4c8c-a6f1-2b054e9eff3c.png",
+      "group": "construction",
+      "observation": "Rejected: extra finger",
+      "prompt": "Use case identity-preserve. One full-body neutral construction sprite of the EXACT purple mon from reference 1 (approved identity) and reference 2 (approved six-view turnaround). Reference 3 is the new neutral front candidate for consistent proportions, not authority over references 1/2. Keep the approved broad rounded integrated limbs and feet, sweeping CURVED flame head silhouette, purple cel shadows, thin dark contour, black eye fields/white pupils, small mouth. Exactly two broad fingers plus thumb on each complete hand, exactly three integrated toes per foot, naturally occluded parts can be hidden but never add visible digits. Arms relaxed down, legs neutral planted, no gesture, no clothing/nose/ears/horns/accessories. Single sprite centered with generous padding on truly transparent background; no checkerboard graphic, no green, no gray backdrop, no shadow, no text. Intended1024 square source root at512,896. FULL RIGHT PROFILE. Body and face point exactly SCREEN RIGHT, a 90degree side view, not three quarter. Use approved turnaround BOTTOM LEFT labeled RIGHT PROFILE as direct silhouette authority. Only near eye seen. Near arm/hand hangs over near thigh; far limbs mostly occluded. Flame spikes sweep backward toward SCREEN LEFT. Independently reproduce that approved view; do not flip the left profile or its lighting.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_fix",
+      "file": "exec-4349dd4e-af32-4350-b211-0004e797ce33.png",
+      "group": "construction",
+      "observation": "Targeted digit edit; provisional, not promoted",
+      "prompt": "Precise object edit of the input sprite. Correct ONLY its visible near HAND anatomy: currently there are THREE long finger lobes plus one thumb, which is wrong. There must be exactly TWO broad long finger lobes plus the existing ONE short opposing thumb (three total digits). Merge the middle and rear long finger lobes into one broad integrated finger so ONE of the long-finger separating creases disappears. Keep the two remaining long fingers rounded, not beads; thumb remains distinct. Preserve wrist, arm position, every other body part, all three foot toes, exact full profile facing, head silhouette, face, palette, shadows, framing and scale. No new pose, no turn, no redesign. Background genuinely transparent, not a drawn checkerboard. No additional fingers and no gloves.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "right_fix",
+      "file": "exec-188bc285-c713-41fc-a9d9-43c5d930bdd1.png",
+      "group": "construction",
+      "observation": "Targeted digit edit; independent right, not mirrored; not promoted",
+      "prompt": "Precise object edit of the input sprite. Correct ONLY its visible near HAND anatomy: currently there are THREE long finger lobes plus one thumb, which is wrong. There must be exactly TWO broad long finger lobes plus the existing ONE short opposing thumb (three total digits). Merge the middle and rear long finger lobes into one broad integrated finger so ONE of the long-finger separating creases disappears. Keep the two remaining long fingers rounded, not beads; thumb remains distinct. Preserve wrist, arm position, every other body part, all three foot toes, exact full profile facing, head silhouette, face, palette, shadows, framing and scale. No new pose, no turn, no redesign. Background genuinely transparent, not a drawn checkerboard. No additional fingers and no gloves.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "back",
+      "file": "exec-cfae944a-5114-492f-90ea-77c547c3ca72.png",
+      "group": "construction",
+      "observation": "Provisional rear study, not promoted",
+      "prompt": "Use case identity-preserve. One full-body neutral construction sprite of the EXACT purple mon from reference 1 (approved identity) and reference 2 (approved six-view turnaround). Reference 3 is the new neutral front candidate for consistent proportions, not authority over references 1/2. Keep the approved broad rounded integrated limbs and feet, sweeping CURVED flame head silhouette, purple cel shadows, thin dark contour, black eye fields/white pupils, small mouth. Exactly two broad fingers plus thumb on each complete hand, exactly three integrated toes per foot, naturally occluded parts can be hidden but never add visible digits. Arms relaxed down, legs neutral planted, no gesture, no clothing/nose/ears/horns/accessories. Single sprite centered with generous padding on truly transparent background; no checkerboard graphic, no green, no gray backdrop, no shadow, no text. Intended1024 square source root at512,896. STRAIGHT BACK VIEW. Head torso pelvis all face fully away from viewer; NO visible eyes/pupils/mouth. Use TOP MIDDLE BACK view on approved turnaround as exact silhouette authority. Show backs of both relaxed hands, heels not front toe splits. Keep the same flame-topology orientation as that approved back view, no extra spikes. Neutral weight evenly supported on both feet.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "front_left",
+      "file": "exec-744fe462-a11e-40d8-94c0-f8b5510a2dc4.png",
+      "group": "construction",
+      "observation": "Provisional quarter study, not promoted",
+      "prompt": "Use case identity-preserve. One full-body neutral construction sprite of the EXACT purple mon from reference 1 (approved identity) and reference 2 (approved six-view turnaround). Reference 3 is the new neutral front candidate for consistent proportions, not authority over references 1/2. Keep the approved broad rounded integrated limbs and feet, sweeping CURVED flame head silhouette, purple cel shadows, thin dark contour, black eye fields/white pupils, small mouth. Exactly two broad fingers plus thumb on each complete hand, exactly three integrated toes per foot, naturally occluded parts can be hidden but never add visible digits. Arms relaxed down, legs neutral planted, no gesture, no clothing/nose/ears/horns/accessories. Single sprite centered with generous padding on truly transparent background; no checkerboard graphic, no green, no gray backdrop, no shadow, no text. Intended1024 square source root at512,896. NEUTRAL FRONT-LEFT three-quarter view: face and whole body rotated 45 degrees toward SCREEN LEFT, both eyes visible with far eye narrower on screen-left. Torso pelvis BOTH feet rotate with head, do not leave torso frontal. Both arms hang at sides, no raised hand. Match the identity hero's facing but replace its pose with neutral standing. Only TWO elongated rounded finger lobes and ONE small opposing thumb per hand; total THREE digits, NOT three fingers plus thumb.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "front_right",
+      "file": "exec-0f9e8e1e-505e-43f8-ac3b-79ba6b874090.png",
+      "group": "construction",
+      "observation": "Far hand needs further review; not promoted",
+      "prompt": "Use case identity-preserve. One full-body neutral construction sprite of the EXACT purple mon from reference 1 (approved identity) and reference 2 (approved six-view turnaround). Reference 3 is the new neutral front candidate for consistent proportions, not authority over references 1/2. Keep the approved broad rounded integrated limbs and feet, sweeping CURVED flame head silhouette, purple cel shadows, thin dark contour, black eye fields/white pupils, small mouth. Exactly two broad fingers plus thumb on each complete hand, exactly three integrated toes per foot, naturally occluded parts can be hidden but never add visible digits. Arms relaxed down, legs neutral planted, no gesture, no clothing/nose/ears/horns/accessories. Single sprite centered with generous padding on truly transparent background; no checkerboard graphic, no green, no gray backdrop, no shadow, no text. Intended1024 square source root at512,896. NEUTRAL FRONT-RIGHT three-quarter view: face and whole body rotated 45 degrees toward SCREEN RIGHT. Both eyes visible with the far eye narrower on screen-right. Torso pelvis both feet turn with head. Independently redraw correct opposite perspective and lighting rather than horizontal flipping. Both arms down neutral. Exactly TWO elongated finger lobes plus ONE opposing small thumb per hand, total THREE digits. Feet three toes each. No raised hero hand.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "back_left",
+      "file": "exec-789f8f10-8122-4610-b639-3f904584e9df.png",
+      "group": "construction",
+      "observation": "Far hand needs further review; not promoted",
+      "prompt": "Use case identity-preserve. One full-body neutral construction sprite of the EXACT purple mon from reference 1 (approved identity) and reference 2 (approved six-view turnaround). Reference 3 is the new neutral front candidate for consistent proportions, not authority over references 1/2. Keep the approved broad rounded integrated limbs and feet, sweeping CURVED flame head silhouette, purple cel shadows, thin dark contour, black eye fields/white pupils, small mouth. Exactly two broad fingers plus thumb on each complete hand, exactly three integrated toes per foot, naturally occluded parts can be hidden but never add visible digits. Arms relaxed down, legs neutral planted, no gesture, no clothing/nose/ears/horns/accessories. Single sprite centered with generous padding on truly transparent background; no checkerboard graphic, no green, no gray backdrop, no shadow, no text. Intended1024 square source root at512,896. BACK-LEFT neutral three-quarter view: the character is facing AWAY and toward SCREEN LEFT. Camera sees the back of the head and back of torso, near leftward profile cheek silhouette at far left, NO pupils or eye fields visible. Full body turns together 135degrees from front. Two feet planted, far foot partially occluded, backs of relaxed hands visible. Exactly two broad finger lobes plus ONE thumb each. This is between approved BACK and LEFT PROFILE views, not a front-left view. Preserve broad smooth flame shape; no spiky triangular crown.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "back_right",
+      "file": "exec-5daf5925-e02f-4b8d-9cd2-5ca4adcd3c40.png",
+      "group": "construction",
+      "observation": "Provisional quarter study, not promoted",
+      "prompt": "Use case identity-preserve. One full-body neutral construction sprite of the EXACT purple mon from reference 1 (approved identity) and reference 2 (approved six-view turnaround). Reference 3 is the new neutral front candidate for consistent proportions, not authority over references 1/2. Keep the approved broad rounded integrated limbs and feet, sweeping CURVED flame head silhouette, purple cel shadows, thin dark contour, black eye fields/white pupils, small mouth. Exactly two broad fingers plus thumb on each complete hand, exactly three integrated toes per foot, naturally occluded parts can be hidden but never add visible digits. Arms relaxed down, legs neutral planted, no gesture, no clothing/nose/ears/horns/accessories. Single sprite centered with generous padding on truly transparent background; no checkerboard graphic, no green, no gray backdrop, no shadow, no text. Intended1024 square source root at512,896. BACK-RIGHT neutral three-quarter view: the character is facing AWAY and toward SCREEN RIGHT. Camera sees back of head and torso, near rightward profile cheek silhouette at far right, NO pupils or eye fields visible. Full body turned135degrees from front. Two feet planted, far foot partly occluded, backs of relaxed hands visible. Exactly two broad finger lobes plus ONE thumb each. Construct between approved BACK and RIGHT PROFILE views, NOT a mirror or front-right view. Keep original sweeping smooth flame contour.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_contact_near",
+      "file": "exec-0bf2b58d-6484-43ef-a873-b4b3bf1e1c1a.png",
+      "group": "gait",
+      "observation": "Rejected: near arm advances with near leg",
+      "prompt": "Use case identity-preserve. Full-canvas SINGLE full-body WALK KEY DRAWING of the exact approved mon in the reference. Same LEFT FULL PROFILE facing SCREEN LEFT, same head shape, size, eye, body proportions and drawing language. This is an authored key, NOT a sprite sheet, not a gesture, not a turn. Show TWO distinct legs and feet, TWO arms and hands in a normal moderately spaced walking contact pose. NEAR anatomical LEFT leg extends FORWARD toward screen LEFT, heel contacting the ground. FAR anatomical RIGHT leg extends BACKWARD toward screen RIGHT, heel raised and toe touching the ground. The near thigh/foot has the same brighter base purple as the visible near side of the neutral reference. The far rear leg is behind it in the slightly darker existing purple shadow role. NEAR arm swings backward to screen RIGHT; FAR arm swings forward toward screen LEFT. Keep pelvis centrally registered, head upright, no bounce yet. Each foot exactly THREE soft integrated toes, hands exactly TWO broad fingers plus one small thumb. Hand anatomy unchanged through rotation; no extra fingers. Ground line invisible. Keep all pixels within generous source margins; 1024 square intended root (512,896), complete body visible. Transparent background, no checkerboard graphic, no text, no arrows, no green or colored edging. Keep legs broad and rounded like reference, not elongated thin human legs. The key must visibly identify which anatomical leg is in front using correct occlusion, not just a darker duplicate foot.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_contact_far",
+      "file": "exec-95863396-3477-43fe-8310-c800cf12ad2e.png",
+      "group": "gait",
+      "observation": "Opposite leading leg observed; not a qualified key set",
+      "prompt": "Use case identity-preserve. Full-canvas SINGLE full-body WALK KEY DRAWING of the exact approved mon in the reference. Same LEFT FULL PROFILE facing SCREEN LEFT, same head shape, size, eye, body proportions and drawing language. This is an authored key, NOT a sprite sheet, not a gesture, not a turn. Show TWO distinct legs and feet, TWO arms and hands in a normal moderately spaced walking contact pose. FAR anatomical RIGHT leg extends FORWARD toward screen LEFT, heel contacting the ground. NEAR anatomical LEFT leg extends BACKWARD toward screen RIGHT, heel raised and toe touching ground. This is the OPPOSITE contact pose from near-leg-forward. The near thigh and rear foot on SCREEN RIGHT use the bright base purple and occlude the far leg at the pelvis. The far front foot on SCREEN LEFT uses the existing darker purple shadow role. NEAR arm swings forward toward SCREEN LEFT; FAR arm swings backward toward screen RIGHT. Keep pelvis centrally registered, head upright, no bounce yet. Each foot exactly THREE soft integrated toes, hands exactly TWO broad fingers plus one small thumb. Hand anatomy unchanged through rotation; no extra fingers. Ground line invisible. Keep all pixels within generous source margins; 1024 square intended root (512,896), complete body visible. Transparent background, no checkerboard graphic, no text, no arrows, no green or colored edging. Keep legs broad and rounded like reference, not elongated thin human legs. The key must visibly identify which anatomical leg is in front using correct occlusion, not just a darker duplicate foot.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_contact_near_armfix",
+      "file": "exec-f21fc1fb-c3f0-4e2d-a299-075cb54fc4ec.png",
+      "group": "gait",
+      "observation": "Counter-swing improved; hand shape continuity unresolved",
+      "prompt": "Precise pose edit. Keep this exact LEFT-profile character and both leg/foot positions absolutely unchanged. Fix ONLY the arm swing and shoulder occlusion to produce a proper CONTRALATERAL walk: the BRIGHT NEAR ARM attached to the visible near shoulder must extend BACKWARD toward SCREEN RIGHT, passing IN FRONT OF the torso as the closest limb. Its hand belongs on SCREEN RIGHT. The DARKER FAR ARM must extend FORWARD toward SCREEN LEFT, and its upper arm must pass BEHIND the torso rather than over its front. Its hand belongs on SCREEN LEFT. Front foot on screen-left is the NEAR leg, so the NEAR arm must be backward, NOT forward. Change the actual visible arm geometry and occlusion, not just the colors. Every hand exactly two fingers plus one thumb, broad rounded, unchanged totalsize. Preserve the full-profile facing, exact flame head, face, torso, pelvis, foot anatomy, all leg geometry, framing, baseline and purple cel style. No text, no scene, truly transparent background.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_passing_near",
+      "file": "exec-fc732319-ab9e-4351-8395-38bfe6a1d9b3.png",
+      "group": "gait",
+      "observation": "Rejected: knee behind body, downward hand-like swing foot",
+      "prompt": "Use case identity-preserve. Author ONE exact LEFT PROFILE walk key sprite using images1/2 as the two adjacent CONTACT endpoints of the same walk cycle, not alternate character designs. Preserve precisely their head silhouette, eye, body proportions, broad integrated legs, stable hands with TWO fingers plus ONE thumb, three toes per foot, purple cel palette and source registration. NO text or annotations. Whole body remains90degree profile looking SCREEN LEFT. Two legs, two arms only. Anatomical LEFT leg is the NEAR bright leg; anatomical RIGHT is the FAR darker leg. The near limb occludes the far limb wherever they cross. An authored KEY pose, not a sheet, not a facing turn. Fully visible complete body with padding, transparent background not green/checkerboard graphic. Passing pose halfway FROM image1 TO image2. NEAR LEFT leg is the sole straight SUPPORT LEG under pelvis, its entire flat foot rests on floor near center, pointing left. FAR RIGHT knee passes FORWARD toward screen-left, bending; FAR RIGHT foot is clearly lifted 50pixels ABOVE the floor and tucked BACK toward screen-right behind the support calf. Far bent leg is behind and partially occluded by bright support leg; do NOT lift near leg. Both arms are near their low mid-swing positions beside torso, near hand still in foreground. This must look like a foot passing a planted leg, not two grounded feet.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_up_near",
+      "file": "exec-a5a38c1d-838a-4b78-9358-ef09c864b4bc.png",
+      "group": "gait",
+      "observation": "Clear lifted foot but kick-like spacing; not promoted",
+      "prompt": "Use case identity-preserve. Author ONE exact LEFT PROFILE walk key sprite using images1/2 as the two adjacent CONTACT endpoints of the same walk cycle, not alternate character designs. Preserve precisely their head silhouette, eye, body proportions, broad integrated legs, stable hands with TWO fingers plus ONE thumb, three toes per foot, purple cel palette and source registration. NO text or annotations. Whole body remains90degree profile looking SCREEN LEFT. Two legs, two arms only. Anatomical LEFT leg is the NEAR bright leg; anatomical RIGHT is the FAR darker leg. The near limb occludes the far limb wherever they cross. An authored KEY pose, not a sheet, not a facing turn. Fully visible complete body with padding, transparent background not green/checkerboard graphic. UP pose just BEFORE image2: NEAR LEFT support leg now extends BACKWARD toward screen-right with heel lifted and toes contacting ground. FAR RIGHT thigh and knee travel FORWARD toward screen-left; FAR foot is lifted and reaching forward toward the next heel strike, still visibly above floor. Body rises slightly in weight response; head staysprofileleft. NEAR arm has swung FORWARD toward screen-left, FAR arm BACK toward screen-right. Near leg remains closest at crossing. This is the last key before FAR RIGHT heel contacts as shown in image2.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_down_near",
+      "file": "exec-71db525e-b1f7-4667-9d25-8f0de0196ee5.png",
+      "group": "gait",
+      "observation": "Rejected: counter-swing reverted to same-side arm and leg",
+      "prompt": "Use case identity-preserve. Author ONE exact LEFT PROFILE walk key sprite using images1/2 as the two adjacent CONTACT endpoints of the same walk cycle, not alternate character designs. Preserve precisely their head silhouette, eye, body proportions, broad integrated legs, stable hands with TWO fingers plus ONE thumb, three toes per foot, purple cel palette and source registration. NO text or annotations. Whole body remains90degree profile looking SCREEN LEFT. Two legs, two arms only. Anatomical LEFT leg is the NEAR bright leg; anatomical RIGHT is the FAR darker leg. The near limb occludes the far limb wherever they cross. An authored KEY pose, not a sheet, not a facing turn. Fully visible complete body with padding, transparent background not green/checkerboard graphic. Pose immediately AFTER image1 and BEFORE the passing pose: NEAR LEFT foot now flat on ground toward screen-left, load bearing; NEAR knee bends to absorb weight, pelvis/head lowers slightly without changing headshape. FAR RIGHT heel leaves ground behind on screen-right, its toes are just lifting. Near arm remains behind torso to right but moving toward center; far arm in front to left moving toward center. Head motion only small weight response, no turning. Preserve near-front/far-rear identity from image1.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_passing_repair",
+      "file": "exec-9c46add8-fe5e-4f6f-8b71-c9be57e694a9.png",
+      "group": "gait",
+      "observation": "Foot improved but knee remains behind body",
+      "prompt": "Edit this exact purple creature key pose, preserving its head, face, proportions, palette and profile facing screen LEFT. This is a walk PASSING pose correction, not a new design. Keep the visible near support leg and its broad planted three-toed foot unchanged. Replace ONLY the far lifted leg/foot and arm pose: the far thigh comes forward toward screen LEFT, knee bends gently forward, its lower leg folds backward under the pelvis, and a recognizable broad FLAT foot hangs parallel to the floor 60 pixels above the floor; all three toes point screen LEFT. This foot must look like the same broad foot on the supporting leg, NOT dangling fingers or a hand and NOT toes pointed downward. The far foot is passing directly beside/behind the support ankle, no backward kicking. Both arms pass near the body's sides with relaxed hands, exactly TWO fingers plus ONE thumb, no extra digits. Do not swing the near arm out in front. One full-body orthographic profile drawing, unchanged canvas composition, no motion arcs, no labels, no checkerboard painted into the image; real transparent alpha background. Maintain organic rounded silhouette, clean dark outline, purple cel shading. No stretching or warping the head. Preserve identity; correct these local anatomy and phase issues only.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_passing_repair2",
+      "file": "exec-49f685e2-0470-4a21-bb05-9114d60db24a.png",
+      "group": "gait",
+      "observation": "Foot moved forward; far leg heavily occluded; not qualified as consistent gait",
+      "prompt": "Make a surgical lower-body correction to this sprite. Preserve the purple character's exact head, torso, supporting leg, planted foot, arms, style and full LEFT profile. The raised far leg currently bends the WRONG direction behind the body. Replace that far leg with a forward-facing humanlike walk passing phase: the raised KNEE must project to SCREEN LEFT of the planted shin, never to the right. The raised ankle trails to the right of that knee, and its broad three-toed foot points screen LEFT, level with floor, lifted about 60 pixels. Occlusion is essential: hide the middle portion of the far leg behind the near supporting shin as it passes; show the knee to the left and heel/toes just beside the support ankle. Do not leave a huge floating foot behind the pelvis. No extra limb, no extra toes, no fingers for a foot. Maintain two legs total, no arrows/labels/motion marks. Change only the incorrect far leg. Real transparent background.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "right_contact_near",
+      "file": "exec-c3d2d9e3-ec47-47a3-8ba2-9bb3f9970f01.png",
+      "group": "gait",
+      "observation": "Independent right contact; counter-swing observed; not promoted",
+      "prompt": "Create one authored walk CONTACT key using this exact neutral full RIGHT profile creature. Preserve the same head, face, curved spikes, rounded torso, limb thickness, two fingers plus one thumb on each hand, three toes per foot, flat purple cel-shading and eye. Body faces screen RIGHT exactly, not quarter view. In this first contact, anatomical RIGHT (near, bright) leg reaches FORWARD screen RIGHT, heel on ground, toes slightly lifted. Anatomical LEFT (far, darker) leg trails screen LEFT with toe on ground and heel lifted. Legs must be clearly separated and both visible as two broad organic legs. Near RIGHT arm must swing BACK screen LEFT, OPPOSITE its forward leg; far LEFT arm swings forward screen RIGHT. Keep relaxed same-size complete hands and no added digits. Pelvis stays over midpoint of ground contacts. No static standing pose, no running leap, no same-side arm/leg swing, no head rotation, no annotations. Full body with margin. Background true transparent alpha, not checkerboard or chroma color. This is an independently posed rightward key, not a mirrored leftward image.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_passing_far",
+      "file": "exec-6412ba59-795e-4188-afb7-97c9e56bff4c.png",
+      "group": "gait",
+      "observation": "Opposite support and occlusion observed, but exaggerated high knee and inconsistent limb shape",
+      "prompt": "Create the OPPOSITE passing key of this same walk cycle, keeping head/face/silhouette/style identical and facing SCREEN LEFT exactly. Current near bright leg is planted; EXCHANGE which leg supports weight. In the new drawing the FAR DARKER leg is straight beneath the body, planted broad foot points screen LEFT at ground. The NEAR BRIGHT leg swings forward, knee screen LEFT, its bent lower leg and recognizable horizontal three-toed foot lifted beside the support ankle. The NEAR swing leg visibly OCCLUDES the FAR planted leg at the crossover, never vice versa. Near knee is slightly ahead screen LEFT of the support shin; heel lifted; exactly two complete legs with attachment to pelvis. Preserve foot dimensions and three toes, no finger-like foot. Preserve the two-finger-plus-one-thumb hand anatomy. Arms are passing low by the sides but the near arm is just behind the torso this time. Preserve body scale and source placement. Make an unmistakable support-leg exchange, not merely moving/recoloring the same lifted far foot. True transparent alpha background. No labels.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_down_armfix",
+      "file": "exec-c76e819f-2500-4514-b476-7e1fd5fc3f64.png",
+      "group": "gait",
+      "observation": "Counter-swing restored locally, not stable across generated keys",
+      "prompt": "Surgical edit of this exact LEFT profile walk DOWN key. Keep head, torso, two legs, feet, ground placement and purple style completely unchanged. ONLY correct ARM counter-swing: the near bright leg reaches forward screen LEFT, therefore the near bright arm must be behind body screen RIGHT, and the far dark arm reaches screen LEFT. The visible arm attached to near shoulder must swing rightward/back, not leftward/front. Hands retain exactly two fingers plus one thumb with same organic shape. Do not exchange the legs. Preserve the slight support-knee bend and rear toe contact. Transparent alpha background, no labels.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_down_far",
+      "file": "exec-77a6db42-5bc3-4716-9a21-a8e5f9010380.png",
+      "group": "gait",
+      "observation": "Down pose candidate; hand/foot shape continuity remains unqualified",
+      "prompt": "Author the DOWN phase immediately after this far-leg-leading contact key. Preserve full LEFT profile head, body proportions and stable three-toed feet/two-finger-plus-thumb hands. Far dark leg leads screen LEFT and now bends slightly at knee to absorb body weight, broad far foot flat planted. Near bright leg remains trailing screen RIGHT with heel lifting and toe last on ground. Near bright arm stays forward screen LEFT, opposing the backward near leg; far arm stays behind screen RIGHT. Lower torso/head slightly from contact for believable weight absorption, not a squat. Do not swap leg ownership, no new digit or limb. Same full-body registration and transparent background. One key drawing.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "left_up_far",
+      "file": "exec-4df27118-b8c3-4013-bdaa-39db57739750.png",
+      "group": "gait",
+      "observation": "Forward foot clearance observed; not coherent gait spacing",
+      "prompt": "Author the UP key after this opposite passing key, keeping exact left-facing creature identity. FAR dark support leg now trails screen RIGHT behind pelvis, heel lifted with toe still on floor. NEAR bright swing leg extends ahead screen LEFT, knee slightly bent, whole foot clear of floor and toes level pointing left, approaching next contact. Near bright arm swings BACK screen RIGHT, far arm forward screen LEFT. Keep anatomically connected broad feet with exactly three toes each and hands two fingers plus thumb. Bounded torso/head rise, not jump or kick. Full LEFT orthographic profile, same size/registration, no labels or motion lines, true transparent background. This pose must connect back to near bright leg forward contact.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "right_contact_far",
+      "file": "exec-9057a3ee-02c3-4cc2-94a0-a4a5b2622cfc.png",
+      "group": "gait",
+      "observation": "Opposite right-travel contact; not promoted",
+      "prompt": "Author the OPPOSITE contact key to this full RIGHT profile walk image. Exactly same character and head identity/scale. Reverse gait phase by articulating limbs, not mirroring picture. FAR darker anatomical LEFT leg is now forward screen RIGHT with heel contacting floor; NEAR bright anatomical RIGHT leg trails screen LEFT with heel raised/toe contact. Near bright arm swings FORWARD screen RIGHT, far darker arm BACK screen LEFT. Two legs both visibly connected; near limbs occlude far at crossing. Exact same broad three-toed feet and two-finger-plus-thumb hands, no mitten shape changes. Smooth flat cel shading, no background, full-body margin. Do not keep near leg forward. One static gait KEY, not sheet.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    },
+    {
+      "id": "right_passing_near",
+      "file": "exec-7e4aa74a-619b-46c2-beb8-007608f01830.png",
+      "group": "gait",
+      "observation": "Rejected: same backward-knee and hand-like swing-foot defect recurs independently on right",
+      "prompt": "Author the PASSING phase following this RIGHT profile near-leg-leading contact. Same head/identity/proportions and full RIGHT facing. Near bright anatomical RIGHT leg is the planted support leg, vertical under pelvis, broad foot flat on ground pointing screen RIGHT. Far darker LEFT thigh swings FORWARD screen RIGHT, knee slightly in front of support shin; lower leg folds backward and broad three-toed foot lifted about60pixels, level with floor, passing behind the near support ankle. Far middle leg is occluded by near shin. Arms pass low by sides; no forward reaching, no hands replacing feet, no extra digits. Body root stays source center. One key with actual swing-foot clearance, relaxed normal walking not marching high knee. Transparent alpha background.",
+      "promotion": "NOT_PROMOTED",
+      "assessment_source": "MODEL_VISUAL_INSPECTION_NOT_OPERATOR_APPROVAL"
+    }
+  ]
+}

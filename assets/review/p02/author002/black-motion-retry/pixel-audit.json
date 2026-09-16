@@ -1,0 +1,71 @@
+{
+  "anatomy_and_contact_qualification": "NOT_RUN",
+  "evidence_ceiling": "E2_REPRODUCED_PIXEL_SCAN_ONLY",
+  "nondecreasing_width": false,
+  "observations": [
+    {
+      "file": "front.png",
+      "left": 491,
+      "right": 758,
+      "scan_y": 880,
+      "sha256": "fa788e5f08dd3ae6b607cb127b3fd1437d5eb08b184e1024d5e0e861f236c316",
+      "threshold_channel_max_gt": 32,
+      "width": 268
+    },
+    {
+      "file": "inhale_1.png",
+      "left": 490,
+      "right": 765,
+      "scan_y": 880,
+      "sha256": "b4f7b76d9f6baf020a2c2340eae949b9a7fd5252492b23ae38edd889b5d9d89e",
+      "threshold_channel_max_gt": 32,
+      "width": 276
+    },
+    {
+      "file": "inhale_2.png",
+      "left": 489,
+      "right": 765,
+      "scan_y": 880,
+      "sha256": "c845e9085e27ac3d185a1ee3d78aced434b4bcd85a3b36836cec3de5c77085b7",
+      "threshold_channel_max_gt": 32,
+      "width": 277
+    },
+    {
+      "file": "inhale_3.png",
+      "left": 489,
+      "right": 765,
+      "scan_y": 880,
+      "sha256": "58dae9f414fe9b14760ded2fa61ae2463cafeb4f42795344bb1ed10ac206b47c",
+      "threshold_channel_max_gt": 32,
+      "width": 277
+    },
+    {
+      "file": "inhale_4.png",
+      "left": 491,
+      "right": 763,
+      "scan_y": 880,
+      "sha256": "b885359998e88064bb99a0712ca2a047731a5b60985444e69e7e98dae232fee2",
+      "threshold_channel_max_gt": 32,
+      "width": 273
+    },
+    {
+      "file": "breathe_peak.png",
+      "left": 489,
+      "right": 765,
+      "scan_y": 880,
+      "sha256": "9a1ae10d426fbcc0020526619f3729eb36db1f1ea39da94dc3901ab74a8d26c1",
+      "threshold_channel_max_gt": 32,
+      "width": 277
+    }
+  ],
+  "property": "requested_inhale_torso_width_progression",
+  "requested_progress_fractions": [
+    0,
+    0.16666666666666666,
+    0.3333333333333333,
+    0.5,
+    0.6666666666666666,
+    1
+  ],
+  "status": "FAILED"
+}

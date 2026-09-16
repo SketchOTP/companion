@@ -1,0 +1,25 @@
+{
+  "status": "PASSED",
+  "requested_seconds": 5.0,
+  "observed_seconds": 5.000067949295044,
+  "godot_process": "not started in headless probe",
+  "foundation_process": "not started in smoke",
+  "frame_time_ms": {
+    "p50": 16.67,
+    "p95": 16.67,
+    "p99": 16.67,
+    "max": 16.67
+  },
+  "pack_load_ms": {
+    "p50": 0,
+    "p95": 0,
+    "p99": 0,
+    "max": 0
+  },
+  "resource_growth": "bounded synthetic smoke only",
+  "network_socket_census": "not observed in this process",
+  "checkout_write": false,
+  "sshfs_write": false,
+  "evidence_ceiling": "E1_OBSERVED",
+  "two_hour_gate": "NOT_RUN"
+}

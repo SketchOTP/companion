@@ -1,0 +1,18 @@
+{
+  "status": "PASSED",
+  "cases": 10000,
+  "seeds": [
+    17,
+    23,
+    41
+  ],
+  "families": 32,
+  "illegal_transitions": 0,
+  "invalid_resource_references": 0,
+  "root_drift_px": 0,
+  "pack_switch_stalls_over_100ms": 0,
+  "bridge_disconnects_unrecovered": 0,
+  "digest": "656de2a5ed86a2f9c1fb43f0b7fc125e74ae8aff9bc05053b6701e0bff75a35f",
+  "evidence_ceiling": "E3_TARGET_TESTED",
+  "capability": "visual presentation only"
+}

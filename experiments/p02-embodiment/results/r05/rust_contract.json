@@ -1,0 +1,8 @@
+{
+  "actual_pack_returncode": 0,
+  "message": "authored_pack_rust_round_trip_ok pack_id=05a17a00-0000-4000-8000-000000000001 tracks=8",
+  "missing_pack_path_rejected": true,
+  "missing_pack_path_returncode": 1,
+  "status": "PASSED",
+  "track_count": 8
+}

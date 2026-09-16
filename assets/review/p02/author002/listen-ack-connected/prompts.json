@@ -1,0 +1,193 @@
+{
+  "profile": "LISTEN_ACK_DRAWING_STUDIES_V1",
+  "new_outputs": [
+    {
+      "id": "attention_01",
+      "file": "attention_01.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE full-body sprite animation drawing, NOT a sheet. Preserve this exact purple mon and the supplied 1254-square full-canvas placement on a SOLID BLACK background. Front-facing torso and head, never quarter view. Exactly two integrated fingers plus one thumb per hand and three toes per foot. No new gesture, no raised hand, no extra digits, no glow, no text, no props, no arcs. Feet, pelvis, legs, hands, arms and background must stay unchanged at the exact positions from image 1. Keep the same sweeping flame spikes, rounded limbs, purple cel shading, black eye fields and white pupils. Use image 1 and image 2 as the two actual adjacent bounding animation poses; this output is the specified intermediate, not a fresh redesign. Only head/eye/chest adjustments needed to connect the endpoints. Do not shift, crop, rescale or recolor the entire character. Image 1 is front rest, image 2 is the selected listening hold. Produce the first attention in-between, exactly about ONE THIRD of the transition: eye pupils engage slightly upward, chin and upper chest have only just begun the small lift into attentive listening. Head should change by only a few pixels, no head tilt to either side. This is an understated early pose before the second image, NOT the full hold.",
+      "reference_files": [
+        "front.png",
+        "listen_hold.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "attention_02",
+      "file": "attention_02.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE full-body sprite animation drawing, NOT a sheet. Preserve this exact purple mon and the supplied 1254-square full-canvas placement on a SOLID BLACK background. Front-facing torso and head, never quarter view. Exactly two integrated fingers plus one thumb per hand and three toes per foot. No new gesture, no raised hand, no extra digits, no glow, no text, no props, no arcs. Feet, pelvis, legs, hands, arms and background must stay unchanged at the exact positions from image 1. Keep the same sweeping flame spikes, rounded limbs, purple cel shading, black eye fields and white pupils. Use image 1 and image 2 as the two actual adjacent bounding animation poses; this output is the specified intermediate, not a fresh redesign. Only head/eye/chest adjustments needed to connect the endpoints. Do not shift, crop, rescale or recolor the entire character. The TWO-THIRDS pose between image 1 front rest and image 2 listening hold. The eyes gently widen toward the full rounded white pupils of image 2. The upper torso straightens slightly; head remains level, both shoulders relaxed. Keep feet and hanging hands exact. Not a nod yet.",
+      "reference_files": [
+        "front.png",
+        "listen_hold.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "nod_01",
+      "file": "nod_01.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE full-body sprite animation drawing, NOT a sheet. Preserve this exact purple mon and the supplied 1254-square full-canvas placement on a SOLID BLACK background. Front-facing torso and head, never quarter view. Exactly two integrated fingers plus one thumb per hand and three toes per foot. No new gesture, no raised hand, no extra digits, no glow, no text, no props, no arcs. Feet, pelvis, legs, hands, arms and background must stay unchanged at the exact positions from image 1. Keep the same sweeping flame spikes, rounded limbs, purple cel shading, black eye fields and white pupils. Use image 1 and image 2 as the two actual adjacent bounding animation poses; this output is the specified intermediate, not a fresh redesign. Only head/eye/chest adjustments needed to connect the endpoints. Do not shift, crop, rescale or recolor the entire character. The 20 PERCENT downward-nod intermediate between image 1 listening hold and image 2 low acknowledgment. A slow gentle YES nod just starting. White pupils should retain 85 percent of image 1 visible height, eyelids lowered only slightly. Mouth and chin start to lower a few pixels, chest begins a tiny compression. Head pitch only, no sideways rotation.",
+      "reference_files": [
+        "listen_hold.png",
+        "acknowledge_down.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "nod_02",
+      "file": "nod_02.png",
+      "prompt": "Use case: identity-preserve. Asset: ONE full-body sprite animation drawing, NOT a sheet. Preserve this exact purple mon and the supplied 1254-square full-canvas placement on a SOLID BLACK background. Front-facing torso and head, never quarter view. Exactly two integrated fingers plus one thumb per hand and three toes per foot. No new gesture, no raised hand, no extra digits, no glow, no text, no props, no arcs. Feet, pelvis, legs, hands, arms and background must stay unchanged at the exact positions from image 1. Keep the same sweeping flame spikes, rounded limbs, purple cel shading, black eye fields and white pupils. Use image 1 and image 2 as the two actual adjacent bounding animation poses; this output is the specified intermediate, not a fresh redesign. Only head/eye/chest adjustments needed to connect the endpoints. Do not shift, crop, rescale or recolor the entire character. The 40 PERCENT downward-nod intermediate between image 1 listening hold and image 2 low acknowledgment. White pupils retain about 75 percent of image 1 visible height, between the two references. Mouth and chin lower halfway toward the second reference; small upper-torso compression. No lateral head shake or arm gesture.",
+      "reference_files": [
+        "listen_hold.png",
+        "acknowledge_down.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "nod_entry",
+      "file": "nod_entry.png",
+      "prompt": "Use case: precise-object-edit. One animation drawing, same full canvas, solid black background. Reference is the exact edit target. Very small local edit to the eye region ONLY. The mon begins a gentle front-facing acknowledgement nod. Lower both upper eyelid edges just a little, covering the top FIFTEEN PERCENT of each existing white pupil. The lower edge of both eyes, mouth, all head spikes, body, hands and feet stay where they are. Keep eyes mostly open. Do not move/resize the whole head. Preserve exact purple palette, cel shading, original rounded anatomy and symmetrical front facing. No hand gesture, text, arcs, clothing, extra body parts, or global translation. Output one full-canvas PNG, not a sheet.",
+      "reference_files": [
+        "listen_hold.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "nod_late",
+      "file": "nod_late.png",
+      "prompt": "Use case: precise-object-edit. One animation drawing, same full canvas, solid black background. Reference is the exact edit target. Local edit to eye region and mouth ONLY. A front-facing gentle downward acknowledgment three-quarter pose. Lower both upper eyelid edges, covering the top FORTY PERCENT of the existing white pupils. Lower eye edges remain unchanged. Mouth sits just 7 pixels lower. Pupils still prominently visible. Keep head spikes, hanging hands and planted feet unchanged. Preserve exact purple palette, cel shading, original rounded anatomy and symmetrical front facing. No hand gesture, text, arcs, clothing, extra body parts, or global translation. Output one full-canvas PNG, not a sheet.",
+      "reference_files": [
+        "listen_hold.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "nod_middle",
+      "file": "nod_middle.png",
+      "prompt": "Use case: precise-object-edit. One animation drawing, same full canvas, solid black background. Reference is the exact edit target. Local edit to eye region and mouth ONLY. A front-facing gentle downward acknowledgment halfway pose. Lower both upper eyelid edges modestly, covering the top THIRTY PERCENT of the existing white pupils. The lower eye edges remain unchanged. Mouth sits just 4 pixels lower. Do not shrink eyes to slits, do not tilt sideways. Everything else, especially fingers toes and silhouette, stays unchanged. Preserve exact purple palette, cel shading, original rounded anatomy and symmetrical front facing. No hand gesture, text, arcs, clothing, extra body parts, or global translation. Output one full-canvas PNG, not a sheet.",
+      "reference_files": [
+        "listen_hold.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "recover_01",
+      "file": "recover_01.png",
+      "prompt": "Use case: identity-preserve. One full-canvas front-facing sprite on exactly the same solid black background. Image is the edit target, the LOWEST nod key. The FIRST upward recovery pose after a gentle nod. Keep the head still low, but lift chin/mouth 3 pixels and open upper eyelids just slightly so the visible white pupil height is about 60 pixels instead of the low key's roughly 45. This is NOT rest yet. No second nod. Preserve the identity, spikes, same purple shading, body width, hanging arms, exactly two fingers+thumb, and three toes. Legs, pelvis, hands and feet completely stationary. Do not resize whole figure, no new pose, no hand gesture, no icons. Edit only head expression/chin and slight upper chest response. Maintain exact full-body placement and original canvas.",
+      "reference_files": [
+        "acknowledge_down.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "recover_02",
+      "file": "recover_02.png",
+      "prompt": "Use case: identity-preserve. One full-canvas front-facing sprite on exactly the same solid black background. Image is the edit target, the LOWEST nod key. The HALFWAY upward recovery pose after a gentle nod. Lift chin/mouth about 8 pixels and gently open upper eyelids so white pupil height is about 75 pixels rather than the low key's roughly 45. Small upper-chest release. Head remains front facing, no lateral tilt. Preserve the identity, spikes, same purple shading, body width, hanging arms, exactly two fingers+thumb, and three toes. Legs, pelvis, hands and feet completely stationary. Do not resize whole figure, no new pose, no hand gesture, no icons. Edit only head expression/chin and slight upper chest response. Maintain exact full-body placement and original canvas.",
+      "reference_files": [
+        "acknowledge_down.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "recover_03",
+      "file": "recover_03.png",
+      "prompt": "Use case: identity-preserve. One full-canvas front-facing sprite on exactly the same solid black background. Image is the edit target, the LOWEST nod key. The LATE upward recovery pose after one gentle nod. Lift chin/mouth about 12 pixels and open upper eyelids to almost full attentive white pupils, about 90 pixels high rather than the low key's roughly 45. Shoulders relax. No second nod; the movement is now returning to front rest. Preserve the identity, spikes, same purple shading, body width, hanging arms, exactly two fingers+thumb, and three toes. Legs, pelvis, hands and feet completely stationary. Do not resize whole figure, no new pose, no hand gesture, no icons. Edit only head expression/chin and slight upper chest response. Maintain exact full-body placement and original canvas.",
+      "reference_files": [
+        "acknowledge_down.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "settle_01",
+      "file": "settle_01.png",
+      "prompt": "Use case: identity-preserve. ONE full-canvas animation drawing on solid black. Image 1 is the end-of-nod follow-through, chin/head lifted slightly higher than rest. Image 2 is the exact front neutral rest the character must settle back into. Create the ONE QUARTER intermediate on that return. Smooth small downward relaxation of head/chin and shoulders toward image 2. Eye aperture progressively becomes the full neutral aperture of image 2. No new nod, sideways turn, hand motion, pose change or whole-image resize. Keep the exact planted legs/feet and relaxed hands from image 2 fixed. Preserve the exact purple mon, head-spike topology, front facing, two fingers plus thumb and three toes, colors, full canvas placement. No effects or decorative arcs. Difference between endpoints is subtle: never exaggerate. The endpoint shapes in image 2 are binding.",
+      "reference_files": [
+        "exec-3b9fb828-47cf-4ab2-9973-0f20ded098a6.png",
+        "front.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "settle_02",
+      "file": "settle_02.png",
+      "prompt": "Use case: identity-preserve. ONE full-canvas animation drawing on solid black. Image 1 is the end-of-nod follow-through, chin/head lifted slightly higher than rest. Image 2 is the exact front neutral rest the character must settle back into. Create the ONE HALF intermediate on that return. Smooth small downward relaxation of head/chin and shoulders toward image 2. Eye aperture progressively becomes the full neutral aperture of image 2. No new nod, sideways turn, hand motion, pose change or whole-image resize. Keep the exact planted legs/feet and relaxed hands from image 2 fixed. Preserve the exact purple mon, head-spike topology, front facing, two fingers plus thumb and three toes, colors, full canvas placement. No effects or decorative arcs. Difference between endpoints is subtle: never exaggerate. The endpoint shapes in image 2 are binding.",
+      "reference_files": [
+        "exec-3b9fb828-47cf-4ab2-9973-0f20ded098a6.png",
+        "front.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "settle_03",
+      "file": "settle_03.png",
+      "prompt": "Use case: identity-preserve. ONE full-canvas animation drawing on solid black. Image 1 is the end-of-nod follow-through, chin/head lifted slightly higher than rest. Image 2 is the exact front neutral rest the character must settle back into. Create the THREE QUARTERS intermediate on that return. Smooth small downward relaxation of head/chin and shoulders toward image 2. Eye aperture progressively becomes the full neutral aperture of image 2. No new nod, sideways turn, hand motion, pose change or whole-image resize. Keep the exact planted legs/feet and relaxed hands from image 2 fixed. Preserve the exact purple mon, head-spike topology, front facing, two fingers plus thumb and three toes, colors, full canvas placement. No effects or decorative arcs. Difference between endpoints is subtle: never exaggerate. The endpoint shapes in image 2 are binding.",
+      "reference_files": [
+        "exec-3b9fb828-47cf-4ab2-9973-0f20ded098a6.png",
+        "front.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "rest_approach_02",
+      "file": "rest_approach_02.png",
+      "prompt": "Use case: precise-object-edit. This exact full-body purple mon on black is the neutral endpoint of an animation. Create ONE settling in-between. ONLY the head/neck is 10 pixels higher than this supplied neutral pose, as the head is descending slowly toward neutral after a gentle nod. Mouth/pupils/spikes follow this slight head lift coherently. Do not raise the torso, arms, hands or legs. Keep exactly the same original fully open eye shapes, white pupils, little smile, head asymmetry, cel shading and full front facing. Maintain same canvas, character size, feet and pelvis placement. No sideways tilt or new gesture. Do not change the fingers, toes or body shape. Solid black background. Not a sheet, no text, no effects.",
+      "reference_files": [
+        "front.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "rest_approach_01",
+      "file": "rest_approach_01.png",
+      "prompt": "Use case: precise-object-edit. This exact full-body purple mon on black is the neutral endpoint of an animation. Create ONE settling in-between. ONLY the head/neck is 18 pixels higher than this supplied neutral pose, as the head is descending slowly toward neutral after a gentle nod. Mouth/pupils/spikes follow this slight head lift coherently. Do not raise the torso, arms, hands or legs. Keep exactly the same original fully open eye shapes, white pupils, little smile, head asymmetry, cel shading and full front facing. Maintain same canvas, character size, feet and pelvis placement. No sideways tilt or new gesture. Do not change the fingers, toes or body shape. Solid black background. Not a sheet, no text, no effects.",
+      "reference_files": [
+        "front.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "rest_approach_03",
+      "file": "rest_approach_03.png",
+      "prompt": "Use case: precise-object-edit. This exact full-body purple mon on black is the neutral endpoint of an animation. Create ONE settling in-between. ONLY the head/neck is 4 pixels higher than this supplied neutral pose, as the head is descending slowly toward neutral after a gentle nod. Mouth/pupils/spikes follow this slight head lift coherently. Do not raise the torso, arms, hands or legs. Keep exactly the same original fully open eye shapes, white pupils, little smile, head asymmetry, cel shading and full front facing. Maintain same canvas, character size, feet and pelvis placement. No sideways tilt or new gesture. Do not change the fingers, toes or body shape. Solid black background. Not a sheet, no text, no effects.",
+      "reference_files": [
+        "front.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "listen_entry",
+      "file": "listen_entry.png",
+      "prompt": "Use case: precise-object-edit. One full-canvas sprite on solid black, edit this exact neutral front reference. Only make a very subtle attentive expression: the white pupils shift UP by 2 pixels and the black eye fields open VERY slightly, while the small mouth becomes a relaxed shallow smile. Maintain the original shape of the eyes, no new brow lines. Torso is relaxed as it begins listening. Keep the complete outer silhouette, hands, feet and head placement unchanged. Preserve exact full-body scale/canvas, purple palette, cel shading, head spikes, two fingers plus thumb and three toes. No neck extension, nod, sideways turn, hand gesture, no decorations. Only the described tiny facial changes; no redraw of limbs.",
+      "reference_files": [
+        "front.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    },
+    {
+      "id": "attention_lead",
+      "file": "attention_lead.png",
+      "prompt": "Use case: precise-object-edit. One full-canvas sprite on solid black, edit this exact neutral front reference. Only change the gaze: shift the white pupils UP by 3 pixels inside their existing black eye fields. Do NOT shrink the pupils or change the eyelid shapes. The head, mouth, shoulders, entire body, feet and hands remain unchanged. This is the subtle first instant of noticing speech from in front. Preserve exact full-body scale/canvas, purple palette, cel shading, head spikes, two fingers plus thumb and three toes. No neck extension, nod, sideways turn, hand gesture, no decorations. Only the described tiny facial changes; no redraw of limbs.",
+      "reference_files": [
+        "front.png"
+      ],
+      "method": "built_in_imagegen_reference_edit",
+      "approval_state": "candidate"
+    }
+  ],
+  "source_pixels_altered_after_generation": false
+}

@@ -1,0 +1,129 @@
+{
+  "frame_id": "r06_t01_f016",
+  "grounding": {
+    "evidence": "overlays/grounding_representative_left.png",
+    "measured_contour_candidates": [
+      {
+        "x": 761,
+        "y": 1196
+      }
+    ],
+    "method": "foreground_silhouette_contour_v1",
+    "review_state": "machine_assisted_checked",
+    "source_sha256": "738cffb262bd10494cc6300f7a228d4d88973e58c5bd56b3a90185b2f1e7e347"
+  },
+  "landmarks": {
+    "action_anchor": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "attachment_back": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "attachment_front": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "eye_left": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "eye_midpoint": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "eye_right": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "foot_left": {
+      "point": {
+        "x": 761,
+        "y": 1196
+      },
+      "state": "visible"
+    },
+    "foot_right": {
+      "point": null,
+      "state": "occluded"
+    },
+    "ground_contact_left": {
+      "point": {
+        "x": 761,
+        "y": 1196
+      },
+      "state": "visible"
+    },
+    "ground_contact_right": {
+      "point": null,
+      "state": "occluded"
+    },
+    "hand_left": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "hand_right": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "head_center": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "interaction_focus": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "mouth_center": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "object_anchor": {
+      "point": null,
+      "state": "not_applicable"
+    },
+    "root": {
+      "point": {
+        "x": 761,
+        "y": 1196
+      },
+      "state": "visible"
+    }
+  },
+  "observations": {
+    "background": "near_black_field",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "mode": "RGB",
+    "perimeter": [
+      [
+        1,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ]
+    ]
+  },
+  "presentation_profile": "R05_BLACK_FIELD_RGB8_V1",
+  "profile": "R05_RUNTIME_FRAME_SIDECAR_V1",
+  "source_asset_id": "r06_left_up_far",
+  "source_path": "raw/base_left_up_far.png",
+  "source_sha256": "738cffb262bd10494cc6300f7a228d4d88973e58c5bd56b3a90185b2f1e7e347"
+}

@@ -1,0 +1,22 @@
+{
+  "frame_slots": 283,
+  "grounding_status": "PASS",
+  "negative_tests": {
+    "bbox_placeholder_rejected": true,
+    "missing_support_rejected": true,
+    "one_tick_contact_rejected": true,
+    "outer_corner_only_rejected": true,
+    "readback_without_frame_post_draw_rejected": true,
+    "root_discontinuity_rejected": true,
+    "sequence_boundary_discontinuity_rejected": true,
+    "slip_over_two_px_rejected": true
+  },
+  "profile": "COMPANION_P02_R06_C02_VALIDATION_V1",
+  "root_plans_continuous": true,
+  "sequence_plans_continuous": true,
+  "source_hashes_ok": true,
+  "source_pack_sha256": "1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40",
+  "status": "PASS",
+  "tracks": 24,
+  "world_contact_max_slip_px": 0.0
+}

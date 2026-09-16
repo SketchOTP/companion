@@ -1,0 +1,25 @@
+{
+  "status": "INCOMPLETE_NOT_A_SOURCE_PACK",
+  "execution_date": "2026-09-12",
+  "source": "reference-conditioned image generation",
+  "approval": "not_approved",
+  "attempts": [
+    {"id": "dense_walk_16", "sha256": "0f8a7b7e75109cf7a5813227638334a0dc7938e6049a59059734fa088c7f231c", "disposition": "rejected", "reason": "repeated leading leg and encoded checkerboard"},
+    {"id": "contact_key", "sha256": "523db8bd9745272adac150974f1a5da4ebae72c7c7e6bfcb673235d70a5eda19", "disposition": "study_only", "reason": "single pose does not establish gait"},
+    {"id": "opposite_contacts", "sha256": "c67c01634e5cb18e5468e7864d461b5ddc96f5a9188d6c13b3a4494d88946aef", "disposition": "study_only", "reason": "opposite poses differ; complete gait not established"},
+    {"id": "half_cycle_8", "sha256": "cf9ce660b000e763644d8f7bf1247a2ba5bbb5a6f397e98e993c50311782421b", "disposition": "rejected", "reason": "leg correspondence does not follow requested passing sequence"},
+    {"id": "passing_pose", "sha256": "2220aefb5898c4d90fb7baaecd06ed6690fae7cb4313edf423568c89f1a88b3f", "disposition": "rejected", "reason": "wrong intended swing leg"},
+    {"id": "idle_16_turnaround_conditioned", "sha256": "cb61e897f5125bb5b4af4c1df4ed97c761c6e2e6b2de5bdc95afe252bfd58599", "disposition": "rejected", "reason": "facing drift toward front"},
+    {"id": "neutral_anchor", "sha256": "0ae44e7fffd7bd95c242a455a8c758cda527bf3b61df341cffcead6d808b37e8", "disposition": "study_only", "reason": "new rest source not approved"},
+    {"id": "idle_16_anchor_conditioned", "sha256": "fa3c38f27c224a5568b56e17021ded04c28f91f82e2dad3951836d08c8d6818e", "disposition": "study_only_not_pack_ready", "reason": "inconsistent placement; coherent complete breathing not established"}
+  ],
+  "live_cutout_observations": [
+    {"id": "contact_key", "provider": "photoroom", "http_status": 200, "output_sha256": "0aec555e93d586d319ba73555a6e5eab1e2be48bce106c1324cffeaddf6ab8c8", "dimensions": [1254,1254], "mode": "RGBA", "perimeter_max_alpha": 1},
+    {"id": "opposite_contacts", "provider": "photoroom", "http_status": 200, "output_sha256": "a5bc2ab8355701da6729b8307689878b97b7823a1c0edb70ff01f753a324344e", "dimensions": [1536,1024], "mode": "RGBA", "perimeter_max_alpha": 2},
+    {"id": "idle_16_anchor_conditioned", "provider": "photoroom", "http_status": 200, "output_sha256": "afd789a482aa94b1770a79e3984fcb9a621caae32d7addf8c8217feedf9ecb2b", "dimensions": [1254,1254], "mode": "RGBA", "perimeter_max_alpha": 2}
+  ],
+  "cutout_boundary": "response bytes retained; not MON_FRAME_V1 normalized or approved",
+  "all_three_green_test": {"alpha_min_exclusive": 8, "green_dominance_margin_exclusive": 12, "green_dominant_count": 0, "scope": "narrow RGB test; not complete edge quality"},
+  "removebg_attempt": {"http_status": 402, "status": "FAILED", "output_accepted": false},
+  "bulk_binary_location": "private local generated-image and qualification caches; not committed"
+}

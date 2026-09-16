@@ -1,0 +1,176 @@
+name: phase02-embodiment-r05
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  authored-frame-boundary:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+      - name: Install pinned qualification-only validators
+        run: python3 -m pip install --disable-pip-version-check --no-input 'Pillow==11.3.0' 'jsonschema==4.25.1'
+      - name: Verify immutable approved references
+        run: |
+          set -euo pipefail
+          test "$(sha256sum assets/source/p02/references/identity-approved.png | awk '{print $1}')" = 86ce1f9428f9a998d57e1a99c4245347d5a05e9f0bcf853c2b68065f351bdb56
+          test "$(sha256sum assets/source/p02/references/turnaround-approved.png | awk '{print $1}')" = 3696c7d63594de38d408438d5b882f3207635bc63e59fb270f624715faeb09e4
+      - name: Verify canonical Godot log classifier
+        run: python3 experiments/p02-embodiment/scripts/test_godot_runner.py
+      - name: Sprite review timing and offline cutout adapter regressions
+        run: |
+          set -euo pipefail
+          python3 experiments/p02-embodiment/scripts/test_review_timing.py
+          python3 experiments/p02-embodiment/scripts/test_remove_background_provider.py
+      - name: Fetch exact Phase 01 artifacts
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/sqlite" "$RUNNER_TEMP/godot"
+          curl --fail --location --retry 3 https://www.sqlite.org/2026/sqlite-amalgamation-3530400.zip -o "$RUNNER_TEMP/sqlite/sqlite.zip"
+          unzip -q "$RUNNER_TEMP/sqlite/sqlite.zip" -d "$RUNNER_TEMP/sqlite"
+          test "$(sha256sum "$RUNNER_TEMP/sqlite/sqlite-amalgamation-3530400/sqlite3.c" | awk '{print $1}')" = b1dd5d74ec7f29055a6684fa06fb3c2f6821c87dd38f9a458dfd2e8a1db28189
+          echo "COMPANION_SQLITE_SOURCE=$RUNNER_TEMP/sqlite/sqlite-amalgamation-3530400/sqlite3.c" >> "$GITHUB_ENV"
+          curl --fail --location --retry 3 https://github.com/godotengine/godot/releases/download/4.7.2-stable/Godot_v4.7.2-stable_linux.x86_64.zip -o "$RUNNER_TEMP/godot/godot.zip"
+          test "$(sha256sum "$RUNNER_TEMP/godot/godot.zip" | awk '{print $1}')" = cadd3204e728a35d3f13adb7fd0d7902636b79f6b95c40c265eb73b6c35329e4
+          unzip -q "$RUNNER_TEMP/godot/godot.zip" -d "$RUNNER_TEMP/godot"
+          chmod +x "$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64"
+          echo "GODOT_BIN=$RUNNER_TEMP/godot/Godot_v4.7.2-stable_linux.x86_64" >> "$GITHUB_ENV"
+      - name: Build synthetic pack twice and intake exact bytes
+        run: |
+          set -euo pipefail
+          python3 experiments/p02-embodiment/scripts/build_r04_synthetic_pack.py --out "$RUNNER_TEMP/source-a" --clean
+          python3 experiments/p02-embodiment/scripts/build_r04_synthetic_pack.py --out "$RUNNER_TEMP/source-b" --clean
+          diff -rq "$RUNNER_TEMP/source-a" "$RUNNER_TEMP/source-b"
+          python3 experiments/p02-embodiment/scripts/intake_authored_frame_pack.py intake --source "$RUNNER_TEMP/source-a" --out "$RUNNER_TEMP/intake" --operation test
+          python3 experiments/p02-embodiment/scripts/intake_authored_frame_pack.py identity-smoke --source assets/source/p02/references/identity-approved.png --out "$RUNNER_TEMP/intake"
+          echo "MON_AUTHORED_PACK_PATH=$RUNNER_TEMP/intake/pack.json" >> "$GITHUB_ENV"
+      - name: Validate schema before typed consumption
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_schemas.py
+          python3 scripts/check_contract_types.py
+          python3 experiments/p02-embodiment/scripts/validate_r04_intake.py --out "$RUNNER_TEMP/intake-validation"
+      - name: Rust regression and actual generated-pack round trip
+        env:
+          RUSTUP_TOOLCHAIN: 1.98.1
+        run: |
+          set -euo pipefail
+          rustup toolchain install 1.98.1 --profile minimal --component rustfmt --component clippy
+          cargo fmt --all -- --check
+          cargo clippy --workspace --all-targets --all-features --locked -- -D warnings
+          cargo test --workspace --locked
+          cargo run -p foundation-core --bin validate-authored-pack --locked -- "$MON_AUTHORED_PACK_PATH"
+          if cargo run -p foundation-core --bin validate-authored-pack --locked --; then
+            echo 'missing required generated pack path was accepted' >&2
+            exit 1
+          fi
+      - name: Canonical Godot import, cold, and warm qualification gate
+        run: |
+          set -euo pipefail
+          cp -a "$RUNNER_TEMP/intake" "$RUNNER_TEMP/corrupt"
+          FRAME="$RUNNER_TEMP/corrupt/runtime/frames/neutral_construction__front__neutral__v01__f000.png"
+          python3 - "$FRAME" <<'PY'
+          from pathlib import Path
+          import sys
+          from PIL import Image
+          path = Path(sys.argv[1])
+          with Image.open(path) as source:
+              image = source.convert("RGBA")
+              pixel = image.getpixel((0, 0))
+              image.putpixel((0, 0), (pixel[0] ^ 1, pixel[1], pixel[2], pixel[3]))
+              image.save(path, format="PNG", optimize=False)
+          PY
+          python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+            --godot "$GODOT_BIN" --out "$RUNNER_TEMP/godot-import" --mode import --label import
+          python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+            --godot "$GODOT_BIN" --out "$RUNNER_TEMP/godot-cold" --mode semantic \
+            --pack "$MON_AUTHORED_PACK_PATH" --corrupt-pack "$RUNNER_TEMP/corrupt/pack.json" --label cold
+          python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+            --godot "$GODOT_BIN" --out "$RUNNER_TEMP/godot-warm" --mode semantic \
+            --pack "$MON_AUTHORED_PACK_PATH" --corrupt-pack "$RUNNER_TEMP/corrupt/pack.json" --label warm
+          python3 experiments/p02-embodiment/scripts/run_godot_qualification.py \
+            --godot "$GODOT_BIN" --out "$RUNNER_TEMP/godot-identity" --mode semantic \
+            --pack "$MON_AUTHORED_PACK_PATH" --script r04_identity_smoke_test.gd \
+            --script-arg="--image=$RUNNER_TEMP/intake/smoke/identity-approved.png" --label identity
+      - name: Generate and validate sanitized evidence
+        env:
+          RUSTUP_TOOLCHAIN: 1.98.1
+        run: |
+          set -euo pipefail
+          python3 experiments/p02-embodiment/scripts/run_r04_evidence.py --out "$RUNNER_TEMP/r04-results" --godot "$GODOT_BIN"
+          python3 experiments/p02-embodiment/scripts/validate_r04_results.py --results "$RUNNER_TEMP/r04-results" --tamper-negative | tee "$RUNNER_TEMP/r04-validation.json"
+          cp "$RUNNER_TEMP/r04-validation.json" "$RUNNER_TEMP/r04-results/validation.json"
+      - name: Retained R05-v1 rejected-art engineering regression (not visual acceptance)
+        env:
+          RUSTUP_TOOLCHAIN: 1.98.1
+        run: |
+          set -euo pipefail
+          python3 experiments/p02-embodiment/scripts/run_r05_candidate_evidence.py \
+            --out "$RUNNER_TEMP/r05-results" --godot "$GODOT_BIN"
+          python3 experiments/p02-embodiment/scripts/validate_r05_results.py \
+            --results "$RUNNER_TEMP/r05-results" --tamper-negative \
+            --output "$RUNNER_TEMP/r05-results/validation.json"
+      - name: Repository, secret, and private-data policy
+        run: |
+          set -euo pipefail
+          ! git ls-files -z assets/generated/p02 godot/assets/p02 godot/assets/p02-r03 | grep -z .
+          ! rg -nI '(BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|api[_-]?key\s*[:=]\s*[A-Za-z0-9]{16,}|/home/[^ /]+|/srv/[^ /]+)' \
+            assets/source/p02/architect-frame-request-v1 \
+            contracts/fixtures/mon-authored-frame-pack-v1.json \
+            contracts/fixtures/mon-authored-frame-source-pack-v1.json \
+            contracts/fixtures/mon-ingested-frame-pack-v1.json \
+            contracts/fixtures/mon-authored-frame-intake-receipt-v1.json \
+            contracts/schemas/mon-authored-frame-pack-v1.schema.json \
+            contracts/schemas/mon-authored-frame-source-pack-v1.schema.json \
+            contracts/schemas/mon-ingested-frame-pack-v1.schema.json \
+            contracts/schemas/mon-frame-intake-receipt-v1.schema.json \
+            crates/foundation-core/src/contracts.rs \
+            crates/foundation-core/src/bin/validate-authored-pack.rs \
+            experiments/p02-embodiment/results/r04 \
+            experiments/p02-embodiment/scripts/*r04* \
+            experiments/p02-embodiment/scripts/intake_authored_frame_pack.py \
+            experiments/p02-embodiment/scripts/export_restore_authored_pack.py \
+            godot/mon_animation_director.gd godot/mon_avatar.gd godot/r04_*.gd
+          ! find assets/source/p02/r05 -type f -size +25M -print -quit | grep .
+          ! rg -nI '(BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|api[_-]?key\s*[:=]\s*[A-Za-z0-9]{16,}|/home/[^ /]+|/srv/[^ /]+)' \
+            assets/source/p02/r05 experiments/p02-embodiment/results/r05 \
+            experiments/p02-embodiment/scripts/*r05* godot/r04_authored_pack_test.gd godot/mon_avatar.gd
+          git diff --exit-code
+      - name: Upload R04 authored-frame boundary evidence and diagnostics
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+        with:
+          name: phase02-embodiment-r04-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/r04-results
+            ${{ runner.temp }}/intake-validation
+            ${{ runner.temp }}/godot-import
+            ${{ runner.temp }}/godot-cold
+            ${{ runner.temp }}/godot-warm
+            ${{ runner.temp }}/godot-identity
+            assets/source/p02/architect-frame-request-v1
+            contracts/schemas/mon-authored-frame-source-pack-v1.schema.json
+            contracts/schemas/mon-ingested-frame-pack-v1.schema.json
+            contracts/schemas/mon-frame-intake-receipt-v1.schema.json
+            contracts/fixtures/mon-authored-frame-source-pack-v1.json
+            contracts/fixtures/mon-ingested-frame-pack-v1.json
+            contracts/fixtures/mon-authored-frame-intake-receipt-v1.json
+          if-no-files-found: warn
+        if: always()
+      - name: Upload rejected R05-v1 historical source and engineering evidence
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
+        with:
+          name: phase02-embodiment-r05-rejected-v1-${{ github.sha }}
+          path: |
+            ${{ runner.temp }}/r05-results
+            assets/source/p02/r05/review
+            assets/source/p02/r05/generation-provenance.json
+            assets/source/p02/r05/OPERATOR_REJECTION.md
+            assets/source/p02/r05-v2-study
+          if-no-files-found: error
+        if: always()
