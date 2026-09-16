@@ -40,6 +40,7 @@ Retain:
 7. **Resident restore/model independence remain open.** The actual resident stack has not booted from clean-root restore, and model-worker independence is not topology-qualified.
 8. **Target sensor evidence is not governed yet.** The handoff reports bounded host camera/mic capture, but reviewed exact-head artifacts do not contain sanitized target-host records.
 9. **Artifact hash manifest still includes an empty temporary file.** Redirection creates `artifact-sha256.txt.tmp` before `find`, so it is hashed as an empty file. Exclude temp files or write outside the scanned directory.
+10. **Legacy ordinary file ingress remains live-capable.** The exact C01 resident ordinary-listener loop still reads `ordinary-observation.json` whenever `COMPANION_ALPHA_LIFE` is absent—the same condition under which the ordinary UDS listener is created. The positive Alpha trace does not use the file, but the alternate unauthenticated path remains available. C02 must gate this behind an explicit compatibility-only test flag and prove that Alpha live mode ignores/rejects the file without organism/event mutation.
 
 ## Completion position
 
