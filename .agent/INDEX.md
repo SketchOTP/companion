@@ -15,15 +15,15 @@
 - Alpha50-001: `PARTIAL ACCEPTED`.
 - Alpha50-002: `PARTIAL ACCEPTED`.
 - Alpha50-003-LIVE-001: `PARTIAL ACCEPTED`.
-- Current disposition: `CONTINUE — ALPHA50-003-LIVE-001-C01 AUTH + REAL GODOT CORRECTION ACTIVE`.
-- Current directive: `COMPANION-ALPHA50-003-LIVE-001-C01`.
-- Repository Review 26: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C01/ARCHITECT_REVIEW_26.md`.
-- Repository directive: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C01/DIRECTIVE.md`.
-- Current C01 implementation record: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C01/C01_RESULT.md`.
-- Notion Review 26: https://app.notion.com/p/3dc833cb27ff811abaa5c0b57c6530fe
-- Reviewed Alpha50-003 executable: `d484c0370512ab3bb9fbcebaf99b9e44a718cdba`.
-- Reviewed Alpha50-003 publication: `299886beb2dac046e9ba5a25055f5f51c34eb9df`.
-- Alpha artifact: `10419532624`, ZIP SHA-256 `6694a8f2cdf022a59f5ca8598487ba7846867e25089e309f5d42118a6c644b2e`.
+- Alpha50-003-LIVE-001-C01: `PARTIAL ACCEPTED`.
+- Current disposition: `CONTINUE — ALPHA50-003-LIVE-001-C02 FINAL CENTRAL SOFTWARE CLOSEOUT ACTIVE`.
+- Current directive: `COMPANION-ALPHA50-003-LIVE-001-C02`.
+- Repository Review 27: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C02/ARCHITECT_REVIEW_27.md`.
+- Repository directive: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C02/DIRECTIVE.md`.
+- Notion Review 27: https://app.notion.com/p/3dd833cb27ff8189b600fe777ba9479b
+- Reviewed C01 executable: `794571f10e6bec1814af6b7d27da227a234f2566`.
+- Reviewed C01 publication: `113d747cdfba2d33c8673d32233cd537448aa4ab`.
+- Alpha artifact: `10424275946`, independently verified ZIP SHA-256 `7e5bada75cfff0e87ab6693898604fc71b5374775e448460473f7c31fd143e43`.
 - Frozen R06 pack: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`.
 - PR #9: draft/open/unmerged.
 - Issue #8: open.
@@ -31,60 +31,54 @@
 
 ## Accepted / retained boundary
 
-Accepted authority remains Architecture v1.0, Roadmap Phase 01, and the bounded R06-C06 source/intake/controller/render/timing evidence.
+Accepted authority remains Architecture v1.0, Roadmap Phase 01, and bounded R06-C06 source/intake/controller/render/timing evidence.
 
-Retained bounded Alpha candidate implementation now includes:
+Retained bounded Alpha candidate capability/evidence now includes:
 
-- V2-only Alpha qualification and explicit V1 guard;
-- fixed-point V2 numerical state;
-- V2 preference/correction/commitment/outcome methods;
-- signed-64 sequence design;
-- separate typed ordinary UDS architecture;
-- same-UID peer-credential and digest-integrity prototype;
-- resident V2 ordinary→intent→Rust bridge-result→learning→snapshot plumbing;
-- graceful restart continuity and exact-head CI.
+- V2-only Alpha qualification and V1 guard;
+- fixed-point V2 numerical organism state;
+- authenticated ordinary evidence bound to expected sensor-gateway PID/UID/generation plus a separate HMAC domain;
+- durable ordinary message reservation before V2 mutation;
+- fail-closed signed-64 intent sequence exhaustion;
+- real Godot 4.7.2 frozen-pack render/result participation before V2 outcome learning;
+- exact-head CI and retained foundation/C06 regressions.
 
 Not accepted:
 
-- authorized ordinary producer authentication;
-- real Godot execution/result integration;
+- production transition legality through the same live R06 resolver/director;
+- general production embodiment routing beyond the narrow C01 adapter;
+- resident paired preference/correction/commitment/outcome causality;
 - post-restart remembered behavior proof;
-- production legal transition graph/10k Godot campaign;
-- rich autonomous goals/development/consolidation;
+- fully resolved V2 canonical type boundary;
+- rich goals/development/retrieval/consolidation;
 - multi-class failure qualification;
 - care process-loss independence;
 - resident clean-root restore;
-- semantic sensors/speech;
+- governed target-host sensor evidence;
+- semantic perception/speech;
 - Phase 02/Alpha/product reliability/release.
 
-## Review 26 findings
+## Review 27 findings
 
-1. ordinary evidence currently authenticates only same UID; the digest is unkeyed and the hosted positive is Python declaring itself sensor-gateway;
-2. replay tracking is process-local and must become durable before state mutation;
-3. legacy `ordinary-observation.json` remains available alongside the live UDS and must be isolated from Alpha live mode;
-4. Rust `godot-bridge` currently manufactures an accepted result without starting Godot;
-5. transition qualification remains Python-owned;
-6. intent sequence exhaustion may re-emit the signed-64 maximum sequence;
-7. V2 30-day evidence remains shallow/degenerate and does not qualify goals/development/consolidation;
-8. 500 failures remain graceful restart repetitions and care remains smoke-only;
-9. clean-root restore does not start the resident service;
-10. target host exposes video/audio hardware, so bounded sensor acquisition should now be attempted.
+1. the 10,000-case Godot campaign is hosted in Godot 4.7.2 but owns a second hard-coded graph instead of invoking the live production R06 resolver/director;
+2. real Godot execution is proven only through a narrow Rust action-to-track adapter;
+3. resident paired causal comparisons and remembered post-restart behavior remain unrun;
+4. V2 reuses historical shared canonical structs without an explicit version-neutral contract disposition;
+5. 30-day V2 behavior remains degenerate and goals/development/retrieval/consolidation remain unqualified;
+6. failures remain repeated restart evidence and care remains smoke-only;
+7. resident clean-root restore and topology-qualified model-worker independence remain open;
+8. target-host camera/mic evidence is reported but not yet governed in reviewed exact-head artifacts;
+9. artifact hash manifest includes an empty temp-file hash;
+10. the legacy `ordinary-observation.json` compatibility reader remains live-capable unless explicitly isolated.
 
-## C01 gate
+## C02 gate
 
-C01 must bind ordinary evidence to the real authorized sensor-gateway, execute intents/results through real Godot 4.7.2 using the frozen pack, run 10,000+ production Godot transitions, prove resident paired memory/learning causality across restart, exercise Godot loss, operative goals/development/consolidation, a non-degenerate V2 30-day campaign, 500+ multi-class failures, care process-loss independence, resident clean-root restore, model-worker independence and bounded host camera/microphone acquisition.
+C02 must isolate legacy file ingress, unify live intents and the 10,000-case campaign on the same production Godot resolver/director, resolve shared V2 canonical typing, prove four resident paired causal comparisons plus post-restart remembered behavior, qualify operative bounded goals/development/retrieval/consolidation and a non-degenerate V2 30-day campaign, run 500+ genuine multi-class failures and care process-loss independence, boot the resident stack from clean-root restore, establish model-worker independence, and publish governed target-host sensor evidence.
 
 Openbox may remain an explicit blocker if unavailable without prohibited host reconfiguration.
 
 ## Completion position
 
-Review 26 sets evidence-grounded overall completion to **39%**.
+Review 27 sets evidence-grounded overall completion to **44%**.
 
-A fully passing C01 may support approximately **50–53%** after independent review while semantic vision, STT/TTS, live escalation/notification, full vault/consent, security/reliability qualification, pilot and release remain incomplete.
-
-## Latest C01 execution checkpoint — 2026-09-15
-
-The final branch head `794571f10e6bec1814af6b7d27da227a234f2566` passed the
-hosted Alpha50, Phase 01, focused R06, and inherited Phase 02 workflows. This
-records exact-head regression status only; it does not promote remaining C01
-criteria to accepted capability.
+A fully passing C02 may support approximately **52–55%** after independent review while semantic vision, STT/TTS, live escalation/notification, full vault/consent, security/reliability qualification, pilot and release remain incomplete.

@@ -6,21 +6,21 @@ Architecture v1.0 remains adopted. Roadmap Phase 01 remains accepted. R06-C06 re
 
 ## Latest Architect disposition
 
-Architect Review 26: `CONTINUE — COMPANION-ALPHA50-003-LIVE-001 PARTIAL ACCEPTED`.
+Architect Review 27: `CONTINUE — COMPANION-ALPHA50-003-LIVE-001-C01 PARTIAL ACCEPTED`.
 
-Alpha50-003 materially advances the project: Alpha qualification is V2-only; the target host XDG store was inspected read-only with no potentially lived V1 organism snapshots found; V2 ordinary evidence now has a separate typed UDS; resident companion plumbing can process ordinary input, emit an intent, consume a Rust bridge result, learn, snapshot and restore identity. These remain bounded candidate observations.
+C01 materially advances the project: ordinary evidence is now bound to the expected sensor-gateway PID/UID/generation with a separately provisioned HMAC domain; durable message reservation precedes V2 mutation; signed-64 sequence exhaustion fails closed; and the resident bridge can invoke real Godot 4.7.2 R06 rendering before V2 outcome learning.
 
-Independent review found that ordinary evidence is currently same-UID + unkeyed-digest integrity rather than authorized sensor-gateway authentication, the positive hosted trace is sent by Python impersonating the producer, replay authority is process-local, legacy file ingress remains available in the live service path, and the Rust bridge result is not Godot execution. Transition qualification remains Python-owned and failure/care-independence gates remain open.
+Independent review still found that the 10,000-case transition campaign is a parallel hard-coded Godot graph rather than the live R06 production resolver/director, the bridge still uses a narrow hard-coded action-to-track adapter, the legacy `ordinary-observation.json` compatibility reader remains live-capable unless explicitly gated, resident paired causal controls are not run, rich goals/development/consolidation remain unqualified, failures/care process loss/restore remain open, and target-host sensor evidence is not yet governed in the exact-head artifact.
 
 Current authority:
 
-- Architect Review 26: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C01/ARCHITECT_REVIEW_26.md`
-- Notion Review 26: https://app.notion.com/p/3dc833cb27ff811abaa5c0b57c6530fe
-- Current directive: `COMPANION-ALPHA50-003-LIVE-001-C01`
-- Directive: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C01/DIRECTIVE.md`
-- Reviewed Alpha50-003 executable: `d484c0370512ab3bb9fbcebaf99b9e44a718cdba`
-- Reviewed Alpha50-003 publication: `299886beb2dac046e9ba5a25055f5f51c34eb9df`
-- Alpha artifact: `10419532624`, independently verified ZIP SHA-256 `6694a8f2cdf022a59f5ca8598487ba7846867e25089e309f5d42118a6c644b2e`
+- Architect Review 27: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C02/ARCHITECT_REVIEW_27.md`
+- Notion Review 27: https://app.notion.com/p/3dd833cb27ff8189b600fe777ba9479b
+- Current directive: `COMPANION-ALPHA50-003-LIVE-001-C02`
+- Directive: `.agent/tasks/active/COMPANION-ALPHA50-003-LIVE-001-C02/DIRECTIVE.md`
+- Reviewed C01 executable: `794571f10e6bec1814af6b7d27da227a234f2566`
+- Reviewed C01 publication: `113d747cdfba2d33c8673d32233cd537448aa4ab`
+- Alpha artifact: `10424275946`, independently verified ZIP SHA-256 `7e5bada75cfff0e87ab6693898604fc71b5374775e448460473f7c31fd143e43`
 - Frozen R06 pack: `1596bc28f2aac81344c4ba814a47deaa3f746e88e53278a81985977d41c8af40`
 - PR #9: draft/open/unmerged
 - Issue #8: open
@@ -46,38 +46,32 @@ are not yet accepted. See
 
 No new character artwork is authorized.
 
-## Retained Alpha50-003 boundary
+## Retained C01 boundary
 
-Retain only as bounded candidate evidence:
+Retain as bounded capability/evidence:
 
-- V2-only Alpha qualification and V1 acceptance guard;
-- fixed-point/milli-integer V2 numerical organism state;
-- preference/correction/commitment/outcome V2 plumbing;
-- signed-64 sequence contract direction;
-- separate typed ordinary-evidence UDS architecture;
-- same-UID peer credential plus digest-integrity prototype;
-- resident companion ordinary→V2→intent→Rust bridge-result→learning→snapshot plumbing;
-- graceful restart continuity;
-- exact-head CI/scanner/capability-matrix corrections;
-- all accepted Phase 01/C06 evidence.
+- V2-only Alpha qualification and V1 guard;
+- fixed-point V2 organism numerical state;
+- authenticated sensor-gateway ordinary evidence boundary and durable replay direction;
+- fail-closed intent sequence exhaustion;
+- real Godot 4.7.2 frozen-pack renderer participation and typed result plumbing;
+- exact-head CI and all accepted Phase 01/C06 evidence.
 
-Do not claim current ordinary ingress as authenticated producer authority, current bridge result as Godot execution, or Python transition evidence as production legal routing.
+Do not treat `godot/alpha50_transition_campaign.gd` as production routing authority: it contains a separate hard-coded graph. Do not treat direct helper causal flags as resident production causality.
 
 ## Active objective
 
-Execute `COMPANION-ALPHA50-003-LIVE-001-C01` only.
+Execute `COMPANION-ALPHA50-003-LIVE-001-C02` only.
 
-Close the software-only Alpha central gate on one exact executable SHA:
+Close the remaining central Alpha software gate by isolating the legacy file ingress, unifying live intents and the 10,000-case campaign on the same production Godot resolver/director, proving four resident paired causal comparisons plus post-restart remembered behavior, making bounded goals/development/retrieval/consolidation operative, running real multi-class failure and care-loss campaigns, booting the resident stack from clean-root restore, qualifying model-worker independence, and publishing governed target-host sensor evidence.
 
-`authorized real sensor-gateway evidence → companion V2 memory/state → typed intent → real Godot 4.7.2 frozen-pack execution → typed observed result → V2 learning → persistence → restart → remembered behavior change`.
-
-The same tree must establish production Godot legal transitions, real multi-class failure evidence, care process-loss independence, resident clean-root restore, operative bounded goals/development/consolidation, and actual low-level camera/microphone acquisition where host permissions allow.
+Do not return because implementation is missing or a test initially fails; repair and continue unless an explicit Architect stop condition is reached.
 
 ## Completion position
 
-Architect Review 26 sets evidence-grounded overall completion to **39%**, superseding Review 25's 35%.
+Architect Review 27 sets evidence-grounded overall completion to **44%**, superseding Review 26's 39%.
 
-If C01 closes the central software boundary, independent review may support approximately **50–53%** even if the dedicated Openbox target remains explicitly blocked.
+If C02 closes the central software boundary, independent review may support approximately **52–55%** even if the dedicated Openbox target remains explicitly blocked.
 
 ## Protected work
 
