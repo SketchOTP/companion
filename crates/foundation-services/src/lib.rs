@@ -108,6 +108,17 @@ fn service(role: &str) -> Result<(), Box<dyn std::error::Error>> {
             let listener = std::os::unix::net::UnixListener::bind(&socket)?;
             listener.set_nonblocking(true)?;
             ordinary_listener = Some(listener);
+            // Alpha-life qualification requires a supported production state
+            // transition before restart probes inspect durable snapshots. The
+            // ordinary-evidence listener owns the service loop below, so this
+            // explicit initialization step must occur before entering it;
+            // it is not a hidden background snapshot side effect.
+            if env::var_os("COMPANION_ALPHA_LIFE").is_some() {
+                let mut state = foundation_core::organism_v2::restore_latest(&store)?
+                    .unwrap_or_else(|| OrganismStateV2::deterministic(50));
+                state.step(env::var_os("COMPANION_USER_PRESENT").is_some())?;
+                let _ = state.snapshot_to(&store)?;
+            }
             drop(store);
         }
         "identity-consent-vault" => ordinary_store("vault", &boot, &mut seq)?,
