@@ -14,7 +14,7 @@ static func _authority() -> Dictionary:
 			_authority_cache = parsed
 	return _authority_cache
 
-static func resolve(start_state: String, request: String) -> Array[String]:
+static func resolve(start_state: String, request: String) -> Array:
 	var by_request: Dictionary = _authority().get("edges", {}).get(start_state, {})
 	var route = by_request.get(request, [])
 	return route.duplicate() if route is Array else []
